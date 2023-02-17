@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{3BB210F1-119D-409D-988F-7009AA916BF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{D9F0335F-8263-4A80-835C-F9AAC8CD1993}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoPSWMain", "ProyectoPSWMain\ProyectoPSWMain.csproj", "{4351C725-2AE2-4A63-BD89-92755659B69E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4351C725-2AE2-4A63-BD89-92755659B69E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4351C725-2AE2-4A63-BD89-92755659B69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4351C725-2AE2-4A63-BD89-92755659B69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4351C725-2AE2-4A63-BD89-92755659B69E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4351C725-2AE2-4A63-BD89-92755659B69E} = {3BB210F1-119D-409D-988F-7009AA916BF7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBE68530-DF41-4F3C-8BBC-457C9DF61AB9}
+	EndGlobalSection
+EndGlobal
