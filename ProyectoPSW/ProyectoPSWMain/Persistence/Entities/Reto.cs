@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoPSWMain.Persistence.Entities
 {
-    internal class Reto
+    public partial class Reto
     {
         public int Puntuacion_acierto
         {

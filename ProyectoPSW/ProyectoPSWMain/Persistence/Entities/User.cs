@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoPSWMain.Persistence.Entities
 {
-    internal class User
+    public partial class User
     {
         public int Puntuacion {
             get; set;

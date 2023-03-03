@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoPSWMain.BussinesLogic.Entities
 {
-    internal class Pregunta
+    public partial class Pregunta
     {
     }
 }
