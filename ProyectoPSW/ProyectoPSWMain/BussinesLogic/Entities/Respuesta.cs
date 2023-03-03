@@ -4,19 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoPSWMain.Persistence.Entities
+namespace ProyectoPSWMain.BussinesLogic.Entities
 {
     public partial class Respuesta
     {
-        public string Texto { get; set; }
-
-        public virtual Pregunta Pregunta { get; set; }
-
-
-
-
-
-            
 
     }
 }
