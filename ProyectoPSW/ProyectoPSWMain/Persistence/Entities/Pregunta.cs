@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProyectoPSWMain.Persistence.Entities
 {
-    internal class Class1
+    internal class Pregunta: Reto
     {
+        public string enunciado {
+            get;    set;
+        }
     }
 }
