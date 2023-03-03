@@ -6,17 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoPSWMain.Persistence.Entities
 {
-    public partial class Respuesta
+    internal class Class2
     {
-        public string Texto { get; set; }
-
-        public virtual Pregunta Pregunta { get; set; }
-
-
-
-
-
-            
-
     }
 }
