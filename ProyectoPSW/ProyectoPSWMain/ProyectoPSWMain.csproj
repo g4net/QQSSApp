@@ -56,13 +56,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BussinesLogic\Entities\Pregunta.cs" />
+    <Compile Include="BussinesLogic\Entities\Reto.cs" />
+    <Compile Include="BussinesLogic\Entities\User.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Persistence\Entities\Class1.cs" />
+    <Compile Include="Persistence\Entities\Pregunta.cs" />
+    <Compile Include="Persistence\Entities\Reto.cs" />
+    <Compile Include="Persistence\Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BussinesLogic\Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
