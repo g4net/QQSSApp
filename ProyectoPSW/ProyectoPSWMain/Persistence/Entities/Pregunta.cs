@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProyectoPSWMain.Persistence.Entities
 {
-    internal class Class3
+    public partial class Pregunta
     {
-    }
+        public ICollection<Reto> Retos {
+            get; set;
+        }
+}
 }
