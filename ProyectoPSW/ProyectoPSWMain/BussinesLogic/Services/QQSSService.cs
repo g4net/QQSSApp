@@ -27,7 +27,7 @@ namespace ProyectoPSWMain.Services
 
         }
 
-        void DBInitialization()
+        public void DBInitialization()
         {
 
         }
