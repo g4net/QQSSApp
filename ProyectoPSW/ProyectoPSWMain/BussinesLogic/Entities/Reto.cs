@@ -8,6 +8,7 @@ namespace ProyectoPSWMain.Entities
 {
     public partial class Reto
     {
+
       public Reto() {
             this.PartidaDeReto = new List<Partida>();
             
