@@ -11,13 +11,10 @@ namespace ProyectoPSWMain.Entities
     {
        
       
-        public virtual ICollection<Respuesta> Respuestas {
-            get; set;
-        }
+        public virtual ICollection<Respuesta> Respuestas { get; set; }
 
         public Respuesta RespuestaCorrecta { get; }
-        public String Enunciado {
-            get; set;   
+        public String Enunciado { get; set; }   
         }
 }
 }

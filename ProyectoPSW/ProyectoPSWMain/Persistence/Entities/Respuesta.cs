@@ -10,10 +10,7 @@ namespace ProyectoPSWMain.Entities
     public partial class Respuesta
     {
        
-        public int Id
-        {
-            get; set;
-        }
+        public int Id { get; set; }
         public string Texto { get; set; }
 
 
