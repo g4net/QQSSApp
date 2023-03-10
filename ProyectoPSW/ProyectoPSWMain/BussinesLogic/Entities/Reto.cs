@@ -14,12 +14,11 @@ namespace ProyectoPSWMain.Entities
             
       }
 
-        public Reto(int Dificulty, int Punt_fallo, int Punt_acierto, int Segundos):this()
+        public Reto(int Dificulty, int Punt_acierto):this()
         {
             this.Dificultad = Dificulty;
-            this.Puntuacion_fallo = Punt_fallo;
             this.Puntuacion_acierto = Punt_acierto;
-            this.Segundos = Segundos;
+         
         }
 
     }

@@ -16,15 +16,7 @@ namespace ProyectoPSWMain.Entities
         {
             get; set;
         }
-        public int Puntuacion_fallo {
-            get; set;
-        }
-        public int Segundos { 
-            get; set;
-        }
-        public int Dificultad {
-            get; set;
-        }
+        public int Dificultad {  get; set; }
 
         public virtual ICollection<Partida> PartidaDeReto
         {
