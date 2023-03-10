@@ -16,8 +16,6 @@ namespace ProyectoPSWMain.Entities
         }
         public string Texto { get; set; }
 
-        public virtual Pregunta Pregunta { get; set; }
-
 
 
     }

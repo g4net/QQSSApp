@@ -15,6 +15,7 @@ namespace ProyectoPSWMain.Entities
             get; set;
         }
 
+        public Respuesta RespuestaCorrecta { get; }
         public String Enunciado {
             get; set;   
         }
