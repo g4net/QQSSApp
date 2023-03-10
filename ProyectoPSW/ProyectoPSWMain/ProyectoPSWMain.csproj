@@ -74,6 +74,8 @@
     <Compile Include="BussinesLogic\Entities\Respuesta.cs" />
     <Compile Include="BussinesLogic\Entities\Reto.cs" />
     <Compile Include="BussinesLogic\Entities\User.cs" />
+    <Compile Include="BussinesLogic\Services\QQSSService.cs" />
+    <Compile Include="BussinesLogic\Services\IQQSSService.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="EntityFramework\DbContextPSW.cs" />
     <Compile Include="EntityFramework\EntityFrameworkDAL.cs" />
