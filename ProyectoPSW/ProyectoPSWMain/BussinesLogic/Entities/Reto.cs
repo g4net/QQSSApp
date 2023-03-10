@@ -10,14 +10,14 @@ namespace ProyectoPSWMain.Entities
     {
 
       public Reto() {
-            this.partidaDeReto = new List<Partida>();
+            this.PartidaDeReto = new List<Partida>();
             
       }
 
         public Reto(int Dificulty, int Punt_acierto):this()
         {
-            this.dificultad = Dificulty;
-            this.puntuacion_acierto = Punt_acierto;
+            this.Dificultad = Dificulty;
+            this.Puntuacion_acierto = Punt_acierto;
          
         }
 
