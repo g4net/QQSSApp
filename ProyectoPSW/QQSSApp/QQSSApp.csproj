@@ -46,14 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="PantallaPrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="PantallaPrincipalForm.Designer.cs">
+      <DependentUpon>PantallaPrincipalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartidaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartidaForm.Designer.cs">
+      <DependentUpon>PartidaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PantallaPrincipalForm.resx">
+      <DependentUpon>PantallaPrincipalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +84,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProyectoPSWMain\ProyectoPSWMain.csproj">
+      <Project>{4351c725-2ae2-4a63-bd89-92755659b69e}</Project>
+      <Name>ProyectoPSWMain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

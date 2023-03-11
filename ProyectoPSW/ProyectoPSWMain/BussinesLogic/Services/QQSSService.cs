@@ -1,4 +1,5 @@
-﻿using ProyectoPSWMain.Entities;
+﻿using ProyectoPSWMain.BussinesLogic.Services;
+using ProyectoPSWMain.Entities;
 using ProyectoPSWMain.EntityFramework;
 using ProyectoPSWMain.Services;
 using System;
@@ -31,5 +32,28 @@ namespace ProyectoPSWMain.Services
         {
 
         }
+
+        #region User
+
+        #endregion
+
+        #region Partida
+
+        public int [] GetDifficultyArray(int level)
+        {
+            // falta implementar el ServiceException y el archivo de las excepciones
+            if(level > 4) throw new ServiceException(resourceManager.GetString("Difficulty level does not exist!""));
+            switch (level)
+            {
+                case 0: return new int[] { 0, 0, 0, 0, 0, 1, 1, 1, 2, 2 };
+                case 1: return new int[] { 0, 0, 0, 0, 1, 1, 1, 2, 2, 2 };
+                case 2: return new int[] { 0, 0, 0, 1, 1, 1, 1, 2, 2, 2 };
+                case 3: return new int[] { 0, 0, 1, 1, 1, 1, 2, 2, 2, 2 };
+                case 4: return new int[] { 1, 1, 1, 1, 1, 2, 2, 2, 2, 2 };
+            }
+
+            return null;
+
+        #endregion
     }
 }

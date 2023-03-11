@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPSWMain.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,13 @@ using System.Windows.Forms;
 
 namespace QQSSApp
 {
-    public partial class Form1 : Form
+    public partial class PartidaForm : Form
     {
-        public Form1()
+        private IQQSSService service;
+        public PartidaForm(IQQSSService service)
         {
             InitializeComponent();
+            this.service = service;
         }
     }
 }
