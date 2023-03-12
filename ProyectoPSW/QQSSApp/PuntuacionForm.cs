@@ -21,7 +21,7 @@ namespace QQSSApp
             InitializeComponent();
             this.service = service;
             this.userLogged = service.GetLoggedUser();
-
+            this.label1.Text = this.userLogged.Puntuacion.ToString();
         }
 
     }

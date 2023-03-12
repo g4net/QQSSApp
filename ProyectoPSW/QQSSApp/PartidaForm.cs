@@ -18,6 +18,7 @@ namespace QQSSApp
         {
             InitializeComponent();
             this.service = service;
+            this.service.Login("1235");
         }
 
         private void PartidaForm_Load(object sender, EventArgs e)

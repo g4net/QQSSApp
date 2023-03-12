@@ -73,7 +73,7 @@ namespace DBTest
                 Console.WriteLine("===========================================");
 
                 Console.WriteLine("\n// CREACIÓN DE UNA REVISTA Y SU EDITOR EN JEFE");
-                User u = new User("54313",0);
+                User u = new User("1235",500);
                 dal.Insert<User>(u);
                 dal.Commit();
 
