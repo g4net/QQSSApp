@@ -58,12 +58,6 @@
   <ItemGroup>
     <Compile Include="AppBuilder.cs" />
     <Compile Include="Director.cs" />
-    <Compile Include="FormTemplate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTemplate.Designer.cs">
-      <DependentUpon>FormTemplate.cs</DependentUpon>
-    </Compile>
     <Compile Include="PantallaPrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +72,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTemplate.Designer.cs">
+      <DependentUpon>FormTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="PuntuacionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +101,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="FormTemplate.resx">
+      <DependentUpon>FormTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PuntuacionForm.resx">
       <DependentUpon>PuntuacionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +132,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\agüita.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\flecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo0.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
