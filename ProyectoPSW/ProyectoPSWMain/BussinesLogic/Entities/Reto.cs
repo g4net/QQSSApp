@@ -10,8 +10,7 @@ namespace ProyectoPSWMain.Entities
     {
 
       public Reto() {
-            this.PartidaDeReto = new List<Partida>();
-            
+                        
       }
 
         public Reto(int Dificulty, int Punt_acierto):this()
