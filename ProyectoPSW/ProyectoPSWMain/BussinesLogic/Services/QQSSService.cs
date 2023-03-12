@@ -66,6 +66,7 @@ namespace ProyectoPSWMain.Services
             if (this.loggedUser != null)
             {
                 this.loggedUser.SetPoints(points);
+                repository.Commit();
             }
             else {
                 throw new ServiceException("There is no user logged in");

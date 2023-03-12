@@ -16,7 +16,9 @@ namespace ProyectoPSWMain.Entities
             this.Id = dni;
             this.Puntuacion = Points;
         }
-
+        public int getPoints() {
+            return this.Puntuacion;
+        }
         public void SetPoints(int points) {
             this.Puntuacion = points;
         }

@@ -19,5 +19,18 @@ namespace QQSSApp
             InitializeComponent();
             this.service = service;
         }
+
+        private void PartidaForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PuntuacionForm puntuacion = new PuntuacionForm(service);
+            puntuacion.FormClosed += (s, args) => this.Show();
+            puntuacion.Show();
+        }
     }
 }
