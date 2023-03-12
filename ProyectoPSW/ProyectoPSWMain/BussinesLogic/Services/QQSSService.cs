@@ -1,13 +1,13 @@
-﻿using ProyectoPSWMain.BussinesLogic.Services;
+﻿using ProyectoPSWMain.Services;
 using ProyectoPSWMain.Entities;
 using ProyectoPSWMain.EntityFramework;
-using ProyectoPSWMain.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ProyectoPSWMain.Services
 {
@@ -34,15 +34,60 @@ namespace ProyectoPSWMain.Services
         }
 
         #region User
+        public void AddUser(User usuario) {
+            if (repository.GetById<User>(usuario.Id) == null)
+            {
+                repository.Insert<User>(usuario);
+                repository.Commit();
+            }
+            else {
+                throw new ServiceException("User with DNI" + usuario.Id + "already exists");
+            }
 
+        }
+        public void Login(String dni) {
+            if (repository.GetById<User>(dni) != null)
+            {
+                this.loggedUser = repository.GetById<User>(dni);
+            }else {
+                throw new ServiceException("There is no user with that DNI");
+            }
+        }
+        public User GetLoggedUser()
+        {
+            if (this.loggedUser != null)
+            {
+                return this.loggedUser;
+            }
+            else throw new ServiceException("There is no user logged in");
+
+        }
+        public void UpdateScore(int points) {
+            if (this.loggedUser != null)
+            {
+                this.loggedUser.SetPoints(points);
+            }
+            else {
+                throw new ServiceException("There is no user logged in");
+            }
+        }
         #endregion
 
         #region Partida
 
-        public int [] GetDifficultyArray(int level)
+        public void AddPartida(Partida game) {
+            if (!repository.GetWhere<Partida>(x => x.PuntuacionPartida == game.PuntuacionPartida && x.Nivel == game.Nivel).Any()){
+                repository.Insert<Partida>(game);
+                repository.Commit() ;
+            }
+            else {
+                throw new ServiceException("There is already a game with that dificulty and that punctuation");
+            }
+        }
+        public int[] GetDifficultyArray(int level)
         {
             // falta implementar el ServiceException y el archivo de las excepciones
-            if(level > 4) throw new ServiceException(resourceManager.GetString("Difficulty level does not exist!""));
+            if (level > 4) throw new ServiceException(resourceManager.GetString("Difficulty level does not exist!"));
             switch (level)
             {
                 case 0: return new int[] { 0, 0, 0, 0, 0, 1, 1, 1, 2, 2 };
@@ -53,7 +98,21 @@ namespace ProyectoPSWMain.Services
             }
 
             return null;
+        }
+        #endregion
+
+        #region Reto
 
         #endregion
-    }
+
+        #region Pregunta
+        public void AddPregunta(Pregunta pregutna)
+        {
+           repository.Insert<Pregunta>(pregutna);
+            repository.Commit();
+        }
+        #endregion
+
+
+    } 
 }
