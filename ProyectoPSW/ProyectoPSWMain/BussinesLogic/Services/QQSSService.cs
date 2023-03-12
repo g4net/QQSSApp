@@ -88,7 +88,7 @@ namespace ProyectoPSWMain.Services
         public int[] GetDifficultyArray(int level)
         {
             // falta implementar el ServiceException y el archivo de las excepciones
-            if (level > 4) throw new ServiceException(resourceManager.GetString("Difficulty level does not exist!"));
+            //if(level > 4) throw new ServiceException(resourceManager.GetString("Difficulty level does not exist!""));
             switch (level)
             {
                 case 0: return new int[] { 0, 0, 0, 0, 0, 1, 1, 1, 2, 2 };

@@ -11,17 +11,16 @@ using System.Windows.Forms;
 
 namespace QQSSApp
 {
-    public partial class PantallaPrincipalForm : Form
+    public partial class PantallaPrincipalForm : FormTemplate
     {
-        private IQQSSService service;
-        public PantallaPrincipalForm(IQQSSService service)
+        public PantallaPrincipalForm() : base()
         {
             InitializeComponent();
-            this.service = service;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.FormClosed += (s, args) => Application.Exit();
         }
+
 
         private void ButtonComenzar_Click(object sender, EventArgs e)
         {
