@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace QQSSApp
 {
-    public partial class PartidaForm : Form
+    public partial class PartidaForm : FormTemplate
     {
-        private IQQSSService service;
+
         public PartidaForm(IQQSSService service)
         {
             InitializeComponent();

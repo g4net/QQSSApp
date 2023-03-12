@@ -1,4 +1,4 @@
-﻿using ProyectoPSWMain.BussinesLogic.Services;
+﻿using ProyectoPSWMain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

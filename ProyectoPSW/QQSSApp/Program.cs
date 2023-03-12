@@ -17,12 +17,17 @@ namespace QQSSApp
 
         static void Main()
         {
+            AppBuilder appBuilder = new QQSSAppBuilder();
+            Director director = new Director(appBuilder);
+            FormTemplate mainForm = new PantallaPrincipalForm();
             IQQSSService service = new QQSSService(new EntityFrameworkDAL(new ProyectPSWDBContext()));
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PantallaPrincipalForm(service));
+            director.BuildApp(mainForm, service);
+
+            
         }
+
+
 
     }
 }
