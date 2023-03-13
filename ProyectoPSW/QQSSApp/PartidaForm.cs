@@ -26,12 +26,26 @@ namespace QQSSApp
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void op1_click(object sender, EventArgs e)
         {
-            this.Hide();
-            PuntuacionForm puntuacion = new PuntuacionForm(service);
-            puntuacion.FormClosed += (s, args) => this.Show();
-            puntuacion.Show();
+
         }
+
+        private void op2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void op3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void op4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
