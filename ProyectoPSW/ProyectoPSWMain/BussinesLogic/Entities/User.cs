@@ -19,6 +19,9 @@ namespace ProyectoPSWMain.Entities
         public int getPoints() {
             return this.Puntuacion;
         }
+        public string getPointsStr() {
+            return this.Puntuacion.ToString();
+        }
         public void SetPoints(int points) {
             this.Puntuacion = points;
         }

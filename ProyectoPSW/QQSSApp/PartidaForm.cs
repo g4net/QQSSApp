@@ -19,7 +19,7 @@ namespace QQSSApp
         {
             InitializeComponent();
             this.service = service;
-            this.service.Login("1235");
+            
             GraphicsPath path = new GraphicsPath();
             path.AddEllipse(0, 0, ODS_especifica.Width, ODS_especifica.Height);
             ODS_especifica.Region = new Region(path);
@@ -28,7 +28,8 @@ namespace QQSSApp
 
         private void PartidaForm_Load(object sender, EventArgs e)
         {
-
+            this.service.Login("1235");
+            this.label6.Text = this.service.GetLoggedUser().getPointsStr();
         }
 
         private void op1_click(object sender, EventArgs e)
