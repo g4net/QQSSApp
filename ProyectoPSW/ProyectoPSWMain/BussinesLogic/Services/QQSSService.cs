@@ -114,10 +114,10 @@ namespace ProyectoPSWMain.Services
             repository.Commit();
         }
 
-        public List<Pregunta> QuestionList(int[] dificultad) {
-            List<Pregunta> QList = new List<Pregunta>();
+        public List<Pregunta> Questions(int[] dificultad) {
+            List<Pregunta> Questions = new List<Pregunta>();
             int puntero = 0;
-            List<Pregunta> Aux = repository.GetWhere<Pregunta>(x => x.Dificultad == dificultad[puntero]).ToList(); ;
+            List<Pregunta> QuestionsDB = repository.GetWhere<Pregunta>(x => x.Dificultad == dificultad[puntero]).ToList(); ;
             var random = new Random();
            
             int dificAnt = dificultad[puntero];
@@ -125,17 +125,17 @@ namespace ProyectoPSWMain.Services
             while (puntero > 9)
             {
                 if (dificAnt != dificultad[puntero]) {
-                    Aux = repository.GetWhere<Pregunta>(x => x.Dificultad == dificultad[puntero]).ToList();
+                    QuestionsDB = repository.GetWhere<Pregunta>(x => x.Dificultad == dificultad[puntero]).ToList();
                     dificAnt = dificultad[puntero];
                 }
-                int index = random.Next(Aux.Count);
+                int index = random.Next(QuestionsDB.Count);
 
-                QList.Add(Aux.ElementAt(index));
-                Aux.RemoveAt(index);
+                Questions.Add(QuestionsDB.ElementAt(index));
+                QuestionsDB.RemoveAt(index);
                 puntero++;
             }
 
-            return QList;
+            return Questions;
         }
         
         #endregion
