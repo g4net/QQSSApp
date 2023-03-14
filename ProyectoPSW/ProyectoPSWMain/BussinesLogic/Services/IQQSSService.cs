@@ -31,8 +31,6 @@ namespace ProyectoPSWMain.Services
 
         #region Pregunta
         void AddPregunta(Pregunta pregunta);
-
-        List<Pregunta> QuestionList(int[] Dificulty);
         #endregion
 
 

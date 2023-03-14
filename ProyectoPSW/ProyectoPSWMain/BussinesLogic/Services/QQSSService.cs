@@ -8,7 +8,6 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography.X509Certificates;
-using System.Reflection.Emit;
 
 namespace ProyectoPSWMain.Services
 {
@@ -89,7 +88,7 @@ namespace ProyectoPSWMain.Services
         public int[] GetDifficultyArray(int level)
         {
             // falta implementar el ServiceException y el archivo de las excepciones
-            if(level > 4) throw new ServiceException(resourceManager.GetString("Difficulty level does not exist!"));
+            //if(level > 4) throw new ServiceException(resourceManager.GetString("Difficulty level does not exist!""));
             switch (level)
             {
                 case 0: return new int[] { 0, 0, 0, 0, 0, 1, 1, 1, 2, 2 };
@@ -113,31 +112,6 @@ namespace ProyectoPSWMain.Services
            repository.Insert<Pregunta>(pregutna);
             repository.Commit();
         }
-
-        public List<Pregunta> QuestionList(int[] dificultad) {
-            List<Pregunta> QList = new List<Pregunta>();
-            int puntero = 0;
-            List<Pregunta> Aux = repository.GetWhere<Pregunta>(x => x.Dificultad == dificultad[puntero]).ToList(); ;
-            var random = new Random();
-           
-            int dificAnt = dificultad[puntero];
-            
-            while (puntero > 9)
-            {
-                if (dificAnt != dificultad[puntero]) {
-                    Aux = repository.GetWhere<Pregunta>(x => x.Dificultad == dificultad[puntero]).ToList();
-                    dificAnt = dificultad[puntero];
-                }
-                int index = random.Next(Aux.Count);
-
-                QList.Add(Aux.ElementAt(index));
-                Aux.RemoveAt(index);
-                puntero++;
-            }
-
-            return QList;
-        }
-        
         #endregion
 
 
