@@ -33,7 +33,12 @@
             this.op4 = new System.Windows.Forms.Button();
             this.op3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.puntuacion_negativa = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.puntuacion_positiva = new System.Windows.Forms.Label();
             this.enunciado = new System.Windows.Forms.Label();
             this.tiempo = new System.Windows.Forms.Label();
             this.ODS_especifica = new System.Windows.Forms.PictureBox();
@@ -48,11 +53,6 @@
             this.pos8 = new System.Windows.Forms.Button();
             this.pos9 = new System.Windows.Forms.Button();
             this.pos10 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ODS_especifica)).BeginInit();
@@ -106,13 +106,35 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.puntuacion_negativa);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.puntuacion_positiva);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1067, 67);
             this.panel1.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(832, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 22);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Acumulado:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(952, 8);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 46);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "2000";
             // 
             // pictureBox1
             // 
@@ -124,6 +146,38 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            // 
+            // puntuacion_negativa
+            // 
+            this.puntuacion_negativa.AutoSize = true;
+            this.puntuacion_negativa.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.puntuacion_negativa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.puntuacion_negativa.Location = new System.Drawing.Point(529, 8);
+            this.puntuacion_negativa.Name = "puntuacion_negativa";
+            this.puntuacion_negativa.Size = new System.Drawing.Size(57, 46);
+            this.puntuacion_negativa.TabIndex = 22;
+            this.puntuacion_negativa.Text = "-0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(491, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 46);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "/";
+            // 
+            // puntuacion_positiva
+            // 
+            this.puntuacion_positiva.AutoSize = true;
+            this.puntuacion_positiva.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.puntuacion_positiva.ForeColor = System.Drawing.Color.White;
+            this.puntuacion_positiva.Location = new System.Drawing.Point(439, 8);
+            this.puntuacion_positiva.Name = "puntuacion_positiva";
+            this.puntuacion_positiva.Size = new System.Drawing.Size(43, 46);
+            this.puntuacion_positiva.TabIndex = 20;
+            this.puntuacion_positiva.Text = "0";
             // 
             // enunciado
             // 
@@ -277,60 +331,6 @@
             this.pos10.Text = "10";
             this.pos10.UseVisualStyleBackColor = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(439, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 46);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "0";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(491, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 46);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "/";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.label5.Location = new System.Drawing.Point(529, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 46);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "-0";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(952, 8);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 46);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "2000";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(832, 18);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 22);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Acumulado:";
-            // 
             // PartidaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -393,8 +393,8 @@
         private System.Windows.Forms.Button pos10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label puntuacion_negativa;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label puntuacion_positiva;
     }
 }
