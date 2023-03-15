@@ -20,10 +20,6 @@ namespace QQSSApp
             InitializeComponent();
             this.service = service;
             
-            GraphicsPath path = new GraphicsPath();
-            path.AddEllipse(0, 0, ODS_especifica.Width, ODS_especifica.Height);
-            ODS_especifica.Region = new Region(path);
-            
         }
 
         private void PartidaForm_Load(object sender, EventArgs e)
