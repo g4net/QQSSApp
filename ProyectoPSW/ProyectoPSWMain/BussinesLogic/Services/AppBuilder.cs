@@ -6,22 +6,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QQSSApp
+namespace ProyectoPSWMain.Services
 {
     public abstract class AppBuilder
     {
-        protected FormTemplate mainForm;
-        protected IQQSSService service;
+        protected App app;
 
         public AppBuilder() { }
 
-        public abstract void BuildForm(FormTemplate mainForm);
-
-        public abstract void BuildService(IQQSSService service);
+        public abstract void BuildForm(Form form);
 
         public abstract void BuildConfig();
 
-        public abstract void RunApp();
+        public App GetApp() { return app; }
+
     }
 
 

@@ -61,6 +61,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +75,9 @@
     <Compile Include="BussinesLogic\Entities\Respuesta.cs" />
     <Compile Include="BussinesLogic\Entities\Reto.cs" />
     <Compile Include="BussinesLogic\Entities\User.cs" />
+    <Compile Include="BussinesLogic\Services\App.cs" />
+    <Compile Include="BussinesLogic\Services\AppBuilder.cs" />
+    <Compile Include="BussinesLogic\Services\QQSSAppBuilder.cs" />
     <Compile Include="BussinesLogic\Services\ServiceException.cs" />
     <Compile Include="BussinesLogic\Services\QQSSService.cs" />
     <Compile Include="BussinesLogic\Services\IQQSSService.cs" />

@@ -12,10 +12,12 @@ using System.Windows.Forms;
 
 namespace QQSSApp
 {
-    public partial class PantallaPrincipalForm : FormTemplate
+    public partial class PantallaPrincipalForm : Form
     {
-        public PantallaPrincipalForm() : base()
+        IQQSSService service;
+        public PantallaPrincipalForm(IQQSSService service)
         {
+            this.service = service;
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

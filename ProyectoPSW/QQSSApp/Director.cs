@@ -10,19 +10,14 @@ namespace QQSSApp
 {
     public class Director
     {
-        private AppBuilder builder;
-        public Director(AppBuilder builder)
+        public Director()
         {
-            this.builder = builder;
         }
 
-        public void BuildApp(FormTemplate form, IQQSSService service)
+        public void BuildApp(AppBuilder builder)
         {
-            builder.BuildForm(form);
-
-            builder.BuildService(service);
-
-            builder.RunApp();
+            IQQSSService service = new QQSSService(new EntityFrameworkDAL(new ProyectPSWDBContext()));
+            builder.BuildForm(new PantallaPrincipalForm(service));
         }
          
     }
