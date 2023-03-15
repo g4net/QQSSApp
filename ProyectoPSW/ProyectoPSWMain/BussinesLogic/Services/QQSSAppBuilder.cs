@@ -7,26 +7,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QQSSApp
+namespace ProyectoPSWMain.Services
 {
     public class QQSSAppBuilder : AppBuilder
     {
-
         public QQSSAppBuilder() : base()
         {
-
+            app = new App();
         }
 
 
-        public override void BuildForm(FormTemplate mainForm)
+        public override void BuildForm(Form form)
         {
-            this.mainForm = mainForm;
-        }
-
-        public override void BuildService(IQQSSService service)
-        {
-            this.service = service;
-            mainForm.SetService(service);
+            app.form = form;
         }
 
 
@@ -34,13 +27,6 @@ namespace QQSSApp
         public override void BuildConfig()
         {
             throw new NotImplementedException();
-        }
-
-        public override void RunApp()
-        {
-            Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(mainForm);
         }
     }
 

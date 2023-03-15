@@ -56,7 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppBuilder.cs" />
     <Compile Include="Director.cs" />
     <Compile Include="PantallaPrincipalForm.cs">
       <SubType>Form</SubType>
@@ -84,7 +83,6 @@
     <Compile Include="PuntuacionForm.Designer.cs">
       <DependentUpon>PuntuacionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="QQSSAppBuilder.cs" />
     <EmbeddedResource Include="PantallaPrincipalForm.resx">
       <DependentUpon>PantallaPrincipalForm.cs</DependentUpon>
     </EmbeddedResource>
