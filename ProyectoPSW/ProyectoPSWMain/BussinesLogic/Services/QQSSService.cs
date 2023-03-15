@@ -137,9 +137,26 @@ namespace ProyectoPSWMain.Services
 
             return Questions;
         }
-        
+
         #endregion
 
+        #region Pregunta
+        public List<Respuesta> AnswerShuffle(Pregunta Question){
+            List<Respuesta> Answers = new List<Respuesta>();
+            int pointer = 0;
+            var random = new Random();
+            List<Respuesta> NoMix = Question.getAllAnswers();
 
-    } 
+            while (pointer < 4)
+            {
+                int index = random.Next(NoMix.Count);
+                Answers.Add(NoMix.ElementAt(index));
+                NoMix.RemoveAt(index);
+                pointer++;
+
+            }
+            return Answers;
+        }
+        #endregion
+    }
 }

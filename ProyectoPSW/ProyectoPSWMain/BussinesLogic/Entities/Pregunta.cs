@@ -13,9 +13,15 @@ namespace ProyectoPSWMain.Entities
             this.Respuestas = new List<Respuesta>();
         }
 
-        public Pregunta(ICollection<Respuesta> rtas, String texto, int Dificulty, int Punt_acierto) : base(Dificulty,Punt_acierto) {
+        public Pregunta(ICollection<Respuesta> rtas, String texto, int Dificulty, int Punt_acierto, Respuesta rtaCorrecta) : base(Dificulty,Punt_acierto) {
             this.Respuestas = rtas;
             this.Enunciado = texto;
+            this.RespuestaCorrecta = rtaCorrecta;
+        }
+        public List<Respuesta> getAllAnswers() {
+            List<Respuesta> allAnswers = this.Respuestas.ToList();
+            allAnswers.Add(this.RespuestaCorrecta);
+            return allAnswers;
         }
     }
 }

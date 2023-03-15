@@ -35,6 +35,10 @@ namespace ProyectoPSWMain.Services
         List<Pregunta> Questions(int[] Dificulty);
         #endregion
 
+        #region Respuesta
+        List<Respuesta> AnswerShuffle(Pregunta Question);
+        #endregion
+
 
     }
 }
