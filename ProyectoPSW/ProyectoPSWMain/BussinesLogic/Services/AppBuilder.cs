@@ -18,8 +18,12 @@ namespace ProyectoPSWMain.Services
 
         public abstract void BuildConfig();
 
+<<<<<<< HEAD:ProyectoPSW/QQSSApp/AppBuilder.cs
+        //public abstract void RunApp();
+=======
         public App GetApp() { return app; }
 
+>>>>>>> 566611c5025febd01fdd951d4a637d68cfc161eb:ProyectoPSW/ProyectoPSWMain/BussinesLogic/Services/AppBuilder.cs
     }
 
 

@@ -57,6 +57,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Director.cs" />
+    <Compile Include="PuntuacionNegativa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PuntuacionNegativa.Designer.cs">
+      <DependentUpon>PuntuacionNegativa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PuntuacionPositiva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PuntuacionPositiva.Designer.cs">
+      <DependentUpon>PuntuacionPositiva.cs</DependentUpon>
+    </Compile>
     <Compile Include="PantallaPrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,12 +89,12 @@
     <Compile Include="FormTemplate.Designer.cs">
       <DependentUpon>FormTemplate.cs</DependentUpon>
     </Compile>
-    <Compile Include="PuntuacionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PuntuacionForm.Designer.cs">
-      <DependentUpon>PuntuacionForm.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="PuntuacionNegativa.resx">
+      <DependentUpon>PuntuacionNegativa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PuntuacionPositiva.resx">
+      <DependentUpon>PuntuacionPositiva.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PantallaPrincipalForm.resx">
       <DependentUpon>PantallaPrincipalForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,9 +113,6 @@
     </Compile>
     <EmbeddedResource Include="FormTemplate.resx">
       <DependentUpon>FormTemplate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PuntuacionForm.resx">
-      <DependentUpon>PuntuacionForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -28,6 +28,16 @@ namespace ProyectoPSWMain.Services
         {
             throw new NotImplementedException();
         }
+<<<<<<< HEAD:ProyectoPSW/QQSSApp/QQSSAppBuilder.cs
+
+        //public override void RunApp()
+        //{
+        //    Application.EnableVisualStyles();
+        //    //Application.SetCompatibleTextRenderingDefault(false);
+        //    Application.Run(mainForm);
+        //}
+=======
+>>>>>>> 566611c5025febd01fdd951d4a637d68cfc161eb:ProyectoPSW/ProyectoPSWMain/BussinesLogic/Services/QQSSAppBuilder.cs
     }
 
 }
