@@ -17,6 +17,12 @@ namespace QQSSApp
 {
     public partial class PuntuacionNegativa : Form
     {
-       
+        IQQSSService service;
+        public PuntuacionNegativa(IQQSSService service)
+        {
+            InitializeComponent();
+            this.service = service;
+
+        }
     }
 }

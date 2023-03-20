@@ -18,5 +18,17 @@ namespace ProyectoPSWMain.Entities
             this.PuntuacionPartida = Puntos;
            
         }
+        public void AddReto(Reto reto) {
+            RetoPartida.Add(reto);
+        }
+        public List<Reto> getRetos() {
+            List<Reto> retopartida = this.RetoPartida.ToList();
+            return retopartida;
+        }
+        public String getPuntuacionPartida()
+        {
+            return this.PuntuacionPartida + "";
+
+        }
     }
 }

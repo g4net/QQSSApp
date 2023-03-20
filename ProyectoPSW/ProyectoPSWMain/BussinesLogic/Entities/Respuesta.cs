@@ -16,6 +16,10 @@ namespace ProyectoPSWMain.Entities
     public Respuesta(String txt) {
            this.Texto = txt;
     }
-
+        public String getText()
+        {
+            return this.Texto;
+        }
     }
+   
 }

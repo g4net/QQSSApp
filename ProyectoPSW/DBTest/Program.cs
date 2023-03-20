@@ -73,18 +73,44 @@ namespace DBTest
                 Console.WriteLine("===========================================");
 
                 Console.WriteLine("\n// CREACIÓN DE UNA REVISTA Y SU EDITOR EN JEFE");
-                User u = new User("1235",500);
-                dal.Insert<User>(u);
+                User user = new User("1235",500);
+                dal.Insert<User>(user);
                 dal.Commit();
 
 
 
-                Partida p = new Partida(1, 400);
-                dal.Insert<Partida>(p);
-                dal.Commit();
+               
+            
+            Respuesta rta1 = new Respuesta("AAAA");
+            dal.Insert<Respuesta>(rta1);
+            dal.Commit();
+            Respuesta rta2 = new Respuesta("DDDD");
+            dal.Insert<Respuesta>(rta2);
+            dal.Commit();
+            Respuesta rta3 = new Respuesta("CCCC");
+            dal.Insert<Respuesta>(rta3);
+            dal.Commit();
+            Respuesta rta4 = new Respuesta("BBBB");
+            dal.Insert<Respuesta>(rta4);
+            dal.Commit();
+            List<Respuesta> lresp = new List<Respuesta>();
+            lresp.Add(rta1);
+            lresp.Add(rta2);
+            lresp.Add(rta3);
+            lresp.Add(rta4);
+            Pregunta pr1 = new Pregunta(lresp, "Es la bbbbbbb", 0, 100, rta4);
+            dal.Insert<Pregunta>(pr1);
+            dal.Commit();
+            Console.ReadKey();
 
-                Console.ReadKey();
-             //User prueba = dal.GetWhere()
+            Partida p = new Partida(1, 400);
+            p.AddReto(pr1);
+            
+            dal.Insert<Partida>(p);
+
+            dal.Commit();
+
+            //User prueba = dal.GetWhere()
             Console.WriteLine("aaaaaaaaa");
             // Populate here the rest of the database with data
 

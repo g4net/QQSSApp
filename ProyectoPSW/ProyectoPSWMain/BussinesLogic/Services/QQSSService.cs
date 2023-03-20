@@ -86,6 +86,14 @@ namespace ProyectoPSWMain.Services
                 throw new ServiceException("There is already a game with that dificulty and that punctuation");
             }
         }
+        public Partida GetPartida(int level, int points) {
+            var random = new Random();
+            List<Partida> PartidasDb = repository.GetAll<Partida>().ToList();
+            /*int index = random.Next(PartidasDb.Count);
+
+            return PartidasDb.ElementAt(index);*/
+            return PartidasDb.First();
+        }
         public int[] GetDifficultyArray(int level)
         {
             // falta implementar el ServiceException y el archivo de las excepciones
@@ -108,16 +116,23 @@ namespace ProyectoPSWMain.Services
         #endregion
 
         #region Pregunta
+        public void AddPreguntaToPartida(Pregunta pregutna, Partida partida)
+        {
+            partida.AddReto(pregutna);
+            repository.Insert<Pregunta>(pregutna);
+            repository.Commit();
+        }
         public void AddPregunta(Pregunta pregutna)
         {
-           repository.Insert<Pregunta>(pregutna);
+
+            repository.Insert<Pregunta>(pregutna);
             repository.Commit();
         }
 
         public List<Pregunta> Questions(int[] dificultad) {
             List<Pregunta> Questions = new List<Pregunta>();
             int puntero = 0;
-            List<Pregunta> QuestionsDB = repository.GetWhere<Pregunta>(x => x.Dificultad == dificultad[puntero]).ToList(); ;
+            List<Pregunta> QuestionsDB = repository.GetWhere<Pregunta>(x => x.Dificultad == dificultad[puntero]).ToList() ;
             var random = new Random();
            
             int dificAnt = dificultad[puntero];
@@ -140,7 +155,7 @@ namespace ProyectoPSWMain.Services
 
         #endregion
 
-        #region Pregunta
+        #region Respuesta
         public List<Respuesta> AnswerShuffle(Pregunta Question){
             List<Respuesta> Answers = new List<Respuesta>();
             int pointer = 0;
@@ -156,6 +171,15 @@ namespace ProyectoPSWMain.Services
 
             }
             return Answers;
+        }
+        public bool TestAnswer(String txt, Pregunta pregunta) {
+            if (pregunta.RespuestaCorrecta.getText() == txt)
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
         }
         #endregion
     }

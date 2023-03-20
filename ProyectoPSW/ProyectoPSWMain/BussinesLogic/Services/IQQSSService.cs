@@ -21,6 +21,8 @@ namespace ProyectoPSWMain.Services
 
         #region Partida
         void AddPartida(Partida game);
+
+        Partida GetPartida(int level, int points);
         int [] GetDifficultyArray(int level);
 
         #endregion
@@ -31,12 +33,14 @@ namespace ProyectoPSWMain.Services
 
         #region Pregunta
         void AddPregunta(Pregunta pregunta);
-
+        void AddPreguntaToPartida(Pregunta pregunta, Partida partida);
         List<Pregunta> Questions(int[] Dificulty);
         #endregion
 
         #region Respuesta
         List<Respuesta> AnswerShuffle(Pregunta Question);
+
+        bool TestAnswer(String txt, Pregunta pregunta);
         #endregion
 
 

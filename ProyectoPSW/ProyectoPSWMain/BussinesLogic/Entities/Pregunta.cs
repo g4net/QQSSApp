@@ -20,8 +20,16 @@ namespace ProyectoPSWMain.Entities
         }
         public List<Respuesta> getAllAnswers() {
             List<Respuesta> allAnswers = this.Respuestas.ToList();
-            allAnswers.Add(this.RespuestaCorrecta);
+            
+
             return allAnswers;
+        }
+        public String getPuntuacionAcierto() {
+            return this.Puntuacion_acierto + "";
+        }
+        public String getPuntuacionFallo()
+        {
+            return (this.Puntuacion_acierto * -2) + "";
         }
     }
 }
