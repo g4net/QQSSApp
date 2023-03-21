@@ -54,7 +54,7 @@
             this.correcto.AutoSize = true;
             this.correcto.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.correcto.ForeColor = System.Drawing.Color.White;
-            this.correcto.Location = new System.Drawing.Point(113, 21);
+            this.correcto.Location = new System.Drawing.Point(92, 21);
             this.correcto.Name = "correcto";
             this.correcto.Size = new System.Drawing.Size(371, 58);
             this.correcto.TabIndex = 0;
@@ -64,7 +64,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(145, 141);
+            this.label1.Location = new System.Drawing.Point(108, 141);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 91);
             this.label1.TabIndex = 1;
@@ -74,7 +74,7 @@
             // 
             this.puntuacion.AutoSize = true;
             this.puntuacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntuacion.Location = new System.Drawing.Point(208, 141);
+            this.puntuacion.Location = new System.Drawing.Point(181, 141);
             this.puntuacion.Name = "puntuacion";
             this.puntuacion.Size = new System.Drawing.Size(255, 91);
             this.puntuacion.TabIndex = 2;
@@ -116,7 +116,7 @@
             this.reintentar_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reintentar_salir.Location = new System.Drawing.Point(29, 455);
             this.reintentar_salir.Name = "reintentar_salir";
-            this.reintentar_salir.Size = new System.Drawing.Size(507, 52);
+            this.reintentar_salir.Size = new System.Drawing.Size(514, 52);
             this.reintentar_salir.TabIndex = 7;
             this.reintentar_salir.Text = "REINTENTAR";
             this.reintentar_salir.UseVisualStyleBackColor = false;

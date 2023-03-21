@@ -10,6 +10,8 @@ namespace ProyectoPSWMain.Services
 {
     public interface IQQSSService
     {
+        void RemoveAllData();
+        void Commit();  
         void DBInitialization();
 
         #region User

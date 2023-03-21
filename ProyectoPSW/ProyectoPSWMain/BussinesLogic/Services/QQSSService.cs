@@ -26,13 +26,34 @@ namespace ProyectoPSWMain.Services
         public QQSSService(IRepository repository)
         {
             this.repository = repository;
+        }
 
+        public void RemoveAllData()
+        {
+            repository.RemoveAllData();
+        }
+
+        public void Commit()
+        {
+            repository.Commit();
         }
 
         public void DBInitialization()
         {
-
+            
         }
+
+        private ICollection<Respuesta> createAnswers(ICollection<String> respuestas)
+        {
+            ICollection<Respuesta> answers = new List<Respuesta>();
+            foreach(String text in respuestas)
+            {
+                Respuesta answer = new Respuesta(text);
+                answers.Add(answer);
+            }
+            return answers;
+        }
+
 
         #region User
         public void AddUser(User usuario) {
