@@ -13,7 +13,7 @@ namespace ProyectoPSWMain.Entities
             this.Respuestas = new List<Respuesta>();
         }
 
-        public Pregunta(ICollection<Respuesta> rtas, String texto, int Dificulty, int Punt_acierto, Respuesta rtaCorrecta) : base(Dificulty,Punt_acierto) {
+        public Pregunta(ICollection<Respuesta> rtas, String texto, int Dificulty, int Punt_acierto, Respuesta rtaCorrecta, int ods) : base(Dificulty,Punt_acierto, ods) {
             this.Respuestas = rtas;
             this.Enunciado = texto;
             this.RespuestaCorrecta = rtaCorrecta;
@@ -30,6 +30,9 @@ namespace ProyectoPSWMain.Entities
         public String getPuntuacionFallo()
         {
             return (this.Puntuacion_acierto * -2) + "";
+        }
+        public int getOds() {
+            return this.ods;
         }
     }
 }
