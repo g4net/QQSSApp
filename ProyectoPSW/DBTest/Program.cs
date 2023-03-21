@@ -98,7 +98,7 @@ namespace DBTest
             lresp.Add(rta2);
             lresp.Add(rta3);
             lresp.Add(rta4);
-            Pregunta pr1 = new Pregunta(lresp, "Es la bbbbbbb", 0, 100, rta4);
+            Pregunta pr1 = new Pregunta(lresp, "Es la bbbbbbb", 0, 100, rta4, 0);
             dal.Insert<Pregunta>(pr1);
             dal.Commit();
             Console.ReadKey();

@@ -18,6 +18,7 @@ namespace ProyectoPSWMain.Entities
         }
         public int Dificultad {  get; set; }
 
+        public int ods { get; set; }
        
 
     }
