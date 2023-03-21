@@ -33,12 +33,13 @@
             this.op4 = new System.Windows.Forms.Button();
             this.op3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelPuntuacionAcierto = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelPuntuacionFallo = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.labelPuntuacionAcumulada = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.enunciado = new System.Windows.Forms.Label();
             this.tiempo = new System.Windows.Forms.Label();
             this.reloj_circular = new System.Windows.Forms.PictureBox();
@@ -53,18 +54,17 @@
             this.pos9 = new System.Windows.Forms.Button();
             this.pos10 = new System.Windows.Forms.Button();
             this.ODS_especifica = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reloj_circular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ODS_especifica)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // op1
             // 
             this.op1.Location = new System.Drawing.Point(79, 415);
-            this.op1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.op1.Margin = new System.Windows.Forms.Padding(4);
             this.op1.Name = "op1";
             this.op1.Size = new System.Drawing.Size(391, 62);
             this.op1.TabIndex = 0;
@@ -75,7 +75,7 @@
             // op2
             // 
             this.op2.Location = new System.Drawing.Point(576, 415);
-            this.op2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.op2.Margin = new System.Windows.Forms.Padding(4);
             this.op2.Name = "op2";
             this.op2.Size = new System.Drawing.Size(391, 62);
             this.op2.TabIndex = 1;
@@ -86,7 +86,7 @@
             // op4
             // 
             this.op4.Location = new System.Drawing.Point(576, 500);
-            this.op4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.op4.Margin = new System.Windows.Forms.Padding(4);
             this.op4.Name = "op4";
             this.op4.Size = new System.Drawing.Size(391, 62);
             this.op4.TabIndex = 2;
@@ -97,7 +97,7 @@
             // op3
             // 
             this.op3.Location = new System.Drawing.Point(79, 500);
-            this.op3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.op3.Margin = new System.Windows.Forms.Padding(4);
             this.op3.Name = "op3";
             this.op3.Size = new System.Drawing.Size(391, 62);
             this.op3.TabIndex = 3;
@@ -110,7 +110,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.labelPuntuacionAcumulada);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -118,6 +118,55 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1079, 66);
             this.panel1.TabIndex = 4;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.Controls.Add(this.labelPuntuacionAcierto);
+            this.flowLayoutPanel1.Controls.Add(this.label4);
+            this.flowLayoutPanel1.Controls.Add(this.labelPuntuacionFallo);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(377, 7);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(311, 56);
+            this.flowLayoutPanel1.TabIndex = 25;
+            // 
+            // labelPuntuacionAcierto
+            // 
+            this.labelPuntuacionAcierto.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelPuntuacionAcierto.AutoSize = true;
+            this.labelPuntuacionAcierto.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPuntuacionAcierto.ForeColor = System.Drawing.Color.White;
+            this.labelPuntuacionAcierto.Location = new System.Drawing.Point(3, 0);
+            this.labelPuntuacionAcierto.Name = "labelPuntuacionAcierto";
+            this.labelPuntuacionAcierto.Size = new System.Drawing.Size(43, 46);
+            this.labelPuntuacionAcierto.TabIndex = 20;
+            this.labelPuntuacionAcierto.Text = "0";
+            this.labelPuntuacionAcierto.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(52, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 46);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "/";
+            // 
+            // labelPuntuacionFallo
+            // 
+            this.labelPuntuacionFallo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelPuntuacionFallo.AutoSize = true;
+            this.labelPuntuacionFallo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPuntuacionFallo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.labelPuntuacionFallo.Location = new System.Drawing.Point(90, 0);
+            this.labelPuntuacionFallo.Name = "labelPuntuacionFallo";
+            this.labelPuntuacionFallo.Size = new System.Drawing.Size(57, 46);
+            this.labelPuntuacionFallo.TabIndex = 22;
+            this.labelPuntuacionFallo.Text = "-0";
             // 
             // label7
             // 
@@ -131,18 +180,18 @@
             this.label7.TabIndex = 24;
             this.label7.Text = "Acumulado:";
             // 
-            // label6
+            // labelPuntuacionAcumulada
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(959, 9);
-            this.label6.Margin = new System.Windows.Forms.Padding(0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 46);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "2000";
+            this.labelPuntuacionAcumulada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPuntuacionAcumulada.AutoSize = true;
+            this.labelPuntuacionAcumulada.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPuntuacionAcumulada.ForeColor = System.Drawing.Color.White;
+            this.labelPuntuacionAcumulada.Location = new System.Drawing.Point(959, 9);
+            this.labelPuntuacionAcumulada.Margin = new System.Windows.Forms.Padding(0);
+            this.labelPuntuacionAcumulada.Name = "labelPuntuacionAcumulada";
+            this.labelPuntuacionAcumulada.Size = new System.Drawing.Size(112, 46);
+            this.labelPuntuacionAcumulada.TabIndex = 23;
+            this.labelPuntuacionAcumulada.Text = "2000";
             // 
             // pictureBox1
             // 
@@ -155,42 +204,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.label5.Location = new System.Drawing.Point(90, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 46);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "-0";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(52, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 46);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "/";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 46);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "0";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // enunciado
             // 
@@ -361,19 +374,6 @@
             this.ODS_especifica.TabIndex = 9;
             this.ODS_especifica.TabStop = false;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.label3);
-            this.flowLayoutPanel1.Controls.Add(this.label4);
-            this.flowLayoutPanel1.Controls.Add(this.label5);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(377, 7);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(311, 56);
-            this.flowLayoutPanel1.TabIndex = 25;
-            // 
             // PartidaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -398,17 +398,17 @@
             this.Controls.Add(this.op4);
             this.Controls.Add(this.op2);
             this.Controls.Add(this.op1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PartidaForm";
             this.Text = "Partida";
             this.Load += new System.EventHandler(this.PartidaForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reloj_circular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ODS_especifica)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,10 +436,10 @@
         private System.Windows.Forms.Button pos9;
         private System.Windows.Forms.Button pos10;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelPuntuacionAcumulada;
+        private System.Windows.Forms.Label labelPuntuacionFallo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelPuntuacionAcierto;
         private System.Windows.Forms.PictureBox ODS_especifica;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }

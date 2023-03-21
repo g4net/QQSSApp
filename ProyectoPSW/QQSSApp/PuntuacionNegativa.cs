@@ -24,5 +24,10 @@ namespace QQSSApp
             this.service = service;
 
         }
+
+        private void ButtonReintentarClick(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
