@@ -22,9 +22,14 @@ namespace QQSSApp
         List<Reto> retos;
         Pregunta p;
         List<Respuesta> respuestas;
+        private List<Image> images;
+        private int currentImageIndex = 0;
         public PartidaForm(IQQSSService service)
         {
             InitializeComponent();
+            InitializeImages();
+            timer1.Interval = 1764;
+            timer1.Start();
             this.service = service;
             
         }
@@ -45,6 +50,17 @@ namespace QQSSApp
             op2.Text = respuestas.ElementAt(1).getText();
             op3.Text = respuestas.ElementAt(2).getText();
             op4.Text = respuestas.ElementAt(3).getText();
+
+        }
+
+        public void InitializeImages()
+        {
+            images = new List<Image>();
+
+            for(int i = 0; i <= 17; i++)
+            {
+                images.Add(Image.FromFile("circulo" + i + ".png"));
+            }
 
         }
 
@@ -122,5 +138,14 @@ namespace QQSSApp
             }
         }
 
+        private void TimerTick(object sender, EventArgs e)
+        {
+            currentImageIndex++;
+            if (currentImageIndex >= images.Count)
+            {
+                currentImageIndex = 0;
+            }
+            pictureBox1.Image = images[currentImageIndex];
+        }
     }
 }

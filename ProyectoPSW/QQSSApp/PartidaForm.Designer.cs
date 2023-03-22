@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.op1 = new System.Windows.Forms.Button();
             this.op2 = new System.Windows.Forms.Button();
             this.op4 = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             this.pos9 = new System.Windows.Forms.Button();
             this.pos10 = new System.Windows.Forms.Button();
             this.ODS_especifica = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -421,6 +423,10 @@
             this.ODS_especifica.TabIndex = 9;
             this.ODS_especifica.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
+            // 
             // PartidaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -492,5 +498,6 @@
         private System.Windows.Forms.Label puntuacionPositiva;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label puntuaciónNegativa;
+        private System.Windows.Forms.Timer timer1;
     }
 }
