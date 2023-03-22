@@ -19,7 +19,7 @@ namespace ProyectoPSWMain.Services
         private readonly IRepository repository;
 
         // Resources Manager for error messaging
-        private ResourceManager resourceManager;
+        //private ResourceManager resourceManager;
 
         private User loggedUser;
 
@@ -160,7 +160,7 @@ namespace ProyectoPSWMain.Services
         public int[] GetDifficultyArray(int level)
         {
             // falta implementar el ServiceException y el archivo de las excepciones
-            if(level > 4) throw new ServiceException(resourceManager.GetString("Difficulty level does not exist!"));
+            if(level > 4) throw new ServiceException("Difficulty level does not exist!");
             switch (level)
             {
                 case 0: return new int[] { 0, 0, 0, 0, 0, 1, 1, 1, 2, 2 };
@@ -179,16 +179,16 @@ namespace ProyectoPSWMain.Services
         #endregion
 
         #region Pregunta
-        public void AddPreguntaToPartida(Pregunta pregutna, Partida partida)
+        public void AddPreguntaToPartida(Pregunta pregunta, Partida partida)
         {
-            partida.AddReto(pregutna);
-            repository.Insert<Pregunta>(pregutna);
+            partida.AddReto(pregunta);
+            repository.Insert<Pregunta>(pregunta);
             repository.Commit();
         }
-        public void AddPregunta(Pregunta pregutna)
+        public void AddPregunta(Pregunta pregunta)
         {
 
-            repository.Insert<Pregunta>(pregutna);
+            repository.Insert<Pregunta>(pregunta);
             repository.Commit();
         }
 

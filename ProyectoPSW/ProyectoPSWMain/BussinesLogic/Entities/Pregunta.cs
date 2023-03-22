@@ -24,15 +24,12 @@ namespace ProyectoPSWMain.Entities
 
             return allAnswers;
         }
-        public String getPuntuacionAcierto() {
+        public String GetPuntuacionAcierto() {
             return this.Puntuacion_acierto + "";
         }
-        public String getPuntuacionFallo()
+        public String GetPuntuacionFallo()
         {
             return (this.Puntuacion_acierto * -2) + "";
-        }
-        public int getOds() {
-            return this.ods;
         }
     }
 }

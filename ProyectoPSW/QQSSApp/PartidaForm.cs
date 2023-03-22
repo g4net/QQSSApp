@@ -34,12 +34,12 @@ namespace QQSSApp
             this.service.Login("1235");
             
             partida = this.service.GetPartida(1, 400);
-            retos = partida.getRetos();
+            retos = partida.GetRetos();
             p = (Pregunta) retos.First();
-            this.label6.Text = partida.getPuntuacionPartida();
+            this.labelPuntuacionAcumulada.Text = partida.getPuntuacionPartida();
             enunciado.Text = p.Enunciado;
-            label3.Text = p.getPuntuacionAcierto();
-            label5.Text = p.getPuntuacionFallo();
+            labelPuntuacionAcierto.Text = p.GetPuntuacionAcierto();
+            labelPuntuacionFallo.Text = p.GetPuntuacionFallo();
             respuestas = service.AnswerShuffle(p);
             op1.Text = respuestas.ElementAt(0).getText();
             op2.Text = respuestas.ElementAt(1).getText();

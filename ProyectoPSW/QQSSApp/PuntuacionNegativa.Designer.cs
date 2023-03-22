@@ -120,6 +120,7 @@
             this.reintentar_salir.TabIndex = 7;
             this.reintentar_salir.Text = "REINTENTAR";
             this.reintentar_salir.UseVisualStyleBackColor = false;
+            this.reintentar_salir.Click += new System.EventHandler(this.ButtonReintentarClick);
             // 
             // respuesta
             // 

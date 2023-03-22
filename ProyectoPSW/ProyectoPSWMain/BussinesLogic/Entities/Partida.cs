@@ -21,7 +21,7 @@ namespace ProyectoPSWMain.Entities
         public void AddReto(Reto reto) {
             RetoPartida.Add(reto);
         }
-        public List<Reto> getRetos() {
+        public List<Reto> GetRetos() {
             List<Reto> retopartida = this.RetoPartida.ToList();
             return retopartida;
         }
