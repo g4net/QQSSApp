@@ -73,7 +73,9 @@ namespace QQSSApp
             if (service.TestAnswer(op1.Text,    pregunta))
             {
                 this.Hide();
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex++, this.partida);
+
+                this.retoindex++;
+                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
                 partidag.FormClosed += (s, args) => this.Show();
                 partidag.Show();
             }
@@ -90,7 +92,9 @@ namespace QQSSApp
             if (service.TestAnswer(op2.Text, pregunta))
             {
                 this.Hide();
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex++,this.partida);
+
+                this.retoindex++;
+                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos,this.retoindex ,this.partida);
                 partidag.FormClosed += (s, args) => this.Show();
                 partidag.Show();
             }
@@ -109,13 +113,16 @@ namespace QQSSApp
             if (service.TestAnswer(op3.Text, pregunta))
             {
             this.Hide();
-            PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex++, this.partida);
+
+                this.retoindex++;
+                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
             partidag.FormClosed += (s, args) => this.Show();
             partidag.Show();
         }
         else
         {
             this.Hide();
+                
             PuntuacionNegativa partidab = new PuntuacionNegativa(service, this.retos, this.retoindex, this.partida);
             partidab.FormClosed += (s, args) => this.Show();
             partidab.Show();
@@ -129,7 +136,9 @@ namespace QQSSApp
             {
 
                 this.Hide();
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex++, this.partida);
+
+                this.retoindex++;
+                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
                 partidag.FormClosed += (s, args) => this.Show();
                 partidag.Show();
             }
