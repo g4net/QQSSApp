@@ -10,7 +10,7 @@ namespace ProyectoPSWMain.Entities
 {
     public partial class User
     {
-        
+        [Key]
         public String Id { get; set; }
         public int Puntuacion {
             get; set;

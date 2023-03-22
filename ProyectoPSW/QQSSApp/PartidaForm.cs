@@ -20,36 +20,40 @@ namespace QQSSApp
         IQQSSService service;
         Partida partida;
         List<Reto> retos;
-        Pregunta p;
+        Pregunta pregunta;
         List<Respuesta> respuestas;
         private List<Image> images;
         private int currentImageIndex = 0;
-        public PartidaForm(IQQSSService service)
+        int retoindex;
+        public PartidaForm(IQQSSService service, List<Reto> reto, int index, Partida partidas)
         {
             InitializeComponent();
             InitializeImages();
             timer1.Interval = 1764;
             timer1.Start();
             this.service = service;
-            
-        }
-
-        private void PartidaForm_Load(object sender, EventArgs e)
-        {
             this.service.Login("1235");
-            
-            partida = this.service.GetPartida(1, 400);
-            retos = partida.GetRetos();
-            p = (Pregunta) retos.First();
+            partida = partidas;
+            this.retoindex = index;
+
+
+
+            this.retos = reto;
+            pregunta = (Pregunta)retos.ElementAt(index);
             this.labelPuntuacionAcumulada.Text = partida.getPuntuacionPartida();
-            enunciado.Text = p.Enunciado;
-            labelPuntuacionAcierto.Text = p.GetPuntuacionAcierto();
-            labelPuntuacionFallo.Text = p.GetPuntuacionFallo();
-            respuestas = service.AnswerShuffle(p);
+            enunciado.Text = pregunta.Enunciado;
+            labelPuntuacionAcierto.Text = pregunta.GetPuntuacionAcierto();
+            labelPuntuacionFallo.Text = pregunta.GetPuntuacionFallo();
+            respuestas = service.AnswerShuffle(pregunta);
             op1.Text = respuestas.ElementAt(0).getText();
             op2.Text = respuestas.ElementAt(1).getText();
             op3.Text = respuestas.ElementAt(2).getText();
             op4.Text = respuestas.ElementAt(3).getText();
+        }
+
+        private void PartidaForm_Load(object sender, EventArgs e)
+        {
+          
 
         }
 
@@ -59,23 +63,23 @@ namespace QQSSApp
 
             for(int i = 0; i <= 17; i++)
             {
-                images.Add(Image.FromFile("circulo" + i + ".png"));
+                //ages.Add(Image.FromFile("circulo" + i + ".png"));
             }
 
         }
 
         private void op1_click(object sender, EventArgs e)
         {
-            if (service.TestAnswer(op1.Text, p))
+            if (service.TestAnswer(op1.Text,    pregunta))
             {
                 this.Hide();
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service);
+                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex++, this.partida);
                 partidag.FormClosed += (s, args) => this.Show();
                 partidag.Show();
             }
             else {
                 this.Hide();
-                PuntuacionNegativa partidab = new PuntuacionNegativa(service);
+                PuntuacionNegativa partidab = new PuntuacionNegativa(service, this.retos, this.retoindex, this.partida);
                 partidab.FormClosed += (s, args) => this.Show();
                 partidab.Show();
             }
@@ -83,17 +87,17 @@ namespace QQSSApp
 
         private void op2_Click(object sender, EventArgs e)
         {
-            if (service.TestAnswer(op2.Text, p))
+            if (service.TestAnswer(op2.Text, pregunta))
             {
                 this.Hide();
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service);
+                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex++,this.partida);
                 partidag.FormClosed += (s, args) => this.Show();
                 partidag.Show();
             }
             else
             {
                 this.Hide();
-                PuntuacionNegativa partidab = new PuntuacionNegativa(service);
+                PuntuacionNegativa partidab = new PuntuacionNegativa(service, this.retos, this.retoindex,this.partida);
                 partidab.FormClosed += (s, args) => this.Show();
                 partidab.Show();
             }
@@ -102,17 +106,17 @@ namespace QQSSApp
 
         private void op3_Click(object sender, EventArgs e)
         {
-            if (service.TestAnswer(op3.Text, p))
+            if (service.TestAnswer(op3.Text, pregunta))
             {
             this.Hide();
-            PuntuacionPositiva partidag = new PuntuacionPositiva(service);
+            PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex++, this.partida);
             partidag.FormClosed += (s, args) => this.Show();
             partidag.Show();
         }
         else
         {
             this.Hide();
-            PuntuacionNegativa partidab = new PuntuacionNegativa(service);
+            PuntuacionNegativa partidab = new PuntuacionNegativa(service, this.retos, this.retoindex, this.partida);
             partidab.FormClosed += (s, args) => this.Show();
             partidab.Show();
         
@@ -121,18 +125,18 @@ namespace QQSSApp
 
         private void op4_Click(object sender, EventArgs e)
         {
-            if (service.TestAnswer(op4.Text, p))
+            if (service.TestAnswer(op4.Text, pregunta))
             {
 
                 this.Hide();
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service);
+                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex++, this.partida);
                 partidag.FormClosed += (s, args) => this.Show();
                 partidag.Show();
             }
             else
             {
                 this.Hide();
-                PuntuacionNegativa partidab = new PuntuacionNegativa(service);
+                PuntuacionNegativa partidab = new PuntuacionNegativa(service, this.retos, this.retoindex, this.partida);
                 partidab.FormClosed += (s, args) => this.Show();
                 partidab.Show();
             }
@@ -145,7 +149,7 @@ namespace QQSSApp
             {
                 currentImageIndex = 0;
             }
-            pictureBox1.Image = images[currentImageIndex];
+            //pictureBox1.Image = images[currentImageIndex];
         }
     }
 }

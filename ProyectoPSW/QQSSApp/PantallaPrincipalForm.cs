@@ -1,4 +1,5 @@
-﻿using ProyectoPSWMain.Services;
+﻿using ProyectoPSWMain.Entities;
+using ProyectoPSWMain.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,10 @@ namespace QQSSApp
         private void ButtonComenzar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PartidaForm partida = new PartidaForm(service);
+            Partida partidas = this.service.GetPartida(1, 400);
+            List<Reto>  retos = partidas.GetRetos();
+            int index = 0;
+            PartidaForm partida = new PartidaForm(service, retos, index,partidas);
             partida.FormClosed += (s, args) => this.Show();
             partida.Show();
         }

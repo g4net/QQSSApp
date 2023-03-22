@@ -1,4 +1,5 @@
 ﻿using ProyectoPSWMain.Services;
+using ProyectoPSWMain.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace QQSSApp
     public partial class PuntuacionNegativa : Form
     {
         IQQSSService service;
-        public PuntuacionNegativa(IQQSSService service)
+        public PuntuacionNegativa(IQQSSService service, List<Reto> reto, int index, Partida partidas)
         {
             InitializeComponent();
             this.service = service;

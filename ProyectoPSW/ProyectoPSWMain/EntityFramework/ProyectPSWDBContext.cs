@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace ProyectoPSWMain.EntityFramework
 {
@@ -23,6 +25,13 @@ namespace ProyectoPSWMain.EntityFramework
             Database.SetInitializer<ProyectPSWDBContext>(new DropCreateDatabaseIfModelChanges<ProyectPSWDBContext>());
         
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {/*
+            modelBuilder.Entity<Pregunta>()
+                .HasRequired(s => s.RespuestaCorrecta)
+                .WithMany()
+                .WillCascadeOnDelete(false);*/
+        }
         //Esto es para agragar las distintas tablas de las clases. Algunas no ahcen faltas agregarlas porque se agregan de otras
         public DbSet<User> Users { get; set; }
         public DbSet<Reto> Retos { get; set; }
@@ -30,10 +39,10 @@ namespace ProyectoPSWMain.EntityFramework
         public DbSet<Partida> Partidas { get; set; }
         public override void RemoveAllData()
         {
-            clearSomeRelationships();
-
-            Set<Pregunta>().RemoveRange(Set<Pregunta>());
+            //clearSomeRelationships();
             Set<User>().RemoveRange(Set<User>());
+            Set<Pregunta>().RemoveRange(Set<Pregunta>());
+            
             Set<Reto>().RemoveRange(Set<Reto>());
             Set<Respuesta>().RemoveRange(Set<Respuesta>());
             Set<Partida>().RemoveRange(Set<Partida>());
