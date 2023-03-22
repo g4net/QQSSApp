@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography.X509Certificates;
 using System.Reflection.Emit;
+using System.Security.Cryptography;
 
 namespace ProyectoPSWMain.Services
 {
@@ -40,10 +41,51 @@ namespace ProyectoPSWMain.Services
 
         public void DBInitialization()
         {
-            
+            ICollection<Respuesta> respuestas = new List<Respuesta>();
+            Respuesta respuestaCorrecta = new Respuesta();
+            List<Respuesta> respuestas2 = new List<Respuesta> {respuestaCorrecta, };
+            respuestaCorrecta = new Respuesta("Ambiental, social y económica");
+            respuestas = CreateAnswers(CreateStringAnswers("Ambiental, tecnológica y económica", "Social, tecnológica y económica", "Económica, acuática y vida"));
+            AddPregunta(new Pregunta(respuestas, "¿Cuáles son las tres dimensiones del desarrollo sostenible?", 1, 100, respuestaCorrecta, 0));
+            respuestas.Add(respuestaCorrecta);
+            AddRespuestas(respuestas);
+
+            respuestas = CreateAnswers(CreateStringAnswers("Objetivos de Desarrollo Social", "Objetivos de Desarrollo Económico", "Objetivos de Desarrollo Tecnológico"));
+            respuestaCorrecta = new Respuesta("Objetivos de Desarrollo Sostentable");
+            AddPregunta(new Pregunta(respuestas, "¿Qué son los ODS?", 1, 100, respuestaCorrecta, 0));
+            respuestas.Add(respuestaCorrecta);
+            AddRespuestas(respuestas);
+
+            respuestas = CreateAnswers(CreateStringAnswers("12", "15", "20"));
+            respuestaCorrecta = new Respuesta("17");
+            AddPregunta(new Pregunta(respuestas, "¿Cuántas ODS hay?", 1, 100, respuestaCorrecta, 0));
+            respuestas.Add(respuestaCorrecta);
+            AddRespuestas(respuestas);
+
+            respuestas = CreateAnswers(CreateStringAnswers("Promover la igualdad de género", "Garantizar la educación de calidad", "Promover la energía renovable"));
+            respuestaCorrecta = new Respuesta("Erradicar la pobreza extrema");
+            AddPregunta(new Pregunta(respuestas, "¿Cuál es el objetivo de la ODS 1?", 1, 100, respuestaCorrecta, 1));
+            respuestas.Add(respuestaCorrecta);
+            AddRespuestas(respuestas);
+
+            respuestas = CreateAnswers(CreateStringAnswers("Menos del 5%", "Entre el 5% y el 10%", "Entre el 10% y el 15%"));
+            respuestaCorrecta = new Respuesta("Más del 15%");
+            AddPregunta(new Pregunta(respuestas, "¿Qué porcentaje de personas viven en situación de pobreza extrema según la ODS 1?", 2, 200, respuestaCorrecta, 1));
+            respuestas.Add(respuestaCorrecta);
+            AddRespuestas(respuestas);
+
         }
 
-        private ICollection<Respuesta> createAnswers(ICollection<String> respuestas)
+        private ICollection<String> CreateStringAnswers(String t1, String t2, String t3)
+        {
+            ICollection<String> respuestas = new List<String>();
+            respuestas.Add(t1);
+            respuestas.Add(t2);
+            respuestas.Add(t3);
+            return respuestas;
+        }
+
+        private ICollection<Respuesta> CreateAnswers(ICollection<String> respuestas)
         {
             ICollection<Respuesta> answers = new List<Respuesta>();
             foreach(String text in respuestas)
@@ -193,6 +235,16 @@ namespace ProyectoPSWMain.Services
             }
             return Answers;
         }
+
+        public void AddRespuestas(ICollection<Respuesta> respuestas)
+        {
+            foreach(Respuesta respuesta in respuestas)
+            {
+                repository.Insert<Respuesta>(respuesta);
+                repository.Commit();
+            }
+        }
+
         public bool TestAnswer(String txt, Pregunta pregunta) {
             if (pregunta.RespuestaCorrecta.getText() == txt)
             {
