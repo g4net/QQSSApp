@@ -12,10 +12,7 @@ namespace ProyectoPSWMain.Entities
     {
         [Key]
         public String Id { get; set; }
-        public int Puntuacion {
-            get; set;
-        
-        }
+        public int PuntuacionAcumulada { get; set; }
         public virtual ICollection<Partida> PartidasJugadas { get; set; }
 
 

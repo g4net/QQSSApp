@@ -198,7 +198,6 @@ namespace ProyectoPSWMain.Services
         }
         public void AddPregunta(Pregunta pregunta)
         {
-
             repository.Insert<Pregunta>(pregunta);
             repository.Commit();
         }
