@@ -46,7 +46,7 @@ namespace QQSSApp
             labelPuntuacionAcierto.Text = p.GetPuntuacionAcierto();
             labelPuntuacionFallo.Text = p.GetPuntuacionFallo();
             respuestas = service.AnswerShuffle(p);
-            op1.Text = respuestas.ElementAt(0).getText();
+            op1.Text = respuestas.ElementAt(0).getText();//respuesta.Texto;
             op2.Text = respuestas.ElementAt(1).getText();
             op3.Text = respuestas.ElementAt(2).getText();
             op4.Text = respuestas.ElementAt(3).getText();
