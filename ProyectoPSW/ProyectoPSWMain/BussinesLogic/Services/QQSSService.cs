@@ -44,41 +44,37 @@ namespace ProyectoPSWMain.Services
         {
             ICollection<Respuesta> respuestas = new List<Respuesta>();
             Respuesta respuestaCorrecta = new Respuesta();
-            List<Respuesta> respuestas2 = new List<Respuesta> {respuestaCorrecta, };
-            respuestaCorrecta = new Respuesta("Ambiental, social y económica");
-            respuestas = CreateAnswers(CreateStringAnswers("Ambiental, tecnológica y económica", "Social, tecnológica y económica", "Económica, acuática y vida"));
-            Pregunta p1 = new Pregunta(respuestas, "¿Cuáles son las tres dimensiones del desarrollo sostenible?", 1, 100, respuestaCorrecta.getText(), 0);
+            
+         
+            respuestas = CreateAnswers(CreateStringAnswers("Ambiental, tecnológica y económica", "Ambiental, social y económica", "Económica, acuática y vida", "Social, tecnológica y termica"));
+            Pregunta p1 = new Pregunta(respuestas, "¿Cuáles son las tres dimensiones del desarrollo sostenible?", 1, 100, "Ambiental, social y económica", 0);
             AddPregunta(p1);
-            respuestas.Add(respuestaCorrecta);
-            AddRespuestas(respuestas);
+           
 
-            respuestas = CreateAnswers(CreateStringAnswers("Objetivos de Desarrollo Social", "Objetivos de Desarrollo Económico", "Objetivos de Desarrollo Tecnológico"));
+            respuestas = CreateAnswers(CreateStringAnswers("Objetivos de Desarrollo Sostentable", "Objetivos sociales", "Objetivos de Desarrollo Económico", "Objetivos de Desarrollo Tecnológico"));
             respuestaCorrecta = new Respuesta("Objetivos de Desarrollo Sostentable");
             Pregunta p2 = new Pregunta(respuestas, "¿Qué son los ODS?", 1, 100, respuestaCorrecta.getText(), 0);
-            AddPregunta(p2);
-            respuestas.Add(respuestaCorrecta);
-            AddRespuestas(respuestas);
+            AddPregunta(p2);            
+          
 
-            respuestas = CreateAnswers(CreateStringAnswers("12", "15", "20"));
+            respuestas = CreateAnswers(CreateStringAnswers("12", "15", "20", "17"));
             respuestaCorrecta = new Respuesta("17");
             Pregunta p3 = new Pregunta(respuestas, "¿Cuántas ODS hay?", 1, 100, respuestaCorrecta.getText(), 0);
-            AddPregunta(p3);
-            respuestas.Add(respuestaCorrecta);
-            AddRespuestas(respuestas);
-
-            respuestas = CreateAnswers(CreateStringAnswers("Promover la igualdad de género", "Garantizar la educación de calidad", "Promover la energía renovable"));
+            AddPregunta(p3);            
+      
+            respuestas = CreateAnswers(CreateStringAnswers("Erradicar la pobreza extrema", "Promover la igualdad de género", "Garantizar la educación de calidad", "Promover la energía renovable"));
             respuestaCorrecta = new Respuesta("Erradicar la pobreza extrema");
             Pregunta p4 = new Pregunta(respuestas, "¿Cuál es el objetivo de la ODS 1?", 1, 100, respuestaCorrecta.getText(), 1);
             AddPregunta(p4);
-            respuestas.Add(respuestaCorrecta);
-            AddRespuestas(respuestas);
+         
+          
 
-            respuestas = CreateAnswers(CreateStringAnswers("Menos del 5%", "Entre el 5% y el 10%", "Entre el 10% y el 15%"));
+            respuestas = CreateAnswers(CreateStringAnswers("Más del 15%", "Menos del 5%", "Entre el 5% y el 10%", "Entre el 10% y el 15%"));
             respuestaCorrecta = new Respuesta("Más del 15%");
             Pregunta p5 = new Pregunta(respuestas, "¿Qué porcentaje de personas viven en situación de pobreza extrema según la ODS 1?", 2, 200, respuestaCorrecta.getText(), 1);
             AddPregunta(p5);
-            respuestas.Add(respuestaCorrecta);
-            AddRespuestas(respuestas);
+            
+       
             Partida partida = new Partida(1, 400);
             partida.AddReto(p1);
             partida.AddReto(p2);
@@ -87,12 +83,13 @@ namespace ProyectoPSWMain.Services
             AddPartida(partida);
         }
 
-        private ICollection<String> CreateStringAnswers(String t1, String t2, String t3)
+        private ICollection<String> CreateStringAnswers(String t1, String t2, String t3, String t4)
         {
             ICollection<String> respuestas = new List<String>();
             respuestas.Add(t1);
             respuestas.Add(t2);
             respuestas.Add(t3);
+            respuestas.Add(t4);
             return respuestas;
         }
 
@@ -154,6 +151,7 @@ namespace ProyectoPSWMain.Services
         public void AddPartida(Partida game) {
             if (!repository.GetWhere<Partida>(x => x.PuntuacionPartida == game.PuntuacionPartida && x.Nivel == game.Nivel).Any()){
                 repository.Insert<Partida>(game);
+                
                 repository.Commit() ;
             }
             else {

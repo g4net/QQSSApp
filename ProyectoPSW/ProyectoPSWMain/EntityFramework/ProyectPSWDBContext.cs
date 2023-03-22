@@ -26,11 +26,8 @@ namespace ProyectoPSWMain.EntityFramework
         
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {/*
-            modelBuilder.Entity<Pregunta>()
-                .HasRequired(s => s.RespuestaCorrecta)
-                .WithMany()
-                .WillCascadeOnDelete(false);*/
+        {
+
         }
         //Esto es para agragar las distintas tablas de las clases. Algunas no ahcen faltas agregarlas porque se agregan de otras
         public DbSet<User> Users { get; set; }
