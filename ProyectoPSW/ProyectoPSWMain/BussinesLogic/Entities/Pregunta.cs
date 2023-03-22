@@ -17,6 +17,9 @@ namespace ProyectoPSWMain.Entities
             this.Respuestas = rtas;
             this.Enunciado = texto;
             this.RespuestaCorrecta = rtaCorrecta;
+            this.Dificultad = Dificulty;
+            this.Puntuacion_acierto = Punt_acierto;
+            this.Ods = ods;
         }
         public List<Respuesta> getAllAnswers() {
             List<Respuesta> allAnswers = this.Respuestas.ToList();
