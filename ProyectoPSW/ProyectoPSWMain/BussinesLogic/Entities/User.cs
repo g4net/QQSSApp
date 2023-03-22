@@ -14,16 +14,16 @@ namespace ProyectoPSWMain.Entities
 
         public User(string dni, int Points) : this() {
             this.Id = dni;
-            this.Puntuacion = Points;
+            this.PuntuacionAcumulada = Points;
         }
         public int getPoints() {
-            return this.Puntuacion;
+            return this.PuntuacionAcumulada;
         }
         public string getPointsStr() {
-            return this.Puntuacion.ToString();
+            return this.PuntuacionAcumulada.ToString();
         }
         public void SetPoints(int points) {
-            this.Puntuacion = points;
+            this.PuntuacionAcumulada = points;
         }
 
     }
