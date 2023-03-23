@@ -34,11 +34,9 @@ namespace QQSSApp
 
         private void continuar_salir_Click(object sender, EventArgs e)
         {
-            this.Hide();
-           
             PartidaForm partida = new PartidaForm(service, retos, retoindex, this.party);
-            partida.FormClosed += (s, args) => this.Show();
             partida.Show();
+            this.Close();
         }
     }
 }
