@@ -118,7 +118,9 @@ namespace QQSSApp
             }
             //pictureBox1.Image = images[currentImageIndex];
         }
-
+        private void Atras(object sender, EventArgs e) {
+        
+        }
         private void puntuacionPositiva_Click(object sender, EventArgs e)
         {
 
