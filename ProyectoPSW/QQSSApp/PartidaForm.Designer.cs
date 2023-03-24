@@ -81,7 +81,7 @@
             // 
             // op2
             // 
-            this.op2.Location = new System.Drawing.Point(578, 408);
+            this.op2.Location = new System.Drawing.Point(581, 408);
             this.op2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.op2.Name = "op2";
             this.op2.Size = new System.Drawing.Size(360, 62);
@@ -125,7 +125,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1045, 70);
+            this.panel1.Size = new System.Drawing.Size(1051, 70);
             this.panel1.TabIndex = 4;
             // 
             // puntuaciónNegativa
@@ -145,7 +145,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(793, 28);
+            this.label7.Location = new System.Drawing.Point(799, 28);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 22);
             this.label7.TabIndex = 24;
@@ -157,7 +157,7 @@
             this.labelPuntuacionAcumulada.AutoSize = true;
             this.labelPuntuacionAcumulada.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPuntuacionAcumulada.ForeColor = System.Drawing.Color.White;
-            this.labelPuntuacionAcumulada.Location = new System.Drawing.Point(909, 14);
+            this.labelPuntuacionAcumulada.Location = new System.Drawing.Point(915, 14);
             this.labelPuntuacionAcumulada.Margin = new System.Windows.Forms.Padding(0);
             this.labelPuntuacionAcumulada.Name = "labelPuntuacionAcumulada";
             this.labelPuntuacionAcumulada.Size = new System.Drawing.Size(112, 46);
@@ -431,8 +431,8 @@
             this.pictureBox2.Location = new System.Drawing.Point(471, 184);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(90, 87);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.Size = new System.Drawing.Size(92, 84);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
             // 
@@ -446,7 +446,7 @@
             this.reloj_circular.Location = new System.Drawing.Point(245, 115);
             this.reloj_circular.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reloj_circular.Name = "reloj_circular";
-            this.reloj_circular.Size = new System.Drawing.Size(539, 229);
+            this.reloj_circular.Size = new System.Drawing.Size(545, 228);
             this.reloj_circular.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.reloj_circular.TabIndex = 6;
             this.reloj_circular.TabStop = false;
@@ -455,7 +455,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 569);
+            this.ClientSize = new System.Drawing.Size(1051, 568);
             this.Controls.Add(this.tiempo);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.enunciado);

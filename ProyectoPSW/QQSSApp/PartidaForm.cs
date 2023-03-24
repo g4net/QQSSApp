@@ -33,6 +33,7 @@ namespace QQSSApp
             timer1.Start();
             this.service = service;
             this.service.Login("1235");
+            enunciado.Select();
             partida = partidas;
             this.retoindex = index;
 
@@ -159,5 +160,17 @@ namespace QQSSApp
             menu.FormClosed += (s, args) => this.Show();
             menu.Show();
         }
+
+        /**private void Enter1(object sender, EventArgs e)
+        {
+            op1.BackColor = Color.LawnGreen;
+            op1.ForeColor = Color.White;
+        }
+
+        private void Leave1(object sender, EventArgs e)
+        {
+            op1.BackColor = Color.White;
+            op1.ForeColor= Color.Black;
+        }**/
     }
 }
