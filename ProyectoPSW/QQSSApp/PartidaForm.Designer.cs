@@ -442,7 +442,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reloj_circular.BackColor = System.Drawing.Color.Transparent;
-            this.reloj_circular.Image = global::QQSSApp.Properties.Resources.circulo1;
+            this.reloj_circular.Image = global::QQSSApp.Properties.Resources.circulo18;
             this.reloj_circular.Location = new System.Drawing.Point(245, 115);
             this.reloj_circular.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reloj_circular.Name = "reloj_circular";

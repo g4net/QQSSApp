@@ -173,6 +173,16 @@ namespace QQSSApp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap circulo18 {
+            get {
+                object obj = ResourceManager.GetObject("circulo18", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap circulo2 {
             get {
                 object obj = ResourceManager.GetObject("circulo2", resourceCulture);

@@ -61,9 +61,11 @@ namespace QQSSApp
         {
             images = new List<Image>();
 
-            for(int i = 0; i <= 17; i++)
+            for(int i = 1; i <= 18; i++)
             {
-                //ages.Add(Image.FromFile("circulo" + i + ".png"));
+                string image = "circulo" + i;
+                Image imagen = (System.Drawing.Bitmap) QQSSApp.Properties.Resources.ResourceManager.GetObject(image);
+                images.Add(imagen);
             }
 
         }
@@ -149,7 +151,7 @@ namespace QQSSApp
             {
                 currentImageIndex = 0;
             }
-            //pictureBox1.Image = images[currentImageIndex];
+            reloj_circular.Image = images[currentImageIndex];
         }
 
         private void Atras(object sender, EventArgs e)
