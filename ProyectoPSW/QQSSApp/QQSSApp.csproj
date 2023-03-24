@@ -63,6 +63,12 @@
     <Compile Include="PuntuacionNegativa.Designer.cs">
       <DependentUpon>PuntuacionNegativa.cs</DependentUpon>
     </Compile>
+    <Compile Include="PartidaGanada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartidaGanada.Designer.cs">
+      <DependentUpon>PartidaGanada.cs</DependentUpon>
+    </Compile>
     <Compile Include="PuntuacionPositiva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="PuntuacionNegativa.resx">
       <DependentUpon>PuntuacionNegativa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartidaGanada.resx">
+      <DependentUpon>PartidaGanada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PuntuacionPositiva.resx">
       <DependentUpon>PuntuacionPositiva.cs</DependentUpon>
