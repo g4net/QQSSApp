@@ -23,6 +23,7 @@ namespace QQSSApp
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.FormClosed += (s, args) => Application.Exit();
+            this.label1.Select();
             
         }
 
