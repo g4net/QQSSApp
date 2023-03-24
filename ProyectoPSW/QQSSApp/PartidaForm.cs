@@ -72,12 +72,10 @@ namespace QQSSApp
         {
             if (service.TestAnswer(op1.Text,    pregunta))
             {
-                this.Hide();
-
                 this.retoindex++;
                 PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
-                partidag.FormClosed += (s, args) => this.Show();
                 partidag.Show();
+                this.Close();
             }
             else {
                 this.Hide();
@@ -91,12 +89,10 @@ namespace QQSSApp
         {
             if (service.TestAnswer(op2.Text, pregunta))
             {
-                this.Hide();
-
                 this.retoindex++;
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos,this.retoindex ,this.partida);
-                partidag.FormClosed += (s, args) => this.Show();
+                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
                 partidag.Show();
+                this.Close();
             }
             else
             {
@@ -112,13 +108,11 @@ namespace QQSSApp
         {
             if (service.TestAnswer(op3.Text, pregunta))
             {
-            this.Hide();
-
                 this.retoindex++;
                 PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
-            partidag.FormClosed += (s, args) => this.Show();
-            partidag.Show();
-        }
+                partidag.Show();
+                this.Close();
+            }
         else
         {
             this.Hide();
@@ -134,13 +128,10 @@ namespace QQSSApp
         {
             if (service.TestAnswer(op4.Text, pregunta))
             {
-
-                this.Hide();
-
                 this.retoindex++;
                 PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
-                partidag.FormClosed += (s, args) => this.Show();
                 partidag.Show();
+                this.Close();
             }
             else
             {
@@ -159,6 +150,14 @@ namespace QQSSApp
                 currentImageIndex = 0;
             }
             //pictureBox1.Image = images[currentImageIndex];
+        }
+
+        private void Atras(object sender, EventArgs e)
+        {
+            this.Hide();
+            PantallaPrincipalForm menu = new PantallaPrincipalForm(service);
+            menu.FormClosed += (s, args) => this.Show();
+            menu.Show();
         }
     }
 }

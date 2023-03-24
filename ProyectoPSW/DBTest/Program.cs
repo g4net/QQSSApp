@@ -79,6 +79,7 @@ namespace DBTest
               dal.Insert<User>(user);
               dal.Commit();
             QQSSService serv = new QQSSService(dal);
+           
             serv.DBInitialization();
          
             dal.Commit();
