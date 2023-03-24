@@ -25,7 +25,7 @@ namespace QQSSApp
         private List<Image> images;
         private int currentImageIndex = 0;
         int retoindex;
-        public PartidaForm(IQQSSService service, List<Reto> reto, int index, Partida partidas)
+        public PartidaForm(IQQSSService service, int index)
         {
             InitializeComponent();
             InitializeImages();
@@ -33,17 +33,17 @@ namespace QQSSApp
             timer1.Start();
             this.service = service;
             this.service.Login("1235");
-            partida = partidas;
+            partida = service.GetPartidaActual();
             this.retoindex = index;
 
 
 
-            this.retos = reto;
+            this.retos = partida.GetRetos();
             pregunta = (Pregunta)retos.ElementAt(index);
             this.labelPuntuacionAcumulada.Text = partida.getPuntuacionPartida();
             enunciado.Text = pregunta.Enunciado;
-            labelPuntuacionAcierto.Text = pregunta.GetPuntuacionAcierto();
-            labelPuntuacionFallo.Text = pregunta.GetPuntuacionFallo();
+            puntuacionPositiva.Text = pregunta.GetPuntuacionAcierto();
+            puntuaciónNegativa.Text = pregunta.GetPuntuacionFallo();
             respuestas = service.AnswerShuffle(pregunta);
             op1.Text = respuestas.ElementAt(0).getText();
             op2.Text = respuestas.ElementAt(1).getText();
@@ -53,7 +53,7 @@ namespace QQSSApp
 
         private void PartidaForm_Load(object sender, EventArgs e)
         {
-          
+            
 
         }
 
@@ -73,15 +73,16 @@ namespace QQSSApp
             if (service.TestAnswer(op1.Text,    pregunta))
             {
                 this.retoindex++;
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
+                service.UpdateGameScore(pregunta.Puntuacion_acierto);
+                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retoindex);
                 partidag.Show();
                 this.Close();
             }
             else {
-                this.Hide();
-                PuntuacionNegativa partidab = new PuntuacionNegativa(service, this.retos, this.retoindex, this.partida);
-                partidab.FormClosed += (s, args) => this.Show();
-                partidab.Show();
+                service.UpdateGameScore(pregunta.PuntuacionFallo());
+                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex);
+                partidag.Show();
+                this.Close();
             }
         }
 
@@ -90,16 +91,17 @@ namespace QQSSApp
             if (service.TestAnswer(op2.Text, pregunta))
             {
                 this.retoindex++;
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
+                service.UpdateGameScore(pregunta.Puntuacion_acierto);
+                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retoindex);
                 partidag.Show();
                 this.Close();
             }
             else
             {
-                this.Hide();
-                PuntuacionNegativa partidab = new PuntuacionNegativa(service, this.retos, this.retoindex,this.partida);
-                partidab.FormClosed += (s, args) => this.Show();
-                partidab.Show();
+                service.UpdateGameScore(pregunta.PuntuacionFallo());
+                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex);
+                partidag.Show();
+                this.Close();
             }
         
         }
@@ -109,19 +111,18 @@ namespace QQSSApp
             if (service.TestAnswer(op3.Text, pregunta))
             {
                 this.retoindex++;
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
+                service.UpdateGameScore(pregunta.Puntuacion_acierto);
+                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retoindex);
                 partidag.Show();
                 this.Close();
             }
         else
         {
-            this.Hide();
-                
-            PuntuacionNegativa partidab = new PuntuacionNegativa(service, this.retos, this.retoindex, this.partida);
-            partidab.FormClosed += (s, args) => this.Show();
-            partidab.Show();
-        
-    }
+                service.UpdateGameScore(pregunta.PuntuacionFallo());
+                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex);
+                partidag.Show();
+                this.Close();
+            }
         }
 
         private void op4_Click(object sender, EventArgs e)
@@ -129,16 +130,20 @@ namespace QQSSApp
             if (service.TestAnswer(op4.Text, pregunta))
             {
                 this.retoindex++;
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
+                service.UpdateGameScore(pregunta.Puntuacion_acierto);
+                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retoindex);
                 partidag.Show();
                 this.Close();
+                
             }
             else
             {
-                this.Hide();
-                PuntuacionNegativa partidab = new PuntuacionNegativa(service, this.retos, this.retoindex, this.partida);
-                partidab.FormClosed += (s, args) => this.Show();
-                partidab.Show();
+
+                
+                service.UpdateGameScore(pregunta.PuntuacionFallo());
+                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex);
+                partidag.Show();
+                this.Close();
             }
         }
 
@@ -150,6 +155,11 @@ namespace QQSSApp
                 currentImageIndex = 0;
             }
             //pictureBox1.Image = images[currentImageIndex];
+        }
+
+        private void puntuacionPositiva_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

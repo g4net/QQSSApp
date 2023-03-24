@@ -17,9 +17,7 @@ namespace ProyectoPSWMain.Entities
             this.Respuestas = rtas;
             this.Enunciado = texto;
             this.RespuestaCorrecta = rtaCorrecta;
-            this.Dificultad = Dificulty;
-            this.Puntuacion_acierto = Punt_acierto;
-            this.Ods = ods;
+
         }
         public List<Respuesta> getAllAnswers() {
             List<Respuesta> allAnswers = this.Respuestas.ToList();
@@ -33,6 +31,10 @@ namespace ProyectoPSWMain.Entities
         public String GetPuntuacionFallo()
         {
             return (this.Puntuacion_acierto * -2) + "";
+        }
+        public int PuntuacionFallo()
+        {
+            return (this.Puntuacion_acierto * -2);
         }
     }
 }
