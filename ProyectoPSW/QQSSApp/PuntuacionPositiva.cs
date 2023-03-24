@@ -11,9 +11,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-// esto era un intento de tener un form base del cual heredaran todos para no tener que pasar el servicio cada vez pero de momento
-// no he conseguido que funcione (ignorad esta clase)
-
 namespace QQSSApp
 {
     public partial class PuntuacionPositiva : Form
