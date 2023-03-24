@@ -146,6 +146,102 @@
   <ItemGroup>
     <Folder Include="resources\Sonidos\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\circulo17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ODS_17.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
