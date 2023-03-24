@@ -58,6 +58,22 @@ namespace QQSSApp
 
         }
 
+        private void marcarProgreso(int index) {
+            string nombreBoton = "pos" + index.ToString();
+            Control[] controles = this.Controls.Find(nombreBoton, true);
+            if (controles.Length > 0)
+            {
+                Button botonActual = (Button)controles[0];
+
+                // Verifica que el botón no sea nulo antes de intentar cambiar su color
+                if (botonActual != null)
+                {
+                    botonActual.BackColor = Color.Yellow;
+                }
+            }
+
+        }
+
         public void InitializeImages()
         {
             images = new List<Image>();
@@ -73,6 +89,7 @@ namespace QQSSApp
         {
             if (service.TestAnswer(op1.Text,    pregunta))
             {
+                marcarProgreso(retoindex);
                 this.retoindex++;
                 PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
                 partidag.Show();
@@ -90,6 +107,7 @@ namespace QQSSApp
         {
             if (service.TestAnswer(op2.Text, pregunta))
             {
+                marcarProgreso(retoindex);
                 this.retoindex++;
                 PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
                 partidag.Show();
@@ -109,6 +127,7 @@ namespace QQSSApp
         {
             if (service.TestAnswer(op3.Text, pregunta))
             {
+                marcarProgreso(retoindex);
                 this.retoindex++;
                 PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
                 partidag.Show();
@@ -129,6 +148,7 @@ namespace QQSSApp
         {
             if (service.TestAnswer(op4.Text, pregunta))
             {
+                marcarProgreso(retoindex);
                 this.retoindex++;
                 PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
                 partidag.Show();

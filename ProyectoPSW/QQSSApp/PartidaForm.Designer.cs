@@ -417,7 +417,7 @@
             this.flowLayoutPanel2.Location = new System.Drawing.Point(140, 76);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(756, 43);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(773, 43);
             this.flowLayoutPanel2.TabIndex = 20;
             // 
             // pictureBox2
