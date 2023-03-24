@@ -151,5 +151,13 @@ namespace QQSSApp
             }
             //pictureBox1.Image = images[currentImageIndex];
         }
+
+        private void Atras(object sender, EventArgs e)
+        {
+            this.Hide();
+            PantallaPrincipalForm menu = new PantallaPrincipalForm(service);
+            menu.FormClosed += (s, args) => this.Show();
+            menu.Show();
+        }
     }
 }

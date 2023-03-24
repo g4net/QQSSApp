@@ -39,6 +39,7 @@
             this.labelPuntuacionAcumulada = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.puntuacionPositiva = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.labelPuntuacionAcierto = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,13 +58,12 @@
             this.pos10 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.reloj_circular = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reloj_circular)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +71,7 @@
             // op1
             // 
             this.op1.Location = new System.Drawing.Point(67, 408);
-            this.op1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.op1.Margin = new System.Windows.Forms.Padding(4);
             this.op1.Name = "op1";
             this.op1.Size = new System.Drawing.Size(357, 62);
             this.op1.TabIndex = 0;
@@ -96,7 +96,7 @@
             this.op4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.op4.Name = "op4";
             this.op4.Size = new System.Drawing.Size(357, 62);
-            this.op4.TabIndex = 2;
+            this.op4.TabIndex = 3;
             this.op4.Text = "Opcion 4";
             this.op4.UseVisualStyleBackColor = true;
             this.op4.Click += new System.EventHandler(this.op4_Click);
@@ -107,7 +107,7 @@
             this.op3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.op3.Name = "op3";
             this.op3.Size = new System.Drawing.Size(357, 62);
-            this.op3.TabIndex = 3;
+            this.op3.TabIndex = 2;
             this.op3.Text = "Opcion 3";
             this.op3.UseVisualStyleBackColor = true;
             this.op3.Click += new System.EventHandler(this.op3_Click);
@@ -185,6 +185,19 @@
             this.puntuacionPositiva.Size = new System.Drawing.Size(47, 51);
             this.puntuacionPositiva.TabIndex = 20;
             this.puntuacionPositiva.Text = "0";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::QQSSApp.Properties.Resources.flecha;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(71, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.Atras);
             // 
             // flowLayoutPanel1
             // 
@@ -402,22 +415,10 @@
             this.flowLayoutPanel2.Controls.Add(this.pos9);
             this.flowLayoutPanel2.Controls.Add(this.pos10);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(140, 76);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(756, 43);
             this.flowLayoutPanel2.TabIndex = 20;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::QQSSApp.Properties.Resources.flecha;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 66);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -425,12 +426,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Image = global::QQSSApp.Properties.Resources.ODS_05;
-            this.pictureBox2.Location = new System.Drawing.Point(468, 178);
+            this.pictureBox2.Location = new System.Drawing.Point(471, 184);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(95, 98);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.Size = new System.Drawing.Size(90, 87);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
             // 
@@ -464,16 +466,16 @@
             this.Controls.Add(this.op1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.reloj_circular);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PartidaForm";
             this.Text = "Partida";
             this.Load += new System.EventHandler(this.PartidaForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reloj_circular)).EndInit();
             this.ResumeLayout(false);
