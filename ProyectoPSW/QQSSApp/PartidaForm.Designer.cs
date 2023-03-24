@@ -422,7 +422,7 @@
             this.puntuacionPos.AutoSize = true;
             this.puntuacionPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.puntuacionPos.ForeColor = System.Drawing.Color.White;
-            this.puntuacionPos.Location = new System.Drawing.Point(413, 16);
+            this.puntuacionPos.Location = new System.Drawing.Point(404, 16);
             this.puntuacionPos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.puntuacionPos.Name = "puntuacionPos";
             this.puntuacionPos.Size = new System.Drawing.Size(37, 39);
