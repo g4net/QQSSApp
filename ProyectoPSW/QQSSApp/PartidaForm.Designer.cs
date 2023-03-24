@@ -34,6 +34,7 @@
             this.op4 = new System.Windows.Forms.Button();
             this.op3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.puntuacionPos = new System.Windows.Forms.Label();
             this.puntuaciónNegativa = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.labelPuntuacionAcumulada = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.reloj_circular = new System.Windows.Forms.PictureBox();
-            this.puntuacionPos = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -125,6 +125,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(973, 70);
             this.panel1.TabIndex = 4;
+            // 
+            // puntuacionPos
+            // 
+            this.puntuacionPos.AutoSize = true;
+            this.puntuacionPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.puntuacionPos.ForeColor = System.Drawing.Color.White;
+            this.puntuacionPos.Location = new System.Drawing.Point(404, 16);
+            this.puntuacionPos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.puntuacionPos.Name = "puntuacionPos";
+            this.puntuacionPos.Size = new System.Drawing.Size(37, 39);
+            this.puntuacionPos.TabIndex = 27;
+            this.puntuacionPos.Text = "0";
+            this.puntuacionPos.Click += new System.EventHandler(this.label1_Click);
             // 
             // puntuaciónNegativa
             // 
@@ -227,7 +240,7 @@
             // 
             this.tiempo.AutoSize = true;
             this.tiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tiempo.Location = new System.Drawing.Point(457, 221);
+            this.tiempo.Location = new System.Drawing.Point(463, 222);
             this.tiempo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tiempo.Name = "tiempo";
             this.tiempo.Size = new System.Drawing.Size(49, 24);
@@ -394,7 +407,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Image = global::QQSSApp.Properties.Resources.ODS_05;
-            this.pictureBox2.Location = new System.Drawing.Point(439, 180);
+            this.pictureBox2.Location = new System.Drawing.Point(444, 182);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(85, 102);
@@ -409,26 +422,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reloj_circular.BackColor = System.Drawing.Color.Transparent;
             this.reloj_circular.Image = global::QQSSApp.Properties.Resources.circulo1;
-            this.reloj_circular.Location = new System.Drawing.Point(246, 117);
+            this.reloj_circular.Location = new System.Drawing.Point(235, 117);
             this.reloj_circular.Margin = new System.Windows.Forms.Padding(2);
             this.reloj_circular.Name = "reloj_circular";
-            this.reloj_circular.Size = new System.Drawing.Size(477, 228);
+            this.reloj_circular.Size = new System.Drawing.Size(501, 228);
             this.reloj_circular.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.reloj_circular.TabIndex = 6;
             this.reloj_circular.TabStop = false;
-            // 
-            // puntuacionPos
-            // 
-            this.puntuacionPos.AutoSize = true;
-            this.puntuacionPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntuacionPos.ForeColor = System.Drawing.Color.White;
-            this.puntuacionPos.Location = new System.Drawing.Point(404, 16);
-            this.puntuacionPos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.puntuacionPos.Name = "puntuacionPos";
-            this.puntuacionPos.Size = new System.Drawing.Size(37, 39);
-            this.puntuacionPos.TabIndex = 27;
-            this.puntuacionPos.Text = "0";
-            this.puntuacionPos.Click += new System.EventHandler(this.label1_Click);
             // 
             // PartidaForm
             // 
