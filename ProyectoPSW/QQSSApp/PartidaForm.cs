@@ -70,81 +70,43 @@ namespace QQSSApp
 
         private void op1_click(object sender, EventArgs e)
         {
-            if (service.TestAnswer(op1.Text,    pregunta))
-            {
-                this.retoindex++;
-                service.UpdateGameScore(pregunta.Puntuacion_acierto);
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retoindex);
-                partidag.Show();
-                this.Close();
-            }
-            else {
-                service.UpdateGameScore(pregunta.PuntuacionFallo());
-                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex);
-                partidag.Show();
-                this.Close();
-            }
+            CheckAnswer(op1.Text);
         }
 
         private void op2_Click(object sender, EventArgs e)
         {
-            if (service.TestAnswer(op2.Text, pregunta))
-            {
-                this.retoindex++;
-                service.UpdateGameScore(pregunta.Puntuacion_acierto);
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retoindex);
-                partidag.Show();
-                this.Close();
-            }
-            else
-            {
-                service.UpdateGameScore(pregunta.PuntuacionFallo());
-                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex);
-                partidag.Show();
-                this.Close();
-            }
-        
+            CheckAnswer(op2.Text);
+
         }
 
         private void op3_Click(object sender, EventArgs e)
         {
-            if (service.TestAnswer(op3.Text, pregunta))
-            {
-                this.retoindex++;
-                service.UpdateGameScore(pregunta.Puntuacion_acierto);
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retoindex);
-                partidag.Show();
-                this.Close();
-            }
-        else
-        {
-                service.UpdateGameScore(pregunta.PuntuacionFallo());
-                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex);
-                partidag.Show();
-                this.Close();
-            }
+            CheckAnswer(op3.Text);
         }
 
         private void op4_Click(object sender, EventArgs e)
         {
-            if (service.TestAnswer(op4.Text, pregunta))
+            CheckAnswer(op4.Text);
+        }
+
+        private void CheckAnswer(string optext)
+        {
+            if(service.TestAnswer(optext, pregunta))
             {
                 this.retoindex++;
                 service.UpdateGameScore(pregunta.Puntuacion_acierto);
                 PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retoindex);
                 partidag.Show();
                 this.Close();
-                
             }
             else
             {
-
-                
                 service.UpdateGameScore(pregunta.PuntuacionFallo());
                 PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex);
                 partidag.Show();
                 this.Close();
             }
+
         }
 
         private void TimerTick(object sender, EventArgs e)
