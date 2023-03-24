@@ -22,8 +22,12 @@ namespace ProyectoPSWMain.Services
         #endregion
 
         #region Partida
+        void UpdateGameScore(int score);
+        void ResetGameScore();
+        void DeleteUser(int id);
         void AddPartida(Partida game);
-
+        void SetPartidaActual(Partida partida);
+        Partida GetPartidaActual();  
         Partida GetPartida(int level, int points);
         int [] GetDifficultyArray(int level);
 
