@@ -42,7 +42,7 @@ namespace QQSSApp
             pregunta = (Pregunta)retos.ElementAt(index);
             this.labelPuntuacionAcumulada.Text = partida.getPuntuacionPartida();
             enunciado.Text = pregunta.Enunciado;
-            puntuacionPositiva.Text = pregunta.GetPuntuacionAcierto();
+            puntuacionPos.Text = pregunta.GetPuntuacionAcierto();
             puntuaciónNegativa.Text = pregunta.GetPuntuacionFallo();
             respuestas = service.AnswerShuffle(pregunta);
             op1.Text = respuestas.ElementAt(0).getText();
@@ -122,6 +122,16 @@ namespace QQSSApp
         
         }
         private void puntuacionPositiva_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void puntuaciónNegativa_Click(object sender, EventArgs e)
         {
 
         }
