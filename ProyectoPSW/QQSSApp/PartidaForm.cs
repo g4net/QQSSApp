@@ -25,7 +25,7 @@ namespace QQSSApp
         private List<Image> images;
         private int currentImageIndex = 0;
         int retoindex;
-        public PartidaForm(IQQSSService service, List<Reto> reto, int index, Partida partidas)
+        public PartidaForm(IQQSSService service, int index)
         {
             InitializeComponent();
             InitializeImages();
@@ -33,17 +33,17 @@ namespace QQSSApp
             timer1.Start();
             this.service = service;
             this.service.Login("1235");
-            partida = partidas;
+            partida = service.GetPartidaActual();
             this.retoindex = index;
 
 
 
-            this.retos = reto;
+            this.retos = partida.GetRetos();
             pregunta = (Pregunta)retos.ElementAt(index);
             this.labelPuntuacionAcumulada.Text = partida.getPuntuacionPartida();
             enunciado.Text = pregunta.Enunciado;
-            labelPuntuacionAcierto.Text = pregunta.GetPuntuacionAcierto();
-            labelPuntuacionFallo.Text = pregunta.GetPuntuacionFallo();
+            puntuacionPos.Text = pregunta.GetPuntuacionAcierto();
+            puntuaciónNegativa.Text = pregunta.GetPuntuacionFallo();
             respuestas = service.AnswerShuffle(pregunta);
             op1.Text = respuestas.ElementAt(0).getText();
             op2.Text = respuestas.ElementAt(1).getText();
@@ -53,7 +53,23 @@ namespace QQSSApp
 
         private void PartidaForm_Load(object sender, EventArgs e)
         {
-          
+            
+
+        }
+
+        private void marcarProgreso(int index) {
+            string nombreBoton = "pos" + index.ToString();
+            Control[] controles = this.Controls.Find(nombreBoton, true);
+            if (controles.Length > 0)
+            {
+                Button botonActual = (Button)controles[0];
+
+                // Verifica que el botón no sea nulo antes de intentar cambiar su color
+                if (botonActual != null)
+                {
+                    botonActual.BackColor = Color.Yellow;
+                }
+            }
 
         }
 
@@ -72,76 +88,44 @@ namespace QQSSApp
 
         private void op1_click(object sender, EventArgs e)
         {
-            if (service.TestAnswer(op1.Text,    pregunta))
-            {
-                this.retoindex++;
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
-                partidag.Show();
-                this.Close();
-            }
-            else {
-                this.Hide();
-                PuntuacionNegativa partidab = new PuntuacionNegativa(service, this.retos, this.retoindex, this.partida);
-                partidab.FormClosed += (s, args) => this.Show();
-                partidab.Show();
-            }
+            CheckAnswer(op1.Text);
         }
 
         private void op2_Click(object sender, EventArgs e)
         {
-            if (service.TestAnswer(op2.Text, pregunta))
-            {
-                this.retoindex++;
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
-                partidag.Show();
-                this.Close();
-            }
-            else
-            {
-                this.Hide();
-                PuntuacionNegativa partidab = new PuntuacionNegativa(service, this.retos, this.retoindex,this.partida);
-                partidab.FormClosed += (s, args) => this.Show();
-                partidab.Show();
-            }
-        
+            CheckAnswer(op2.Text);
+
         }
 
         private void op3_Click(object sender, EventArgs e)
         {
-            if (service.TestAnswer(op3.Text, pregunta))
-            {
-                this.retoindex++;
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
-                partidag.Show();
-                this.Close();
-            }
-        else
-        {
-            this.Hide();
-                
-            PuntuacionNegativa partidab = new PuntuacionNegativa(service, this.retos, this.retoindex, this.partida);
-            partidab.FormClosed += (s, args) => this.Show();
-            partidab.Show();
-        
-    }
+            CheckAnswer(op3.Text);
         }
 
         private void op4_Click(object sender, EventArgs e)
         {
-            if (service.TestAnswer(op4.Text, pregunta))
+            CheckAnswer(op4.Text);
+        }
+
+        private void CheckAnswer(string optext)
+        {
+            if(service.TestAnswer(optext, pregunta))
             {
+                marcarProgreso(retoindex);
                 this.retoindex++;
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retos, this.retoindex, this.partida);
+                service.UpdateGameScore(pregunta.Puntuacion_acierto);
+                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retoindex);
                 partidag.Show();
                 this.Close();
             }
             else
             {
-                this.Hide();
-                PuntuacionNegativa partidab = new PuntuacionNegativa(service, this.retos, this.retoindex, this.partida);
-                partidab.FormClosed += (s, args) => this.Show();
-                partidab.Show();
+                service.UpdateGameScore(pregunta.PuntuacionFallo());
+                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex);
+                partidag.Show();
+                this.Close();
             }
+
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -153,13 +137,22 @@ namespace QQSSApp
             }
             reloj_circular.Image = images[currentImageIndex];
         }
-
-        private void Atras(object sender, EventArgs e)
+        private void Atras(object sender, EventArgs e) {
+        
+        }
+        private void puntuacionPositiva_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            PantallaPrincipalForm menu = new PantallaPrincipalForm(service);
-            menu.FormClosed += (s, args) => this.Show();
-            menu.Show();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void puntuaciónNegativa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

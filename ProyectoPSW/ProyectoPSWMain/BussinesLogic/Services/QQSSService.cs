@@ -23,7 +23,8 @@ namespace ProyectoPSWMain.Services
         //private ResourceManager resourceManager;
 
         private User loggedUser;
-
+        private Partida partidaActual;
+       
 
         public QQSSService(IRepository repository)
         {
@@ -47,10 +48,13 @@ namespace ProyectoPSWMain.Services
             
          
             respuestas = CreateAnswers(CreateStringAnswers("Ambiental, tecnológica y económica", "Ambiental, social y económica", "Económica, acuática y vida", "Social, tecnológica y termica"));
-            Pregunta p1 = new Pregunta(respuestas, "¿Cuáles son las tres dimensiones del desarrollo sostenible?", 1, 100, "Ambiental, social y económica", 0);
+            Pregunta p1 = new Pregunta(respuestas, "¿Cuáles son las tres dimensiones del desarrollo sostenible?", 1, 100, "Ambiental, social y económica", 10);
             AddPregunta(p1);
-           
 
+           
+ 
+             
+             
             respuestas = CreateAnswers(CreateStringAnswers("Objetivos de Desarrollo Sostentable", "Objetivos sociales", "Objetivos de Desarrollo Económico", "Objetivos de Desarrollo Tecnológico"));
             respuestaCorrecta = new Respuesta("Objetivos de Desarrollo Sostentable");
             Pregunta p2 = new Pregunta(respuestas, "¿Qué son los ODS?", 1, 100, respuestaCorrecta.getText(), 0);
@@ -75,7 +79,7 @@ namespace ProyectoPSWMain.Services
             AddPregunta(p5);
             
        
-            Partida partida = new Partida(1, 400);
+            Partida partida = new Partida(1, 0);
             partida.AddReto(p1);
             partida.AddReto(p2);
             partida.AddReto(p3);    
@@ -125,6 +129,16 @@ namespace ProyectoPSWMain.Services
                 throw new ServiceException("There is no user with that DNI");
             }
         }
+        public void DeleteUser(int dni) {
+            if (repository.GetById<User>(dni) != null)
+            {
+                repository.Delete(repository.GetById<User>(dni));
+            }
+            else
+            {
+                throw new ServiceException("There is no user with that DNI");
+            }
+        }
         public User GetLoggedUser()
         {
             if (this.loggedUser != null)
@@ -160,11 +174,19 @@ namespace ProyectoPSWMain.Services
         }
         public Partida GetPartida(int level, int points) {
             var random = new Random();
-            List<Partida> PartidasDb = repository.GetAll<Partida>().ToList();
+            
+             
+             List<Partida> PartidasDb = repository.GetAll<Partida>().ToList();
             /*int index = random.Next(PartidasDb.Count);
 
             return PartidasDb.ElementAt(index);*/
             return PartidasDb.First();
+        }
+        public Partida GetPartidaActual() {
+            return partidaActual;
+        }
+        public void SetPartidaActual(Partida partida) { 
+            this.partidaActual = partida;
         }
         public int[] GetDifficultyArray(int level)
         {
@@ -180,6 +202,14 @@ namespace ProyectoPSWMain.Services
             }
 
             return null;
+        }
+        public void UpdateGameScore(int score) {
+            this.partidaActual.PuntuacionPartida += score;
+            repository.Commit();
+        }
+        public void ResetGameScore() {
+            this.partidaActual.PuntuacionPartida = 0;
+            repository.Commit();
         }
         #endregion
 

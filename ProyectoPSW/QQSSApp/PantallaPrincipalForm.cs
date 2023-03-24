@@ -23,6 +23,7 @@ namespace QQSSApp
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.FormClosed += (s, args) => Application.Exit();
+            this.label1.Select();
             
         }
 
@@ -30,10 +31,10 @@ namespace QQSSApp
         private void ButtonComenzar_Click(object sender, EventArgs e)
         {
             
-            Partida partidas = this.service.GetPartida(1, 400);
-            List<Reto>  retos = partidas.GetRetos();
+           service.SetPartidaActual(this.service.GetPartida(1, 0));
+            service.ResetGameScore();
             int index = 0;
-            PartidaForm partida = new PartidaForm(service, retos, index,partidas);
+            PartidaForm partida = new PartidaForm(service,index);
             partida.Show();
             this.Hide();
         }
