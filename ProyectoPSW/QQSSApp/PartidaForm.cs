@@ -57,6 +57,22 @@ namespace QQSSApp
 
         }
 
+        private void marcarProgreso(int index) {
+            string nombreBoton = "pos" + index.ToString();
+            Control[] controles = this.Controls.Find(nombreBoton, true);
+            if (controles.Length > 0)
+            {
+                Button botonActual = (Button)controles[0];
+
+                // Verifica que el botón no sea nulo antes de intentar cambiar su color
+                if (botonActual != null)
+                {
+                    botonActual.BackColor = Color.Yellow;
+                }
+            }
+
+        }
+
         public void InitializeImages()
         {
             images = new List<Image>();
@@ -93,6 +109,7 @@ namespace QQSSApp
         {
             if(service.TestAnswer(optext, pregunta))
             {
+                marcarProgreso(retoindex);
                 this.retoindex++;
                 service.UpdateGameScore(pregunta.Puntuacion_acierto);
                 PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retoindex);
