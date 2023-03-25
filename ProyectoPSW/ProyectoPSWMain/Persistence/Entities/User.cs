@@ -13,6 +13,7 @@ namespace ProyectoPSWMain.Entities
         [Key]
         public String Id { get; set; }
         public int PuntuacionAcumulada { get; set; }
+        public int nivel { get; set;}
         public virtual ICollection<Partida> PartidasJugadas { get; set; }
 
 

@@ -12,9 +12,10 @@ namespace ProyectoPSWMain.Entities
             this.PartidasJugadas = new List<Partida>();
         }
 
-        public User(string dni, int Points) : this() {
+        public User(string dni, int Points, int nivel) : this() {
             this.Id = dni;
             this.PuntuacionAcumulada = Points;
+            this.nivel = nivel;
         }
         public int getPoints() {
             return this.PuntuacionAcumulada;
