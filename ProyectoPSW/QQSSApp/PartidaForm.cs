@@ -32,7 +32,7 @@ namespace QQSSApp
             timer1.Interval = 1764;
             timer1.Start();
             this.service = service;
-            this.service.Login("1235");
+            this.service.Login("0");
             partida = service.GetPartidaActual();
             this.retoindex = index;
 
