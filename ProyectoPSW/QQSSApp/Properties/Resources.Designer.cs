@@ -353,6 +353,16 @@ namespace QQSSApp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ODS_1 {
+            get {
+                object obj = ResourceManager.GetObject("ODS_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ODS_10 {
             get {
                 object obj = ResourceManager.GetObject("ODS_10", resourceCulture);
@@ -436,6 +446,46 @@ namespace QQSSApp.Properties {
         internal static System.Drawing.Bitmap ODS_4 {
             get {
                 object obj = ResourceManager.GetObject("ODS_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ODS_5 {
+            get {
+                object obj = ResourceManager.GetObject("ODS_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ODS_6 {
+            get {
+                object obj = ResourceManager.GetObject("ODS_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ODS_7 {
+            get {
+                object obj = ResourceManager.GetObject("ODS_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ODS_8 {
+            get {
+                object obj = ResourceManager.GetObject("ODS_8", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

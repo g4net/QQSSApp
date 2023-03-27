@@ -63,6 +63,11 @@
     <Compile Include="CargarDatos.Designer.cs">
       <DependentUpon>CargarDatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="PuntuacionNegativa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,14 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -156,7 +156,7 @@
     <EmbeddedResource Include="resources\circulo0.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\ODS_01.png" />
+    <None Include="resources\ODS_1.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="resources\circulo18.png" />
@@ -213,25 +213,25 @@
     <EmbeddedResource Include="resources\circulo17.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\ODS_02.png" />
+    <None Include="resources\ODS_2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\ODS_03.png" />
+    <None Include="resources\ODS_3.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\ODS_4.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\ODS_05.png" />
+    <None Include="resources\ODS_5.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\ODS_06.png" />
+    <None Include="resources\ODS_6.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\ODS_07.png" />
+    <None Include="resources\ODS_7.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\ODS_08.png" />
+    <None Include="resources\ODS_8.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\ODS_9.png" />

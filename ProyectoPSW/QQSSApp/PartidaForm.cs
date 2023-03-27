@@ -22,6 +22,7 @@ namespace QQSSApp
         Pregunta pregunta;
         List<Respuesta> respuestas;
         private List<Image> images;
+        private List<Image> ods;
         private int currentImageIndex = 0;
         int retoindex;
         public PartidaForm(IQQSSService service, int index)
@@ -34,7 +35,7 @@ namespace QQSSApp
             this.service.Login("0");
             partida = service.GetPartidaActual();
             this.retoindex = index;
-
+            
 
 
             
@@ -48,6 +49,7 @@ namespace QQSSApp
             op2.Text = respuestas.ElementAt(1).getText();
             op3.Text = respuestas.ElementAt(2).getText();
             op4.Text = respuestas.ElementAt(3).getText();
+            ods_picture.Image = ods.ElementAt(pregunta.Ods - 1);
         }
 
         private void PartidaForm_Load(object sender, EventArgs e)
@@ -75,12 +77,20 @@ namespace QQSSApp
         public void InitializeImages()
         {
             images = new List<Image>();
+            ods = new List<Image>();
 
             for(int i = 1; i <= 18; i++)
             {
                 string image = "circulo" + i;
                 Image imagen = (System.Drawing.Bitmap) QQSSApp.Properties.Resources.ResourceManager.GetObject(image);
                 images.Add(imagen);
+            }
+
+            for(int i= 1; i <= 17; i++)
+            {
+                string image = "ODS_" + i;
+                Image imagen = (System.Drawing.Bitmap) QQSSApp.Properties.Resources.ResourceManager.GetObject(image);
+                ods.Add(imagen);
             }
 
         }
