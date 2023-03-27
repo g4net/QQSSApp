@@ -77,10 +77,10 @@ namespace DBTest
             
               Console.WriteLine("\n// CREACIÓN DE UNA REVISTA Y SU EDITOR EN JEFE");
               User user = new User("0",500,1);
-            Partida partida = new Partida(1, 0);
-            dal.Insert<Partida>(partida);
-              dal.Insert<User>(user);
-              dal.Commit();
+                Partida partida = new Partida(1, 0);
+                dal.Insert<Partida>(partida);
+                 dal.Insert<User>(user);
+                dal.Commit();
 
             //--------------------------------ODS 1---------------------------------------------
             ICollection<Respuesta> respuestasMal = new List<Respuesta>();
@@ -94,9 +94,11 @@ namespace DBTest
             respuestasMal.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             Respuesta respuestaBien = new Respuesta("Erradicar la pobreza extrema en todas sus formas");
+            respuestasMal.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
-
+            
             Pregunta pregunta = new Pregunta(respuestasMal, "¿Cuál es la meta de la ODS 1 para el año 2030?", 1, 100, respuestaBien.Texto, 1);
+            
             dal.Insert<Pregunta>(pregunta);
             dal.Commit();
 
@@ -112,6 +114,7 @@ namespace DBTest
             respuestasMal1.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "La falta de empleo y oportunidades económicas";
+            respuestasMal1.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta1 = new Pregunta(respuestasMal1, "¿Cuál es la principal causa de la pobreza extrema según la ODS 1?", 2, 200, respuestaBien.Texto, 1);
@@ -129,6 +132,7 @@ namespace DBTest
             respuestasMal2.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Implementar políticas públicas que fomenten la inclusión social y económica";
+            respuestasMal2.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta2 = new Pregunta(respuestasMal2, "¿Qué estrategia propone la ODS 1 para reducir la pobreza extrema?", 3, 300, respuestaBien.Texto, 1);
@@ -146,6 +150,7 @@ namespace DBTest
             respuestasMal3.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Reducir la brecha de género en el acceso al empleo";
+            respuestasMal3.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta3 = new Pregunta(respuestasMal3, "¿Cuál es el objetivo específico de la ODS 1 relacionado con la igualdad de género?", 3, 300, respuestaBien.Texto, 1);
@@ -160,9 +165,10 @@ namespace DBTest
             respuestasMal4.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Europa del Este y Asia Central";
-            respuestasMal4.Add(respuesta1mal);
+            respuestasMal4.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "África subsahariana";
+            respuestasMal4.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta4 = new Pregunta(respuestasMal4, "¿Cuál es la región del mundo con el mayor número de personas en situación de pobreza extrema según la ODS 1?", 3, 300, respuestaBien.Texto, 1);
@@ -177,9 +183,11 @@ namespace DBTest
             respuestasMal5.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Las personas en situación de pobreza tienen un acceso igualitario a los servicios de salud";
-            respuestasMal5.Add(respuesta1mal);
+            respuestasMal5.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
+
             respuestaBien.Texto = "Las personas en situación de pobreza tienen un mayor riesgo de enfermedades y mortalidad";
+            respuestasMal5.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta5 = new Pregunta(respuestasMal5, "¿Cuál es el impacto de la pobreza en la salud según la ODS 1?", 2, 200, respuestaBien.Texto, 1);
@@ -196,9 +204,10 @@ namespace DBTest
             respuestasMal6.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Promover la igualdad de género";
-            respuestasMal6.Add(respuesta1mal);
+            respuestasMal6.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Lograr la seguridad alimentaria y la nutrición para todos";
+            respuestasMal6.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta6 = new Pregunta(respuestasMal6, "¿Cuál es el objetivo principal de la ODS 2?", 1, 100, respuestaBien.Texto, 2);
@@ -213,9 +222,10 @@ namespace DBTest
             respuestasMal7.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Reducir el desperdicio de alimentos en un 75%";
-            respuestasMal7.Add(respuesta1mal);
+            respuestasMal7.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Erradicar el hambre en todas sus formas";
+            respuestasMal7.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta7 = new Pregunta(respuestasMal7, "¿Cuál es la meta de la ODS 2 para el año 2030?", 1, 100, respuestaBien.Texto, 2);
@@ -230,9 +240,10 @@ namespace DBTest
             respuestasMal8.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Europa del Este y Asia Central";
-            respuestasMal8.Add(respuesta1mal);
+            respuestasMal8.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "África subsahariana";
+            respuestasMal8.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta8 = new Pregunta(respuestasMal8, "¿Cuál es la región del mundo con el mayor número de personas que padecen hambre según la ODS 2?", 2, 200, respuestaBien.Texto, 2);
@@ -247,9 +258,10 @@ namespace DBTest
             respuestasMal9.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "La discriminación racial y de género";
-            respuestasMal9.Add(respuesta1mal);
+            respuestasMal9.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "La falta de tecnología y conocimientos agrícolas";
+            respuestasMal8.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta9 = new Pregunta(respuestasMal9, "¿Cuál es la principal causa del hambre según la ODS 2?", 2, 200, respuestaBien.Texto, 2);
@@ -265,9 +277,10 @@ namespace DBTest
             respuestasMal10.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Todas las anteriores";
-            respuestasMal10.Add(respuesta1mal);
+            respuestasMal10.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Reducir la brecha de género en el acceso a la tierra y otros recursos productivos";
+            respuestasMal10.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta10 = new Pregunta(respuestasMal10, "¿Cuál es el objetivo específico de la ODS 2 relacionado con la igualdad de género?", 3, 300, respuestaBien.Texto, 2);
@@ -282,9 +295,10 @@ namespace DBTest
             respuestasMal11.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Salud y Bienestar";
-            respuestasMal11.Add(respuesta1mal);
+            respuestasMal11.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Acabar con la Inseguridad Alimentaria";
+            respuestasMal11.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta11 = new Pregunta(respuestasMal11, "¿Cuál es el nombre completo de la segunda ODS?", 1, 100, respuestaBien.Texto, 2);
@@ -299,9 +313,10 @@ namespace DBTest
             respuestasMal12.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Fomentar el uso de energías renovables";
-            respuestasMal12.Add(respuesta1mal);
+            respuestasMal12.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Erradicar el hambre en el mundo";
+            respuestasMal12.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta12 = new Pregunta(respuestasMal12, "¿Cuál es el objetivo principal de la segunda ODS?", 1, 100, respuestaBien.Texto, 2);
@@ -316,9 +331,10 @@ namespace DBTest
             respuestasMal13.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "30%";
-            respuestasMal13.Add(respuesta1mal);
+            respuestasMal13.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "20%";
+            respuestasMal13.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta13 = new Pregunta(respuestasMal13, "¿Qué porcentaje de la población mundial sufre de inseguridad alimentaria?", 3, 300, respuestaBien.Texto, 2);
@@ -333,9 +349,10 @@ namespace DBTest
             respuestasMal14.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Desigualdad de género";
-            respuestasMal14.Add(respuesta1mal);
+            respuestasMal14.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Cambio climático";
+            respuestasMal14.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta14 = new Pregunta(respuestasMal14, "¿Cuál es uno de los principales factores que contribuyen a la inseguridad alimentaria?", 2, 200, respuestaBien.Texto, 2);
@@ -350,9 +367,10 @@ namespace DBTest
             respuestasMal15.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Todas las anteriores";
-            respuestasMal15.Add(respuesta1mal);
+            respuestasMal15.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Mejorar la productividad y la resiliencia de la agricultura familiar";
+            respuestasMal15.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta15 = new Pregunta(respuestasMal15, "¿Cuál es una de las estrategias para lograr la segunda ODS?", 3, 300, respuestaBien.Texto, 2);
@@ -367,9 +385,10 @@ namespace DBTest
             respuestasMal16.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Porque la falta de seguridad alimentaria perpetúa el ciclo de la pobreza";
-            respuestasMal16.Add(respuesta1mal);
+            respuestasMal16.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal16.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta16 = new Pregunta(respuestasMal16, "¿Por qué la segunda ODS es importante para lograr un mundo sostenible?", 2, 200, respuestaBien.Texto, 2);
@@ -384,9 +403,10 @@ namespace DBTest
             respuestasMal17.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "El índice de precios de los alimentos";
-            respuestasMal17.Add(respuesta1mal);
+            respuestasMal17.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "La prevalencia de la inseguridad alimentaria";
+            respuestasMal17.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta17 = new Pregunta(respuestasMal17, "¿Cuál es uno de los indicadores utilizados para medir el progreso hacia la segunda ODS?", 2, 200, respuestaBien.Texto, 2);
@@ -401,9 +421,10 @@ namespace DBTest
             respuestasMal18.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Ninguna de las anteriores";
-            respuestasMal18.Add(respuesta1mal);
+            respuestasMal18.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Acceso físico y económico a suficientes alimentos nutritivos";
+            respuestasMal18.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta18 = new Pregunta(respuestasMal18, "¿Qué se entiende por seguridad alimentaria?", 3, 300, respuestaBien.Texto, 2);
@@ -418,9 +439,10 @@ namespace DBTest
             respuestasMal19.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Trabajo Decente y Crecimiento Económico";
-            respuestasMal19.Add(respuesta1mal);
+            respuestasMal19.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Salud y Bienestar";
+            respuestasMal19.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta19 = new Pregunta(respuestasMal19, "¿Cuál es el nombre completo de la tercera ODS?", 1, 100, respuestaBien.Texto, 3);
@@ -435,9 +457,10 @@ namespace DBTest
             respuestasMal20.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Fomentar el uso de energías renovables";
-            respuestasMal20.Add(respuesta1mal);
+            respuestasMal20.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Aumentar el acceso a servicios de salud de calidad";
+            respuestasMal20.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta20 = new Pregunta(respuestasMal20, "¿Cuál es el objetivo principal de la tercera ODS?", 1, 100, respuestaBien.Texto, 3);
@@ -453,9 +476,10 @@ namespace DBTest
             respuestasMal21.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Combatir enfermedades no transmisibles";
-            respuestasMal21.Add(respuesta1mal);
+            respuestasMal21.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Mejorar la calidad de la educación en los países en desarrollo";
+            respuestasMal21.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta21 = new Pregunta(respuestasMal21, "¿Cuál de los siguientes no es uno de los objetivos específicos de la tercera ODS?", 1, 100, respuestaBien.Texto, 3);
@@ -471,9 +495,10 @@ namespace DBTest
             respuestasMal22.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "La prevalencia del VIH/SIDA";
-            respuestasMal22.Add(respuesta1mal);
+            respuestasMal22.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "El porcentaje de la población que vive en zonas urbanas";
+            respuestasMal22.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta22 = new Pregunta(respuestasMal22, "¿Cuál de los siguientes no es un indicador utilizado para medir el progreso hacia la tercera ODS?", 2, 200, respuestaBien.Texto, 3);
@@ -488,9 +513,10 @@ namespace DBTest
             respuestasMal23.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Malaria";
-            respuestasMal23.Add(respuesta1mal);
+            respuestasMal23.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Poliomielitis";
+            respuestasMal23.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta23 = new Pregunta(respuestasMal23, "¿Cuál de las siguientes enfermedades se ha logrado erradicar a nivel mundial gracias a los esfuerzos de la tercera ODS?", 3, 300, respuestaBien.Texto, 3);
@@ -505,9 +531,10 @@ namespace DBTest
             respuestasMal24.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Ninguna de las anteriores";
-            respuestasMal24.Add(respuesta1mal);
+            respuestasMal24.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Que todas las personas tengan acceso a servicios de salud de calidad sin tener que enfrentar dificultades financieras";
+            respuestasMal24.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta24 = new Pregunta(respuestasMal24, "¿Qué se entiende por cobertura universal de salud?", 3, 300, respuestaBien.Texto, 3);
@@ -522,9 +549,10 @@ namespace DBTest
             respuestasMal25.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Falta de personal médico capacitado";
-            respuestasMal25.Add(respuesta1mal);
+            respuestasMal25.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal25.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta25 = new Pregunta(respuestasMal25, "¿Cuál es uno de los principales desafíos para lograr la tercera ODS en los países en desarrollo?", 2, 200, respuestaBien.Texto, 3);
@@ -539,9 +567,10 @@ namespace DBTest
             respuestasMal26.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Ninguna de las anteriores";
-            respuestasMal26.Add(respuesta1mal);
+            respuestasMal26.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "El bienestar emocional y psicológico de las personas";
+            respuestasMal26.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta26 = new Pregunta(respuestasMal26, "¿Qué se entiende por salud mental según la tercera ODS?", 2, 200, respuestaBien.Texto, 3);
@@ -557,9 +586,10 @@ namespace DBTest
             respuestasMal27.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Paz, Justicia e Instituciones Sólidas";
-            respuestasMal27.Add(respuesta1mal);
+            respuestasMal27.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Educación de Calidad";
+            respuestasMal27.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta27 = new Pregunta(respuestasMal27, "¿Cuál es el nombre completo de la cuarta ODS?", 1, 100, respuestaBien.Texto, 4);
@@ -574,9 +604,10 @@ namespace DBTest
             respuestasMal28.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Promover la paz, la justicia y la solidaridad en todo el mundo";
-            respuestasMal28.Add(respuesta1mal);
+            respuestasMal28.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Asegurar que todos los niños y niñas tengan acceso a una educación de calidad";
+            respuestasMal28.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta28 = new Pregunta(respuestasMal28, "¿Cuál es el objetivo principal de la cuarta ODS?", 1, 100, respuestaBien.Texto, 4);
@@ -591,9 +622,10 @@ namespace DBTest
             respuestasMal29.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Mejorar la calidad de la educación a través de la capacitación de docentes y la utilización de tecnologías innovadoras";
-            respuestasMal29.Add(respuesta1mal);
+            respuestasMal29.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Aumentar el número de estudiantes universitarios en países en desarrollo";
+            respuestasMal29.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta29 = new Pregunta(respuestasMal29, "¿Cuál de las siguientes no es una meta específica de la cuarta ODS?", 2, 200, respuestaBien.Texto, 4);
@@ -608,9 +640,10 @@ namespace DBTest
             respuestasMal30.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "La cantidad de estudiantes universitarios matriculados";
-            respuestasMal30.Add(respuesta1mal);
+            respuestasMal30.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "La esperanza de vida al nacer";
+            respuestasMal30.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta30 = new Pregunta(respuestasMal30, "¿Cuál de los siguientes no es un indicador utilizado para medir el progreso hacia la cuarta ODS?", 1, 100, respuestaBien.Texto, 4);
@@ -625,9 +658,10 @@ namespace DBTest
             respuestasMal31.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Ninguna de las anteriores";
-            respuestasMal31.Add(respuesta1mal);
+            respuestasMal31.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Una educación que se adapta a las necesidades de cada estudiante";
+            respuestasMal31.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta31 = new Pregunta(respuestasMal31, "¿Qué se entiende por educación inclusiva según la cuarta ODS?", 3, 300, respuestaBien.Texto, 4);
@@ -642,9 +676,10 @@ namespace DBTest
             respuestasMal32.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "La falta de capacitación de los docentes";
-            respuestasMal32.Add(respuesta1mal);
+            respuestasMal32.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "El exceso de oferta de programas de educación";
+            respuestasMal32.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta32 = new Pregunta(respuestasMal32, "¿Cuál de las siguientes no es una barrera para el acceso a una educación de calidad según la cuarta ODS?", 2, 200, respuestaBien.Texto, 4);
@@ -659,9 +694,10 @@ namespace DBTest
             respuestasMal33.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Ninguna de las anteriores";
-            respuestasMal33.Add(respuesta1mal);
+            respuestasMal33.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Una educación que se lleva a cabo fuera de un entorno escolar tradicional";
+            respuestasMal33.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta33 = new Pregunta(respuestasMal33, "¿Qué se entiende por educación no formal según la cuarta ODS?", 3, 300, respuestaBien.Texto, 4);
@@ -676,9 +712,10 @@ namespace DBTest
             respuestasMal34.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Mejorar la capacitación de los docentes y la calidad de la enseñanza";
-            respuestasMal34.Add(respuesta1mal);
+            respuestasMal34.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Aumentar el número de estudiantes matriculados en programas de educación superior";
+            respuestasMal34.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta34 = new Pregunta(respuestasMal34, "¿Cuál de las siguientes medidas no es una forma de promover la calidad de la educación según la cuarta ODS?", 2, 200, respuestaBien.Texto, 4);
@@ -693,9 +730,10 @@ namespace DBTest
             respuestasMal35.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "La tecnología solo es importante en los países desarrollados";
-            respuestasMal35.Add(respuesta1mal);
+            respuestasMal35.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "La tecnología es un elemento clave para promover la calidad de la educación y la igualdad de oportunidades";
+            respuestasMal35.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta35 = new Pregunta(respuestasMal35, "¿Cuál es el papel de la tecnología en la cuarta ODS?", 1, 100, respuestaBien.Texto, 4);
@@ -712,9 +750,10 @@ namespace DBTest
             respuestasMal36.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Erradicar la pobreza extrema";
-            respuestasMal36.Add(respuesta1mal);
+            respuestasMal36.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Lograr la igualdad de género";
+            respuestasMal36.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta36 = new Pregunta(respuestasMal36, "¿Cuál es el objetivo de la quinta ODS?", 1, 100, respuestaBien.Texto, 5);
@@ -729,9 +768,10 @@ namespace DBTest
             respuestasMal37.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Eliminar la violencia de género";
-            respuestasMal37.Add(respuesta1mal);
+            respuestasMal37.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal37.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta37 = new Pregunta(respuestasMal37, "¿Qué medidas se deben tomar para lograr la quinta ODS?", 1, 100, respuestaBien.Texto, 5);
@@ -746,9 +786,10 @@ namespace DBTest
             respuestasMal38.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "50%";
-            respuestasMal38.Add(respuesta1mal);
+            respuestasMal38.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "35%";
+            respuestasMal38.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta38 = new Pregunta(respuestasMal38, "¿Qué porcentaje de mujeres entre 15 y 49 años ha sufrido violencia física o sexual por parte de su pareja en todo el mundo?", 3, 300, respuestaBien.Texto, 5);
@@ -763,9 +804,10 @@ namespace DBTest
             respuestasMal39.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "400 millones";
-            respuestasMal39.Add(respuesta1mal);
+            respuestasMal39.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "200 millones";
+            respuestasMal39.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta39 = new Pregunta(respuestasMal39, "¿Cuántas mujeres han sufrido mutilación genital femenina en todo el mundo?", 2, 200, respuestaBien.Texto, 5);
@@ -780,9 +822,10 @@ namespace DBTest
             respuestasMal40.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "40%";
-            respuestasMal40.Add(respuesta1mal);
+            respuestasMal40.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "30%";
+            respuestasMal40.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta40 = new Pregunta(respuestasMal40, "¿Cuál es el porcentaje de mujeres en todo el mundo que ocupan cargos parlamentarios?", 2, 200, respuestaBien.Texto, 5);
@@ -797,9 +840,10 @@ namespace DBTest
             respuestasMal41.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "100 millones";
-            respuestasMal41.Add(respuesta1mal);
+            respuestasMal41.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "130 millones";
+            respuestasMal41.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta41 = new Pregunta(respuestasMal41, "¿Cuántas niñas en todo el mundo no van a la escuela?", 2, 200, respuestaBien.Texto, 5);
@@ -814,9 +858,10 @@ namespace DBTest
             respuestasMal42.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Finlandia";
-            respuestasMal42.Add(respuesta1mal);
+            respuestasMal42.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Suecia";
+            respuestasMal42.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta42 = new Pregunta(respuestasMal42, "¿Qué país ha logrado la igualdad de género en todos los ámbitos?", 3, 300, respuestaBien.Texto, 5);
@@ -831,9 +876,10 @@ namespace DBTest
             respuestasMal43.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Garantizar la igualdad de acceso a los recursos económicos y a la propiedad";
-            respuestasMal43.Add(respuesta1mal);
+            respuestasMal43.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal43.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta43 = new Pregunta(respuestasMal43, "¿Cuál es la meta específica de la quinta ODS?", 1, 100, respuestaBien.Texto, 5);
@@ -848,9 +894,10 @@ namespace DBTest
             respuestasMal44.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Erradicar la pobreza extrema";
-            respuestasMal44.Add(respuesta1mal);
+            respuestasMal44.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Garantizar la disponibilidad y gestión sostenible del agua y saneamiento para todos";
+            respuestasMal44.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta44 = new Pregunta(respuestasMal44, "¿Cuál es el objetivo de la sexta ODS?", 1, 100, respuestaBien.Texto, 6);
@@ -865,9 +912,10 @@ namespace DBTest
             respuestasMal45.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "15%";
-            respuestasMal45.Add(respuesta1mal);
+            respuestasMal45.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "20%";
+            respuestasMal45.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta45 = new Pregunta(respuestasMal45, "¿Qué porcentaje de la población mundial no tiene acceso a agua potable?", 2, 200, respuestaBien.Texto, 6);
@@ -882,9 +930,10 @@ namespace DBTest
             respuestasMal46.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "45%";
-            respuestasMal46.Add(respuesta1mal);
+            respuestasMal46.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "25%";
+            respuestasMal46.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta46 = new Pregunta(respuestasMal46, "¿Qué porcentaje de la población mundial no tiene acceso a servicios de saneamiento básico?", 2, 200, respuestaBien.Texto, 6);
@@ -899,9 +948,10 @@ namespace DBTest
             respuestasMal47.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "La falta de acceso a atención médica";
-            respuestasMal47.Add(respuesta1mal);
+            respuestasMal47.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "La falta de higiene personal";
+            respuestasMal47.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta47 = new Pregunta(respuestasMal47, "¿Cuál es la principal causa de enfermedades relacionadas con el agua y el saneamiento?", 1, 100, respuestaBien.Texto, 6);
@@ -916,9 +966,10 @@ namespace DBTest
             respuestasMal48.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "5 millones";
-            respuestasMal48.Add(respuesta1mal);
+            respuestasMal48.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "2,5 millones";
+            respuestasMal48.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta48 = new Pregunta(respuestasMal48, "¿Cuántas personas mueren cada año por enfermedades relacionadas con la falta de agua y saneamiento?", 3, 300, respuestaBien.Texto, 6);
@@ -933,9 +984,10 @@ namespace DBTest
             respuestasMal49.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Todas las anteriores";
-            respuestasMal49.Add(respuesta1mal);
+            respuestasMal49.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Asegurar el acceso equitativo a agua y saneamiento para todos";
+            respuestasMal49.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta49 = new Pregunta(respuestasMal49, "¿Cuál es la meta específica de la sexta ODS?", 1, 100, respuestaBien.Texto, 6);
@@ -950,9 +1002,10 @@ namespace DBTest
             respuestasMal50.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Nigeria";
-            respuestasMal50.Add(respuesta1mal);
+            respuestasMal50.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "India";
+            respuestasMal50.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta50 = new Pregunta(respuestasMal50, "¿Qué país tiene la mayor cantidad de personas sin acceso a agua potable?", 3, 300, respuestaBien.Texto, 6);
@@ -967,9 +1020,10 @@ namespace DBTest
             respuestasMal51.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Sistemas de recolección de agua de lluvia";
-            respuestasMal51.Add(respuesta1mal);
+            respuestasMal51.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal51.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta51 = new Pregunta(respuestasMal51, "¿Qué tecnologías se pueden utilizar para mejorar el acceso al agua y saneamiento en zonas rurales?", 1, 100, respuestaBien.Texto, 6);
@@ -986,9 +1040,10 @@ namespace DBTest
             respuestasMal52.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Lograr que las ciudades sean más sostenibles";
-            respuestasMal52.Add(respuesta1mal);
+            respuestasMal52.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Asegurar el acceso a energía asequible, segura, sostenible y moderna para todos";
+            respuestasMal52.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta52 = new Pregunta(respuestasMal52, "¿Cuál es el objetivo de la séptima ODS?", 1, 100, respuestaBien.Texto, 7);
@@ -1003,9 +1058,10 @@ namespace DBTest
             respuestasMal53.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "2.000 millones";
-            respuestasMal53.Add(respuesta1mal);
+            respuestasMal53.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "1.000 millones";
+            respuestasMal53.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta53 = new Pregunta(respuestasMal53, "¿Cuántas personas en todo el mundo carecen de acceso a la electricidad?", 3, 300, respuestaBien.Texto, 7);
@@ -1020,9 +1076,10 @@ namespace DBTest
             respuestasMal54.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Biomasa";
-            respuestasMal54.Add(respuesta1mal);
+            respuestasMal54.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Energía hidráulica";
+            respuestasMal54.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta54 = new Pregunta(respuestasMal54, "¿Qué tipo de energía renovable es la más utilizada en todo el mundo?", 2, 200, respuestaBien.Texto, 7);
@@ -1037,9 +1094,10 @@ namespace DBTest
             respuestasMal55.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "40%";
-            respuestasMal55.Add(respuesta1mal);
+            respuestasMal55.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "10%";
+            respuestasMal55.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta55 = new Pregunta(respuestasMal55, "¿Cuál es el porcentaje de energía renovable en el consumo energético mundial en 2019?", 2, 200, respuestaBien.Texto, 7);
@@ -1054,9 +1112,10 @@ namespace DBTest
             respuestasMal56.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Falta de conocimiento técnico";
-            respuestasMal56.Add(respuesta1mal);
+            respuestasMal56.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal56.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta56 = new Pregunta(respuestasMal56, "¿Cuál es el principal obstáculo para la adopción de energías renovables en los países en desarrollo?", 1, 100, respuestaBien.Texto, 7);
@@ -1071,9 +1130,10 @@ namespace DBTest
             respuestasMal57.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "España";
-            respuestasMal57.Add(respuesta1mal);
+            respuestasMal57.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "China";
+            respuestasMal57.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta57 = new Pregunta(respuestasMal57, "¿Qué país es el mayor productor de energía eólica en todo el mundo?", 2, 200, respuestaBien.Texto, 7);
@@ -1088,9 +1148,10 @@ namespace DBTest
             respuestasMal58.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Paneles solares";
-            respuestasMal58.Add(respuesta1mal);
+            respuestasMal58.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal58.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta58 = new Pregunta(respuestasMal58, "¿Qué tecnologías pueden ayudar a aumentar la eficiencia energética en hogares y edificios?", 1, 100, respuestaBien.Texto, 7);
@@ -1099,15 +1160,17 @@ namespace DBTest
 
             ICollection<Respuesta> respuestasMal59 = new List<Respuesta>();
             respuesta1mal.Texto = "Préstamos bancarios";
+            
             respuestasMal59.Add(respuesta1mal);
             dal.Insert<Respuesta>(respuesta1mal);
             respuesta2mal.Texto = "Inversión privada";
             respuestasMal59.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Fondos gubernamentales";
-            respuestasMal59.Add(respuesta1mal);
+            respuestasMal59.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal59.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta59 = new Pregunta(respuestasMal59, "¿Qué tipo de financiamiento se utiliza para impulsar proyectos de energías renovables?", 1, 100, respuestaBien.Texto, 7);
@@ -1123,9 +1186,10 @@ namespace DBTest
             respuestasMal60.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Asegurar el acceso a energía asequible, segura, sostenible y moderna para todos";
-            respuestasMal60.Add(respuesta1mal);
+            respuestasMal60.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Fomentar el crecimiento económico sostenido, inclusivo y sostenible";
+            respuestasMal60.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta60 = new Pregunta(respuestasMal60, "¿Cuál es el objetivo de la octava ODS?", 1, 100, respuestaBien.Texto, 8);
@@ -1140,9 +1204,10 @@ namespace DBTest
             respuestasMal61.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Entre el 10% y el 15%";
-            respuestasMal61.Add(respuesta1mal);
+            respuestasMal61.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Más del 15%";
+            respuestasMal61.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta61 = new Pregunta(respuestasMal61, "¿Qué porcentaje de la población mundial vive con menos de 1,90 dólares al día?", 3, 300, respuestaBien.Texto, 8);
@@ -1157,9 +1222,10 @@ namespace DBTest
             respuestasMal62.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Alemania";
-            respuestasMal62.Add(respuesta1mal);
+            respuestasMal62.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "China";
+            respuestasMal62.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta62 = new Pregunta(respuestasMal62, "¿Qué país es el mayor productor de bienes manufacturados en el mundo?", 2, 200, respuestaBien.Texto, 8);
@@ -1174,9 +1240,10 @@ namespace DBTest
             respuestasMal63.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Entre el 20% y el 30%";
-            respuestasMal63.Add(respuesta1mal);
+            respuestasMal63.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Más del 30%";
+            respuestasMal63.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta63 = new Pregunta(respuestasMal63, "¿Cuál es el porcentaje de la población mundial que está empleada en el sector agrícola?", 2, 200, respuestaBien.Texto, 8);
@@ -1191,9 +1258,10 @@ namespace DBTest
             respuestasMal64.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Más del 50%";
-            respuestasMal64.Add(respuesta1mal);
+            respuestasMal64.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Entre el 25% y el 50%";
+            respuestasMal64.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta64 = new Pregunta(respuestasMal64, "¿Qué porcentaje de la fuerza laboral mundial trabaja en el sector informal?", 3, 300, respuestaBien.Texto, 8);
@@ -1208,9 +1276,10 @@ namespace DBTest
             respuestasMal65.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Trabajo que es seguro y saludable";
-            respuestasMal65.Add(respuesta1mal);
+            respuestasMal65.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal65.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta65 = new Pregunta(respuestasMal65, "¿Qué se entiende por trabajo decente?", 1, 100, respuestaBien.Texto, 8);
@@ -1225,9 +1294,10 @@ namespace DBTest
             respuestasMal66.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Entre el 50% y el 70%";
-            respuestasMal66.Add(respuesta1mal);
+            respuestasMal66.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Más del 70%";
+            respuestasMal66.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta66 = new Pregunta(respuestasMal66, "¿Qué porcentaje de la población mundial está empleada en el sector servicios?", 3, 300, respuestaBien.Texto, 8);
@@ -1242,9 +1312,11 @@ namespace DBTest
             respuestasMal67.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Crecimiento que no es dependiente de recursos no renovables";
-            respuestasMal67.Add(respuesta1mal);
+            respuestasMal67.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
+
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal67.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta67 = new Pregunta(respuestasMal67, "¿Qué se entiende por crecimiento económico sostenible?", 2, 200, respuestaBien.Texto, 8);
@@ -1260,9 +1332,10 @@ namespace DBTest
             respuestasMal68.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Proteger la biodiversidad y los ecosistemas terrestres";
-            respuestasMal68.Add(respuesta1mal);
+            respuestasMal68.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Promover la innovación y el desarrollo tecnológico";
+            respuestasMal68.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta68 = new Pregunta(respuestasMal68, "¿Cuál es el objetivo principal de la novena ODS?", 1, 100, respuestaBien.Texto, 9);
@@ -1277,9 +1350,10 @@ namespace DBTest
             respuestasMal69.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Tecnología que reduce las emisiones de gases de efecto invernadero";
-            respuestasMal69.Add(respuesta1mal);
+            respuestasMal69.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal69.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta69 = new Pregunta(respuestasMal69, "¿Qué se entiende por tecnología limpia?", 1, 100, respuestaBien.Texto, 9);
@@ -1294,9 +1368,10 @@ namespace DBTest
             respuestasMal70.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Entre el 40% y el 60%";
-            respuestasMal70.Add(respuesta1mal);
+            respuestasMal70.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Más del 60%";
+            respuestasMal70.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta70 = new Pregunta(respuestasMal70, "¿Qué porcentaje de la población mundial tiene acceso a internet?", 2, 200, respuestaBien.Texto, 9);
@@ -1311,9 +1386,10 @@ namespace DBTest
             respuestasMal71.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Economía que promueve el comercio justo";
-            respuestasMal71.Add(respuesta1mal);
+            respuestasMal71.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Economía que se basa en el reciclaje y la reutilización de materiales";
+            respuestasMal71.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta71 = new Pregunta(respuestasMal71, "¿Qué se entiende por economía circular?", 3, 300, respuestaBien.Texto, 9);
@@ -1328,9 +1404,11 @@ namespace DBTest
             respuestasMal72.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Actividades que buscan mejorar la calidad de los productos y servicios existentes";
-            respuestasMal72.Add(respuesta1mal);
+            respuestasMal72.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
+            
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal72.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta72 = new Pregunta(respuestasMal72, "¿Qué se entiende por investigación y desarrollo (I+D)?", 1, 100, respuestaBien.Texto, 9);
@@ -1345,9 +1423,10 @@ namespace DBTest
             respuestasMal73.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Marcas comerciales y diseños industriales";
-            respuestasMal73.Add(respuesta1mal);
+            respuestasMal73.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal73.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta73 = new Pregunta(respuestasMal73, "¿Qué se entiende por propiedad intelectual?", 2, 200, respuestaBien.Texto, 9);
@@ -1362,9 +1441,10 @@ namespace DBTest
             respuestasMal74.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Más del 50%";
-            respuestasMal74.Add(respuesta1mal);
+            respuestasMal74.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Entre el 10% y el 30%";
+            respuestasMal74.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta74 = new Pregunta(respuestasMal74, "¿Qué porcentaje de la población mundial tiene acceso a servicios financieros formales?", 3, 300, respuestaBien.Texto, 9);
@@ -1379,9 +1459,10 @@ namespace DBTest
             respuestasMal75.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Transferencia de tecnología entre sectores económicos";
-            respuestasMal75.Add(respuesta1mal);
+            respuestasMal75.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal75.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta75 = new Pregunta(respuestasMal75, "¿Qué se entiende por transferencia de tecnología?", 2, 200, respuestaBien.Texto, 9);
@@ -1396,9 +1477,10 @@ namespace DBTest
             respuestasMal76.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Garantizar la inclusión social y económica de todas las personas";
-            respuestasMal76.Add(respuesta1mal);
+            respuestasMal76.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Reducir la desigualdad económica";
+            respuestasMal76.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta76 = new Pregunta(respuestasMal76, "¿Cuál es el objetivo principal de la décima ODS?", 1, 100, respuestaBien.Texto, 10);
@@ -1413,9 +1495,10 @@ namespace DBTest
             respuestasMal77.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Ninguna de las anteriores";
-            respuestasMal77.Add(respuesta1mal);
+            respuestasMal77.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Crecimiento económico que beneficia a todas las personas, independientemente de su género, edad o origen étnico";
+            respuestasMal77.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta77 = new Pregunta(respuestasMal77, "¿Qué se entiende por \"crecimiento económico inclusivo\"?", 2, 200, respuestaBien.Texto, 10);
@@ -1430,9 +1513,10 @@ namespace DBTest
             respuestasMal78.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Más del 50%";
-            respuestasMal78.Add(respuesta1mal);
+            respuestasMal78.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Entre el 10% y el 25%";
+            respuestasMal78.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta78 = new Pregunta(respuestasMal78, "¿Qué porcentaje de la población mundial vive en la pobreza extrema?", 3, 300, respuestaBien.Texto, 10);
@@ -1447,9 +1531,11 @@ namespace DBTest
             respuestasMal79.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Ninguna de las anteriores";
-            respuestasMal79.Add(respuesta1mal);
+            respuestasMal79.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
+            
             respuestaBien.Texto = "Proceso por el cual las personas adquieren habilidades y recursos para mejorar su situación económica";
+            respuestasMal79.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta79 = new Pregunta(respuestasMal79, "¿Qué se entiende por \"empoderamiento económico\"?", 2, 200, respuestaBien.Texto, 10);
@@ -1464,9 +1550,10 @@ namespace DBTest
             respuestasMal80.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Ninguna de las anteriores";
-            respuestasMal80.Add(respuesta1mal);
+            respuestasMal80.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Conjunto de políticas y programas que garantizan la protección de los derechos sociales y económicos de las personas";
+            respuestasMal80.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta80 = new Pregunta(respuestasMal80, "¿Qué se entiende por \"sistema de protección social\"?", 3, 300, respuestaBien.Texto, 10);
@@ -1481,9 +1568,10 @@ namespace DBTest
             respuestasMal81.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Ninguna de las anteriores";
-            respuestasMal81.Add(respuesta1mal);
+            respuestasMal81.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Proceso por el cual las comunidades locales desarrollan su economía y mejoran su bienestar económico y social";
+            respuestasMal81.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta81 = new Pregunta(respuestasMal81, "¿Qué se entiende por \"desarrollo económico local\"?", 2, 200, respuestaBien.Texto, 10);
@@ -1498,9 +1586,10 @@ namespace DBTest
             respuestasMal82.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Protección de las marcas comerciales y diseños industriales";
-            respuestasMal82.Add(respuesta1mal);
+            respuestasMal82.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal82.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta82 = new Pregunta(respuestasMal82, "¿Qué se entiende por \"protección de los derechos de propiedad intelectual\"?", 1, 100, respuestaBien.Texto, 10);
@@ -1515,9 +1604,10 @@ namespace DBTest
             respuestasMal83.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Un sistema comercial que solo beneficia a grandes corporaciones y deja fuera a pequeños productores";
-            respuestasMal83.Add(respuesta1mal);
+            respuestasMal83.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Un sistema comercial que busca la igualdad de condiciones y el respeto por los derechos humanos y laborales de los trabajadores de países en desarrollo";
+            respuestasMal83.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta83 = new Pregunta(respuestasMal83, "¿Qué se entiende por el término \"comercio justo\"?", 3, 300, respuestaBien.Texto, 10);
@@ -1533,9 +1623,10 @@ namespace DBTest
             respuestasMal84.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "80%";
-            respuestasMal84.Add(respuesta1mal);
+            respuestasMal84.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "70%";
+            respuestasMal84.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta84 = new Pregunta(respuestasMal84, "¿Qué porcentaje de la población mundial se espera que viva en ciudades para 2050?", 2, 200, respuestaBien.Texto, 11);
@@ -1550,9 +1641,10 @@ namespace DBTest
             respuestasMal85.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Promover la diversidad cultural en áreas urbanas";
-            respuestasMal85.Add(respuesta1mal);
+            respuestasMal85.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Mejorar la calidad de vida en áreas urbanas";
+            respuestasMal85.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta85 = new Pregunta(respuestasMal85, "¿Cuál es uno de los objetivos de la undécima ODS?", 1, 100, respuestaBien.Texto, 11);
@@ -1567,9 +1659,10 @@ namespace DBTest
             respuestasMal86.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Una ciudad que tiene un gran número de edificios históricos y monumentos";
-            respuestasMal86.Add(respuesta1mal);
+            respuestasMal86.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Una ciudad que proporciona igualdad de oportunidades a todos sus residentes, independientemente de su origen o estatus social";
+            respuestasMal86.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta86 = new Pregunta(respuestasMal86, "¿Qué se entiende por \"ciudad inclusiva\"?", 2, 200, respuestaBien.Texto, 11);
@@ -1584,9 +1677,10 @@ namespace DBTest
             respuestasMal87.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Para aumentar la cantidad de edificios altos en las ciudades";
-            respuestasMal87.Add(respuesta1mal);
+            respuestasMal87.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Para minimizar el impacto ambiental y promover el desarrollo económico y social sostenible";
+            respuestasMal87.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta87 = new Pregunta(respuestasMal87, "¿Por qué es importante la planificación urbana sostenible?", 2, 200, respuestaBien.Texto, 11);
@@ -1601,9 +1695,10 @@ namespace DBTest
             respuestasMal88.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Aumentar el número de centros comerciales y grandes superficies";
-            respuestasMal88.Add(respuesta1mal);
+            respuestasMal88.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Fomentar el uso de energías renovables como la energía solar y eólica";
+            respuestasMal88.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta88 = new Pregunta(respuestasMal88, "¿Cuál es una forma de reducir la huella de carbono de una ciudad?", 1, 100, respuestaBien.Texto, 11);
@@ -1618,9 +1713,10 @@ namespace DBTest
             respuestasMal89.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "El derecho de los ciudadanos a tener una vivienda propia";
-            respuestasMal89.Add(respuesta1mal);
+            respuestasMal89.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "El derecho de los ciudadanos a participar en la toma de decisiones que afectan a sus comunidades";
+            respuestasMal89.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta89 = new Pregunta(respuestasMal89, "¿Qué es el \"derecho a la ciudad\"?", 3, 300, respuestaBien.Texto, 11);
@@ -1635,9 +1731,10 @@ namespace DBTest
             respuestasMal90.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Para aumentar la cantidad de turistas que visitan la ciudad";
-            respuestasMal90.Add(respuesta1mal);
+            respuestasMal90.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Para reducir los costos de la atención médica debido a enfermedades respiratorias";
+            respuestasMal90.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta90 = new Pregunta(respuestasMal90, "¿Por qué es importante reducir la contaminación del aire en las ciudades?", 1, 100, respuestaBien.Texto, 11);
@@ -1653,9 +1750,10 @@ namespace DBTest
             respuestasMal91.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Reducir la producción de bienes de lujo";
-            respuestasMal91.Add(respuesta1mal);
+            respuestasMal91.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Fomentar la producción sostenible y el consumo responsable";
+            respuestasMal91.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta91 = new Pregunta(respuestasMal91, "¿Cuál es el objetivo principal de la duodécima ODS?", 1, 100, respuestaBien.Texto, 12);
@@ -1670,9 +1768,10 @@ namespace DBTest
             respuestasMal92.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "La cantidad de tierra que se utiliza para producir un producto";
-            respuestasMal92.Add(respuesta1mal);
+            respuestasMal92.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "La cantidad de dióxido de carbono que se emite durante la producción y el uso de un producto";
+            respuestasMal92.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta92 = new Pregunta(respuestasMal92, "¿Qué es la huella de carbono?", 2, 200, respuestaBien.Texto, 12);
@@ -1687,9 +1786,10 @@ namespace DBTest
             respuestasMal93.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Un sistema comercial que solo beneficia a grandes corporaciones y deja fuera a pequeños productores";
-            respuestasMal93.Add(respuesta1mal);
+            respuestasMal93.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Una economía en la que todos los productos son producidos de manera sostenible";
+            respuestasMal93.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta93 = new Pregunta(respuestasMal93, "¿Qué es la economía circular?", 2, 200, respuestaBien.Texto, 12);
@@ -1704,9 +1804,10 @@ namespace DBTest
             respuestasMal94.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "El proceso de reducir el uso de productos químicos en la producción de bienes";
-            respuestasMal94.Add(respuesta1mal);
+            respuestasMal94.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "El proceso de convertir productos no deseados o desechados en materiales de mayor valor";
+            respuestasMal94.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta94 = new Pregunta(respuestasMal94, "¿Qué es el \"upcycling\"?", 2, 200, respuestaBien.Texto, 12);
@@ -1721,9 +1822,10 @@ namespace DBTest
             respuestasMal95.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "El proceso de diseñar productos que sean más resistentes y duraderos";
-            respuestasMal95.Add(respuesta1mal);
+            respuestasMal95.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "El proceso de diseñar productos que tengan un menor impacto ambiental";
+            respuestasMal95.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta95 = new Pregunta(respuestasMal95, "¿Qué es el ecodiseño?", 2, 200, respuestaBien.Texto, 12);
@@ -1738,9 +1840,10 @@ namespace DBTest
             respuestasMal96.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "La cantidad de energía que se utiliza en la producción de un producto";
-            respuestasMal96.Add(respuesta1mal);
+            respuestasMal96.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "La relación entre el valor económico y los recursos utilizados para producir un producto";
+            respuestasMal96.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta96 = new Pregunta(respuestasMal96, "¿Qué es la eficiencia de los recursos?", 3, 300, respuestaBien.Texto, 12);
@@ -1755,9 +1858,10 @@ namespace DBTest
             respuestasMal97.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Una economía que se centra en la producción de bienes y servicios de lujo";
-            respuestasMal97.Add(respuesta1mal);
+            respuestasMal97.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Una economía que se centra en la producción de bienes y servicios que tienen un bajo impacto ambiental";
+            respuestasMal97.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta97 = new Pregunta(respuestasMal97, "¿Qué es la \"economía verde\"?", 2, 200, respuestaBien.Texto, 12);
@@ -1774,9 +1878,10 @@ namespace DBTest
             respuestasMal98.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Aumentar el acceso a la educación de calidad";
-            respuestasMal98.Add(respuesta1mal);
+            respuestasMal98.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Proteger el medio ambiente y combatir el cambio climático";
+            respuestasMal98.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta98 = new Pregunta(respuestasMal98, "¿Cuál es el objetivo principal de la decimotercera ODS?", 1, 100, respuestaBien.Texto, 13);
@@ -1791,9 +1896,10 @@ namespace DBTest
             respuestasMal99.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Lucha contra el cambio climático y sus efectos";
-            respuestasMal99.Add(respuesta1mal);
+            respuestasMal99.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Acción por el clima";
+            respuestasMal99.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta99 = new Pregunta(respuestasMal99, "¿Cuál es el nombre completo de la decimotercera ODS?", 1, 100, respuestaBien.Texto, 13);
@@ -1808,9 +1914,10 @@ namespace DBTest
             respuestasMal100.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Promover la educación y conciencia ambiental en la sociedad";
-            respuestasMal100.Add(respuesta1mal);
+            respuestasMal100.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal100.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta100 = new Pregunta(respuestasMal100, "¿Qué se espera lograr con la decimotercera ODS?", 2, 200, respuestaBien.Texto, 13);
@@ -1825,9 +1932,10 @@ namespace DBTest
             respuestasMal101.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Movilizar recursos financieros y tecnológicos para ayudar a los países más vulnerables a luchar contra el cambio climático";
-            respuestasMal101.Add(respuesta1mal);
+            respuestasMal101.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal101.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta101 = new Pregunta(respuestasMal101, "¿Qué se espera que hagan los países para cumplir con la decimotercera ODS?", 2, 200, respuestaBien.Texto, 13);
@@ -1842,9 +1950,10 @@ namespace DBTest
             respuestasMal102.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Un acuerdo internacional para fomentar la investigación y el desarrollo de tecnologías limpias";
-            respuestasMal102.Add(respuesta1mal);
+            respuestasMal102.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Un acuerdo internacional para reducir las emisiones de gases de efecto invernadero y limitar el calentamiento global a menos de 2°C por encima de los niveles preindustriales";
+            respuestasMal102.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta102 = new Pregunta(respuestasMal102, "¿Qué es el \"acuerdo de París\"?", 3, 300, respuestaBien.Texto, 13);
@@ -1859,9 +1968,10 @@ namespace DBTest
             respuestasMal103.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "La acción por el clima es un obstáculo para lograr los objetivos de desarrollo sostenible";
-            respuestasMal103.Add(respuesta1mal);
+            respuestasMal103.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "La acción por el clima es una forma de lograr los objetivos de desarrollo sostenible";
+            respuestasMal103.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta103 = new Pregunta(respuestasMal103, "¿Cuál es la relación entre la acción por el clima y los objetivos de desarrollo sostenible?", 3, 300, respuestaBien.Texto, 13);
@@ -1876,9 +1986,10 @@ namespace DBTest
             respuestasMal104.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Participando en iniciativas de acción por el clima y apoyando a las organizaciones que trabajan en este ámbito";
-            respuestasMal104.Add(respuesta1mal);
+            respuestasMal104.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal104.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta104 = new Pregunta(respuestasMal104, "¿Cómo puede la sociedad contribuir a la acción por el clima?", 1, 100, respuestaBien.Texto, 13);
@@ -1894,9 +2005,10 @@ namespace DBTest
             respuestasMal105.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Vida marina";
-            respuestasMal105.Add(respuesta1mal);
+            respuestasMal105.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Vida submarina para el desarrollo sostenible";
+            respuestasMal105.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta105 = new Pregunta(respuestasMal105, "¿Cuál es el nombre completo de la decimocuarta ODS?", 1, 100, respuestaBien.Texto, 14);
@@ -1911,9 +2023,10 @@ namespace DBTest
             respuestasMal106.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Porque la biodiversidad marina es fundamental para el funcionamiento de los ecosistemas terrestres";
-            respuestasMal106.Add(respuesta1mal);
+            respuestasMal106.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal106.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta106 = new Pregunta(respuestasMal106, "¿Por qué es importante la protección de la vida submarina?", 1, 100, respuestaBien.Texto, 14);
@@ -1929,9 +2042,10 @@ namespace DBTest
             respuestasMal107.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Una zona del océano en la que se realizan investigaciones científicas sobre la vida submarina";
-            respuestasMal107.Add(respuesta1mal);
+            respuestasMal107.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Una zona del océano en la que está prohibida la pesca y otras actividades humanas";
+            respuestasMal107.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta107 = new Pregunta(respuestasMal107, "¿Qué es el Área Marina Protegida (AMP)?", 3, 300, respuestaBien.Texto, 14);
@@ -1946,9 +2060,10 @@ namespace DBTest
             respuestasMal108.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Porque pueden reducir la contaminación y la sobrepesca en los océanos";
-            respuestasMal108.Add(respuesta1mal);
+            respuestasMal108.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal108.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta108 = new Pregunta(respuestasMal108, "¿Por qué es importante establecer Áreas Marinas Protegidas?", 2, 200, respuestaBien.Texto, 14);
@@ -1963,9 +2078,10 @@ namespace DBTest
             respuestasMal109.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Promover la educación y conciencia ambiental sobre la importancia de la vida submarina";
-            respuestasMal109.Add(respuesta1mal);
+            respuestasMal109.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal109.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta109 = new Pregunta(respuestasMal109, "¿Qué medidas pueden tomar los gobiernos y las organizaciones para proteger la vida submarina?", 2, 200, respuestaBien.Texto, 14);
@@ -1980,9 +2096,10 @@ namespace DBTest
             respuestasMal110.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "El cambio climático y la acidificación de los océanos";
-            respuestasMal110.Add(respuesta1mal);
+            respuestasMal110.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal110.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta110 = new Pregunta(respuestasMal110, "¿Cuál es la principal amenaza para la vida submarina?", 3, 300, respuestaBien.Texto, 14);
@@ -1999,9 +2116,10 @@ namespace DBTest
             respuestasMal111.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Reducir la contaminación del aire y del agua";
-            respuestasMal111.Add(respuesta1mal);
+            respuestasMal111.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Proteger la biodiversidad terrestre";
+            respuestasMal111.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta111 = new Pregunta(respuestasMal111, "¿Cuál es el objetivo principal de la decimoquinta ODS?", 1, 100, respuestaBien.Texto, 15);
@@ -2016,9 +2134,10 @@ namespace DBTest
             respuestasMal112.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Reducir la deforestación y la pérdida de hábitats naturales";
-            respuestasMal112.Add(respuesta1mal);
+            respuestasMal112.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal112.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta112 = new Pregunta(respuestasMal112, "¿Qué se espera lograr con la decimoquinta ODS?", 1, 100, respuestaBien.Texto, 15);
@@ -2033,9 +2152,10 @@ namespace DBTest
             respuestasMal113.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Porque la biodiversidad terrestre es una fuente importante de alimento y medios de vida para muchas personas en todo el mundo";
-            respuestasMal113.Add(respuesta1mal);
+            respuestasMal113.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal113.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta113 = new Pregunta(respuestasMal113, "¿Por qué es importante la protección de la biodiversidad terrestre?", 2, 200, respuestaBien.Texto, 15);
@@ -2050,9 +2170,10 @@ namespace DBTest
             respuestasMal114.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "La extinción de especies animales y vegetales en un ecosistema";
-            respuestasMal114.Add(respuesta1mal);
+            respuestasMal114.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "La degradación de las tierras productivas, especialmente en regiones áridas, semiáridas y subhúmedas";
+            respuestasMal114.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta114 = new Pregunta(respuestasMal114, "¿Qué es la desertificación?", 3, 300, respuestaBien.Texto, 15);
@@ -2067,9 +2188,10 @@ namespace DBTest
             respuestasMal115.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Porque puede aumentar la vulnerabilidad de las comunidades locales a la sequía y otros desastres naturales";
-            respuestasMal115.Add(respuesta1mal);
+            respuestasMal115.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal115.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta115 = new Pregunta(respuestasMal115, "¿Por qué es importante abordar la desertificación?", 3, 300, respuestaBien.Texto, 15);
@@ -2084,9 +2206,10 @@ namespace DBTest
             respuestasMal116.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Promover la educación y la conciencia ambiental sobre la importancia de la protección de los ecosistemas terrestres";
-            respuestasMal116.Add(respuesta1mal);
+            respuestasMal116.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal116.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta116 = new Pregunta(respuestasMal116, "¿Qué medidas pueden tomar los gobiernos y las comunidades para abordar la desertificación?", 2, 200, respuestaBien.Texto, 15);
@@ -2101,9 +2224,10 @@ namespace DBTest
             respuestasMal117.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "La contaminación del aire y del agua";
-            respuestasMal117.Add(respuesta1mal);
+            respuestasMal117.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal117.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta117 = new Pregunta(respuestasMal117, "¿Cuál es la principal amenaza para la biodiversidad terrestre?", 3, 300, respuestaBien.Texto, 15);
@@ -2120,9 +2244,10 @@ namespace DBTest
             respuestasMal118.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Mejorar la salud y el bienestar";
-            respuestasMal118.Add(respuesta1mal);
+            respuestasMal118.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Fortalecer las instituciones y la gobernanza";
+            respuestasMal118.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta118 = new Pregunta(respuestasMal118, "¿Qué es la meta principal de la decimosexta ODS?", 1, 100, respuestaBien.Texto, 16);
@@ -2137,9 +2262,10 @@ namespace DBTest
             respuestasMal119.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Las organizaciones y estructuras gubernamentales responsables de la toma de decisiones y la implementación de políticas públicas";
-            respuestasMal119.Add(respuesta1mal);
+            respuestasMal119.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal119.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta119 = new Pregunta(respuestasMal119, "¿Qué se entiende por instituciones y gobernanza?", 2, 200, respuestaBien.Texto, 16);
@@ -2154,9 +2280,10 @@ namespace DBTest
             respuestasMal120.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Porque puede fomentar el desarrollo económico sostenible y la estabilidad política";
-            respuestasMal120.Add(respuesta1mal);
+            respuestasMal120.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal120.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta120 = new Pregunta(respuestasMal120, "¿Por qué es importante fortalecer las instituciones y la gobernanza?", 2, 200, respuestaBien.Texto, 16);
@@ -2171,9 +2298,10 @@ namespace DBTest
             respuestasMal121.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "La falta de voluntad política y la resistencia al cambio";
-            respuestasMal121.Add(respuesta1mal);
+            respuestasMal121.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal121.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta121 = new Pregunta(respuestasMal121, "¿Cuáles son algunos de los principales desafíos para fortalecer las instituciones y la gobernanza?", 1, 100, respuestaBien.Texto, 16);
@@ -2188,9 +2316,10 @@ namespace DBTest
             respuestasMal122.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Todas las anteriores";
-            respuestasMal122.Add(respuesta1mal);
+            respuestasMal122.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "La capacidad de la población para involucrarse en la toma de decisiones y la implementación de políticas públicas";
+            respuestasMal122.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta122 = new Pregunta(respuestasMal122, "¿Qué se entiende por participación ciudadana?", 3, 300, respuestaBien.Texto, 16);
@@ -2205,9 +2334,10 @@ namespace DBTest
             respuestasMal123.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Monitoreando el desempeño de las instituciones y denunciando actos de corrupción";
-            respuestasMal123.Add(respuesta1mal);
+            respuestasMal123.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal123.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta123 = new Pregunta(respuestasMal119, "¿Cómo pueden las organizaciones de la sociedad civil contribuir a fortalecer las instituciones y la gobernanza?", 3, 300, respuestaBien.Texto, 16);
@@ -2222,9 +2352,10 @@ namespace DBTest
             respuestasMal124.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Puede promover la transparencia y la rendición de cuentas";
-            respuestasMal124.Add(respuesta1mal);
+            respuestasMal124.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal124.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta124 = new Pregunta(respuestasMal124, "¿Qué papel juega la educación en la promoción de instituciones y gobernanza fuertes?", 2, 200, respuestaBien.Texto, 16);
@@ -2241,9 +2372,10 @@ namespace DBTest
             respuestasMal125.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Promover la paz, la justicia y la inclusión social";
-            respuestasMal125.Add(respuesta1mal);
+            respuestasMal125.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Fortalecer la cooperación internacional para el desarrollo sostenible";
+            respuestasMal125.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta125 = new Pregunta(respuestasMal125, "¿Cuál es el objetivo principal de la ODS 17?", 1, 100, respuestaBien.Texto, 17);
@@ -2258,9 +2390,10 @@ namespace DBTest
             respuestasMal126.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Solo puede contribuir a través de donaciones benéficas";
-            respuestasMal126.Add(respuesta1mal);
+            respuestasMal126.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Debe contribuir al desarrollo sostenible y alinearse con los objetivos de la ODS 17";
+            respuestasMal126.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta126 = new Pregunta(respuestasMal126, "¿Qué rol juega el sector privado en la implementación de la ODS 17?", 2, 200, respuestaBien.Texto, 17);
@@ -2275,9 +2408,10 @@ namespace DBTest
             respuestasMal127.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Ninguna de las anteriores";
-            respuestasMal127.Add(respuesta1mal);
+            respuestasMal127.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Apoyar la implementación de la ODS 17";
+            respuestasMal127.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta127 = new Pregunta(respuestasMal127, "¿Cuál es el objetivo de la Asociación Mundial para el Desarrollo Sostenible (AMDS)?", 1, 100, respuestaBien.Texto, 17);
@@ -2292,9 +2426,10 @@ namespace DBTest
             respuestasMal128.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Participación Internacional en Bienes";
-            respuestasMal128.Add(respuesta1mal);
+            respuestasMal128.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Producto Interno Bruto";
+            respuestasMal128.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta128 = new Pregunta(respuestasMal128, "¿Qué significa la sigla PIB?", 2, 200, respuestaBien.Texto, 17);
@@ -2309,9 +2444,10 @@ namespace DBTest
             respuestasMal129.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "Ninguna de las anteriores";
-            respuestasMal129.Add(respuesta1mal);
+            respuestasMal129.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Proporcionar financiamiento para proyectos de desarrollo sostenible";
+            respuestasMal129.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta129 = new Pregunta(respuestasMal129, "¿Cuál es el objetivo del Fondo Verde para el Clima?", 3, 300, respuestaBien.Texto, 17);
@@ -2326,9 +2462,10 @@ namespace DBTest
             respuestasMal130.Add(respuesta2mal);
             dal.Insert<Respuesta>(respuesta2mal);
             respuesta3mal.Texto = "A través de la creación de alianzas público-privadas";
-            respuestasMal130.Add(respuesta1mal);
+            respuestasMal130.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "Todas las anteriores";
+            respuestasMal130.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta130 = new Pregunta(respuestasMal130, "¿Cómo se puede promover la cooperación internacional para el desarrollo sostenible?", 3, 300, respuestaBien.Texto, 17);
@@ -2340,12 +2477,12 @@ namespace DBTest
 
 
 
-            Console.WriteLine(respuestasMal.First().Texto + ", " + respuestasMal.Last().Texto);
-            Console.WriteLine(pregunta.RespuestaCorrecta + ", " + pregunta1.RespuestaCorrecta);
+            //*Console.WriteLine(respuestasMal.First().Texto + ", " + respuestasMal.Last().Texto);
+//*Console.WriteLine(pregunta.RespuestaCorrecta + ", " + pregunta1.RespuestaCorrecta);
 
 
 
-            dal.Commit();
+           //* dal.Commit();
             
             Console.ReadKey();
 

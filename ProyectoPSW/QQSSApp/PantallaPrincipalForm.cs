@@ -36,8 +36,9 @@ namespace QQSSApp
             this.Hide();
             */
             
-           service.SetPartidaActual(this.service.GetPartida(1, 0));
+           service.SetPartidaActual(this.service.GetPartida(1, 0));            
             service.ResetGameScore();
+            service.Questions(service.GetDifficultyArray(service.GetPartidaActual().Nivel));
             int index = 0;
             PartidaForm partida = new PartidaForm(service,index);
             partida.Show();

@@ -24,7 +24,7 @@ namespace ProyectoPSWMain.Services
 
         private User loggedUser;
         private Partida partidaActual;
-       
+        private List<Pregunta> QuestionServ;
 
         public QQSSService(IRepository repository)
         {
@@ -194,17 +194,26 @@ namespace ProyectoPSWMain.Services
             if(level > 4) throw new ServiceException("Difficulty level does not exist!");
             switch (level)
             {
-                case 0: return new int[] { 0, 0, 0, 0, 0, 1, 1, 1, 2, 2 };
-                case 1: return new int[] { 0, 0, 0, 0, 1, 1, 1, 2, 2, 2 };
-                case 2: return new int[] { 0, 0, 0, 1, 1, 1, 1, 2, 2, 2 };
-                case 3: return new int[] { 0, 0, 1, 1, 1, 1, 2, 2, 2, 2 };
-                case 4: return new int[] { 1, 1, 1, 1, 1, 2, 2, 2, 2, 2 };
+                case 0: return new int[] { 1, 1, 1, 1, 1, 2, 2, 2, 3, 3 };
+                case 1: return new int[] { 1, 1, 1, 1, 2, 2, 2, 3, 3, 3 };
+                case 2: return new int[] { 1, 1, 1, 2, 2, 2, 2, 3, 3, 3 };
+                case 3: return new int[] { 1, 1, 2, 2, 2, 2, 3, 3, 3, 3 };
+                case 4: return new int[] { 2, 2, 2, 2, 2, 3, 3, 3, 3, 3 };
             }
 
             return null;
         }
         public void UpdateGameScore(int score) {
-            this.partidaActual.PuntuacionPartida += score;
+            int punt = this.partidaActual.PuntuacionPartida + score;
+            if (punt < 0)
+            {
+                this.ResetGameScore();
+            }
+            else
+            {
+                this.partidaActual.PuntuacionPartida = punt;
+            }
+
             repository.Commit();
         }
         public void ResetGameScore() {
@@ -218,6 +227,7 @@ namespace ProyectoPSWMain.Services
         #endregion
 
         #region Pregunta
+        
         public void AddPreguntaToPartida(Pregunta pregunta, Partida partida)
         {
             partida.AddReto(pregunta);
@@ -230,18 +240,20 @@ namespace ProyectoPSWMain.Services
             repository.Commit();
         }
 
-        public List<Pregunta> Questions(int[] dificultad) {
+        public void Questions(int[] dificultad) {
             List<Pregunta> Questions = new List<Pregunta>();
             int puntero = 0;
-            List<Pregunta> QuestionsDB = repository.GetWhere<Pregunta>(x => x.Dificultad == dificultad[puntero]).ToList() ;
+            int dificulty = dificultad[puntero];
+            List<Pregunta> QuestionsDB = repository.GetWhere<Pregunta>(x => x.Dificultad == dificulty).ToList() ;
             var random = new Random();
            
             int dificAnt = dificultad[puntero];
             
-            while (puntero > 9)
+            while (puntero < 10)
             {
                 if (dificAnt != dificultad[puntero]) {
-                    QuestionsDB = repository.GetWhere<Pregunta>(x => x.Dificultad == dificultad[puntero]).ToList();
+                    dificulty = dificultad[puntero];
+                    QuestionsDB = repository.GetWhere<Pregunta>(x => x.Dificultad == dificulty).ToList();
                     dificAnt = dificultad[puntero];
                 }
                 int index = random.Next(QuestionsDB.Count);
@@ -251,9 +263,13 @@ namespace ProyectoPSWMain.Services
                 puntero++;
             }
 
-            return Questions;
+            QuestionServ = Questions;
         }
 
+        public Pregunta QuestionServIndex(int index)
+        {
+            return QuestionServ.ElementAt(index);
+        }
         #endregion
 
         #region Respuesta

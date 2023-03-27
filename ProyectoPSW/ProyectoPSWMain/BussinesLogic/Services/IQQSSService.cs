@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProyectoPSWMain.Services
 {
@@ -40,7 +41,9 @@ namespace ProyectoPSWMain.Services
         #region Pregunta
         void AddPregunta(Pregunta pregunta);
         void AddPreguntaToPartida(Pregunta pregunta, Partida partida);
-        List<Pregunta> Questions(int[] Dificulty);
+        void Questions(int[] Dificulty);
+
+        Pregunta QuestionServIndex(int index);
         #endregion
 
         #region Respuesta

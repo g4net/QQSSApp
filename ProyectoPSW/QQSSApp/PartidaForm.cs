@@ -19,7 +19,6 @@ namespace QQSSApp
     {
         IQQSSService service;
         Partida partida;
-        List<Reto> retos;
         Pregunta pregunta;
         List<Respuesta> respuestas;
         private List<Image> images;
@@ -38,8 +37,8 @@ namespace QQSSApp
 
 
 
-            this.retos = partida.GetRetos();
-            pregunta = (Pregunta)retos.ElementAt(index);
+            
+            pregunta = service.QuestionServIndex(index);
             this.labelPuntuacionAcumulada.Text = partida.getPuntuacionPartida();
             enunciado.Text = pregunta.Enunciado;
             puntuacionPos.Text = pregunta.GetPuntuacionAcierto();

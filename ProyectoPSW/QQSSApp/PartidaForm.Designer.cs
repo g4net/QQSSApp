@@ -422,10 +422,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reloj_circular.BackColor = System.Drawing.Color.Transparent;
             this.reloj_circular.Image = global::QQSSApp.Properties.Resources.circulo18;
-            this.reloj_circular.Location = new System.Drawing.Point(245, 115);
+            this.reloj_circular.Location = new System.Drawing.Point(226, 117);
             this.reloj_circular.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reloj_circular.Name = "reloj_circular";
-            this.reloj_circular.Size = new System.Drawing.Size(501, 228);
+            this.reloj_circular.Size = new System.Drawing.Size(520, 235);
             this.reloj_circular.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.reloj_circular.TabIndex = 6;
             this.reloj_circular.TabStop = false;
