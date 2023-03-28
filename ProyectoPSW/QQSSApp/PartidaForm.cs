@@ -55,7 +55,7 @@ namespace QQSSApp
 
         private void PartidaForm_Load(object sender, EventArgs e)
         {
-            marcarProgreso(retoindex);
+            
 
         }
 
