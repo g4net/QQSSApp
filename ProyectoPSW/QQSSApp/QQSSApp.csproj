@@ -63,6 +63,12 @@
     <Compile Include="CargarDatos.Designer.cs">
       <DependentUpon>CargarDatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Niveles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Niveles.Designer.cs">
+      <DependentUpon>Niveles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,6 +108,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CargarDatos.resx">
       <DependentUpon>CargarDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Niveles.resx">
+      <DependentUpon>Niveles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PuntuacionNegativa.resx">
       <DependentUpon>PuntuacionNegativa.cs</DependentUpon>
