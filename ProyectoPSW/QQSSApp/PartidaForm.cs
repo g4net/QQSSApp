@@ -32,7 +32,7 @@ namespace QQSSApp
             timer1.Interval = 1764;
             timer1.Start();
             this.service = service;
-            this.service.Login("0");
+            
             partida = service.GetPartidaActual();
             this.retoindex = index;
             
@@ -50,11 +50,12 @@ namespace QQSSApp
             op3.Text = respuestas.ElementAt(2).getText();
             op4.Text = respuestas.ElementAt(3).getText();
             ods_picture.Image = ods.ElementAt(pregunta.Ods - 1);
+            marcarProgreso(retoindex);
         }
 
         private void PartidaForm_Load(object sender, EventArgs e)
         {
-            
+            marcarProgreso(retoindex);
 
         }
 
@@ -78,8 +79,8 @@ namespace QQSSApp
         {
             images = new List<Image>();
             ods = new List<Image>();
-
-            for(int i = 1; i <= 18; i++)
+            
+            for (int i = 1; i <= 18; i++)
             {
                 string image = "circulo" + i;
                 Image imagen = (System.Drawing.Bitmap) QQSSApp.Properties.Resources.ResourceManager.GetObject(image);
@@ -120,7 +121,7 @@ namespace QQSSApp
         {
             if(service.TestAnswer(optext, pregunta))
             {
-                marcarProgreso(retoindex);
+                
                 this.retoindex++;
                 service.UpdateGameScore(pregunta.Puntuacion_acierto);
                 PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retoindex);
