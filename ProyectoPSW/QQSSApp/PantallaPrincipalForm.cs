@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Media;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms; 
@@ -45,6 +46,12 @@ namespace QQSSApp
             partida.Show();
             this.Hide();
             
+        }
+
+        private void BotonReglas_Click(object sender, EventArgs e)
+        {
+            Reglas regla = new Reglas();
+            regla.Show();
         }
     }
 }

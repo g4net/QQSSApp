@@ -118,14 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="circulo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\circulo18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ODS_12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\ODS_12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="circulo7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\circulo7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ODS_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ODS_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="circulo17" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\circulo17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,14 +151,17 @@
   <data name="agüita" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\agüita.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ODS_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\ODS_9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ODS_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ODS_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="circulo13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\circulo13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="circulo18" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\circulo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="circulo13" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\circulo13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="circulo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\circulo18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ODS_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\ODS_7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,17 +172,20 @@
   <data name="circulo4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\circulo4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ODS_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\ODS_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="circulo6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\circulo6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ODS_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ODS_9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="circulo5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\circulo5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ODS_14" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\ODS_14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="circulo9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\circulo9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="circulo8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\circulo8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="flecha" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\flecha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +202,8 @@
   <data name="circulo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\circulo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="circulo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\circulo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ODS_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ODS_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="circulo12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\circulo12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,8 +217,8 @@
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="circulo8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\circulo8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="circulo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\circulo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="circulo14" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\circulo14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,16 +229,13 @@
   <data name="ODS_13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\ODS_13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="circulo9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\circulo9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="circulo6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\circulo6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ODS_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\ODS_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ODS_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\ODS_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ODS_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\ODS_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="reglas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\reglas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
