@@ -37,14 +37,26 @@ namespace QQSSApp
             datos.Show();
             this.Hide();
             */
-            
-           service.SetPartidaActual(this.service.GetPartida(1, 0));            
-            service.ResetGameScore();
-            service.Questions(service.GetDifficultyArray(service.GetPartidaActual().Nivel));
-            int index = 0;
-            PartidaForm partida = new PartidaForm(service,index);
-            partida.Show();
+
+            //el siguiente codigo debera estar en el selector de nivel
+            //START
+            service.CrearPartida(1);
+            service.Questions(service.GetDifficultyArray(1));
+            PartidaForm partidaForm = new PartidaForm(service, 0, 0);
+            partidaForm.Show();
             this.Hide();
+
+            //END
+           
+
+            //codigo refactorizado
+            //service.SetPartidaActual(this.service.GetPartida(1, 0));            
+            // service.ResetGameScore();
+            // service.Questions(service.GetDifficultyArray(service.GetPartidaActual().Nivel));
+            // int index = 0;
+            // PartidaForm partida = new PartidaForm(service,index, 0);
+            // partida.Show();
+            // this.Hide();
             
         }
 

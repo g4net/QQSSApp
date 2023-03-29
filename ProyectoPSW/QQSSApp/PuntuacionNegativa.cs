@@ -17,19 +17,28 @@ namespace QQSSApp
     {
         IQQSSService service;
         int retoindex;
-        public PuntuacionNegativa(IQQSSService service, int index)
+        int errores;
+        public PuntuacionNegativa(IQQSSService service, int index, int errores)
         {
             InitializeComponent();
             this.service = service;
-           this.retoindex = index;
+            this.retoindex = index;
+            this.errores = errores;
         }
 
         private void ButtonReintentarClick(object sender, EventArgs e)
         {
+            if(errores == 1)
+            {
+                // game over form (se implementa cuando se pueda);
+            }
+            else
+            {
+                PartidaForm partida = new PartidaForm(service, retoindex, errores + 1);
+                partida.Show();
+                this.Close();
+            }
             
-            PartidaForm partida = new PartidaForm(service, retoindex);
-            partida.Show();
-            this.Close();
         }
     }
 }

@@ -23,6 +23,8 @@ namespace ProyectoPSWMain.Services
         #endregion
 
         #region Partida
+
+        void CrearPartida(int nivel);
         void UpdateGameScore(int score);
         void ResetGameScore();
         void DeleteUser(int id);

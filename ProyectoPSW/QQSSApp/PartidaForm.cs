@@ -25,54 +25,36 @@ namespace QQSSApp
         private List<Image> ods;
         private int currentImageIndex = 0;
         int retoindex;
-        public PartidaForm(IQQSSService service, int index)
+        int tiempoContador;
+        int errores;
+        public PartidaForm(IQQSSService service, int index, int errores)
         {
             InitializeComponent();
             InitializeImages();
-            timer1.Interval = 1764;
-            timer1.Start();
-            this.service = service;
             
+            this.service = service;
             partida = service.GetPartidaActual();
             this.retoindex = index;
-            
-
-
-            
-            pregunta = service.QuestionServIndex(index);
-            this.labelPuntuacionAcumulada.Text = partida.getPuntuacionPartida();
-            enunciado.Text = pregunta.Enunciado;
-            puntuacionPos.Text = pregunta.GetPuntuacionAcierto();
-            puntuaciónNegativa.Text = pregunta.GetPuntuacionFallo();
-            respuestas = service.AnswerShuffle(pregunta);
-            op1.Text = respuestas.ElementAt(0).getText();
-            op2.Text = respuestas.ElementAt(1).getText();
-            op3.Text = respuestas.ElementAt(2).getText();
-            op4.Text = respuestas.ElementAt(3).getText();
-            ods_picture.Image = ods.ElementAt(pregunta.Ods - 1);
-            marcarProgreso(retoindex);
+            this.errores = errores;
+            this.labelPuntuacionAcumulada.Text = partida.PuntuacionPartida.ToString();
+            this.puntuacionConsolidadaLabel.Text = partida.PuntuacionConsolidada.ToString();
+            InitializeRetoPregunta();
+            MarcarProgreso();
+            InitializeTimers();
         }
 
-        private void PartidaForm_Load(object sender, EventArgs e)
+
+        private void MarcarProgreso() 
         {
-            
-
-        }
-
-        private void marcarProgreso(int index) {
-            string nombreBoton = "pos" + index.ToString();
-            Control[] controles = this.Controls.Find(nombreBoton, true);
-            if (controles.Length > 0)
+            for(int i = 0; i <= retoindex; i++)
             {
-                Button botonActual = (Button)controles[0];
-
-                // Verifica que el botón no sea nulo antes de intentar cambiar su color
-                if (botonActual != null)
-                {
-                    botonActual.BackColor = Color.Yellow;
-                }
+                string nombreBoton = "pos" + i;
+                Control[] controles = this.Controls.Find(nombreBoton, true);
+                if (controles.Length == 0 || controles[0] == null) continue;
+                Button b = (Button)controles[0];
+                if (i == retoindex) b.BackColor = Color.Yellow;
+                else b.BackColor = Color.DarkOliveGreen;
             }
-
         }
 
         public void InitializeImages()
@@ -124,14 +106,14 @@ namespace QQSSApp
                 
                 this.retoindex++;
                 service.UpdateGameScore(pregunta.Puntuacion_acierto);
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retoindex);
+                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retoindex, errores);
                 partidag.Show();
                 this.Close();
             }
             else
             {
                 service.UpdateGameScore(pregunta.PuntuacionFallo());
-                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex);
+                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex, errores);
                 partidag.Show();
                 this.Close();
             }
@@ -141,28 +123,49 @@ namespace QQSSApp
         private void TimerTick(object sender, EventArgs e)
         {
             currentImageIndex++;
-            if (currentImageIndex >= images.Count)
-            {
-                currentImageIndex = 0;
-            }
+
+            if (currentImageIndex >= images.Count) currentImageIndex = 0;
+
             reloj_circular.Image = images[currentImageIndex];
         }
         private void Atras(object sender, EventArgs e) {
         
         }
-        private void puntuacionPositiva_Click(object sender, EventArgs e)
-        {
 
+        private void TimerTiempoTick(object sender, EventArgs e)
+        {
+            tiempoContador--;
+            tiempo.Text = tiempoContador.ToString();
+            if(tiempoContador == 0)
+            {
+                service.UpdateGameScore(pregunta.PuntuacionFallo());
+                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex, errores);
+                partidag.Show();
+                this.Close();
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void InitializeTimers()
         {
-
+            timer1.Interval = 1764;
+            timer1.Start();
+            timer2.Interval = 1000;
+            tiempoContador = 30;
+            timer2.Start();
         }
 
-        private void puntuaciónNegativa_Click(object sender, EventArgs e)
+        private void InitializeRetoPregunta()
         {
-
+            pregunta = service.QuestionServIndex(retoindex);
+            enunciado.Text = pregunta.Enunciado;
+            puntuacionPos.Text = pregunta.GetPuntuacionAcierto();
+            puntuaciónNegativa.Text = pregunta.GetPuntuacionFallo();
+            respuestas = service.AnswerShuffle(pregunta);
+            op1.Text = respuestas.ElementAt(0).getText();
+            op2.Text = respuestas.ElementAt(1).getText();
+            op3.Text = respuestas.ElementAt(2).getText();
+            op4.Text = respuestas.ElementAt(3).getText();
+            ods_picture.Image = ods.ElementAt(pregunta.Ods - 1);
         }
     }
 }

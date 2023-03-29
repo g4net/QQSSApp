@@ -16,7 +16,15 @@ namespace ProyectoPSWMain.Entities
         {
             this.Nivel = Level;
             this.PuntuacionPartida = Puntos;
+            this.PuntuacionConsolidada = 0;
            
+        }
+
+        public Partida(int nivel) : this()
+        {
+            this.Nivel = nivel;
+            this.PuntuacionPartida = 0;
+            this.PuntuacionConsolidada = 0;
         }
         public void AddReto(Reto reto) {
             RetoPartida.Add(reto);

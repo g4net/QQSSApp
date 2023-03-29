@@ -18,17 +18,18 @@ namespace QQSSApp
         IQQSSService service;
         
         int retoindex;
-        public PuntuacionPositiva(IQQSSService service, int index)
+        int errores;
+        public PuntuacionPositiva(IQQSSService service, int index, int errores)
         {
             InitializeComponent();
             this.service = service;
-            
+            this.errores = errores; 
             retoindex= index;
         }
 
         private void continuar_salir_Click(object sender, EventArgs e)
         {
-            PartidaForm partida = new PartidaForm(service, retoindex);
+            PartidaForm partida = new PartidaForm(service, retoindex, errores);
             partida.Show();
             this.Close();
         }

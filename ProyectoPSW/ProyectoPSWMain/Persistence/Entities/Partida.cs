@@ -27,5 +27,7 @@ namespace ProyectoPSWMain.Entities
             get; set;
         }
 
+        public int PuntuacionConsolidada { get; set; }
+
     }
 }

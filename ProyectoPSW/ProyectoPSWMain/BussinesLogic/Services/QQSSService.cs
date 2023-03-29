@@ -111,33 +111,51 @@ namespace ProyectoPSWMain.Services
 
         #region User
         public void AddUser(User usuario) {
-            if (repository.GetById<User>(usuario.Id) == null)
-            {
-                repository.Insert<User>(usuario);
-                repository.Commit();
-            }
-            else {
+            if(usuario == null) throw new ServiceException("You cannot add a null user");
+            if(repository.GetById<User>(usuario.Id) == null)
                 throw new ServiceException("User with DNI" + usuario.Id + "already exists");
-            }
+
+            repository.Insert<User>(usuario);
+            Commit();
+
+            //if (repository.GetById<User>(usuario.Id) == null)
+            //{
+            //    repository.Insert<User>(usuario);
+            //    repository.Commit();
+            //}
+            //else {
+            //    throw new ServiceException("User with DNI" + usuario.Id + "already exists");
+            //}
 
         }
         public void Login(String dni) {
-            if (repository.GetById<User>(dni) != null)
-            {
-                this.loggedUser = repository.GetById<User>(dni);
-            }else {
-                throw new ServiceException("There is no user with that DNI");
-            }
+            User usuario = repository.GetById<User>(dni);
+            if(usuario == null) throw new ServiceException("There is no user with that DNI");
+            this.loggedUser = usuario;
+            
+            
+            
+            //if (repository.GetById<User>(dni) != null)
+            //{
+            //    this.loggedUser = repository.GetById<User>(dni);
+            //}else {
+            //    throw new ServiceException("There is no user with that DNI");
+            //}
         }
         public void DeleteUser(int dni) {
-            if (repository.GetById<User>(dni) != null)
-            {
-                repository.Delete(repository.GetById<User>(dni));
-            }
-            else
-            {
-                throw new ServiceException("There is no user with that DNI");
-            }
+            User user = repository.GetById<User>(dni);
+            if(user == null) throw new ServiceException("There is no user with that DNI");
+            repository.Delete<User>(user);
+            
+            
+            //if (repository.GetById<User>(dni) != null)
+            //{
+            //    repository.Delete(repository.GetById<User>(dni));
+            //}
+            //else
+            //{
+            //    throw new ServiceException("There is no user with that DNI");
+            //}
         }
         public User GetLoggedUser()
         {
@@ -149,24 +167,36 @@ namespace ProyectoPSWMain.Services
 
         }
         public void UpdateScore(int points) {
-            if (this.loggedUser != null)
-            {
-                this.loggedUser.SetPoints(points);
-                repository.Commit();
-            }
-            else {
-                throw new ServiceException("There is no user logged in");
-            }
+            if(this.loggedUser == null) throw new ServiceException("There is no user logged in");
+
+            this.loggedUser.SetPoints(points);
+            Commit();
+
+            //if (this.loggedUser != null)
+            //{
+            //    this.loggedUser.SetPoints(points);
+            //    repository.Commit();
+            //}
+            //else {
+            //    throw new ServiceException("There is no user logged in");
+            //}
         }
         #endregion
 
         #region Partida
 
+
+        public void CrearPartida(int nivel)
+        {
+            if (nivel < 0 || nivel > 10) throw new ServiceException("The level is not within the possible ones");
+            partidaActual = new Partida(nivel);
+        }
+
         public void AddPartida(Partida game) {
             if (!repository.GetWhere<Partida>(x => x.PuntuacionPartida == game.PuntuacionPartida && x.Nivel == game.Nivel).Any()){
                 repository.Insert<Partida>(game);
                 
-                repository.Commit() ;
+                Commit() ;
             }
             else {
                 throw new ServiceException("There is already a game with that dificulty and that punctuation");
@@ -190,7 +220,6 @@ namespace ProyectoPSWMain.Services
         }
         public int[] GetDifficultyArray(int level)
         {
-            // falta implementar el ServiceException y el archivo de las excepciones
             if(level > 4) throw new ServiceException("Difficulty level does not exist!");
             switch (level)
             {
@@ -205,20 +234,22 @@ namespace ProyectoPSWMain.Services
         }
         public void UpdateGameScore(int score) {
             int punt = this.partidaActual.PuntuacionPartida + score;
-            if (punt < 0)
-            {
-                this.ResetGameScore();
-            }
-            else
-            {
-                this.partidaActual.PuntuacionPartida = punt;
-            }
+            this.partidaActual.PuntuacionPartida = punt < 0 ? 0 : punt;
+            Commit();
 
-            repository.Commit();
+            //if (punt < 0)
+            //{
+            //    this.ResetGameScore();
+            //}
+            //else
+            //{
+            //    this.partidaActual.PuntuacionPartida = punt;
+            //}
+
         }
         public void ResetGameScore() {
             this.partidaActual.PuntuacionPartida = 0;
-            repository.Commit();
+            Commit();
         }
         #endregion
 
@@ -232,15 +263,42 @@ namespace ProyectoPSWMain.Services
         {
             partida.AddReto(pregunta);
             repository.Insert<Pregunta>(pregunta);
-            repository.Commit();
+            Commit();
         }
         public void AddPregunta(Pregunta pregunta)
         {
             repository.Insert<Pregunta>(pregunta);
-            repository.Commit();
+            Commit();
         }
 
         public void Questions(int[] dificultad) {
+            if(dificultad.Length != 10) throw new ServiceException("Difficulty array has not the correct length");
+            
+
+            var questions = new List<Pregunta>();
+            Random random = new Random();
+            int prevDifficulty = -1;
+            List<Pregunta> questionsDB = null;
+            foreach (int difficulty in dificultad)
+            {
+                if (difficulty > 4 || difficulty < 0) throw new ServiceException("Difficulty array has incorrect values");
+                if(difficulty != prevDifficulty)
+                {
+                    questionsDB = repository.GetWhere<Pregunta>(x => x.Dificultad == difficulty).ToList();
+                    prevDifficulty = difficulty;
+                }
+                int index = random.Next(questionsDB.Count);
+                questions.Add(questionsDB[index]);
+                questionsDB.RemoveAt(index);
+            }
+
+            QuestionServ = questions;
+        }
+
+
+        /*
+         * public void Questions(int[] dificultad) 
+         * {
             List<Pregunta> Questions = new List<Pregunta>();
             int puntero = 0;
             int dificulty = dificultad[puntero];
@@ -264,29 +322,40 @@ namespace ProyectoPSWMain.Services
             }
 
             QuestionServ = Questions;
-        }
+         }
+         */
 
         public Pregunta QuestionServIndex(int index)
         {
-            return QuestionServ.ElementAt(index);
+            return QuestionServ[index];
+            //return QuestionServ.ElementAt(index);
         }
         #endregion
 
         #region Respuesta
         public List<Respuesta> AnswerShuffle(Pregunta Question){
             List<Respuesta> Answers = new List<Respuesta>();
-            int pointer = 0;
             var random = new Random();
             List<Respuesta> NoMix = Question.getAllAnswers();
 
-            while (pointer < 4)
+            //int pointer = 0;
+            //while (pointer < 4)
+            //{
+            //    int index = random.Next(NoMix.Count);
+            //    Answers.Add(NoMix.ElementAt(index));
+            //    NoMix.RemoveAt(index);
+            //    pointer++;
+
+            //}
+
+            for(int i = 0; i < 4; i++)
             {
                 int index = random.Next(NoMix.Count);
                 Answers.Add(NoMix.ElementAt(index));
                 NoMix.RemoveAt(index);
-                pointer++;
-
             }
+
+
             return Answers;
         }
 
@@ -295,18 +364,21 @@ namespace ProyectoPSWMain.Services
             foreach(Respuesta respuesta in respuestas)
             {
                 repository.Insert<Respuesta>(respuesta);
-                repository.Commit();
+                Commit();
             }
         }
 
         public bool TestAnswer(String txt, Pregunta pregunta) {
-            if (pregunta.RespuestaCorrecta == txt)
-            {
-                return true;
-            }
-            else {
-                return false;
-            }
+
+            //if (pregunta.RespuestaCorrecta == txt)
+            //{
+            //    return true;
+            //}
+            //else {
+            //    return false;
+            //}
+
+            return pregunta.RespuestaCorrecta == txt;
         }
         #endregion
     }

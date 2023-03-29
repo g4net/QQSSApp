@@ -28,9 +28,9 @@ namespace QQSSApp
 
         private void continuar_salir_Click(object sender, EventArgs e)
         {
-            PartidaForm partida = new PartidaForm(service, retoindex);
-            partida.Show();
-            this.Close();
+            //PartidaForm partida = new PartidaForm(service, retoindex, );
+            //partida.Show();
+            //this.Close();
         }
 
     }
