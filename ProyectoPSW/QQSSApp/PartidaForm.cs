@@ -52,6 +52,7 @@ namespace QQSSApp
                 Control[] controles = this.Controls.Find(nombreBoton, true);
                 if (controles.Length == 0 || controles[0] == null) continue;
                 Button b = (Button)controles[0];
+                if (i < retoindex) b.BackColor = Color.Green;
                 if (i == retoindex) b.BackColor = Color.Yellow;
                 else b.BackColor = Color.DarkOliveGreen;
             }
