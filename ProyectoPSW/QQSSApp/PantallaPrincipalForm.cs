@@ -17,6 +17,7 @@ namespace QQSSApp
     public partial class PantallaPrincipalForm : Form
     {
         IQQSSService service;
+        Reglas actualVentanaReglas;
         public PantallaPrincipalForm(IQQSSService service)
         {
             this.service = service;
@@ -40,10 +41,15 @@ namespace QQSSApp
 
             //el siguiente codigo debera estar en el selector de nivel
             //START
+            /*
             service.CrearPartida(1);
             service.Questions(service.GetDifficultyArray(1));
-            PartidaForm partidaForm = new PartidaForm(service, 0, 0);
+            PartidaForm partidaForm = new PartidaForm(service, 0);
             partidaForm.Show();
+            service.ResetErroresyConsolidaciones();
+            this.Hide();*/
+            Niveles niveles = new Niveles(service);
+            niveles.Show();
             this.Hide();
 
             //END
@@ -62,8 +68,18 @@ namespace QQSSApp
 
         private void BotonReglas_Click(object sender, EventArgs e)
         {
-            Reglas regla = new Reglas();
-            regla.Show();
+            if (actualVentanaReglas == null)
+            {
+                Reglas regla = new Reglas();
+                actualVentanaReglas = regla;
+                regla.Show();
+            }
+            else { 
+                actualVentanaReglas.Close();
+                Reglas regla = new Reglas();
+                actualVentanaReglas = regla;
+                regla.Show();
+            }
         }
     }
 }

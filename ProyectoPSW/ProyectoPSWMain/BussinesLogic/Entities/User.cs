@@ -24,7 +24,7 @@ namespace ProyectoPSWMain.Entities
             return this.PuntuacionAcumulada.ToString();
         }
         public void SetPoints(int points) {
-            this.PuntuacionAcumulada = points;
+            this.PuntuacionAcumulada += points;
         }
 
     }

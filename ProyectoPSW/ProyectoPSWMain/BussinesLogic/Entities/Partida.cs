@@ -38,5 +38,8 @@ namespace ProyectoPSWMain.Entities
             return this.PuntuacionPartida + "";
 
         }
+        public String GetPuntuacionConsolidada() {
+            return this.PuntuacionConsolidada + "";
+        }
     }
 }

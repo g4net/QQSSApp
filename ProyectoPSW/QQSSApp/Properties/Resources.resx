@@ -238,4 +238,25 @@
   <data name="reglas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\reglas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="normas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\lista-de-verificacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lista_de_verificacion__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\lista-de-verificacion (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="regla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\regla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="regla__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\regla (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="regla__2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\regla (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="perdiste" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\perdiste.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="perdiste2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\perdiste2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

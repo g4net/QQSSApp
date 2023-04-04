@@ -25,6 +25,8 @@ namespace ProyectoPSWMain.Services
         private User loggedUser;
         private Partida partidaActual;
         private List<Pregunta> QuestionServ;
+        private int errores = 0;
+        private int consolidaciones = 0;
 
         public QQSSService(IRepository repository)
         {
@@ -167,7 +169,7 @@ namespace ProyectoPSWMain.Services
             else throw new ServiceException("There is no user logged in");
 
         }
-        public void UpdateScore(int points) {
+        public void UpdateUserScore(int points) {
             if(this.loggedUser == null) throw new ServiceException("There is no user logged in");
 
             this.loggedUser.SetPoints(points);
@@ -186,7 +188,24 @@ namespace ProyectoPSWMain.Services
 
         #region Partida
 
+        public void UpdateErrores() {             
+            this.errores++;            
+        }
 
+        public int GetErrores() {  return errores; }
+        public int GetConsolidaciones() {return consolidaciones;
+        }
+        public void UpdateConsolidaciones() {
+            this.consolidaciones++;           
+            int puntosConsolidados = this.partidaActual.PuntuacionPartida;
+            this.partidaActual.PuntuacionConsolidada = puntosConsolidados;           
+            UpdateUserScore(puntosConsolidados);
+            ResetGameScore();
+        }
+        public void ResetErroresyConsolidaciones() {
+            this.errores = 0;
+            this.consolidaciones = 0;   
+        }
         public void CrearPartida(int nivel)
         {
             if (nivel < 0 || nivel > 10) throw new ServiceException("The level is not within the possible ones");
