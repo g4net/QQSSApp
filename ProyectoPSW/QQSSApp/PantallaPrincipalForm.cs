@@ -40,10 +40,15 @@ namespace QQSSApp
 
             //el siguiente codigo debera estar en el selector de nivel
             //START
+            /*
             service.CrearPartida(1);
             service.Questions(service.GetDifficultyArray(1));
-            PartidaForm partidaForm = new PartidaForm(service, 0, 0);
+            PartidaForm partidaForm = new PartidaForm(service, 0);
             partidaForm.Show();
+            service.ResetErroresyConsolidaciones();
+            this.Hide();*/
+            Niveles niveles = new Niveles(service);
+            niveles.Show();
             this.Hide();
 
             //END

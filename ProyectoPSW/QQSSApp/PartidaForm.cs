@@ -27,7 +27,7 @@ namespace QQSSApp
         int retoindex;
         int tiempoContador;
         int errores;
-        public PartidaForm(IQQSSService service, int index, int errores)
+        public PartidaForm(IQQSSService service, int index)
         {
             InitializeComponent();
             InitializeImages();
@@ -35,7 +35,7 @@ namespace QQSSApp
             this.service = service;
             partida = service.GetPartidaActual();
             this.retoindex = index;
-            this.errores = errores;
+        
             this.labelPuntuacionAcumulada.Text = partida.PuntuacionPartida.ToString();
             this.puntuacionConsolidadaLabel.Text = partida.PuntuacionConsolidada.ToString();
             InitializeRetoPregunta();
@@ -102,22 +102,33 @@ namespace QQSSApp
 
         private void CheckAnswer(string optext)
         {
-            if(service.TestAnswer(optext, pregunta))
-            {
-                
-                this.retoindex++;
-                service.UpdateGameScore(pregunta.Puntuacion_acierto);
-                PuntuacionPositiva partidag = new PuntuacionPositiva(service, this.retoindex, errores);
-                partidag.Show();
-                this.Close();
-            }
-            else
-            {
-                service.UpdateGameScore(pregunta.PuntuacionFallo());
-                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex, errores);
-                partidag.Show();
-                this.Close();
-            }
+           
+                if (service.TestAnswer(optext, pregunta))
+                {
+                    if (retoindex != 1)
+                    {
+                    
+                    service.UpdateGameScore(pregunta.Puntuacion_acierto);
+                    PuntuacionPositiva pacierto = new PuntuacionPositiva(service, this.retoindex);
+                    pacierto.Show();
+                    this.Close();
+                    }
+                    else {
+                    service.UpdateGameScore(pregunta.Puntuacion_acierto);
+                    PartidaGanada partidaGanada = new PartidaGanada(service, retoindex);
+                    partidaGanada.Show();
+                    this.Close();
+                    }
+                }
+                else
+                {
+                    service.UpdateGameScore(pregunta.PuntuacionFallo());
+                    PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex);
+                    partidag.Show();
+                    this.Close();
+                }
+            
+          
 
         }
 
@@ -140,7 +151,7 @@ namespace QQSSApp
             if(tiempoContador == 0)
             {
                 service.UpdateGameScore(pregunta.PuntuacionFallo());
-                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex, errores);
+                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex);
                 partidag.Show();
                 this.Close();
             }

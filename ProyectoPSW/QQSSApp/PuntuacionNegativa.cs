@@ -18,12 +18,15 @@ namespace QQSSApp
         IQQSSService service;
         int retoindex;
         int errores;
-        public PuntuacionNegativa(IQQSSService service, int index, int errores)
+        Pregunta pregunta;
+        public PuntuacionNegativa(IQQSSService service, int index)
         {
             InitializeComponent();
             this.service = service;
             this.retoindex = index;
-            this.errores = errores;
+            //this.errores = errores (atributo) Refactoring
+            this.errores = service.GetErrores();
+            InitializeNegativePunctuation();
         }
 
         private void ButtonReintentarClick(object sender, EventArgs e)
@@ -34,11 +37,19 @@ namespace QQSSApp
             }
             else
             {
-                PartidaForm partida = new PartidaForm(service, retoindex, errores + 1);
+                PartidaForm partida = new PartidaForm(service, retoindex);
+                service.UpdateErrores();
                 partida.Show();
                 this.Close();
             }
             
+        }
+        private void InitializeNegativePunctuation()
+        {
+            pregunta = service.QuestionServIndex(retoindex);
+            puntuacion.Text = pregunta.GetPuntuacionAcierto();
+            punt_actual.Text = service.GetPartidaActual().getPuntuacionPartida();
+
         }
     }
 }

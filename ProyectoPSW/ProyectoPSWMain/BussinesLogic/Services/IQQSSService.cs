@@ -18,12 +18,18 @@ namespace ProyectoPSWMain.Services
         #region User
         void AddUser(User usuario);
         void Login(String dni);
-        void UpdateScore(int points);
+        void UpdateUserScore(int points);
         User GetLoggedUser();
         #endregion
 
         #region Partida
+        int GetErrores();
 
+        void UpdateErrores();
+
+        int GetConsolidaciones();
+        void ResetErroresyConsolidaciones();
+        void UpdateConsolidaciones();
         void CrearPartida(int nivel);
         void UpdateGameScore(int score);
         void ResetGameScore();
