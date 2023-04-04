@@ -35,7 +35,7 @@ namespace QQSSApp
             this.service = service;
             partida = service.GetPartidaActual();
             this.retoindex = index;
-        
+            this.errores = service.GetErrores();
             this.labelPuntuacionAcumulada.Text = partida.PuntuacionPartida.ToString();
             this.puntuacionConsolidadaLabel.Text = partida.PuntuacionConsolidada.ToString();
             InitializeRetoPregunta();
@@ -143,17 +143,19 @@ namespace QQSSApp
             }
             else
             {
-                errores++;
+                
                 //erroreslabel.Text = errores.ToString();
                 service.UpdateGameScore(pregunta.PuntuacionFallo());
-                if (errores >= 2) 
-                { 
+                if (errores == 1) 
+                {
+                    service.UpdateErrores();
                     PartidaPerdida partidaPer = new PartidaPerdida(service, this.retoindex);
                     partidaPer.Show();
                     this.Close();
                 }
                 else 
                 {
+                    service.UpdateErrores();
                     PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex, errores);
                     partidag.Show();
                     this.Close();
@@ -184,17 +186,19 @@ namespace QQSSApp
             tiempo.Text = tiempoContador.ToString();
             if(tiempoContador == 0)
             {
-                errores++;
+              
                 //erroreslabel.Text = errores.ToString();
                 service.UpdateGameScore(pregunta.PuntuacionFallo());
-                if (errores >= 2)
+                if (errores == 1)
                 {
+                    service.UpdateErrores();
                     PartidaPerdida partidaPer = new PartidaPerdida(service, this.retoindex);
                     partidaPer.Show();
                     this.Close();
                 }
                 else
                 {
+                    service.UpdateErrores();
                     PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex, errores);
                     partidag.Show();
                     this.Close();

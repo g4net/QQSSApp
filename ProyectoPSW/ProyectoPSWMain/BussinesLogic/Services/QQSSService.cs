@@ -27,7 +27,7 @@ namespace ProyectoPSWMain.Services
         private List<Pregunta> QuestionServ;
         private int errores = 0;
         private int consolidaciones = 0;
-
+        
         public QQSSService(IRepository repository)
         {
             this.repository = repository;
@@ -189,9 +189,10 @@ namespace ProyectoPSWMain.Services
         #region Partida
 
         public void UpdateErrores() {             
-            this.errores++;            
+            this.errores++;
+          
         }
-
+      
         public int GetErrores() {  return errores; }
         public int GetConsolidaciones() {return consolidaciones;
         }
@@ -204,7 +205,8 @@ namespace ProyectoPSWMain.Services
         }
         public void ResetErroresyConsolidaciones() {
             this.errores = 0;
-            this.consolidaciones = 0;   
+            this.consolidaciones = 0;
+            
         }
         public void CrearPartida(int nivel)
         {

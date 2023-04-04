@@ -34,7 +34,6 @@ namespace QQSSApp
         {
             
             PartidaForm partida = new PartidaForm(service, retoindex);
-            service.UpdateErrores();
             partida.Show();
             this.Close();
             

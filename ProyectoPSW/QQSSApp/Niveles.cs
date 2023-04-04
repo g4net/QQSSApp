@@ -49,56 +49,74 @@ namespace QQSSApp
             }
             return BotonNivel0;
         }
-
-        private void click_lvl0(object sender, EventArgs e)
-        {
-            service.CrearPartida(0);
-            service.Questions(service.GetDifficultyArray(0));
+        private void PlayButton(int level) {
+            service.CrearPartida(level);
+            service.Questions(service.GetDifficultyArray(level));
             PartidaForm partidaForm = new PartidaForm(service, 0);
             partidaForm.Show();
             service.ResetErroresyConsolidaciones();
             this.Close();
-
+        }
+        private void click_lvl0(object sender, EventArgs e)
+        {
+            //Refactoring
+            //service.CrearPartida(0);
+            //service.Questions(service.GetDifficultyArray(0));
+            //PartidaForm partidaForm = new PartidaForm(service, 0);
+            // partidaForm.Show();
+            // service.ResetErroresyConsolidaciones();
+            // this.Close();
+            PlayButton(0);
         }
 
         private void click_lvl1(object sender, EventArgs e)
         {
-            service.CrearPartida(1);
-            service.Questions(service.GetDifficultyArray(1));
-            PartidaForm partidaForm = new PartidaForm(service, 0);
-            partidaForm.Show();
-            service.ResetErroresyConsolidaciones();
-            this.Close();
+            // Refactoring
+            //service.CrearPartida(1);
+            //service.Questions(service.GetDifficultyArray(1));
+            //PartidaForm partidaForm = new PartidaForm(service, 0);
+            // partidaForm.Show();
+            // service.ResetErroresyConsolidaciones();
+            // this.Close();
+            PlayButton(1);
         }
 
         private void click_lvl2(object sender, EventArgs e)
         {
-            service.CrearPartida(2);
-            service.Questions(service.GetDifficultyArray(2));
-            PartidaForm partidaForm = new PartidaForm(service, 0);
-            partidaForm.Show();
-            service.ResetErroresyConsolidaciones();
-            this.Close();
+
+
+            // Refactoring
+            //service.CrearPartida(2);
+            //service.Questions(service.GetDifficultyArray(2));
+            //PartidaForm partidaForm = new PartidaForm(service, 0);
+            // partidaForm.Show();
+            // service.ResetErroresyConsolidaciones();
+            // this.Close();
+            PlayButton(2);
         }
 
         private void click_lvl3(object sender, EventArgs e)
         {
-            service.CrearPartida(3);
-            service.Questions(service.GetDifficultyArray(3));
-            PartidaForm partidaForm = new PartidaForm(service, 0);
-            partidaForm.Show();
-            service.ResetErroresyConsolidaciones();
-            this.Close();
+            //Refactoring
+            //service.CrearPartida(3);
+            //service.Questions(service.GetDifficultyArray(3));
+            //PartidaForm partidaForm = new PartidaForm(service, 0);
+            // partidaForm.Show();
+            // service.ResetErroresyConsolidaciones();
+            // this.Close();
+            PlayButton(3);
         }
 
         private void click_lvl4(object sender, EventArgs e)
         {
-            service.CrearPartida(4);
-            service.Questions(service.GetDifficultyArray(4));
-            PartidaForm partidaForm = new PartidaForm(service, 0);
-            partidaForm.Show();
-            service.ResetErroresyConsolidaciones();
-            this.Close();
+            //Refactoring
+            //service.CrearPartida(4);
+            //service.Questions(service.GetDifficultyArray(4));
+            //PartidaForm partidaForm = new PartidaForm(service, 0);
+            // partidaForm.Show();
+            // service.ResetErroresyConsolidaciones();
+            // this.Close();
+            PlayButton(4);
         }
     }
 }
