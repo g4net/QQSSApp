@@ -32,9 +32,9 @@
             this.correcto = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.puntuacion = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.punt_actual = new System.Windows.Forms.Label();
             this.reintentar_salir = new System.Windows.Forms.Button();
+            this.punt_actual = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +43,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.panel1.Controls.Add(this.correcto);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(428, 80);
             this.panel1.TabIndex = 0;
@@ -82,6 +82,30 @@
             this.puntuacion.TabIndex = 2;
             this.puntuacion.Text = "label3";
             // 
+            // reintentar_salir
+            // 
+            this.reintentar_salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.reintentar_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reintentar_salir.Location = new System.Drawing.Point(22, 370);
+            this.reintentar_salir.Margin = new System.Windows.Forms.Padding(2);
+            this.reintentar_salir.Name = "reintentar_salir";
+            this.reintentar_salir.Size = new System.Drawing.Size(386, 42);
+            this.reintentar_salir.TabIndex = 7;
+            this.reintentar_salir.Text = "REINTENTAR";
+            this.reintentar_salir.UseVisualStyleBackColor = false;
+            this.reintentar_salir.Click += new System.EventHandler(this.ButtonReintentarClick);
+            // 
+            // punt_actual
+            // 
+            this.punt_actual.AutoSize = true;
+            this.punt_actual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.punt_actual.Location = new System.Drawing.Point(270, 277);
+            this.punt_actual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.punt_actual.Name = "punt_actual";
+            this.punt_actual.Size = new System.Drawing.Size(57, 20);
+            this.punt_actual.TabIndex = 4;
+            this.punt_actual.Text = "label5";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -92,30 +116,6 @@
             this.label4.Size = new System.Drawing.Size(160, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Puntuación Actual:";
-            // 
-            // punt_actual
-            // 
-            this.punt_actual.AutoSize = true;
-            this.punt_actual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.punt_actual.Location = new System.Drawing.Point(256, 277);
-            this.punt_actual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.punt_actual.Name = "punt_actual";
-            this.punt_actual.Size = new System.Drawing.Size(57, 20);
-            this.punt_actual.TabIndex = 4;
-            this.punt_actual.Text = "label5";
-            // 
-            // reintentar_salir
-            // 
-            this.reintentar_salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.reintentar_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reintentar_salir.Location = new System.Drawing.Point(22, 370);
-            this.reintentar_salir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.reintentar_salir.Name = "reintentar_salir";
-            this.reintentar_salir.Size = new System.Drawing.Size(386, 42);
-            this.reintentar_salir.TabIndex = 7;
-            this.reintentar_salir.Text = "REINTENTAR";
-            this.reintentar_salir.UseVisualStyleBackColor = false;
-            this.reintentar_salir.Click += new System.EventHandler(this.ButtonReintentarClick);
             // 
             // PuntuacionNegativa
             // 
@@ -143,8 +143,8 @@
         private System.Windows.Forms.Label correcto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label puntuacion;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label punt_actual;
         private System.Windows.Forms.Button reintentar_salir;
+        private System.Windows.Forms.Label punt_actual;
+        private System.Windows.Forms.Label label4;
     }
 }

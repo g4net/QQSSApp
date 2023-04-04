@@ -17,6 +17,7 @@ namespace QQSSApp
     public partial class PantallaPrincipalForm : Form
     {
         IQQSSService service;
+        Reglas actualVentanaReglas;
         public PantallaPrincipalForm(IQQSSService service)
         {
             this.service = service;
@@ -67,8 +68,18 @@ namespace QQSSApp
 
         private void BotonReglas_Click(object sender, EventArgs e)
         {
-            Reglas regla = new Reglas();
-            regla.Show();
+            if (actualVentanaReglas == null)
+            {
+                Reglas regla = new Reglas();
+                actualVentanaReglas = regla;
+                regla.Show();
+            }
+            else { 
+                actualVentanaReglas.Close();
+                Reglas regla = new Reglas();
+                actualVentanaReglas = regla;
+                regla.Show();
+            }
         }
     }
 }
