@@ -33,13 +33,11 @@
             this.correcto = new System.Windows.Forms.Label();
             this.puntuacion_acumulada = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.puntuacion_total = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.puntuacion_partida = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // reintentar_salir
@@ -53,6 +51,7 @@
             this.reintentar_salir.TabIndex = 13;
             this.reintentar_salir.Text = "VOLVER AL MENÚ PRINCIPAL";
             this.reintentar_salir.UseVisualStyleBackColor = false;
+            this.reintentar_salir.Click += new System.EventHandler(this.reintentar_salir_Click);
             // 
             // panel1
             // 
@@ -98,28 +97,6 @@
             this.label5.TabIndex = 19;
             this.label5.Text = "Puntuación Acumulada:";
             // 
-            // puntuacion_total
-            // 
-            this.puntuacion_total.AutoSize = true;
-            this.puntuacion_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntuacion_total.Location = new System.Drawing.Point(242, 332);
-            this.puntuacion_total.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.puntuacion_total.Name = "puntuacion_total";
-            this.puntuacion_total.Size = new System.Drawing.Size(57, 20);
-            this.puntuacion_total.TabIndex = 18;
-            this.puntuacion_total.Text = "label5";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(88, 332);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 20);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Puntuación Total:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -133,31 +110,10 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Has perdido la partida";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(88, 264);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(211, 20);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Puntuación Total Partida:";
-            // 
-            // puntuacion_partida
-            // 
-            this.puntuacion_partida.AutoSize = true;
-            this.puntuacion_partida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntuacion_partida.Location = new System.Drawing.Point(291, 264);
-            this.puntuacion_partida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.puntuacion_partida.Name = "puntuacion_partida";
-            this.puntuacion_partida.Size = new System.Drawing.Size(57, 20);
-            this.puntuacion_partida.TabIndex = 15;
-            this.puntuacion_partida.Text = "label5";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(54, 194);
@@ -165,6 +121,16 @@
             this.label6.Size = new System.Drawing.Size(313, 31);
             this.label6.TabIndex = 21;
             this.label6.Text = "Suerte la próxima vez!!";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QQSSApp.Properties.Resources.perdiste;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 114);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(392, 317);
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
             // 
             // PartidaPerdida
             // 
@@ -174,17 +140,15 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.puntuacion_acumulada);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.puntuacion_total);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.puntuacion_partida);
             this.Controls.Add(this.reintentar_salir);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "PartidaPerdida";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,11 +161,8 @@
         private System.Windows.Forms.Label correcto;
         private System.Windows.Forms.Label puntuacion_acumulada;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label puntuacion_total;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label puntuacion_partida;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

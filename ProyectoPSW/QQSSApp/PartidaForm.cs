@@ -111,33 +111,42 @@ namespace QQSSApp
         private void CheckAnswer(string optext)
         {
            
-                if (service.TestAnswer(optext, pregunta))
+            if (service.TestAnswer(optext, pregunta))
+            {
+                if (retoindex != 9)
                 {
-                    if (retoindex != 9)
-                    {
                     
-                    service.UpdateGameScore(pregunta.Puntuacion_acierto);
-                    PuntuacionPositiva pacierto = new PuntuacionPositiva(service, this.retoindex);
-                    pacierto.Show();
-                    this.Close();
-                    }
-                    else {
-                    service.UpdateGameScore(pregunta.Puntuacion_acierto);
-                    PartidaGanada partidaGanada = new PartidaGanada(service, retoindex);
-                    partidaGanada.Show();
-                    this.Close();
-                    }
+                service.UpdateGameScore(pregunta.Puntuacion_acierto);
+                PuntuacionPositiva pacierto = new PuntuacionPositiva(service, this.retoindex);
+                pacierto.Show();
+                this.Close();
                 }
-                else
+                else {
+                service.UpdateGameScore(pregunta.Puntuacion_acierto);
+                PartidaGanada partidaGanada = new PartidaGanada(service, retoindex);
+                partidaGanada.Show();
+                this.Close();
+                }
+            }
+            else
+            {
+                errores++;
+                //erroreslabel.Text = errores.ToString();
+                service.UpdateGameScore(pregunta.PuntuacionFallo());
+                if (errores >= 2) 
+                { 
+                    PartidaPerdida partidaPer = new PartidaPerdida(service, this.retoindex);
+                    partidaPer.Show();
+                    this.Close();
+                }
+                else 
                 {
-                    service.UpdateGameScore(pregunta.PuntuacionFallo());
-                    PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex);
+                    PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex, errores);
                     partidag.Show();
                     this.Close();
                 }
-            
-          
-
+                
+            }
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -148,8 +157,12 @@ namespace QQSSApp
 
             reloj_circular.Image = images[currentImageIndex];
         }
-        private void Atras(object sender, EventArgs e) {
-        
+
+        private void Atras(object sender, EventArgs e) 
+        {
+            PantallaPrincipalForm Ppr = new PantallaPrincipalForm(service);
+            Ppr.Show();
+            this.Close();
         }
 
         private void TimerTiempoTick(object sender, EventArgs e)
@@ -158,10 +171,21 @@ namespace QQSSApp
             tiempo.Text = tiempoContador.ToString();
             if(tiempoContador == 0)
             {
+                errores++;
+                //erroreslabel.Text = errores.ToString();
                 service.UpdateGameScore(pregunta.PuntuacionFallo());
-                PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex);
-                partidag.Show();
-                this.Close();
+                if (errores >= 2)
+                {
+                    PartidaPerdida partidaPer = new PartidaPerdida(service, this.retoindex);
+                    partidaPer.Show();
+                    this.Close();
+                }
+                else
+                {
+                    PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex, errores);
+                    partidag.Show();
+                    this.Close();
+                }
             }
         }
 

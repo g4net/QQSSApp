@@ -74,14 +74,14 @@
             // 
             // BotonReglas
             // 
-            this.BotonReglas.BackColor = System.Drawing.Color.White;
+            this.BotonReglas.BackColor = System.Drawing.Color.Transparent;
             this.BotonReglas.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
             this.BotonReglas.FlatAppearance.BorderSize = 2;
             this.BotonReglas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.BotonReglas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BotonReglas.Image = global::QQSSApp.Properties.Resources.reglas;
             this.BotonReglas.Location = new System.Drawing.Point(547, 11);
-            this.BotonReglas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BotonReglas.Margin = new System.Windows.Forms.Padding(2);
             this.BotonReglas.Name = "BotonReglas";
             this.BotonReglas.Size = new System.Drawing.Size(43, 42);
             this.BotonReglas.TabIndex = 29;
@@ -93,7 +93,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::QQSSApp.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(152, -29);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(292, 251);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -104,7 +104,7 @@
             // 
             this.pictureBox2.Image = global::QQSSApp.Properties.Resources.agüita;
             this.pictureBox2.Location = new System.Drawing.Point(1, -4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(601, 377);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

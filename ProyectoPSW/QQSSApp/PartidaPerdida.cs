@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoPSWMain.Entities;
+using ProyectoPSWMain.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,30 @@ namespace QQSSApp
 {
     public partial class PartidaPerdida : Form
     {
-        public PartidaPerdida()
+        IQQSSService service;
+        //Pregunta pregunta;
+        int retoindex;
+        Partida pActual;
+        public PartidaPerdida(IQQSSService service, int index)
         {
             InitializeComponent();
+            this.service = service;
+            pActual = service.GetPartidaActual();
+            retoindex = index;
+            InitializePartidaPerdida();
+        }
+        private void InitializePartidaPerdida()
+        {
+            //pregunta = service.QuestionServIndex(retoindex);
+            puntuacion_acumulada.Text = pActual.GetPuntuacionConsolidada();
+            service.UpdateUserScore(pActual.PuntuacionPartida);
+        }
+
+        private void reintentar_salir_Click(object sender, EventArgs e)
+        {
+            PantallaPrincipalForm Ppr = new PantallaPrincipalForm(service);
+            Ppr.Show();
+            this.Close();
         }
     }
 }

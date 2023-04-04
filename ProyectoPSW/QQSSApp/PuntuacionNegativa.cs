@@ -19,9 +19,10 @@ namespace QQSSApp
         int retoindex;
         int errores;
         Pregunta pregunta;
-        public PuntuacionNegativa(IQQSSService service, int index)
+        public PuntuacionNegativa(IQQSSService service, int index, int err)
         {
             InitializeComponent();
+            this.errores = err;
             this.service = service;
             this.retoindex = index;
             //this.errores = errores (atributo) Refactoring
@@ -31,17 +32,12 @@ namespace QQSSApp
 
         private void ButtonReintentarClick(object sender, EventArgs e)
         {
-            if(errores == 1)
-            {
-                // game over form (se implementa cuando se pueda);
-            }
-            else
-            {
-                PartidaForm partida = new PartidaForm(service, retoindex);
-                service.UpdateErrores();
-                partida.Show();
-                this.Close();
-            }
+            
+            PartidaForm partida = new PartidaForm(service, retoindex);
+            service.UpdateErrores();
+            partida.Show();
+            this.Close();
+            
             
         }
         private void InitializeNegativePunctuation()

@@ -308,6 +308,24 @@
   <ItemGroup>
     <None Include="resources\lista-de-verificacion.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\lista-de-verificacion %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\regla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\regla %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\regla %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\perdiste.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\perdiste2.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
