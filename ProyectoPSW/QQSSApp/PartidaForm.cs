@@ -105,7 +105,7 @@ namespace QQSSApp
            
                 if (service.TestAnswer(optext, pregunta))
                 {
-                    if (retoindex != 1)
+                    if (retoindex != 9)
                     {
                     
                     service.UpdateGameScore(pregunta.Puntuacion_acierto);
