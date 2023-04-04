@@ -13,7 +13,7 @@ namespace ProyectoPSWMain.Services
     {
         void RemoveAllData();
         void Commit();  
-        void DBInitialization();
+        //void DBInitialization();
 
         #region User
         void AddUser(User usuario);

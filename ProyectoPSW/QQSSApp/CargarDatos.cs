@@ -58,7 +58,7 @@ namespace QQSSApp
             {
                 puntuacion = 300;
             }
-            service.AddPregunta(new Pregunta(respuestasMal, enunciado, dificultad, puntuacion, respuesta4.Text, ODS));
+            //service.AddPregunta(new Pregunta(respuestasMal, enunciado, dificultad, puntuacion, respuesta4.Text, ODS));
             limpia();
         }
         public void limpia()

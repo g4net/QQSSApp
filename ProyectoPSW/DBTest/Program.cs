@@ -75,7 +75,7 @@ namespace DBTest
                 Console.WriteLine("Creando los datos y almacenándolos en la BD");
                 Console.WriteLine("===========================================");
             
-              Console.WriteLine("\n// CREACIÓN DE UNA REVISTA Y SU EDITOR EN JEFE");
+              Console.WriteLine("\n// CREACIÓN DE UNA PARTIDA Y SUS PREGUNTITAS");
               User user = new User("0",500,1);
                 Partida partida = new Partida(1, 0);
                 dal.Insert<Partida>(partida);
@@ -97,7 +97,7 @@ namespace DBTest
             respuestasMal.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
             
-            Pregunta pregunta = new Pregunta(respuestasMal, "¿Cuál es la meta de la ODS 1 para el año 2030?", 1, 100, respuestaBien.Texto, 1);
+            Pregunta pregunta = new Pregunta(respuestasMal, "¿Cuál es la meta de la ODS 1 para el año 2030?", 1, 100, respuestaBien.Texto, 1, false);
             
             dal.Insert<Pregunta>(pregunta);
             dal.Commit();
@@ -117,7 +117,7 @@ namespace DBTest
             respuestasMal1.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta1 = new Pregunta(respuestasMal1, "¿Cuál es la principal causa de la pobreza extrema según la ODS 1?", 2, 200, respuestaBien.Texto, 1);
+            Pregunta pregunta1 = new Pregunta(respuestasMal1, "¿Cuál es la principal causa de la pobreza extrema según la ODS 1?", 2, 200, respuestaBien.Texto, 1, true);
             dal.Insert<Pregunta>(pregunta1);
             dal.Commit();
 
@@ -135,7 +135,7 @@ namespace DBTest
             respuestasMal2.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta2 = new Pregunta(respuestasMal2, "¿Qué estrategia propone la ODS 1 para reducir la pobreza extrema?", 3, 300, respuestaBien.Texto, 1);
+            Pregunta pregunta2 = new Pregunta(respuestasMal2, "¿Qué estrategia propone la ODS 1 para reducir la pobreza extrema?", 3, 300, respuestaBien.Texto, 1, true);
             dal.Insert<Pregunta>(pregunta2);
             dal.Commit();
 
@@ -153,7 +153,7 @@ namespace DBTest
             respuestasMal3.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta3 = new Pregunta(respuestasMal3, "¿Cuál es el objetivo específico de la ODS 1 relacionado con la igualdad de género?", 3, 300, respuestaBien.Texto, 1);
+            Pregunta pregunta3 = new Pregunta(respuestasMal3, "¿Cuál es el objetivo específico de la ODS 1 relacionado con la igualdad de género?", 3, 300, respuestaBien.Texto, 1, true);
             dal.Insert<Pregunta>(pregunta3);
             dal.Commit();
 
@@ -171,7 +171,7 @@ namespace DBTest
             respuestasMal4.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta4 = new Pregunta(respuestasMal4, "¿Cuál es la región del mundo con el mayor número de personas en situación de pobreza extrema según la ODS 1?", 3, 300, respuestaBien.Texto, 1);
+            Pregunta pregunta4 = new Pregunta(respuestasMal4, "¿Cuál es la región del mundo con el mayor número de personas en situación de pobreza extrema según la ODS 1?", 3, 300, respuestaBien.Texto, 1, true);
             dal.Insert<Pregunta>(pregunta4);
             dal.Commit();
 
@@ -190,7 +190,7 @@ namespace DBTest
             respuestasMal5.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta5 = new Pregunta(respuestasMal5, "¿Cuál es el impacto de la pobreza en la salud según la ODS 1?", 2, 200, respuestaBien.Texto, 1);
+            Pregunta pregunta5 = new Pregunta(respuestasMal5, "¿Cuál es el impacto de la pobreza en la salud según la ODS 1?", 2, 200, respuestaBien.Texto, 1, true);
             dal.Insert<Pregunta>(pregunta5);
             dal.Commit();
 
@@ -210,7 +210,7 @@ namespace DBTest
             respuestasMal6.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta6 = new Pregunta(respuestasMal6, "¿Cuál es el objetivo principal de la ODS 2?", 1, 100, respuestaBien.Texto, 2);
+            Pregunta pregunta6 = new Pregunta(respuestasMal6, "¿Cuál es el objetivo principal de la ODS 2?", 1, 100, respuestaBien.Texto, 2, false);
             dal.Insert<Pregunta>(pregunta6);
             dal.Commit();
 
@@ -228,7 +228,7 @@ namespace DBTest
             respuestasMal7.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta7 = new Pregunta(respuestasMal7, "¿Cuál es la meta de la ODS 2 para el año 2030?", 1, 100, respuestaBien.Texto, 2);
+            Pregunta pregunta7 = new Pregunta(respuestasMal7, "¿Cuál es la meta de la ODS 2 para el año 2030?", 1, 100, respuestaBien.Texto, 2, true);
             dal.Insert<Pregunta>(pregunta7);
             dal.Commit();
 
@@ -246,7 +246,7 @@ namespace DBTest
             respuestasMal8.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta8 = new Pregunta(respuestasMal8, "¿Cuál es la región del mundo con el mayor número de personas que padecen hambre según la ODS 2?", 2, 200, respuestaBien.Texto, 2);
+            Pregunta pregunta8 = new Pregunta(respuestasMal8, "¿Cuál es la región del mundo con el mayor número de personas que padecen hambre según la ODS 2?", 2, 200, respuestaBien.Texto, 2, true);
             dal.Insert<Pregunta>(pregunta8);
             dal.Commit();
 
@@ -264,7 +264,7 @@ namespace DBTest
             respuestasMal8.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta9 = new Pregunta(respuestasMal9, "¿Cuál es la principal causa del hambre según la ODS 2?", 2, 200, respuestaBien.Texto, 2);
+            Pregunta pregunta9 = new Pregunta(respuestasMal9, "¿Cuál es la principal causa del hambre según la ODS 2?", 2, 200, respuestaBien.Texto, 2, true);
             dal.Insert<Pregunta>(pregunta9);
             dal.Commit();
 
@@ -283,7 +283,7 @@ namespace DBTest
             respuestasMal10.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta10 = new Pregunta(respuestasMal10, "¿Cuál es el objetivo específico de la ODS 2 relacionado con la igualdad de género?", 3, 300, respuestaBien.Texto, 2);
+            Pregunta pregunta10 = new Pregunta(respuestasMal10, "¿Cuál es el objetivo específico de la ODS 2 relacionado con la igualdad de género?", 3, 300, respuestaBien.Texto, 2, true);
             dal.Insert<Pregunta>(pregunta10);
             dal.Commit();
 
@@ -301,7 +301,7 @@ namespace DBTest
             respuestasMal11.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta11 = new Pregunta(respuestasMal11, "¿Cuál es el nombre completo de la segunda ODS?", 1, 100, respuestaBien.Texto, 2);
+            Pregunta pregunta11 = new Pregunta(respuestasMal11, "¿Cuál es el nombre completo de la segunda ODS?", 1, 100, respuestaBien.Texto, 2, false);
             dal.Insert<Pregunta>(pregunta11);
             dal.Commit();
 
@@ -319,7 +319,7 @@ namespace DBTest
             respuestasMal12.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta12 = new Pregunta(respuestasMal12, "¿Cuál es el objetivo principal de la segunda ODS?", 1, 100, respuestaBien.Texto, 2);
+            Pregunta pregunta12 = new Pregunta(respuestasMal12, "¿Cuál es el objetivo principal de la segunda ODS?", 1, 100, respuestaBien.Texto, 2, false);
             dal.Insert<Pregunta>(pregunta12);
             dal.Commit();
 
@@ -337,7 +337,7 @@ namespace DBTest
             respuestasMal13.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta13 = new Pregunta(respuestasMal13, "¿Qué porcentaje de la población mundial sufre de inseguridad alimentaria?", 3, 300, respuestaBien.Texto, 2);
+            Pregunta pregunta13 = new Pregunta(respuestasMal13, "¿Qué porcentaje de la población mundial sufre de inseguridad alimentaria?", 3, 300, respuestaBien.Texto, 2, true);
             dal.Insert<Pregunta>(pregunta13);
             dal.Commit();
 
@@ -355,7 +355,7 @@ namespace DBTest
             respuestasMal14.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta14 = new Pregunta(respuestasMal14, "¿Cuál es uno de los principales factores que contribuyen a la inseguridad alimentaria?", 2, 200, respuestaBien.Texto, 2);
+            Pregunta pregunta14 = new Pregunta(respuestasMal14, "¿Cuál es uno de los principales factores que contribuyen a la inseguridad alimentaria?", 2, 200, respuestaBien.Texto, 2, true);
             dal.Insert<Pregunta>(pregunta14);
             dal.Commit();
 
@@ -373,7 +373,7 @@ namespace DBTest
             respuestasMal15.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta15 = new Pregunta(respuestasMal15, "¿Cuál es una de las estrategias para lograr la segunda ODS?", 3, 300, respuestaBien.Texto, 2);
+            Pregunta pregunta15 = new Pregunta(respuestasMal15, "¿Cuál es una de las estrategias para lograr la segunda ODS?", 3, 300, respuestaBien.Texto, 2, true);
             dal.Insert<Pregunta>(pregunta15);
             dal.Commit();
 
@@ -391,7 +391,7 @@ namespace DBTest
             respuestasMal16.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta16 = new Pregunta(respuestasMal16, "¿Por qué la segunda ODS es importante para lograr un mundo sostenible?", 2, 200, respuestaBien.Texto, 2);
+            Pregunta pregunta16 = new Pregunta(respuestasMal16, "¿Por qué la segunda ODS es importante para lograr un mundo sostenible?", 2, 200, respuestaBien.Texto, 2, true);
             dal.Insert<Pregunta>(pregunta16);
             dal.Commit();
 
@@ -409,7 +409,7 @@ namespace DBTest
             respuestasMal17.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta17 = new Pregunta(respuestasMal17, "¿Cuál es uno de los indicadores utilizados para medir el progreso hacia la segunda ODS?", 2, 200, respuestaBien.Texto, 2);
+            Pregunta pregunta17 = new Pregunta(respuestasMal17, "¿Cuál es uno de los indicadores utilizados para medir el progreso hacia la segunda ODS?", 2, 200, respuestaBien.Texto, 2, true);
             dal.Insert<Pregunta>(pregunta17);
             dal.Commit();
 
@@ -427,7 +427,7 @@ namespace DBTest
             respuestasMal18.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta18 = new Pregunta(respuestasMal18, "¿Qué se entiende por seguridad alimentaria?", 3, 300, respuestaBien.Texto, 2);
+            Pregunta pregunta18 = new Pregunta(respuestasMal18, "¿Qué se entiende por seguridad alimentaria?", 3, 300, respuestaBien.Texto, 2, true);
             dal.Insert<Pregunta>(pregunta18);
             dal.Commit();
             //--------------ODS 3---------------------------
@@ -445,7 +445,7 @@ namespace DBTest
             respuestasMal19.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta19 = new Pregunta(respuestasMal19, "¿Cuál es el nombre completo de la tercera ODS?", 1, 100, respuestaBien.Texto, 3);
+            Pregunta pregunta19 = new Pregunta(respuestasMal19, "¿Cuál es el nombre completo de la tercera ODS?", 1, 100, respuestaBien.Texto, 3, false);
             dal.Insert<Pregunta>(pregunta19);
             dal.Commit();
 
@@ -463,7 +463,7 @@ namespace DBTest
             respuestasMal20.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta20 = new Pregunta(respuestasMal20, "¿Cuál es el objetivo principal de la tercera ODS?", 1, 100, respuestaBien.Texto, 3);
+            Pregunta pregunta20 = new Pregunta(respuestasMal20, "¿Cuál es el objetivo principal de la tercera ODS?", 1, 100, respuestaBien.Texto, 3, false);
             dal.Insert<Pregunta>(pregunta20);
             dal.Commit();
 
@@ -482,7 +482,7 @@ namespace DBTest
             respuestasMal21.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta21 = new Pregunta(respuestasMal21, "¿Cuál de los siguientes no es uno de los objetivos específicos de la tercera ODS?", 1, 100, respuestaBien.Texto, 3);
+            Pregunta pregunta21 = new Pregunta(respuestasMal21, "¿Cuál de los siguientes no es uno de los objetivos específicos de la tercera ODS?", 1, 100, respuestaBien.Texto, 3, true);
             dal.Insert<Pregunta>(pregunta21);
             dal.Commit();
 
@@ -501,7 +501,7 @@ namespace DBTest
             respuestasMal22.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta22 = new Pregunta(respuestasMal22, "¿Cuál de los siguientes no es un indicador utilizado para medir el progreso hacia la tercera ODS?", 2, 200, respuestaBien.Texto, 3);
+            Pregunta pregunta22 = new Pregunta(respuestasMal22, "¿Cuál de los siguientes no es un indicador utilizado para medir el progreso hacia la tercera ODS?", 2, 200, respuestaBien.Texto, 3, true);
             dal.Insert<Pregunta>(pregunta22);
             dal.Commit();
 
@@ -519,7 +519,7 @@ namespace DBTest
             respuestasMal23.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta23 = new Pregunta(respuestasMal23, "¿Cuál de las siguientes enfermedades se ha logrado erradicar a nivel mundial gracias a los esfuerzos de la tercera ODS?", 3, 300, respuestaBien.Texto, 3);
+            Pregunta pregunta23 = new Pregunta(respuestasMal23, "¿Cuál de las siguientes enfermedades se ha logrado erradicar a nivel mundial gracias a los esfuerzos de la tercera ODS?", 3, 300, respuestaBien.Texto, 3, true);
             dal.Insert<Pregunta>(pregunta23);
             dal.Commit();
 
@@ -537,7 +537,7 @@ namespace DBTest
             respuestasMal24.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta24 = new Pregunta(respuestasMal24, "¿Qué se entiende por cobertura universal de salud?", 3, 300, respuestaBien.Texto, 3);
+            Pregunta pregunta24 = new Pregunta(respuestasMal24, "¿Qué se entiende por cobertura universal de salud?", 3, 300, respuestaBien.Texto, 3, true);
             dal.Insert<Pregunta>(pregunta24);
             dal.Commit();
 
@@ -555,7 +555,7 @@ namespace DBTest
             respuestasMal25.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta25 = new Pregunta(respuestasMal25, "¿Cuál es uno de los principales desafíos para lograr la tercera ODS en los países en desarrollo?", 2, 200, respuestaBien.Texto, 3);
+            Pregunta pregunta25 = new Pregunta(respuestasMal25, "¿Cuál es uno de los principales desafíos para lograr la tercera ODS en los países en desarrollo?", 2, 200, respuestaBien.Texto, 3, true);
             dal.Insert<Pregunta>(pregunta25);
             dal.Commit();
 
@@ -573,7 +573,7 @@ namespace DBTest
             respuestasMal26.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta26 = new Pregunta(respuestasMal26, "¿Qué se entiende por salud mental según la tercera ODS?", 2, 200, respuestaBien.Texto, 3);
+            Pregunta pregunta26 = new Pregunta(respuestasMal26, "¿Qué se entiende por salud mental según la tercera ODS?", 2, 200, respuestaBien.Texto, 3, true);
             dal.Insert<Pregunta>(pregunta26);
             dal.Commit();
 
@@ -592,7 +592,7 @@ namespace DBTest
             respuestasMal27.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta27 = new Pregunta(respuestasMal27, "¿Cuál es el nombre completo de la cuarta ODS?", 1, 100, respuestaBien.Texto, 4);
+            Pregunta pregunta27 = new Pregunta(respuestasMal27, "¿Cuál es el nombre completo de la cuarta ODS?", 1, 100, respuestaBien.Texto, 4, false);
             dal.Insert<Pregunta>(pregunta27);
             dal.Commit();
 
@@ -610,7 +610,7 @@ namespace DBTest
             respuestasMal28.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta28 = new Pregunta(respuestasMal28, "¿Cuál es el objetivo principal de la cuarta ODS?", 1, 100, respuestaBien.Texto, 4);
+            Pregunta pregunta28 = new Pregunta(respuestasMal28, "¿Cuál es el objetivo principal de la cuarta ODS?", 1, 100, respuestaBien.Texto, 4, false);
             dal.Insert<Pregunta>(pregunta28);
             dal.Commit();
 
@@ -628,7 +628,7 @@ namespace DBTest
             respuestasMal29.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta29 = new Pregunta(respuestasMal29, "¿Cuál de las siguientes no es una meta específica de la cuarta ODS?", 2, 200, respuestaBien.Texto, 4);
+            Pregunta pregunta29 = new Pregunta(respuestasMal29, "¿Cuál de las siguientes no es una meta específica de la cuarta ODS?", 2, 200, respuestaBien.Texto, 4, false);
             dal.Insert<Pregunta>(pregunta29);
             dal.Commit();
 
@@ -646,7 +646,7 @@ namespace DBTest
             respuestasMal30.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta30 = new Pregunta(respuestasMal30, "¿Cuál de los siguientes no es un indicador utilizado para medir el progreso hacia la cuarta ODS?", 1, 100, respuestaBien.Texto, 4);
+            Pregunta pregunta30 = new Pregunta(respuestasMal30, "¿Cuál de los siguientes no es un indicador utilizado para medir el progreso hacia la cuarta ODS?", 1, 100, respuestaBien.Texto, 4, true);
             dal.Insert<Pregunta>(pregunta30);
             dal.Commit();
 
@@ -664,7 +664,7 @@ namespace DBTest
             respuestasMal31.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta31 = new Pregunta(respuestasMal31, "¿Qué se entiende por educación inclusiva según la cuarta ODS?", 3, 300, respuestaBien.Texto, 4);
+            Pregunta pregunta31 = new Pregunta(respuestasMal31, "¿Qué se entiende por educación inclusiva según la cuarta ODS?", 3, 300, respuestaBien.Texto, 4, true);
             dal.Insert<Pregunta>(pregunta31);
             dal.Commit();
 
@@ -682,7 +682,7 @@ namespace DBTest
             respuestasMal32.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta32 = new Pregunta(respuestasMal32, "¿Cuál de las siguientes no es una barrera para el acceso a una educación de calidad según la cuarta ODS?", 2, 200, respuestaBien.Texto, 4);
+            Pregunta pregunta32 = new Pregunta(respuestasMal32, "¿Cuál de las siguientes no es una barrera para el acceso a una educación de calidad según la cuarta ODS?", 2, 200, respuestaBien.Texto, 4, true);
             dal.Insert<Pregunta>(pregunta32);
             dal.Commit();
 
@@ -700,7 +700,7 @@ namespace DBTest
             respuestasMal33.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta33 = new Pregunta(respuestasMal33, "¿Qué se entiende por educación no formal según la cuarta ODS?", 3, 300, respuestaBien.Texto, 4);
+            Pregunta pregunta33 = new Pregunta(respuestasMal33, "¿Qué se entiende por educación no formal según la cuarta ODS?", 3, 300, respuestaBien.Texto, 4, true);
             dal.Insert<Pregunta>(pregunta33);
             dal.Commit();
 
@@ -718,7 +718,7 @@ namespace DBTest
             respuestasMal34.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta34 = new Pregunta(respuestasMal34, "¿Cuál de las siguientes medidas no es una forma de promover la calidad de la educación según la cuarta ODS?", 2, 200, respuestaBien.Texto, 4);
+            Pregunta pregunta34 = new Pregunta(respuestasMal34, "¿Cuál de las siguientes medidas no es una forma de promover la calidad de la educación según la cuarta ODS?", 2, 200, respuestaBien.Texto, 4, true);
             dal.Insert<Pregunta>(pregunta34);
             dal.Commit();
 
@@ -736,7 +736,7 @@ namespace DBTest
             respuestasMal35.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta35 = new Pregunta(respuestasMal35, "¿Cuál es el papel de la tecnología en la cuarta ODS?", 1, 100, respuestaBien.Texto, 4);
+            Pregunta pregunta35 = new Pregunta(respuestasMal35, "¿Cuál es el papel de la tecnología en la cuarta ODS?", 1, 100, respuestaBien.Texto, 4, true);
             dal.Insert<Pregunta>(pregunta35);
             dal.Commit();
 
@@ -756,7 +756,7 @@ namespace DBTest
             respuestasMal36.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta36 = new Pregunta(respuestasMal36, "¿Cuál es el objetivo de la quinta ODS?", 1, 100, respuestaBien.Texto, 5);
+            Pregunta pregunta36 = new Pregunta(respuestasMal36, "¿Cuál es el objetivo de la quinta ODS?", 1, 100, respuestaBien.Texto, 5, false);
             dal.Insert<Pregunta>(pregunta36);
             dal.Commit();
 
@@ -774,7 +774,7 @@ namespace DBTest
             respuestasMal37.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta37 = new Pregunta(respuestasMal37, "¿Qué medidas se deben tomar para lograr la quinta ODS?", 1, 100, respuestaBien.Texto, 5);
+            Pregunta pregunta37 = new Pregunta(respuestasMal37, "¿Qué medidas se deben tomar para lograr la quinta ODS?", 1, 100, respuestaBien.Texto, 5, true);
             dal.Insert<Pregunta>(pregunta37);
             dal.Commit();
 
@@ -792,7 +792,7 @@ namespace DBTest
             respuestasMal38.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta38 = new Pregunta(respuestasMal38, "¿Qué porcentaje de mujeres entre 15 y 49 años ha sufrido violencia física o sexual por parte de su pareja en todo el mundo?", 3, 300, respuestaBien.Texto, 5);
+            Pregunta pregunta38 = new Pregunta(respuestasMal38, "¿Qué porcentaje de mujeres entre 15 y 49 años ha sufrido violencia física o sexual por parte de su pareja en todo el mundo?", 3, 300, respuestaBien.Texto, 5, true);
             dal.Insert<Pregunta>(pregunta38);
             dal.Commit();
 
@@ -810,7 +810,7 @@ namespace DBTest
             respuestasMal39.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta39 = new Pregunta(respuestasMal39, "¿Cuántas mujeres han sufrido mutilación genital femenina en todo el mundo?", 2, 200, respuestaBien.Texto, 5);
+            Pregunta pregunta39 = new Pregunta(respuestasMal39, "¿Cuántas mujeres han sufrido mutilación genital femenina en todo el mundo?", 2, 200, respuestaBien.Texto, 5, true);
             dal.Insert<Pregunta>(pregunta39);
             dal.Commit();
 
@@ -828,7 +828,7 @@ namespace DBTest
             respuestasMal40.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta40 = new Pregunta(respuestasMal40, "¿Cuál es el porcentaje de mujeres en todo el mundo que ocupan cargos parlamentarios?", 2, 200, respuestaBien.Texto, 5);
+            Pregunta pregunta40 = new Pregunta(respuestasMal40, "¿Cuál es el porcentaje de mujeres en todo el mundo que ocupan cargos parlamentarios?", 2, 200, respuestaBien.Texto, 5, true);
             dal.Insert<Pregunta>(pregunta40);
             dal.Commit();
 
@@ -846,7 +846,7 @@ namespace DBTest
             respuestasMal41.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta41 = new Pregunta(respuestasMal41, "¿Cuántas niñas en todo el mundo no van a la escuela?", 2, 200, respuestaBien.Texto, 5);
+            Pregunta pregunta41 = new Pregunta(respuestasMal41, "¿Cuántas niñas en todo el mundo no van a la escuela?", 2, 200, respuestaBien.Texto, 5, true);
             dal.Insert<Pregunta>(pregunta41);
             dal.Commit();
 
@@ -864,7 +864,7 @@ namespace DBTest
             respuestasMal42.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta42 = new Pregunta(respuestasMal42, "¿Qué país ha logrado la igualdad de género en todos los ámbitos?", 3, 300, respuestaBien.Texto, 5);
+            Pregunta pregunta42 = new Pregunta(respuestasMal42, "¿Qué país ha logrado la igualdad de género en todos los ámbitos?", 3, 300, respuestaBien.Texto, 5, true);
             dal.Insert<Pregunta>(pregunta42);
             dal.Commit();
 
@@ -882,7 +882,7 @@ namespace DBTest
             respuestasMal43.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta43 = new Pregunta(respuestasMal43, "¿Cuál es la meta específica de la quinta ODS?", 1, 100, respuestaBien.Texto, 5);
+            Pregunta pregunta43 = new Pregunta(respuestasMal43, "¿Cuál es la meta específica de la quinta ODS?", 1, 100, respuestaBien.Texto, 5, false);
             dal.Insert<Pregunta>(pregunta43);
             dal.Commit();
             //------------------------------ODS 6------------------------
@@ -900,7 +900,7 @@ namespace DBTest
             respuestasMal44.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta44 = new Pregunta(respuestasMal44, "¿Cuál es el objetivo de la sexta ODS?", 1, 100, respuestaBien.Texto, 6);
+            Pregunta pregunta44 = new Pregunta(respuestasMal44, "¿Cuál es el objetivo de la sexta ODS?", 1, 100, respuestaBien.Texto, 6, false);
             dal.Insert<Pregunta>(pregunta44);
             dal.Commit();
 
@@ -918,7 +918,7 @@ namespace DBTest
             respuestasMal45.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta45 = new Pregunta(respuestasMal45, "¿Qué porcentaje de la población mundial no tiene acceso a agua potable?", 2, 200, respuestaBien.Texto, 6);
+            Pregunta pregunta45 = new Pregunta(respuestasMal45, "¿Qué porcentaje de la población mundial no tiene acceso a agua potable?", 2, 200, respuestaBien.Texto, 6, true);
             dal.Insert<Pregunta>(pregunta45);
             dal.Commit();
 
@@ -936,7 +936,7 @@ namespace DBTest
             respuestasMal46.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta46 = new Pregunta(respuestasMal46, "¿Qué porcentaje de la población mundial no tiene acceso a servicios de saneamiento básico?", 2, 200, respuestaBien.Texto, 6);
+            Pregunta pregunta46 = new Pregunta(respuestasMal46, "¿Qué porcentaje de la población mundial no tiene acceso a servicios de saneamiento básico?", 2, 200, respuestaBien.Texto, 6, true);
             dal.Insert<Pregunta>(pregunta46);
             dal.Commit();
 
@@ -954,7 +954,7 @@ namespace DBTest
             respuestasMal47.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta47 = new Pregunta(respuestasMal47, "¿Cuál es la principal causa de enfermedades relacionadas con el agua y el saneamiento?", 1, 100, respuestaBien.Texto, 6);
+            Pregunta pregunta47 = new Pregunta(respuestasMal47, "¿Cuál es la principal causa de enfermedades relacionadas con el agua y el saneamiento?", 1, 100, respuestaBien.Texto, 6, true);
             dal.Insert<Pregunta>(pregunta47);
             dal.Commit();
 
@@ -972,7 +972,7 @@ namespace DBTest
             respuestasMal48.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta48 = new Pregunta(respuestasMal48, "¿Cuántas personas mueren cada año por enfermedades relacionadas con la falta de agua y saneamiento?", 3, 300, respuestaBien.Texto, 6);
+            Pregunta pregunta48 = new Pregunta(respuestasMal48, "¿Cuántas personas mueren cada año por enfermedades relacionadas con la falta de agua y saneamiento?", 3, 300, respuestaBien.Texto, 6, true);
             dal.Insert<Pregunta>(pregunta48);
             dal.Commit();
 
@@ -990,7 +990,7 @@ namespace DBTest
             respuestasMal49.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta49 = new Pregunta(respuestasMal49, "¿Cuál es la meta específica de la sexta ODS?", 1, 100, respuestaBien.Texto, 6);
+            Pregunta pregunta49 = new Pregunta(respuestasMal49, "¿Cuál es la meta específica de la sexta ODS?", 1, 100, respuestaBien.Texto, 6, false);
             dal.Insert<Pregunta>(pregunta49);
             dal.Commit();
 
@@ -1008,7 +1008,7 @@ namespace DBTest
             respuestasMal50.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta50 = new Pregunta(respuestasMal50, "¿Qué país tiene la mayor cantidad de personas sin acceso a agua potable?", 3, 300, respuestaBien.Texto, 6);
+            Pregunta pregunta50 = new Pregunta(respuestasMal50, "¿Qué país tiene la mayor cantidad de personas sin acceso a agua potable?", 3, 300, respuestaBien.Texto, 6, true);
             dal.Insert<Pregunta>(pregunta50);
             dal.Commit();
 
@@ -1026,7 +1026,7 @@ namespace DBTest
             respuestasMal51.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta51 = new Pregunta(respuestasMal51, "¿Qué tecnologías se pueden utilizar para mejorar el acceso al agua y saneamiento en zonas rurales?", 1, 100, respuestaBien.Texto, 6);
+            Pregunta pregunta51 = new Pregunta(respuestasMal51, "¿Qué tecnologías se pueden utilizar para mejorar el acceso al agua y saneamiento en zonas rurales?", 1, 100, respuestaBien.Texto, 6, true);
             dal.Insert<Pregunta>(pregunta51);
             dal.Commit();
 
@@ -1046,7 +1046,7 @@ namespace DBTest
             respuestasMal52.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta52 = new Pregunta(respuestasMal52, "¿Cuál es el objetivo de la séptima ODS?", 1, 100, respuestaBien.Texto, 7);
+            Pregunta pregunta52 = new Pregunta(respuestasMal52, "¿Cuál es el objetivo de la séptima ODS?", 1, 100, respuestaBien.Texto, 7, false);
             dal.Insert<Pregunta>(pregunta52);
             dal.Commit();
 
@@ -1064,7 +1064,7 @@ namespace DBTest
             respuestasMal53.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta53 = new Pregunta(respuestasMal53, "¿Cuántas personas en todo el mundo carecen de acceso a la electricidad?", 3, 300, respuestaBien.Texto, 7);
+            Pregunta pregunta53 = new Pregunta(respuestasMal53, "¿Cuántas personas en todo el mundo carecen de acceso a la electricidad?", 3, 300, respuestaBien.Texto, 7, true);
             dal.Insert<Pregunta>(pregunta53);
             dal.Commit();
 
@@ -1082,7 +1082,7 @@ namespace DBTest
             respuestasMal54.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta54 = new Pregunta(respuestasMal54, "¿Qué tipo de energía renovable es la más utilizada en todo el mundo?", 2, 200, respuestaBien.Texto, 7);
+            Pregunta pregunta54 = new Pregunta(respuestasMal54, "¿Qué tipo de energía renovable es la más utilizada en todo el mundo?", 2, 200, respuestaBien.Texto, 7, true);
             dal.Insert<Pregunta>(pregunta54);
             dal.Commit();
 
@@ -1100,7 +1100,7 @@ namespace DBTest
             respuestasMal55.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta55 = new Pregunta(respuestasMal55, "¿Cuál es el porcentaje de energía renovable en el consumo energético mundial en 2019?", 2, 200, respuestaBien.Texto, 7);
+            Pregunta pregunta55 = new Pregunta(respuestasMal55, "¿Cuál es el porcentaje de energía renovable en el consumo energético mundial en 2019?", 2, 200, respuestaBien.Texto, 7, true);
             dal.Insert<Pregunta>(pregunta55);
             dal.Commit();
 
@@ -1118,7 +1118,7 @@ namespace DBTest
             respuestasMal56.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta56 = new Pregunta(respuestasMal56, "¿Cuál es el principal obstáculo para la adopción de energías renovables en los países en desarrollo?", 1, 100, respuestaBien.Texto, 7);
+            Pregunta pregunta56 = new Pregunta(respuestasMal56, "¿Cuál es el principal obstáculo para la adopción de energías renovables en los países en desarrollo?", 1, 100, respuestaBien.Texto, 7, true);
             dal.Insert<Pregunta>(pregunta56);
             dal.Commit();
 
@@ -1136,7 +1136,7 @@ namespace DBTest
             respuestasMal57.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta57 = new Pregunta(respuestasMal57, "¿Qué país es el mayor productor de energía eólica en todo el mundo?", 2, 200, respuestaBien.Texto, 7);
+            Pregunta pregunta57 = new Pregunta(respuestasMal57, "¿Qué país es el mayor productor de energía eólica en todo el mundo?", 2, 200, respuestaBien.Texto, 7, true);
             dal.Insert<Pregunta>(pregunta57);
             dal.Commit();
 
@@ -1154,7 +1154,7 @@ namespace DBTest
             respuestasMal58.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta58 = new Pregunta(respuestasMal58, "¿Qué tecnologías pueden ayudar a aumentar la eficiencia energética en hogares y edificios?", 1, 100, respuestaBien.Texto, 7);
+            Pregunta pregunta58 = new Pregunta(respuestasMal58, "¿Qué tecnologías pueden ayudar a aumentar la eficiencia energética en hogares y edificios?", 1, 100, respuestaBien.Texto, 7, true);
             dal.Insert<Pregunta>(pregunta58);
             dal.Commit();
 
@@ -1173,7 +1173,7 @@ namespace DBTest
             respuestasMal59.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta59 = new Pregunta(respuestasMal59, "¿Qué tipo de financiamiento se utiliza para impulsar proyectos de energías renovables?", 1, 100, respuestaBien.Texto, 7);
+            Pregunta pregunta59 = new Pregunta(respuestasMal59, "¿Qué tipo de financiamiento se utiliza para impulsar proyectos de energías renovables?", 1, 100, respuestaBien.Texto, 7, true);
             dal.Insert<Pregunta>(pregunta59);
             dal.Commit();
 
@@ -1192,7 +1192,7 @@ namespace DBTest
             respuestasMal60.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta60 = new Pregunta(respuestasMal60, "¿Cuál es el objetivo de la octava ODS?", 1, 100, respuestaBien.Texto, 8);
+            Pregunta pregunta60 = new Pregunta(respuestasMal60, "¿Cuál es el objetivo de la octava ODS?", 1, 100, respuestaBien.Texto, 8, false);
             dal.Insert<Pregunta>(pregunta60);
             dal.Commit();
 
@@ -1210,7 +1210,7 @@ namespace DBTest
             respuestasMal61.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta61 = new Pregunta(respuestasMal61, "¿Qué porcentaje de la población mundial vive con menos de 1,90 dólares al día?", 3, 300, respuestaBien.Texto, 8);
+            Pregunta pregunta61 = new Pregunta(respuestasMal61, "¿Qué porcentaje de la población mundial vive con menos de 1,90 dólares al día?", 3, 300, respuestaBien.Texto, 8, true);
             dal.Insert<Pregunta>(pregunta61);
             dal.Commit();
 
@@ -1228,7 +1228,7 @@ namespace DBTest
             respuestasMal62.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta62 = new Pregunta(respuestasMal62, "¿Qué país es el mayor productor de bienes manufacturados en el mundo?", 2, 200, respuestaBien.Texto, 8);
+            Pregunta pregunta62 = new Pregunta(respuestasMal62, "¿Qué país es el mayor productor de bienes manufacturados en el mundo?", 2, 200, respuestaBien.Texto, 8, true);
             dal.Insert<Pregunta>(pregunta62);
             dal.Commit();
 
@@ -1246,7 +1246,7 @@ namespace DBTest
             respuestasMal63.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta63 = new Pregunta(respuestasMal63, "¿Cuál es el porcentaje de la población mundial que está empleada en el sector agrícola?", 2, 200, respuestaBien.Texto, 8);
+            Pregunta pregunta63 = new Pregunta(respuestasMal63, "¿Cuál es el porcentaje de la población mundial que está empleada en el sector agrícola?", 2, 200, respuestaBien.Texto, 8, true);
             dal.Insert<Pregunta>(pregunta63);
             dal.Commit();
 
@@ -1264,7 +1264,7 @@ namespace DBTest
             respuestasMal64.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta64 = new Pregunta(respuestasMal64, "¿Qué porcentaje de la fuerza laboral mundial trabaja en el sector informal?", 3, 300, respuestaBien.Texto, 8);
+            Pregunta pregunta64 = new Pregunta(respuestasMal64, "¿Qué porcentaje de la fuerza laboral mundial trabaja en el sector informal?", 3, 300, respuestaBien.Texto, 8, true);
             dal.Insert<Pregunta>(pregunta64);
             dal.Commit();
 
@@ -1282,7 +1282,7 @@ namespace DBTest
             respuestasMal65.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta65 = new Pregunta(respuestasMal65, "¿Qué se entiende por trabajo decente?", 1, 100, respuestaBien.Texto, 8);
+            Pregunta pregunta65 = new Pregunta(respuestasMal65, "¿Qué se entiende por trabajo decente?", 1, 100, respuestaBien.Texto, 8, true);
             dal.Insert<Pregunta>(pregunta65);
             dal.Commit();
 
@@ -1300,7 +1300,7 @@ namespace DBTest
             respuestasMal66.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta66 = new Pregunta(respuestasMal66, "¿Qué porcentaje de la población mundial está empleada en el sector servicios?", 3, 300, respuestaBien.Texto, 8);
+            Pregunta pregunta66 = new Pregunta(respuestasMal66, "¿Qué porcentaje de la población mundial está empleada en el sector servicios?", 3, 300, respuestaBien.Texto, 8, true);
             dal.Insert<Pregunta>(pregunta66);
             dal.Commit();
 
@@ -1319,7 +1319,7 @@ namespace DBTest
             respuestasMal67.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta67 = new Pregunta(respuestasMal67, "¿Qué se entiende por crecimiento económico sostenible?", 2, 200, respuestaBien.Texto, 8);
+            Pregunta pregunta67 = new Pregunta(respuestasMal67, "¿Qué se entiende por crecimiento económico sostenible?", 2, 200, respuestaBien.Texto, 8, true);
             dal.Insert<Pregunta>(pregunta67);
             dal.Commit();
             //------------------------------ODS 9------------------------
@@ -1338,7 +1338,7 @@ namespace DBTest
             respuestasMal68.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta68 = new Pregunta(respuestasMal68, "¿Cuál es el objetivo principal de la novena ODS?", 1, 100, respuestaBien.Texto, 9);
+            Pregunta pregunta68 = new Pregunta(respuestasMal68, "¿Cuál es el objetivo principal de la novena ODS?", 1, 100, respuestaBien.Texto, 9, false);
             dal.Insert<Pregunta>(pregunta68);
             dal.Commit();
 
@@ -1356,7 +1356,7 @@ namespace DBTest
             respuestasMal69.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta69 = new Pregunta(respuestasMal69, "¿Qué se entiende por tecnología limpia?", 1, 100, respuestaBien.Texto, 9);
+            Pregunta pregunta69 = new Pregunta(respuestasMal69, "¿Qué se entiende por tecnología limpia?", 1, 100, respuestaBien.Texto, 9, true);
             dal.Insert<Pregunta>(pregunta69);
             dal.Commit();
 
@@ -1374,7 +1374,7 @@ namespace DBTest
             respuestasMal70.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta70 = new Pregunta(respuestasMal70, "¿Qué porcentaje de la población mundial tiene acceso a internet?", 2, 200, respuestaBien.Texto, 9);
+            Pregunta pregunta70 = new Pregunta(respuestasMal70, "¿Qué porcentaje de la población mundial tiene acceso a internet?", 2, 200, respuestaBien.Texto, 9, true);
             dal.Insert<Pregunta>(pregunta70);
             dal.Commit();
 
@@ -1392,7 +1392,7 @@ namespace DBTest
             respuestasMal71.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta71 = new Pregunta(respuestasMal71, "¿Qué se entiende por economía circular?", 3, 300, respuestaBien.Texto, 9);
+            Pregunta pregunta71 = new Pregunta(respuestasMal71, "¿Qué se entiende por economía circular?", 3, 300, respuestaBien.Texto, 9, true);
             dal.Insert<Pregunta>(pregunta71);
             dal.Commit();
 
@@ -1411,7 +1411,7 @@ namespace DBTest
             respuestasMal72.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta72 = new Pregunta(respuestasMal72, "¿Qué se entiende por investigación y desarrollo (I+D)?", 1, 100, respuestaBien.Texto, 9);
+            Pregunta pregunta72 = new Pregunta(respuestasMal72, "¿Qué se entiende por investigación y desarrollo (I+D)?", 1, 100, respuestaBien.Texto, 9, true);
             dal.Insert<Pregunta>(pregunta72);
             dal.Commit();
 
@@ -1429,7 +1429,7 @@ namespace DBTest
             respuestasMal73.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta73 = new Pregunta(respuestasMal73, "¿Qué se entiende por propiedad intelectual?", 2, 200, respuestaBien.Texto, 9);
+            Pregunta pregunta73 = new Pregunta(respuestasMal73, "¿Qué se entiende por propiedad intelectual?", 2, 200, respuestaBien.Texto, 9, true);
             dal.Insert<Pregunta>(pregunta73);
             dal.Commit();
 
@@ -1447,7 +1447,7 @@ namespace DBTest
             respuestasMal74.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta74 = new Pregunta(respuestasMal74, "¿Qué porcentaje de la población mundial tiene acceso a servicios financieros formales?", 3, 300, respuestaBien.Texto, 9);
+            Pregunta pregunta74 = new Pregunta(respuestasMal74, "¿Qué porcentaje de la población mundial tiene acceso a servicios financieros formales?", 3, 300, respuestaBien.Texto, 9, true);
             dal.Insert<Pregunta>(pregunta74);
             dal.Commit();
 
@@ -1465,7 +1465,7 @@ namespace DBTest
             respuestasMal75.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta75 = new Pregunta(respuestasMal75, "¿Qué se entiende por transferencia de tecnología?", 2, 200, respuestaBien.Texto, 9);
+            Pregunta pregunta75 = new Pregunta(respuestasMal75, "¿Qué se entiende por transferencia de tecnología?", 2, 200, respuestaBien.Texto, 9, true);
             dal.Insert<Pregunta>(pregunta75);
             dal.Commit();
             //------------------------------ODS 10------------------------
@@ -1483,7 +1483,7 @@ namespace DBTest
             respuestasMal76.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta76 = new Pregunta(respuestasMal76, "¿Cuál es el objetivo principal de la décima ODS?", 1, 100, respuestaBien.Texto, 10);
+            Pregunta pregunta76 = new Pregunta(respuestasMal76, "¿Cuál es el objetivo principal de la décima ODS?", 1, 100, respuestaBien.Texto, 10, false);
             dal.Insert<Pregunta>(pregunta76);
             dal.Commit();
 
@@ -1501,7 +1501,7 @@ namespace DBTest
             respuestasMal77.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta77 = new Pregunta(respuestasMal77, "¿Qué se entiende por \"crecimiento económico inclusivo\"?", 2, 200, respuestaBien.Texto, 10);
+            Pregunta pregunta77 = new Pregunta(respuestasMal77, "¿Qué se entiende por \"crecimiento económico inclusivo\"?", 2, 200, respuestaBien.Texto, 10, true);
             dal.Insert<Pregunta>(pregunta77);
             dal.Commit();
 
@@ -1519,7 +1519,7 @@ namespace DBTest
             respuestasMal78.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta78 = new Pregunta(respuestasMal78, "¿Qué porcentaje de la población mundial vive en la pobreza extrema?", 3, 300, respuestaBien.Texto, 10);
+            Pregunta pregunta78 = new Pregunta(respuestasMal78, "¿Qué porcentaje de la población mundial vive en la pobreza extrema?", 3, 300, respuestaBien.Texto, 10, true);
             dal.Insert<Pregunta>(pregunta78);
             dal.Commit();
 
@@ -1538,7 +1538,7 @@ namespace DBTest
             respuestasMal79.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta79 = new Pregunta(respuestasMal79, "¿Qué se entiende por \"empoderamiento económico\"?", 2, 200, respuestaBien.Texto, 10);
+            Pregunta pregunta79 = new Pregunta(respuestasMal79, "¿Qué se entiende por \"empoderamiento económico\"?", 2, 200, respuestaBien.Texto, 10, true);
             dal.Insert<Pregunta>(pregunta79);
             dal.Commit();
 
@@ -1556,7 +1556,7 @@ namespace DBTest
             respuestasMal80.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta80 = new Pregunta(respuestasMal80, "¿Qué se entiende por \"sistema de protección social\"?", 3, 300, respuestaBien.Texto, 10);
+            Pregunta pregunta80 = new Pregunta(respuestasMal80, "¿Qué se entiende por \"sistema de protección social\"?", 3, 300, respuestaBien.Texto, 10, true);
             dal.Insert<Pregunta>(pregunta80);
             dal.Commit();
 
@@ -1574,7 +1574,7 @@ namespace DBTest
             respuestasMal81.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta81 = new Pregunta(respuestasMal81, "¿Qué se entiende por \"desarrollo económico local\"?", 2, 200, respuestaBien.Texto, 10);
+            Pregunta pregunta81 = new Pregunta(respuestasMal81, "¿Qué se entiende por \"desarrollo económico local\"?", 2, 200, respuestaBien.Texto, 10, true);
             dal.Insert<Pregunta>(pregunta81);
             dal.Commit();
 
@@ -1592,7 +1592,7 @@ namespace DBTest
             respuestasMal82.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta82 = new Pregunta(respuestasMal82, "¿Qué se entiende por \"protección de los derechos de propiedad intelectual\"?", 1, 100, respuestaBien.Texto, 10);
+            Pregunta pregunta82 = new Pregunta(respuestasMal82, "¿Qué se entiende por \"protección de los derechos de propiedad intelectual\"?", 1, 100, respuestaBien.Texto, 10, true);
             dal.Insert<Pregunta>(pregunta82);
             dal.Commit();
 
@@ -1610,7 +1610,7 @@ namespace DBTest
             respuestasMal83.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta83 = new Pregunta(respuestasMal83, "¿Qué se entiende por el término \"comercio justo\"?", 3, 300, respuestaBien.Texto, 10);
+            Pregunta pregunta83 = new Pregunta(respuestasMal83, "¿Qué se entiende por el término \"comercio justo\"?", 3, 300, respuestaBien.Texto, 10, true);
             dal.Insert<Pregunta>(pregunta83);
             dal.Commit();
 
@@ -1629,7 +1629,7 @@ namespace DBTest
             respuestasMal84.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta84 = new Pregunta(respuestasMal84, "¿Qué porcentaje de la población mundial se espera que viva en ciudades para 2050?", 2, 200, respuestaBien.Texto, 11);
+            Pregunta pregunta84 = new Pregunta(respuestasMal84, "¿Qué porcentaje de la población mundial se espera que viva en ciudades para 2050?", 2, 200, respuestaBien.Texto, 11, true);
             dal.Insert<Pregunta>(pregunta84);
             dal.Commit();
 
@@ -1647,7 +1647,7 @@ namespace DBTest
             respuestasMal85.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta85 = new Pregunta(respuestasMal85, "¿Cuál es uno de los objetivos de la undécima ODS?", 1, 100, respuestaBien.Texto, 11);
+            Pregunta pregunta85 = new Pregunta(respuestasMal85, "¿Cuál es uno de los objetivos de la undécima ODS?", 1, 100, respuestaBien.Texto, 11, false);
             dal.Insert<Pregunta>(pregunta85);
             dal.Commit();
 
@@ -1665,7 +1665,7 @@ namespace DBTest
             respuestasMal86.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta86 = new Pregunta(respuestasMal86, "¿Qué se entiende por \"ciudad inclusiva\"?", 2, 200, respuestaBien.Texto, 11);
+            Pregunta pregunta86 = new Pregunta(respuestasMal86, "¿Qué se entiende por \"ciudad inclusiva\"?", 2, 200, respuestaBien.Texto, 11, true);
             dal.Insert<Pregunta>(pregunta86);
             dal.Commit();
 
@@ -1683,7 +1683,7 @@ namespace DBTest
             respuestasMal87.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta87 = new Pregunta(respuestasMal87, "¿Por qué es importante la planificación urbana sostenible?", 2, 200, respuestaBien.Texto, 11);
+            Pregunta pregunta87 = new Pregunta(respuestasMal87, "¿Por qué es importante la planificación urbana sostenible?", 2, 200, respuestaBien.Texto, 11, true);
             dal.Insert<Pregunta>(pregunta87);
             dal.Commit();
 
@@ -1701,7 +1701,7 @@ namespace DBTest
             respuestasMal88.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta88 = new Pregunta(respuestasMal88, "¿Cuál es una forma de reducir la huella de carbono de una ciudad?", 1, 100, respuestaBien.Texto, 11);
+            Pregunta pregunta88 = new Pregunta(respuestasMal88, "¿Cuál es una forma de reducir la huella de carbono de una ciudad?", 1, 100, respuestaBien.Texto, 11, true);
             dal.Insert<Pregunta>(pregunta88);
             dal.Commit();
 
@@ -1719,7 +1719,7 @@ namespace DBTest
             respuestasMal89.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta89 = new Pregunta(respuestasMal89, "¿Qué es el \"derecho a la ciudad\"?", 3, 300, respuestaBien.Texto, 11);
+            Pregunta pregunta89 = new Pregunta(respuestasMal89, "¿Qué es el \"derecho a la ciudad\"?", 3, 300, respuestaBien.Texto, 11, true);
             dal.Insert<Pregunta>(pregunta89);
             dal.Commit();
 
@@ -1737,7 +1737,7 @@ namespace DBTest
             respuestasMal90.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta90 = new Pregunta(respuestasMal90, "¿Por qué es importante reducir la contaminación del aire en las ciudades?", 1, 100, respuestaBien.Texto, 11);
+            Pregunta pregunta90 = new Pregunta(respuestasMal90, "¿Por qué es importante reducir la contaminación del aire en las ciudades?", 1, 100, respuestaBien.Texto, 11, true);
             dal.Insert<Pregunta>(pregunta90);
             dal.Commit();
 
@@ -1756,7 +1756,7 @@ namespace DBTest
             respuestasMal91.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta91 = new Pregunta(respuestasMal91, "¿Cuál es el objetivo principal de la duodécima ODS?", 1, 100, respuestaBien.Texto, 12);
+            Pregunta pregunta91 = new Pregunta(respuestasMal91, "¿Cuál es el objetivo principal de la duodécima ODS?", 1, 100, respuestaBien.Texto, 12, false);
             dal.Insert<Pregunta>(pregunta91);
             dal.Commit();
 
@@ -1774,7 +1774,7 @@ namespace DBTest
             respuestasMal92.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta92 = new Pregunta(respuestasMal92, "¿Qué es la huella de carbono?", 2, 200, respuestaBien.Texto, 12);
+            Pregunta pregunta92 = new Pregunta(respuestasMal92, "¿Qué es la huella de carbono?", 2, 200, respuestaBien.Texto, 12, true);
             dal.Insert<Pregunta>(pregunta92);
             dal.Commit();
 
@@ -1792,7 +1792,7 @@ namespace DBTest
             respuestasMal93.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta93 = new Pregunta(respuestasMal93, "¿Qué es la economía circular?", 2, 200, respuestaBien.Texto, 12);
+            Pregunta pregunta93 = new Pregunta(respuestasMal93, "¿Qué es la economía circular?", 2, 200, respuestaBien.Texto, 12, true);
             dal.Insert<Pregunta>(pregunta93);
             dal.Commit();
 
@@ -1810,7 +1810,7 @@ namespace DBTest
             respuestasMal94.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta94 = new Pregunta(respuestasMal94, "¿Qué es el \"upcycling\"?", 2, 200, respuestaBien.Texto, 12);
+            Pregunta pregunta94 = new Pregunta(respuestasMal94, "¿Qué es el \"upcycling\"?", 2, 200, respuestaBien.Texto, 12, true);
             dal.Insert<Pregunta>(pregunta94);
             dal.Commit();
 
@@ -1828,7 +1828,7 @@ namespace DBTest
             respuestasMal95.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta95 = new Pregunta(respuestasMal95, "¿Qué es el ecodiseño?", 2, 200, respuestaBien.Texto, 12);
+            Pregunta pregunta95 = new Pregunta(respuestasMal95, "¿Qué es el ecodiseño?", 2, 200, respuestaBien.Texto, 12, true);
             dal.Insert<Pregunta>(pregunta95);
             dal.Commit();
 
@@ -1846,7 +1846,7 @@ namespace DBTest
             respuestasMal96.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta96 = new Pregunta(respuestasMal96, "¿Qué es la eficiencia de los recursos?", 3, 300, respuestaBien.Texto, 12);
+            Pregunta pregunta96 = new Pregunta(respuestasMal96, "¿Qué es la eficiencia de los recursos?", 3, 300, respuestaBien.Texto, 12, true);
             dal.Insert<Pregunta>(pregunta96);
             dal.Commit();
 
@@ -1864,7 +1864,7 @@ namespace DBTest
             respuestasMal97.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta97 = new Pregunta(respuestasMal97, "¿Qué es la \"economía verde\"?", 2, 200, respuestaBien.Texto, 12);
+            Pregunta pregunta97 = new Pregunta(respuestasMal97, "¿Qué es la \"economía verde\"?", 2, 200, respuestaBien.Texto, 12, true);
             dal.Insert<Pregunta>(pregunta97);
             dal.Commit();
 
@@ -1884,7 +1884,7 @@ namespace DBTest
             respuestasMal98.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta98 = new Pregunta(respuestasMal98, "¿Cuál es el objetivo principal de la decimotercera ODS?", 1, 100, respuestaBien.Texto, 13);
+            Pregunta pregunta98 = new Pregunta(respuestasMal98, "¿Cuál es el objetivo principal de la decimotercera ODS?", 1, 100, respuestaBien.Texto, 13, false);
             dal.Insert<Pregunta>(pregunta98);
             dal.Commit();
 
@@ -1902,7 +1902,7 @@ namespace DBTest
             respuestasMal99.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta99 = new Pregunta(respuestasMal99, "¿Cuál es el nombre completo de la decimotercera ODS?", 1, 100, respuestaBien.Texto, 13);
+            Pregunta pregunta99 = new Pregunta(respuestasMal99, "¿Cuál es el nombre completo de la decimotercera ODS?", 1, 100, respuestaBien.Texto, 13, false);
             dal.Insert<Pregunta>(pregunta99);
             dal.Commit();
 
@@ -1920,7 +1920,7 @@ namespace DBTest
             respuestasMal100.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta100 = new Pregunta(respuestasMal100, "¿Qué se espera lograr con la decimotercera ODS?", 2, 200, respuestaBien.Texto, 13);
+            Pregunta pregunta100 = new Pregunta(respuestasMal100, "¿Qué se espera lograr con la decimotercera ODS?", 2, 200, respuestaBien.Texto, 13, true);
             dal.Insert<Pregunta>(pregunta100);
             dal.Commit();
 
@@ -1938,7 +1938,7 @@ namespace DBTest
             respuestasMal101.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta101 = new Pregunta(respuestasMal101, "¿Qué se espera que hagan los países para cumplir con la decimotercera ODS?", 2, 200, respuestaBien.Texto, 13);
+            Pregunta pregunta101 = new Pregunta(respuestasMal101, "¿Qué se espera que hagan los países para cumplir con la decimotercera ODS?", 2, 200, respuestaBien.Texto, 13, true);
             dal.Insert<Pregunta>(pregunta101);
             dal.Commit();
 
@@ -1956,7 +1956,7 @@ namespace DBTest
             respuestasMal102.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta102 = new Pregunta(respuestasMal102, "¿Qué es el \"acuerdo de París\"?", 3, 300, respuestaBien.Texto, 13);
+            Pregunta pregunta102 = new Pregunta(respuestasMal102, "¿Qué es el \"acuerdo de París\"?", 3, 300, respuestaBien.Texto, 13, true);
             dal.Insert<Pregunta>(pregunta102);
             dal.Commit();
 
@@ -1974,7 +1974,7 @@ namespace DBTest
             respuestasMal103.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta103 = new Pregunta(respuestasMal103, "¿Cuál es la relación entre la acción por el clima y los objetivos de desarrollo sostenible?", 3, 300, respuestaBien.Texto, 13);
+            Pregunta pregunta103 = new Pregunta(respuestasMal103, "¿Cuál es la relación entre la acción por el clima y los objetivos de desarrollo sostenible?", 3, 300, respuestaBien.Texto, 13, true);
             dal.Insert<Pregunta>(pregunta103);
             dal.Commit();
 
@@ -1992,7 +1992,7 @@ namespace DBTest
             respuestasMal104.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta104 = new Pregunta(respuestasMal104, "¿Cómo puede la sociedad contribuir a la acción por el clima?", 1, 100, respuestaBien.Texto, 13);
+            Pregunta pregunta104 = new Pregunta(respuestasMal104, "¿Cómo puede la sociedad contribuir a la acción por el clima?", 1, 100, respuestaBien.Texto, 13, true);
             dal.Insert<Pregunta>(pregunta104);
             dal.Commit();
 
@@ -2011,7 +2011,7 @@ namespace DBTest
             respuestasMal105.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta105 = new Pregunta(respuestasMal105, "¿Cuál es el nombre completo de la decimocuarta ODS?", 1, 100, respuestaBien.Texto, 14);
+            Pregunta pregunta105 = new Pregunta(respuestasMal105, "¿Cuál es el nombre completo de la decimocuarta ODS?", 1, 100, respuestaBien.Texto, 14, false);
             dal.Insert<Pregunta>(pregunta105);
             dal.Commit();
 
@@ -2029,7 +2029,7 @@ namespace DBTest
             respuestasMal106.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta106 = new Pregunta(respuestasMal106, "¿Por qué es importante la protección de la vida submarina?", 1, 100, respuestaBien.Texto, 14);
+            Pregunta pregunta106 = new Pregunta(respuestasMal106, "¿Por qué es importante la protección de la vida submarina?", 1, 100, respuestaBien.Texto, 14, true);
             dal.Insert<Pregunta>(pregunta106);
             dal.Commit();
 
@@ -2048,7 +2048,7 @@ namespace DBTest
             respuestasMal107.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta107 = new Pregunta(respuestasMal107, "¿Qué es el Área Marina Protegida (AMP)?", 3, 300, respuestaBien.Texto, 14);
+            Pregunta pregunta107 = new Pregunta(respuestasMal107, "¿Qué es el Área Marina Protegida (AMP)?", 3, 300, respuestaBien.Texto, 14, true);
             dal.Insert<Pregunta>(pregunta107);
             dal.Commit();
 
@@ -2066,7 +2066,7 @@ namespace DBTest
             respuestasMal108.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta108 = new Pregunta(respuestasMal108, "¿Por qué es importante establecer Áreas Marinas Protegidas?", 2, 200, respuestaBien.Texto, 14);
+            Pregunta pregunta108 = new Pregunta(respuestasMal108, "¿Por qué es importante establecer Áreas Marinas Protegidas?", 2, 200, respuestaBien.Texto, 14, true);
             dal.Insert<Pregunta>(pregunta108);
             dal.Commit();
 
@@ -2084,7 +2084,7 @@ namespace DBTest
             respuestasMal109.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta109 = new Pregunta(respuestasMal109, "¿Qué medidas pueden tomar los gobiernos y las organizaciones para proteger la vida submarina?", 2, 200, respuestaBien.Texto, 14);
+            Pregunta pregunta109 = new Pregunta(respuestasMal109, "¿Qué medidas pueden tomar los gobiernos y las organizaciones para proteger la vida submarina?", 2, 200, respuestaBien.Texto, 14, true);
             dal.Insert<Pregunta>(pregunta109);
             dal.Commit();
 
@@ -2102,7 +2102,7 @@ namespace DBTest
             respuestasMal110.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta110 = new Pregunta(respuestasMal110, "¿Cuál es la principal amenaza para la vida submarina?", 3, 300, respuestaBien.Texto, 14);
+            Pregunta pregunta110 = new Pregunta(respuestasMal110, "¿Cuál es la principal amenaza para la vida submarina?", 3, 300, respuestaBien.Texto, 14, true);
             dal.Insert<Pregunta>(pregunta110);
             dal.Commit();
 
@@ -2122,7 +2122,7 @@ namespace DBTest
             respuestasMal111.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta111 = new Pregunta(respuestasMal111, "¿Cuál es el objetivo principal de la decimoquinta ODS?", 1, 100, respuestaBien.Texto, 15);
+            Pregunta pregunta111 = new Pregunta(respuestasMal111, "¿Cuál es el objetivo principal de la decimoquinta ODS?", 1, 100, respuestaBien.Texto, 15, false);
             dal.Insert<Pregunta>(pregunta111);
             dal.Commit();
 
@@ -2140,7 +2140,7 @@ namespace DBTest
             respuestasMal112.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta112 = new Pregunta(respuestasMal112, "¿Qué se espera lograr con la decimoquinta ODS?", 1, 100, respuestaBien.Texto, 15);
+            Pregunta pregunta112 = new Pregunta(respuestasMal112, "¿Qué se espera lograr con la decimoquinta ODS?", 1, 100, respuestaBien.Texto, 15, false);
             dal.Insert<Pregunta>(pregunta112);
             dal.Commit();
 
@@ -2158,7 +2158,7 @@ namespace DBTest
             respuestasMal113.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta113 = new Pregunta(respuestasMal113, "¿Por qué es importante la protección de la biodiversidad terrestre?", 2, 200, respuestaBien.Texto, 15);
+            Pregunta pregunta113 = new Pregunta(respuestasMal113, "¿Por qué es importante la protección de la biodiversidad terrestre?", 2, 200, respuestaBien.Texto, 15, true);
             dal.Insert<Pregunta>(pregunta113);
             dal.Commit();
 
@@ -2176,7 +2176,7 @@ namespace DBTest
             respuestasMal114.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta114 = new Pregunta(respuestasMal114, "¿Qué es la desertificación?", 3, 300, respuestaBien.Texto, 15);
+            Pregunta pregunta114 = new Pregunta(respuestasMal114, "¿Qué es la desertificación?", 3, 300, respuestaBien.Texto, 15, true);
             dal.Insert<Pregunta>(pregunta114);
             dal.Commit();
 
@@ -2194,7 +2194,7 @@ namespace DBTest
             respuestasMal115.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta115 = new Pregunta(respuestasMal115, "¿Por qué es importante abordar la desertificación?", 3, 300, respuestaBien.Texto, 15);
+            Pregunta pregunta115 = new Pregunta(respuestasMal115, "¿Por qué es importante abordar la desertificación?", 3, 300, respuestaBien.Texto, 15, true);
             dal.Insert<Pregunta>(pregunta115);
             dal.Commit();
 
@@ -2212,7 +2212,7 @@ namespace DBTest
             respuestasMal116.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta116 = new Pregunta(respuestasMal116, "¿Qué medidas pueden tomar los gobiernos y las comunidades para abordar la desertificación?", 2, 200, respuestaBien.Texto, 15);
+            Pregunta pregunta116 = new Pregunta(respuestasMal116, "¿Qué medidas pueden tomar los gobiernos y las comunidades para abordar la desertificación?", 2, 200, respuestaBien.Texto, 15, true);
             dal.Insert<Pregunta>(pregunta116);
             dal.Commit();
 
@@ -2230,7 +2230,7 @@ namespace DBTest
             respuestasMal117.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta117 = new Pregunta(respuestasMal117, "¿Cuál es la principal amenaza para la biodiversidad terrestre?", 3, 300, respuestaBien.Texto, 15);
+            Pregunta pregunta117 = new Pregunta(respuestasMal117, "¿Cuál es la principal amenaza para la biodiversidad terrestre?", 3, 300, respuestaBien.Texto, 15, true);
             dal.Insert<Pregunta>(pregunta117);
             dal.Commit();
 
@@ -2250,7 +2250,7 @@ namespace DBTest
             respuestasMal118.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta118 = new Pregunta(respuestasMal118, "¿Qué es la meta principal de la decimosexta ODS?", 1, 100, respuestaBien.Texto, 16);
+            Pregunta pregunta118 = new Pregunta(respuestasMal118, "¿Qué es la meta principal de la decimosexta ODS?", 1, 100, respuestaBien.Texto, 16, false);
             dal.Insert<Pregunta>(pregunta118);
             dal.Commit();
 
@@ -2268,7 +2268,7 @@ namespace DBTest
             respuestasMal119.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta119 = new Pregunta(respuestasMal119, "¿Qué se entiende por instituciones y gobernanza?", 2, 200, respuestaBien.Texto, 16);
+            Pregunta pregunta119 = new Pregunta(respuestasMal119, "¿Qué se entiende por instituciones y gobernanza?", 2, 200, respuestaBien.Texto, 16, true);
             dal.Insert<Pregunta>(pregunta119);
             dal.Commit();
 
@@ -2286,7 +2286,7 @@ namespace DBTest
             respuestasMal120.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta120 = new Pregunta(respuestasMal120, "¿Por qué es importante fortalecer las instituciones y la gobernanza?", 2, 200, respuestaBien.Texto, 16);
+            Pregunta pregunta120 = new Pregunta(respuestasMal120, "¿Por qué es importante fortalecer las instituciones y la gobernanza?", 2, 200, respuestaBien.Texto, 16, true);
             dal.Insert<Pregunta>(pregunta120);
             dal.Commit();
 
@@ -2304,7 +2304,7 @@ namespace DBTest
             respuestasMal121.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta121 = new Pregunta(respuestasMal121, "¿Cuáles son algunos de los principales desafíos para fortalecer las instituciones y la gobernanza?", 1, 100, respuestaBien.Texto, 16);
+            Pregunta pregunta121 = new Pregunta(respuestasMal121, "¿Cuáles son algunos de los principales desafíos para fortalecer las instituciones y la gobernanza?", 1, 100, respuestaBien.Texto, 16, true);
             dal.Insert<Pregunta>(pregunta121);
             dal.Commit();
 
@@ -2322,7 +2322,7 @@ namespace DBTest
             respuestasMal122.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta122 = new Pregunta(respuestasMal122, "¿Qué se entiende por participación ciudadana?", 3, 300, respuestaBien.Texto, 16);
+            Pregunta pregunta122 = new Pregunta(respuestasMal122, "¿Qué se entiende por participación ciudadana?", 3, 300, respuestaBien.Texto, 16, true);
             dal.Insert<Pregunta>(pregunta122);
             dal.Commit();
 
@@ -2340,7 +2340,7 @@ namespace DBTest
             respuestasMal123.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta123 = new Pregunta(respuestasMal119, "¿Cómo pueden las organizaciones de la sociedad civil contribuir a fortalecer las instituciones y la gobernanza?", 3, 300, respuestaBien.Texto, 16);
+            Pregunta pregunta123 = new Pregunta(respuestasMal119, "¿Cómo pueden las organizaciones de la sociedad civil contribuir a fortalecer las instituciones y la gobernanza?", 3, 300, respuestaBien.Texto, 16, true);
             dal.Insert<Pregunta>(pregunta123);
             dal.Commit();
 
@@ -2358,7 +2358,7 @@ namespace DBTest
             respuestasMal124.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta124 = new Pregunta(respuestasMal124, "¿Qué papel juega la educación en la promoción de instituciones y gobernanza fuertes?", 2, 200, respuestaBien.Texto, 16);
+            Pregunta pregunta124 = new Pregunta(respuestasMal124, "¿Qué papel juega la educación en la promoción de instituciones y gobernanza fuertes?", 2, 200, respuestaBien.Texto, 16, true);
             dal.Insert<Pregunta>(pregunta124);
             dal.Commit();
 
@@ -2378,7 +2378,7 @@ namespace DBTest
             respuestasMal125.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta125 = new Pregunta(respuestasMal125, "¿Cuál es el objetivo principal de la ODS 17?", 1, 100, respuestaBien.Texto, 17);
+            Pregunta pregunta125 = new Pregunta(respuestasMal125, "¿Cuál es el objetivo principal de la ODS 17?", 1, 100, respuestaBien.Texto, 17, false);
             dal.Insert<Pregunta>(pregunta125);
             dal.Commit();
 
@@ -2396,7 +2396,7 @@ namespace DBTest
             respuestasMal126.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta126 = new Pregunta(respuestasMal126, "¿Qué rol juega el sector privado en la implementación de la ODS 17?", 2, 200, respuestaBien.Texto, 17);
+            Pregunta pregunta126 = new Pregunta(respuestasMal126, "¿Qué rol juega el sector privado en la implementación de la ODS 17?", 2, 200, respuestaBien.Texto, 17, true);
             dal.Insert<Pregunta>(pregunta126);
             dal.Commit();
 
@@ -2414,7 +2414,7 @@ namespace DBTest
             respuestasMal127.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta127 = new Pregunta(respuestasMal127, "¿Cuál es el objetivo de la Asociación Mundial para el Desarrollo Sostenible (AMDS)?", 1, 100, respuestaBien.Texto, 17);
+            Pregunta pregunta127 = new Pregunta(respuestasMal127, "¿Cuál es el objetivo de la Asociación Mundial para el Desarrollo Sostenible (AMDS)?", 1, 100, respuestaBien.Texto, 17, true);
             dal.Insert<Pregunta>(pregunta127);
             dal.Commit();
 
@@ -2432,7 +2432,7 @@ namespace DBTest
             respuestasMal128.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta128 = new Pregunta(respuestasMal128, "¿Qué significa la sigla PIB?", 2, 200, respuestaBien.Texto, 17);
+            Pregunta pregunta128 = new Pregunta(respuestasMal128, "¿Qué significa la sigla PIB?", 2, 200, respuestaBien.Texto, 17, true);
             dal.Insert<Pregunta>(pregunta128);
             dal.Commit();
 
@@ -2450,7 +2450,7 @@ namespace DBTest
             respuestasMal129.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
-            Pregunta pregunta129 = new Pregunta(respuestasMal129, "¿Cuál es el objetivo del Fondo Verde para el Clima?", 3, 300, respuestaBien.Texto, 17);
+            Pregunta pregunta129 = new Pregunta(respuestasMal129, "¿Cuál es el objetivo del Fondo Verde para el Clima?", 3, 300, respuestaBien.Texto, 17, true);
             dal.Insert<Pregunta>(pregunta129);
             dal.Commit();
 
@@ -2467,8 +2467,7 @@ namespace DBTest
             respuestaBien.Texto = "Todas las anteriores";
             respuestasMal130.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
-
-            Pregunta pregunta130 = new Pregunta(respuestasMal130, "¿Cómo se puede promover la cooperación internacional para el desarrollo sostenible?", 3, 300, respuestaBien.Texto, 17);
+                        Pregunta pregunta130 = new Pregunta(respuestasMal130, "¿Cómo se puede promover la cooperación internacional para el desarrollo sostenible?", 3, 300, respuestaBien.Texto, 17, true);
             dal.Insert<Pregunta>(pregunta130);
             dal.Commit();
 

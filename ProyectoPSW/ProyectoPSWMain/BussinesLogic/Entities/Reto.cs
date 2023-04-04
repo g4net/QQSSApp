@@ -13,11 +13,12 @@ namespace ProyectoPSWMain.Entities
                         
       }
 
-        public Reto(int Dificulty, int Punt_acierto, int Ods):this()
+        public Reto(int Dificulty, int Punt_acierto, int Ods, bool muestraImagen):this()
         {
             this.Dificultad = Dificulty;
             this.Puntuacion_acierto = Punt_acierto;
             this.Ods = Ods;        
+            this.MuestraImagen = muestraImagen;
         }
 
     }

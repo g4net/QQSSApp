@@ -13,7 +13,7 @@ namespace ProyectoPSWMain.Entities
             this.Respuestas = new List<Respuesta>();
         }
 
-        public Pregunta(ICollection<Respuesta> rtas, String texto, int Dificulty, int Punt_acierto, String rtaCorrecta, int ods) : base(Dificulty,Punt_acierto, ods) {
+        public Pregunta(ICollection<Respuesta> rtas, String texto, int Dificulty, int Punt_acierto, String rtaCorrecta, int ods, bool muestraImagen) : base(Dificulty,Punt_acierto, ods, muestraImagen) {
             this.Respuestas = rtas;
             this.Enunciado = texto;
             this.RespuestaCorrecta = rtaCorrecta;

@@ -40,7 +40,7 @@ namespace ProyectoPSWMain.Services
         {
             repository.Commit();
         }
-
+        /*
         public void DBInitialization()
         {
             ICollection<Respuesta> respuestas = new List<Respuesta>();
@@ -107,6 +107,7 @@ namespace ProyectoPSWMain.Services
             }
             return answers;
         }
+        */
 
 
         #region User
