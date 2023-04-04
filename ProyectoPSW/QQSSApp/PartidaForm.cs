@@ -41,6 +41,7 @@ namespace QQSSApp
             InitializeRetoPregunta();
             MarcarProgreso();
             InitializeTimers();
+            InitializeODS();
         }
 
 
@@ -78,13 +79,25 @@ namespace QQSSApp
                 images.Add(imagen);
             }
 
-            for(int i= 1; i <= 17; i++)
+            for(int i= 0; i <= 17; i++)
             {
                 string image = "ODS_" + i;
                 Image imagen = (System.Drawing.Bitmap) QQSSApp.Properties.Resources.ResourceManager.GetObject(image);
                 ods.Add(imagen);
             }
 
+        }
+
+        public void InitializeODS()
+        {
+            if (pregunta.MuestraImagen)
+            {
+                ods_picture.Image = ods.ElementAt(pregunta.Ods);
+            }
+            else
+            {
+                ods_picture.Image = ods.ElementAt(0);
+            }
         }
 
         private void op1_click(object sender, EventArgs e)
@@ -209,7 +222,6 @@ namespace QQSSApp
             op2.Text = respuestas.ElementAt(1).getText();
             op3.Text = respuestas.ElementAt(2).getText();
             op4.Text = respuestas.ElementAt(3).getText();
-            ods_picture.Image = ods.ElementAt(pregunta.Ods - 1);
         }
     }
 }

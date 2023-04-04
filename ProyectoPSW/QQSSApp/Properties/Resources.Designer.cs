@@ -303,6 +303,16 @@ namespace QQSSApp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ODS_0 {
+            get {
+                object obj = ResourceManager.GetObject("ODS_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ODS_1 {
             get {
                 object obj = ResourceManager.GetObject("ODS_1", resourceCulture);

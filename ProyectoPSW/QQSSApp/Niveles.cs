@@ -18,6 +18,36 @@ namespace QQSSApp
         {
             this.service = service;
             InitializeComponent();
+            BotonesHabilitados();
+        }
+
+        public void BotonesHabilitados()
+        {
+            for(int i = service.GetLoggedUser().nivel; i >= 0; i--)
+            {
+                GetButton(i).Enabled = true;
+            }
+        }
+
+        public Button GetButton(int nivel)
+        {
+            if (nivel == 1)
+            {
+                return BotonNivel1;
+            }
+            else if(nivel == 2)
+            {
+                return BotonNivel2;
+            }
+            else if (nivel == 3)
+            {
+                return BotonNivel3;
+            }
+            else if(nivel == 4)
+            {
+                return BotonNivel4;
+            }
+            return BotonNivel0;
         }
 
         private void click_lvl0(object sender, EventArgs e)
