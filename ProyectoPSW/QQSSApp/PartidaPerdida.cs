@@ -29,7 +29,7 @@ namespace QQSSApp
         private void InitializePartidaPerdida()
         {
             
-            puntuacion_acumulada.Text = pActual.getPuntuacionPartida();
+            puntuacion_acumulada.Text = pActual.GetPuntuacionConsolidada();
             
         }
 
