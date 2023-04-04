@@ -28,9 +28,9 @@ namespace QQSSApp
         }
         private void InitializePartidaPerdida()
         {
-            //pregunta = service.QuestionServIndex(retoindex);
-            puntuacion_acumulada.Text = pActual.GetPuntuacionConsolidada();
-            service.UpdateUserScore(pActual.PuntuacionPartida);
+            
+            puntuacion_acumulada.Text = pActual.getPuntuacionPartida();
+            
         }
 
         private void reintentar_salir_Click(object sender, EventArgs e)
