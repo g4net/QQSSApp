@@ -47,7 +47,7 @@ namespace QQSSApp
 
         private void MarcarProgreso() 
         {
-            for(int i = 1; i <= (retoindex + 1); i++)
+            for(int i = 0; i <= (retoindex); i++)
             {
                 string nombreBoton = "pos" + i;
                 Control[] controles = this.Controls.Find(nombreBoton, true);
