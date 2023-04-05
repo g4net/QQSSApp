@@ -44,6 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.enunciado = new System.Windows.Forms.Label();
             this.tiempo = new System.Windows.Forms.Label();
+            this.pos0 = new System.Windows.Forms.Button();
             this.pos1 = new System.Windows.Forms.Button();
             this.pos2 = new System.Windows.Forms.Button();
             this.pos3 = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this.pos7 = new System.Windows.Forms.Button();
             this.pos8 = new System.Windows.Forms.Button();
             this.pos9 = new System.Windows.Forms.Button();
-            this.pos10 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.ods_picture = new System.Windows.Forms.PictureBox();
@@ -72,7 +72,7 @@
             // op1
             // 
             this.op1.Location = new System.Drawing.Point(84, 395);
-            this.op1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.op1.Margin = new System.Windows.Forms.Padding(4);
             this.op1.Name = "op1";
             this.op1.Size = new System.Drawing.Size(357, 62);
             this.op1.TabIndex = 0;
@@ -94,7 +94,7 @@
             // op4
             // 
             this.op4.Location = new System.Drawing.Point(532, 471);
-            this.op4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.op4.Margin = new System.Windows.Forms.Padding(2);
             this.op4.Name = "op4";
             this.op4.Size = new System.Drawing.Size(357, 62);
             this.op4.TabIndex = 3;
@@ -105,7 +105,7 @@
             // op3
             // 
             this.op3.Location = new System.Drawing.Point(84, 471);
-            this.op3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.op3.Margin = new System.Windows.Forms.Padding(2);
             this.op3.Name = "op3";
             this.op3.Size = new System.Drawing.Size(357, 62);
             this.op3.TabIndex = 2;
@@ -124,7 +124,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(973, 70);
             this.panel1.TabIndex = 4;
@@ -249,17 +249,30 @@
             this.tiempo.TabIndex = 8;
             this.tiempo.Text = "30";
             // 
+            // pos0
+            // 
+            this.pos0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(238)))), ((int)(((byte)(205)))));
+            this.pos0.Enabled = false;
+            this.pos0.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pos0.Location = new System.Drawing.Point(0, 0);
+            this.pos0.Margin = new System.Windows.Forms.Padding(0);
+            this.pos0.Name = "pos0";
+            this.pos0.Size = new System.Drawing.Size(56, 30);
+            this.pos0.TabIndex = 10;
+            this.pos0.Text = "1";
+            this.pos0.UseVisualStyleBackColor = false;
+            // 
             // pos1
             // 
             this.pos1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(238)))), ((int)(((byte)(205)))));
             this.pos1.Enabled = false;
             this.pos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pos1.Location = new System.Drawing.Point(0, 0);
+            this.pos1.Location = new System.Drawing.Point(56, 0);
             this.pos1.Margin = new System.Windows.Forms.Padding(0);
             this.pos1.Name = "pos1";
             this.pos1.Size = new System.Drawing.Size(56, 30);
-            this.pos1.TabIndex = 10;
-            this.pos1.Text = "1";
+            this.pos1.TabIndex = 11;
+            this.pos1.Text = "2";
             this.pos1.UseVisualStyleBackColor = false;
             // 
             // pos2
@@ -267,12 +280,12 @@
             this.pos2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(238)))), ((int)(((byte)(205)))));
             this.pos2.Enabled = false;
             this.pos2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pos2.Location = new System.Drawing.Point(56, 0);
+            this.pos2.Location = new System.Drawing.Point(112, 0);
             this.pos2.Margin = new System.Windows.Forms.Padding(0);
             this.pos2.Name = "pos2";
             this.pos2.Size = new System.Drawing.Size(56, 30);
-            this.pos2.TabIndex = 11;
-            this.pos2.Text = "2";
+            this.pos2.TabIndex = 12;
+            this.pos2.Text = "3";
             this.pos2.UseVisualStyleBackColor = false;
             // 
             // pos3
@@ -280,12 +293,12 @@
             this.pos3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(238)))), ((int)(((byte)(205)))));
             this.pos3.Enabled = false;
             this.pos3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pos3.Location = new System.Drawing.Point(112, 0);
+            this.pos3.Location = new System.Drawing.Point(168, 0);
             this.pos3.Margin = new System.Windows.Forms.Padding(0);
             this.pos3.Name = "pos3";
             this.pos3.Size = new System.Drawing.Size(56, 30);
-            this.pos3.TabIndex = 12;
-            this.pos3.Text = "3";
+            this.pos3.TabIndex = 13;
+            this.pos3.Text = "4";
             this.pos3.UseVisualStyleBackColor = false;
             // 
             // pos4
@@ -293,12 +306,12 @@
             this.pos4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(238)))), ((int)(((byte)(205)))));
             this.pos4.Enabled = false;
             this.pos4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pos4.Location = new System.Drawing.Point(168, 0);
+            this.pos4.Location = new System.Drawing.Point(224, 0);
             this.pos4.Margin = new System.Windows.Forms.Padding(0);
             this.pos4.Name = "pos4";
             this.pos4.Size = new System.Drawing.Size(56, 30);
-            this.pos4.TabIndex = 13;
-            this.pos4.Text = "4";
+            this.pos4.TabIndex = 14;
+            this.pos4.Text = "5";
             this.pos4.UseVisualStyleBackColor = false;
             // 
             // pos5
@@ -306,12 +319,12 @@
             this.pos5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(238)))), ((int)(((byte)(205)))));
             this.pos5.Enabled = false;
             this.pos5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pos5.Location = new System.Drawing.Point(224, 0);
+            this.pos5.Location = new System.Drawing.Point(280, 0);
             this.pos5.Margin = new System.Windows.Forms.Padding(0);
             this.pos5.Name = "pos5";
             this.pos5.Size = new System.Drawing.Size(56, 30);
-            this.pos5.TabIndex = 14;
-            this.pos5.Text = "5";
+            this.pos5.TabIndex = 15;
+            this.pos5.Text = "6";
             this.pos5.UseVisualStyleBackColor = false;
             // 
             // pos6
@@ -319,12 +332,12 @@
             this.pos6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(238)))), ((int)(((byte)(205)))));
             this.pos6.Enabled = false;
             this.pos6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pos6.Location = new System.Drawing.Point(280, 0);
+            this.pos6.Location = new System.Drawing.Point(336, 0);
             this.pos6.Margin = new System.Windows.Forms.Padding(0);
             this.pos6.Name = "pos6";
             this.pos6.Size = new System.Drawing.Size(56, 30);
-            this.pos6.TabIndex = 15;
-            this.pos6.Text = "6";
+            this.pos6.TabIndex = 16;
+            this.pos6.Text = "7";
             this.pos6.UseVisualStyleBackColor = false;
             // 
             // pos7
@@ -332,12 +345,12 @@
             this.pos7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(238)))), ((int)(((byte)(205)))));
             this.pos7.Enabled = false;
             this.pos7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pos7.Location = new System.Drawing.Point(336, 0);
+            this.pos7.Location = new System.Drawing.Point(392, 0);
             this.pos7.Margin = new System.Windows.Forms.Padding(0);
             this.pos7.Name = "pos7";
             this.pos7.Size = new System.Drawing.Size(56, 30);
-            this.pos7.TabIndex = 16;
-            this.pos7.Text = "7";
+            this.pos7.TabIndex = 17;
+            this.pos7.Text = "8";
             this.pos7.UseVisualStyleBackColor = false;
             // 
             // pos8
@@ -345,12 +358,12 @@
             this.pos8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(238)))), ((int)(((byte)(205)))));
             this.pos8.Enabled = false;
             this.pos8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pos8.Location = new System.Drawing.Point(392, 0);
+            this.pos8.Location = new System.Drawing.Point(448, 0);
             this.pos8.Margin = new System.Windows.Forms.Padding(0);
             this.pos8.Name = "pos8";
             this.pos8.Size = new System.Drawing.Size(56, 30);
-            this.pos8.TabIndex = 17;
-            this.pos8.Text = "8";
+            this.pos8.TabIndex = 18;
+            this.pos8.Text = "9";
             this.pos8.UseVisualStyleBackColor = false;
             // 
             // pos9
@@ -358,26 +371,13 @@
             this.pos9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(238)))), ((int)(((byte)(205)))));
             this.pos9.Enabled = false;
             this.pos9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pos9.Location = new System.Drawing.Point(448, 0);
+            this.pos9.Location = new System.Drawing.Point(504, 0);
             this.pos9.Margin = new System.Windows.Forms.Padding(0);
             this.pos9.Name = "pos9";
             this.pos9.Size = new System.Drawing.Size(56, 30);
-            this.pos9.TabIndex = 18;
-            this.pos9.Text = "9";
+            this.pos9.TabIndex = 19;
+            this.pos9.Text = "10";
             this.pos9.UseVisualStyleBackColor = false;
-            // 
-            // pos10
-            // 
-            this.pos10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(238)))), ((int)(((byte)(205)))));
-            this.pos10.Enabled = false;
-            this.pos10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pos10.Location = new System.Drawing.Point(504, 0);
-            this.pos10.Margin = new System.Windows.Forms.Padding(0);
-            this.pos10.Name = "pos10";
-            this.pos10.Size = new System.Drawing.Size(56, 30);
-            this.pos10.TabIndex = 19;
-            this.pos10.Text = "10";
-            this.pos10.UseVisualStyleBackColor = false;
             // 
             // timer1
             // 
@@ -385,6 +385,7 @@
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.Controls.Add(this.pos0);
             this.flowLayoutPanel2.Controls.Add(this.pos1);
             this.flowLayoutPanel2.Controls.Add(this.pos2);
             this.flowLayoutPanel2.Controls.Add(this.pos3);
@@ -394,9 +395,8 @@
             this.flowLayoutPanel2.Controls.Add(this.pos7);
             this.flowLayoutPanel2.Controls.Add(this.pos8);
             this.flowLayoutPanel2.Controls.Add(this.pos9);
-            this.flowLayoutPanel2.Controls.Add(this.pos10);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(205, 76);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(567, 35);
             this.flowLayoutPanel2.TabIndex = 20;
@@ -473,7 +473,7 @@
             this.Controls.Add(this.op1);
             this.Controls.Add(this.ods_picture);
             this.Controls.Add(this.reloj_circular);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PartidaForm";
             this.Text = "Partida";
             this.panel1.ResumeLayout(false);
@@ -500,6 +500,7 @@
         private System.Windows.Forms.PictureBox reloj_circular;
         private System.Windows.Forms.Label enunciado;
         private System.Windows.Forms.Label tiempo;
+        private System.Windows.Forms.Button pos0;
         private System.Windows.Forms.Button pos1;
         private System.Windows.Forms.Button pos2;
         private System.Windows.Forms.Button pos3;
@@ -509,7 +510,6 @@
         private System.Windows.Forms.Button pos7;
         private System.Windows.Forms.Button pos8;
         private System.Windows.Forms.Button pos9;
-        private System.Windows.Forms.Button pos10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labelPuntuacionAcumulada;
   
