@@ -25,6 +25,7 @@ namespace QQSSApp
             pActual = service.GetPartidaActual();
             retoindex = index;
             puntuacion_acumulada.Text = pActual.GetPuntuacionConsolidada();
+            service.UpdateUserScore(pActual.PuntuacionPartida - pActual.PuntuacionConsolidada);
         }
 
         private void reintentar_salir_Click(object sender, EventArgs e)
