@@ -24,9 +24,10 @@ namespace ProyectoPSWMain.Services
 
         #region Partida
         int GetErrores();
-
+        int GetPuntuacionAcumulada();
+        void SetPuntuacionAcumulada(int points);
         void UpdateErrores();
-
+        
         void Consolidar();
 
         bool IsConsolidado();
@@ -44,14 +45,20 @@ namespace ProyectoPSWMain.Services
         #endregion
 
         #region Reto
-        
+
         #endregion
 
+
+
         #region Pregunta
+        List<Pregunta> GetUsersQuestionByDificulty(int dificultad);
+        void UpdateUserQuestions(Pregunta pregunta);
         void AddPregunta(Pregunta pregunta);
         void AddPreguntaToPartida(Pregunta pregunta, Partida partida);
         void Questions(int[] Dificulty);
-
+        bool CheckQuestionPlayed(Pregunta pregunta);
+        void ResetUserQuestions(int dificultad);
+        
         Pregunta QuestionServIndex(int index);
         #endregion
 

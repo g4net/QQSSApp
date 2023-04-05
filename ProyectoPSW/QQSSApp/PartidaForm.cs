@@ -47,13 +47,16 @@ namespace QQSSApp
 
         private void MarcarProgreso() 
         {
-            for(int i = 0; i <= retoindex; i++)
+            for(int i = 1; i <= (retoindex + 1); i++)
             {
                 string nombreBoton = "pos" + i;
                 Control[] controles = this.Controls.Find(nombreBoton, true);
                 if (controles.Length == 0 || controles[0] == null) continue;
                 Button b = (Button)controles[0];
-                if (i == retoindex) b.BackColor = Color.YellowGreen;
+                if (i == retoindex)
+                {
+                    b.BackColor = Color.YellowGreen;
+                }
                 else b.BackColor = Color.DarkSeaGreen; 
             }
         }
@@ -110,9 +113,11 @@ namespace QQSSApp
         {
            
             if (service.TestAnswer(optext, pregunta))
-            {
-                service.UpdateGameScore(pregunta.Puntuacion_acierto);
+            { 
                 Form respuestaAcertada;
+                service.SetPuntuacionAcumulada(pregunta.Puntuacion_acierto);
+                service.UpdateGameScore(pregunta.Puntuacion_acierto);
+                service.UpdateUserQuestions(pregunta);
                 if (retoindex != 9) respuestaAcertada = new PuntuacionPositiva(service, this.retoindex);
                 else respuestaAcertada = new PartidaGanada(service, retoindex);
                 respuestaAcertada.Show();
@@ -121,6 +126,7 @@ namespace QQSSApp
             else
             {
                 Form respuestaFallada;
+                service.SetPuntuacionAcumulada(pregunta.PuntuacionFallo());
                 service.UpdateGameScore(pregunta.PuntuacionFallo());
                 service.UpdateErrores();
                 if (errores == 1) respuestaFallada = new PartidaPerdida(service, this.retoindex);

@@ -39,15 +39,11 @@ namespace QQSSApp
         {
             pregunta = service.QuestionServIndex(retoindex);
             puntuacion.Text = pregunta.GetPuntuacionAcierto();
-            puntuacion_partida.Text = CalcularPuntTotal();
-            puntuacion_acumulada.Text = pActual.getPuntuacionPartida();
-            service.UpdateUserScore(pActual.PuntuacionPartida - pActual.PuntuacionConsolidada);
+            puntuacion_partida.Text = pActual.getPuntuacionPartida();
+            puntuacion_acumulada.Text = service.GetPuntuacionAcumulada().ToString();
+            service.UpdateUserScore(service.GetPuntuacionAcumulada());
             puntuacion_total.Text = service.GetLoggedUser().getPointsStr();
         }
-        private String CalcularPuntTotal() 
-        {
-            int total = pActual.PuntuacionPartida + pActual.PuntuacionConsolidada;
-            return total + "";
-        }
+      
     }
 }

@@ -40,7 +40,7 @@ namespace QQSSApp
 
         private void BotonReglas_Click(object sender, EventArgs e)
         {
-            if (actualVentanaReglas == null) actualVentanaReglas.Close();
+            if (actualVentanaReglas != null) actualVentanaReglas.Close();
             actualVentanaReglas = new Reglas();
             actualVentanaReglas.Show();
         }

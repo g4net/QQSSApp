@@ -17,6 +17,7 @@ namespace QQSSApp
         IQQSSService service;
         int retoindex;
         Partida pActual;
+        Pregunta pregunta;
         public PartidaPerdida(IQQSSService service, int index)
         {
             InitializeComponent();
@@ -25,7 +26,8 @@ namespace QQSSApp
             pActual = service.GetPartidaActual();
             retoindex = index;
             puntuacion_acumulada.Text = pActual.GetPuntuacionConsolidada();
-            service.UpdateUserScore(pActual.PuntuacionPartida - pActual.PuntuacionConsolidada);
+            pregunta = service.QuestionServIndex(retoindex);
+            service.UpdateUserScore(pActual.PuntuacionConsolidada - pregunta.PuntuacionFallo());
         }
 
         private void reintentar_salir_Click(object sender, EventArgs e)

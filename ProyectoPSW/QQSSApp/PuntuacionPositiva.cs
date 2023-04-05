@@ -51,9 +51,10 @@ namespace QQSSApp
         {
             service.Consolidar();
             consolidar.Enabled = false;
-            //Consolidar consolidar = new Consolidar(service, retoindex);                
-            //consolidar.Show();
-            //this.Close();
+            Consolidar Consolidar = new Consolidar(service, retoindex);
+            Consolidar.Show();
+            this.Close();
+
         }
     }
 }

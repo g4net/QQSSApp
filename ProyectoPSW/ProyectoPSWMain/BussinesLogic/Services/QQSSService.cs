@@ -27,7 +27,7 @@ namespace ProyectoPSWMain.Services
         private List<Pregunta> QuestionServ;
         private int errores = 0;
         private bool consolidado = false;
-        
+        private int puntuacionAcumulada = 0;
         public QQSSService(IRepository repository)
         {
             this.repository = repository;
@@ -172,7 +172,7 @@ namespace ProyectoPSWMain.Services
         public void UpdateUserScore(int points) {
             if(this.loggedUser == null) throw new ServiceException("There is no user logged in");
 
-            this.loggedUser.SetPoints(points);
+            this.loggedUser.SetPoints(points < 0 ? 0 : points);
             Commit();
 
             //if (this.loggedUser != null)
@@ -187,17 +187,25 @@ namespace ProyectoPSWMain.Services
         #endregion
 
         #region Partida
+        public int GetPuntuacionAcumulada() {
+            return this.puntuacionAcumulada;
+        }
+        public void SetPuntuacionAcumulada(int points) {
+            int punt = this.puntuacionAcumulada + points;
+            this.puntuacionAcumulada = punt < 0 ? 0 : punt;
+        }
 
         public void UpdateErrores() {             
             this.errores++;
         }
-      
+        
         public int GetErrores() { return errores; }
         public bool IsConsolidado() { return consolidado; }
         public void Consolidar() {
             this.consolidado = true;         
             int puntosConsolidados = this.partidaActual.PuntuacionPartida;
-            this.partidaActual.PuntuacionConsolidada = puntosConsolidados;           
+            this.partidaActual.PuntuacionConsolidada = puntosConsolidados;
+            this.puntuacionAcumulada = 0;
             UpdateUserScore(puntosConsolidados);
         }
         public void ResetErroresyConsolidaciones() {
@@ -266,6 +274,24 @@ namespace ProyectoPSWMain.Services
         #endregion
 
         #region Pregunta
+        public void UpdateUserQuestions(Pregunta pregunta) {
+           
+            this.loggedUser.PreguntasRealizadas.Add(pregunta);
+            Commit();
+        }
+        public bool CheckQuestionPlayed(Pregunta pregunta) {
+            List<Pregunta> QuestionsUsers = this.loggedUser.PreguntasRealizadas.ToList();
+            return QuestionsUsers.Contains(pregunta);
+        }
+        public List<Pregunta> GetUsersQuestionByDificulty(int dificultad) {
+            List<Pregunta> preguntas = this.loggedUser.PreguntasRealizadas.ToList();
+            
+            return preguntas.Where(x => x.Dificultad == dificultad).ToList();
+        }
+        public void ResetUserQuestions(int dificultad) {
+            List<Pregunta> preguntas = this.loggedUser.PreguntasRealizadas.ToList();
+            this.loggedUser.PreguntasRealizadas = preguntas.Where(x => x.Dificultad > dificultad).ToList();
+        }
         
         public void AddPreguntaToPartida(Pregunta pregunta, Partida partida)
         {
@@ -287,16 +313,28 @@ namespace ProyectoPSWMain.Services
             Random random = new Random();
             int prevDifficulty = -1;
             List<Pregunta> questionsDB = null;
-            foreach (int difficulty in dificultad)
+         
+             
+            foreach(int difficulty in dificultad)
             {
+               
                 if (difficulty > 4 || difficulty < 0) throw new ServiceException("Difficulty array has incorrect values");
                 if(difficulty != prevDifficulty)
                 {
+                    
                     questionsDB = repository.GetWhere<Pregunta>(x => x.Dificultad == difficulty).ToList();
+                    questionsDB = questionsDB.Except<Pregunta>(this.GetUsersQuestionByDificulty(difficulty)).ToList();
                     prevDifficulty = difficulty;
+                }
+                if (questionsDB.Count == 0)
+                {
+                    this.ResetUserQuestions(difficulty);
                 }
                 int index = random.Next(questionsDB.Count);
                 questions.Add(questionsDB[index]);
+                
+
+                
                 questionsDB.RemoveAt(index);
             }
 
