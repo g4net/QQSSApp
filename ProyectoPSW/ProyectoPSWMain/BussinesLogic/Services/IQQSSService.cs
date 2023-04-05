@@ -27,9 +27,10 @@ namespace ProyectoPSWMain.Services
 
         void UpdateErrores();
 
-        int GetConsolidaciones();
+        void Consolidar();
+
+        bool IsConsolidado();
         void ResetErroresyConsolidaciones();
-        void UpdateConsolidaciones();
         void CrearPartida(int nivel);
         void UpdateGameScore(int score);
         void ResetGameScore();

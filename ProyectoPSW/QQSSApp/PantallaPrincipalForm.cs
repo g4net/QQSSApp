@@ -27,59 +27,22 @@ namespace QQSSApp
             this.FormClosed += (s, args) => Application.Exit();
             this.label1.Select();
             this.service.Login("0");
-
+            this.CenterToScreen();
         }
 
 
         private void ButtonComenzar_Click(object sender, EventArgs e)
         {
-            /*
-            CargarDatos datos = new CargarDatos(service);
-            datos.Show();
-            this.Hide();
-            */
-
-            //el siguiente codigo debera estar en el selector de nivel
-            //START
-            /*
-            service.CrearPartida(1);
-            service.Questions(service.GetDifficultyArray(1));
-            PartidaForm partidaForm = new PartidaForm(service, 0);
-            partidaForm.Show();
-            service.ResetErroresyConsolidaciones();
-            this.Hide();*/
             Niveles niveles = new Niveles(service);
             niveles.Show();
             this.Hide();
-
-            //END
-           
-
-            //codigo refactorizado
-            //service.SetPartidaActual(this.service.GetPartida(1, 0));            
-            // service.ResetGameScore();
-            // service.Questions(service.GetDifficultyArray(service.GetPartidaActual().Nivel));
-            // int index = 0;
-            // PartidaForm partida = new PartidaForm(service,index, 0);
-            // partida.Show();
-            // this.Hide();
-            
         }
 
         private void BotonReglas_Click(object sender, EventArgs e)
         {
-            if (actualVentanaReglas == null)
-            {
-                Reglas regla = new Reglas();
-                actualVentanaReglas = regla;
-                regla.Show();
-            }
-            else { 
-                actualVentanaReglas.Close();
-                Reglas regla = new Reglas();
-                actualVentanaReglas = regla;
-                regla.Show();
-            }
+            if (actualVentanaReglas == null) actualVentanaReglas.Close();
+            actualVentanaReglas = new Reglas();
+            actualVentanaReglas.Show();
         }
     }
 }

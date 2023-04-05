@@ -31,7 +31,7 @@ namespace QQSSApp
         {
             InitializeComponent();
             InitializeImages();
-            
+            this.CenterToScreen();
             this.service = service;
             partida = service.GetPartidaActual();
             this.retoindex = index;
@@ -53,17 +53,8 @@ namespace QQSSApp
                 Control[] controles = this.Controls.Find(nombreBoton, true);
                 if (controles.Length == 0 || controles[0] == null) continue;
                 Button b = (Button)controles[0];
-                //if (i < retoindex) b.BackColor = Color.Green;
-                if (i == retoindex)
-                {
-                    b.BackColor = Color.YellowGreen;
-                    //b.ForeColor = Color.White;
-                }
-                else
-                {
-                    b.BackColor = Color.DarkSeaGreen; 
-                    //b.ForeColor = Color.Black;
-                }
+                if (i == retoindex) b.BackColor = Color.YellowGreen;
+                else b.BackColor = Color.DarkSeaGreen; 
             }
         }
 
@@ -90,14 +81,8 @@ namespace QQSSApp
 
         public void InitializeODS()
         {
-            if (pregunta.MuestraImagen)
-            {
-                ods_picture.Image = ods.ElementAt(pregunta.Ods);
-            }
-            else
-            {
-                ods_picture.Image = ods.ElementAt(0);
-            }
+            ods_picture.Image = ods[0];
+            if (pregunta.MuestraImagen) ods_picture.Image = ods[pregunta.Ods];
         }
 
         private void op1_click(object sender, EventArgs e)
@@ -126,41 +111,22 @@ namespace QQSSApp
            
             if (service.TestAnswer(optext, pregunta))
             {
-                if (retoindex != 9)
-                {
-                    
                 service.UpdateGameScore(pregunta.Puntuacion_acierto);
-                PuntuacionPositiva pacierto = new PuntuacionPositiva(service, this.retoindex);
-                pacierto.Show();
+                Form respuestaAcertada;
+                if (retoindex != 9) respuestaAcertada = new PuntuacionPositiva(service, this.retoindex);
+                else respuestaAcertada = new PartidaGanada(service, retoindex);
+                respuestaAcertada.Show();
                 this.Close();
-                }
-                else {
-                service.UpdateGameScore(pregunta.Puntuacion_acierto);
-                PartidaGanada partidaGanada = new PartidaGanada(service, retoindex);
-                partidaGanada.Show();
-                this.Close();
-                }
             }
             else
             {
-                
-                //erroreslabel.Text = errores.ToString();
+                Form respuestaFallada;
                 service.UpdateGameScore(pregunta.PuntuacionFallo());
-                if (errores == 1) 
-                {
-                    service.UpdateErrores();
-                    PartidaPerdida partidaPer = new PartidaPerdida(service, this.retoindex);
-                    partidaPer.Show();
-                    this.Close();
-                }
-                else 
-                {
-                    service.UpdateErrores();
-                    PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex, errores);
-                    partidag.Show();
-                    this.Close();
-                }
-                
+                service.UpdateErrores();
+                if (errores == 1) respuestaFallada = new PartidaPerdida(service, this.retoindex);
+                else respuestaFallada = new PuntuacionNegativa(service, this.retoindex);
+                respuestaFallada.Show();
+                this.Close();
             }
         }
 
@@ -184,26 +150,7 @@ namespace QQSSApp
         {
             tiempoContador--;
             tiempo.Text = tiempoContador.ToString();
-            if(tiempoContador == 0)
-            {
-              
-                //erroreslabel.Text = errores.ToString();
-                service.UpdateGameScore(pregunta.PuntuacionFallo());
-                if (errores == 1)
-                {
-                    service.UpdateErrores();
-                    PartidaPerdida partidaPer = new PartidaPerdida(service, this.retoindex);
-                    partidaPer.Show();
-                    this.Close();
-                }
-                else
-                {
-                    service.UpdateErrores();
-                    PuntuacionNegativa partidag = new PuntuacionNegativa(service, this.retoindex, errores);
-                    partidag.Show();
-                    this.Close();
-                }
-            }
+            if (tiempoContador == 0) CheckAnswer("");
         }
 
         private void InitializeTimers()

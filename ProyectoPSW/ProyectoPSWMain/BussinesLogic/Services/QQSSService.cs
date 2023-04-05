@@ -26,7 +26,7 @@ namespace ProyectoPSWMain.Services
         private Partida partidaActual;
         private List<Pregunta> QuestionServ;
         private int errores = 0;
-        private int consolidaciones = 0;
+        private bool consolidado = false;
         
         public QQSSService(IRepository repository)
         {
@@ -190,23 +190,19 @@ namespace ProyectoPSWMain.Services
 
         public void UpdateErrores() {             
             this.errores++;
-          
         }
       
-        public int GetErrores() {  return errores; }
-        public int GetConsolidaciones() {return consolidaciones;
-        }
-        public void UpdateConsolidaciones() {
-            this.consolidaciones++;           
+        public int GetErrores() { return errores; }
+        public bool IsConsolidado() { return consolidado; }
+        public void Consolidar() {
+            this.consolidado = true;         
             int puntosConsolidados = this.partidaActual.PuntuacionPartida;
             this.partidaActual.PuntuacionConsolidada = puntosConsolidados;           
             UpdateUserScore(puntosConsolidados);
-            ResetGameScore();
         }
         public void ResetErroresyConsolidaciones() {
             this.errores = 0;
-            this.consolidaciones = 0;
-            
+            this.consolidado = false;
         }
         public void CrearPartida(int nivel)
         {
@@ -217,8 +213,7 @@ namespace ProyectoPSWMain.Services
         public void AddPartida(Partida game) {
             if (!repository.GetWhere<Partida>(x => x.PuntuacionPartida == game.PuntuacionPartida && x.Nivel == game.Nivel).Any()){
                 repository.Insert<Partida>(game);
-                
-                Commit() ;
+                Commit();
             }
             else {
                 throw new ServiceException("There is already a game with that dificulty and that punctuation");
@@ -258,15 +253,6 @@ namespace ProyectoPSWMain.Services
             int punt = this.partidaActual.PuntuacionPartida + score;
             this.partidaActual.PuntuacionPartida = punt < 0 ? 0 : punt;
             Commit();
-
-            //if (punt < 0)
-            //{
-            //    this.ResetGameScore();
-            //}
-            //else
-            //{
-            //    this.partidaActual.PuntuacionPartida = punt;
-            //}
 
         }
         public void ResetGameScore() {
@@ -318,39 +304,11 @@ namespace ProyectoPSWMain.Services
         }
 
 
-        /*
-         * public void Questions(int[] dificultad) 
-         * {
-            List<Pregunta> Questions = new List<Pregunta>();
-            int puntero = 0;
-            int dificulty = dificultad[puntero];
-            List<Pregunta> QuestionsDB = repository.GetWhere<Pregunta>(x => x.Dificultad == dificulty).ToList() ;
-            var random = new Random();
-           
-            int dificAnt = dificultad[puntero];
-            
-            while (puntero < 10)
-            {
-                if (dificAnt != dificultad[puntero]) {
-                    dificulty = dificultad[puntero];
-                    QuestionsDB = repository.GetWhere<Pregunta>(x => x.Dificultad == dificulty).ToList();
-                    dificAnt = dificultad[puntero];
-                }
-                int index = random.Next(QuestionsDB.Count);
-
-                Questions.Add(QuestionsDB.ElementAt(index));
-                QuestionsDB.RemoveAt(index);
-                puntero++;
-            }
-
-            QuestionServ = Questions;
-         }
-         */
 
         public Pregunta QuestionServIndex(int index)
         {
             return QuestionServ[index];
-            //return QuestionServ.ElementAt(index);
+
         }
         #endregion
 

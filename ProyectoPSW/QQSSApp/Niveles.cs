@@ -18,6 +18,7 @@ namespace QQSSApp
         {
             this.service = service;
             InitializeComponent();
+            this.CenterToScreen();
             BotonesHabilitados();
         }
 

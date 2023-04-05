@@ -15,22 +15,16 @@ namespace QQSSApp
     public partial class PartidaPerdida : Form
     {
         IQQSSService service;
-        //Pregunta pregunta;
         int retoindex;
         Partida pActual;
         public PartidaPerdida(IQQSSService service, int index)
         {
             InitializeComponent();
+            this.CenterToScreen();
             this.service = service;
             pActual = service.GetPartidaActual();
             retoindex = index;
-            InitializePartidaPerdida();
-        }
-        private void InitializePartidaPerdida()
-        {
-            
             puntuacion_acumulada.Text = pActual.GetPuntuacionConsolidada();
-            
         }
 
         private void reintentar_salir_Click(object sender, EventArgs e)

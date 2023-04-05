@@ -22,6 +22,7 @@ namespace QQSSApp
         public PartidaGanada(IQQSSService service, int index)
         {
             InitializeComponent();
+            this.CenterToScreen();
             this.service = service;
             pActual = service.GetPartidaActual();
             retoindex= index;
@@ -40,7 +41,7 @@ namespace QQSSApp
             puntuacion.Text = pregunta.GetPuntuacionAcierto();
             puntuacion_partida.Text = CalcularPuntTotal();
             puntuacion_acumulada.Text = pActual.getPuntuacionPartida();
-            service.UpdateUserScore(pActual.PuntuacionPartida);
+            service.UpdateUserScore(pActual.PuntuacionPartida - pActual.PuntuacionConsolidada);
             puntuacion_total.Text = service.GetLoggedUser().getPointsStr();
         }
         private String CalcularPuntTotal() 
