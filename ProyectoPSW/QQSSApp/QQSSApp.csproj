@@ -197,9 +197,7 @@
   <ItemGroup>
     <EmbeddedResource Include="resources\circulo18.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="resources\Sonidos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="resources\circulo2.png" />
   </ItemGroup>
@@ -328,6 +326,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\ODS_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resources\Sonidos\file_example_WAV_5MG.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -90,12 +90,12 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(88, 296);
+            this.label5.Location = new System.Drawing.Point(78, 296);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(198, 20);
+            this.label5.Size = new System.Drawing.Size(208, 20);
             this.label5.TabIndex = 19;
-            this.label5.Text = "Puntuación Acumulada:";
+            this.label5.Text = "Puntuación Consolidada:";
             // 
             // label2
             // 
