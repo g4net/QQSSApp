@@ -10,6 +10,7 @@ namespace ProyectoPSWMain.Entities
     {
         public User() {
             this.PartidasJugadas = new List<Partida>();
+            this.PreguntasRealizadas = new List<Pregunta>();
         }
 
         public User(string dni, int Points, int nivel) : this() {

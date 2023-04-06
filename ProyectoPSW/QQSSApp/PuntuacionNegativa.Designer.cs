@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.correcto = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.puntuacion = new System.Windows.Forms.Label();
             this.reintentar_salir = new System.Windows.Forms.Button();
             this.punt_actual = new System.Windows.Forms.Label();
@@ -60,22 +59,11 @@
             this.correcto.TabIndex = 0;
             this.correcto.Text = "INCORRECTO";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(81, 115);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 73);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "-";
-            // 
             // puntuacion
             // 
             this.puntuacion.AutoSize = true;
             this.puntuacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntuacion.Location = new System.Drawing.Point(136, 115);
+            this.puntuacion.Location = new System.Drawing.Point(117, 119);
             this.puntuacion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.puntuacion.Name = "puntuacion";
             this.puntuacion.Size = new System.Drawing.Size(210, 73);
@@ -123,7 +111,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 450);
             this.Controls.Add(this.reintentar_salir);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.puntuacion);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.punt_actual);
@@ -141,7 +128,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label correcto;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label puntuacion;
         private System.Windows.Forms.Button reintentar_salir;
         private System.Windows.Forms.Label punt_actual;

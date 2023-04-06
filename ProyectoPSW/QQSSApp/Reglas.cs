@@ -15,6 +15,7 @@ namespace QQSSApp
         public Reglas()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
     }

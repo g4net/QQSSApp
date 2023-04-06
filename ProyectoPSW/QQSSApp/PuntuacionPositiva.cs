@@ -19,12 +19,14 @@ namespace QQSSApp
         IQQSSService service;
         Pregunta pregunta;
         int retoindex;
-        int consolidaciones;
+        bool consolidado;
         public PuntuacionPositiva(IQQSSService service, int index)
         {
             InitializeComponent();
+            this.CenterToScreen();
             this.service = service;
-            this.consolidaciones = service.GetConsolidaciones();
+            this.consolidado = service.IsConsolidado();
+            consolidar.Enabled = !consolidado;
             retoindex= index;
             InitializePositivePunctuation();
         }
@@ -47,16 +49,12 @@ namespace QQSSApp
 
         private void consolidar_click(object sender, EventArgs e)
         {
-            if (consolidaciones == 1)
-            {
-                //No se puede seguir consolidando
-            }
-            else {
-                service.UpdateConsolidaciones();
-                Consolidar consolidar = new Consolidar(service, retoindex);                
-                consolidar.Show();
-                this.Close();
-            }
+            service.Consolidar();
+            consolidar.Enabled = false;
+            Consolidar Consolidar = new Consolidar(service, retoindex);
+            Consolidar.Show();
+            this.Close();
+
         }
     }
 }

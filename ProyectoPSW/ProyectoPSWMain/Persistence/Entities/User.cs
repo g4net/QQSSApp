@@ -16,7 +16,7 @@ namespace ProyectoPSWMain.Entities
         public int nivel { get; set;}
         public virtual ICollection<Partida> PartidasJugadas { get; set; }
 
-
+        public virtual ICollection<Pregunta> PreguntasRealizadas { get; set; }
 
     }
 }
