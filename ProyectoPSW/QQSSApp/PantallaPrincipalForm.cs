@@ -44,5 +44,11 @@ namespace QQSSApp
             actualVentanaReglas = new Reglas();
             actualVentanaReglas.Show();
         }
+
+        private void UserClick(object sender, EventArgs e)
+        {
+            Usuario usuario = new Usuario(service.GetLoggedUser());
+            usuario.ShowDialog();
+        }
     }
 }

@@ -69,6 +69,12 @@
     <Compile Include="Consolidar.Designer.cs">
       <DependentUpon>Consolidar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario.Designer.cs">
+      <DependentUpon>Usuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="PartidaPerdida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consolidar.resx">
       <DependentUpon>Consolidar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario.resx">
+      <DependentUpon>Usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PartidaPerdida.resx">
       <DependentUpon>PartidaPerdida.cs</DependentUpon>
@@ -329,6 +338,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\Sonidos\file_example_WAV_5MG.wav" />
+    <None Include="resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
