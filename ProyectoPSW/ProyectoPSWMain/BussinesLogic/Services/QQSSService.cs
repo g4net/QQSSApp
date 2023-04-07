@@ -305,6 +305,13 @@ namespace ProyectoPSWMain.Services
             Commit();
         }
 
+        public List<Pregunta> LoadQuestionsByDifficulty(int difficulty){
+            List<Pregunta> questions = new List<Pregunta>();
+            questions = repository.GetWhere<Pregunta>(x => x.Dificultad == difficulty).ToList();
+            questions = questions.Except<Pregunta>(this.GetUsersQuestionByDificulty(difficulty)).ToList();
+            return questions;
+        }
+
         public void Questions(int[] dificultad) {
             if(dificultad.Length != 10) throw new ServiceException("Difficulty array has not the correct length");
             
@@ -322,13 +329,13 @@ namespace ProyectoPSWMain.Services
                 if(difficulty != prevDifficulty)
                 {
                     
-                    questionsDB = repository.GetWhere<Pregunta>(x => x.Dificultad == difficulty).ToList();
-                    questionsDB = questionsDB.Except<Pregunta>(this.GetUsersQuestionByDificulty(difficulty)).ToList();
+                    questionsDB = LoadQuestionsByDifficulty(difficulty);
                     prevDifficulty = difficulty;
                 }
                 if (questionsDB.Count == 0)
                 {
                     this.ResetUserQuestions(difficulty);
+                    questionsDB = LoadQuestionsByDifficulty(difficulty);
                 }
                 int index = random.Next(questionsDB.Count);
                 questions.Add(questionsDB[index]);

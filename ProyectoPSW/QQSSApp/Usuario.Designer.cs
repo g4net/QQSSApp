@@ -49,11 +49,11 @@
             // 
             this.nivel.AutoSize = true;
             this.nivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nivel.Location = new System.Drawing.Point(202, 84);
+            this.nivel.Location = new System.Drawing.Point(199, 85);
             this.nivel.Name = "nivel";
-            this.nivel.Size = new System.Drawing.Size(255, 91);
+            this.nivel.Size = new System.Drawing.Size(84, 91);
             this.nivel.TabIndex = 1;
-            this.nivel.Text = "label2";
+            this.nivel.Text = "0";
             this.nivel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label3
