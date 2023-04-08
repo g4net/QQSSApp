@@ -31,6 +31,7 @@ namespace QQSSApp
 
         private void continuar_salir_Click(object sender, EventArgs e)
         {
+            service.CleanProgresoPreguntas();
             PantallaPrincipalForm pantallaPrincipal = new PantallaPrincipalForm(service);
             pantallaPrincipal.Show();
             this.Close();

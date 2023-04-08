@@ -26,6 +26,7 @@ namespace ProyectoPSWMain.Services
         private Partida partidaActual;
         private List<Pregunta> QuestionServ;
         private int errores = 0;
+        private List<int> progresoPreguntas = new List<int>();
         private bool consolidado = false;
         private int puntuacionAcumulada = 0;
         public QQSSService(IRepository repository)
@@ -341,7 +342,22 @@ namespace ProyectoPSWMain.Services
             QuestionServ = questions;
         }
 
-
+        public void ProgresoAddPreguntaFallada(int index) 
+        {
+            this.progresoPreguntas.Add(index);
+        }
+        public void ProgresoDeletePreguntaFallada(int index)
+        {
+            this.progresoPreguntas.Remove(index);
+        }
+        public List<int> GetProgresoPreguntas() 
+        {
+            return progresoPreguntas;
+        }
+        public void CleanProgresoPreguntas()
+        {
+            this.progresoPreguntas.Clear();
+        }
 
         public Pregunta QuestionServIndex(int index)
         {

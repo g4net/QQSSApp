@@ -27,12 +27,14 @@ namespace QQSSApp
         int retoindex;
         int tiempoContador;
         int errores;
+        List<int> progresoPreguntas;
         public PartidaForm(IQQSSService service, int index)
         {
             InitializeComponent();
             InitializeImages();
             this.CenterToScreen();
             this.service = service;
+            progresoPreguntas = service.GetProgresoPreguntas();
             partida = service.GetPartidaActual();
             this.retoindex = index;
             this.errores = service.GetErrores();
@@ -42,8 +44,15 @@ namespace QQSSApp
             MarcarProgreso();
             InitializeTimers();
             InitializeODS();
+            //Prueba();
         }
 
+        /*private void Prueba()
+        {
+            String aux = "";
+            for (int i = 0; i < progresoPreguntas.Count; i++) { aux += progresoPreguntas[i].ToString(); }
+            erroreslabel.Text = aux;
+        }*/
 
         private void MarcarProgreso() 
         {
@@ -57,7 +66,8 @@ namespace QQSSApp
                 {
                     b.BackColor = Color.YellowGreen;
                 }
-                else b.BackColor = Color.DarkSeaGreen; 
+                else b.BackColor = Color.DarkSeaGreen;
+                if (progresoPreguntas.Contains(i)) { b.BackColor = Color.LightCoral; }
             }
         }
 
@@ -113,7 +123,9 @@ namespace QQSSApp
         {
            
             if (service.TestAnswer(optext, pregunta))
-            { 
+            {
+                if (progresoPreguntas.Contains(retoindex)) { service.ProgresoDeletePreguntaFallada(retoindex); }
+                progresoPreguntas = service.GetProgresoPreguntas();
                 Form respuestaAcertada;
                 service.SetPuntuacionAcumulada(pregunta.Puntuacion_acierto);
                 service.UpdateGameScore(pregunta.Puntuacion_acierto);
@@ -129,6 +141,8 @@ namespace QQSSApp
                 service.SetPuntuacionAcumulada(pregunta.PuntuacionFallo());
                 service.UpdateGameScore(pregunta.PuntuacionFallo());
                 service.UpdateErrores();
+                service.ProgresoAddPreguntaFallada(retoindex);
+                progresoPreguntas = service.GetProgresoPreguntas();
                 if (errores == 1) respuestaFallada = new PartidaPerdida(service, this.retoindex);
                 else respuestaFallada = new PuntuacionNegativa(service, this.retoindex);
                 respuestaFallada.Show();

@@ -32,6 +32,7 @@ namespace QQSSApp
 
         private void reintentar_salir_Click(object sender, EventArgs e)
         {
+            service.CleanProgresoPreguntas();
             PantallaPrincipalForm Ppr = new PantallaPrincipalForm(service);
             Ppr.Show();
             this.Close();

@@ -28,6 +28,7 @@ namespace QQSSApp
             this.label1.Select();
             this.service.Login("0");
             this.CenterToScreen();
+            service.ResetErroresyConsolidaciones();
         }
 
 

@@ -27,7 +27,7 @@ namespace QQSSApp
             this.service = service;
             this.consolidado = service.IsConsolidado();
             consolidar.Enabled = !consolidado;
-            retoindex= index;
+            retoindex = index;
             InitializePositivePunctuation();
         }
 

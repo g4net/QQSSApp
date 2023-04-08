@@ -28,6 +28,7 @@ namespace ProyectoPSWMain.Services
         void SetPuntuacionAcumulada(int points);
         void UpdateErrores();
         
+        
         void Consolidar();
 
         bool IsConsolidado();
@@ -58,7 +59,10 @@ namespace ProyectoPSWMain.Services
         void Questions(int[] Dificulty);
         bool CheckQuestionPlayed(Pregunta pregunta);
         void ResetUserQuestions(int dificultad);
-        
+        List<int> GetProgresoPreguntas();
+        void ProgresoDeletePreguntaFallada(int index);
+        void ProgresoAddPreguntaFallada(int index);
+        void CleanProgresoPreguntas();
         Pregunta QuestionServIndex(int index);
         #endregion
 
