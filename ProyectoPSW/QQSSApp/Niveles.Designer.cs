@@ -36,6 +36,7 @@
             this.BotonNivel1 = new System.Windows.Forms.Button();
             this.BotonNivel0 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.volver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +47,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(803, 455);
+            this.pictureBox1.Size = new System.Drawing.Size(803, 486);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -54,6 +55,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.volver);
             this.panel1.Controls.Add(this.BotonNivel4);
             this.panel1.Controls.Add(this.BotonNivel3);
             this.panel1.Controls.Add(this.BotonNivel2);
@@ -63,7 +65,7 @@
             this.panel1.Location = new System.Drawing.Point(52, 48);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(696, 354);
+            this.panel1.Size = new System.Drawing.Size(696, 408);
             this.panel1.TabIndex = 1;
             // 
             // BotonNivel4
@@ -151,11 +153,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "NIVEL";
             // 
+            // volver
+            // 
+            this.volver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
+            this.volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.volver.ForeColor = System.Drawing.Color.White;
+            this.volver.Location = new System.Drawing.Point(33, 333);
+            this.volver.Name = "volver";
+            this.volver.Size = new System.Drawing.Size(628, 55);
+            this.volver.TabIndex = 6;
+            this.volver.Text = "Volver";
+            this.volver.UseVisualStyleBackColor = false;
+            this.volver.Click += new System.EventHandler(this.volver_Click);
+            // 
             // Niveles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 484);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -178,5 +193,6 @@
         private System.Windows.Forms.Button BotonNivel1;
         private System.Windows.Forms.Button BotonNivel0;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button volver;
     }
 }

@@ -119,5 +119,12 @@ namespace QQSSApp
             // this.Close();
             PlayButton(4);
         }
+
+        private void volver_Click(object sender, EventArgs e)
+        {
+            PantallaPrincipalForm principal = new PantallaPrincipalForm(service);
+            principal.Show();
+            this.Hide();
+        }
     }
 }
