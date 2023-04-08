@@ -268,6 +268,11 @@ namespace ProyectoPSWMain.Services
             this.partidaActual.PuntuacionPartida = 0;
             Commit();
         }
+
+        public bool GetConsolidado()
+        {
+            return this.consolidado;
+        }
         #endregion
 
         #region Reto

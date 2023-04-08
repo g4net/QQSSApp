@@ -28,7 +28,16 @@ namespace QQSSApp
             this.consolidado = service.IsConsolidado();
             consolidar.Enabled = !consolidado;
             retoindex = index;
+            DeshabilitarBotonConsolidar();
             InitializePositivePunctuation();
+        }
+
+        public void DeshabilitarBotonConsolidar()
+        {
+            if (service.GetConsolidado())
+            {
+                consolidar.Enabled = false;
+            }
         }
 
         private void continuar_salir_Click(object sender, EventArgs e)
@@ -50,10 +59,15 @@ namespace QQSSApp
         private void consolidar_click(object sender, EventArgs e)
         {
             service.Consolidar();
+            puntuacionConsolidada.Text = service.GetPartidaActual().GetPuntuacionConsolidada();
+            puntuacionConsolidada.Visible = true;
+            textoConsolidacion.Visible = true;
             consolidar.Enabled = false;
+            /*
             Consolidar Consolidar = new Consolidar(service, retoindex);
             Consolidar.Show();
             this.Close();
+            */
 
         }
     }

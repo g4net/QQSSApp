@@ -43,6 +43,8 @@ namespace ProyectoPSWMain.Services
         Partida GetPartida(int level, int points);
         int [] GetDifficultyArray(int level);
 
+        bool GetConsolidado();
+
         #endregion
 
         #region Reto
