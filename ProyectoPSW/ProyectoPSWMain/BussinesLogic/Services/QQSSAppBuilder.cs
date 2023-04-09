@@ -19,7 +19,7 @@ namespace ProyectoPSWMain.Services
 
         public override void BuildForm(Form form)
         {
-            app.form = form;
+            app.SetForm(form);
         }
 
 

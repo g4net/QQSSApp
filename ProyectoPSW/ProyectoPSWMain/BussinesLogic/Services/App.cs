@@ -10,12 +10,17 @@ namespace ProyectoPSWMain.Services
 {
     public class App
     {
-        public Form form;
+        private Form form;
         public App()
         {
         }
 
         public Form GetForm() { return form; }
+
+        public void SetForm(Form form)
+        {
+            this.form = form;
+        }
 
 
         
