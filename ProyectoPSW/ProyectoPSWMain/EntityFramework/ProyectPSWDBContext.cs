@@ -14,7 +14,7 @@ namespace ProyectoPSWMain.EntityFramework
 {
     public class ProyectPSWDBContext : DbContextPSW
     {
-        public ProyectPSWDBContext() : base("Server=tcp:pswserver2023.database.windows.net,1433;Initial Catalog=BDPSW;Persist Security Info=False;User ID=nick;Password=NicCC25*;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
+        public ProyectPSWDBContext() : base("Server=tcp:pswsv2023.database.windows.net,1433;Initial Catalog=PSWDB;Persist Security Info=False;User ID=valentino;Password=Wachiturro*;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
         {
             
             Configuration.ProxyCreationEnabled = true;
