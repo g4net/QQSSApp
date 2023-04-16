@@ -185,6 +185,36 @@ namespace ProyectoPSWMain.Services
             //    throw new ServiceException("There is no user logged in");
             //}
         }
+
+        public void NextLevel(User usuario)
+        {
+            if (usuario == null) throw new ServiceException("No hay usuario registrado");
+            if(usuario.PuntuacionAcumulada >= 4000)
+            {
+                usuario.nivel = 4;
+            }else if(usuario.PuntuacionAcumulada >= 2000)
+            {
+                usuario.nivel = 3;
+            }else if(usuario.PuntuacionAcumulada >= 1000)
+            {
+                usuario.nivel = 2;
+            }else if(usuario.PuntuacionAcumulada >= 500)
+            {
+                usuario.nivel = 1;
+            }
+            else
+            {
+                usuario.nivel = 0;
+            }
+
+            UpdateNivel(usuario.nivel);
+        }
+
+        public void UpdateNivel(int nivel)
+        {
+            repository.GetById<User>(GetLoggedUser().Id).nivel = nivel;
+            Commit();
+        }
         #endregion
 
         #region Partida

@@ -20,6 +20,8 @@ namespace ProyectoPSWMain.Services
         void Login(String dni);
         void UpdateUserScore(int points);
         User GetLoggedUser();
+
+        void NextLevel(User usuario);
         #endregion
 
         #region Partida

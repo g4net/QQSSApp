@@ -29,8 +29,23 @@ namespace QQSSApp
             this.service.Login("0");
             this.CenterToScreen();
             service.ResetErroresyConsolidaciones();
+            SiguienteNivel();
         }
 
+        public void SiguienteNivel()
+        {
+            int antiguoNivel = service.GetLoggedUser().nivel;
+            service.NextLevel(service.GetLoggedUser());
+            int nuevoNivel = service.GetLoggedUser().nivel;
+            if (antiguoNivel != nuevoNivel)
+            {
+                DialogResult siguienteNivel = MessageBox.Show(this,
+                    "Acabas de subir al nivel " + nuevoNivel,
+                    "Nivel de Usuario",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+        }
 
         private void ButtonComenzar_Click(object sender, EventArgs e)
         {

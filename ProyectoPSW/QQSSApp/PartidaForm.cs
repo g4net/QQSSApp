@@ -54,6 +54,7 @@ namespace QQSSApp
             erroreslabel.Text = aux;
         }*/
 
+
         private void MarcarProgreso() 
         {
             for(int i = 0; i <= (retoindex); i++)

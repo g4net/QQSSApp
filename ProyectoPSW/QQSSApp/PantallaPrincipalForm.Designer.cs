@@ -42,6 +42,7 @@
             // 
             // comenzarButton
             // 
+            this.comenzarButton.AutoSize = true;
             this.comenzarButton.BackColor = System.Drawing.Color.SpringGreen;
             this.comenzarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comenzarButton.Location = new System.Drawing.Point(260, 348);
@@ -66,6 +67,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(181, -5);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -75,6 +77,7 @@
             // 
             // BotonReglas
             // 
+            this.BotonReglas.AutoSize = true;
             this.BotonReglas.BackColor = System.Drawing.Color.Transparent;
             this.BotonReglas.FlatAppearance.BorderColor = System.Drawing.Color.Lavender;
             this.BotonReglas.FlatAppearance.BorderSize = 2;
@@ -91,6 +94,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::QQSSApp.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(203, -36);
@@ -103,6 +109,9 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::QQSSApp.Properties.Resources.agüita;
             this.pictureBox2.Location = new System.Drawing.Point(1, -5);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
