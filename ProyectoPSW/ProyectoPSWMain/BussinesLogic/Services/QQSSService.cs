@@ -29,6 +29,7 @@ namespace ProyectoPSWMain.Services
         private List<int> progresoPreguntas = new List<int>();
         private bool consolidado = false;
         private int puntuacionAcumulada = 0;
+        public readonly int[] Levels = { 500, 1000, 2000, 3000 };
         public QQSSService(IRepository repository)
         {
             this.repository = repository;
@@ -188,33 +189,50 @@ namespace ProyectoPSWMain.Services
 
         public void NextLevel(User usuario)
         {
+
             if (usuario == null) throw new ServiceException("No hay usuario registrado");
-            if(usuario.PuntuacionAcumulada >= 4000)
+
+            int high = Levels.Length;
+            int low = 0;
+
+            while (high > low)
             {
-                usuario.nivel = 4;
-            }else if(usuario.PuntuacionAcumulada >= 2000)
-            {
-                usuario.nivel = 3;
-            }else if(usuario.PuntuacionAcumulada >= 1000)
-            {
-                usuario.nivel = 2;
-            }else if(usuario.PuntuacionAcumulada >= 500)
-            {
-                usuario.nivel = 1;
-            }
-            else
-            {
-                usuario.nivel = 0;
+                int mid = low + (high - low) / 2;
+                if (usuario.PuntuacionAcumulada == Levels[mid]) { low = mid; break; }
+                else if (usuario.PuntuacionAcumulada > Levels[mid]) low = mid + 1;
+                else high = mid;
             }
 
-            UpdateNivel(usuario.nivel);
-        }
-
-        public void UpdateNivel(int nivel)
-        {
-            repository.GetById<User>(GetLoggedUser().Id).nivel = nivel;
+            usuario.nivel = low;
             Commit();
+            //usuario.nivel = 
+
+            //if(usuario.PuntuacionAcumulada >= 4000)
+            //{
+            //    usuario.nivel = 4;
+            //}else if(usuario.PuntuacionAcumulada >= 2000)
+            //{
+            //    usuario.nivel = 3;
+            //}else if(usuario.PuntuacionAcumulada >= 1000)
+            //{
+            //    usuario.nivel = 2;
+            //}else if(usuario.PuntuacionAcumulada >= 500)
+            //{
+            //    usuario.nivel = 1;
+            //}
+            //else
+            //{
+            //    usuario.nivel = 0;
+            //}
+
+
         }
+
+        //public void UpdateNivel(int nivel)
+        //{
+        //    repository.GetById<User>(GetLoggedUser().Id).nivel = nivel;
+        //    Commit();
+        //}
         #endregion
 
         #region Partida
@@ -258,20 +276,23 @@ namespace ProyectoPSWMain.Services
                 throw new ServiceException("There is already a game with that dificulty and that punctuation");
             }
         }
-        public Partida GetPartida(int level, int points) {
-            var random = new Random();
-            
-             
-             List<Partida> PartidasDb = repository.GetAll<Partida>().ToList();
-            /*int index = random.Next(PartidasDb.Count);
+        //public Partida GetPartida(int level, int points)
+        //{
+        //    var random = new Random();
 
-            return PartidasDb.ElementAt(index);*/
-            return PartidasDb.First();
-        }
-        public Partida GetPartidaActual() {
+
+        //    List<Partida> PartidasDb = repository.GetAll<Partida>().ToList();
+        //    /*int index = random.Next(PartidasDb.Count);
+
+        //    return PartidasDb.ElementAt(index);*/
+        //    return PartidasDb.First();
+        //}
+        public Partida GetPartidaActual()
+        {
             return partidaActual;
         }
-        public void SetPartidaActual(Partida partida) { 
+        public void SetPartidaActual(Partida partida)
+        {
             this.partidaActual = partida;
         }
         public int[] GetDifficultyArray(int level)

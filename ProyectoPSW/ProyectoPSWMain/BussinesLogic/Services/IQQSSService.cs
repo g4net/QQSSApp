@@ -41,9 +41,9 @@ namespace ProyectoPSWMain.Services
         void DeleteUser(int id);
         void AddPartida(Partida game);
         void SetPartidaActual(Partida partida);
-        Partida GetPartidaActual();  
-        Partida GetPartida(int level, int points);
-        int [] GetDifficultyArray(int level);
+        Partida GetPartidaActual();
+        //Partida GetPartida(int level, int points);
+        int[] GetDifficultyArray(int level);
 
         bool GetConsolidado();
 
