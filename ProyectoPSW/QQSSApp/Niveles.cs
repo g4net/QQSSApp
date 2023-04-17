@@ -29,34 +29,13 @@ namespace QQSSApp
                 string nombreBoton = "BotonNivel" + i;
                 Control[] controles = this.Controls.Find(nombreBoton, true);
                 if (controles.Length == 0 || controles[0] == null) continue;
-                Button b = (Button)controles[0];
-                b.Enabled = true;
+                Button boton = (Button)controles[0];
+                boton.Enabled = true;
 
 
                 //GetButton(i).Enabled = true;
             }
         }
-
-        //public Button GetButton(int nivel)
-        //{
-        //    if (nivel == 1)
-        //    {
-        //        return BotonNivel1;
-        //    }
-        //    else if(nivel == 2)
-        //    {
-        //        return BotonNivel2;
-        //    }
-        //    else if (nivel == 3)
-        //    {
-        //        return BotonNivel3;
-        //    }
-        //    else if(nivel == 4)
-        //    {
-        //        return BotonNivel4;
-        //    }
-        //    return BotonNivel0;
-        //}
         private void PlayButton(int level) {
             service.CrearPartida(level);
             service.Questions(service.GetDifficultyArray(level));

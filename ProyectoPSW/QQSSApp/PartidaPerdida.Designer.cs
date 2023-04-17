@@ -78,7 +78,7 @@
             // 
             this.puntuacion_acumulada.AutoSize = true;
             this.puntuacion_acumulada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntuacion_acumulada.Location = new System.Drawing.Point(387, 364);
+            this.puntuacion_acumulada.Location = new System.Drawing.Point(362, 296);
             this.puntuacion_acumulada.Name = "puntuacion_acumulada";
             this.puntuacion_acumulada.Size = new System.Drawing.Size(70, 25);
             this.puntuacion_acumulada.TabIndex = 20;
@@ -91,7 +91,7 @@
             this.label5.Location = new System.Drawing.Point(78, 296);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(208, 20);
+            this.label5.Size = new System.Drawing.Size(254, 25);
             this.label5.TabIndex = 19;
             this.label5.Text = "Puntuación Consolidada:";
             // 
@@ -125,7 +125,7 @@
             this.pictureBox1.Image = global::QQSSApp.Properties.Resources.perdiste;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(32, 140);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(512, 390);
             this.pictureBox1.TabIndex = 22;
@@ -143,7 +143,7 @@
             this.Controls.Add(this.reintentar_salir);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PartidaPerdida";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);

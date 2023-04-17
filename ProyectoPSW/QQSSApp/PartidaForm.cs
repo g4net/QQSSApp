@@ -44,6 +44,7 @@ namespace QQSSApp
             MarcarProgreso();
             InitializeTimers();
             InitializeODS();
+            HabilitarBotonAbandonar();
             //Prueba();
         }
 
@@ -54,7 +55,13 @@ namespace QQSSApp
             erroreslabel.Text = aux;
         }*/
 
-
+        private void HabilitarBotonAbandonar()
+        {
+            if (service.GetConsolidado())
+            {
+                botonAbandonar.Enabled = true;
+            }
+        }
         private void MarcarProgreso() 
         {
             for(int i = 0; i <= (retoindex); i++)

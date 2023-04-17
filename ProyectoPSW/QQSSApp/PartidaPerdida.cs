@@ -27,14 +27,23 @@ namespace QQSSApp
             retoindex = index;
             puntuacion_acumulada.Text = pActual.GetPuntuacionConsolidada();
             pregunta = service.QuestionServIndex(retoindex);
-            service.UpdateUserScore(pActual.PuntuacionConsolidada - pregunta.PuntuacionFallo());
+            OtorgarPuntuacion();
+            
+        }
+
+        private void OtorgarPuntuacion()
+        {
+            if (!service.GetConsolidado())
+            {
+                service.UpdateUserScore(0);
+            }
         }
 
         private void reintentar_salir_Click(object sender, EventArgs e)
         {
             service.CleanProgresoPreguntas();
-            PantallaPrincipalForm Ppr = new PantallaPrincipalForm(service);
-            Ppr.Show();
+            PantallaPrincipalForm pantallaPrincipal = new PantallaPrincipalForm(service);
+            pantallaPrincipal.Show();
             this.Close();
         }
     }

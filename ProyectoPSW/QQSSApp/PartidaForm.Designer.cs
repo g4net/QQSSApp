@@ -34,12 +34,14 @@
             this.op4 = new System.Windows.Forms.Button();
             this.op3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.puntuacionConsolidadaLabel = new System.Windows.Forms.Label();
             this.puntuacionPos = new System.Windows.Forms.Label();
             this.puntuaciónNegativa = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.labelPuntuacionAcumulada = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.botonAbandonar = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.enunciado = new System.Windows.Forms.Label();
@@ -59,11 +61,8 @@
             this.ods_picture = new System.Windows.Forms.PictureBox();
             this.reloj_circular = new System.Windows.Forms.PictureBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.puntuacionConsolidadaLabel = new System.Windows.Forms.Label();
-            this.erroreslabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.botonAbandonar)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ods_picture)).BeginInit();
@@ -73,7 +72,7 @@
             // op1
             // 
             this.op1.Location = new System.Drawing.Point(112, 486);
-            this.op1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.op1.Margin = new System.Windows.Forms.Padding(5);
             this.op1.Name = "op1";
             this.op1.Size = new System.Drawing.Size(476, 76);
             this.op1.TabIndex = 0;
@@ -124,13 +123,37 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.labelPuntuacionAcumulada);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.botonAbandonar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1297, 86);
             this.panel1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(1046, 59);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 18);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Consolidado:";
+            // 
+            // puntuacionConsolidadaLabel
+            // 
+            this.puntuacionConsolidadaLabel.AutoSize = true;
+            this.puntuacionConsolidadaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.puntuacionConsolidadaLabel.ForeColor = System.Drawing.Color.White;
+            this.puntuacionConsolidadaLabel.Location = new System.Drawing.Point(1179, 54);
+            this.puntuacionConsolidadaLabel.Name = "puntuacionConsolidadaLabel";
+            this.puntuacionConsolidadaLabel.Size = new System.Drawing.Size(70, 25);
+            this.puntuacionConsolidadaLabel.TabIndex = 22;
+            this.puntuacionConsolidadaLabel.Text = "label1";
             // 
             // puntuacionPos
             // 
@@ -191,18 +214,20 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "/";
             // 
-            // pictureBox1
+            // botonAbandonar
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::QQSSApp.Properties.Resources.flecha;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(95, 81);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.Atras);
+            this.botonAbandonar.BackColor = System.Drawing.Color.Transparent;
+            this.botonAbandonar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonAbandonar.Enabled = false;
+            this.botonAbandonar.Image = global::QQSSApp.Properties.Resources.flecha;
+            this.botonAbandonar.Location = new System.Drawing.Point(0, 0);
+            this.botonAbandonar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.botonAbandonar.Name = "botonAbandonar";
+            this.botonAbandonar.Size = new System.Drawing.Size(95, 86);
+            this.botonAbandonar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.botonAbandonar.TabIndex = 5;
+            this.botonAbandonar.TabStop = false;
+            this.botonAbandonar.Click += new System.EventHandler(this.Atras);
             // 
             // flowLayoutPanel1
             // 
@@ -395,7 +420,7 @@
             this.flowLayoutPanel2.Controls.Add(this.pos8);
             this.flowLayoutPanel2.Controls.Add(this.pos9);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(273, 94);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(5);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(756, 43);
             this.flowLayoutPanel2.TabIndex = 20;
@@ -436,46 +461,11 @@
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.TimerTiempoTick);
             // 
-            // puntuacionConsolidadaLabel
-            // 
-            this.puntuacionConsolidadaLabel.AutoSize = true;
-            this.puntuacionConsolidadaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntuacionConsolidadaLabel.ForeColor = System.Drawing.Color.White;
-            this.puntuacionConsolidadaLabel.Location = new System.Drawing.Point(1179, 54);
-            this.puntuacionConsolidadaLabel.Name = "puntuacionConsolidadaLabel";
-            this.puntuacionConsolidadaLabel.Size = new System.Drawing.Size(70, 25);
-            this.puntuacionConsolidadaLabel.TabIndex = 22;
-            this.puntuacionConsolidadaLabel.Text = "label1";
-            // 
-            // erroreslabel
-            // 
-            this.erroreslabel.AutoSize = true;
-            this.erroreslabel.Location = new System.Drawing.Point(112, 188);
-            this.erroreslabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.erroreslabel.Name = "erroreslabel";
-            this.erroreslabel.Size = new System.Drawing.Size(44, 16);
-            this.erroreslabel.TabIndex = 23;
-            this.erroreslabel.Text = "label1";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1046, 59);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 18);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Consolidado:";
-            // 
             // PartidaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1297, 699);
-            this.Controls.Add(this.erroreslabel);
             this.Controls.Add(this.tiempo);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.enunciado);
@@ -486,12 +476,12 @@
             this.Controls.Add(this.op1);
             this.Controls.Add(this.ods_picture);
             this.Controls.Add(this.reloj_circular);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "PartidaForm";
             this.Text = "Partida";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.botonAbandonar)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -509,7 +499,7 @@
         private System.Windows.Forms.Button op4;
         private System.Windows.Forms.Button op3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox botonAbandonar;
         private System.Windows.Forms.PictureBox reloj_circular;
         private System.Windows.Forms.Label enunciado;
         private System.Windows.Forms.Label tiempo;
@@ -537,7 +527,6 @@
         private System.Windows.Forms.Label puntuacionPos;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label puntuacionConsolidadaLabel;
-        private System.Windows.Forms.Label erroreslabel;
         private System.Windows.Forms.Label label1;
     }
 }
