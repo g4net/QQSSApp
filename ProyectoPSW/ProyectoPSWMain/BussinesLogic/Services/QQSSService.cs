@@ -11,6 +11,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Reflection.Emit;
 using System.Security.Cryptography;
 using System.Net.NetworkInformation;
+using System.Media;
+using System.IO;
 
 namespace ProyectoPSWMain.Services
 {
@@ -476,6 +478,22 @@ namespace ProyectoPSWMain.Services
             //}
 
             return pregunta.RespuestaCorrecta == txt;
+        }
+        #endregion
+
+        #region sonidos
+
+        public void Play(string rutaSonido)
+        {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(rutaSonido);
+            player.Play();
+        }
+
+        public string GetRutaSonido(string nombreSonido)
+        {
+            string rutaCarpeta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ProyectoPSW", "QQSSApp", "Resources","Sonidos");
+            string rutaArchivo = Path.Combine(rutaCarpeta, nombreSonido + ".wav");
+            return rutaArchivo;
         }
         #endregion
     }

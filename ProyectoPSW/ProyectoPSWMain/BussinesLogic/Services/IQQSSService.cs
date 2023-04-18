@@ -76,6 +76,10 @@ namespace ProyectoPSWMain.Services
         bool TestAnswer(String txt, Pregunta pregunta);
         #endregion
 
+        #region sonidos
+        void Play(string rutaSonido);
+        string GetRutaSonido(string nombreSonido);
+        #endregion
 
     }
 }

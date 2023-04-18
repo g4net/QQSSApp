@@ -52,6 +52,8 @@ namespace QQSSApp
             Niveles niveles = new Niveles(service);
             niveles.Show();
             this.Hide();
+            string ruta = service.GetRutaSonido("CuentaAtras.wav");
+            service.Play(ruta);
         }
 
         private void BotonReglas_Click(object sender, EventArgs e)

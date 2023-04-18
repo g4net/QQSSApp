@@ -337,6 +337,7 @@
     <None Include="resources\ODS_0.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="resources\Sonidos\CuentaAtras.wav" />
     <Content Include="resources\Sonidos\file_example_WAV_5MG.wav" />
     <None Include="resources\user.png" />
   </ItemGroup>
