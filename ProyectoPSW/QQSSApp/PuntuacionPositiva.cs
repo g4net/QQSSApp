@@ -52,14 +52,14 @@ namespace QQSSApp
         {
             pregunta = service.QuestionServIndex(retoindex);
             puntuacion.Text = pregunta.GetPuntuacionAcierto();
-            punt_actual.Text = service.GetPartidaActual().getPuntuacionPartida();
+            punt_actual.Text = service.GetPartidaActual().PuntuacionPartida.ToString();
             
         }
 
         private void consolidar_click(object sender, EventArgs e)
         {
             service.Consolidar();
-            puntuacionConsolidada.Text = service.GetPartidaActual().GetPuntuacionConsolidada();
+            puntuacionConsolidada.Text = service.GetPartidaActual().PuntuacionConsolidada.ToString();
             puntuacionConsolidada.Visible = true;
             textoConsolidacion.Visible = true;
             consolidar.Enabled = false;

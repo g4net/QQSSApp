@@ -33,13 +33,12 @@ namespace ProyectoPSWMain.Entities
             List<Reto> retopartida = this.RetoPartida.ToList();
             return retopartida;
         }
-        public String getPuntuacionPartida()
-        {
-            return this.PuntuacionPartida + "";
-
-        }
-        public String GetPuntuacionConsolidada() {
-            return this.PuntuacionConsolidada + "";
-        }
+        //public String getPuntuacionPartida()
+        //{
+        //    return this.PuntuacionPartida + "";
+        //}
+        //public String GetPuntuacionConsolidada() {
+        //    return this.PuntuacionConsolidada + "";
+        //}
     }
 }

@@ -115,6 +115,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.punt_actual);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "PuntuacionNegativa";
             this.Text = "PuntuacionForm";
             this.panel1.ResumeLayout(false);

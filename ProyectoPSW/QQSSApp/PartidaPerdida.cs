@@ -25,7 +25,7 @@ namespace QQSSApp
             this.service = service;
             pActual = service.GetPartidaActual();
             retoindex = index;
-            puntuacion_acumulada.Text = pActual.GetPuntuacionConsolidada();
+            puntuacion_acumulada.Text = pActual.PuntuacionConsolidada.ToString();
             pregunta = service.QuestionServIndex(retoindex);
             OtorgarPuntuacion();
             
@@ -33,10 +33,11 @@ namespace QQSSApp
 
         private void OtorgarPuntuacion()
         {
-            if (!service.GetConsolidado())
-            {
+            if (!service.GetConsolidado()) 
                 service.UpdateUserScore(0);
-            }
+            else
+                service.UpdateUserScore(pActual.PuntuacionConsolidada + pActual.PuntuacionPartida);
+
         }
 
         private void reintentar_salir_Click(object sender, EventArgs e)

@@ -36,7 +36,7 @@ namespace QQSSApp
         private void InitializeNegativePunctuation()
         {
             
-            puntuacion.Text = service.GetPartidaActual().GetPuntuacionConsolidada();
+            puntuacion.Text = service.GetPartidaActual().PuntuacionConsolidada.ToString();
             punt_usuario.Text = service.GetLoggedUser().getPointsStr();
 
         }

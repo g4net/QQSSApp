@@ -435,16 +435,6 @@ namespace ProyectoPSWMain.Services
             var random = new Random();
             List<Respuesta> NoMix = Question.getAllAnswers();
 
-            //int pointer = 0;
-            //while (pointer < 4)
-            //{
-            //    int index = random.Next(NoMix.Count);
-            //    Answers.Add(NoMix.ElementAt(index));
-            //    NoMix.RemoveAt(index);
-            //    pointer++;
-
-            //}
-
             for(int i = 0; i < 4; i++)
             {
                 int index = random.Next(NoMix.Count);
@@ -465,16 +455,8 @@ namespace ProyectoPSWMain.Services
             }
         }
 
-        public bool TestAnswer(String txt, Pregunta pregunta) {
-
-            //if (pregunta.RespuestaCorrecta == txt)
-            //{
-            //    return true;
-            //}
-            //else {
-            //    return false;
-            //}
-
+        public bool TestAnswer(String txt, Pregunta pregunta) 
+        {
             return pregunta.RespuestaCorrecta == txt;
         }
         #endregion

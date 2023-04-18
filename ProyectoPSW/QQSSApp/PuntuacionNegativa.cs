@@ -39,7 +39,7 @@ namespace QQSSApp
         {
             pregunta = service.QuestionServIndex(retoindex);
             puntuacion.Text = pregunta.GetPuntuacionFallo();
-            punt_actual.Text = service.GetPartidaActual().getPuntuacionPartida();
+            punt_actual.Text = service.GetPartidaActual().PuntuacionPartida.ToString();
         }
     }
 }
