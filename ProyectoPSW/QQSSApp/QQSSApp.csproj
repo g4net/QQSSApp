@@ -340,6 +340,7 @@
     <Content Include="resources\Sonidos\cuentaATRAS.wav" />
     <Content Include="resources\Sonidos\file_example_WAV_5MG.wav" />
     <Content Include="resources\Sonidos\menuPrincipal.wav" />
+    <Content Include="resources\Sonidos\menuPrincipal1.wav" />
     <Content Include="resources\Sonidos\PartidaGanada.wav" />
     <Content Include="resources\Sonidos\PartidaPerdida.wav" />
     <Content Include="resources\Sonidos\RespuestaCorrecta.wav" />
