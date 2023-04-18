@@ -132,8 +132,8 @@ namespace QQSSApp
            
             if (service.TestAnswer(optext, pregunta))
             {
-                if (progresoPreguntas.Contains(retoindex)) { service.ProgresoDeletePreguntaFallada(retoindex); }
-                progresoPreguntas = service.GetProgresoPreguntas();
+                //if (progresoPreguntas.Contains(retoindex)) { service.ProgresoDeletePreguntaFallada(retoindex); }
+                //progresoPreguntas = service.GetProgresoPreguntas();
                 Form respuestaAcertada;
                 service.SetPuntuacionAcumulada(pregunta.Puntuacion_acierto);
                 service.UpdateGameScore(pregunta.Puntuacion_acierto);
