@@ -10,6 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace QQSSApp
@@ -33,6 +34,21 @@ namespace QQSSApp
 
             string ruta = service.GetRutaSonido("respuestaCorrecta");
             service.Play(ruta);
+            InitializeTimer();
+        }
+
+        private void InitializeTimer()
+        {
+            timer1.Interval = 15000;
+            timer1.Start();
+        }
+
+        private void TimerTick(object sender, EventArgs e)
+        {
+            this.retoindex++;
+            PartidaForm partida = new PartidaForm(service, retoindex);
+            partida.Show();
+            this.Close();
         }
 
         public void DeshabilitarBotonConsolidar()
