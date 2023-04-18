@@ -491,9 +491,7 @@ namespace ProyectoPSWMain.Services
 
         public string GetRutaSonido(string nombreSonido)
         {
-            string rutaCarpeta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ProyectoPSW", "QQSSApp", "Resources","Sonidos");
-            string rutaArchivo = Path.Combine(rutaCarpeta, nombreSonido + ".wav");
-            return rutaArchivo;
+            return @"..\..\Resources\Sonidos\" + nombreSonido + ".wav";
         }
         #endregion
     }
