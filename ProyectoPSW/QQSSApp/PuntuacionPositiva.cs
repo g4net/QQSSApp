@@ -30,6 +30,9 @@ namespace QQSSApp
             retoindex = index;
             DeshabilitarBotonConsolidar();
             InitializePositivePunctuation();
+
+            string ruta = service.GetRutaSonido("respuestaCorrecta");
+            service.Play(ruta);
         }
 
         public void DeshabilitarBotonConsolidar()

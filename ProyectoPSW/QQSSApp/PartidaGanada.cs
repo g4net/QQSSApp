@@ -26,6 +26,8 @@ namespace QQSSApp
             this.service = service;
             pActual = service.GetPartidaActual();
             retoindex= index;
+            string ruta = service.GetRutaSonido("PartidaGanada");
+            service.Play(ruta);
             InitializePartidaGanada();
         }
 

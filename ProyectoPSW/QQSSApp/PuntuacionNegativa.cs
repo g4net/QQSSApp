@@ -27,6 +27,9 @@ namespace QQSSApp
             this.retoindex = index;
             this.errores = service.GetErrores();
             InitializeNegativePunctuation();
+
+            string ruta = service.GetRutaSonido("respuestaIncorrecta");
+            service.Play(ruta);
         }
 
         private void ButtonReintentarClick(object sender, EventArgs e)

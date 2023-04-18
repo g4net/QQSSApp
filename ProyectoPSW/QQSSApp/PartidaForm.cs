@@ -45,6 +45,8 @@ namespace QQSSApp
             InitializeTimers();
             InitializeODS();
             HabilitarBotonAbandonar();
+            string ruta = service.GetRutaSonido("CuentaAtras");
+            service.Play(ruta);
             //Prueba();
         }
 

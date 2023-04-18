@@ -28,7 +28,9 @@ namespace QQSSApp
             puntuacion_acumulada.Text = pActual.PuntuacionConsolidada.ToString();
             pregunta = service.QuestionServIndex(retoindex);
             OtorgarPuntuacion();
-            
+            string ruta = service.GetRutaSonido("PartidaPerdida");
+            service.Play(ruta);
+
         }
 
         private void OtorgarPuntuacion()

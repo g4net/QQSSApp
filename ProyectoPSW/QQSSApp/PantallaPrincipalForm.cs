@@ -29,6 +29,8 @@ namespace QQSSApp
             this.service.Login("0");
             this.CenterToScreen();
             service.ResetErroresyConsolidaciones();
+            string ruta = service.GetRutaSonido("menuPrincipal");
+            service.Play(ruta);
             SiguienteNivel();
         }
 
@@ -52,8 +54,8 @@ namespace QQSSApp
             Niveles niveles = new Niveles(service);
             niveles.Show();
             this.Hide();
-            string ruta = service.GetRutaSonido("CuentaAtras");
-            service.Play(ruta);
+            //string ruta = service.GetRutaSonido("CuentaAtras");
+            //service.Play(ruta);
         }
 
         private void BotonReglas_Click(object sender, EventArgs e)
