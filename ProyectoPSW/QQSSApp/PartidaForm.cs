@@ -169,9 +169,20 @@ namespace QQSSApp
 
         private void Atras(object sender, EventArgs e) 
         {
-            PantallaPrincipalForm Ppr = new PantallaPrincipalForm(service);
-            Ppr.Show();
-            this.Close();
+            DialogResult result = MessageBox.Show("¿Está seguro de que desea abandonar la partida actual (perderá los puntos no consolidados)?",
+                                                  "Confirmación de abandono",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                service.UpdateUserScore(Math.Min(partida.PuntuacionPartida, partida.PuntuacionConsolidada));
+                PantallaPrincipalForm Ppr = new PantallaPrincipalForm(service);
+                Ppr.Show();
+                this.Close();
+            }
+
+            
         }
 
         private void TimerTiempoTick(object sender, EventArgs e)

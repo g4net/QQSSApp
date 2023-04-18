@@ -36,7 +36,7 @@ namespace QQSSApp
             if (!service.GetConsolidado()) 
                 service.UpdateUserScore(0);
             else
-                service.UpdateUserScore(pActual.PuntuacionConsolidada + pActual.PuntuacionPartida);
+                service.UpdateUserScore(Math.Min(pActual.PuntuacionPartida, pActual.PuntuacionConsolidada));
 
         }
 
