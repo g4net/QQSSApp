@@ -68,6 +68,8 @@ namespace ProyectoPSWMain.Services
         void ProgresoAddPreguntaFallada(int index);
         void CleanProgresoPreguntas();
         Pregunta QuestionServIndex(int index);
+
+        void PreguntaExtra(int dificultad, int indexActual);
         #endregion
 
         #region Respuesta
