@@ -179,8 +179,8 @@ namespace QQSSApp
             if (result == DialogResult.Yes)
             {
                 service.UpdateUserScore(Math.Min(partida.PuntuacionPartida, partida.PuntuacionConsolidada));
-                PantallaPrincipalForm Ppr = new PantallaPrincipalForm(service);
-                Ppr.Show();
+                Consolidar consolidarForm = new Consolidar(service);
+                consolidarForm.Show();
                 this.Close();
             }
 
