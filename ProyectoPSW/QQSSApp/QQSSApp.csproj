@@ -341,6 +341,14 @@
     <Content Include="resources\Sonidos\file_example_WAV_5MG.wav" />
     <Content Include="resources\Sonidos\menuPrincipal.wav" />
     <Content Include="resources\Sonidos\menuPrincipal1.wav" />
+    <Content Include="resources\Sonidos\musicaFondo0.wav" />
+    <Content Include="resources\Sonidos\musicaFondo1.wav" />
+    <Content Include="resources\Sonidos\musicaFondo2.wav" />
+    <Content Include="resources\Sonidos\musicaFondo3.wav" />
+    <Content Include="resources\Sonidos\musicaFondo4.wav" />
+    <Content Include="resources\Sonidos\musicaFondo5.wav" />
+    <Content Include="resources\Sonidos\musicaFondo6.wav" />
+    <Content Include="resources\Sonidos\musicaFondo7.wav" />
     <Content Include="resources\Sonidos\PartidaGanada.wav" />
     <Content Include="resources\Sonidos\PartidaPerdida.wav" />
     <Content Include="resources\Sonidos\RespuestaCorrecta.wav" />

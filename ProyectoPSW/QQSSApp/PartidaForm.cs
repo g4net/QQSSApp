@@ -45,9 +45,15 @@ namespace QQSSApp
             InitializeTimers();
             InitializeODS();
             HabilitarBotonAbandonar();
-            string ruta = service.GetRutaSonido("CuentaAtras");
+            string ruta = service.GetRutaSonido("musicaFondo" + GetRandomNumber(7));
             service.Play(ruta);
             //Prueba();
+        }
+
+        public string GetRandomNumber(int maxNumber)
+        {
+            Random random = new Random();
+            return random.Next(maxNumber).ToString();
         }
 
         /*private void Prueba()
