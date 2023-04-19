@@ -27,20 +27,11 @@ namespace QQSSApp
             retoindex = index;
             puntuacion_acumulada.Text = pActual.PuntuacionConsolidada.ToString();
             pregunta = service.QuestionServIndex(retoindex);
-            OtorgarPuntuacion();
             string ruta = service.GetRutaSonido("PartidaPerdida");
             service.Play(ruta);
 
         }
 
-        private void OtorgarPuntuacion()
-        {
-            if (!service.GetConsolidado()) 
-                service.UpdateUserScore(0);
-            else
-                service.UpdateUserScore(Math.Min(pActual.PuntuacionPartida, pActual.PuntuacionConsolidada));
-
-        }
 
         private void reintentar_salir_Click(object sender, EventArgs e)
         {

@@ -257,7 +257,6 @@ namespace ProyectoPSWMain.Services
             int puntosConsolidados = this.partidaActual.PuntuacionPartida;
             this.partidaActual.PuntuacionConsolidada = puntosConsolidados;
             this.puntuacionAcumulada = 0;
-            UpdateUserScore(puntosConsolidados);
         }
         public void ResetErroresyConsolidaciones() {
             this.errores = 0;
@@ -405,6 +404,15 @@ namespace ProyectoPSWMain.Services
             }
 
             QuestionServ = questions;
+        }
+
+        public void PreguntaExtra(int dificultad, int indexActual)
+        {
+            Random random = new Random();
+            List<Pregunta> questions = LoadQuestionsByDifficulty(dificultad);
+            int index = random.Next(questions.Count);
+            QuestionServ[indexActual] = questions[index];
+
         }
 
         public void ProgresoAddPreguntaFallada(int index) 
