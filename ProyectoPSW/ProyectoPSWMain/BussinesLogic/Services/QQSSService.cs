@@ -257,7 +257,6 @@ namespace ProyectoPSWMain.Services
             int puntosConsolidados = this.partidaActual.PuntuacionPartida;
             this.partidaActual.PuntuacionConsolidada = puntosConsolidados;
             this.puntuacionAcumulada = 0;
-            UpdateUserScore(puntosConsolidados);
         }
         public void ResetErroresyConsolidaciones() {
             this.errores = 0;
