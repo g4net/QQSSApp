@@ -26,8 +26,8 @@ namespace ProyectoPSWMain.Services
 
         #region Partida
         int GetErrores();
-        int GetPuntuacionAcumulada();
-        void SetPuntuacionAcumulada(int points);
+        //int GetPuntuacionAcumulada();
+        //void SetPuntuacionAcumulada(int points);
         void UpdateErrores();
         
         
@@ -69,7 +69,7 @@ namespace ProyectoPSWMain.Services
         void CleanProgresoPreguntas();
         Pregunta QuestionServIndex(int index);
 
-        void PreguntaExtra(int dificultad, int indexActual);
+        void PreguntaExtra(int indexActual);
         #endregion
 
         #region Respuesta

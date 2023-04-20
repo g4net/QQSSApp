@@ -34,6 +34,7 @@ namespace QQSSApp
 
         private void ButtonReintentarClick(object sender, EventArgs e)
         {
+            service.PreguntaExtra(retoindex);
             PartidaForm partida = new PartidaForm(service, retoindex);
             partida.Show();
             this.Close();
