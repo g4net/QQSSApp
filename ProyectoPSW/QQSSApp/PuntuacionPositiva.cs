@@ -43,14 +43,6 @@ namespace QQSSApp
             timer1.Start();
         }
 
-        private void TimerTick(object sender, EventArgs e)
-        {
-            this.retoindex++;
-            PartidaForm partida = new PartidaForm(service, retoindex);
-            partida.Show();
-            this.Close();
-        }
-
         public void DeshabilitarBotonConsolidar()
         {
             if (service.GetConsolidado())

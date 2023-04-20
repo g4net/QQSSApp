@@ -30,6 +30,13 @@ namespace QQSSApp
 
             string ruta = service.GetRutaSonido("respuestaIncorrecta");
             service.Play(ruta);
+            InitializeTimer();
+        }
+
+        private void InitializeTimer()
+        {
+            timer1.Interval = 15000;
+            timer1.Start();
         }
 
         private void ButtonReintentarClick(object sender, EventArgs e)
