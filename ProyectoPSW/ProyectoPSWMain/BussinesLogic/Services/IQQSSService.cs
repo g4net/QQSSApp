@@ -36,7 +36,7 @@ namespace ProyectoPSWMain.Services
         bool IsConsolidado();
         void ResetErroresyConsolidaciones();
         void CrearPartida(int nivel);
-        void UpdateGameScore(int score);
+        void UpdateGameScore(int score, bool fallo);
         void ResetGameScore();
         void DeleteUser(int id);
         void AddPartida(Partida game);

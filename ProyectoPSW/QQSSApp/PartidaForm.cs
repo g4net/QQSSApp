@@ -143,8 +143,8 @@ namespace QQSSApp
                 //if (progresoPreguntas.Contains(retoindex)) { service.ProgresoDeletePreguntaFallada(retoindex); }
                 //progresoPreguntas = service.GetProgresoPreguntas();
                 Form respuestaAcertada;
-                service.SetPuntuacionAcumulada(pregunta.Puntuacion_acierto);
-                service.UpdateGameScore(pregunta.Puntuacion_acierto);
+                //service.SetPuntuacionAcumulada(pregunta.Puntuacion_acierto);
+                service.UpdateGameScore(pregunta.Puntuacion_acierto, false);
                 service.UpdateUserQuestions(pregunta);
                 if (retoindex != 9) respuestaAcertada = new PuntuacionPositiva(service, this.retoindex);
                 else respuestaAcertada = new PartidaGanada(service, retoindex);
@@ -154,8 +154,8 @@ namespace QQSSApp
             else
             {
                 Form respuestaFallada;
-                service.SetPuntuacionAcumulada(pregunta.PuntuacionFallo());
-                service.UpdateGameScore(pregunta.PuntuacionFallo());
+                //service.SetPuntuacionAcumulada(pregunta.PuntuacionFallo());
+                service.UpdateGameScore(pregunta.PuntuacionFallo(), true);
                 service.UpdateErrores();
                 service.ProgresoAddPreguntaFallada(retoindex);
                 progresoPreguntas = service.GetProgresoPreguntas();
@@ -184,7 +184,7 @@ namespace QQSSApp
 
             if (result == DialogResult.Yes)
             {
-                service.UpdateUserScore(Math.Min(partida.PuntuacionPartida, partida.PuntuacionConsolidada));
+                service.UpdateUserScore(partida.PuntuacionConsolidada);
                 Consolidar consolidarForm = new Consolidar(service);
                 consolidarForm.Show();
                 this.Close();

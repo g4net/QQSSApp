@@ -43,8 +43,9 @@ namespace QQSSApp
             pregunta = service.QuestionServIndex(retoindex);
             puntuacion.Text = pregunta.GetPuntuacionAcierto();
             puntuacion_partida.Text = pActual.PuntuacionPartida.ToString();
-            puntuacion_acumulada.Text = service.GetPuntuacionAcumulada().ToString();
-            service.UpdateUserScore(service.GetPuntuacionAcumulada());
+            //puntuacion_acumulada.Text = pActual.
+                //service.GetPuntuacionAcumulada().ToString();
+            service.UpdateUserScore(pActual.PuntuacionPartida);
             puntuacion_total.Text = service.GetLoggedUser().getPointsStr();
         }
       

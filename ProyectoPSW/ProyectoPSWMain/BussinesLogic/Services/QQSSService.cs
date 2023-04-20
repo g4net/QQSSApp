@@ -30,7 +30,7 @@ namespace ProyectoPSWMain.Services
         private int errores = 0;
         private List<int> progresoPreguntas = new List<int>();
         private bool consolidado = false;
-        private int puntuacionAcumulada = 0;
+        //private int puntuacionAcumulada = 0;
         public readonly int[] Levels = { 500, 1000, 2000, 3000 };
         public QQSSService(IRepository repository)
         {
@@ -238,13 +238,13 @@ namespace ProyectoPSWMain.Services
         #endregion
 
         #region Partida
-        public int GetPuntuacionAcumulada() {
-            return this.puntuacionAcumulada;
-        }
-        public void SetPuntuacionAcumulada(int points) {
-            int punt = this.puntuacionAcumulada + points;
-            this.puntuacionAcumulada = punt < 0 ? 0 : punt;
-        }
+        //public int GetPuntuacionAcumulada() {
+        //    return this.puntuacionAcumulada;
+        //}
+        //public void SetPuntuacionAcumulada(int points) {
+        //    int punt = this.puntuacionAcumulada + points;
+        //    this.puntuacionAcumulada = punt < 0 ? 0 : punt;
+        //}
 
         public void UpdateErrores() {             
             this.errores++;
@@ -310,9 +310,14 @@ namespace ProyectoPSWMain.Services
 
             return null;
         }
-        public void UpdateGameScore(int score) {
+        public void UpdateGameScore(int score, bool fallo) {
             int punt = this.partidaActual.PuntuacionPartida + score;
             this.partidaActual.PuntuacionPartida = punt < 0 ? 0 : punt;
+            if (fallo)
+            {
+                int puntCons = this.partidaActual.PuntuacionConsolidada + score;
+                this.partidaActual.PuntuacionConsolidada = puntCons < 0 ? 0 : puntCons;
+            }
             Commit();
 
         }
