@@ -54,5 +54,9 @@ namespace QQSSApp
             punt_actual.Text = service.GetPartidaActual().PuntuacionPartida.ToString();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,6 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.respcorrect = new System.Windows.Forms.Label();
+            this.respuesta = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +47,7 @@
             this.reintentar_salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.reintentar_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reintentar_salir.Location = new System.Drawing.Point(22, 389);
-            this.reintentar_salir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reintentar_salir.Margin = new System.Windows.Forms.Padding(2);
             this.reintentar_salir.Name = "reintentar_salir";
             this.reintentar_salir.Size = new System.Drawing.Size(386, 42);
             this.reintentar_salir.TabIndex = 13;
@@ -58,7 +60,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.panel1.Controls.Add(this.correcto);
             this.panel1.Location = new System.Drawing.Point(0, 19);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(428, 80);
             this.panel1.TabIndex = 8;
@@ -79,7 +81,7 @@
             // 
             this.puntuacion_acumulada.AutoSize = true;
             this.puntuacion_acumulada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntuacion_acumulada.Location = new System.Drawing.Point(272, 240);
+            this.puntuacion_acumulada.Location = new System.Drawing.Point(210, 240);
             this.puntuacion_acumulada.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.puntuacion_acumulada.Name = "puntuacion_acumulada";
             this.puntuacion_acumulada.Size = new System.Drawing.Size(57, 20);
@@ -90,7 +92,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(58, 240);
+            this.label5.Location = new System.Drawing.Point(8, 240);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(208, 20);
@@ -131,12 +133,38 @@
             this.pictureBox1.Size = new System.Drawing.Size(384, 317);
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // respcorrect
+            // 
+            this.respcorrect.AutoSize = true;
+            this.respcorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.respcorrect.Location = new System.Drawing.Point(11, 285);
+            this.respcorrect.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.respcorrect.Name = "respcorrect";
+            this.respcorrect.Size = new System.Drawing.Size(175, 20);
+            this.respcorrect.TabIndex = 23;
+            this.respcorrect.Text = "Respuesta Correcta:";
+            // 
+            // respuesta
+            // 
+            this.respuesta.AutoSize = true;
+            this.respuesta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.respuesta.Location = new System.Drawing.Point(190, 285);
+            this.respuesta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.respuesta.MaximumSize = new System.Drawing.Size(200, 0);
+            this.respuesta.Name = "respuesta";
+            this.respuesta.Size = new System.Drawing.Size(57, 20);
+            this.respuesta.TabIndex = 24;
+            this.respuesta.Text = "labal5";
             // 
             // PartidaPerdida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 450);
+            this.Controls.Add(this.respuesta);
+            this.Controls.Add(this.respcorrect);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.puntuacion_acumulada);
             this.Controls.Add(this.label5);
@@ -165,5 +193,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label respcorrect;
+        private System.Windows.Forms.Label respuesta;
     }
 }

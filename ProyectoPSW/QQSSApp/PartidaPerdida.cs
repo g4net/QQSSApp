@@ -18,6 +18,7 @@ namespace QQSSApp
         int retoindex;
         Partida pActual;
         Pregunta pregunta;
+        
         public PartidaPerdida(IQQSSService service, int index)
         {
             InitializeComponent();
@@ -28,6 +29,8 @@ namespace QQSSApp
             puntuacion_acumulada.Text = pActual.PuntuacionConsolidada.ToString();
             pregunta = service.QuestionServIndex(retoindex);
             string ruta = service.GetRutaSonido("PartidaPerdida");
+            pregunta = service.QuestionServIndex(retoindex);
+            respuesta.Text = pregunta.RespuestaCorrecta.ToString();
             service.Play(ruta);
 
         }
@@ -39,6 +42,11 @@ namespace QQSSApp
             PantallaPrincipalForm pantallaPrincipal = new PantallaPrincipalForm(service);
             pantallaPrincipal.Show();
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
