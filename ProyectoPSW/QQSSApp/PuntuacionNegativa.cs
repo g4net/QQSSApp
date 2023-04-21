@@ -49,8 +49,10 @@ namespace QQSSApp
         private void InitializeNegativePunctuation()
         {
             pregunta = service.QuestionServIndex(retoindex);
+            respuesta.Text = pregunta.RespuestaCorrecta.ToString();
             puntuacion.Text = pregunta.GetPuntuacionFallo();
             punt_actual.Text = service.GetPartidaActual().PuntuacionPartida.ToString();
         }
+
     }
 }
