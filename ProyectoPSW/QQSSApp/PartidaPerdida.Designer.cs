@@ -81,7 +81,7 @@
             // 
             this.puntuacion_acumulada.AutoSize = true;
             this.puntuacion_acumulada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntuacion_acumulada.Location = new System.Drawing.Point(210, 240);
+            this.puntuacion_acumulada.Location = new System.Drawing.Point(177, 240);
             this.puntuacion_acumulada.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.puntuacion_acumulada.Name = "puntuacion_acumulada";
             this.puntuacion_acumulada.Size = new System.Drawing.Size(57, 20);
@@ -92,12 +92,12 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 240);
+            this.label5.Location = new System.Drawing.Point(20, 240);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(208, 20);
+            this.label5.Size = new System.Drawing.Size(148, 20);
             this.label5.TabIndex = 19;
-            this.label5.Text = "Puntuación Consolidada:";
+            this.label5.Text = "Puntuación Final:";
             // 
             // label2
             // 
@@ -139,7 +139,7 @@
             // 
             this.respcorrect.AutoSize = true;
             this.respcorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.respcorrect.Location = new System.Drawing.Point(11, 285);
+            this.respcorrect.Location = new System.Drawing.Point(18, 285);
             this.respcorrect.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.respcorrect.Name = "respcorrect";
             this.respcorrect.Size = new System.Drawing.Size(175, 20);

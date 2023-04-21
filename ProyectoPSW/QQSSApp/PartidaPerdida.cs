@@ -26,7 +26,7 @@ namespace QQSSApp
             this.service = service;
             pActual = service.GetPartidaActual();
             retoindex = index;
-            puntuacion_acumulada.Text = pActual.PuntuacionConsolidada.ToString();
+            puntuacion_acumulada.Text = 0;
             pregunta = service.QuestionServIndex(retoindex);
             string ruta = service.GetRutaSonido("PartidaPerdida");
             pregunta = service.QuestionServIndex(retoindex);
