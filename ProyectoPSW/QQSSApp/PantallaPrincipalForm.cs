@@ -69,5 +69,10 @@ namespace QQSSApp
             Usuario usuario = new Usuario(service.GetLoggedUser());
             usuario.ShowDialog();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

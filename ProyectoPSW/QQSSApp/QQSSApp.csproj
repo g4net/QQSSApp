@@ -69,6 +69,12 @@
     <Compile Include="Consolidar.Designer.cs">
       <DependentUpon>Consolidar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consolidar.resx">
       <DependentUpon>Consolidar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registrar.resx">
       <DependentUpon>Registrar.cs</DependentUpon>
@@ -346,6 +355,7 @@
     <None Include="resources\ODS_0.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="resources\Black_question_mark.png" />
     <Content Include="resources\Sonidos\cuentaATRAS.wav" />
     <Content Include="resources\Sonidos\file_example_WAV_5MG.wav" />
     <Content Include="resources\Sonidos\menuPrincipal.wav" />
