@@ -12,12 +12,13 @@ namespace ProyectoPSWMain.Services
     public interface IQQSSService
     {
         void RemoveAllData();
-        void Commit();  
+        void Commit();
         //void DBInitialization();
 
         #region User
-        void AddUser(User usuario);
-        void Login(String dni);
+        void Register(String Nombre, String Email, String Password);
+       
+        void Login(String Logger, String Password);
         void UpdateUserScore(int points);
         User GetLoggedUser();
 

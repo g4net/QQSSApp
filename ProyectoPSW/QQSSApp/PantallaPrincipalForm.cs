@@ -25,8 +25,7 @@ namespace QQSSApp
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.FormClosed += (s, args) => Application.Exit();
-            this.label1.Select();
-            this.service.Login("0");
+            this.label1.Select();            
             this.CenterToScreen();
             service.ResetErroresyConsolidaciones();
             string ruta = service.GetRutaSonido("menuPrincipal");

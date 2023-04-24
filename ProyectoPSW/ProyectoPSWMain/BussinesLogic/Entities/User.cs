@@ -11,12 +11,15 @@ namespace ProyectoPSWMain.Entities
         public User() {
             this.PartidasJugadas = new List<Partida>();
             this.PreguntasRealizadas = new List<Pregunta>();
+            this.PuntuacionAcumulada = 0;
+            this.nivel = 0;
         }
 
-        public User(string dni, int Points, int nivel) : this() {
-            this.Id = dni;
-            this.PuntuacionAcumulada = Points;
-            this.nivel = nivel;
+        public User(String Nombre, String Email, String Contraseña) : this() {
+            this.Nombre = Nombre;
+            this.Email = Email;
+            this.Contraseña = Contraseña;
+           
         }
         public int getPoints() {
             return this.PuntuacionAcumulada;

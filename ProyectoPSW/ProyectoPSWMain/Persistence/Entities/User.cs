@@ -11,10 +11,17 @@ namespace ProyectoPSWMain.Entities
     public partial class User
     {
         [Key]
-        public String Id { get; set; }
+        public int Id { get; set; }
         public int PuntuacionAcumulada { get; set; }
         public int nivel { get; set;}
+
+        public String Nombre { get; set; }
         public virtual ICollection<Partida> PartidasJugadas { get; set; }
+
+        public String Email { get; set; }
+
+        public String Contraseña { get; set; }
+
 
         public virtual ICollection<Pregunta> PreguntasRealizadas { get; set; }
 

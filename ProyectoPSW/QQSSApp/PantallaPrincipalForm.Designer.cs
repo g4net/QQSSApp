@@ -46,7 +46,7 @@
             this.comenzarButton.BackColor = System.Drawing.Color.SpringGreen;
             this.comenzarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comenzarButton.Location = new System.Drawing.Point(195, 283);
-            this.comenzarButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comenzarButton.Margin = new System.Windows.Forms.Padding(2);
             this.comenzarButton.Name = "comenzarButton";
             this.comenzarButton.Size = new System.Drawing.Size(200, 41);
             this.comenzarButton.TabIndex = 1;
@@ -65,13 +65,14 @@
             this.label1.Size = new System.Drawing.Size(250, 44);
             this.label1.TabIndex = 2;
             this.label1.Text = "QQSS-Quizz";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(136, -4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(326, 377);
             this.panel1.TabIndex = 28;
@@ -86,7 +87,7 @@
             this.BotonReglas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BotonReglas.Image = global::QQSSApp.Properties.Resources.reglas;
             this.BotonReglas.Location = new System.Drawing.Point(547, 11);
-            this.BotonReglas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BotonReglas.Margin = new System.Windows.Forms.Padding(2);
             this.BotonReglas.Name = "BotonReglas";
             this.BotonReglas.Size = new System.Drawing.Size(43, 42);
             this.BotonReglas.TabIndex = 29;
@@ -101,7 +102,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::QQSSApp.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(152, -29);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(292, 251);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -115,7 +116,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::QQSSApp.Properties.Resources.agüita;
             this.pictureBox2.Location = new System.Drawing.Point(1, -4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(601, 377);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -127,7 +128,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::QQSSApp.Properties.Resources.user;
             this.pictureBox3.Location = new System.Drawing.Point(547, 70);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(43, 44);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -147,7 +148,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PantallaPrincipalForm";
             this.Text = "Principal";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -13,6 +13,7 @@ using System.Security.Cryptography;
 using System.Net.NetworkInformation;
 using System.Media;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace ProyectoPSWMain.Services
 {
@@ -117,13 +118,40 @@ namespace ProyectoPSWMain.Services
 
 
         #region User
-        public void AddUser(User usuario) {
-            if(usuario == null) throw new ServiceException("You cannot add a null user");
-            if(repository.GetById<User>(usuario.Id) == null)
-                throw new ServiceException("User with DNI" + usuario.Id + "already exists");
+        public void Register(String Nombre, String Email, String Password)
+        {
 
+            User usuario = new User(Nombre, Email, Password);
             repository.Insert<User>(usuario);
             Commit();
+            // Esto lo comprobamos en el form? para poder sacar los textos en tiempo real ?
+            /*
+            string regex = @"^[^@\s]+@[^@\s]+\.(com|net|org|gov)$";
+            var hasNumber = new Regex(@"[0-9]+");
+            var hasUpperChar = new Regex(@"[A-Z]+");
+            var hasMinimum8Chars = new Regex(@".{8,}");
+            var hasSpecialChar = new Regex(@"[%!@#$%^&*()?/>.<,:;'\|_~`+=-]+");
+            if (!Regex.IsMatch(Email, regex, RegexOptions.IgnoreCase))
+            {
+                throw new ServiceException("The Email does not contain the right format");
+            }
+
+            if (repository.GetWhere<User>(x => x.Nombre == Nombre).Any())
+            {
+                throw new ServiceException("There is a user with that Name");
+            }
+            if (repository.GetWhere<User>(x => x.Email == Email).Any())
+            {
+                throw new ServiceException("There is a user with that Email");
+            }
+            
+            
+            if (hasNumber.IsMatch(Password) && hasUpperChar.IsMatch(Password) && hasMinimum8Chars.IsMatch(Password) && ) {
+                throw new ServiceException("Password does not follow the format");
+            }*/
+            
+
+
 
             //if (repository.GetById<User>(usuario.Id) == null)
             //{
@@ -135,10 +163,28 @@ namespace ProyectoPSWMain.Services
             //}
 
         }
-        public void Login(String dni) {
-            User usuario = repository.GetById<User>(dni);
-            if(usuario == null) throw new ServiceException("There is no user with that DNI");
+        public void Login(String Logger, String Password) {
+            string regex = @"^[^@\s]+@[^@\s]+\.(com|net|org|gov)$";
+            User usuario;
+
+            if (Regex.IsMatch(Logger, regex, RegexOptions.IgnoreCase))
+            {
+                usuario = repository.GetWhere<User>(x => x.Email == Logger).First();
+                if (usuario == null) throw new ServiceException("There is no user with that Email");
+            }
+            else
+            {
+                usuario = repository.GetWhere<User>(x => x.Nombre == Logger).First();
+                if (usuario == null) throw new ServiceException("There is no user with that Name");
+            }
+
+            if (usuario.Contraseña != Password) throw new ServiceException("The password is not correct");
             this.loggedUser = usuario;
+
+
+            //User usuario = repository.GetById<User>(dni);
+            //if (usuario == null) throw new ServiceException("There is no user with that DNI");
+            //this.loggedUser = usuario;
             
             
             
@@ -284,9 +330,10 @@ namespace ProyectoPSWMain.Services
         //    /*int index = random.Next(PartidasDb.Count);
 
         //    return PartidasDb.ElementAt(index);*/
-        //    return PartidasDb.First();
-        //}
-        public Partida GetPartidaActual()
+            //    return PartidasDb.First();
+            //}
+        
+            public Partida GetPartidaActual()
         {
             return partidaActual;
         }
