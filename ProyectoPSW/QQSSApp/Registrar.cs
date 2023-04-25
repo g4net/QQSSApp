@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPSWMain.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace QQSSApp
 {
     public partial class Registrar : Form
     {
-        public Registrar()
+        IQQSSService Service;
+        public Registrar(IQQSSService service)
         {
             InitializeComponent();
+            Service = service;  
         }
 
         private void label3_Click(object sender, EventArgs e)

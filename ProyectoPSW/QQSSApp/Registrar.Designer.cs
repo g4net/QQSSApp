@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.correcto = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nombre = new System.Windows.Forms.TextBox();
+            this.Correo = new System.Windows.Forms.TextBox();
             this.continuar_salir = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.Contrasenya = new System.Windows.Forms.TextBox();
+            this.RepetirContrasenya = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -58,15 +58,17 @@
             this.panel1.Size = new System.Drawing.Size(486, 86);
             this.panel1.TabIndex = 1;
             // 
-            // label1
+            // pictureBox3
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(191, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "REGISTRARSE";
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::QQSSApp.Properties.Resources.Black_question_mark;
+            this.pictureBox3.Location = new System.Drawing.Point(416, 21);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(43, 43);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 31;
+            this.pictureBox3.TabStop = false;
             // 
             // correcto
             // 
@@ -80,6 +82,16 @@
             this.correcto.TabIndex = 1;
             this.correcto.Text = "REGISTRAR";
             this.correcto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(191, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "REGISTRARSE";
             // 
             // label4
             // 
@@ -125,26 +137,27 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Repita la Contraseña:";
             // 
-            // textBox1
+            // nombre
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(195, 123);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(248, 28);
-            this.textBox1.TabIndex = 9;
+            this.nombre.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nombre.Location = new System.Drawing.Point(195, 123);
+            this.nombre.Multiline = true;
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(248, 28);
+            this.nombre.TabIndex = 9;
+            this.nombre.TextChanged += new System.EventHandler(this.name_TextChange);
             // 
-            // textBox2
+            // Correo
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(195, 170);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(248, 28);
-            this.textBox2.TabIndex = 11;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.Correo.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Correo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Correo.Location = new System.Drawing.Point(195, 170);
+            this.Correo.Multiline = true;
+            this.Correo.Name = "Correo";
+            this.Correo.Size = new System.Drawing.Size(248, 28);
+            this.Correo.TabIndex = 11;
+            this.Correo.TextChanged += new System.EventHandler(this.Correo_change);
             // 
             // continuar_salir
             // 
@@ -158,6 +171,7 @@
             this.continuar_salir.TabIndex = 12;
             this.continuar_salir.Text = "VOLVER";
             this.continuar_salir.UseVisualStyleBackColor = false;
+            this.continuar_salir.Click += new System.EventHandler(this.Volver_click);
             // 
             // button1
             // 
@@ -171,40 +185,31 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "ACEPTAR";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Aceptar_click);
             // 
-            // textBox3
+            // Contrasenya
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(195, 220);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(248, 28);
-            this.textBox3.TabIndex = 14;
-            this.textBox3.UseSystemPasswordChar = true;
+            this.Contrasenya.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Contrasenya.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Contrasenya.Location = new System.Drawing.Point(195, 220);
+            this.Contrasenya.Multiline = true;
+            this.Contrasenya.Name = "Contrasenya";
+            this.Contrasenya.Size = new System.Drawing.Size(248, 28);
+            this.Contrasenya.TabIndex = 14;
+            this.Contrasenya.UseSystemPasswordChar = true;
+            this.Contrasenya.TextChanged += new System.EventHandler(this.Contrasenya_Change);
             // 
-            // textBox4
+            // RepetirContrasenya
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(195, 269);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(248, 28);
-            this.textBox4.TabIndex = 15;
-            this.textBox4.UseSystemPasswordChar = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::QQSSApp.Properties.Resources.Black_question_mark;
-            this.pictureBox3.Location = new System.Drawing.Point(416, 21);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(43, 43);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 31;
-            this.pictureBox3.TabStop = false;
+            this.RepetirContrasenya.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.RepetirContrasenya.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RepetirContrasenya.Location = new System.Drawing.Point(195, 269);
+            this.RepetirContrasenya.Multiline = true;
+            this.RepetirContrasenya.Name = "RepetirContrasenya";
+            this.RepetirContrasenya.Size = new System.Drawing.Size(248, 28);
+            this.RepetirContrasenya.TabIndex = 15;
+            this.RepetirContrasenya.UseSystemPasswordChar = true;
+            this.RepetirContrasenya.TextChanged += new System.EventHandler(this.RepetirContra_change);
             // 
             // Registrar
             // 
@@ -212,12 +217,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(484, 405);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.RepetirContrasenya);
+            this.Controls.Add(this.Contrasenya);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.continuar_salir);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Correo);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -242,12 +247,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox nombre;
+        private System.Windows.Forms.TextBox Correo;
         private System.Windows.Forms.Button continuar_salir;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Contrasenya;
+        private System.Windows.Forms.TextBox RepetirContrasenya;
         private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

@@ -17,7 +17,7 @@ namespace QQSSApp
         public void BuildApp(AppBuilder builder)
         {
             IQQSSService service = new QQSSService(new EntityFrameworkDAL(new ProyectPSWDBContext()));
-            builder.BuildForm(new PantallaPrincipalForm(service));
+            builder.BuildForm(new Login(service));
         }
          
     }

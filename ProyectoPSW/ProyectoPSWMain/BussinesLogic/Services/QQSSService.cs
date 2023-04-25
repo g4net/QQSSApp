@@ -164,30 +164,59 @@ namespace ProyectoPSWMain.Services
 
         }
         public void Login(String Logger, String Password) {
-            string regex = @"^[^@\s]+@[^@\s]+\.(com|net|org|gov)$";
+            List<User> users = repository.GetAll<User>().ToList();
             User usuario;
+            if (Logger == "" || Password == "")
+            {
+                throw new ServiceException("Please Complete All the Camps");
+            }
+            if (users.Where(x => x.Email == Logger | x.Nombre == Logger).Any())
+            {
+               
+                if (users.Where(x => (x.Email == Logger | x.Nombre == Logger) && x.Contraseña == Password).Any())
+                {
+                    usuario = users.Find(x => (x.Email == Logger | x.Nombre == Logger) && x.Contraseña == Password);
+                    this.loggedUser = usuario;
+                }
+                else
+                {
+                    throw new ServiceException("The password is not correct");
 
+                }
+            }
+            else {
+                throw new ServiceException("The email or name is not correct");
+            }
+
+            /*
+           // string regex = @"^[^@\s]+@[^@\s]+\.(com|net|org|gov)$"; 
             if (Regex.IsMatch(Logger, regex, RegexOptions.IgnoreCase))
             {
-                usuario = repository.GetWhere<User>(x => x.Email == Logger).First();
-                if (usuario == null) throw new ServiceException("There is no user with that Email");
+                if (repository.GetWhere<User>(x => x.Email == Logger).Any())
+                {
+                    usuario = repository.GetWhere<User>(x => x.Email == Logger).First();
+                }
+                else { 
+                    throw new ServiceException("There is no user with that Email");
+                }
             }
             else
             {
-                usuario = repository.GetWhere<User>(x => x.Nombre == Logger).First();
-                if (usuario == null) throw new ServiceException("There is no user with that Name");
+                if (repository.GetWhere<User>(x => x.Nombre == Logger).Any()) {
+                    usuario = repository.GetWhere<User>(x => x.Nombre == Logger).First();
+                } else { throw new ServiceException("There is no user with that Name");
+                }
             }
-
             if (usuario.Contraseña != Password) throw new ServiceException("The password is not correct");
             this.loggedUser = usuario;
-
+            */
 
             //User usuario = repository.GetById<User>(dni);
             //if (usuario == null) throw new ServiceException("There is no user with that DNI");
             //this.loggedUser = usuario;
-            
-            
-            
+
+
+
             //if (repository.GetById<User>(dni) != null)
             //{
             //    this.loggedUser = repository.GetById<User>(dni);
