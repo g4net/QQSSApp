@@ -22,8 +22,7 @@ namespace QQSSApp
             LoggerError.Text = "";
             ErrorGeneral.Text = "";
             PasswordError.Text = "";
-            LoggerText.Height = 30;
-            PasswordText.Height = 30;
+          
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -61,6 +60,7 @@ namespace QQSSApp
             Registrar registrarse = new Registrar(Service);
             registrarse.Show();
             this.Hide();
+            
         }
 
         private void PassTextChanged(object sender, EventArgs e)

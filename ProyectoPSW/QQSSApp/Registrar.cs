@@ -29,5 +29,39 @@ namespace QQSSApp
         {
 
         }
+
+        private void Aceptar_click(object sender, EventArgs e)
+        {
+           Login login = new Login(Service);
+            login.Show();
+            this.Close();
+        }
+
+        private void Volver_click(object sender, EventArgs e)
+        {
+            Login login = new Login(Service);
+            login.Show();
+            this.Close();
+        }
+
+        private void name_TextChange(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Correo_change(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Contrasenya_Change(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RepetirContra_change(object sender, EventArgs e)
+        {
+
+        }
     }
 }
