@@ -11,6 +11,7 @@ namespace ProyectoPSWMain.Entities
         public User() {
             this.PartidasJugadas = new List<Partida>();
             this.PreguntasRealizadas = new List<Pregunta>();
+            this.RetosRealizados = new List<Reto>();
             this.PuntuacionAcumulada = 0;
             this.nivel = 0;
         }

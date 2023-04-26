@@ -8,7 +8,7 @@ using ProyectoPSWMain.Services;
 
 namespace QQSSApp
 {
-    internal static class Program
+    internal static class QQSSQuizLauncher
     {
         /// <summary>
         /// The main entry point for the application.
@@ -20,10 +20,10 @@ namespace QQSSApp
             AppBuilder builder = new QQSSAppBuilder();
             Director director = new Director();
             director.BuildApp(builder);
-            App app = builder.GetApp();
+            //App app = builder.GetApp();
             
             Application.EnableVisualStyles();
-            Application.Run(app.GetForm());
+            Application.Run(QQSS.app.GetForm());
 
 
             

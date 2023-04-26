@@ -1,6 +1,8 @@
-﻿using ProyectoPSWMain.Services;
+﻿using ProyectoPSWMain.EntityFramework;
+using ProyectoPSWMain.Services;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,11 +16,19 @@ namespace ProyectoPSWMain.Services
 
         public AppBuilder() { }
 
-        public abstract void BuildForm(Form form);
+        public abstract void BuildForm(Type formType);
+
+        public abstract void BuildGameController();
+
+        public abstract void BuildDbAccess();
+
+        public abstract void BuildService();
+
+        public abstract void BuildUserManager();
 
         public abstract void BuildConfig();
 
-        public App GetApp() { return app; }
+        public void SetApp() { QQSS.app = app;  }
 
 
     }

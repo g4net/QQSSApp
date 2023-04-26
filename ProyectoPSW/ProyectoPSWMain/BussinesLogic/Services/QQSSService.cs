@@ -241,11 +241,9 @@ namespace ProyectoPSWMain.Services
         }
         public User GetLoggedUser()
         {
-            if (this.loggedUser != null)
-            {
-                return this.loggedUser;
-            }
-            else throw new ServiceException("There is no user logged in");
+            if (this.loggedUser == null) throw new ServiceException("There is no user logged in");
+
+            return this.loggedUser;
 
         }
         public void UpdateUserScore(int points) {
@@ -253,15 +251,6 @@ namespace ProyectoPSWMain.Services
 
             this.loggedUser.SetPoints(points < 0 ? 0 : points);
             Commit();
-
-            //if (this.loggedUser != null)
-            //{
-            //    this.loggedUser.SetPoints(points);
-            //    repository.Commit();
-            //}
-            //else {
-            //    throw new ServiceException("There is no user logged in");
-            //}
         }
 
         public void NextLevel(User usuario)

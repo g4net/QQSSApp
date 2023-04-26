@@ -25,5 +25,7 @@ namespace ProyectoPSWMain.Entities
 
         public virtual ICollection<Pregunta> PreguntasRealizadas { get; set; }
 
+        public virtual ICollection<Reto> RetosRealizados { get; set; }
+
     }
 }

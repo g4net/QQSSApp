@@ -27,8 +27,6 @@ namespace ProyectoPSWMain.Services
 
         #region Partida
         int GetErrores();
-        //int GetPuntuacionAcumulada();
-        //void SetPuntuacionAcumulada(int points);
         void UpdateErrores();
         
         
