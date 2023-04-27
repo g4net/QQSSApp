@@ -14,15 +14,12 @@ namespace QQSSApp
 {
     public partial class Login : Form
     {
-        IQQSSService Service;
-        public Login(IQQSSService Service)
+        public Login()
         {
             InitializeComponent();
-            this.Service = Service;
             LoggerError.Text = "";
             ErrorGeneral.Text = "";
             PasswordError.Text = "";
-          
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -36,28 +33,21 @@ namespace QQSSApp
         {
             try 
             {
-                Service.Login(LoggerText.Text, PasswordText.Text);
-                Service.GetLoggedUser();
-                PantallaPrincipalForm paginaPrincipal = new PantallaPrincipalForm(Service);
+                QQSS.service.Login(LoggerText.Text, PasswordText.Text);
+                PantallaPrincipalForm paginaPrincipal = new PantallaPrincipalForm();
                 paginaPrincipal.Show();
                 this.Hide();
-            }catch (ServiceException ex) {
-                if (ex.Message == "The email or name is not correct") 
-                { LoggerError.Text = ex.Message; }
-                else if (ex.Message == "Please Complete All the Camps") {
-                    ErrorGeneral.Text = ex.Message;
-                }
-                else {
-                    PasswordError.Text = ex.Message;
-                }
-               
-
+            }
+            catch (ServiceException ex) 
+            {
+                if (ex.Message == "InvalidUserFormat") LoggerError.Text = "Username is not correct";
+                else PasswordError.Text = ex.Message;
             }
         }
 
         private void Registrarse_Click(object sender, EventArgs e)
         {
-            Registrar registrarse = new Registrar(Service);
+            Registrar registrarse = new Registrar();
             registrarse.Show();
             this.Hide();
             

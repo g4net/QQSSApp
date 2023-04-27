@@ -15,10 +15,10 @@ namespace QQSSApp
     public partial class Usuario : Form
     {
         User usuario;
-        public Usuario(User usuario)
+        public Usuario()
         {
             InitializeComponent();
-            this.usuario = usuario;
+            this.usuario = QQSS.service.GetLoggedUser();
             InitializeLabels();
         }
 

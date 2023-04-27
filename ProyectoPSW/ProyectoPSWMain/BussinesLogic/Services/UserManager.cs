@@ -85,7 +85,7 @@ namespace ProyectoPSWMain.Services
             this.loggedUser.SetPoints(points < 0 ? 0 : points);
         }
 
-        public void CheckLevel()
+        public bool CheckLevel()
         {
 
             if (loggedUser == null) throw new ServiceException("No hay usuario registrado");
@@ -100,8 +100,9 @@ namespace ProyectoPSWMain.Services
                 else if (loggedUser.PuntuacionAcumulada > Levels[mid]) low = mid + 1;
                 else high = mid;
             }
-
+            if (loggedUser.nivel == low) return false;
             loggedUser.nivel = low;
+            return true;
         }
 
         public void SetLoggedUser(User user)
@@ -110,10 +111,9 @@ namespace ProyectoPSWMain.Services
         }
 
         #region Reto
-        public void UpdateUserRetos(Reto reto)
+        public void UpdateUserRetos(List<Reto> retos)
         {
-
-            this.loggedUser.RetosRealizados.Add(reto);
+            this.loggedUser.RetosRealizados.Union(retos);
         }
         public bool CheckRetoPlayed(Reto reto)
         {

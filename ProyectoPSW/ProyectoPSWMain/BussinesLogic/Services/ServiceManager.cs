@@ -46,6 +46,16 @@ namespace ProyectoPSWMain.Services
             databaseService.Logout();
         }
 
+        public User GetLoggedUser()
+        {
+            return userManager.GetLoggedUser();
+        }
+
+        public bool CheckUserLevel()
+        {
+            return userManager.CheckLevel();
+        }
+
 
         #endregion
 
@@ -107,11 +117,27 @@ namespace ProyectoPSWMain.Services
 
         #region Partida
 
+        public void CrearPartida(int lvl)
+        {
+            gameController.CrearPartida(lvl);
+            Questions();
+        }
+
         public void SavePartida()
         {
             Partida partida = gameController.GetPartidaActual();
             if (partida != null) throw new ServiceException("There is no game to save");
             databaseService.SavePartida(partida);
+        }
+
+        public void RetoAcertado()
+        {
+            gameController.RetoAcertado();
+        }
+
+        public void RetoFallado()
+        {
+            gameController.RetoFallado();
         }
 
         public bool TestAnswer(string txt)
@@ -124,13 +150,56 @@ namespace ProyectoPSWMain.Services
             return gameController.GetReto();
         }
 
-        public void FinalizarPartida()
+        public int GetProgressIndex()
         {
-            List<Reto> retosAcertados = gameController.GetRetosAcertados();
-            User user = userManager.GetLoggedUser();
-            user.RetosRealizados.Union(retosAcertados);
+            return gameController.GetIndex();
         }
 
+        public bool GetConsolidado()
+        {
+            return gameController.GetConsolidado();
+        }
+
+        protected void ActualizarRetosAcertados()
+        {
+            List<Reto> retosAcertados = gameController.GetRetosAcertados();
+            userManager.UpdateUserRetos(retosAcertados);
+        }
+
+        public void AbandonarPartida()
+        {
+            ActualizarRetosAcertados();
+            int puntuacion = gameController.GetPartidaActual().PuntuacionConsolidada;
+            userManager.UpdateUserScore(puntuacion);
+        }
+
+        public void GanarPartida()
+        {
+            ActualizarRetosAcertados();
+            int puntuacion = gameController.GetPartidaActual().PuntuacionPartida;
+            userManager.UpdateUserScore(puntuacion);
+
+        }
+
+        public void Consolidar()
+        {
+            gameController.Consolidar();
+        }
+
+        public int GetError()
+        {
+            return gameController.GetError();
+        }
+
+        public int GetPuntuacionConsolidada()
+        {
+            return gameController.GetPartidaActual().PuntuacionConsolidada;
+        }
+
+        public int GetPuntuacionPartida()
+        {
+            return gameController.GetPartidaActual().PuntuacionPartida;
+        }
 
         #endregion
     }

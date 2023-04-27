@@ -12,6 +12,7 @@ namespace ProyectoPSWMain.Services
     {
         void SetRetos(List<Reto> retos);
         int GetError();
+        int GetIndex();
         void UpdateError();
         void Consolidar();
         bool IsConsolidado();
@@ -21,11 +22,11 @@ namespace ProyectoPSWMain.Services
         int[] GetDifficultyArray();
         bool GetConsolidado();
         void Reset();
-
         Reto GetReto();
+        void RetoAcertado();
+        void RetoFallado();
         List<Respuesta> AnswerShuffle();
         bool TestAnswer(string txt);
-
         List<Reto> GetRetosAcertados();
     }
 }

@@ -14,12 +14,9 @@ namespace ProyectoPSWMain.Services
         bool IsValidEmail(string email);
         User GetLoggedUser();
         void UpdateUserScore(int points);
-        void CheckLevel();
-
+        bool CheckLevel();
         void SetLoggedUser(User user);
-
-
-        void UpdateUserRetos(Reto reto);
+        void UpdateUserRetos(List<Reto> retos);
         bool CheckRetoPlayed(Reto reto);
         List<Pregunta> GetUsersQuestionByDificulty(int dificultad);
         void ResetUserQuestions(int dificultad);

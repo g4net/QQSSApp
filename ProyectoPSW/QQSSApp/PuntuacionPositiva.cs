@@ -17,21 +17,16 @@ namespace QQSSApp
 {
     public partial class PuntuacionPositiva : Form
     {
-        IQQSSService service;
         Pregunta pregunta;
         int retoindex;
         bool consolidado;
-        public PuntuacionPositiva(IQQSSService service, int index)
+        public PuntuacionPositiva()
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.service = service;
-            this.consolidado = service.IsConsolidado();
-            consolidar.Enabled = !consolidado;
-            retoindex = index;
-            DeshabilitarBotonConsolidar();
+            this.consolidado = QQSS.service.GetConsolidado();
             InitializePositivePunctuation();
-
+            consolidar.Enabled = !consolidado;
             string ruta = service.GetRutaSonido("respuestaCorrecta");
             service.Play(ruta);
             InitializeTimer();
@@ -43,43 +38,30 @@ namespace QQSSApp
             timer1.Start();
         }
 
-        public void DeshabilitarBotonConsolidar()
-        {
-            if (service.GetConsolidado())
-            {
-                consolidar.Enabled = false;
-            }
-        }
 
         private void continuar_salir_Click(object sender, EventArgs e)
         {
             this.retoindex++;
-            PartidaForm partida = new PartidaForm(service, retoindex);
+            PartidaForm partida = new PartidaForm();
             partida.Show();
             this.Close();
         }
         
         private void InitializePositivePunctuation()
         {
-            pregunta = service.QuestionServIndex(retoindex);
+            pregunta = (Pregunta) QQSS.service.GetReto();
             puntuacion.Text = pregunta.GetPuntuacionAcierto();
-            punt_actual.Text = service.GetPartidaActual().PuntuacionPartida.ToString();
-            
+            QQSS.service.RetoAcertado();
+            punt_actual.Text = QQSS.service.GetPuntuacionPartida().ToString();
         }
 
         private void consolidar_click(object sender, EventArgs e)
         {
-            service.Consolidar();
-            puntuacionConsolidada.Text = service.GetPartidaActual().PuntuacionConsolidada.ToString();
+            QQSS.service.Consolidar();
+            puntuacionConsolidada.Text = QQSS.service.GetPuntuacionConsolidada().ToString();
             puntuacionConsolidada.Visible = true;
             textoConsolidacion.Visible = true;
             consolidar.Enabled = false;
-            /*
-            Consolidar Consolidar = new Consolidar(service, retoindex);
-            Consolidar.Show();
-            this.Close();
-            */
-
         }
     }
 }

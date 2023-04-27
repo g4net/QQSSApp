@@ -14,7 +14,6 @@ namespace QQSSApp
 {
     public partial class PartidaPerdida : Form
     {
-        IQQSSService service;
         int retoindex;
         Partida pActual;
         Pregunta pregunta;

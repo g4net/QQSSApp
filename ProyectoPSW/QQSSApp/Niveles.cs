@@ -34,8 +34,7 @@ namespace QQSSApp
             }
         }
         private void PlayButton(int level) {
-            service.CrearPartida(level);
-            service.Questions(service.GetDifficultyArray(level));
+            QQSS.service.CrearPartida();
             PartidaForm partidaForm = new PartidaForm(service, 0);
             partidaForm.Show();
             service.ResetErroresyConsolidaciones();
@@ -68,7 +67,7 @@ namespace QQSSApp
 
         private void volver_Click(object sender, EventArgs e)
         {
-            PantallaPrincipalForm principal = new PantallaPrincipalForm(service);
+            PantallaPrincipalForm principal = new PantallaPrincipalForm();
             principal.Show();
             this.Hide();
         }

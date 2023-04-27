@@ -15,17 +15,14 @@ namespace QQSSApp
 {
     public partial class PartidaGanada : Form
     {
-        IQQSSService service;
         Pregunta pregunta;
         int retoindex;
-        Partida pActual;
-        public PartidaGanada(IQQSSService service, int index)
+        Partida partida;
+        public PartidaGanada()
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.service = service;
-            pActual = service.GetPartidaActual();
-            retoindex= index;
+            retoindex = QQSS.service.GetProgressIndex();
             string ruta = service.GetRutaSonido("PartidaGanada");
             service.Play(ruta);
             InitializePartidaGanada();
@@ -34,13 +31,13 @@ namespace QQSSApp
         private void continuar_salir_Click(object sender, EventArgs e)
         {
             service.CleanProgresoPreguntas();
-            PantallaPrincipalForm pantallaPrincipal = new PantallaPrincipalForm(service);
+            PantallaPrincipalForm pantallaPrincipal = new PantallaPrincipalForm();
             pantallaPrincipal.Show();
             this.Close();
         }
         private void InitializePartidaGanada()
         {
-            pregunta = service.QuestionServIndex(retoindex);
+            pregunta = QQSS.service.QuestionServIndex(retoindex);
             puntuacion.Text = pregunta.GetPuntuacionAcierto();
             puntuacion_partida.Text = pActual.PuntuacionPartida.ToString();
             //puntuacion_acumulada.Text = pActual.

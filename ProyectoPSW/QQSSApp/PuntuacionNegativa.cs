@@ -15,17 +15,11 @@ namespace QQSSApp
 {
     public partial class PuntuacionNegativa : Form
     {
-        IQQSSService service;
-        int retoindex;
-        int errores;
         Pregunta pregunta;
-        public PuntuacionNegativa(IQQSSService service, int index)
+        public PuntuacionNegativa()
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.service = service;
-            this.retoindex = index;
-            this.errores = service.GetErrores();
             InitializeNegativePunctuation();
 
             string ruta = service.GetRutaSonido("respuestaIncorrecta");
@@ -41,22 +35,17 @@ namespace QQSSApp
 
         private void ButtonReintentarClick(object sender, EventArgs e)
         {
-            service.PreguntaExtra(retoindex);
-            PartidaForm partida = new PartidaForm(service, retoindex);
+            PartidaForm partida = new PartidaForm();
             partida.Show();
             this.Close();
         }
         private void InitializeNegativePunctuation()
         {
-            pregunta = service.QuestionServIndex(retoindex);
+            pregunta = (Pregunta) QQSS.service.GetReto();
             respuesta.Text = pregunta.RespuestaCorrecta.ToString();
             puntuacion.Text = pregunta.GetPuntuacionFallo();
-            punt_actual.Text = service.GetPartidaActual().PuntuacionPartida.ToString();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            QQSS.service.RetoFallado();
+            punt_actual.Text = QQSS.service.GetPuntuacionPartida().ToString();
         }
     }
 }

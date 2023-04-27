@@ -18,16 +18,14 @@ namespace QQSSApp
     {
         IQQSSService service;
         Reglas actualVentanaReglas;
-        public PantallaPrincipalForm(IQQSSService service)
+        public PantallaPrincipalForm()
         {
-            this.service = service;
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.FormClosed += (s, args) => Application.Exit();
             this.label1.Select();            
             this.CenterToScreen();
-            service.ResetErroresyConsolidaciones();
             string ruta = service.GetRutaSonido("menuPrincipal");
             service.Play(ruta);
             SiguienteNivel();
@@ -35,26 +33,21 @@ namespace QQSSApp
 
         public void SiguienteNivel()
         {
-            int antiguoNivel = service.GetLoggedUser().nivel;
-            service.NextLevel(service.GetLoggedUser());
-            int nuevoNivel = service.GetLoggedUser().nivel;
-            if (antiguoNivel != nuevoNivel)
-            {
-                DialogResult siguienteNivel = MessageBox.Show(this,
-                    "Acabas de subir al nivel " + nuevoNivel,
-                    "Nivel de Usuario",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            }
+            if (!QQSS.service.CheckUserLevel()) return;
+
+            int nuevoNivel = QQSS.service.GetLoggedUser().nivel;
+            DialogResult siguienteNivel = MessageBox.Show(this,
+                "Acabas de subir al nivel " + nuevoNivel,
+                "Nivel de Usuario",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
         private void ButtonComenzar_Click(object sender, EventArgs e)
         {
-            Niveles niveles = new Niveles(service);
+            Niveles niveles = new Niveles();
             niveles.Show();
             this.Hide();
-            //string ruta = service.GetRutaSonido("CuentaAtras");
-            //service.Play(ruta);
         }
 
         private void BotonReglas_Click(object sender, EventArgs e)
@@ -66,7 +59,7 @@ namespace QQSSApp
 
         private void UserClick(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario(service.GetLoggedUser());
+            Usuario usuario = new Usuario();
             usuario.ShowDialog();
         }
 

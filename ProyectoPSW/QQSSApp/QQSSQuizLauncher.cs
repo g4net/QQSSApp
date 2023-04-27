@@ -20,7 +20,6 @@ namespace QQSSApp
             AppBuilder builder = new QQSSAppBuilder();
             Director director = new Director();
             director.BuildApp(builder);
-            //App app = builder.GetApp();
             
             Application.EnableVisualStyles();
             Application.Run(QQSS.app.GetForm());

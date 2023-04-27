@@ -75,6 +75,11 @@ namespace ProyectoPSWMain.Services
             return this.consolidado;
         }
 
+        public int GetIndex()
+        {
+            return this.index
+        }
+
         public void Reset()
         {
             this.index = 0;
@@ -100,7 +105,7 @@ namespace ProyectoPSWMain.Services
             return retos[this.index];
         }
 
-        protected void RetoAcertado()
+        public void RetoAcertado()
         {
             Reto reto = this.retos[this.index];
             NextReto();
@@ -108,7 +113,7 @@ namespace ProyectoPSWMain.Services
             retosAcertados.Add(reto);
         }
 
-        protected void RetoFallado()
+        public void RetoFallado()
         {
             Reto reto = this.retos[this.index];
             int nuevaPuntuacionConsolidada = partida.PuntuacionConsolidada - reto.Puntuacion_acierto * 2;
@@ -147,10 +152,7 @@ namespace ProyectoPSWMain.Services
 
         public bool TestAnswer(string txt)
         {
-            bool test = ((Pregunta)this.retos[this.index]).RespuestaCorrecta.Equals(txt);
-            if (test) RetoAcertado();
-            else RetoFallado();
-            return test;
+            return ((Pregunta)this.retos[this.index]).RespuestaCorrecta.Equals(txt);
         }
 
         public List<Reto> GetRetosAcertados()

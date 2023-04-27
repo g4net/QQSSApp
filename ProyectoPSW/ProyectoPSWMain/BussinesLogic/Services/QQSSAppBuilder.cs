@@ -42,7 +42,7 @@ namespace ProyectoPSWMain.Services
 
         public override void BuildService()
         { 
-            QQSS.service = new ServiceManager(userManager, databaseService, gameController);
+            QQSS.service = new ServiceManager(userManager, databaseService, gameController);    
         }
 
         public override void BuildForm(Type typeForm)

@@ -17,7 +17,6 @@ namespace QQSSApp
 {
     public partial class PartidaForm : Form
     {
-        IQQSSService service;
         Partida partida;
         Pregunta pregunta;
         List<Respuesta> respuestas;
@@ -26,18 +25,15 @@ namespace QQSSApp
         private int currentImageIndex = 0;
         int retoindex;
         int tiempoContador;
-        int errores;
-        List<int> progresoPreguntas;
-        public PartidaForm(IQQSSService service, int index)
+        int error;
+        public PartidaForm()
         {
             InitializeComponent();
             InitializeImages();
             this.CenterToScreen();
-            this.service = service;
-            progresoPreguntas = service.GetProgresoPreguntas();
-            partida = service.GetPartidaActual();
-            this.retoindex = index;
-            this.errores = service.GetErrores();
+            this.retoindex = QQSS.service.GetProgressIndex();
+            this.error = QQSS.service.GetError();
+            this.partida = QQSS.service.GetPartida();
             this.labelPuntuacionAcumulada.Text = partida.PuntuacionPartida.ToString();
             this.puntuacionConsolidadaLabel.Text = partida.PuntuacionConsolidada.ToString();
             InitializeRetoPregunta();
@@ -56,19 +52,9 @@ namespace QQSSApp
             return random.Next(maxNumber).ToString();
         }
 
-        /*private void Prueba()
-        {
-            String aux = "";
-            for (int i = 0; i < progresoPreguntas.Count; i++) { aux += progresoPreguntas[i].ToString(); }
-            erroreslabel.Text = aux;
-        }*/
-
         private void HabilitarBotonAbandonar()
         {
-            if (service.GetConsolidado())
-            {
-                botonAbandonar.Enabled = true;
-            }
+            botonAbandonar.Enabled = QQSS.service.GetConsolidado();
         }
         private void MarcarProgreso() 
         {
@@ -83,7 +69,7 @@ namespace QQSSApp
                     b.BackColor = Color.YellowGreen;
                 }
                 else b.BackColor = Color.DarkSeaGreen;
-                if (progresoPreguntas.Contains(i)) { b.BackColor = Color.LightCoral; }
+                if (i == QQSS.service.GetError()) { b.BackColor = Color.LightCoral; }
             }
         }
 
@@ -137,30 +123,21 @@ namespace QQSSApp
 
         private void CheckAnswer(string optext)
         {
+            int error = QQSS.service.GetError();
            
-            if (service.TestAnswer(optext, pregunta))
+            if (QQSS.service.TestAnswer(optext))
             {
-                //if (progresoPreguntas.Contains(retoindex)) { service.ProgresoDeletePreguntaFallada(retoindex); }
-                //progresoPreguntas = service.GetProgresoPreguntas();
                 Form respuestaAcertada;
-                //service.SetPuntuacionAcumulada(pregunta.Puntuacion_acierto);
-                service.UpdateGameScore(pregunta.Puntuacion_acierto, false);
-                service.UpdateUserQuestions(pregunta);
-                if (retoindex != 9) respuestaAcertada = new PuntuacionPositiva(service, this.retoindex);
-                else respuestaAcertada = new PartidaGanada(service, retoindex);
+                if (retoindex != 9) respuestaAcertada = new PuntuacionPositiva();
+                else respuestaAcertada = new PartidaGanada();
                 respuestaAcertada.Show();
                 this.Close();
             }
             else
             {
                 Form respuestaFallada;
-                //service.SetPuntuacionAcumulada(pregunta.PuntuacionFallo());
-                service.UpdateGameScore(pregunta.PuntuacionFallo(), true);
-                service.UpdateErrores();
-                service.ProgresoAddPreguntaFallada(retoindex);
-                progresoPreguntas = service.GetProgresoPreguntas();
-                if (errores == 1) respuestaFallada = new PartidaPerdida(service, this.retoindex);
-                else respuestaFallada = new PuntuacionNegativa(service, this.retoindex);
+                if (QQSS.service.GetError() != ) respuestaFallada = new PartidaPerdida();
+                else respuestaFallada = new PuntuacionNegativa();
                 respuestaFallada.Show();
                 this.Close();
             }
@@ -184,8 +161,8 @@ namespace QQSSApp
 
             if (result == DialogResult.Yes)
             {
-                service.UpdateUserScore(partida.PuntuacionConsolidada);
-                Consolidar consolidarForm = new Consolidar(service);
+                QQSS.service.AbandonarPartida();
+                Consolidar consolidarForm = new Consolidar();
                 consolidarForm.Show();
                 this.Close();
             }
@@ -211,11 +188,11 @@ namespace QQSSApp
 
         private void InitializeRetoPregunta()
         {
-            pregunta = service.QuestionServIndex(retoindex);
+            pregunta = (Pregunta) QQSS.service.GetReto();
             enunciado.Text = pregunta.Enunciado;
             puntuacionPos.Text = pregunta.GetPuntuacionAcierto();
             puntuaciónNegativa.Text = pregunta.GetPuntuacionFallo();
-            respuestas = service.AnswerShuffle(pregunta);
+            respuestas = QQSS.service.GetRespuestas();
             op1.Text = respuestas.ElementAt(0).getText();
             op2.Text = respuestas.ElementAt(1).getText();
             op3.Text = respuestas.ElementAt(2).getText();
