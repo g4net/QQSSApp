@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -171,6 +172,7 @@ namespace ProyectoPSWMain.Services
             ActualizarRetosAcertados();
             int puntuacion = gameController.GetPartidaActual().PuntuacionConsolidada;
             userManager.UpdateUserScore(puntuacion);
+            gameController.Reset();
         }
 
         public void GanarPartida()
@@ -178,12 +180,14 @@ namespace ProyectoPSWMain.Services
             ActualizarRetosAcertados();
             int puntuacion = gameController.GetPartidaActual().PuntuacionPartida;
             userManager.UpdateUserScore(puntuacion);
+            gameController.Reset();
 
         }
 
         public void PerderPartida()
         {
             ActualizarRetosAcertados();
+            gameController.Reset();
         }
 
         public void Consolidar()

@@ -21,7 +21,6 @@ namespace ProyectoPSWMain.Services
         Partida GetPartidaActual();
         int[] GetDifficultyArray();
         bool GetConsolidado();
-        void Reset();
         Reto GetReto();
         void RetoAcertado();
         void RetoFallado();

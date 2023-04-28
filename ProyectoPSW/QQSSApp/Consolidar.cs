@@ -25,12 +25,13 @@ namespace QQSSApp
       
         private void continuar_click(object sender, EventArgs e)
         {
+            QQSS.service.AbandonarPartida();
             PantallaPrincipalForm pantallaPrincipalForm = new PantallaPrincipalForm();
             pantallaPrincipalForm.Show();
             this.Close();
         }
         private void InitializeNegativePunctuation()
-        {
+        { 
             puntuacion.Text = QQSS.service.GetPuntuacionConsolidada().ToString();
             punt_usuario.Text = QQSS.service.GetLoggedUser().PuntuacionAcumulada.ToString();
         }

@@ -26,7 +26,6 @@ namespace QQSSApp
 
         private void continuar_salir_Click(object sender, EventArgs e)
         {
-            QQSS.service.RetoAcertado();
             QQSS.service.GanarPartida();
             PantallaPrincipalForm pantallaPrincipal = new PantallaPrincipalForm();
             pantallaPrincipal.Show();
@@ -36,6 +35,7 @@ namespace QQSSApp
         {
             pregunta = (Pregunta) QQSS.service.GetReto();
             puntuacion.Text = pregunta.GetPuntuacionAcierto();
+            QQSS.service.RetoAcertado();
             puntuacion_partida.Text = QQSS.service.GetPuntuacionPartida().ToString();
             puntuacion_total.Text = QQSS.service.GetLoggedUser().PuntuacionAcumulada.ToString();
         }

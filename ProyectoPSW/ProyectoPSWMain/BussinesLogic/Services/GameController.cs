@@ -12,10 +12,6 @@ namespace ProyectoPSWMain.Services
     {
         public GameController() 
         {
-            partida = null;
-            error = -1;
-            index = -1;
-            consolidado= false;
             retos = new List<Reto>();
             retosAcertados= new List<Reto>();
         }
@@ -24,6 +20,7 @@ namespace ProyectoPSWMain.Services
         private int error;
         private bool consolidado;
         private int index;
+        private int pistasDisponibles;
         private List<Reto> retos;
         private List<Reto> retosAcertados;
 
@@ -80,12 +77,13 @@ namespace ProyectoPSWMain.Services
             return this.index;
         }
 
-        public void Reset()
+        private void Reset()
         {
             this.index = 0;
             this.consolidado = false;
             this.error = -1;
             this.partida = null;
+            this.pistasDisponibles = 3;
         }
 
         public void SetRetos(List<Reto> retos)
