@@ -13,10 +13,8 @@ namespace QQSSApp
 {
     public partial class Niveles : Form
     {
-        IQQSSService service;
-        public Niveles(IQQSSService service)
+        public Niveles()
         {
-            this.service = service;
             InitializeComponent();
             this.CenterToScreen();
             BotonesHabilitados();
@@ -24,7 +22,7 @@ namespace QQSSApp
 
         public void BotonesHabilitados()
         {
-            for(int i = service.GetLoggedUser().nivel; i >= 0; i--)
+            for(int i = QQSS.service.GetLoggedUser().nivel; i >= 0; i--)
             {
                 string nombreBoton = "BotonNivel" + i;
                 Control[] controles = this.Controls.Find(nombreBoton, true);
@@ -34,10 +32,9 @@ namespace QQSSApp
             }
         }
         private void PlayButton(int level) {
-            QQSS.service.CrearPartida();
-            PartidaForm partidaForm = new PartidaForm(service, 0);
+            QQSS.service.CrearPartida(level);
+            PartidaForm partidaForm = new PartidaForm();
             partidaForm.Show();
-            service.ResetErroresyConsolidaciones();
             this.Close();
         }
         private void click_lvl0(object sender, EventArgs e)

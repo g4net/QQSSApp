@@ -13,11 +13,9 @@ namespace QQSSApp
 {
     public partial class Registrar : Form
     {
-        IQQSSService Service;
-        public Registrar(IQQSSService service)
+        public Registrar()
         {
-            InitializeComponent();
-            Service = service;  
+            InitializeComponent(); 
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -32,14 +30,14 @@ namespace QQSSApp
 
         private void Aceptar_click(object sender, EventArgs e)
         {
-           Login login = new Login(Service);
+           Login login = new Login();
             login.Show();
             this.Close();
         }
 
         private void Volver_click(object sender, EventArgs e)
         {
-            Login login = new Login(Service);
+            Login login = new Login();
             login.Show();
             this.Close();
         }

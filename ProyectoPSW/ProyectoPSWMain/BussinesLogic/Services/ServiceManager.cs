@@ -26,8 +26,8 @@ namespace ProyectoPSWMain.Services
 
         public void Login(string username, string password)
         {
-            if(!userManager.IsValidUsername(username)) throw new ServiceException("InvalidUserFormat");
-            if(!userManager.IsValidPassword(password)) throw new ServiceException("InvalidPasswordFormat");
+            if (!userManager.IsValidUsername(username)) throw new ServiceException("InvalidUserFormat");
+            if (!userManager.IsValidPassword(password)) throw new ServiceException("InvalidPasswordFormat");
             User login;
             try
             {
@@ -83,7 +83,7 @@ namespace ProyectoPSWMain.Services
 
 
             foreach (int difficulty in dificultad)
-            { 
+            {
 
                 if (difficulty > 4 || difficulty < 0) throw new ServiceException("Difficulty array has incorrect values");
                 if (difficulty != prevDifficulty)
@@ -181,6 +181,11 @@ namespace ProyectoPSWMain.Services
 
         }
 
+        public void PerderPartida()
+        {
+            ActualizarRetosAcertados();
+        }
+
         public void Consolidar()
         {
             gameController.Consolidar();
@@ -199,6 +204,18 @@ namespace ProyectoPSWMain.Services
         public int GetPuntuacionPartida()
         {
             return gameController.GetPartidaActual().PuntuacionPartida;
+        }
+
+        #endregion
+
+
+        #region Sonidos
+
+        public void PlaySonido(string sonido)
+        {
+            string rutaSonido = @"..\..\Resources\Sonidos\" + sonido + ".wav";
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(rutaSonido);
+            player.Play();
         }
 
         #endregion

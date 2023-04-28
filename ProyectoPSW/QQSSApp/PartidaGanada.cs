@@ -16,34 +16,28 @@ namespace QQSSApp
     public partial class PartidaGanada : Form
     {
         Pregunta pregunta;
-        int retoindex;
-        Partida partida;
         public PartidaGanada()
         {
             InitializeComponent();
             this.CenterToScreen();
-            retoindex = QQSS.service.GetProgressIndex();
-            string ruta = service.GetRutaSonido("PartidaGanada");
-            service.Play(ruta);
+            QQSS.service.PlaySonido("PartidaGanada");
             InitializePartidaGanada();
         }
 
         private void continuar_salir_Click(object sender, EventArgs e)
         {
-            service.CleanProgresoPreguntas();
+            QQSS.service.RetoAcertado();
+            QQSS.service.GanarPartida();
             PantallaPrincipalForm pantallaPrincipal = new PantallaPrincipalForm();
             pantallaPrincipal.Show();
             this.Close();
         }
         private void InitializePartidaGanada()
         {
-            pregunta = QQSS.service.QuestionServIndex(retoindex);
+            pregunta = (Pregunta) QQSS.service.GetReto();
             puntuacion.Text = pregunta.GetPuntuacionAcierto();
-            puntuacion_partida.Text = pActual.PuntuacionPartida.ToString();
-            //puntuacion_acumulada.Text = pActual.
-                //service.GetPuntuacionAcumulada().ToString();
-            service.UpdateUserScore(pActual.PuntuacionPartida);
-            puntuacion_total.Text = service.GetLoggedUser().getPointsStr();
+            puntuacion_partida.Text = QQSS.service.GetPuntuacionPartida().ToString();
+            puntuacion_total.Text = QQSS.service.GetLoggedUser().PuntuacionAcumulada.ToString();
         }
       
     }

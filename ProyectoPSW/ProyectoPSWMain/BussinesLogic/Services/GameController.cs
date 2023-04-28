@@ -77,7 +77,7 @@ namespace ProyectoPSWMain.Services
 
         public int GetIndex()
         {
-            return this.index
+            return this.index;
         }
 
         public void Reset()
@@ -109,7 +109,7 @@ namespace ProyectoPSWMain.Services
         {
             Reto reto = this.retos[this.index];
             NextReto();
-            partida.PuntuacionPartida += reto.Puntuacion_acierto * 2;
+            partida.PuntuacionPartida += reto.Puntuacion_acierto;
             retosAcertados.Add(reto);
         }
 

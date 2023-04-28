@@ -14,14 +14,10 @@ namespace QQSSApp
 {
     public partial class Consolidar : Form
     {
-        IQQSSService service;
-        Partida pActual;
         
-        public Consolidar(IQQSSService service)
+        public Consolidar()
         {
             this.CenterToScreen();
-            this.service = service;
-            pActual = service.GetPartidaActual();
             InitializeComponent();
             InitializeNegativePunctuation();
         }
@@ -29,14 +25,14 @@ namespace QQSSApp
       
         private void continuar_click(object sender, EventArgs e)
         {
-            PantallaPrincipalForm pantallaPrincipalForm = new PantallaPrincipalForm(service);
+            PantallaPrincipalForm pantallaPrincipalForm = new PantallaPrincipalForm();
             pantallaPrincipalForm.Show();
             this.Close();
         }
         private void InitializeNegativePunctuation()
         {
-            puntuacion.Text = Math.Min(pActual.PuntuacionPartida, pActual.PuntuacionConsolidada).ToString();
-            punt_usuario.Text = service.GetLoggedUser().getPointsStr();
+            puntuacion.Text = QQSS.service.GetPuntuacionConsolidada().ToString();
+            punt_usuario.Text = QQSS.service.GetLoggedUser().PuntuacionAcumulada.ToString();
         }
     }
 }

@@ -27,8 +27,7 @@ namespace QQSSApp
             this.consolidado = QQSS.service.GetConsolidado();
             InitializePositivePunctuation();
             consolidar.Enabled = !consolidado;
-            string ruta = service.GetRutaSonido("respuestaCorrecta");
-            service.Play(ruta);
+            QQSS.service.PlaySonido("respuestaCorrecta");
             InitializeTimer();
         }
 

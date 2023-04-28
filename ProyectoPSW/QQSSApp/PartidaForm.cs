@@ -17,7 +17,6 @@ namespace QQSSApp
 {
     public partial class PartidaForm : Form
     {
-        Partida partida;
         Pregunta pregunta;
         List<Respuesta> respuestas;
         private List<Image> images;
@@ -33,17 +32,14 @@ namespace QQSSApp
             this.CenterToScreen();
             this.retoindex = QQSS.service.GetProgressIndex();
             this.error = QQSS.service.GetError();
-            this.partida = QQSS.service.GetPartida();
-            this.labelPuntuacionAcumulada.Text = partida.PuntuacionPartida.ToString();
-            this.puntuacionConsolidadaLabel.Text = partida.PuntuacionConsolidada.ToString();
+            this.labelPuntuacionAcumulada.Text = QQSS.service.GetPuntuacionPartida().ToString();
+            this.puntuacionConsolidadaLabel.Text = QQSS.service.GetPuntuacionConsolidada().ToString();
             InitializeRetoPregunta();
             MarcarProgreso();
             InitializeTimers();
             InitializeODS();
             HabilitarBotonAbandonar();
-            string ruta = service.GetRutaSonido("musicaFondo" + GetRandomNumber(7));
-            service.Play(ruta);
-            //Prueba();
+            QQSS.service.PlaySonido("musicaFondo" + GetRandomNumber(7));
         }
 
         public string GetRandomNumber(int maxNumber)
@@ -136,7 +132,7 @@ namespace QQSSApp
             else
             {
                 Form respuestaFallada;
-                if (QQSS.service.GetError() != ) respuestaFallada = new PartidaPerdida();
+                if (QQSS.service.GetError() != -1) respuestaFallada = new PartidaPerdida();
                 else respuestaFallada = new PuntuacionNegativa();
                 respuestaFallada.Show();
                 this.Close();

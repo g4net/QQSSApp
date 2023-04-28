@@ -14,31 +14,24 @@ namespace QQSSApp
 {
     public partial class PartidaPerdida : Form
     {
-        int retoindex;
-        Partida pActual;
         Pregunta pregunta;
         
-        public PartidaPerdida(IQQSSService service, int index)
+        public PartidaPerdida()
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.service = service;
-            pActual = service.GetPartidaActual();
-            retoindex = index;
             puntuacion_acumulada.Text = "0";
-            pregunta = service.QuestionServIndex(retoindex);
-            string ruta = service.GetRutaSonido("PartidaPerdida");
-            pregunta = service.QuestionServIndex(retoindex);
+            pregunta = (Pregunta) QQSS.service.GetReto();
+            QQSS.service.PlaySonido("PartidaPerdida");
             respuesta.Text = pregunta.RespuestaCorrecta.ToString();
-            service.Play(ruta);
 
         }
 
 
         private void reintentar_salir_Click(object sender, EventArgs e)
         {
-            service.CleanProgresoPreguntas();
-            PantallaPrincipalForm pantallaPrincipal = new PantallaPrincipalForm(service);
+            QQSS.service.PerderPartida();
+            PantallaPrincipalForm pantallaPrincipal = new PantallaPrincipalForm();
             pantallaPrincipal.Show();
             this.Close();
         }

@@ -28,6 +28,7 @@ namespace ProyectoPSWMain.Services
         #endregion
 
         #region Partida
+        void CrearPartida(int lvl);
         void SavePartida();
         int GetError();
         Reto GetReto();
@@ -42,6 +43,12 @@ namespace ProyectoPSWMain.Services
         void RetoAcertado();
         void RetoFallado();
         int GetPuntuacionConsolidada();
+        #endregion
+
+        #region Sonidos
+
+        void PlaySonido(string sonido);
+
         #endregion
     }
 }

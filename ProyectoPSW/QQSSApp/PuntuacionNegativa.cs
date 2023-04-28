@@ -22,8 +22,7 @@ namespace QQSSApp
             this.CenterToScreen();
             InitializeNegativePunctuation();
 
-            string ruta = service.GetRutaSonido("respuestaIncorrecta");
-            service.Play(ruta);
+            QQSS.service.PlaySonido("respuestaIncorrecta");
             InitializeTimer();
         }
 

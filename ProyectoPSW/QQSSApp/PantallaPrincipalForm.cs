@@ -16,7 +16,6 @@ namespace QQSSApp
 {
     public partial class PantallaPrincipalForm : Form
     {
-        IQQSSService service;
         Reglas actualVentanaReglas;
         public PantallaPrincipalForm()
         {
@@ -26,8 +25,7 @@ namespace QQSSApp
             this.FormClosed += (s, args) => Application.Exit();
             this.label1.Select();            
             this.CenterToScreen();
-            string ruta = service.GetRutaSonido("menuPrincipal");
-            service.Play(ruta);
+            QQSS.service.PlaySonido("menuPrincipal");
             SiguienteNivel();
         }
 

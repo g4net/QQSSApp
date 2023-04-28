@@ -48,7 +48,7 @@ namespace ProyectoPSWMain.Services
         public override void BuildForm(Type typeForm)
         {
             if (typeForm.BaseType != typeof(Form)) throw new ServiceException("The director is not giving a form type to the builder");
-            Form form = (Form)Activator.CreateInstance(typeForm, new Object[] { new QQSSService(new EntityFrameworkDAL(new ProyectPSWDBContext())) });
+            Form form = (Form)Activator.CreateInstance(typeForm);
             app.SetForm(form);
         }
 
