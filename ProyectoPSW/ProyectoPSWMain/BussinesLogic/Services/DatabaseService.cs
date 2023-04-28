@@ -45,49 +45,14 @@ namespace ProyectoPSWMain.Services
             repository.Delete<User>(user);
         }
 
-        public void Register(String Nombre, String Email, String Password)
+        public void Register(string nombre, string email, string password)
         {
-
-            User usuario = new User(Nombre, Email, Password);
+            if(repository.GetWhere<User>(u => u.Nombre == nombre 
+                || u.Email == email).FirstOrDefault() != null) throw new ServiceException("UsernameExists");
+            User usuario = new User(nombre, email, password);
             repository.Insert<User>(usuario);
             Commit();
-            // Esto lo comprobamos en el form? para poder sacar los textos en tiempo real ?
-            /*
-            string regex = @"^[^@\s]+@[^@\s]+\.(com|net|org|gov)$";
-            var hasNumber = new Regex(@"[0-9]+");
-            var hasUpperChar = new Regex(@"[A-Z]+");
-            var hasMinimum8Chars = new Regex(@".{8,}");
-            var hasSpecialChar = new Regex(@"[%!@#$%^&*()?/>.<,:;'\|_~`+=-]+");
-            if (!Regex.IsMatch(Email, regex, RegexOptions.IgnoreCase))
-            {
-                throw new ServiceException("The Email does not contain the right format");
-            }
-
-            if (repository.GetWhere<User>(x => x.Nombre == Nombre).Any())
-            {
-                throw new ServiceException("There is a user with that Name");
-            }
-            if (repository.GetWhere<User>(x => x.Email == Email).Any())
-            {
-                throw new ServiceException("There is a user with that Email");
-            }
             
-            
-            if (hasNumber.IsMatch(Password) && hasUpperChar.IsMatch(Password) && hasMinimum8Chars.IsMatch(Password) && ) {
-                throw new ServiceException("Password does not follow the format");
-            }*/
-
-
-
-
-            //if (repository.GetById<User>(usuario.Id) == null)
-            //{
-            //    repository.Insert<User>(usuario);
-            //    repository.Commit();
-            //}
-            //else {
-            //    throw new ServiceException("User with DNI" + usuario.Id + "already exists");
-            //}
 
         }
 

@@ -27,6 +27,7 @@ namespace ProyectoPSWMain.Services
 
         public void Login(string username, string password)
         {
+            if(username.IndexOf("@") != -1 && userManager.IsValidEmail(username)) throw new ServiceException("InvalidEmailFormat");
             if (!userManager.IsValidUsername(username)) throw new ServiceException("InvalidUserFormat");
             if (!userManager.IsValidPassword(password)) throw new ServiceException("InvalidPasswordFormat");
             User login;
@@ -40,6 +41,22 @@ namespace ProyectoPSWMain.Services
             }
             userManager.SetLoggedUser(login);
 
+        }
+
+        public void Register(string username, string email, string password) 
+        {
+            if (!userManager.IsValidUsername(username)) throw new ServiceException("InvalidUserFormat");
+            if (!userManager.IsValidPassword(password)) throw new ServiceException("InvalidPasswordFormat");
+            if (!userManager.IsValidEmail(email)) throw new ServiceException("InvalidEmailFormat");
+            try
+            {
+                databaseService.Register(username, email, password);
+            }
+            catch (Exception e)
+            {
+                throw e; 
+            }
+            
         }
 
         public void Logout()
@@ -172,7 +189,6 @@ namespace ProyectoPSWMain.Services
             ActualizarRetosAcertados();
             int puntuacion = gameController.GetPartidaActual().PuntuacionConsolidada;
             userManager.UpdateUserScore(puntuacion);
-            gameController.Reset();
         }
 
         public void GanarPartida()
@@ -180,14 +196,12 @@ namespace ProyectoPSWMain.Services
             ActualizarRetosAcertados();
             int puntuacion = gameController.GetPartidaActual().PuntuacionPartida;
             userManager.UpdateUserScore(puntuacion);
-            gameController.Reset();
 
         }
 
         public void PerderPartida()
         {
             ActualizarRetosAcertados();
-            gameController.Reset();
         }
 
         public void Consolidar()
