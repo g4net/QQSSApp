@@ -32,5 +32,6 @@ namespace QQSSApp
         {
             this.Hide();
         }
+
     }
 }
