@@ -46,5 +46,16 @@ namespace QQSSApp
             QQSS.service.RetoFallado();
             punt_actual.Text = QQSS.service.GetPuntuacionPartida().ToString();
         }
+
+        private void TextEnlace_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.Link.LinkData.ToString());
+        }
+
+        private void PuntuacionNegativa_Load(object sender, EventArgs e)
+        {
+            TextEnlace.Text = "ODS" + pregunta.Ods;
+            TextEnlace.Links.Add(0, 100, QQSS.service.EnlaceInteres(pregunta.Ods));
+        }
     }
 }

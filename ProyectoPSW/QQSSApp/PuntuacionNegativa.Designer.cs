@@ -38,6 +38,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.respuesta = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TextEnlace = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +78,7 @@
             // 
             this.reintentar_salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.reintentar_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reintentar_salir.Location = new System.Drawing.Point(29, 455);
+            this.reintentar_salir.Location = new System.Drawing.Point(26, 586);
             this.reintentar_salir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reintentar_salir.Name = "reintentar_salir";
             this.reintentar_salir.Size = new System.Drawing.Size(515, 52);
@@ -89,7 +91,7 @@
             // 
             this.punt_actual.AutoSize = true;
             this.punt_actual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.punt_actual.Location = new System.Drawing.Point(341, 395);
+            this.punt_actual.Location = new System.Drawing.Point(352, 458);
             this.punt_actual.Name = "punt_actual";
             this.punt_actual.Size = new System.Drawing.Size(70, 25);
             this.punt_actual.TabIndex = 4;
@@ -99,7 +101,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(131, 395);
+            this.label4.Location = new System.Drawing.Point(137, 458);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(194, 25);
             this.label4.TabIndex = 3;
@@ -130,11 +132,35 @@
             this.respuesta.TabIndex = 9;
             this.respuesta.Text = "Respuesta\r\n";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(70, 514);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(261, 25);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Para saber más, entra en:";
+            // 
+            // TextEnlace
+            // 
+            this.TextEnlace.AutoSize = true;
+            this.TextEnlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextEnlace.Location = new System.Drawing.Point(375, 514);
+            this.TextEnlace.Name = "TextEnlace";
+            this.TextEnlace.Size = new System.Drawing.Size(47, 25);
+            this.TextEnlace.TabIndex = 18;
+            this.TextEnlace.TabStop = true;
+            this.TextEnlace.Text = "ods";
+            this.TextEnlace.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.TextEnlace_LinkClicked);
+            // 
             // PuntuacionNegativa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 554);
+            this.ClientSize = new System.Drawing.Size(571, 663);
+            this.Controls.Add(this.TextEnlace);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.respuesta);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reintentar_salir);
@@ -143,9 +169,10 @@
             this.Controls.Add(this.punt_actual);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PuntuacionNegativa";
             this.Text = "PuntuacionForm";
+            this.Load += new System.EventHandler(this.PuntuacionNegativa_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -164,5 +191,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label respuesta;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel TextEnlace;
     }
 }

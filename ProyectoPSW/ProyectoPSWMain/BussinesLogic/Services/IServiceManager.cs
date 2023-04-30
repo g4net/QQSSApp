@@ -29,6 +29,8 @@ namespace ProyectoPSWMain.Services
 
         #region Partida
         void CrearPartida(int lvl);
+
+        String EnlaceInteres(int ods);
         void SavePartida();
         int GetError();
         Reto GetReto();

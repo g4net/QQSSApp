@@ -41,6 +41,8 @@
             this.textoConsolidacion = new System.Windows.Forms.Label();
             this.puntuacionConsolidada = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.TextEnlace = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +91,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(144, 270);
+            this.label4.Location = new System.Drawing.Point(126, 270);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(194, 25);
             this.label4.TabIndex = 3;
@@ -109,7 +111,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(144, 332);
+            this.label2.Location = new System.Drawing.Point(126, 468);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(275, 25);
             this.label2.TabIndex = 5;
@@ -119,7 +121,7 @@
             // 
             this.consolidar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(107)))));
             this.consolidar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.consolidar.Location = new System.Drawing.Point(37, 455);
+            this.consolidar.Location = new System.Drawing.Point(39, 579);
             this.consolidar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.consolidar.Name = "consolidar";
             this.consolidar.Size = new System.Drawing.Size(175, 52);
@@ -132,7 +134,7 @@
             // 
             this.continuar_salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
             this.continuar_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.continuar_salir.Location = new System.Drawing.Point(360, 455);
+            this.continuar_salir.Location = new System.Drawing.Point(359, 579);
             this.continuar_salir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.continuar_salir.Name = "continuar_salir";
             this.continuar_salir.Size = new System.Drawing.Size(175, 52);
@@ -145,7 +147,7 @@
             // 
             this.textoConsolidacion.AutoSize = true;
             this.textoConsolidacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoConsolidacion.Location = new System.Drawing.Point(139, 396);
+            this.textoConsolidacion.Location = new System.Drawing.Point(126, 510);
             this.textoConsolidacion.Name = "textoConsolidacion";
             this.textoConsolidacion.Size = new System.Drawing.Size(179, 25);
             this.textoConsolidacion.TabIndex = 8;
@@ -156,7 +158,7 @@
             // 
             this.puntuacionConsolidada.AutoSize = true;
             this.puntuacionConsolidada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntuacionConsolidada.Location = new System.Drawing.Point(369, 396);
+            this.puntuacionConsolidada.Location = new System.Drawing.Point(344, 510);
             this.puntuacionConsolidada.Name = "puntuacionConsolidada";
             this.puntuacionConsolidada.Size = new System.Drawing.Size(24, 25);
             this.puntuacionConsolidada.TabIndex = 9;
@@ -167,11 +169,35 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.continuar_salir_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(59, 367);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(261, 25);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Para saber más, entra en:";
+            // 
+            // TextEnlace
+            // 
+            this.TextEnlace.AutoSize = true;
+            this.TextEnlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextEnlace.Location = new System.Drawing.Point(367, 367);
+            this.TextEnlace.Name = "TextEnlace";
+            this.TextEnlace.Size = new System.Drawing.Size(47, 25);
+            this.TextEnlace.TabIndex = 17;
+            this.TextEnlace.TabStop = true;
+            this.TextEnlace.Text = "ods";
+            this.TextEnlace.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.TextEnlace_LinkClicked);
+            // 
             // PuntuacionPositiva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 554);
+            this.ClientSize = new System.Drawing.Size(571, 656);
+            this.Controls.Add(this.TextEnlace);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.puntuacionConsolidada);
             this.Controls.Add(this.textoConsolidacion);
             this.Controls.Add(this.continuar_salir);
@@ -183,9 +209,10 @@
             this.Controls.Add(this.punt_actual);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PuntuacionPositiva";
             this.Text = "PuntuacionForm";
+            this.Load += new System.EventHandler(this.PuntuacionPositiva_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -207,5 +234,7 @@
         private System.Windows.Forms.Label textoConsolidacion;
         private System.Windows.Forms.Label puntuacionConsolidada;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel TextEnlace;
     }
 }

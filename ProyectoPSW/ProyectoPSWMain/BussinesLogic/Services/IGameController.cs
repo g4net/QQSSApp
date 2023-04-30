@@ -12,6 +12,8 @@ namespace ProyectoPSWMain.Services
     {
         void SetRetos(List<Reto> retos);
         int GetError();
+
+        String EnlaceInteres(int ods);
         int GetIndex();
         void UpdateError();
         void Consolidar();

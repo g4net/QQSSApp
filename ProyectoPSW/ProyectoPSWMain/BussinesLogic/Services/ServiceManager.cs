@@ -153,6 +153,11 @@ namespace ProyectoPSWMain.Services
             gameController.RetoAcertado();
         }
 
+        public String EnlaceInteres(int ods)
+        {
+            return gameController.EnlaceInteres(ods);
+        }
+
         public void RetoFallado()
         {
             gameController.RetoFallado();

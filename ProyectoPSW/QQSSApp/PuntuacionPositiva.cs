@@ -62,5 +62,16 @@ namespace QQSSApp
             textoConsolidacion.Visible = true;
             consolidar.Enabled = false;
         }
+
+        private void TextEnlace_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.Link.LinkData.ToString());
+        }
+
+        private void PuntuacionPositiva_Load(object sender, EventArgs e)
+        {
+            TextEnlace.Text = "ODS" + pregunta.Ods;
+            TextEnlace.Links.Add(0,100, QQSS.service.EnlaceInteres(pregunta.Ods));
+        }
     }
 }

@@ -5,11 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace ProyectoPSWMain.Services
 {
     public class GameController : IGameController
     {
+        private String[] enlaces = { "https://www.un.org/sustainabledevelopment/es/poverty/", "https://www.un.org/sustainabledevelopment/es/hunger/",
+        "https://www.un.org/sustainabledevelopment/es/health/", "https://www.un.org/sustainabledevelopment/es/education/", "https://www.un.org/sustainabledevelopment/es/gender-equality/",
+        "https://www.un.org/sustainabledevelopment/es/water-and-sanitation/", "https://www.un.org/sustainabledevelopment/es/energy/", "https://www.un.org/sustainabledevelopment/es/economic-growth/",
+        "https://www.un.org/sustainabledevelopment/es/infrastructure/", "https://www.un.org/sustainabledevelopment/es/inequality/", "https://www.un.org/sustainabledevelopment/es/cities/",
+        "https://www.un.org/sustainabledevelopment/es/sustainable-consumption-production/", "https://www.un.org/sustainabledevelopment/es/climate-change-2/",
+        "https://www.un.org/sustainabledevelopment/es/oceans/", "https://www.un.org/sustainabledevelopment/es/biodiversity/", "https://www.un.org/sustainabledevelopment/es/peace-justice/",
+        "https://www.un.org/sustainabledevelopment/es/globalpartnerships/"};
         public GameController() 
         {
             retos = new List<Reto>();
@@ -75,6 +83,11 @@ namespace ProyectoPSWMain.Services
         public int GetIndex()
         {
             return this.index;
+        }
+
+        public String EnlaceInteres(int ods)
+        {
+            return enlaces.ElementAt(ods - 1);
         }
 
         private void Reset()
