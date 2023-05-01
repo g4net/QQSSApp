@@ -87,6 +87,7 @@
     <Compile Include="BussinesLogic\Entities\User.cs" />
     <Compile Include="BussinesLogic\Services\App.cs" />
     <Compile Include="BussinesLogic\Services\AppBuilder.cs" />
+    <Compile Include="BussinesLogic\Services\Context.cs" />
     <Compile Include="BussinesLogic\Services\DatabaseService.cs" />
     <Compile Include="BussinesLogic\Services\GameController.cs" />
     <Compile Include="BussinesLogic\Services\IDatabaseService.cs" />
