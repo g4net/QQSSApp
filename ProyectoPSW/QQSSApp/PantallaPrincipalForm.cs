@@ -32,13 +32,9 @@ namespace QQSSApp
         public void SiguienteNivel()
         {
             if (!QQSS.service.CheckUserLevel()) return;
+            SubeNivel subeNivel = new SubeNivel();
+            subeNivel.ShowDialog();
 
-            int nuevoNivel = QQSS.service.GetLoggedUser().nivel;
-            DialogResult siguienteNivel = MessageBox.Show(this,
-                "Acabas de subir al nivel " + nuevoNivel,
-                "Nivel de Usuario",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
         }
 
         private void ButtonComenzar_Click(object sender, EventArgs e)

@@ -84,7 +84,7 @@
             // 
             this.puntuacion.AutoSize = true;
             this.puntuacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntuacion.Location = new System.Drawing.Point(313, 207);
+            this.puntuacion.Location = new System.Drawing.Point(273, 207);
             this.puntuacion.Name = "puntuacion";
             this.puntuacion.Size = new System.Drawing.Size(84, 91);
             this.puntuacion.TabIndex = 3;
@@ -194,7 +194,7 @@
             this.label6.Location = new System.Drawing.Point(512, 101);
             this.label6.MaximumSize = new System.Drawing.Size(150, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(146, 87);
+            this.label6.Size = new System.Drawing.Size(139, 87);
             this.label6.TabIndex = 12;
             this.label6.Text = "Porcentaje de Aciertos:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
