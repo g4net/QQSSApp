@@ -26,6 +26,8 @@ namespace ProyectoPSWMain.BussinesLogic.Services
             PuntosStrategy.AñadirPuntos(puntos);
         }
     }
+
+
     public abstract class PuntosStrategy
     {
         internal static void AñadirPuntos(int puntos)
@@ -35,6 +37,8 @@ namespace ProyectoPSWMain.BussinesLogic.Services
 
         public abstract void AñadirPutos(int puntos);
     }
+
+
     public class AñadirSinPista : PuntosStrategy 
     {
         public override void AñadirPutos(int puntos)
@@ -43,6 +47,8 @@ namespace ProyectoPSWMain.BussinesLogic.Services
             throw new NotImplementedException();
         }
     }
+
+
     public class AñadirConPista : PuntosStrategy 
     {
         public override void AñadirPutos(int puntos)
