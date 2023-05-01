@@ -26,7 +26,6 @@ namespace ProyectoPSWMain.Entities
         public int Nivel {
             get; set;
         }
-
         public int PuntuacionConsolidada { get; set; }
 
     }
