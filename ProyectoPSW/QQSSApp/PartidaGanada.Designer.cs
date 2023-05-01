@@ -38,6 +38,8 @@
             this.continuar_salir = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.puntuacion_total = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TextEnlace = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,7 +120,7 @@
             // 
             this.continuar_salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
             this.continuar_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.continuar_salir.Location = new System.Drawing.Point(35, 455);
+            this.continuar_salir.Location = new System.Drawing.Point(34, 519);
             this.continuar_salir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.continuar_salir.Name = "continuar_salir";
             this.continuar_salir.Size = new System.Drawing.Size(501, 52);
@@ -147,11 +149,35 @@
             this.puntuacion_total.TabIndex = 9;
             this.puntuacion_total.Text = "label5";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(97, 441);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(261, 25);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Para saber más, entra en:";
+            // 
+            // TextEnlace
+            // 
+            this.TextEnlace.AutoSize = true;
+            this.TextEnlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextEnlace.Location = new System.Drawing.Point(408, 441);
+            this.TextEnlace.Name = "TextEnlace";
+            this.TextEnlace.Size = new System.Drawing.Size(47, 25);
+            this.TextEnlace.TabIndex = 18;
+            this.TextEnlace.TabStop = true;
+            this.TextEnlace.Text = "ods";
+            this.TextEnlace.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.TextEnlace_LinkClicked);
+            // 
             // PartidaGanada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 554);
+            this.ClientSize = new System.Drawing.Size(571, 599);
+            this.Controls.Add(this.TextEnlace);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.puntuacion_total);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.continuar_salir);
@@ -162,9 +188,10 @@
             this.Controls.Add(this.puntuacion_partida);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PartidaGanada";
             this.Text = "PuntuacionForm";
+            this.Load += new System.EventHandler(this.PartidaGanada_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -184,5 +211,7 @@
         private System.Windows.Forms.Button continuar_salir;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label puntuacion_total;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.LinkLabel TextEnlace;
     }
 }
