@@ -171,5 +171,51 @@ namespace ProyectoPSWMain.Services
             return retosAcertados;
         }
 
+        #region Reto frase
+
+        public static string QuitarLetras(Frase fraseOriginal, string dificultad)
+        {
+            double porcentaje;
+            if (dificultad == "facil"){porcentaje = 0.7;}
+            else if (dificultad == "medio"){ porcentaje = 0.8;}
+            else if (dificultad == "dificil"){porcentaje = 0.9;}
+            else{ throw new ArgumentException("La dificultad no es válida. (introduce facil, medio o dificil");}
+
+            string frase = fraseOriginal.Enunciado;
+            char[] fraseCaracteres = frase.ToCharArray();
+            Random random = new Random();
+            int numCharsToReplace = (int)(fraseCaracteres.Length * porcentaje);
+
+            for (int i = 0; i < numCharsToReplace; i++)
+            {
+                int randomIndex = random.Next(fraseCaracteres.Length);
+                while (fraseCaracteres[randomIndex] == '_' || !char.IsLetter(fraseCaracteres[randomIndex]))
+                {
+                    randomIndex = random.Next(fraseCaracteres.Length);
+                }
+                fraseCaracteres[randomIndex] = '_';
+            }
+
+            return new string(fraseCaracteres);
+        }
+
+        public static string GetLetrasEliminadas(Frase fraseOriginal, string fraseConHuecos)
+        {
+            string letrasEliminadas = "";
+            string frase = fraseOriginal.Enunciado;
+            for (int i = 0; i < frase.Length; i++)
+            {
+                if (char.IsLetter(frase[i]) && fraseConHuecos[i] == '_')
+                {
+                    letrasEliminadas += frase[i];
+                }
+            }
+
+            return letrasEliminadas;
+        }
+
+    
+        #endregion
+
     }
 }
