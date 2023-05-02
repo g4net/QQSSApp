@@ -9,10 +9,13 @@ namespace ProyectoPSWMain.Services
 {
     public interface IServiceManager
     {
+        void Init(IUserManager userManager, IDatabaseService databaseService, IGameController gameController);
+
         #region User
         void Login(string username, string password);
         User GetLoggedUser();
         bool CheckUserLevel();
+        void Logout();
 
 
 
@@ -30,7 +33,7 @@ namespace ProyectoPSWMain.Services
         #region Partida
         void CrearPartida(int lvl);
 
-        String EnlaceInteres(int ods);
+        string EnlaceInteres(int ods);
         void SavePartida();
         int GetError();
         Reto GetReto();

@@ -11,7 +11,7 @@ namespace ProyectoPSWMain.Services
 {
     public class GameController : IGameController
     {
-        private String[] enlaces = { "https://www.un.org/sustainabledevelopment/es/poverty/", "https://www.un.org/sustainabledevelopment/es/hunger/",
+        private string[] enlaces = { "https://www.un.org/sustainabledevelopment/es/poverty/", "https://www.un.org/sustainabledevelopment/es/hunger/",
         "https://www.un.org/sustainabledevelopment/es/health/", "https://www.un.org/sustainabledevelopment/es/education/", "https://www.un.org/sustainabledevelopment/es/gender-equality/",
         "https://www.un.org/sustainabledevelopment/es/water-and-sanitation/", "https://www.un.org/sustainabledevelopment/es/energy/", "https://www.un.org/sustainabledevelopment/es/economic-growth/",
         "https://www.un.org/sustainabledevelopment/es/infrastructure/", "https://www.un.org/sustainabledevelopment/es/inequality/", "https://www.un.org/sustainabledevelopment/es/cities/",
@@ -85,7 +85,7 @@ namespace ProyectoPSWMain.Services
             return this.index;
         }
 
-        public String EnlaceInteres(int ods)
+        public string EnlaceInteres(int ods)
         {
             return enlaces.ElementAt(ods - 1);
         }

@@ -33,5 +33,9 @@ namespace QQSSApp
             this.Hide();
         }
 
+        private void CerrarSesionButton_Click(object sender, EventArgs e)
+        {
+            QQSS.service.Logout();
+        }
     }
 }

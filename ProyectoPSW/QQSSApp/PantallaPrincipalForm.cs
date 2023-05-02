@@ -22,7 +22,12 @@ namespace QQSSApp
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.FormClosed += (s, args) => Application.Exit();
+            this.FormClosed += (s, args) =>
+            {
+                QQSS.service.Logout();
+                Login login = new Login();
+                login.Show();
+            };
             this.label1.Select();            
             this.CenterToScreen();
             QQSS.service.PlaySonido("menuPrincipal");
