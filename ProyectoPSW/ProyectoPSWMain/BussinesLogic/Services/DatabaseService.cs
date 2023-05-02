@@ -44,11 +44,11 @@ namespace ProyectoPSWMain.Services
             if (user == null) throw new ServiceException("There is no user with that DNI");
             repository.Delete<User>(user);
         }
-
-        public void Register(string nombre, string email, string password)
+        public void Register(string nombre, string email, string password, string reppassword)
         {
-            if(repository.GetWhere<User>(u => u.Nombre == nombre 
-                || u.Email == email).FirstOrDefault() != null) throw new ServiceException("UsernameExists");
+            if(repository.GetWhere<User>(u => u.Nombre == nombre).FirstOrDefault() != null) throw new ServiceException("UsernameExists");
+            if (repository.GetWhere<User>(u => u.Email == email).FirstOrDefault() != null) throw new ServiceException("EmailExists");
+            if (password != reppassword) throw new ServiceException("Passwordsnotmatch");
             User usuario = new User(nombre, email, password);
             repository.Insert<User>(usuario);
             Commit();
@@ -61,8 +61,8 @@ namespace ProyectoPSWMain.Services
         public User Login(string login, string password)
         {
             User user = repository.GetWhere<User>((u) => u.Nombre.Equals(login) || u.Email.Equals(login)).FirstOrDefault();
-            if(user == null) throw new ServiceException("There is no user with that username");
-            if(!user.Contraseña.Equals(password)) throw new ServiceException("The password is not correct");
+            if(user == null) throw new ServiceException("UserNotRegistered");
+            if(!user.Contraseña.Equals(password)) throw new ServiceException("NotRightPassword");
             return user;
         }
 

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace ProyectoPSWMain.Services
 {
@@ -57,8 +58,12 @@ namespace ProyectoPSWMain.Services
 
         public void Login(string username, string password)
         {
-            if(username.IndexOf("@") != -1 && userManager.IsValidEmail(username)) throw new ServiceException("InvalidEmailFormat");
-            if (!userManager.IsValidUsername(username)) throw new ServiceException("InvalidUserFormat");
+            if (username.IndexOf("@") != -1 && !userManager.IsValidEmail(username)) { throw new ServiceException("InvalidEmailFormat"); }
+            else
+            {
+                if (!userManager.IsValidUsername(username)) 
+                    throw new ServiceException("InvalidUserFormat");
+            }
             if (!userManager.IsValidPassword(password)) throw new ServiceException("InvalidPasswordFormat");
             User login;
             try
@@ -72,15 +77,24 @@ namespace ProyectoPSWMain.Services
             userManager.SetLoggedUser(login);
 
         }
-
-        public void Register(string username, string email, string password) 
+        public bool TestUser(string username) {
+            return userManager.IsValidUsername(username);
+        }
+        public bool TestPassword(string password) {
+            return userManager.IsValidPassword(password);
+        }
+        public bool TestEmail(string email) {
+            return userManager.IsValidEmail(email);
+        }
+        public void Register(string username, string email, string password, string repassword) 
         {
+           
             if (!userManager.IsValidUsername(username)) throw new ServiceException("InvalidUserFormat");
             if (!userManager.IsValidPassword(password)) throw new ServiceException("InvalidPasswordFormat");
             if (!userManager.IsValidEmail(email)) throw new ServiceException("InvalidEmailFormat");
             try
             {
-                databaseService.Register(username, email, password);
+                databaseService.Register(username, email, password, repassword);
             }
             catch (Exception e)
             {

@@ -17,8 +17,13 @@ namespace ProyectoPSWMain.Services
         bool CheckUserLevel();
         void Logout();
 
+        void Register(string username, string email, string password, string repasword);
 
+        
+        bool TestUser(string username);
+        bool TestEmail(string email);
 
+        bool TestPassword(string password); 
         #endregion
 
         #region Pregunta

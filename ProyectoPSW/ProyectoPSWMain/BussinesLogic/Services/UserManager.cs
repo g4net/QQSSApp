@@ -66,7 +66,7 @@ namespace ProyectoPSWMain.Services
 
         public bool IsValidUsername(string login)
         {
-            if (login == null || login.Length == 0 || login.Length > 30) return false;
+            if (login == null || login.Length > 30) return false;
             char[] specialCharacters = { '?', '+', '=', '@', '#', '&' };
             if(login.IndexOfAny(specialCharacters) != -1) return false;
             return true;

@@ -41,9 +41,16 @@ namespace QQSSApp
             }
             catch (ServiceException ex) 
             {
-                if (ex.Message == "InvalidUserFormat") LoggerError.Text = "Username is not correct";
-                else PasswordError.Text = ex.Message;
-            }
+                if (PasswordText.Text == "" || LoggerText.Text == "") ErrorGeneral.Text = "Please Complete all the camps";
+                else
+                {
+                    if (ex.Message == "InvalidUserFormat") LoggerError.Text = "Username format is not correct";
+                    if (ex.Message == "InvalidEmailFormat") LoggerError.Text = "Email format is not correct";
+                    if (ex.Message == "InvalidPasswordFormat") PasswordError.Text = "Password format is not correct";
+                    if (ex.Message == "UserNotRegistered") ErrorGeneral.Text = "There is no user with that username";
+                    if (ex.Message == "NotRightPassword") PasswordError.Text = "The Pasword is not correct";
+                }
+                }
         }
 
         private void Registrarse_Click(object sender, EventArgs e)

@@ -13,7 +13,7 @@ namespace ProyectoPSWMain.Services
         #region User
         User Login(string login, string password);
 
-        void Register(String Nombre, String Email, String Password);
+        void Register(string nombre, string email, string password,string reppassword);
 
         void DeleteUser(int dni);
 
