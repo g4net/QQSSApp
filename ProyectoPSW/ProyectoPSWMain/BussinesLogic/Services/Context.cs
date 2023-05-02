@@ -23,38 +23,54 @@ namespace ProyectoPSWMain.BussinesLogic.Services
         
         public void AñadirPuntos()
         {
-            PuntosStrategy.AñadirPuntos(puntos);
+            this.puntosStrategy.AñadirPuntos(puntos);
         }
     }
 
-
-    public abstract class PuntosStrategy
+    public interface PuntosStrategy
     {
-        internal static void AñadirPuntos(int puntos)
-        {
-            throw new NotImplementedException();
-        }
-
-        public abstract void AñadirPutos(int puntos);
+        void AñadirPuntos(int puntos);
     }
 
 
-    public class AñadirSinPista : PuntosStrategy 
+    public class EasyStrategy: PuntosStrategy 
     {
-        public override void AñadirPutos(int puntos)
+        public void AñadirPuntos(int puntos)
         {
-            //implementar
+            puntos = 100;
+            //añadir al user
             throw new NotImplementedException();
         }
     }
 
-
-    public class AñadirConPista : PuntosStrategy 
+    public class MiddleStrategy : PuntosStrategy 
     {
-        public override void AñadirPutos(int puntos)
+        public void AñadirPuntos(int puntos)
         {
-            //implementar
+            puntos = 200;
+            //añadir al user
             throw new NotImplementedException();
         }
     }
+
+    public class HardStrategy : PuntosStrategy
+    {
+        public void AñadirPuntos(int puntos)
+        {
+            puntos = 300;
+            //añadir al user
+            throw new NotImplementedException();
+        }
+    }
+
+    public class HalfStrategy : PuntosStrategy
+    {
+        public void AñadirPuntos(int puntos)
+        {
+            puntos = puntos / 2;
+            //añadir al user
+            throw new NotImplementedException();
+        }
+    }
+
 }
