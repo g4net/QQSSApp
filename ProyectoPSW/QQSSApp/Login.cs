@@ -17,6 +17,7 @@ namespace QQSSApp
         public Login()
         {
             InitializeComponent();
+            this.FormClosed += (s, args) => Application.Exit();
             LoggerError.Text = "";
             ErrorGeneral.Text = "";
             PasswordError.Text = "";

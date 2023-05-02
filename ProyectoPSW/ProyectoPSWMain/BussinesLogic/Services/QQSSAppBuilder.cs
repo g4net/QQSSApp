@@ -22,7 +22,6 @@ namespace ProyectoPSWMain.Services
             app = new App();
         }
 
-
         public override void BuildDbAccess()
         {
             DbContextPSW dbContext = new ProyectPSWDBContext();
@@ -41,8 +40,9 @@ namespace ProyectoPSWMain.Services
         }
 
         public override void BuildService()
-        { 
-            QQSS.service = new ServiceManager(userManager, databaseService, gameController);    
+        {
+            QQSS.service = ServiceManager.Instance;
+            QQSS.service.Init(userManager, databaseService, gameController);
         }
 
         public override void BuildForm(Type typeForm)
@@ -51,7 +51,6 @@ namespace ProyectoPSWMain.Services
             Form form = (Form)Activator.CreateInstance(typeForm);
             app.SetForm(form);
         }
-
 
 
         //esto cuando tengamos sonidos / selector de idioma / modo oscuro y demás lo usaremos (de momento no sé que poner)

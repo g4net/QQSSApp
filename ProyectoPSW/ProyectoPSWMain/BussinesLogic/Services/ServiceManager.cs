@@ -10,18 +10,48 @@ using System.Windows.Forms;
 
 namespace ProyectoPSWMain.Services
 {
-    public class ServiceManager : IServiceManager
+    public sealed class ServiceManager : IServiceManager
     {
+        private static ServiceManager instance = null;
         private IUserManager userManager;
         private IDatabaseService databaseService;
         private IGameController gameController;
 
-        public ServiceManager(IUserManager userManager, IDatabaseService databaseService, IGameController gameController)
+        ServiceManager()
+        {
+        }
+
+        public static ServiceManager Instance
+        {
+            get
+            {
+                if (instance == null) instance = new ServiceManager();
+                return instance;
+            }
+        }
+
+        public void Init(IUserManager userManager, IDatabaseService databaseService, IGameController gameController)
+        {
+            if (this.userManager == null) this.userManager = userManager;
+            if (this.databaseService == null) this.databaseService = databaseService;
+            if (this.gameController == null) this.gameController = gameController;
+        }
+
+        public void SetUserManager(IUserManager userManager)
         {
             this.userManager = userManager;
+        }
+
+        public void SetDatabaseService(IDatabaseService databaseService)
+        {
             this.databaseService = databaseService;
+        }
+
+        public void SetGameController(IGameController gameController)
+        {
             this.gameController = gameController;
         }
+        
 
         #region User
 
@@ -153,7 +183,7 @@ namespace ProyectoPSWMain.Services
             gameController.RetoAcertado();
         }
 
-        public String EnlaceInteres(int ods)
+        public string EnlaceInteres(int ods)
         {
             return gameController.EnlaceInteres(ods);
         }
