@@ -74,6 +74,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 31;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.FormatoClick);
             // 
             // correcto
             // 
@@ -150,6 +151,7 @@
             this.Correo.Name = "Correo";
             this.Correo.Size = new System.Drawing.Size(248, 20);
             this.Correo.TabIndex = 11;
+            this.Correo.TextChanged += new System.EventHandler(this.correo_text_Change);
             this.Correo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Correo_change);
             // 
             // continuar_salir
@@ -190,6 +192,7 @@
             this.Contrasenya.Size = new System.Drawing.Size(248, 20);
             this.Contrasenya.TabIndex = 14;
             this.Contrasenya.UseSystemPasswordChar = true;
+            this.Contrasenya.TextChanged += new System.EventHandler(this.contrasenya_text_change);
             this.Contrasenya.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Contrasenya_Change);
             // 
             // RepetirContrasenya
@@ -202,6 +205,7 @@
             this.RepetirContrasenya.Size = new System.Drawing.Size(248, 20);
             this.RepetirContrasenya.TabIndex = 15;
             this.RepetirContrasenya.UseSystemPasswordChar = true;
+            this.RepetirContrasenya.TextChanged += new System.EventHandler(this.repetircontra_textChange);
             this.RepetirContrasenya.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RepetirContra_change);
             // 
             // NombreError
@@ -263,6 +267,7 @@
             this.nombre.Name = "nombre";
             this.nombre.Size = new System.Drawing.Size(248, 20);
             this.nombre.TabIndex = 9;
+            this.nombre.TextChanged += new System.EventHandler(this.nombreChangeText);
             this.nombre.MouseDown += new System.Windows.Forms.MouseEventHandler(this.name_TextChange);
             // 
             // Registrar
