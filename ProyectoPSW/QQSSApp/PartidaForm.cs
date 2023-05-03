@@ -170,20 +170,8 @@ namespace QQSSApp
 
         private void Atras(object sender, EventArgs e) 
         {
-            DialogResult result = MessageBox.Show("¿Está seguro de que desea abandonar la partida actual (perderá los puntos no consolidados)?",
-                                                  "Confirmación de abandono",
-                                                  MessageBoxButtons.YesNo,
-                                                  MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                QQSS.service.AbandonarPartida();
-                Consolidar consolidarForm = new Consolidar();
-                consolidarForm.Show();
-                this.Close();
-            }
-
-            
+            Confirmar confirmarForm = new Confirmar(this);
+            confirmarForm.ShowDialog();
         }
 
         private void TimerTiempoTick(object sender, EventArgs e)
