@@ -73,6 +73,12 @@
     <Compile Include="Consolidar.Designer.cs">
       <DependentUpon>Consolidar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Niveles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Niveles.Designer.cs">
+      <DependentUpon>Niveles.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubeNivel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,11 +115,11 @@
     <Compile Include="Reglas.Designer.cs">
       <DependentUpon>Reglas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Niveles.cs">
+    <Compile Include="CatalogoReto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Niveles.Designer.cs">
-      <DependentUpon>Niveles.cs</DependentUpon>
+    <Compile Include="CatalogoReto.Designer.cs">
+      <DependentUpon>CatalogoReto.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -161,6 +167,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Niveles.resx">
+      <DependentUpon>Niveles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registrar.resx">
       <DependentUpon>Registrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,8 +185,8 @@
     <EmbeddedResource Include="Reglas.resx">
       <DependentUpon>Reglas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Niveles.resx">
-      <DependentUpon>Niveles.cs</DependentUpon>
+    <EmbeddedResource Include="CatalogoReto.resx">
+      <DependentUpon>CatalogoReto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PuntuacionNegativa.resx">
       <DependentUpon>PuntuacionNegativa.cs</DependentUpon>

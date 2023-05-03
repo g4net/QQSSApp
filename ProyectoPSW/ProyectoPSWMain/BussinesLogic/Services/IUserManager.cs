@@ -18,7 +18,11 @@ namespace ProyectoPSWMain.Services
         void SetLoggedUser(User user);
         void UpdateUserRetos(List<Reto> retos);
         bool CheckRetoPlayed(Reto reto);
-        List<Pregunta> GetUsersQuestionByDificulty(int dificultad);
+        List<Pregunta> GetUsersQuestionByDifficulty(int dificultad);
+        List<Frase> GetUsersFrasesByDifficulty(int dificultad);
+        List<Reto> GetUsersRetosByDifficulty(int dificultad);
         void ResetUserQuestions(int dificultad);
+        void ResetUserFrases(int dificultad);
+        void ResetUserRetos(int dificultad);
     }
 }

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace QQSSApp
 {
-    public partial class Niveles : Form
+    public partial class CatalogoReto : Form
     {
-        public Niveles()
+        public CatalogoReto()
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -31,42 +31,33 @@ namespace QQSSApp
                 boton.Enabled = true;
             }
         }
-        private void PlayButton(int level) {
-            QQSS.service.CrearPartida(level);
-            CatalogoReto retoForm = new CatalogoReto();
-            retoForm.Show();
+        private void PlayButton(TipoReto tipoReto) {
+            QQSS.service.GenerarRetos(tipoReto);
+            PartidaForm partidaForm = new PartidaForm();
+            partidaForm.Show();
             this.Close();
-        }
-        private void click_lvl0(object sender, EventArgs e)
-        {
-            PlayButton(0);
-        }
-
-        private void click_lvl1(object sender, EventArgs e)
-        {
-            PlayButton(1);
-        }
-
-        private void click_lvl2(object sender, EventArgs e)
-        {
-            PlayButton(2);
-        }
-
-        private void click_lvl3(object sender, EventArgs e)
-        {
-            PlayButton(3);
-        }
-
-        private void click_lvl4(object sender, EventArgs e)
-        {
-            PlayButton(4);
         }
 
         private void volver_Click(object sender, EventArgs e)
         {
-            PantallaPrincipalForm principal = new PantallaPrincipalForm();
-            principal.Show();
-            this.Close();
+            Niveles niveles = new Niveles();
+            niveles.Show();
+            this.Hide();
+        }
+
+        private void ButtonPreguntas_OnClick(object sender, EventArgs e)
+        {
+            PlayButton(TipoReto.Pregunta);
+        }
+
+        private void ButtonAdivinar_OnClick(object sender, EventArgs e)
+        {
+            PlayButton(TipoReto.AdivinarFrase);
+        }
+
+        private void ButtonAleatorio_OnClick(object sender, EventArgs e)
+        {
+            PlayButton(TipoReto.None);
         }
     }
 }

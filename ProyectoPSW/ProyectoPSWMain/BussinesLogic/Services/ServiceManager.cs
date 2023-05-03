@@ -127,9 +127,25 @@ namespace ProyectoPSWMain.Services
         public List<Pregunta> LoadUndoneQuestionsByDifficulty(int difficulty)
         {
             List<Pregunta> preguntasDificultad = databaseService.LoadQuestionsByDifficulty(difficulty);
-            List<Pregunta> preguntasUsuario = userManager.GetUsersQuestionByDificulty(difficulty);
+            List<Pregunta> preguntasUsuario = userManager.GetUsersQuestionByDifficulty(difficulty);
 
             return preguntasDificultad.Except(preguntasUsuario).ToList();
+        }
+
+        public List<Frase> LoadUndoneFrasesByDifficulty(int difficulty)
+        {
+            List<Frase> frasesDificultad = databaseService.LoadFrasesByDifficulty(difficulty);
+            List<Frase> frasesUsuario = userManager.GetUsersFrasesByDifficulty(difficulty);
+
+            return frasesDificultad.Except(frasesUsuario).ToList();
+        }
+
+        public List<Reto> LoadUndoneRetosByDifficulty(int difficulty)
+        {
+            List<Reto> retosDificultad = databaseService.LoadRetosByDifficulty(difficulty);
+            List<Reto> retosUsuario = userManager.GetUsersRetosByDifficulty(difficulty);
+
+            return retosDificultad.Except(retosUsuario).ToList();
         }
 
         public void Questions()
@@ -169,6 +185,91 @@ namespace ProyectoPSWMain.Services
             gameController.SetRetos(questions.ToList());
         }
 
+        public void AdivinarFrase()
+        {
+            int[] dificultad = gameController.GetDifficultyArray();
+            if (dificultad.Length != 10) throw new ServiceException("Difficulty array has not the correct length");
+
+
+            var frases = new List<Reto>();
+            Random random = new Random();
+            int prevDifficulty = -1;
+            List<Frase> frasesDB = null;
+
+
+            foreach (int difficulty in dificultad)
+            {
+
+                if (difficulty > 4 || difficulty < 0) throw new ServiceException("Difficulty array has incorrect values");
+                if (difficulty != prevDifficulty)
+                {
+                    frasesDB = LoadUndoneFrasesByDifficulty(difficulty);
+                    prevDifficulty = difficulty;
+                }
+                if (frasesDB.Count == 0)
+                {
+                    userManager.ResetUserFrases(difficulty);
+                    frasesDB = LoadUndoneFrasesByDifficulty(difficulty);
+                }
+                int index = random.Next(frasesDB.Count);
+                frases.Add(frasesDB[index]);
+
+
+
+                frasesDB.RemoveAt(index);
+            }
+
+            gameController.SetRetos(frases.ToList());
+        }
+
+        public void RetosAleatorios()
+        {
+            int[] dificultad = gameController.GetDifficultyArray();
+            if (dificultad.Length != 10) throw new ServiceException("Difficulty array has not the correct length");
+
+
+            var retos = new List<Reto>();
+            Random random = new Random();
+            int prevDifficulty = -1;
+            List<Reto> retosDB = null;
+
+
+            foreach (int difficulty in dificultad)
+            {
+
+                if (difficulty > 4 || difficulty < 0) throw new ServiceException("Difficulty array has incorrect values");
+                if (difficulty != prevDifficulty)
+                {
+                    retosDB = LoadUndoneRetosByDifficulty(difficulty);
+                    prevDifficulty = difficulty;
+                }
+                if (retosDB.Count == 0)
+                {
+                    userManager.ResetUserRetos(difficulty);
+                    retosDB = LoadUndoneRetosByDifficulty(difficulty);
+                }
+                int index = random.Next(retosDB.Count);
+                retos.Add(retosDB[index]);
+
+
+
+                retosDB.RemoveAt(index);
+            }
+
+            gameController.SetRetos(retos.ToList());
+        }
+
+        public void GenerarRetos(TipoReto tipoReto)
+        {
+            switch(tipoReto)
+            {
+                case TipoReto.Pregunta: Questions(); break;
+                case TipoReto.AdivinarFrase: AdivinarFrase(); break;
+                //case TipoReto.Ahorcado: Ahorcado(); break;
+                default: RetosAleatorios(); break;
+            }
+        }
+
         public List<Respuesta> GetRespuestas()
         {
             return gameController.AnswerShuffle();
@@ -182,13 +283,12 @@ namespace ProyectoPSWMain.Services
         public void CrearPartida(int lvl)
         {
             gameController.CrearPartida(lvl);
-            Questions();
         }
 
         public void SavePartida()
         {
             Partida partida = gameController.GetPartidaActual();
-            if (partida != null) throw new ServiceException("There is no game to save");
+            if (partida == null) throw new ServiceException("There is no game to save");
             databaseService.SavePartida(partida);
         }
 
@@ -227,7 +327,7 @@ namespace ProyectoPSWMain.Services
             return gameController.GetConsolidado();
         }
 
-        protected void ActualizarRetosAcertados()
+        private void ActualizarRetosAcertados()
         {
             List<Reto> retosAcertados = gameController.GetRetosAcertados();
             userManager.UpdateUserRetos(retosAcertados);
@@ -238,6 +338,7 @@ namespace ProyectoPSWMain.Services
             ActualizarRetosAcertados();
             int puntuacion = gameController.GetPartidaActual().PuntuacionConsolidada;
             userManager.UpdateUserScore(puntuacion);
+            SavePartida();
         }
 
         public void GanarPartida()
@@ -245,12 +346,14 @@ namespace ProyectoPSWMain.Services
             ActualizarRetosAcertados();
             int puntuacion = gameController.GetPartidaActual().PuntuacionPartida;
             userManager.UpdateUserScore(puntuacion);
+            SavePartida();
 
         }
 
         public void PerderPartida()
         {
             ActualizarRetosAcertados();
+            SavePartida();
         }
 
         public void Consolidar()

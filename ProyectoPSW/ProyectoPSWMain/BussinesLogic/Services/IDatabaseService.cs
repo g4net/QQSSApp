@@ -26,6 +26,8 @@ namespace ProyectoPSWMain.Services
         #region Pregunta
 
         List<Pregunta> LoadQuestionsByDifficulty(int difficulty);
+        List<Frase> LoadFrasesByDifficulty(int difficulty);
+        List<Reto> LoadRetosByDifficulty(int difficulty);
 
         #endregion
 

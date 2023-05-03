@@ -83,6 +83,21 @@ namespace ProyectoPSWMain.Services
             return questions;
         }
 
+        public List<Frase> LoadFrasesByDifficulty(int difficulty)
+        {
+            List<Frase> frases = new List<Frase>();
+            frases = repository.GetWhere<Frase>(x => x.Dificultad == difficulty).ToList();
+            return frases;
+
+        }
+
+        public List<Reto> LoadRetosByDifficulty(int difficulty)
+        {
+            List<Reto> retos = new List<Reto>();
+            retos = repository.GetWhere<Reto>(x => x.Dificultad == difficulty).ToList();
+            return retos;
+        }
+
         #endregion
 
         #region Partida

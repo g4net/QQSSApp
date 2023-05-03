@@ -53,6 +53,7 @@ namespace ProyectoPSWMain.Services
         void RetoAcertado();
         void RetoFallado();
         int GetPuntuacionConsolidada();
+        void GenerarRetos(TipoReto tipoReto);
         #endregion
 
         #region Sonidos
