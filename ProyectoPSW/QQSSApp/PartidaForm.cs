@@ -228,6 +228,7 @@ namespace QQSSApp
         private void CheckCorrectButton(Button op) {
             if (op.Text == pregunta.RespuestaCorrecta) {
                 botonCorrecto = op;
+                botonCorrecto.BackColor = Color.Green;
             }
         }
 
