@@ -192,7 +192,7 @@ namespace QQSSApp
             timer2.Interval = 1000;
             tiempoContador = 30;
             timer2.Start();
-            tiempodeMostrarRta = 8;
+            tiempodeMostrarRta = 6;
             
         }
 
