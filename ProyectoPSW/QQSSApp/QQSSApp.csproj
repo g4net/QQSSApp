@@ -79,6 +79,12 @@
     <Compile Include="Confirmar.Designer.cs">
       <DependentUpon>Confirmar.cs</DependentUpon>
     </Compile>
+    <Compile Include="PartidaDescubrirFrase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartidaDescubrirFrase.Designer.cs">
+      <DependentUpon>PartidaDescubrirFrase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Niveles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Niveles.resx">
       <DependentUpon>Niveles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartidaDescubrirFrase.resx">
+      <DependentUpon>PartidaDescubrirFrase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registrar.resx">
       <DependentUpon>Registrar.cs</DependentUpon>
@@ -387,6 +396,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\Black_question_mark.png" />
+    <None Include="resources\pista %282%29.png" />
+    <None Include="resources\pista %281%29.png" />
+    <None Include="resources\pista.png" />
     <Content Include="resources\Sonidos\cuentaATRAS.wav" />
     <Content Include="resources\Sonidos\file_example_WAV_5MG.wav" />
     <Content Include="resources\Sonidos\menuPrincipal.wav" />
