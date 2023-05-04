@@ -91,8 +91,7 @@ namespace QQSSApp
             if (PasswordText.Text == "" || LoggerText.Text == "") ErrorGeneral.Text = "Please Complete all the camps";
             else
             {
-                if (ex.Message == "InvalidUserFormat" || ex.Message == "InvalidEmailFormat" || ex.Message == "UserNotRegistered") LoggerError.Text = "There is no user with that username/email";
-                if (ex.Message == "InvalidPasswordFormat" || ex.Message == "NotRightPassword") PasswordError.Text = "The Pasword is not correct";
+                if (ex.Message == "InvalidUserFormat" || ex.Message == "InvalidEmailFormat" || ex.Message == "UserNotRegistered" || ex.Message == "InvalidPasswordFormat" || ex.Message == "NotRightPassword") PasswordError.Text = "The User/Email and Password combination is not correct";
 
 
             }
