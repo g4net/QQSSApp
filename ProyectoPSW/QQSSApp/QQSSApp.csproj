@@ -396,6 +396,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\Black_question_mark.png" />
+    <None Include="resources\pista %282%29.png" />
+    <None Include="resources\pista %281%29.png" />
+    <None Include="resources\pista.png" />
     <Content Include="resources\Sonidos\cuentaATRAS.wav" />
     <Content Include="resources\Sonidos\file_example_WAV_5MG.wav" />
     <Content Include="resources\Sonidos\menuPrincipal.wav" />
