@@ -68,7 +68,7 @@ namespace QQSSApp
                     b.BackColor = Color.YellowGreen;
                 }
                 else b.BackColor = Color.DarkSeaGreen;
-                if (i == QQSS.service.GetError()) { b.BackColor = Color.LightCoral; }
+                if (i == error) { b.BackColor = Color.LightCoral; }
             }
         }
 
@@ -156,7 +156,7 @@ namespace QQSSApp
                     botonCorrecto.BackColor = Color.Green;
                 }
                 esCorrecta = false;
-                }
+            }
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -192,7 +192,7 @@ namespace QQSSApp
             timer2.Interval = 1000;
             tiempoContador = 30;
             timer2.Start();
-            tiempodeMostrarRta = 8;
+            tiempodeMostrarRta = 3;
             
         }
 

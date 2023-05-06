@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBTest", "DBTest\DBTest.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QQSSApp", "QQSSApp\QQSSApp.csproj", "{EC97CE1E-106D-4E55-8ACB-BC2A69864683}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameControllerTest", "GameControllerTest\GameControllerTest.csproj", "{09000960-22F4-4BF5-AD04-BCE80B645864}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameControllerTest", "GameControllerTest\GameControllerTest.csproj", "{09000960-22F4-4BF5-AD04-BCE80B645864}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

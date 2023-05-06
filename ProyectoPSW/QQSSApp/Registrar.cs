@@ -45,7 +45,7 @@ namespace QQSSApp
                 QQSS.service.Register(nombre.Text, Correo.Text, Contrasenya.Text, RepetirContrasenya.Text);
                 Login login = new Login();
                 login.Show();
-                this.Close();
+                this.Hide();
 
             }
             catch (ServiceException ex)
@@ -92,7 +92,7 @@ namespace QQSSApp
         {
             Login login = new Login();
             login.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void label6_Click(object sender, EventArgs e)
