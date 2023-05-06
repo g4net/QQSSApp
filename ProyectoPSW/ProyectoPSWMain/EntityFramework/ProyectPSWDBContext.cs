@@ -34,6 +34,7 @@ namespace ProyectoPSWMain.EntityFramework
         public DbSet<Reto> Retos { get; set; }
         public DbSet<Respuesta> Respuestas { get; set; }
         public DbSet<Partida> Partidas { get; set; }
+        public DbSet<Estadistica> Estadisticas { get; set; }
         public override void RemoveAllData()
         {
             //clearSomeRelationships();
@@ -43,6 +44,7 @@ namespace ProyectoPSWMain.EntityFramework
             Set<Reto>().RemoveRange(Set<Reto>());
             Set<Respuesta>().RemoveRange(Set<Respuesta>());
             Set<Partida>().RemoveRange(Set<Partida>());
+            Set<Estadistica>().RemoveRange(Set<Estadistica>());
             SaveChanges();
         }
         // Sometimes it is needed to clear some relationships explicitly 

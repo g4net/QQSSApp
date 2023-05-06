@@ -17,6 +17,9 @@ namespace ProyectoPSWMain.Services
         bool CheckUserLevel();
         void Logout();
 
+        void IncrementaAciertos();
+        void IncrementaFallos();
+
         void Register(string username, string email, string password, string repasword);
 
         

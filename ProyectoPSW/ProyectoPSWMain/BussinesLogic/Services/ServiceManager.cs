@@ -77,6 +77,15 @@ namespace ProyectoPSWMain.Services
             userManager.SetLoggedUser(login);
 
         }
+
+        public void IncrementaAciertos()
+        {
+            userManager.IncrementaAciertos();
+        }
+        public void IncrementaFallos()
+        {
+            userManager.IncrementaFallos();
+        }
         public bool TestUser(string username) {
             return userManager.IsValidUsername(username);
         }

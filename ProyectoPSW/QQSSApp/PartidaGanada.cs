@@ -22,6 +22,7 @@ namespace QQSSApp
             this.CenterToScreen();
             QQSS.service.PlaySonido("PartidaGanada");
             InitializePartidaGanada();
+            QQSS.service.IncrementaAciertos();
         }
 
         private void continuar_salir_Click(object sender, EventArgs e)

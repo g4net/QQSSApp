@@ -37,7 +37,7 @@
             this.puntuacion = new System.Windows.Forms.Label();
             this.VolverButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CerrarSesionButton = new System.Windows.Forms.Button();
             this.ModificarButton = new System.Windows.Forms.Button();
@@ -84,7 +84,7 @@
             // 
             this.puntuacion.AutoSize = true;
             this.puntuacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.puntuacion.Location = new System.Drawing.Point(273, 207);
+            this.puntuacion.Location = new System.Drawing.Point(250, 207);
             this.puntuacion.Name = "puntuacion";
             this.puntuacion.Size = new System.Drawing.Size(84, 91);
             this.puntuacion.TabIndex = 3;
@@ -107,22 +107,22 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.NameLabel);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(731, 76);
             this.panel1.TabIndex = 5;
             // 
-            // label5
+            // NameLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(230, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(254, 29);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "*nombre de usuario*";
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.ForeColor = System.Drawing.Color.White;
+            this.NameLabel.Location = new System.Drawing.Point(230, 24);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(254, 29);
+            this.NameLabel.TabIndex = 12;
+            this.NameLabel.Text = "*nombre de usuario*";
             // 
             // label2
             // 
@@ -139,7 +139,7 @@
             this.CerrarSesionButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
             this.CerrarSesionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CerrarSesionButton.ForeColor = System.Drawing.Color.White;
-            this.CerrarSesionButton.Location = new System.Drawing.Point(387, 826);
+            this.CerrarSesionButton.Location = new System.Drawing.Point(401, 826);
             this.CerrarSesionButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CerrarSesionButton.Name = "CerrarSesionButton";
             this.CerrarSesionButton.Size = new System.Drawing.Size(287, 46);
@@ -156,7 +156,7 @@
             this.ModificarButton.Location = new System.Drawing.Point(47, 761);
             this.ModificarButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ModificarButton.Name = "ModificarButton";
-            this.ModificarButton.Size = new System.Drawing.Size(627, 46);
+            this.ModificarButton.Size = new System.Drawing.Size(641, 46);
             this.ModificarButton.TabIndex = 9;
             this.ModificarButton.Text = "Modificar Datos";
             this.ModificarButton.UseVisualStyleBackColor = false;
@@ -184,7 +184,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(627, 302);
+            this.chart1.Size = new System.Drawing.Size(641, 302);
             this.chart1.TabIndex = 11;
             this.chart1.Text = "chart1";
             // 
@@ -192,7 +192,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(512, 101);
+            this.label6.Location = new System.Drawing.Point(519, 101);
             this.label6.MaximumSize = new System.Drawing.Size(150, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 87);
@@ -204,18 +204,18 @@
             // 
             this.AciertosLabel.AutoSize = true;
             this.AciertosLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AciertosLabel.Location = new System.Drawing.Point(542, 207);
+            this.AciertosLabel.Location = new System.Drawing.Point(486, 207);
             this.AciertosLabel.Name = "AciertosLabel";
-            this.AciertosLabel.Size = new System.Drawing.Size(84, 91);
+            this.AciertosLabel.Size = new System.Drawing.Size(251, 114);
             this.AciertosLabel.TabIndex = 13;
-            this.AciertosLabel.Text = "0";
+            this.AciertosLabel.Text = "40%";
             // 
             // Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(713, 898);
+            this.ClientSize = new System.Drawing.Size(724, 898);
             this.Controls.Add(this.AciertosLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.chart1);
@@ -254,7 +254,7 @@
         private System.Windows.Forms.Button ModificarButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label AciertosLabel;
     }

@@ -18,6 +18,8 @@ namespace ProyectoPSWMain.Services
         public readonly int[] Levels = { 500, 1000, 2000, 3000 };
         private User loggedUser;
 
+        public List<Reto> listaRetosPorODS = new List<Reto>();
+
         public bool IsValidEmail(string email)
         {
             if (email == null || email.Length <= 4) return false;
@@ -64,6 +66,16 @@ namespace ProyectoPSWMain.Services
             return true;
         }
 
+        public void IncrementaAciertos()
+        {
+            loggedUser.Estadistica.NumAciertos++;
+        }
+        
+        public void IncrementaFallos()
+        {
+            loggedUser.Estadistica.NumFallos++;
+        }
+
         public bool IsValidUsername(string login)
         {
             if (login == null || login.Length > 30) return false;
@@ -104,6 +116,29 @@ namespace ProyectoPSWMain.Services
             if (loggedUser.nivel == low) return false;
             loggedUser.nivel = low;
             return true;
+        }
+
+        public void ObtenerPuntajeODS(int ods)
+        {
+            CargarListaODS(ods);
+            int aciertosODS = listaRetosPorODS.Count;
+
+        }
+
+        public void CargarListaODS(int ods)
+        {
+            loggedUser.RetosSuperados.OrderBy(x => x.Ods).ToList();
+            foreach(Reto reto in loggedUser.RetosSuperados)
+            {
+                if(reto.Ods == ods)
+                {
+                    listaRetosPorODS.Add(reto);
+                }
+                else
+                {
+                    break;
+                }
+            }
         }
 
         public void SetLoggedUser(User user)

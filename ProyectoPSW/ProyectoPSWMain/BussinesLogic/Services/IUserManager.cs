@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace ProyectoPSWMain.Services
 {
@@ -14,6 +15,8 @@ namespace ProyectoPSWMain.Services
         bool IsValidEmail(string email);
         User GetLoggedUser();
         void UpdateUserScore(int points);
+        void IncrementaAciertos();
+        void IncrementaFallos();
         bool CheckLevel();
         void SetLoggedUser(User user);
         void UpdateUserRetos(List<Reto> retos);

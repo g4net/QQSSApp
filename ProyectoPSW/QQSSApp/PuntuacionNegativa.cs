@@ -24,6 +24,7 @@ namespace QQSSApp
 
             QQSS.service.PlaySonido("respuestaIncorrecta");
             InitializeTimer();
+            QQSS.service.IncrementaFallos();
         }
 
         private void InitializeTimer()

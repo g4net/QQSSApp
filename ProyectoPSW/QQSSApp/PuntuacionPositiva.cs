@@ -29,6 +29,7 @@ namespace QQSSApp
             consolidar.Enabled = !consolidado;
             QQSS.service.PlaySonido("respuestaCorrecta");
             InitializeTimer();
+            QQSS.service.IncrementaAciertos();
         }
 
         private void InitializeTimer()

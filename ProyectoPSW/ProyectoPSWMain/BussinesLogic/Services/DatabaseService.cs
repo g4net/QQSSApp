@@ -56,8 +56,6 @@ namespace ProyectoPSWMain.Services
 
         }
 
-
-
         public User Login(string login, string password)
         {
             User user = repository.GetWhere<User>((u) => u.Nombre.Equals(login) || u.Email.Equals(login)).FirstOrDefault();
