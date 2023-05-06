@@ -30,6 +30,7 @@ namespace QQSSApp
             QQSS.service.PlaySonido("respuestaCorrecta");
             InitializeTimer();
             QQSS.service.IncrementaAciertos();
+            QQSS.service.GetLoggedUser().RetosSuperados.Add(pregunta);
         }
 
         private void InitializeTimer()

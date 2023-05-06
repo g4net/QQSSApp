@@ -111,6 +111,10 @@ namespace ProyectoPSWMain.Services
             }
             
         }
+        public double GetPuntajeODS(int ods)
+        {
+            return userManager.GetPuntajeODS(ods);
+        }
 
         public void Logout()
         {

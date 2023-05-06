@@ -35,17 +35,20 @@ namespace QQSSApp
         public void InitializeGraphic()
         {
             string[] series = { "ODS 1", "ODS 2", "ODS 3", "ODS 4", "ODS 5", "ODS 6", "ODS 7", "ODS 8", "ODS 9", "ODS 10", "ODS 11", "ODS 12", "ODS 13", "ODS 14", "ODS 15", "ODS 16", "ODS 17" };
-            int[] puntos = {};
+            double[] puntos = {};
             for(int i = 0; i < series.Length; i++)
             {
-                puntos.Add(ObtenerPuntajeODS(i+1);
+                Array.Resize(ref puntos, puntos.Length + 1);
+                puntos[puntos.Length - 1] = QQSS.service.GetPuntajeODS(i+1);
             }
             for(int i = 0; i < series.Length; i++)
             {
-                Series serie = chart1.Series.Add(series[i]);
-                serie.Label = puntos[i].ToString();
-                serie.Points.Add(puntos[i]);
+                //Series serie = chart1.Series.Add(series[i]);
+                //serie.Label = puntos[i].ToString();
+                //serie.Points.Add(puntos[i]);
+                chart1.Series["Series1"].Points.AddXY(series[i], puntos[i]);
             }
+            
         }
         
 

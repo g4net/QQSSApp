@@ -18,6 +18,7 @@ namespace ProyectoPSWMain.Services
         public readonly int[] Levels = { 500, 1000, 2000, 3000 };
         private User loggedUser;
 
+        public List<Reto> listaSuperadosPorODS = new List<Reto>();
         public List<Reto> listaRetosPorODS = new List<Reto>();
 
         public bool IsValidEmail(string email)
@@ -118,21 +119,47 @@ namespace ProyectoPSWMain.Services
             return true;
         }
 
-        public void ObtenerPuntajeODS(int ods)
-        {
-            CargarListaODS(ods);
-            int aciertosODS = listaRetosPorODS.Count;
 
+        public double GetPuntajeODS(int ods)
+        {
+            CargarListaRetosODS(ods);
+            if(listaRetosPorODS.Count != 0)
+            {
+                CargarListaSuperadosODS(ods);
+                double aciertosODS = listaSuperadosPorODS.Count * 100;
+                aciertosODS /= listaRetosPorODS.Count;
+                return aciertosODS;
+            }
+            else
+            {
+                return 0;
+            }
+            
         }
 
-        public void CargarListaODS(int ods)
+        public void CargarListaRetosODS(int ods)
+        {
+            loggedUser.RetosJugados.OrderBy(x => x.Ods).ToList();
+            foreach (Reto reto in loggedUser.RetosJugados)
+            {
+                if (reto.Ods == ods)
+                {
+                    listaRetosPorODS.Add(reto);
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+        public void CargarListaSuperadosODS(int ods)
         {
             loggedUser.RetosSuperados.OrderBy(x => x.Ods).ToList();
             foreach(Reto reto in loggedUser.RetosSuperados)
             {
                 if(reto.Ods == ods)
                 {
-                    listaRetosPorODS.Add(reto);
+                    listaSuperadosPorODS.Add(reto);
                 }
                 else
                 {

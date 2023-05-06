@@ -23,6 +23,7 @@ namespace QQSSApp
             QQSS.service.PlaySonido("PartidaGanada");
             InitializePartidaGanada();
             QQSS.service.IncrementaAciertos();
+            QQSS.service.GetLoggedUser().RetosSuperados.Add(pregunta);
         }
 
         private void continuar_salir_Click(object sender, EventArgs e)

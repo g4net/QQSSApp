@@ -13,6 +13,7 @@ namespace ProyectoPSWMain.Entities
             this.PreguntasRealizadas = new List<Pregunta>();
             this.RetosRealizados = new List<Reto>();
             this.RetosSuperados = new List<Reto>();
+            this.RetosJugados = new List<Reto>();
             this.Estadistica = new Estadistica(0, 0);
             this.PuntuacionAcumulada = 0;
             this.nivel = 0;

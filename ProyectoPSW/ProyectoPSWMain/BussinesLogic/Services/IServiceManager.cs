@@ -21,8 +21,7 @@ namespace ProyectoPSWMain.Services
         void IncrementaFallos();
 
         void Register(string username, string email, string password, string repasword);
-
-        
+        double GetPuntajeODS(int ods);
         bool TestUser(string username);
         bool TestEmail(string email);
 
