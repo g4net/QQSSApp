@@ -54,6 +54,7 @@ namespace ProyectoPSWMain.Services
         void RetoFallado();
         int GetPuntuacionConsolidada();
         void GenerarRetos(TipoReto tipoReto);
+        string QuitarLetras(out List<char> letrasHueco);
         #endregion
 
         #region Sonidos

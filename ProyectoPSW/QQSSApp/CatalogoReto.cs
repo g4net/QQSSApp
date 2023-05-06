@@ -33,8 +33,10 @@ namespace QQSSApp
         }
         private void PlayButton(TipoReto tipoReto) {
             QQSS.service.GenerarRetos(tipoReto);
-            PartidaForm partidaForm = new PartidaForm();
-            partidaForm.Show();
+            Form partida = new Form();
+            if (tipoReto == TipoReto.AdivinarFrase) partida = new PartidaDescubrirFrase();
+            else if (tipoReto == TipoReto.Pregunta) partida = new PartidaForm();
+            partida.Show();
             this.Close();
         }
 

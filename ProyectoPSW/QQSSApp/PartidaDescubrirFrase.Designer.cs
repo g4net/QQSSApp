@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.pos0 = new System.Windows.Forms.Button();
+            this.pos1 = new System.Windows.Forms.Button();
             this.pos2 = new System.Windows.Forms.Button();
             this.pos3 = new System.Windows.Forms.Button();
             this.pos4 = new System.Windows.Forms.Button();
@@ -48,103 +50,140 @@
             this.acumuladotexto = new System.Windows.Forms.Label();
             this.labelPuntuacionAcumulada = new System.Windows.Forms.Label();
             this.barra = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.pos1 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.botonAbandonar = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.letra0 = new System.Windows.Forms.Label();
+            this.letra1 = new System.Windows.Forms.Label();
+            this.letra2 = new System.Windows.Forms.Label();
+            this.letra3 = new System.Windows.Forms.Label();
+            this.letra4 = new System.Windows.Forms.Label();
+            this.letra5 = new System.Windows.Forms.Label();
+            this.letra6 = new System.Windows.Forms.Label();
+            this.letra7 = new System.Windows.Forms.Label();
+            this.letra8 = new System.Windows.Forms.Label();
+            this.letra9 = new System.Windows.Forms.Label();
+            this.letra10 = new System.Windows.Forms.Label();
+            this.letra11 = new System.Windows.Forms.Label();
+            this.letra12 = new System.Windows.Forms.Label();
+            this.letra13 = new System.Windows.Forms.Label();
+            this.letra14 = new System.Windows.Forms.Label();
+            this.letra15 = new System.Windows.Forms.Label();
+            this.letra16 = new System.Windows.Forms.Label();
+            this.letra17 = new System.Windows.Forms.Label();
+            this.letra18 = new System.Windows.Forms.Label();
+            this.letra19 = new System.Windows.Forms.Label();
+            this.letra20 = new System.Windows.Forms.Label();
+            this.letra21 = new System.Windows.Forms.Label();
+            this.letra22 = new System.Windows.Forms.Label();
+            this.letra23 = new System.Windows.Forms.Label();
+            this.letra24 = new System.Windows.Forms.Label();
+            this.letra25 = new System.Windows.Forms.Label();
+            this.letra26 = new System.Windows.Forms.Label();
+            this.letra27 = new System.Windows.Forms.Label();
+            this.letra28 = new System.Windows.Forms.Label();
+            this.letra29 = new System.Windows.Forms.Label();
+            this.letra30 = new System.Windows.Forms.Label();
+            this.letra31 = new System.Windows.Forms.Label();
+            this.letra32 = new System.Windows.Forms.Label();
+            this.letra33 = new System.Windows.Forms.Label();
+            this.letra34 = new System.Windows.Forms.Label();
+            this.letra35 = new System.Windows.Forms.Label();
+            this.letra36 = new System.Windows.Forms.Label();
+            this.letra37 = new System.Windows.Forms.Label();
+            this.letra38 = new System.Windows.Forms.Label();
+            this.letra39 = new System.Windows.Forms.Label();
+            this.letra40 = new System.Windows.Forms.Label();
+            this.letra41 = new System.Windows.Forms.Label();
+            this.letra42 = new System.Windows.Forms.Label();
+            this.letra43 = new System.Windows.Forms.Label();
+            this.letra44 = new System.Windows.Forms.Label();
+            this.letra45 = new System.Windows.Forms.Label();
+            this.letra46 = new System.Windows.Forms.Label();
+            this.letra47 = new System.Windows.Forms.Label();
+            this.letra48 = new System.Windows.Forms.Label();
+            this.letra49 = new System.Windows.Forms.Label();
+            this.letra50 = new System.Windows.Forms.Label();
+            this.letra51 = new System.Windows.Forms.Label();
+            this.letra52 = new System.Windows.Forms.Label();
+            this.letra53 = new System.Windows.Forms.Label();
+            this.letra54 = new System.Windows.Forms.Label();
+            this.letra55 = new System.Windows.Forms.Label();
+            this.letra56 = new System.Windows.Forms.Label();
+            this.letra57 = new System.Windows.Forms.Label();
+            this.letra58 = new System.Windows.Forms.Label();
+            this.letra59 = new System.Windows.Forms.Label();
+            this.letra60 = new System.Windows.Forms.Label();
+            this.letra61 = new System.Windows.Forms.Label();
+            this.letra62 = new System.Windows.Forms.Label();
+            this.letra63 = new System.Windows.Forms.Label();
+            this.letra64 = new System.Windows.Forms.Label();
+            this.letra65 = new System.Windows.Forms.Label();
+            this.letra66 = new System.Windows.Forms.Label();
+            this.letra67 = new System.Windows.Forms.Label();
+            this.letra68 = new System.Windows.Forms.Label();
+            this.letra69 = new System.Windows.Forms.Label();
+            this.letra70 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.ods_picture = new System.Windows.Forms.PictureBox();
             this.reloj_circular = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
-            this.label84 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
-            this.label86 = new System.Windows.Forms.Label();
+            this.letraHueco0 = new System.Windows.Forms.Label();
+            this.letraHueco1 = new System.Windows.Forms.Label();
+            this.letraHueco2 = new System.Windows.Forms.Label();
+            this.letraHueco3 = new System.Windows.Forms.Label();
+            this.letraHueco4 = new System.Windows.Forms.Label();
+            this.letraHueco5 = new System.Windows.Forms.Label();
+            this.letraHueco6 = new System.Windows.Forms.Label();
+            this.letraHueco7 = new System.Windows.Forms.Label();
+            this.letraHueco8 = new System.Windows.Forms.Label();
+            this.letraHueco9 = new System.Windows.Forms.Label();
+            this.letraHueco10 = new System.Windows.Forms.Label();
+            this.letraHueco11 = new System.Windows.Forms.Label();
+            this.letraHueco12 = new System.Windows.Forms.Label();
+            this.letraHueco13 = new System.Windows.Forms.Label();
+            this.letraHueco14 = new System.Windows.Forms.Label();
+            this.letraHueco15 = new System.Windows.Forms.Label();
+            this.letraHueco16 = new System.Windows.Forms.Label();
+            this.letraHueco17 = new System.Windows.Forms.Label();
+            this.letraHueco18 = new System.Windows.Forms.Label();
+            this.letraHueco19 = new System.Windows.Forms.Label();
+            this.letraHueco20 = new System.Windows.Forms.Label();
+            this.letraHueco21 = new System.Windows.Forms.Label();
+            this.letraHueco22 = new System.Windows.Forms.Label();
+            this.letraHueco23 = new System.Windows.Forms.Label();
+            this.letraHueco24 = new System.Windows.Forms.Label();
+            this.letraHueco25 = new System.Windows.Forms.Label();
+            this.letraHueco26 = new System.Windows.Forms.Label();
+            this.letraHueco27 = new System.Windows.Forms.Label();
+            this.letraHueco28 = new System.Windows.Forms.Label();
+            this.letraHueco29 = new System.Windows.Forms.Label();
+            this.letraHueco30 = new System.Windows.Forms.Label();
+            this.letraHueco31 = new System.Windows.Forms.Label();
+            this.letraHueco32 = new System.Windows.Forms.Label();
+            this.letraHueco33 = new System.Windows.Forms.Label();
+            this.letraHueco34 = new System.Windows.Forms.Label();
+            this.letraHueco35 = new System.Windows.Forms.Label();
+            this.letraHueco36 = new System.Windows.Forms.Label();
+            this.letraHueco37 = new System.Windows.Forms.Label();
+            this.letraHueco38 = new System.Windows.Forms.Label();
+            this.letraHueco39 = new System.Windows.Forms.Label();
+            this.letraHueco40 = new System.Windows.Forms.Label();
+            this.letraHueco41 = new System.Windows.Forms.Label();
+            this.letraHueco42 = new System.Windows.Forms.Label();
+            this.letraHueco43 = new System.Windows.Forms.Label();
+            this.letraHueco44 = new System.Windows.Forms.Label();
+            this.letraHueco45 = new System.Windows.Forms.Label();
+            this.letraHueco46 = new System.Windows.Forms.Label();
+            this.letraHueco47 = new System.Windows.Forms.Label();
+            this.letraHueco48 = new System.Windows.Forms.Label();
+            this.letraHueco49 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonAbandonar)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ods_picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reloj_circular)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
@@ -180,6 +219,19 @@
             this.pos0.TabIndex = 10;
             this.pos0.Text = "1";
             this.pos0.UseVisualStyleBackColor = false;
+            // 
+            // pos1
+            // 
+            this.pos1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(238)))), ((int)(((byte)(205)))));
+            this.pos1.Enabled = false;
+            this.pos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pos1.Location = new System.Drawing.Point(56, 0);
+            this.pos1.Margin = new System.Windows.Forms.Padding(0);
+            this.pos1.Name = "pos1";
+            this.pos1.Size = new System.Drawing.Size(56, 30);
+            this.pos1.TabIndex = 11;
+            this.pos1.Text = "2";
+            this.pos1.UseVisualStyleBackColor = false;
             // 
             // pos2
             // 
@@ -292,7 +344,7 @@
             this.enunciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enunciado.Location = new System.Drawing.Point(253, 147);
             this.enunciado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.enunciado.MaximumSize = new System.Drawing.Size(825, 0);
+            this.enunciado.MaximumSize = new System.Drawing.Size(500, 400);
             this.enunciado.Name = "enunciado";
             this.enunciado.Size = new System.Drawing.Size(104, 22);
             this.enunciado.TabIndex = 28;
@@ -415,877 +467,878 @@
             this.barra.TabIndex = 21;
             this.barra.Text = "/";
             // 
+            // botonAbandonar
+            // 
+            this.botonAbandonar.BackColor = System.Drawing.Color.Transparent;
+            this.botonAbandonar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonAbandonar.Enabled = false;
+            this.botonAbandonar.Image = global::QQSSApp.Properties.Resources.flecha;
+            this.botonAbandonar.Location = new System.Drawing.Point(0, 0);
+            this.botonAbandonar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.botonAbandonar.Name = "botonAbandonar";
+            this.botonAbandonar.Size = new System.Drawing.Size(71, 70);
+            this.botonAbandonar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.botonAbandonar.TabIndex = 5;
+            this.botonAbandonar.TabStop = false;
+            // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Controls.Add(this.label3);
-            this.flowLayoutPanel1.Controls.Add(this.label4);
-            this.flowLayoutPanel1.Controls.Add(this.label5);
-            this.flowLayoutPanel1.Controls.Add(this.label6);
-            this.flowLayoutPanel1.Controls.Add(this.label7);
-            this.flowLayoutPanel1.Controls.Add(this.label8);
-            this.flowLayoutPanel1.Controls.Add(this.label9);
-            this.flowLayoutPanel1.Controls.Add(this.label10);
-            this.flowLayoutPanel1.Controls.Add(this.label11);
-            this.flowLayoutPanel1.Controls.Add(this.label12);
-            this.flowLayoutPanel1.Controls.Add(this.label13);
-            this.flowLayoutPanel1.Controls.Add(this.label14);
-            this.flowLayoutPanel1.Controls.Add(this.label15);
-            this.flowLayoutPanel1.Controls.Add(this.label16);
-            this.flowLayoutPanel1.Controls.Add(this.label17);
-            this.flowLayoutPanel1.Controls.Add(this.label18);
-            this.flowLayoutPanel1.Controls.Add(this.label19);
-            this.flowLayoutPanel1.Controls.Add(this.label20);
-            this.flowLayoutPanel1.Controls.Add(this.label21);
-            this.flowLayoutPanel1.Controls.Add(this.label22);
-            this.flowLayoutPanel1.Controls.Add(this.label23);
-            this.flowLayoutPanel1.Controls.Add(this.label24);
-            this.flowLayoutPanel1.Controls.Add(this.label25);
-            this.flowLayoutPanel1.Controls.Add(this.label26);
-            this.flowLayoutPanel1.Controls.Add(this.label27);
-            this.flowLayoutPanel1.Controls.Add(this.label28);
-            this.flowLayoutPanel1.Controls.Add(this.label29);
-            this.flowLayoutPanel1.Controls.Add(this.label30);
-            this.flowLayoutPanel1.Controls.Add(this.label31);
-            this.flowLayoutPanel1.Controls.Add(this.label32);
-            this.flowLayoutPanel1.Controls.Add(this.label33);
-            this.flowLayoutPanel1.Controls.Add(this.label34);
-            this.flowLayoutPanel1.Controls.Add(this.label35);
-            this.flowLayoutPanel1.Controls.Add(this.label36);
-            this.flowLayoutPanel1.Controls.Add(this.label37);
-            this.flowLayoutPanel1.Controls.Add(this.label38);
-            this.flowLayoutPanel1.Controls.Add(this.label39);
-            this.flowLayoutPanel1.Controls.Add(this.label40);
-            this.flowLayoutPanel1.Controls.Add(this.label41);
-            this.flowLayoutPanel1.Controls.Add(this.label42);
-            this.flowLayoutPanel1.Controls.Add(this.label43);
-            this.flowLayoutPanel1.Controls.Add(this.label44);
-            this.flowLayoutPanel1.Controls.Add(this.label45);
-            this.flowLayoutPanel1.Controls.Add(this.label46);
-            this.flowLayoutPanel1.Controls.Add(this.label47);
-            this.flowLayoutPanel1.Controls.Add(this.label48);
-            this.flowLayoutPanel1.Controls.Add(this.label49);
-            this.flowLayoutPanel1.Controls.Add(this.label50);
-            this.flowLayoutPanel1.Controls.Add(this.label51);
-            this.flowLayoutPanel1.Controls.Add(this.label52);
-            this.flowLayoutPanel1.Controls.Add(this.label53);
-            this.flowLayoutPanel1.Controls.Add(this.label54);
-            this.flowLayoutPanel1.Controls.Add(this.label55);
-            this.flowLayoutPanel1.Controls.Add(this.label56);
-            this.flowLayoutPanel1.Controls.Add(this.label57);
-            this.flowLayoutPanel1.Controls.Add(this.label58);
-            this.flowLayoutPanel1.Controls.Add(this.label59);
-            this.flowLayoutPanel1.Controls.Add(this.label60);
-            this.flowLayoutPanel1.Controls.Add(this.label61);
-            this.flowLayoutPanel1.Controls.Add(this.label62);
-            this.flowLayoutPanel1.Controls.Add(this.label63);
-            this.flowLayoutPanel1.Controls.Add(this.label64);
-            this.flowLayoutPanel1.Controls.Add(this.label65);
-            this.flowLayoutPanel1.Controls.Add(this.label66);
-            this.flowLayoutPanel1.Controls.Add(this.label67);
-            this.flowLayoutPanel1.Controls.Add(this.label68);
-            this.flowLayoutPanel1.Controls.Add(this.label69);
-            this.flowLayoutPanel1.Controls.Add(this.label70);
-            this.flowLayoutPanel1.Controls.Add(this.label71);
+            this.flowLayoutPanel1.Controls.Add(this.letra0);
+            this.flowLayoutPanel1.Controls.Add(this.letra1);
+            this.flowLayoutPanel1.Controls.Add(this.letra2);
+            this.flowLayoutPanel1.Controls.Add(this.letra3);
+            this.flowLayoutPanel1.Controls.Add(this.letra4);
+            this.flowLayoutPanel1.Controls.Add(this.letra5);
+            this.flowLayoutPanel1.Controls.Add(this.letra6);
+            this.flowLayoutPanel1.Controls.Add(this.letra7);
+            this.flowLayoutPanel1.Controls.Add(this.letra8);
+            this.flowLayoutPanel1.Controls.Add(this.letra9);
+            this.flowLayoutPanel1.Controls.Add(this.letra10);
+            this.flowLayoutPanel1.Controls.Add(this.letra11);
+            this.flowLayoutPanel1.Controls.Add(this.letra12);
+            this.flowLayoutPanel1.Controls.Add(this.letra13);
+            this.flowLayoutPanel1.Controls.Add(this.letra14);
+            this.flowLayoutPanel1.Controls.Add(this.letra15);
+            this.flowLayoutPanel1.Controls.Add(this.letra16);
+            this.flowLayoutPanel1.Controls.Add(this.letra17);
+            this.flowLayoutPanel1.Controls.Add(this.letra18);
+            this.flowLayoutPanel1.Controls.Add(this.letra19);
+            this.flowLayoutPanel1.Controls.Add(this.letra20);
+            this.flowLayoutPanel1.Controls.Add(this.letra21);
+            this.flowLayoutPanel1.Controls.Add(this.letra22);
+            this.flowLayoutPanel1.Controls.Add(this.letra23);
+            this.flowLayoutPanel1.Controls.Add(this.letra24);
+            this.flowLayoutPanel1.Controls.Add(this.letra25);
+            this.flowLayoutPanel1.Controls.Add(this.letra26);
+            this.flowLayoutPanel1.Controls.Add(this.letra27);
+            this.flowLayoutPanel1.Controls.Add(this.letra28);
+            this.flowLayoutPanel1.Controls.Add(this.letra29);
+            this.flowLayoutPanel1.Controls.Add(this.letra30);
+            this.flowLayoutPanel1.Controls.Add(this.letra31);
+            this.flowLayoutPanel1.Controls.Add(this.letra32);
+            this.flowLayoutPanel1.Controls.Add(this.letra33);
+            this.flowLayoutPanel1.Controls.Add(this.letra34);
+            this.flowLayoutPanel1.Controls.Add(this.letra35);
+            this.flowLayoutPanel1.Controls.Add(this.letra36);
+            this.flowLayoutPanel1.Controls.Add(this.letra37);
+            this.flowLayoutPanel1.Controls.Add(this.letra38);
+            this.flowLayoutPanel1.Controls.Add(this.letra39);
+            this.flowLayoutPanel1.Controls.Add(this.letra40);
+            this.flowLayoutPanel1.Controls.Add(this.letra41);
+            this.flowLayoutPanel1.Controls.Add(this.letra42);
+            this.flowLayoutPanel1.Controls.Add(this.letra43);
+            this.flowLayoutPanel1.Controls.Add(this.letra44);
+            this.flowLayoutPanel1.Controls.Add(this.letra45);
+            this.flowLayoutPanel1.Controls.Add(this.letra46);
+            this.flowLayoutPanel1.Controls.Add(this.letra47);
+            this.flowLayoutPanel1.Controls.Add(this.letra48);
+            this.flowLayoutPanel1.Controls.Add(this.letra49);
+            this.flowLayoutPanel1.Controls.Add(this.letra50);
+            this.flowLayoutPanel1.Controls.Add(this.letra51);
+            this.flowLayoutPanel1.Controls.Add(this.letra52);
+            this.flowLayoutPanel1.Controls.Add(this.letra53);
+            this.flowLayoutPanel1.Controls.Add(this.letra54);
+            this.flowLayoutPanel1.Controls.Add(this.letra55);
+            this.flowLayoutPanel1.Controls.Add(this.letra56);
+            this.flowLayoutPanel1.Controls.Add(this.letra57);
+            this.flowLayoutPanel1.Controls.Add(this.letra58);
+            this.flowLayoutPanel1.Controls.Add(this.letra59);
+            this.flowLayoutPanel1.Controls.Add(this.letra60);
+            this.flowLayoutPanel1.Controls.Add(this.letra61);
+            this.flowLayoutPanel1.Controls.Add(this.letra62);
+            this.flowLayoutPanel1.Controls.Add(this.letra63);
+            this.flowLayoutPanel1.Controls.Add(this.letra64);
+            this.flowLayoutPanel1.Controls.Add(this.letra65);
+            this.flowLayoutPanel1.Controls.Add(this.letra66);
+            this.flowLayoutPanel1.Controls.Add(this.letra67);
+            this.flowLayoutPanel1.Controls.Add(this.letra68);
+            this.flowLayoutPanel1.Controls.Add(this.letra69);
+            this.flowLayoutPanel1.Controls.Add(this.letra70);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(78, 348);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(820, 85);
             this.flowLayoutPanel1.TabIndex = 31;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 24);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "A";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 24);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "A";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(48, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 24);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "A";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(72, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(24, 24);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "A";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(96, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 24);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "A";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(120, 0);
-            this.label6.Margin = new System.Windows.Forms.Padding(0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 24);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "A";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(144, 0);
-            this.label7.Margin = new System.Windows.Forms.Padding(0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(24, 24);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "A";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(168, 0);
-            this.label8.Margin = new System.Windows.Forms.Padding(0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(24, 24);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "A";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(192, 0);
-            this.label9.Margin = new System.Windows.Forms.Padding(0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 24);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "A";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(216, 0);
-            this.label10.Margin = new System.Windows.Forms.Padding(0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(24, 24);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "A";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(240, 0);
-            this.label11.Margin = new System.Windows.Forms.Padding(0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(24, 24);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "A";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(264, 0);
-            this.label12.Margin = new System.Windows.Forms.Padding(0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(24, 24);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "A";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(288, 0);
-            this.label13.Margin = new System.Windows.Forms.Padding(0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(24, 24);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "A";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(312, 0);
-            this.label14.Margin = new System.Windows.Forms.Padding(0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(24, 24);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "A";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(336, 0);
-            this.label15.Margin = new System.Windows.Forms.Padding(0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(24, 24);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "A";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(360, 0);
-            this.label16.Margin = new System.Windows.Forms.Padding(0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(24, 24);
-            this.label16.TabIndex = 17;
-            this.label16.Text = "A";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(384, 0);
-            this.label17.Margin = new System.Windows.Forms.Padding(0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(24, 24);
-            this.label17.TabIndex = 18;
-            this.label17.Text = "A";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(408, 0);
-            this.label18.Margin = new System.Windows.Forms.Padding(0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(24, 24);
-            this.label18.TabIndex = 19;
-            this.label18.Text = "A";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(432, 0);
-            this.label19.Margin = new System.Windows.Forms.Padding(0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(24, 24);
-            this.label19.TabIndex = 20;
-            this.label19.Text = "A";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(456, 0);
-            this.label20.Margin = new System.Windows.Forms.Padding(0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(24, 24);
-            this.label20.TabIndex = 21;
-            this.label20.Text = "A";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(480, 0);
-            this.label21.Margin = new System.Windows.Forms.Padding(0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(24, 24);
-            this.label21.TabIndex = 22;
-            this.label21.Text = "A";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(504, 0);
-            this.label22.Margin = new System.Windows.Forms.Padding(0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(24, 24);
-            this.label22.TabIndex = 23;
-            this.label22.Text = "A";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(528, 0);
-            this.label23.Margin = new System.Windows.Forms.Padding(0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(24, 24);
-            this.label23.TabIndex = 24;
-            this.label23.Text = "A";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(552, 0);
-            this.label24.Margin = new System.Windows.Forms.Padding(0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(24, 24);
-            this.label24.TabIndex = 25;
-            this.label24.Text = "A";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(576, 0);
-            this.label25.Margin = new System.Windows.Forms.Padding(0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(24, 24);
-            this.label25.TabIndex = 26;
-            this.label25.Text = "A";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(600, 0);
-            this.label26.Margin = new System.Windows.Forms.Padding(0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(24, 24);
-            this.label26.TabIndex = 27;
-            this.label26.Text = "A";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(624, 0);
-            this.label27.Margin = new System.Windows.Forms.Padding(0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(24, 24);
-            this.label27.TabIndex = 28;
-            this.label27.Text = "A";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(648, 0);
-            this.label28.Margin = new System.Windows.Forms.Padding(0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(24, 24);
-            this.label28.TabIndex = 29;
-            this.label28.Text = "A";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(672, 0);
-            this.label29.Margin = new System.Windows.Forms.Padding(0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(24, 24);
-            this.label29.TabIndex = 30;
-            this.label29.Text = "A";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(696, 0);
-            this.label30.Margin = new System.Windows.Forms.Padding(0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(24, 24);
-            this.label30.TabIndex = 31;
-            this.label30.Text = "A";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(720, 0);
-            this.label31.Margin = new System.Windows.Forms.Padding(0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(24, 24);
-            this.label31.TabIndex = 32;
-            this.label31.Text = "A";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(744, 0);
-            this.label32.Margin = new System.Windows.Forms.Padding(0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(24, 24);
-            this.label32.TabIndex = 33;
-            this.label32.Text = "A";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(768, 0);
-            this.label33.Margin = new System.Windows.Forms.Padding(0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(24, 24);
-            this.label33.TabIndex = 34;
-            this.label33.Text = "A";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(792, 0);
-            this.label34.Margin = new System.Windows.Forms.Padding(0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(24, 24);
-            this.label34.TabIndex = 35;
-            this.label34.Text = "A";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(0, 24);
-            this.label35.Margin = new System.Windows.Forms.Padding(0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(24, 24);
-            this.label35.TabIndex = 36;
-            this.label35.Text = "A";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(24, 24);
-            this.label36.Margin = new System.Windows.Forms.Padding(0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(24, 24);
-            this.label36.TabIndex = 37;
-            this.label36.Text = "A";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(48, 24);
-            this.label37.Margin = new System.Windows.Forms.Padding(0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(24, 24);
-            this.label37.TabIndex = 38;
-            this.label37.Text = "A";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(72, 24);
-            this.label38.Margin = new System.Windows.Forms.Padding(0);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(24, 24);
-            this.label38.TabIndex = 39;
-            this.label38.Text = "A";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(96, 24);
-            this.label39.Margin = new System.Windows.Forms.Padding(0);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(24, 24);
-            this.label39.TabIndex = 40;
-            this.label39.Text = "A";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(120, 24);
-            this.label40.Margin = new System.Windows.Forms.Padding(0);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(24, 24);
-            this.label40.TabIndex = 41;
-            this.label40.Text = "A";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(144, 24);
-            this.label41.Margin = new System.Windows.Forms.Padding(0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(24, 24);
-            this.label41.TabIndex = 42;
-            this.label41.Text = "A";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(168, 24);
-            this.label42.Margin = new System.Windows.Forms.Padding(0);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(24, 24);
-            this.label42.TabIndex = 43;
-            this.label42.Text = "A";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(192, 24);
-            this.label43.Margin = new System.Windows.Forms.Padding(0);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(24, 24);
-            this.label43.TabIndex = 44;
-            this.label43.Text = "A";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(216, 24);
-            this.label44.Margin = new System.Windows.Forms.Padding(0);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(24, 24);
-            this.label44.TabIndex = 45;
-            this.label44.Text = "A";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(240, 24);
-            this.label45.Margin = new System.Windows.Forms.Padding(0);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(24, 24);
-            this.label45.TabIndex = 46;
-            this.label45.Text = "A";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(264, 24);
-            this.label46.Margin = new System.Windows.Forms.Padding(0);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(24, 24);
-            this.label46.TabIndex = 47;
-            this.label46.Text = "A";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(288, 24);
-            this.label47.Margin = new System.Windows.Forms.Padding(0);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(24, 24);
-            this.label47.TabIndex = 48;
-            this.label47.Text = "A";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(312, 24);
-            this.label48.Margin = new System.Windows.Forms.Padding(0);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(24, 24);
-            this.label48.TabIndex = 49;
-            this.label48.Text = "A";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(336, 24);
-            this.label49.Margin = new System.Windows.Forms.Padding(0);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(24, 24);
-            this.label49.TabIndex = 50;
-            this.label49.Text = "A";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(360, 24);
-            this.label50.Margin = new System.Windows.Forms.Padding(0);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(24, 24);
-            this.label50.TabIndex = 51;
-            this.label50.Text = "A";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(384, 24);
-            this.label51.Margin = new System.Windows.Forms.Padding(0);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(24, 24);
-            this.label51.TabIndex = 52;
-            this.label51.Text = "A";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(408, 24);
-            this.label52.Margin = new System.Windows.Forms.Padding(0);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(24, 24);
-            this.label52.TabIndex = 53;
-            this.label52.Text = "A";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(432, 24);
-            this.label53.Margin = new System.Windows.Forms.Padding(0);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(24, 24);
-            this.label53.TabIndex = 54;
-            this.label53.Text = "A";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(456, 24);
-            this.label54.Margin = new System.Windows.Forms.Padding(0);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(24, 24);
-            this.label54.TabIndex = 55;
-            this.label54.Text = "A";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(480, 24);
-            this.label55.Margin = new System.Windows.Forms.Padding(0);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(24, 24);
-            this.label55.TabIndex = 56;
-            this.label55.Text = "A";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(504, 24);
-            this.label56.Margin = new System.Windows.Forms.Padding(0);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(24, 24);
-            this.label56.TabIndex = 57;
-            this.label56.Text = "A";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.Location = new System.Drawing.Point(528, 24);
-            this.label57.Margin = new System.Windows.Forms.Padding(0);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(24, 24);
-            this.label57.TabIndex = 58;
-            this.label57.Text = "A";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(552, 24);
-            this.label58.Margin = new System.Windows.Forms.Padding(0);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(24, 24);
-            this.label58.TabIndex = 59;
-            this.label58.Text = "A";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(576, 24);
-            this.label59.Margin = new System.Windows.Forms.Padding(0);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(24, 24);
-            this.label59.TabIndex = 60;
-            this.label59.Text = "A";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(600, 24);
-            this.label60.Margin = new System.Windows.Forms.Padding(0);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(24, 24);
-            this.label60.TabIndex = 61;
-            this.label60.Text = "A";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.Location = new System.Drawing.Point(624, 24);
-            this.label61.Margin = new System.Windows.Forms.Padding(0);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(24, 24);
-            this.label61.TabIndex = 62;
-            this.label61.Text = "A";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label62.Location = new System.Drawing.Point(648, 24);
-            this.label62.Margin = new System.Windows.Forms.Padding(0);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(24, 24);
-            this.label62.TabIndex = 63;
-            this.label62.Text = "A";
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(672, 24);
-            this.label63.Margin = new System.Windows.Forms.Padding(0);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(24, 24);
-            this.label63.TabIndex = 64;
-            this.label63.Text = "A";
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(696, 24);
-            this.label64.Margin = new System.Windows.Forms.Padding(0);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(24, 24);
-            this.label64.TabIndex = 65;
-            this.label64.Text = "A";
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(720, 24);
-            this.label65.Margin = new System.Windows.Forms.Padding(0);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(24, 24);
-            this.label65.TabIndex = 66;
-            this.label65.Text = "A";
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.Location = new System.Drawing.Point(744, 24);
-            this.label66.Margin = new System.Windows.Forms.Padding(0);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(24, 24);
-            this.label66.TabIndex = 67;
-            this.label66.Text = "A";
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.Location = new System.Drawing.Point(768, 24);
-            this.label67.Margin = new System.Windows.Forms.Padding(0);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(24, 24);
-            this.label67.TabIndex = 68;
-            this.label67.Text = "A";
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.Location = new System.Drawing.Point(792, 24);
-            this.label68.Margin = new System.Windows.Forms.Padding(0);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(24, 24);
-            this.label68.TabIndex = 69;
-            this.label68.Text = "A";
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.Location = new System.Drawing.Point(0, 48);
-            this.label69.Margin = new System.Windows.Forms.Padding(0);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(24, 24);
-            this.label69.TabIndex = 70;
-            this.label69.Text = "A";
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label70.Location = new System.Drawing.Point(24, 48);
-            this.label70.Margin = new System.Windows.Forms.Padding(0);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(24, 24);
-            this.label70.TabIndex = 71;
-            this.label70.Text = "A";
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label71.Location = new System.Drawing.Point(48, 48);
-            this.label71.Margin = new System.Windows.Forms.Padding(0);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(24, 24);
-            this.label71.TabIndex = 72;
-            this.label71.Text = "A";
-            // 
-            // pos1
-            // 
-            this.pos1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(238)))), ((int)(((byte)(205)))));
-            this.pos1.Enabled = false;
-            this.pos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pos1.Location = new System.Drawing.Point(56, 0);
-            this.pos1.Margin = new System.Windows.Forms.Padding(0);
-            this.pos1.Name = "pos1";
-            this.pos1.Size = new System.Drawing.Size(56, 30);
-            this.pos1.TabIndex = 11;
-            this.pos1.Text = "2";
-            this.pos1.UseVisualStyleBackColor = false;
+            // letra0
+            // 
+            this.letra0.AutoSize = true;
+            this.letra0.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra0.Location = new System.Drawing.Point(0, 0);
+            this.letra0.Margin = new System.Windows.Forms.Padding(0);
+            this.letra0.Name = "letra0";
+            this.letra0.Size = new System.Drawing.Size(24, 24);
+            this.letra0.TabIndex = 2;
+            this.letra0.Text = "A";
+            // 
+            // letra1
+            // 
+            this.letra1.AutoSize = true;
+            this.letra1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra1.Location = new System.Drawing.Point(24, 0);
+            this.letra1.Margin = new System.Windows.Forms.Padding(0);
+            this.letra1.Name = "letra1";
+            this.letra1.Size = new System.Drawing.Size(24, 24);
+            this.letra1.TabIndex = 3;
+            this.letra1.Text = "A";
+            // 
+            // letra2
+            // 
+            this.letra2.AutoSize = true;
+            this.letra2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra2.Location = new System.Drawing.Point(48, 0);
+            this.letra2.Margin = new System.Windows.Forms.Padding(0);
+            this.letra2.Name = "letra2";
+            this.letra2.Size = new System.Drawing.Size(24, 24);
+            this.letra2.TabIndex = 4;
+            this.letra2.Text = "A";
+            // 
+            // letra3
+            // 
+            this.letra3.AutoSize = true;
+            this.letra3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra3.Location = new System.Drawing.Point(72, 0);
+            this.letra3.Margin = new System.Windows.Forms.Padding(0);
+            this.letra3.Name = "letra3";
+            this.letra3.Size = new System.Drawing.Size(24, 24);
+            this.letra3.TabIndex = 5;
+            this.letra3.Text = "A";
+            // 
+            // letra4
+            // 
+            this.letra4.AutoSize = true;
+            this.letra4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra4.Location = new System.Drawing.Point(96, 0);
+            this.letra4.Margin = new System.Windows.Forms.Padding(0);
+            this.letra4.Name = "letra4";
+            this.letra4.Size = new System.Drawing.Size(24, 24);
+            this.letra4.TabIndex = 6;
+            this.letra4.Text = "A";
+            // 
+            // letra5
+            // 
+            this.letra5.AutoSize = true;
+            this.letra5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra5.Location = new System.Drawing.Point(120, 0);
+            this.letra5.Margin = new System.Windows.Forms.Padding(0);
+            this.letra5.Name = "letra5";
+            this.letra5.Size = new System.Drawing.Size(24, 24);
+            this.letra5.TabIndex = 7;
+            this.letra5.Text = "A";
+            // 
+            // letra6
+            // 
+            this.letra6.AutoSize = true;
+            this.letra6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra6.Location = new System.Drawing.Point(144, 0);
+            this.letra6.Margin = new System.Windows.Forms.Padding(0);
+            this.letra6.Name = "letra6";
+            this.letra6.Size = new System.Drawing.Size(24, 24);
+            this.letra6.TabIndex = 8;
+            this.letra6.Text = "A";
+            // 
+            // letra7
+            // 
+            this.letra7.AutoSize = true;
+            this.letra7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra7.Location = new System.Drawing.Point(168, 0);
+            this.letra7.Margin = new System.Windows.Forms.Padding(0);
+            this.letra7.Name = "letra7";
+            this.letra7.Size = new System.Drawing.Size(24, 24);
+            this.letra7.TabIndex = 9;
+            this.letra7.Text = "A";
+            // 
+            // letra8
+            // 
+            this.letra8.AutoSize = true;
+            this.letra8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra8.Location = new System.Drawing.Point(192, 0);
+            this.letra8.Margin = new System.Windows.Forms.Padding(0);
+            this.letra8.Name = "letra8";
+            this.letra8.Size = new System.Drawing.Size(24, 24);
+            this.letra8.TabIndex = 10;
+            this.letra8.Text = "A";
+            // 
+            // letra9
+            // 
+            this.letra9.AutoSize = true;
+            this.letra9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra9.Location = new System.Drawing.Point(216, 0);
+            this.letra9.Margin = new System.Windows.Forms.Padding(0);
+            this.letra9.Name = "letra9";
+            this.letra9.Size = new System.Drawing.Size(24, 24);
+            this.letra9.TabIndex = 11;
+            this.letra9.Text = "A";
+            // 
+            // letra10
+            // 
+            this.letra10.AutoSize = true;
+            this.letra10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra10.Location = new System.Drawing.Point(240, 0);
+            this.letra10.Margin = new System.Windows.Forms.Padding(0);
+            this.letra10.Name = "letra10";
+            this.letra10.Size = new System.Drawing.Size(24, 24);
+            this.letra10.TabIndex = 12;
+            this.letra10.Text = "A";
+            // 
+            // letra11
+            // 
+            this.letra11.AutoSize = true;
+            this.letra11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra11.Location = new System.Drawing.Point(264, 0);
+            this.letra11.Margin = new System.Windows.Forms.Padding(0);
+            this.letra11.Name = "letra11";
+            this.letra11.Size = new System.Drawing.Size(24, 24);
+            this.letra11.TabIndex = 13;
+            this.letra11.Text = "A";
+            // 
+            // letra12
+            // 
+            this.letra12.AutoSize = true;
+            this.letra12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra12.Location = new System.Drawing.Point(288, 0);
+            this.letra12.Margin = new System.Windows.Forms.Padding(0);
+            this.letra12.Name = "letra12";
+            this.letra12.Size = new System.Drawing.Size(24, 24);
+            this.letra12.TabIndex = 14;
+            this.letra12.Text = "A";
+            // 
+            // letra13
+            // 
+            this.letra13.AutoSize = true;
+            this.letra13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra13.Location = new System.Drawing.Point(312, 0);
+            this.letra13.Margin = new System.Windows.Forms.Padding(0);
+            this.letra13.Name = "letra13";
+            this.letra13.Size = new System.Drawing.Size(24, 24);
+            this.letra13.TabIndex = 15;
+            this.letra13.Text = "A";
+            // 
+            // letra14
+            // 
+            this.letra14.AutoSize = true;
+            this.letra14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra14.Location = new System.Drawing.Point(336, 0);
+            this.letra14.Margin = new System.Windows.Forms.Padding(0);
+            this.letra14.Name = "letra14";
+            this.letra14.Size = new System.Drawing.Size(24, 24);
+            this.letra14.TabIndex = 16;
+            this.letra14.Text = "A";
+            // 
+            // letra15
+            // 
+            this.letra15.AutoSize = true;
+            this.letra15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra15.Location = new System.Drawing.Point(360, 0);
+            this.letra15.Margin = new System.Windows.Forms.Padding(0);
+            this.letra15.Name = "letra15";
+            this.letra15.Size = new System.Drawing.Size(24, 24);
+            this.letra15.TabIndex = 17;
+            this.letra15.Text = "A";
+            // 
+            // letra16
+            // 
+            this.letra16.AutoSize = true;
+            this.letra16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra16.Location = new System.Drawing.Point(384, 0);
+            this.letra16.Margin = new System.Windows.Forms.Padding(0);
+            this.letra16.Name = "letra16";
+            this.letra16.Size = new System.Drawing.Size(24, 24);
+            this.letra16.TabIndex = 18;
+            this.letra16.Text = "A";
+            // 
+            // letra17
+            // 
+            this.letra17.AutoSize = true;
+            this.letra17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra17.Location = new System.Drawing.Point(408, 0);
+            this.letra17.Margin = new System.Windows.Forms.Padding(0);
+            this.letra17.Name = "letra17";
+            this.letra17.Size = new System.Drawing.Size(24, 24);
+            this.letra17.TabIndex = 19;
+            this.letra17.Text = "A";
+            // 
+            // letra18
+            // 
+            this.letra18.AutoSize = true;
+            this.letra18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra18.Location = new System.Drawing.Point(432, 0);
+            this.letra18.Margin = new System.Windows.Forms.Padding(0);
+            this.letra18.Name = "letra18";
+            this.letra18.Size = new System.Drawing.Size(24, 24);
+            this.letra18.TabIndex = 20;
+            this.letra18.Text = "A";
+            // 
+            // letra19
+            // 
+            this.letra19.AutoSize = true;
+            this.letra19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra19.Location = new System.Drawing.Point(456, 0);
+            this.letra19.Margin = new System.Windows.Forms.Padding(0);
+            this.letra19.Name = "letra19";
+            this.letra19.Size = new System.Drawing.Size(24, 24);
+            this.letra19.TabIndex = 21;
+            this.letra19.Text = "A";
+            // 
+            // letra20
+            // 
+            this.letra20.AutoSize = true;
+            this.letra20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra20.Location = new System.Drawing.Point(480, 0);
+            this.letra20.Margin = new System.Windows.Forms.Padding(0);
+            this.letra20.Name = "letra20";
+            this.letra20.Size = new System.Drawing.Size(24, 24);
+            this.letra20.TabIndex = 22;
+            this.letra20.Text = "A";
+            // 
+            // letra21
+            // 
+            this.letra21.AutoSize = true;
+            this.letra21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra21.Location = new System.Drawing.Point(504, 0);
+            this.letra21.Margin = new System.Windows.Forms.Padding(0);
+            this.letra21.Name = "letra21";
+            this.letra21.Size = new System.Drawing.Size(24, 24);
+            this.letra21.TabIndex = 23;
+            this.letra21.Text = "A";
+            // 
+            // letra22
+            // 
+            this.letra22.AutoSize = true;
+            this.letra22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra22.Location = new System.Drawing.Point(528, 0);
+            this.letra22.Margin = new System.Windows.Forms.Padding(0);
+            this.letra22.Name = "letra22";
+            this.letra22.Size = new System.Drawing.Size(24, 24);
+            this.letra22.TabIndex = 24;
+            this.letra22.Text = "A";
+            // 
+            // letra23
+            // 
+            this.letra23.AutoSize = true;
+            this.letra23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra23.Location = new System.Drawing.Point(552, 0);
+            this.letra23.Margin = new System.Windows.Forms.Padding(0);
+            this.letra23.Name = "letra23";
+            this.letra23.Size = new System.Drawing.Size(24, 24);
+            this.letra23.TabIndex = 25;
+            this.letra23.Text = "A";
+            // 
+            // letra24
+            // 
+            this.letra24.AutoSize = true;
+            this.letra24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra24.Location = new System.Drawing.Point(576, 0);
+            this.letra24.Margin = new System.Windows.Forms.Padding(0);
+            this.letra24.Name = "letra24";
+            this.letra24.Size = new System.Drawing.Size(24, 24);
+            this.letra24.TabIndex = 26;
+            this.letra24.Text = "A";
+            // 
+            // letra25
+            // 
+            this.letra25.AutoSize = true;
+            this.letra25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra25.Location = new System.Drawing.Point(600, 0);
+            this.letra25.Margin = new System.Windows.Forms.Padding(0);
+            this.letra25.Name = "letra25";
+            this.letra25.Size = new System.Drawing.Size(24, 24);
+            this.letra25.TabIndex = 27;
+            this.letra25.Text = "A";
+            // 
+            // letra26
+            // 
+            this.letra26.AutoSize = true;
+            this.letra26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra26.Location = new System.Drawing.Point(624, 0);
+            this.letra26.Margin = new System.Windows.Forms.Padding(0);
+            this.letra26.Name = "letra26";
+            this.letra26.Size = new System.Drawing.Size(24, 24);
+            this.letra26.TabIndex = 28;
+            this.letra26.Text = "A";
+            // 
+            // letra27
+            // 
+            this.letra27.AutoSize = true;
+            this.letra27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra27.Location = new System.Drawing.Point(648, 0);
+            this.letra27.Margin = new System.Windows.Forms.Padding(0);
+            this.letra27.Name = "letra27";
+            this.letra27.Size = new System.Drawing.Size(24, 24);
+            this.letra27.TabIndex = 29;
+            this.letra27.Text = "A";
+            // 
+            // letra28
+            // 
+            this.letra28.AutoSize = true;
+            this.letra28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra28.Location = new System.Drawing.Point(672, 0);
+            this.letra28.Margin = new System.Windows.Forms.Padding(0);
+            this.letra28.Name = "letra28";
+            this.letra28.Size = new System.Drawing.Size(24, 24);
+            this.letra28.TabIndex = 30;
+            this.letra28.Text = "A";
+            // 
+            // letra29
+            // 
+            this.letra29.AutoSize = true;
+            this.letra29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra29.Location = new System.Drawing.Point(696, 0);
+            this.letra29.Margin = new System.Windows.Forms.Padding(0);
+            this.letra29.Name = "letra29";
+            this.letra29.Size = new System.Drawing.Size(24, 24);
+            this.letra29.TabIndex = 31;
+            this.letra29.Text = "A";
+            // 
+            // letra30
+            // 
+            this.letra30.AutoSize = true;
+            this.letra30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra30.Location = new System.Drawing.Point(720, 0);
+            this.letra30.Margin = new System.Windows.Forms.Padding(0);
+            this.letra30.Name = "letra30";
+            this.letra30.Size = new System.Drawing.Size(24, 24);
+            this.letra30.TabIndex = 32;
+            this.letra30.Text = "A";
+            // 
+            // letra31
+            // 
+            this.letra31.AutoSize = true;
+            this.letra31.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra31.Location = new System.Drawing.Point(744, 0);
+            this.letra31.Margin = new System.Windows.Forms.Padding(0);
+            this.letra31.Name = "letra31";
+            this.letra31.Size = new System.Drawing.Size(24, 24);
+            this.letra31.TabIndex = 33;
+            this.letra31.Text = "A";
+            // 
+            // letra32
+            // 
+            this.letra32.AutoSize = true;
+            this.letra32.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra32.Location = new System.Drawing.Point(768, 0);
+            this.letra32.Margin = new System.Windows.Forms.Padding(0);
+            this.letra32.Name = "letra32";
+            this.letra32.Size = new System.Drawing.Size(24, 24);
+            this.letra32.TabIndex = 34;
+            this.letra32.Text = "A";
+            // 
+            // letra33
+            // 
+            this.letra33.AutoSize = true;
+            this.letra33.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra33.Location = new System.Drawing.Point(792, 0);
+            this.letra33.Margin = new System.Windows.Forms.Padding(0);
+            this.letra33.Name = "letra33";
+            this.letra33.Size = new System.Drawing.Size(24, 24);
+            this.letra33.TabIndex = 35;
+            this.letra33.Text = "A";
+            // 
+            // letra34
+            // 
+            this.letra34.AutoSize = true;
+            this.letra34.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra34.Location = new System.Drawing.Point(0, 24);
+            this.letra34.Margin = new System.Windows.Forms.Padding(0);
+            this.letra34.Name = "letra34";
+            this.letra34.Size = new System.Drawing.Size(24, 24);
+            this.letra34.TabIndex = 36;
+            this.letra34.Text = "A";
+            // 
+            // letra35
+            // 
+            this.letra35.AutoSize = true;
+            this.letra35.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra35.Location = new System.Drawing.Point(24, 24);
+            this.letra35.Margin = new System.Windows.Forms.Padding(0);
+            this.letra35.Name = "letra35";
+            this.letra35.Size = new System.Drawing.Size(24, 24);
+            this.letra35.TabIndex = 37;
+            this.letra35.Text = "A";
+            // 
+            // letra36
+            // 
+            this.letra36.AutoSize = true;
+            this.letra36.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra36.Location = new System.Drawing.Point(48, 24);
+            this.letra36.Margin = new System.Windows.Forms.Padding(0);
+            this.letra36.Name = "letra36";
+            this.letra36.Size = new System.Drawing.Size(24, 24);
+            this.letra36.TabIndex = 38;
+            this.letra36.Text = "A";
+            // 
+            // letra37
+            // 
+            this.letra37.AutoSize = true;
+            this.letra37.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra37.Location = new System.Drawing.Point(72, 24);
+            this.letra37.Margin = new System.Windows.Forms.Padding(0);
+            this.letra37.Name = "letra37";
+            this.letra37.Size = new System.Drawing.Size(24, 24);
+            this.letra37.TabIndex = 39;
+            this.letra37.Text = "A";
+            // 
+            // letra38
+            // 
+            this.letra38.AutoSize = true;
+            this.letra38.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra38.Location = new System.Drawing.Point(96, 24);
+            this.letra38.Margin = new System.Windows.Forms.Padding(0);
+            this.letra38.Name = "letra38";
+            this.letra38.Size = new System.Drawing.Size(24, 24);
+            this.letra38.TabIndex = 40;
+            this.letra38.Text = "A";
+            // 
+            // letra39
+            // 
+            this.letra39.AutoSize = true;
+            this.letra39.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra39.Location = new System.Drawing.Point(120, 24);
+            this.letra39.Margin = new System.Windows.Forms.Padding(0);
+            this.letra39.Name = "letra39";
+            this.letra39.Size = new System.Drawing.Size(24, 24);
+            this.letra39.TabIndex = 41;
+            this.letra39.Text = "A";
+            // 
+            // letra40
+            // 
+            this.letra40.AutoSize = true;
+            this.letra40.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra40.Location = new System.Drawing.Point(144, 24);
+            this.letra40.Margin = new System.Windows.Forms.Padding(0);
+            this.letra40.Name = "letra40";
+            this.letra40.Size = new System.Drawing.Size(24, 24);
+            this.letra40.TabIndex = 42;
+            this.letra40.Text = "A";
+            // 
+            // letra41
+            // 
+            this.letra41.AutoSize = true;
+            this.letra41.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra41.Location = new System.Drawing.Point(168, 24);
+            this.letra41.Margin = new System.Windows.Forms.Padding(0);
+            this.letra41.Name = "letra41";
+            this.letra41.Size = new System.Drawing.Size(24, 24);
+            this.letra41.TabIndex = 43;
+            this.letra41.Text = "A";
+            // 
+            // letra42
+            // 
+            this.letra42.AutoSize = true;
+            this.letra42.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra42.Location = new System.Drawing.Point(192, 24);
+            this.letra42.Margin = new System.Windows.Forms.Padding(0);
+            this.letra42.Name = "letra42";
+            this.letra42.Size = new System.Drawing.Size(24, 24);
+            this.letra42.TabIndex = 44;
+            this.letra42.Text = "A";
+            // 
+            // letra43
+            // 
+            this.letra43.AutoSize = true;
+            this.letra43.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra43.Location = new System.Drawing.Point(216, 24);
+            this.letra43.Margin = new System.Windows.Forms.Padding(0);
+            this.letra43.Name = "letra43";
+            this.letra43.Size = new System.Drawing.Size(24, 24);
+            this.letra43.TabIndex = 45;
+            this.letra43.Text = "A";
+            // 
+            // letra44
+            // 
+            this.letra44.AutoSize = true;
+            this.letra44.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra44.Location = new System.Drawing.Point(240, 24);
+            this.letra44.Margin = new System.Windows.Forms.Padding(0);
+            this.letra44.Name = "letra44";
+            this.letra44.Size = new System.Drawing.Size(24, 24);
+            this.letra44.TabIndex = 46;
+            this.letra44.Text = "A";
+            // 
+            // letra45
+            // 
+            this.letra45.AutoSize = true;
+            this.letra45.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra45.Location = new System.Drawing.Point(264, 24);
+            this.letra45.Margin = new System.Windows.Forms.Padding(0);
+            this.letra45.Name = "letra45";
+            this.letra45.Size = new System.Drawing.Size(24, 24);
+            this.letra45.TabIndex = 47;
+            this.letra45.Text = "A";
+            // 
+            // letra46
+            // 
+            this.letra46.AutoSize = true;
+            this.letra46.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra46.Location = new System.Drawing.Point(288, 24);
+            this.letra46.Margin = new System.Windows.Forms.Padding(0);
+            this.letra46.Name = "letra46";
+            this.letra46.Size = new System.Drawing.Size(24, 24);
+            this.letra46.TabIndex = 48;
+            this.letra46.Text = "A";
+            // 
+            // letra47
+            // 
+            this.letra47.AutoSize = true;
+            this.letra47.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra47.Location = new System.Drawing.Point(312, 24);
+            this.letra47.Margin = new System.Windows.Forms.Padding(0);
+            this.letra47.Name = "letra47";
+            this.letra47.Size = new System.Drawing.Size(24, 24);
+            this.letra47.TabIndex = 49;
+            this.letra47.Text = "A";
+            // 
+            // letra48
+            // 
+            this.letra48.AutoSize = true;
+            this.letra48.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra48.Location = new System.Drawing.Point(336, 24);
+            this.letra48.Margin = new System.Windows.Forms.Padding(0);
+            this.letra48.Name = "letra48";
+            this.letra48.Size = new System.Drawing.Size(24, 24);
+            this.letra48.TabIndex = 50;
+            this.letra48.Text = "A";
+            // 
+            // letra49
+            // 
+            this.letra49.AutoSize = true;
+            this.letra49.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra49.Location = new System.Drawing.Point(360, 24);
+            this.letra49.Margin = new System.Windows.Forms.Padding(0);
+            this.letra49.Name = "letra49";
+            this.letra49.Size = new System.Drawing.Size(24, 24);
+            this.letra49.TabIndex = 51;
+            this.letra49.Text = "A";
+            // 
+            // letra50
+            // 
+            this.letra50.AutoSize = true;
+            this.letra50.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra50.Location = new System.Drawing.Point(384, 24);
+            this.letra50.Margin = new System.Windows.Forms.Padding(0);
+            this.letra50.Name = "letra50";
+            this.letra50.Size = new System.Drawing.Size(24, 24);
+            this.letra50.TabIndex = 52;
+            this.letra50.Text = "A";
+            // 
+            // letra51
+            // 
+            this.letra51.AutoSize = true;
+            this.letra51.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra51.Location = new System.Drawing.Point(408, 24);
+            this.letra51.Margin = new System.Windows.Forms.Padding(0);
+            this.letra51.Name = "letra51";
+            this.letra51.Size = new System.Drawing.Size(24, 24);
+            this.letra51.TabIndex = 53;
+            this.letra51.Text = "A";
+            // 
+            // letra52
+            // 
+            this.letra52.AutoSize = true;
+            this.letra52.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra52.Location = new System.Drawing.Point(432, 24);
+            this.letra52.Margin = new System.Windows.Forms.Padding(0);
+            this.letra52.Name = "letra52";
+            this.letra52.Size = new System.Drawing.Size(24, 24);
+            this.letra52.TabIndex = 54;
+            this.letra52.Text = "A";
+            // 
+            // letra53
+            // 
+            this.letra53.AutoSize = true;
+            this.letra53.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra53.Location = new System.Drawing.Point(456, 24);
+            this.letra53.Margin = new System.Windows.Forms.Padding(0);
+            this.letra53.Name = "letra53";
+            this.letra53.Size = new System.Drawing.Size(24, 24);
+            this.letra53.TabIndex = 55;
+            this.letra53.Text = "A";
+            // 
+            // letra54
+            // 
+            this.letra54.AutoSize = true;
+            this.letra54.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra54.Location = new System.Drawing.Point(480, 24);
+            this.letra54.Margin = new System.Windows.Forms.Padding(0);
+            this.letra54.Name = "letra54";
+            this.letra54.Size = new System.Drawing.Size(24, 24);
+            this.letra54.TabIndex = 56;
+            this.letra54.Text = "A";
+            // 
+            // letra55
+            // 
+            this.letra55.AutoSize = true;
+            this.letra55.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra55.Location = new System.Drawing.Point(504, 24);
+            this.letra55.Margin = new System.Windows.Forms.Padding(0);
+            this.letra55.Name = "letra55";
+            this.letra55.Size = new System.Drawing.Size(24, 24);
+            this.letra55.TabIndex = 57;
+            this.letra55.Text = "A";
+            // 
+            // letra56
+            // 
+            this.letra56.AutoSize = true;
+            this.letra56.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra56.Location = new System.Drawing.Point(528, 24);
+            this.letra56.Margin = new System.Windows.Forms.Padding(0);
+            this.letra56.Name = "letra56";
+            this.letra56.Size = new System.Drawing.Size(24, 24);
+            this.letra56.TabIndex = 58;
+            this.letra56.Text = "A";
+            // 
+            // letra57
+            // 
+            this.letra57.AutoSize = true;
+            this.letra57.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra57.Location = new System.Drawing.Point(552, 24);
+            this.letra57.Margin = new System.Windows.Forms.Padding(0);
+            this.letra57.Name = "letra57";
+            this.letra57.Size = new System.Drawing.Size(24, 24);
+            this.letra57.TabIndex = 59;
+            this.letra57.Text = "A";
+            // 
+            // letra58
+            // 
+            this.letra58.AutoSize = true;
+            this.letra58.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra58.Location = new System.Drawing.Point(576, 24);
+            this.letra58.Margin = new System.Windows.Forms.Padding(0);
+            this.letra58.Name = "letra58";
+            this.letra58.Size = new System.Drawing.Size(24, 24);
+            this.letra58.TabIndex = 60;
+            this.letra58.Text = "A";
+            // 
+            // letra59
+            // 
+            this.letra59.AutoSize = true;
+            this.letra59.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra59.Location = new System.Drawing.Point(600, 24);
+            this.letra59.Margin = new System.Windows.Forms.Padding(0);
+            this.letra59.Name = "letra59";
+            this.letra59.Size = new System.Drawing.Size(24, 24);
+            this.letra59.TabIndex = 61;
+            this.letra59.Text = "A";
+            // 
+            // letra60
+            // 
+            this.letra60.AutoSize = true;
+            this.letra60.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra60.Location = new System.Drawing.Point(624, 24);
+            this.letra60.Margin = new System.Windows.Forms.Padding(0);
+            this.letra60.Name = "letra60";
+            this.letra60.Size = new System.Drawing.Size(24, 24);
+            this.letra60.TabIndex = 62;
+            this.letra60.Text = "A";
+            // 
+            // letra61
+            // 
+            this.letra61.AutoSize = true;
+            this.letra61.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra61.Location = new System.Drawing.Point(648, 24);
+            this.letra61.Margin = new System.Windows.Forms.Padding(0);
+            this.letra61.Name = "letra61";
+            this.letra61.Size = new System.Drawing.Size(24, 24);
+            this.letra61.TabIndex = 63;
+            this.letra61.Text = "A";
+            // 
+            // letra62
+            // 
+            this.letra62.AutoSize = true;
+            this.letra62.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra62.Location = new System.Drawing.Point(672, 24);
+            this.letra62.Margin = new System.Windows.Forms.Padding(0);
+            this.letra62.Name = "letra62";
+            this.letra62.Size = new System.Drawing.Size(24, 24);
+            this.letra62.TabIndex = 64;
+            this.letra62.Text = "A";
+            // 
+            // letra63
+            // 
+            this.letra63.AutoSize = true;
+            this.letra63.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra63.Location = new System.Drawing.Point(696, 24);
+            this.letra63.Margin = new System.Windows.Forms.Padding(0);
+            this.letra63.Name = "letra63";
+            this.letra63.Size = new System.Drawing.Size(24, 24);
+            this.letra63.TabIndex = 65;
+            this.letra63.Text = "A";
+            // 
+            // letra64
+            // 
+            this.letra64.AutoSize = true;
+            this.letra64.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra64.Location = new System.Drawing.Point(720, 24);
+            this.letra64.Margin = new System.Windows.Forms.Padding(0);
+            this.letra64.Name = "letra64";
+            this.letra64.Size = new System.Drawing.Size(24, 24);
+            this.letra64.TabIndex = 66;
+            this.letra64.Text = "A";
+            // 
+            // letra65
+            // 
+            this.letra65.AutoSize = true;
+            this.letra65.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra65.Location = new System.Drawing.Point(744, 24);
+            this.letra65.Margin = new System.Windows.Forms.Padding(0);
+            this.letra65.Name = "letra65";
+            this.letra65.Size = new System.Drawing.Size(24, 24);
+            this.letra65.TabIndex = 67;
+            this.letra65.Text = "A";
+            // 
+            // letra66
+            // 
+            this.letra66.AutoSize = true;
+            this.letra66.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra66.Location = new System.Drawing.Point(768, 24);
+            this.letra66.Margin = new System.Windows.Forms.Padding(0);
+            this.letra66.Name = "letra66";
+            this.letra66.Size = new System.Drawing.Size(24, 24);
+            this.letra66.TabIndex = 68;
+            this.letra66.Text = "A";
+            // 
+            // letra67
+            // 
+            this.letra67.AutoSize = true;
+            this.letra67.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra67.Location = new System.Drawing.Point(792, 24);
+            this.letra67.Margin = new System.Windows.Forms.Padding(0);
+            this.letra67.Name = "letra67";
+            this.letra67.Size = new System.Drawing.Size(24, 24);
+            this.letra67.TabIndex = 69;
+            this.letra67.Text = "A";
+            // 
+            // letra68
+            // 
+            this.letra68.AutoSize = true;
+            this.letra68.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra68.Location = new System.Drawing.Point(0, 48);
+            this.letra68.Margin = new System.Windows.Forms.Padding(0);
+            this.letra68.Name = "letra68";
+            this.letra68.Size = new System.Drawing.Size(24, 24);
+            this.letra68.TabIndex = 70;
+            this.letra68.Text = "A";
+            // 
+            // letra69
+            // 
+            this.letra69.AutoSize = true;
+            this.letra69.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra69.Location = new System.Drawing.Point(24, 48);
+            this.letra69.Margin = new System.Windows.Forms.Padding(0);
+            this.letra69.Name = "letra69";
+            this.letra69.Size = new System.Drawing.Size(24, 24);
+            this.letra69.TabIndex = 71;
+            this.letra69.Text = "A";
+            // 
+            // letra70
+            // 
+            this.letra70.AutoSize = true;
+            this.letra70.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra70.Location = new System.Drawing.Point(48, 48);
+            this.letra70.Margin = new System.Windows.Forms.Padding(0);
+            this.letra70.Name = "letra70";
+            this.letra70.Size = new System.Drawing.Size(24, 24);
+            this.letra70.TabIndex = 72;
+            this.letra70.Text = "A";
             // 
             // button1
             // 
@@ -1302,20 +1355,6 @@
             this.button1.TabIndex = 20;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // botonAbandonar
-            // 
-            this.botonAbandonar.BackColor = System.Drawing.Color.Transparent;
-            this.botonAbandonar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botonAbandonar.Enabled = false;
-            this.botonAbandonar.Image = global::QQSSApp.Properties.Resources.flecha;
-            this.botonAbandonar.Location = new System.Drawing.Point(0, 0);
-            this.botonAbandonar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.botonAbandonar.Name = "botonAbandonar";
-            this.botonAbandonar.Size = new System.Drawing.Size(71, 70);
-            this.botonAbandonar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.botonAbandonar.TabIndex = 5;
-            this.botonAbandonar.TabStop = false;
-            // 
             // ods_picture
             // 
             this.ods_picture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1324,10 +1363,10 @@
             this.ods_picture.BackColor = System.Drawing.Color.Transparent;
             this.ods_picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ods_picture.Image = global::QQSSApp.Properties.Resources.ODS_0;
-            this.ods_picture.Location = new System.Drawing.Point(84, 184);
+            this.ods_picture.Location = new System.Drawing.Point(94, 194);
             this.ods_picture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ods_picture.Name = "ods_picture";
-            this.ods_picture.Size = new System.Drawing.Size(89, 87);
+            this.ods_picture.Size = new System.Drawing.Size(66, 65);
             this.ods_picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ods_picture.TabIndex = 30;
             this.ods_picture.TabStop = false;
@@ -1351,191 +1390,619 @@
             // 
             this.flowLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel3.Controls.Add(this.label72);
-            this.flowLayoutPanel3.Controls.Add(this.label73);
-            this.flowLayoutPanel3.Controls.Add(this.label74);
-            this.flowLayoutPanel3.Controls.Add(this.label75);
-            this.flowLayoutPanel3.Controls.Add(this.label76);
-            this.flowLayoutPanel3.Controls.Add(this.label77);
-            this.flowLayoutPanel3.Controls.Add(this.label78);
-            this.flowLayoutPanel3.Controls.Add(this.label79);
-            this.flowLayoutPanel3.Controls.Add(this.label80);
-            this.flowLayoutPanel3.Controls.Add(this.label81);
-            this.flowLayoutPanel3.Controls.Add(this.label82);
-            this.flowLayoutPanel3.Controls.Add(this.label83);
-            this.flowLayoutPanel3.Controls.Add(this.label84);
-            this.flowLayoutPanel3.Controls.Add(this.label85);
-            this.flowLayoutPanel3.Controls.Add(this.label86);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco0);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco1);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco2);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco3);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco4);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco5);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco6);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco7);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco8);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco9);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco10);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco11);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco12);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco13);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco14);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco15);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco16);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco17);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco18);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco19);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco20);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco21);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco22);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco23);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco24);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco25);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco26);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco27);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco28);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco29);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco30);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco31);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco32);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco33);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco34);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco35);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco36);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco37);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco38);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco39);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco40);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco41);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco42);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco43);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco44);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco45);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco46);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco47);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco48);
+            this.flowLayoutPanel3.Controls.Add(this.letraHueco49);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(178, 485);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(590, 26);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(607, 52);
             this.flowLayoutPanel3.TabIndex = 73;
             // 
-            // label72
+            // letraHueco0
             // 
-            this.label72.AutoSize = true;
-            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label72.Location = new System.Drawing.Point(0, 0);
-            this.label72.Margin = new System.Windows.Forms.Padding(0);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(24, 24);
-            this.label72.TabIndex = 43;
-            this.label72.Text = "A";
+            this.letraHueco0.AutoSize = true;
+            this.letraHueco0.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco0.Location = new System.Drawing.Point(0, 0);
+            this.letraHueco0.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco0.Name = "letraHueco0";
+            this.letraHueco0.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco0.TabIndex = 43;
+            this.letraHueco0.Text = "A";
             // 
-            // label73
+            // letraHueco1
             // 
-            this.label73.AutoSize = true;
-            this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label73.Location = new System.Drawing.Point(24, 0);
-            this.label73.Margin = new System.Windows.Forms.Padding(0);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(24, 24);
-            this.label73.TabIndex = 44;
-            this.label73.Text = "A";
+            this.letraHueco1.AutoSize = true;
+            this.letraHueco1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco1.Location = new System.Drawing.Point(24, 0);
+            this.letraHueco1.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco1.Name = "letraHueco1";
+            this.letraHueco1.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco1.TabIndex = 44;
+            this.letraHueco1.Text = "A";
             // 
-            // label74
+            // letraHueco2
             // 
-            this.label74.AutoSize = true;
-            this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label74.Location = new System.Drawing.Point(48, 0);
-            this.label74.Margin = new System.Windows.Forms.Padding(0);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(24, 24);
-            this.label74.TabIndex = 45;
-            this.label74.Text = "A";
+            this.letraHueco2.AutoSize = true;
+            this.letraHueco2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco2.Location = new System.Drawing.Point(48, 0);
+            this.letraHueco2.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco2.Name = "letraHueco2";
+            this.letraHueco2.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco2.TabIndex = 45;
+            this.letraHueco2.Text = "A";
             // 
-            // label75
+            // letraHueco3
             // 
-            this.label75.AutoSize = true;
-            this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label75.Location = new System.Drawing.Point(72, 0);
-            this.label75.Margin = new System.Windows.Forms.Padding(0);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(24, 24);
-            this.label75.TabIndex = 46;
-            this.label75.Text = "A";
+            this.letraHueco3.AutoSize = true;
+            this.letraHueco3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco3.Location = new System.Drawing.Point(72, 0);
+            this.letraHueco3.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco3.Name = "letraHueco3";
+            this.letraHueco3.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco3.TabIndex = 46;
+            this.letraHueco3.Text = "A";
             // 
-            // label76
+            // letraHueco4
             // 
-            this.label76.AutoSize = true;
-            this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label76.Location = new System.Drawing.Point(96, 0);
-            this.label76.Margin = new System.Windows.Forms.Padding(0);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(24, 24);
-            this.label76.TabIndex = 47;
-            this.label76.Text = "A";
+            this.letraHueco4.AutoSize = true;
+            this.letraHueco4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco4.Location = new System.Drawing.Point(96, 0);
+            this.letraHueco4.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco4.Name = "letraHueco4";
+            this.letraHueco4.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco4.TabIndex = 47;
+            this.letraHueco4.Text = "A";
             // 
-            // label77
+            // letraHueco5
             // 
-            this.label77.AutoSize = true;
-            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label77.Location = new System.Drawing.Point(120, 0);
-            this.label77.Margin = new System.Windows.Forms.Padding(0);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(24, 24);
-            this.label77.TabIndex = 48;
-            this.label77.Text = "A";
+            this.letraHueco5.AutoSize = true;
+            this.letraHueco5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco5.Location = new System.Drawing.Point(120, 0);
+            this.letraHueco5.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco5.Name = "letraHueco5";
+            this.letraHueco5.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco5.TabIndex = 48;
+            this.letraHueco5.Text = "A";
             // 
-            // label78
+            // letraHueco6
             // 
-            this.label78.AutoSize = true;
-            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.Location = new System.Drawing.Point(144, 0);
-            this.label78.Margin = new System.Windows.Forms.Padding(0);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(24, 24);
-            this.label78.TabIndex = 49;
-            this.label78.Text = "A";
+            this.letraHueco6.AutoSize = true;
+            this.letraHueco6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco6.Location = new System.Drawing.Point(144, 0);
+            this.letraHueco6.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco6.Name = "letraHueco6";
+            this.letraHueco6.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco6.TabIndex = 49;
+            this.letraHueco6.Text = "A";
             // 
-            // label79
+            // letraHueco7
             // 
-            this.label79.AutoSize = true;
-            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label79.Location = new System.Drawing.Point(168, 0);
-            this.label79.Margin = new System.Windows.Forms.Padding(0);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(24, 24);
-            this.label79.TabIndex = 50;
-            this.label79.Text = "A";
+            this.letraHueco7.AutoSize = true;
+            this.letraHueco7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco7.Location = new System.Drawing.Point(168, 0);
+            this.letraHueco7.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco7.Name = "letraHueco7";
+            this.letraHueco7.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco7.TabIndex = 50;
+            this.letraHueco7.Text = "A";
             // 
-            // label80
+            // letraHueco8
             // 
-            this.label80.AutoSize = true;
-            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label80.Location = new System.Drawing.Point(192, 0);
-            this.label80.Margin = new System.Windows.Forms.Padding(0);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(24, 24);
-            this.label80.TabIndex = 51;
-            this.label80.Text = "A";
+            this.letraHueco8.AutoSize = true;
+            this.letraHueco8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco8.Location = new System.Drawing.Point(192, 0);
+            this.letraHueco8.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco8.Name = "letraHueco8";
+            this.letraHueco8.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco8.TabIndex = 51;
+            this.letraHueco8.Text = "A";
             // 
-            // label81
+            // letraHueco9
             // 
-            this.label81.AutoSize = true;
-            this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label81.Location = new System.Drawing.Point(216, 0);
-            this.label81.Margin = new System.Windows.Forms.Padding(0);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(24, 24);
-            this.label81.TabIndex = 52;
-            this.label81.Text = "A";
+            this.letraHueco9.AutoSize = true;
+            this.letraHueco9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco9.Location = new System.Drawing.Point(216, 0);
+            this.letraHueco9.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco9.Name = "letraHueco9";
+            this.letraHueco9.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco9.TabIndex = 52;
+            this.letraHueco9.Text = "A";
             // 
-            // label82
+            // letraHueco10
             // 
-            this.label82.AutoSize = true;
-            this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label82.Location = new System.Drawing.Point(240, 0);
-            this.label82.Margin = new System.Windows.Forms.Padding(0);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(24, 24);
-            this.label82.TabIndex = 53;
-            this.label82.Text = "A";
+            this.letraHueco10.AutoSize = true;
+            this.letraHueco10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco10.Location = new System.Drawing.Point(240, 0);
+            this.letraHueco10.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco10.Name = "letraHueco10";
+            this.letraHueco10.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco10.TabIndex = 53;
+            this.letraHueco10.Text = "A";
             // 
-            // label83
+            // letraHueco11
             // 
-            this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label83.Location = new System.Drawing.Point(264, 0);
-            this.label83.Margin = new System.Windows.Forms.Padding(0);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(24, 24);
-            this.label83.TabIndex = 54;
-            this.label83.Text = "A";
+            this.letraHueco11.AutoSize = true;
+            this.letraHueco11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco11.Location = new System.Drawing.Point(264, 0);
+            this.letraHueco11.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco11.Name = "letraHueco11";
+            this.letraHueco11.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco11.TabIndex = 54;
+            this.letraHueco11.Text = "A";
             // 
-            // label84
+            // letraHueco12
             // 
-            this.label84.AutoSize = true;
-            this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label84.Location = new System.Drawing.Point(288, 0);
-            this.label84.Margin = new System.Windows.Forms.Padding(0);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(24, 24);
-            this.label84.TabIndex = 55;
-            this.label84.Text = "A";
+            this.letraHueco12.AutoSize = true;
+            this.letraHueco12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco12.Location = new System.Drawing.Point(288, 0);
+            this.letraHueco12.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco12.Name = "letraHueco12";
+            this.letraHueco12.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco12.TabIndex = 55;
+            this.letraHueco12.Text = "A";
             // 
-            // label85
+            // letraHueco13
             // 
-            this.label85.AutoSize = true;
-            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label85.Location = new System.Drawing.Point(312, 0);
-            this.label85.Margin = new System.Windows.Forms.Padding(0);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(24, 24);
-            this.label85.TabIndex = 56;
-            this.label85.Text = "A";
+            this.letraHueco13.AutoSize = true;
+            this.letraHueco13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco13.Location = new System.Drawing.Point(312, 0);
+            this.letraHueco13.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco13.Name = "letraHueco13";
+            this.letraHueco13.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco13.TabIndex = 56;
+            this.letraHueco13.Text = "A";
             // 
-            // label86
+            // letraHueco14
             // 
-            this.label86.AutoSize = true;
-            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label86.Location = new System.Drawing.Point(336, 0);
-            this.label86.Margin = new System.Windows.Forms.Padding(0);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(24, 24);
-            this.label86.TabIndex = 57;
-            this.label86.Text = "A";
+            this.letraHueco14.AutoSize = true;
+            this.letraHueco14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco14.Location = new System.Drawing.Point(336, 0);
+            this.letraHueco14.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco14.Name = "letraHueco14";
+            this.letraHueco14.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco14.TabIndex = 57;
+            this.letraHueco14.Text = "A";
+            // 
+            // letraHueco15
+            // 
+            this.letraHueco15.AutoSize = true;
+            this.letraHueco15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco15.Location = new System.Drawing.Point(360, 0);
+            this.letraHueco15.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco15.Name = "letraHueco15";
+            this.letraHueco15.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco15.TabIndex = 58;
+            this.letraHueco15.Text = "A";
+            // 
+            // letraHueco16
+            // 
+            this.letraHueco16.AutoSize = true;
+            this.letraHueco16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco16.Location = new System.Drawing.Point(384, 0);
+            this.letraHueco16.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco16.Name = "letraHueco16";
+            this.letraHueco16.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco16.TabIndex = 59;
+            this.letraHueco16.Text = "A";
+            // 
+            // letraHueco17
+            // 
+            this.letraHueco17.AutoSize = true;
+            this.letraHueco17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco17.Location = new System.Drawing.Point(408, 0);
+            this.letraHueco17.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco17.Name = "letraHueco17";
+            this.letraHueco17.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco17.TabIndex = 60;
+            this.letraHueco17.Text = "A";
+            // 
+            // letraHueco18
+            // 
+            this.letraHueco18.AutoSize = true;
+            this.letraHueco18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco18.Location = new System.Drawing.Point(432, 0);
+            this.letraHueco18.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco18.Name = "letraHueco18";
+            this.letraHueco18.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco18.TabIndex = 61;
+            this.letraHueco18.Text = "A";
+            // 
+            // letraHueco19
+            // 
+            this.letraHueco19.AutoSize = true;
+            this.letraHueco19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco19.Location = new System.Drawing.Point(456, 0);
+            this.letraHueco19.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco19.Name = "letraHueco19";
+            this.letraHueco19.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco19.TabIndex = 62;
+            this.letraHueco19.Text = "A";
+            // 
+            // letraHueco20
+            // 
+            this.letraHueco20.AutoSize = true;
+            this.letraHueco20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco20.Location = new System.Drawing.Point(480, 0);
+            this.letraHueco20.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco20.Name = "letraHueco20";
+            this.letraHueco20.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco20.TabIndex = 63;
+            this.letraHueco20.Text = "A";
+            // 
+            // letraHueco21
+            // 
+            this.letraHueco21.AutoSize = true;
+            this.letraHueco21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco21.Location = new System.Drawing.Point(504, 0);
+            this.letraHueco21.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco21.Name = "letraHueco21";
+            this.letraHueco21.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco21.TabIndex = 64;
+            this.letraHueco21.Text = "A";
+            // 
+            // letraHueco22
+            // 
+            this.letraHueco22.AutoSize = true;
+            this.letraHueco22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco22.Location = new System.Drawing.Point(528, 0);
+            this.letraHueco22.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco22.Name = "letraHueco22";
+            this.letraHueco22.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco22.TabIndex = 65;
+            this.letraHueco22.Text = "A";
+            // 
+            // letraHueco23
+            // 
+            this.letraHueco23.AutoSize = true;
+            this.letraHueco23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco23.Location = new System.Drawing.Point(552, 0);
+            this.letraHueco23.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco23.Name = "letraHueco23";
+            this.letraHueco23.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco23.TabIndex = 66;
+            this.letraHueco23.Text = "A";
+            // 
+            // letraHueco24
+            // 
+            this.letraHueco24.AutoSize = true;
+            this.letraHueco24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco24.Location = new System.Drawing.Point(576, 0);
+            this.letraHueco24.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco24.Name = "letraHueco24";
+            this.letraHueco24.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco24.TabIndex = 67;
+            this.letraHueco24.Text = "A";
+            // 
+            // letraHueco25
+            // 
+            this.letraHueco25.AutoSize = true;
+            this.letraHueco25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco25.Location = new System.Drawing.Point(0, 24);
+            this.letraHueco25.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco25.Name = "letraHueco25";
+            this.letraHueco25.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco25.TabIndex = 68;
+            this.letraHueco25.Text = "A";
+            // 
+            // letraHueco26
+            // 
+            this.letraHueco26.AutoSize = true;
+            this.letraHueco26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco26.Location = new System.Drawing.Point(24, 24);
+            this.letraHueco26.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco26.Name = "letraHueco26";
+            this.letraHueco26.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco26.TabIndex = 69;
+            this.letraHueco26.Text = "A";
+            // 
+            // letraHueco27
+            // 
+            this.letraHueco27.AutoSize = true;
+            this.letraHueco27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco27.Location = new System.Drawing.Point(48, 24);
+            this.letraHueco27.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco27.Name = "letraHueco27";
+            this.letraHueco27.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco27.TabIndex = 70;
+            this.letraHueco27.Text = "A";
+            // 
+            // letraHueco28
+            // 
+            this.letraHueco28.AutoSize = true;
+            this.letraHueco28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco28.Location = new System.Drawing.Point(72, 24);
+            this.letraHueco28.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco28.Name = "letraHueco28";
+            this.letraHueco28.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco28.TabIndex = 71;
+            this.letraHueco28.Text = "A";
+            // 
+            // letraHueco29
+            // 
+            this.letraHueco29.AutoSize = true;
+            this.letraHueco29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco29.Location = new System.Drawing.Point(96, 24);
+            this.letraHueco29.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco29.Name = "letraHueco29";
+            this.letraHueco29.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco29.TabIndex = 72;
+            this.letraHueco29.Text = "A";
+            // 
+            // letraHueco30
+            // 
+            this.letraHueco30.AutoSize = true;
+            this.letraHueco30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco30.Location = new System.Drawing.Point(120, 24);
+            this.letraHueco30.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco30.Name = "letraHueco30";
+            this.letraHueco30.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco30.TabIndex = 73;
+            this.letraHueco30.Text = "A";
+            // 
+            // letraHueco31
+            // 
+            this.letraHueco31.AutoSize = true;
+            this.letraHueco31.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco31.Location = new System.Drawing.Point(144, 24);
+            this.letraHueco31.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco31.Name = "letraHueco31";
+            this.letraHueco31.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco31.TabIndex = 74;
+            this.letraHueco31.Text = "A";
+            // 
+            // letraHueco32
+            // 
+            this.letraHueco32.AutoSize = true;
+            this.letraHueco32.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco32.Location = new System.Drawing.Point(168, 24);
+            this.letraHueco32.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco32.Name = "letraHueco32";
+            this.letraHueco32.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco32.TabIndex = 75;
+            this.letraHueco32.Text = "A";
+            // 
+            // letraHueco33
+            // 
+            this.letraHueco33.AutoSize = true;
+            this.letraHueco33.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco33.Location = new System.Drawing.Point(192, 24);
+            this.letraHueco33.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco33.Name = "letraHueco33";
+            this.letraHueco33.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco33.TabIndex = 76;
+            this.letraHueco33.Text = "A";
+            // 
+            // letraHueco34
+            // 
+            this.letraHueco34.AutoSize = true;
+            this.letraHueco34.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco34.Location = new System.Drawing.Point(216, 24);
+            this.letraHueco34.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco34.Name = "letraHueco34";
+            this.letraHueco34.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco34.TabIndex = 77;
+            this.letraHueco34.Text = "A";
+            // 
+            // letraHueco35
+            // 
+            this.letraHueco35.AutoSize = true;
+            this.letraHueco35.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco35.Location = new System.Drawing.Point(240, 24);
+            this.letraHueco35.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco35.Name = "letraHueco35";
+            this.letraHueco35.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco35.TabIndex = 78;
+            this.letraHueco35.Text = "A";
+            // 
+            // letraHueco36
+            // 
+            this.letraHueco36.AutoSize = true;
+            this.letraHueco36.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco36.Location = new System.Drawing.Point(264, 24);
+            this.letraHueco36.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco36.Name = "letraHueco36";
+            this.letraHueco36.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco36.TabIndex = 79;
+            this.letraHueco36.Text = "A";
+            // 
+            // letraHueco37
+            // 
+            this.letraHueco37.AutoSize = true;
+            this.letraHueco37.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco37.Location = new System.Drawing.Point(288, 24);
+            this.letraHueco37.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco37.Name = "letraHueco37";
+            this.letraHueco37.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco37.TabIndex = 80;
+            this.letraHueco37.Text = "A";
+            // 
+            // letraHueco38
+            // 
+            this.letraHueco38.AutoSize = true;
+            this.letraHueco38.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco38.Location = new System.Drawing.Point(312, 24);
+            this.letraHueco38.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco38.Name = "letraHueco38";
+            this.letraHueco38.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco38.TabIndex = 81;
+            this.letraHueco38.Text = "A";
+            // 
+            // letraHueco39
+            // 
+            this.letraHueco39.AutoSize = true;
+            this.letraHueco39.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco39.Location = new System.Drawing.Point(336, 24);
+            this.letraHueco39.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco39.Name = "letraHueco39";
+            this.letraHueco39.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco39.TabIndex = 82;
+            this.letraHueco39.Text = "A";
+            // 
+            // letraHueco40
+            // 
+            this.letraHueco40.AutoSize = true;
+            this.letraHueco40.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco40.Location = new System.Drawing.Point(360, 24);
+            this.letraHueco40.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco40.Name = "letraHueco40";
+            this.letraHueco40.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco40.TabIndex = 83;
+            this.letraHueco40.Text = "A";
+            // 
+            // letraHueco41
+            // 
+            this.letraHueco41.AutoSize = true;
+            this.letraHueco41.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco41.Location = new System.Drawing.Point(384, 24);
+            this.letraHueco41.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco41.Name = "letraHueco41";
+            this.letraHueco41.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco41.TabIndex = 84;
+            this.letraHueco41.Text = "A";
+            // 
+            // letraHueco42
+            // 
+            this.letraHueco42.AutoSize = true;
+            this.letraHueco42.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco42.Location = new System.Drawing.Point(408, 24);
+            this.letraHueco42.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco42.Name = "letraHueco42";
+            this.letraHueco42.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco42.TabIndex = 85;
+            this.letraHueco42.Text = "A";
+            // 
+            // letraHueco43
+            // 
+            this.letraHueco43.AutoSize = true;
+            this.letraHueco43.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco43.Location = new System.Drawing.Point(432, 24);
+            this.letraHueco43.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco43.Name = "letraHueco43";
+            this.letraHueco43.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco43.TabIndex = 86;
+            this.letraHueco43.Text = "A";
+            // 
+            // letraHueco44
+            // 
+            this.letraHueco44.AutoSize = true;
+            this.letraHueco44.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco44.Location = new System.Drawing.Point(456, 24);
+            this.letraHueco44.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco44.Name = "letraHueco44";
+            this.letraHueco44.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco44.TabIndex = 87;
+            this.letraHueco44.Text = "A";
+            // 
+            // letraHueco45
+            // 
+            this.letraHueco45.AutoSize = true;
+            this.letraHueco45.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco45.Location = new System.Drawing.Point(480, 24);
+            this.letraHueco45.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco45.Name = "letraHueco45";
+            this.letraHueco45.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco45.TabIndex = 88;
+            this.letraHueco45.Text = "A";
+            // 
+            // letraHueco46
+            // 
+            this.letraHueco46.AutoSize = true;
+            this.letraHueco46.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco46.Location = new System.Drawing.Point(504, 24);
+            this.letraHueco46.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco46.Name = "letraHueco46";
+            this.letraHueco46.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco46.TabIndex = 89;
+            this.letraHueco46.Text = "A";
+            // 
+            // letraHueco47
+            // 
+            this.letraHueco47.AutoSize = true;
+            this.letraHueco47.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco47.Location = new System.Drawing.Point(528, 24);
+            this.letraHueco47.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco47.Name = "letraHueco47";
+            this.letraHueco47.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco47.TabIndex = 90;
+            this.letraHueco47.Text = "A";
+            // 
+            // letraHueco48
+            // 
+            this.letraHueco48.AutoSize = true;
+            this.letraHueco48.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco48.Location = new System.Drawing.Point(552, 24);
+            this.letraHueco48.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco48.Name = "letraHueco48";
+            this.letraHueco48.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco48.TabIndex = 91;
+            this.letraHueco48.Text = "A";
+            // 
+            // letraHueco49
+            // 
+            this.letraHueco49.AutoSize = true;
+            this.letraHueco49.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letraHueco49.Location = new System.Drawing.Point(576, 24);
+            this.letraHueco49.Margin = new System.Windows.Forms.Padding(0);
+            this.letraHueco49.Name = "letraHueco49";
+            this.letraHueco49.Size = new System.Drawing.Size(24, 24);
+            this.letraHueco49.TabIndex = 92;
+            this.letraHueco49.Text = "A";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.TimerTiempoTick);
             // 
             // PartidaDescubrirFrase
             // 
@@ -1555,9 +2022,9 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.botonAbandonar)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonAbandonar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ods_picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reloj_circular)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
@@ -1593,94 +2060,132 @@
         private System.Windows.Forms.PictureBox ods_picture;
         private System.Windows.Forms.PictureBox reloj_circular;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label letra0;
+        private System.Windows.Forms.Label letra1;
+        private System.Windows.Forms.Label letra2;
+        private System.Windows.Forms.Label letra3;
+        private System.Windows.Forms.Label letra4;
+        private System.Windows.Forms.Label letra5;
+        private System.Windows.Forms.Label letra6;
+        private System.Windows.Forms.Label letra7;
+        private System.Windows.Forms.Label letra8;
+        private System.Windows.Forms.Label letra9;
+        private System.Windows.Forms.Label letra10;
+        private System.Windows.Forms.Label letra11;
+        private System.Windows.Forms.Label letra12;
+        private System.Windows.Forms.Label letra13;
+        private System.Windows.Forms.Label letra14;
+        private System.Windows.Forms.Label letra15;
+        private System.Windows.Forms.Label letra16;
+        private System.Windows.Forms.Label letra17;
+        private System.Windows.Forms.Label letra18;
+        private System.Windows.Forms.Label letra19;
+        private System.Windows.Forms.Label letra20;
+        private System.Windows.Forms.Label letra21;
+        private System.Windows.Forms.Label letra22;
+        private System.Windows.Forms.Label letra23;
+        private System.Windows.Forms.Label letra24;
+        private System.Windows.Forms.Label letra25;
+        private System.Windows.Forms.Label letra26;
+        private System.Windows.Forms.Label letra27;
+        private System.Windows.Forms.Label letra28;
+        private System.Windows.Forms.Label letra29;
+        private System.Windows.Forms.Label letra30;
+        private System.Windows.Forms.Label letra31;
+        private System.Windows.Forms.Label letra32;
+        private System.Windows.Forms.Label letra33;
+        private System.Windows.Forms.Label letra34;
+        private System.Windows.Forms.Label letra35;
+        private System.Windows.Forms.Label letra36;
+        private System.Windows.Forms.Label letra37;
+        private System.Windows.Forms.Label letra38;
+        private System.Windows.Forms.Label letra39;
+        private System.Windows.Forms.Label letra40;
+        private System.Windows.Forms.Label letra41;
+        private System.Windows.Forms.Label letra42;
+        private System.Windows.Forms.Label letra43;
+        private System.Windows.Forms.Label letra44;
+        private System.Windows.Forms.Label letra45;
+        private System.Windows.Forms.Label letra46;
+        private System.Windows.Forms.Label letra47;
+        private System.Windows.Forms.Label letra48;
+        private System.Windows.Forms.Label letra49;
+        private System.Windows.Forms.Label letra50;
+        private System.Windows.Forms.Label letra51;
+        private System.Windows.Forms.Label letra52;
+        private System.Windows.Forms.Label letra53;
+        private System.Windows.Forms.Label letra54;
+        private System.Windows.Forms.Label letra55;
+        private System.Windows.Forms.Label letra56;
+        private System.Windows.Forms.Label letra57;
+        private System.Windows.Forms.Label letra58;
+        private System.Windows.Forms.Label letra59;
+        private System.Windows.Forms.Label letra60;
+        private System.Windows.Forms.Label letra61;
+        private System.Windows.Forms.Label letra62;
+        private System.Windows.Forms.Label letra63;
+        private System.Windows.Forms.Label letra64;
+        private System.Windows.Forms.Label letra65;
+        private System.Windows.Forms.Label letra66;
+        private System.Windows.Forms.Label letra67;
+        private System.Windows.Forms.Label letra68;
+        private System.Windows.Forms.Label letra69;
+        private System.Windows.Forms.Label letra70;
         private System.Windows.Forms.Button pos1;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.Label label75;
-        private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Label label82;
-        private System.Windows.Forms.Label label83;
-        private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.Label letraHueco0;
+        private System.Windows.Forms.Label letraHueco1;
+        private System.Windows.Forms.Label letraHueco2;
+        private System.Windows.Forms.Label letraHueco3;
+        private System.Windows.Forms.Label letraHueco4;
+        private System.Windows.Forms.Label letraHueco5;
+        private System.Windows.Forms.Label letraHueco6;
+        private System.Windows.Forms.Label letraHueco7;
+        private System.Windows.Forms.Label letraHueco8;
+        private System.Windows.Forms.Label letraHueco9;
+        private System.Windows.Forms.Label letraHueco10;
+        private System.Windows.Forms.Label letraHueco11;
+        private System.Windows.Forms.Label letraHueco12;
+        private System.Windows.Forms.Label letraHueco13;
+        private System.Windows.Forms.Label letraHueco14;
+        private System.Windows.Forms.Label letraHueco15;
+        private System.Windows.Forms.Label letraHueco16;
+        private System.Windows.Forms.Label letraHueco17;
+        private System.Windows.Forms.Label letraHueco18;
+        private System.Windows.Forms.Label letraHueco19;
+        private System.Windows.Forms.Label letraHueco20;
+        private System.Windows.Forms.Label letraHueco21;
+        private System.Windows.Forms.Label letraHueco22;
+        private System.Windows.Forms.Label letraHueco23;
+        private System.Windows.Forms.Label letraHueco24;
+        private System.Windows.Forms.Label letraHueco25;
+        private System.Windows.Forms.Label letraHueco26;
+        private System.Windows.Forms.Label letraHueco27;
+        private System.Windows.Forms.Label letraHueco28;
+        private System.Windows.Forms.Label letraHueco29;
+        private System.Windows.Forms.Label letraHueco30;
+        private System.Windows.Forms.Label letraHueco31;
+        private System.Windows.Forms.Label letraHueco32;
+        private System.Windows.Forms.Label letraHueco33;
+        private System.Windows.Forms.Label letraHueco34;
+        private System.Windows.Forms.Label letraHueco35;
+        private System.Windows.Forms.Label letraHueco36;
+        private System.Windows.Forms.Label letraHueco37;
+        private System.Windows.Forms.Label letraHueco38;
+        private System.Windows.Forms.Label letraHueco39;
+        private System.Windows.Forms.Label letraHueco40;
+        private System.Windows.Forms.Label letraHueco41;
+        private System.Windows.Forms.Label letraHueco42;
+        private System.Windows.Forms.Label letraHueco43;
+        private System.Windows.Forms.Label letraHueco44;
+        private System.Windows.Forms.Label letraHueco45;
+        private System.Windows.Forms.Label letraHueco46;
+        private System.Windows.Forms.Label letraHueco47;
+        private System.Windows.Forms.Label letraHueco48;
+        private System.Windows.Forms.Label letraHueco49;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
     }
 }

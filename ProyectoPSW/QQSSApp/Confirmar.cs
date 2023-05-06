@@ -13,8 +13,8 @@ namespace QQSSApp
 {
     public partial class Confirmar : Form
     {
-        PartidaForm partidaForm;
-        public Confirmar(PartidaForm partidaForm)
+        Form partidaForm;
+        public Confirmar(Form partidaForm)
         {
             InitializeComponent();
             this.partidaForm = partidaForm;

@@ -122,7 +122,8 @@ namespace ProyectoPSWMain.Services
         #endregion
 
 
-        #region Pregunta
+        #region Reto
+
 
         public List<Pregunta> LoadUndoneQuestionsByDifficulty(int difficulty)
         {
@@ -273,6 +274,36 @@ namespace ProyectoPSWMain.Services
         public List<Respuesta> GetRespuestas()
         {
             return gameController.AnswerShuffle();
+        }
+
+        public string QuitarLetras(out List<char> letrasHueco)
+        {
+            letrasHueco = new List<char>();
+            Frase fraseOriginal = (Frase)gameController.GetReto();
+            int dificultad = fraseOriginal.Dificultad;
+            double porcentaje = 0.0;
+            if (dificultad == 1) porcentaje = 0.7;
+            else if (dificultad == 2) porcentaje = 0.8;
+            else if (dificultad == 3) porcentaje = 0.9;
+            else throw new ServiceException("Dificultad de la frase incorrecta");
+
+            string frase = fraseOriginal.Enunciado;
+            char[] fraseCaracteres = frase.ToCharArray();
+            Random random = new Random();
+            int numCharsToReplace = (int)(fraseCaracteres.Length * porcentaje);
+
+            for (int i = 0; i < numCharsToReplace; i++)
+            {
+                int randomIndex = random.Next(fraseCaracteres.Length);
+                while (fraseCaracteres[randomIndex] == '_' || !char.IsLetter(fraseCaracteres[randomIndex]))
+                {
+                    randomIndex = random.Next(fraseCaracteres.Length);
+                }
+                letrasHueco.Add(fraseCaracteres[randomIndex]);
+                fraseCaracteres[randomIndex] = '_';
+            }
+
+            return new string(fraseCaracteres);
         }
 
         #endregion

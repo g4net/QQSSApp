@@ -173,13 +173,16 @@ namespace ProyectoPSWMain.Services
 
         #region Reto frase
 
-        public static string QuitarLetras(Frase fraseOriginal, string dificultad)
+        public string QuitarLetras(out List<char> letrasHueco)
         {
-            double porcentaje;
-            if (dificultad == "facil"){porcentaje = 0.7;}
-            else if (dificultad == "medio"){ porcentaje = 0.8;}
-            else if (dificultad == "dificil"){porcentaje = 0.9;}
-            else{ throw new ArgumentException("La dificultad no es válida. (introduce facil, medio o dificil");}
+            letrasHueco = new List<char>();
+            Frase fraseOriginal = (Frase) this.retos[this.index];
+            int dificultad = fraseOriginal.Dificultad;
+            double porcentaje = 0.0;
+            if (dificultad == 1) porcentaje = 0.7;
+            else if (dificultad == 2) porcentaje = 0.8;
+            else if (dificultad == 3) porcentaje = 0.9;
+            else throw new ServiceException("Dificultad de la frase incorrecta");
 
             string frase = fraseOriginal.Enunciado;
             char[] fraseCaracteres = frase.ToCharArray();
@@ -193,6 +196,7 @@ namespace ProyectoPSWMain.Services
                 {
                     randomIndex = random.Next(fraseCaracteres.Length);
                 }
+                letrasHueco.Add(fraseCaracteres[randomIndex]);
                 fraseCaracteres[randomIndex] = '_';
             }
 
