@@ -410,9 +410,9 @@
             this.tiempo.Location = new System.Drawing.Point(87, 16);
             this.tiempo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tiempo.Name = "tiempo";
-            this.tiempo.Size = new System.Drawing.Size(57, 39);
+            this.tiempo.Size = new System.Drawing.Size(77, 39);
             this.tiempo.TabIndex = 8;
-            this.tiempo.Text = "30";
+            this.tiempo.Text = "120";
             // 
             // consolidadotexto
             // 

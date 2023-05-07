@@ -105,11 +105,13 @@ namespace QQSSApp
         {
             for(int i = 0; i <= 100; i++)
             {
+                if (i == textoFrase.Length) break;
                 fraseConHuecos[i].Text = "" + textoFrase[i];
             }
 
             for (int i = 0; i <= 49; i++)
             {
+                if (i == huecos.Count) break;
                 letrasParaHuecos[i].Show();
                 letrasParaHuecos[i].Text = "" + huecos[i];
             }
@@ -186,12 +188,21 @@ namespace QQSSApp
 
         public void CheckAnswer(string fraseFormada)
         {
-            timer3.Interval = 1000;
-            timer3.Start();
-            timer1.Stop();
-            timer2.Stop();
-
-            esCorrecta = fraseFormada == frase.Enunciado;
+            if (fraseFormada == frase.Enunciado)
+            {
+                Form respuestaAcertada;
+                if (retoindex != 9) respuestaAcertada = new PuntuacionPositiva();
+                else respuestaAcertada = new PartidaGanada();
+                respuestaAcertada.Show();
+                this.Close();
+            }
+            else
+            {
+                LabelReset();
+                checkButton.Enabled = false;
+                checkButton.BackColor = Color.FromArgb(231, 105, 105);
+                timer3.Start();
+            }
             
         }
 
@@ -208,12 +219,13 @@ namespace QQSSApp
 
         private void InitializeTimers()
         {
-            timer1.Interval = 1764;
+            timer1.Interval = 7058;
             timer1.Start();
             timer2.Interval = 1000;
-            tiempoContador = 30;
+            tiempoContador = 120;
             timer2.Start();
-            tiempodeMostrarRta = 3;
+            tiempodeMostrarRta = 2;
+            timer3.Interval = 1000;
 
         }
 
@@ -236,6 +248,7 @@ namespace QQSSApp
 
         private void CheckButtonOnClick(object sender, EventArgs e)
         {
+            timer3.Start();
             StringBuilder sb = new StringBuilder();
             foreach(Label l in fraseConHuecos)
             {
@@ -250,22 +263,9 @@ namespace QQSSApp
 
             if (tiempodeMostrarRta != 0) return;
 
-            if (esCorrecta)
-            {
-                Form respuestaAcertada;
-                if (retoindex != 9) respuestaAcertada = new PuntuacionPositiva();
-                else respuestaAcertada = new PartidaGanada();
-                respuestaAcertada.Show();
-                this.Close();
-            }
-            else
-            {
-                Form respuestaFallada;
-                if (QQSS.service.GetError() != -1) respuestaFallada = new PartidaPerdida();
-                else respuestaFallada = new PuntuacionNegativa();
-                respuestaFallada.Show();
-                this.Close();
-            }
+            checkButton.Enabled = true;
+            checkButton.BackColor = Color.FromArgb(127, 221, 130);
+            tiempodeMostrarRta = 2;
         }
     }
 }
