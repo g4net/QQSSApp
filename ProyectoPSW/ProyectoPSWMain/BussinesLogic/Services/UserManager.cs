@@ -128,6 +128,7 @@ namespace ProyectoPSWMain.Services
                 CargarListaSuperadosODS(ods);
                 double aciertosODS = listaSuperadosPorODS.Count * 100;
                 aciertosODS /= listaRetosPorODS.Count;
+                ClearListasRetos();
                 return aciertosODS;
             }
             else
@@ -135,6 +136,12 @@ namespace ProyectoPSWMain.Services
                 return 0;
             }
             
+        }
+
+        public void ClearListasRetos()
+        {
+            listaRetosPorODS.Clear();
+            listaSuperadosPorODS.Clear();
         }
 
         public void CargarListaRetosODS(int ods)
@@ -161,7 +168,7 @@ namespace ProyectoPSWMain.Services
                 {
                     listaSuperadosPorODS.Add(reto);
                 }
-                else
+                else if(reto.Ods >= ods)
                 {
                     break;
                 }
