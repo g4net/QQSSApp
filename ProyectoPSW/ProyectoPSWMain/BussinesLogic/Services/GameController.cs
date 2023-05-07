@@ -1,4 +1,5 @@
-﻿using ProyectoPSWMain.Entities;
+﻿using ProyectoPSWMain.BussinesLogic.Services;
+using ProyectoPSWMain.Entities;
 using ProyectoPSWMain.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -31,12 +32,14 @@ namespace ProyectoPSWMain.Services
         private int pistasDisponibles;
         private List<Reto> retos;
         private List<Reto> retosAcertados;
+        private Context context;
+        private PuntosStrategy puntosStrategy;
 
         public void UpdateError()
         {
             this.error = index;
         }
-
+        public void SetContext(Context context) { this.context = context; }
         public int GetError() { return error; }
         public bool IsConsolidado() { return consolidado; }
         public void Consolidar()
@@ -116,12 +119,26 @@ namespace ProyectoPSWMain.Services
             return retos[this.index];
         }
 
-        public void RetoAcertado()
+        public void RetoAcertado()//aqui se usa el plantilla 
         {
             Reto reto = this.retos[this.index];
             NextReto();
-            partida.PuntuacionPartida += reto.Puntuacion_acierto;
+            context.setPartida(partida);
+            context.AñadirPuntos();
+            //partida.PuntuacionPartida += reto.Puntuacion_acierto;
             retosAcertados.Add(reto);
+        }
+
+        public void SetPuntosStrategy(int i)
+        {
+            if (i == 1) { context.SetStrategy(new EasyStrategy()); }
+            if (i == 2) { context.SetStrategy(new MiddleStrategy()); }
+            if (i == 3) { context.SetStrategy(new HalfStrategy()); }
+        }
+
+        public void UsarPista()
+        {
+            context.SetStrategy(new MiddleStrategy());
         }
 
         public void RetoFallado()

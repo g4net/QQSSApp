@@ -183,6 +183,11 @@ namespace ProyectoPSWMain.Services
             gameController.RetoAcertado();
         }
 
+        public void SetPuntosStrategy(int i) 
+        {
+            gameController.SetPuntosStrategy(i); 
+        }
+
         public string EnlaceInteres(int ods)
         {
             return gameController.EnlaceInteres(ods);

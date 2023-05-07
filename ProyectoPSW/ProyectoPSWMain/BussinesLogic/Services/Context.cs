@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPSWMain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,67 +11,75 @@ namespace ProyectoPSWMain.BussinesLogic.Services
     {
         private PuntosStrategy puntosStrategy;
         private int puntos;
+        private Partida partida;
 
-        public Context(PuntosStrategy puntosStrategy) 
+        public void setPartida(Partida partida)
+        {
+            this.partida = partida;
+        }
+
+        public Context(PuntosStrategy puntosStrategy)
         {
             this.puntosStrategy = puntosStrategy;
         }
 
-        public void SetSortStrategy(PuntosStrategy puntosStrategy)
+        public int SetStrategy(PuntosStrategy puntosStrategy)
         {
             this.puntosStrategy = puntosStrategy;
+            int puntos = puntosStrategy.SetPuntos();
+            return puntos;
         }
-        
+
         public void AñadirPuntos()
         {
-            this.puntosStrategy.AñadirPuntos(puntos);
+            this.puntosStrategy.AñadirPuntos(partida, puntos);
         }
     }
 
     public interface PuntosStrategy
     {
-        void AñadirPuntos(int puntos);
+        void AñadirPuntos(Partida partida, int puntos);
+        int SetPuntos();
     }
 
 
-    public class EasyStrategy: PuntosStrategy 
+    public class EasyStrategy : PuntosStrategy
     {
-        public void AñadirPuntos(int puntos)
+        public int SetPuntos() { return 100; }
+
+        public void AñadirPuntos(Partida partida, int puntos)
         {
-            puntos = 100;
-            //añadir al user
-            throw new NotImplementedException();
+            partida.PuntuacionPartida += 100;
         }
     }
 
-    public class MiddleStrategy : PuntosStrategy 
+    public class MiddleStrategy : PuntosStrategy
     {
-        public void AñadirPuntos(int puntos)
+        public int SetPuntos() { return 200; }
+
+        public void AñadirPuntos(Partida partida, int puntos)
         {
-            puntos = 200;
-            //añadir al user
-            throw new NotImplementedException();
+            partida.PuntuacionPartida += 200;
         }
     }
 
     public class HardStrategy : PuntosStrategy
     {
-        public void AñadirPuntos(int puntos)
+        public int SetPuntos() { return 300; }
+
+        public void AñadirPuntos(Partida partida, int puntos)
         {
-            puntos = 300;
-            //añadir al user
-            throw new NotImplementedException();
+            partida.PuntuacionPartida += 300;
         }
     }
 
     public class HalfStrategy : PuntosStrategy
     {
-        public void AñadirPuntos(int puntos)
+        public int SetPuntos() { return 0; }
+        public void AñadirPuntos(Partida partida, int puntos)
         {
             puntos = puntos / 2;
-            //añadir al user
-            throw new NotImplementedException();
+            partida.PuntuacionPartida += puntos;
         }
     }
-
 }

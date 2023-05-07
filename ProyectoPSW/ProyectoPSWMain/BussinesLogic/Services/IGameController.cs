@@ -25,6 +25,7 @@ namespace ProyectoPSWMain.Services
         bool GetConsolidado();
         Reto GetReto();
         void RetoAcertado();
+        void SetPuntosStrategy(int i);
         void RetoFallado();
         List<Respuesta> AnswerShuffle();
         bool TestAnswer(string txt);

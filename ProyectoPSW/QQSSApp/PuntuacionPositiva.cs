@@ -50,7 +50,9 @@ namespace QQSSApp
         {
             pregunta = (Pregunta) QQSS.service.GetReto();
             puntuacion.Text = pregunta.GetPuntuacionAcierto();
+            QQSS.service.SetPuntosStrategy(pregunta.Dificultad);
             QQSS.service.RetoAcertado();
+
             punt_actual.Text = QQSS.service.GetPuntuacionPartida().ToString();
         }
 

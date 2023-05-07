@@ -46,6 +46,7 @@ namespace ProyectoPSWMain.Services
         void Consolidar();
         int GetPuntuacionPartida();
         void RetoAcertado();
+        void SetPuntosStrategy(int i);
         void RetoFallado();
         int GetPuntuacionConsolidada();
         #endregion
