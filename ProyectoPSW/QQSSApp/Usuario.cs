@@ -16,12 +16,14 @@ namespace QQSSApp
     public partial class Usuario : Form
     {
         User usuario;
-        public Usuario()
+        Form pantallaPrincipalForm;
+        public Usuario(Form pantallaPrincipialForm)
         {
             InitializeComponent();
             this.usuario = QQSS.service.GetLoggedUser();
             InitializeLabels();
             InitializeGraphic();
+            this.pantallaPrincipalForm = pantallaPrincipialForm;
         }
 
         public void InitializeLabels()
@@ -41,14 +43,15 @@ namespace QQSSApp
                 Array.Resize(ref puntos, puntos.Length + 1);
                 puntos[puntos.Length - 1] = QQSS.service.GetPuntajeODS(i+1);
             }
-            for(int i = 0; i < series.Length; i++)
+            for (int i = 0; i < series.Length; i++)
             {
-                //Series serie = chart1.Series.Add(series[i]);
-                //serie.Label = puntos[i].ToString();
-                //serie.Points.Add(puntos[i]);
-                chart1.Series["Series1"].Points.AddXY(series[i], puntos[i]);
+                ColumnChart.Series["Series1"].Points.AddXY(series[i], puntos[i]);
             }
-            
+            for (int i = 0; i < series.Length; i++)
+            {
+                Series serie = PieChart.Series.Add(series[i]);
+                serie.Points.Add(puntos[i]);
+            }
         }
         
 
@@ -75,7 +78,8 @@ namespace QQSSApp
 
         private void CerrarSesionButton_Click(object sender, EventArgs e)
         {
-            QQSS.service.Logout();
+            ConfirmarCerrarSesion confirmarForm = new ConfirmarCerrarSesion(pantallaPrincipalForm, this);
+            confirmarForm.ShowDialog();
         }
 
     }

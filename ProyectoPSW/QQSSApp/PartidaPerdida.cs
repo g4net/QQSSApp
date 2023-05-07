@@ -25,6 +25,7 @@ namespace QQSSApp
             QQSS.service.PlaySonido("PartidaPerdida");
             respuesta.Text = pregunta.RespuestaCorrecta.ToString();
             QQSS.service.IncrementaFallos();
+            QQSS.service.GetLoggedUser().RetosJugados.Add(pregunta);
         }
 
 

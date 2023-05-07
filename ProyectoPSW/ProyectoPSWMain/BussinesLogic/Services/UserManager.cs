@@ -122,13 +122,13 @@ namespace ProyectoPSWMain.Services
 
         public double GetPuntajeODS(int ods)
         {
+            ClearListasRetos();
             CargarListaRetosODS(ods);
             if(listaRetosPorODS.Count != 0)
             {
                 CargarListaSuperadosODS(ods);
                 double aciertosODS = listaSuperadosPorODS.Count * 100;
                 aciertosODS /= listaRetosPorODS.Count;
-                ClearListasRetos();
                 return aciertosODS;
             }
             else
@@ -146,14 +146,14 @@ namespace ProyectoPSWMain.Services
 
         public void CargarListaRetosODS(int ods)
         {
-            loggedUser.RetosJugados.OrderBy(x => x.Ods).ToList();
-            foreach (Reto reto in loggedUser.RetosJugados)
+            var listaOrdenada = loggedUser.RetosJugados.OrderBy(x => x.Ods);
+            foreach (Reto reto in listaOrdenada)
             {
                 if (reto.Ods == ods)
                 {
                     listaRetosPorODS.Add(reto);
                 }
-                else
+                else if (reto.Ods >= ods)
                 {
                     break;
                 }
@@ -161,8 +161,8 @@ namespace ProyectoPSWMain.Services
         }
         public void CargarListaSuperadosODS(int ods)
         {
-            loggedUser.RetosSuperados.OrderBy(x => x.Ods).ToList();
-            foreach(Reto reto in loggedUser.RetosSuperados)
+            var listaOrdenada = loggedUser.RetosSuperados.OrderBy(x => x.Ods);
+            foreach(Reto reto in listaOrdenada)
             {
                 if(reto.Ods == ods)
                 {

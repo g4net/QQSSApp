@@ -24,6 +24,7 @@ namespace QQSSApp
             InitializePartidaGanada();
             QQSS.service.IncrementaAciertos();
             QQSS.service.GetLoggedUser().RetosSuperados.Add(pregunta);
+            QQSS.service.GetLoggedUser().RetosJugados.Add(pregunta);
         }
 
         private void continuar_salir_Click(object sender, EventArgs e)

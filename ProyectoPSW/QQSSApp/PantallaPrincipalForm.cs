@@ -58,7 +58,7 @@ namespace QQSSApp
 
         private void UserClick(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
+            Usuario usuario = new Usuario(this);
             usuario.ShowDialog();
         }
 

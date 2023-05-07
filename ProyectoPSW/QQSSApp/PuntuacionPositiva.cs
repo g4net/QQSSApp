@@ -31,6 +31,7 @@ namespace QQSSApp
             InitializeTimer();
             QQSS.service.IncrementaAciertos();
             QQSS.service.GetLoggedUser().RetosSuperados.Add(pregunta);
+            QQSS.service.GetLoggedUser().RetosJugados.Add(pregunta);
         }
 
         private void InitializeTimer()
