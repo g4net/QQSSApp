@@ -18,6 +18,7 @@ namespace ProyectoPSWMain.Services
         public readonly int[] Levels = { 500, 1000, 2000, 3000 };
         private User loggedUser;
 
+
         public bool IsValidEmail(string email)
         {
             if (email == null || email.Length <= 4) return false;
@@ -64,9 +65,19 @@ namespace ProyectoPSWMain.Services
             return true;
         }
 
+        public void IncrementaAciertos()
+        {
+            loggedUser.Estadistica.NumAciertos++;
+        }
+        
+        public void IncrementaFallos()
+        {
+            loggedUser.Estadistica.NumFallos++;
+        }
+
         public bool IsValidUsername(string login)
         {
-            if (login == null || login.Length == 0 || login.Length > 30) return false;
+            if (login == null || login.Length > 30) return false;
             char[] specialCharacters = { '?', '+', '=', '@', '#', '&' };
             if(login.IndexOfAny(specialCharacters) != -1) return false;
             return true;
@@ -106,15 +117,27 @@ namespace ProyectoPSWMain.Services
             return true;
         }
 
+
+        public double GetPuntajeODS(int ods)
+        {
+            double countODS = loggedUser.RetosJugados.Where(x => x.Ods == ods).Count();
+            if (countODS == 0) return 0;
+            double aciertosODS = loggedUser.RetosSuperados.Where(x => x.Ods == ods).Count();
+
+            return (aciertosODS / countODS) * 100;
+        }
+
         public void SetLoggedUser(User user)
         {
             loggedUser = user;
         }
 
         #region Reto
-        public void UpdateUserRetos(List<Reto> retos)
+        public void UpdateUserRetos(List<Reto> retosAcertados, List<Reto> retosJugados)
         {
-            this.loggedUser.RetosRealizados.Union(retos);
+            this.loggedUser.RetosRealizados.Union(retosAcertados);
+            this.loggedUser.RetosSuperados.Union(retosAcertados);
+            this.loggedUser.RetosJugados.Union(retosJugados);
         }
         public bool CheckRetoPlayed(Reto reto)
         {
@@ -124,16 +147,53 @@ namespace ProyectoPSWMain.Services
         #endregion Reto
 
         #region Pregunta
-        public List<Pregunta> GetUsersQuestionByDificulty(int dificultad)
+        public List<Pregunta> GetUsersQuestionByDifficulty(int dificultad)
         {
-            List<Pregunta> preguntas = this.loggedUser.PreguntasRealizadas.ToList();
+            List<Reto> retos = this.loggedUser.RetosRealizados.Where(x => x is Pregunta && x.Dificultad == dificultad).ToList();
+            List<Pregunta> preguntas = new List<Pregunta>();
+            foreach(Reto r in retos) preguntas.Add((Pregunta) r);
 
-            return preguntas.Where(x => x.Dificultad == dificultad).ToList();
+            return preguntas;
         }
+
+        public List<Frase> GetUsersFrasesByDifficulty(int dificultad)
+        {
+            List<Reto> retos = this.loggedUser.RetosRealizados.Where(x => x is Frase && x.Dificultad == dificultad).ToList();
+            List<Frase> frases = new List<Frase>();
+            foreach (Reto r in retos) frases.Add((Frase)r);
+
+            return frases;
+        }
+
+        public List<Reto> GetUsersRetosByDifficulty(int dificultad)
+        {
+            List<Reto> retos = this.loggedUser.RetosRealizados.ToList();
+
+            return retos.Where(x => x.Dificultad == dificultad).ToList();
+        }
+
         public void ResetUserQuestions(int dificultad)
         {
-            List<Pregunta> preguntas = this.loggedUser.PreguntasRealizadas.ToList();
-            this.loggedUser.PreguntasRealizadas = preguntas.Where(x => x.Dificultad > dificultad).ToList();
+            List<Reto> retos = this.loggedUser.RetosRealizados.Where(x => x is Pregunta && x.Dificultad == dificultad).ToList();
+            List<Pregunta> preguntas = new List<Pregunta>();
+            foreach (Reto r in retos) preguntas.Add((Pregunta)r);
+
+            this.loggedUser.RetosRealizados = this.loggedUser.RetosRealizados.Except(preguntas).ToList();
+        }
+
+        public void ResetUserFrases(int dificultad)
+        {
+            List<Reto> retos = this.loggedUser.RetosRealizados.Where(x => x is Frase && x.Dificultad == dificultad).ToList();
+            List<Frase> frases = new List<Frase>();
+            foreach (Reto r in retos) frases.Add((Frase)r);
+
+            this.loggedUser.RetosRealizados = this.loggedUser.RetosRealizados.Except(frases).ToList();
+        }
+
+        public void ResetUserRetos(int dificultad)
+        {
+            List<Reto> retos = this.loggedUser.RetosRealizados.Where(x => x.Dificultad == dificultad).ToList();
+            this.loggedUser.RetosRealizados = this.loggedUser.RetosRealizados.Except(retos).ToList();
         }
 
         #endregion Pregunta

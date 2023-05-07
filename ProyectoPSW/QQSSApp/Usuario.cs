@@ -9,23 +9,66 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace QQSSApp
 {
     public partial class Usuario : Form
     {
         User usuario;
-        public Usuario()
+        Form pantallaPrincipalForm;
+        public Usuario(Form pantallaPrincipialForm)
         {
             InitializeComponent();
             this.usuario = QQSS.service.GetLoggedUser();
             InitializeLabels();
+            InitializeGraphic();
+            this.pantallaPrincipalForm = pantallaPrincipialForm;
         }
 
         public void InitializeLabels()
         {
             nivel.Text = usuario.nivel.ToString();
             puntuacion.Text = usuario.PuntuacionAcumulada.ToString();
+            AciertosLabel.Text = CalculoPorcentajeAciertos() + "%";
+            NameLabel.Text = usuario.Nombre;
+        }
+
+        public void InitializeGraphic()
+        {
+            string[] series = { "ODS 1", "ODS 2", "ODS 3", "ODS 4", "ODS 5", "ODS 6", "ODS 7", "ODS 8", "ODS 9", "ODS 10", "ODS 11", "ODS 12", "ODS 13", "ODS 14", "ODS 15", "ODS 16", "ODS 17" };
+            double[] puntos = {};
+            for(int i = 0; i < series.Length; i++)
+            {
+                Array.Resize(ref puntos, puntos.Length + 1);
+                puntos[puntos.Length - 1] = QQSS.service.GetPuntajeODS(i+1);
+            }
+            for (int i = 0; i < series.Length; i++)
+            {
+                ColumnChart.Series["Series1"].Points.AddXY(series[i], puntos[i]);
+            }
+            for (int i = 0; i < series.Length; i++)
+            {
+                Series serie = PieChart.Series.Add(series[i]);
+                serie.Points.Add(puntos[i]);
+            }
+        }
+        
+
+        public String CalculoPorcentajeAciertos()
+        {
+            if(usuario.Estadistica.NumFallos != 0 || usuario.Estadistica.NumAciertos != 0)
+            {
+                double aciertos = usuario.Estadistica.NumAciertos; 
+                aciertos /= (usuario.Estadistica.NumAciertos + usuario.Estadistica.NumFallos);
+                aciertos *= 100;
+                return aciertos.ToString();
+            }
+            else
+            {
+                return "0";
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,7 +78,9 @@ namespace QQSSApp
 
         private void CerrarSesionButton_Click(object sender, EventArgs e)
         {
-            QQSS.service.Logout();
+            ConfirmarCerrarSesion confirmarForm = new ConfirmarCerrarSesion(pantallaPrincipalForm, this);
+            confirmarForm.ShowDialog();
         }
+
     }
 }

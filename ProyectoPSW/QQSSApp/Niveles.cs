@@ -33,8 +33,8 @@ namespace QQSSApp
         }
         private void PlayButton(int level) {
             QQSS.service.CrearPartida(level);
-            PartidaForm partidaForm = new PartidaForm();
-            partidaForm.Show();
+            CatalogoReto retoForm = new CatalogoReto();
+            retoForm.Show();
             this.Close();
         }
         private void click_lvl0(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace QQSSApp
         {
             PantallaPrincipalForm principal = new PantallaPrincipalForm();
             principal.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

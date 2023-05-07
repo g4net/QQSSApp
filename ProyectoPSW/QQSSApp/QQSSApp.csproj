@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfirmarCerrarSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmarCerrarSesion.Designer.cs">
+      <DependentUpon>ConfirmarCerrarSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Director.cs" />
     <Compile Include="CargarDatos.cs">
       <SubType>Form</SubType>
@@ -72,6 +78,24 @@
     </Compile>
     <Compile Include="Consolidar.Designer.cs">
       <DependentUpon>Consolidar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Confirmar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Confirmar.Designer.cs">
+      <DependentUpon>Confirmar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartidaDescubrirFrase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartidaDescubrirFrase.Designer.cs">
+      <DependentUpon>PartidaDescubrirFrase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Niveles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Niveles.Designer.cs">
+      <DependentUpon>Niveles.cs</DependentUpon>
     </Compile>
     <Compile Include="SubeNivel.cs">
       <SubType>Form</SubType>
@@ -109,11 +133,11 @@
     <Compile Include="Reglas.Designer.cs">
       <DependentUpon>Reglas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Niveles.cs">
+    <Compile Include="CatalogoReto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Niveles.Designer.cs">
-      <DependentUpon>Niveles.cs</DependentUpon>
+    <Compile Include="CatalogoReto.Designer.cs">
+      <DependentUpon>CatalogoReto.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -155,11 +179,23 @@
     <EmbeddedResource Include="CargarDatos.resx">
       <DependentUpon>CargarDatos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmarCerrarSesion.resx">
+      <DependentUpon>ConfirmarCerrarSesion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consolidar.resx">
       <DependentUpon>Consolidar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Confirmar.resx">
+      <DependentUpon>Confirmar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Niveles.resx">
+      <DependentUpon>Niveles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartidaDescubrirFrase.resx">
+      <DependentUpon>PartidaDescubrirFrase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registrar.resx">
       <DependentUpon>Registrar.cs</DependentUpon>
@@ -176,8 +212,8 @@
     <EmbeddedResource Include="Reglas.resx">
       <DependentUpon>Reglas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Niveles.resx">
-      <DependentUpon>Niveles.cs</DependentUpon>
+    <EmbeddedResource Include="CatalogoReto.resx">
+      <DependentUpon>CatalogoReto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PuntuacionNegativa.resx">
       <DependentUpon>PuntuacionNegativa.cs</DependentUpon>
@@ -369,6 +405,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\Black_question_mark.png" />
+    <None Include="resources\pista %282%29.png" />
+    <None Include="resources\pista %281%29.png" />
+    <None Include="resources\pista.png" />
     <Content Include="resources\Sonidos\cuentaATRAS.wav" />
     <Content Include="resources\Sonidos\file_example_WAV_5MG.wav" />
     <Content Include="resources\Sonidos\menuPrincipal.wav" />

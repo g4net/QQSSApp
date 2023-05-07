@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BussinesLogic\Entities\Estadistica.cs" />
     <Compile Include="BussinesLogic\Entities\Frase.cs" />
     <Compile Include="BussinesLogic\Entities\Partida.cs" />
     <Compile Include="BussinesLogic\Entities\Pregunta.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="BussinesLogic\Entities\User.cs" />
     <Compile Include="BussinesLogic\Services\App.cs" />
     <Compile Include="BussinesLogic\Services\AppBuilder.cs" />
+    <Compile Include="BussinesLogic\Services\TipoReto.cs" />
     <Compile Include="BussinesLogic\Services\Context.cs" />
     <Compile Include="BussinesLogic\Services\DatabaseService.cs" />
     <Compile Include="BussinesLogic\Services\GameController.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="EntityFramework\EntityFrameworkDAL.cs" />
     <Compile Include="EntityFramework\IRepository.cs" />
     <Compile Include="EntityFramework\ProyectPSWDBContext.cs" />
+    <Compile Include="Persistence\Entities\Estadistica.cs" />
     <Compile Include="Persistence\Entities\Frase.cs" />
     <Compile Include="Persistence\Entities\Partida.cs" />
     <Compile Include="Persistence\Entities\Pregunta.cs" />

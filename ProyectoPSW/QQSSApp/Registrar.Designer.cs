@@ -36,12 +36,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.nombre = new System.Windows.Forms.TextBox();
             this.Correo = new System.Windows.Forms.TextBox();
             this.continuar_salir = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Contrasenya = new System.Windows.Forms.TextBox();
             this.RepetirContrasenya = new System.Windows.Forms.TextBox();
+            this.NombreError = new System.Windows.Forms.Label();
+            this.CorreoError = new System.Windows.Forms.Label();
+            this.ContraError = new System.Windows.Forms.Label();
+            this.RepetirContraError = new System.Windows.Forms.Label();
+            this.ErrorGeneral = new System.Windows.Forms.Label();
+            this.nombre = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +74,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 31;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.FormatoClick);
             // 
             // correcto
             // 
@@ -108,7 +114,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(120, 173);
+            this.label2.Location = new System.Drawing.Point(120, 190);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 20);
@@ -119,7 +125,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(81, 222);
+            this.label3.Location = new System.Drawing.Point(81, 250);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 20);
@@ -130,41 +136,30 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 269);
+            this.label5.Location = new System.Drawing.Point(4, 307);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(184, 20);
             this.label5.TabIndex = 7;
             this.label5.Text = "Repita la Contraseña:";
             // 
-            // nombre
-            // 
-            this.nombre.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nombre.Location = new System.Drawing.Point(195, 123);
-            this.nombre.Multiline = true;
-            this.nombre.Name = "nombre";
-            this.nombre.Size = new System.Drawing.Size(248, 28);
-            this.nombre.TabIndex = 9;
-            this.nombre.TextChanged += new System.EventHandler(this.name_TextChange);
-            // 
             // Correo
             // 
             this.Correo.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.Correo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Correo.Location = new System.Drawing.Point(195, 170);
-            this.Correo.Multiline = true;
+            this.Correo.Location = new System.Drawing.Point(193, 190);
             this.Correo.Name = "Correo";
-            this.Correo.Size = new System.Drawing.Size(248, 28);
+            this.Correo.Size = new System.Drawing.Size(248, 20);
             this.Correo.TabIndex = 11;
-            this.Correo.TextChanged += new System.EventHandler(this.Correo_change);
+            this.Correo.TextChanged += new System.EventHandler(this.correo_text_Change);
+            this.Correo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Correo_change);
             // 
             // continuar_salir
             // 
             this.continuar_salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
             this.continuar_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.continuar_salir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.continuar_salir.Location = new System.Drawing.Point(24, 344);
+            this.continuar_salir.Location = new System.Drawing.Point(24, 366);
             this.continuar_salir.Margin = new System.Windows.Forms.Padding(2);
             this.continuar_salir.Name = "continuar_salir";
             this.continuar_salir.Size = new System.Drawing.Size(193, 40);
@@ -178,7 +173,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(267, 344);
+            this.button1.Location = new System.Drawing.Point(267, 366);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(193, 40);
@@ -191,32 +186,101 @@
             // 
             this.Contrasenya.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.Contrasenya.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Contrasenya.Location = new System.Drawing.Point(195, 220);
-            this.Contrasenya.Multiline = true;
+            this.Contrasenya.Location = new System.Drawing.Point(193, 253);
             this.Contrasenya.Name = "Contrasenya";
-            this.Contrasenya.Size = new System.Drawing.Size(248, 28);
+            this.Contrasenya.PasswordChar = '*';
+            this.Contrasenya.Size = new System.Drawing.Size(248, 20);
             this.Contrasenya.TabIndex = 14;
             this.Contrasenya.UseSystemPasswordChar = true;
-            this.Contrasenya.TextChanged += new System.EventHandler(this.Contrasenya_Change);
+            this.Contrasenya.TextChanged += new System.EventHandler(this.contrasenya_text_change);
+            this.Contrasenya.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Contrasenya_Change);
             // 
             // RepetirContrasenya
             // 
             this.RepetirContrasenya.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.RepetirContrasenya.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RepetirContrasenya.Location = new System.Drawing.Point(195, 269);
-            this.RepetirContrasenya.Multiline = true;
+            this.RepetirContrasenya.Location = new System.Drawing.Point(193, 310);
             this.RepetirContrasenya.Name = "RepetirContrasenya";
-            this.RepetirContrasenya.Size = new System.Drawing.Size(248, 28);
+            this.RepetirContrasenya.PasswordChar = '*';
+            this.RepetirContrasenya.Size = new System.Drawing.Size(248, 20);
             this.RepetirContrasenya.TabIndex = 15;
             this.RepetirContrasenya.UseSystemPasswordChar = true;
-            this.RepetirContrasenya.TextChanged += new System.EventHandler(this.RepetirContra_change);
+            this.RepetirContrasenya.TextChanged += new System.EventHandler(this.repetircontra_textChange);
+            this.RepetirContrasenya.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RepetirContra_change);
+            // 
+            // NombreError
+            // 
+            this.NombreError.AutoSize = true;
+            this.NombreError.ForeColor = System.Drawing.Color.Red;
+            this.NombreError.Location = new System.Drawing.Point(192, 154);
+            this.NombreError.Name = "NombreError";
+            this.NombreError.Size = new System.Drawing.Size(35, 13);
+            this.NombreError.TabIndex = 16;
+            this.NombreError.Text = "label6";
+            // 
+            // CorreoError
+            // 
+            this.CorreoError.AutoSize = true;
+            this.CorreoError.ForeColor = System.Drawing.Color.Red;
+            this.CorreoError.Location = new System.Drawing.Point(192, 218);
+            this.CorreoError.Name = "CorreoError";
+            this.CorreoError.Size = new System.Drawing.Size(35, 13);
+            this.CorreoError.TabIndex = 17;
+            this.CorreoError.Text = "label7";
+            // 
+            // ContraError
+            // 
+            this.ContraError.AutoSize = true;
+            this.ContraError.ForeColor = System.Drawing.Color.Red;
+            this.ContraError.Location = new System.Drawing.Point(192, 279);
+            this.ContraError.Name = "ContraError";
+            this.ContraError.Size = new System.Drawing.Size(35, 13);
+            this.ContraError.TabIndex = 18;
+            this.ContraError.Text = "label8";
+            // 
+            // RepetirContraError
+            // 
+            this.RepetirContraError.AutoSize = true;
+            this.RepetirContraError.ForeColor = System.Drawing.Color.Red;
+            this.RepetirContraError.Location = new System.Drawing.Point(192, 338);
+            this.RepetirContraError.Name = "RepetirContraError";
+            this.RepetirContraError.Size = new System.Drawing.Size(35, 13);
+            this.RepetirContraError.TabIndex = 19;
+            this.RepetirContraError.Text = "label9";
+            // 
+            // ErrorGeneral
+            // 
+            this.ErrorGeneral.AutoSize = true;
+            this.ErrorGeneral.ForeColor = System.Drawing.Color.Red;
+            this.ErrorGeneral.Location = new System.Drawing.Point(121, 415);
+            this.ErrorGeneral.Name = "ErrorGeneral";
+            this.ErrorGeneral.Size = new System.Drawing.Size(66, 13);
+            this.ErrorGeneral.TabIndex = 20;
+            this.ErrorGeneral.Text = "ErrorGeneral";
+            this.ErrorGeneral.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // nombre
+            // 
+            this.nombre.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nombre.Location = new System.Drawing.Point(193, 126);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(248, 20);
+            this.nombre.TabIndex = 9;
+            this.nombre.TextChanged += new System.EventHandler(this.nombreChangeText);
+            this.nombre.MouseDown += new System.Windows.Forms.MouseEventHandler(this.name_TextChange);
             // 
             // Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(484, 405);
+            this.ClientSize = new System.Drawing.Size(484, 437);
+            this.Controls.Add(this.ErrorGeneral);
+            this.Controls.Add(this.RepetirContraError);
+            this.Controls.Add(this.ContraError);
+            this.Controls.Add(this.CorreoError);
+            this.Controls.Add(this.NombreError);
             this.Controls.Add(this.RepetirContrasenya);
             this.Controls.Add(this.Contrasenya);
             this.Controls.Add(this.button1);
@@ -247,12 +311,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox nombre;
         private System.Windows.Forms.TextBox Correo;
         private System.Windows.Forms.Button continuar_salir;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox Contrasenya;
         private System.Windows.Forms.TextBox RepetirContrasenya;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label NombreError;
+        private System.Windows.Forms.Label CorreoError;
+        private System.Windows.Forms.Label ContraError;
+        private System.Windows.Forms.Label RepetirContraError;
+        private System.Windows.Forms.Label ErrorGeneral;
+        private System.Windows.Forms.TextBox nombre;
     }
 }

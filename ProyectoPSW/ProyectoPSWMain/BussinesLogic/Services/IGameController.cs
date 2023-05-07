@@ -30,5 +30,6 @@ namespace ProyectoPSWMain.Services
         List<Respuesta> AnswerShuffle();
         bool TestAnswer(string txt);
         List<Reto> GetRetosAcertados();
+        List<Reto> GetRetosJugados();
     }
 }

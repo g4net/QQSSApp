@@ -34,6 +34,7 @@
             this.op4 = new System.Windows.Forms.Button();
             this.op3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tiempo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.puntuacionConsolidadaLabel = new System.Windows.Forms.Label();
             this.puntuacionPos = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.enunciado = new System.Windows.Forms.Label();
-            this.tiempo = new System.Windows.Forms.Label();
             this.pos0 = new System.Windows.Forms.Button();
             this.pos1 = new System.Windows.Forms.Button();
             this.pos2 = new System.Windows.Forms.Button();
@@ -61,6 +61,7 @@
             this.ods_picture = new System.Windows.Forms.PictureBox();
             this.reloj_circular = new System.Windows.Forms.PictureBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonAbandonar)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -71,6 +72,7 @@
             // 
             // op1
             // 
+            this.op1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.op1.Location = new System.Drawing.Point(112, 486);
             this.op1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.op1.Name = "op1";
@@ -82,6 +84,7 @@
             // 
             // op2
             // 
+            this.op2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.op2.Location = new System.Drawing.Point(709, 486);
             this.op2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.op2.Name = "op2";
@@ -93,6 +96,7 @@
             // 
             // op4
             // 
+            this.op4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.op4.Location = new System.Drawing.Point(709, 580);
             this.op4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.op4.Name = "op4";
@@ -104,6 +108,7 @@
             // 
             // op3
             // 
+            this.op3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.op3.Location = new System.Drawing.Point(112, 580);
             this.op3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.op3.Name = "op3";
@@ -116,6 +121,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
+            this.panel1.Controls.Add(this.tiempo);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.puntuacionConsolidadaLabel);
             this.panel1.Controls.Add(this.puntuacionPos);
@@ -130,6 +136,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1297, 86);
             this.panel1.TabIndex = 4;
+            // 
+            // tiempo
+            // 
+            this.tiempo.AutoSize = true;
+            this.tiempo.BackColor = System.Drawing.Color.Transparent;
+            this.tiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tiempo.Location = new System.Drawing.Point(116, 20);
+            this.tiempo.Name = "tiempo";
+            this.tiempo.Size = new System.Drawing.Size(72, 51);
+            this.tiempo.TabIndex = 8;
+            this.tiempo.Text = "30";
             // 
             // label1
             // 
@@ -260,20 +277,9 @@
             this.enunciado.Location = new System.Drawing.Point(107, 436);
             this.enunciado.MaximumSize = new System.Drawing.Size(1100, 0);
             this.enunciado.Name = "enunciado";
-            this.enunciado.Size = new System.Drawing.Size(85, 29);
+            this.enunciado.Size = new System.Drawing.Size(76, 26);
             this.enunciado.TabIndex = 7;
             this.enunciado.Text = "label1";
-            // 
-            // tiempo
-            // 
-            this.tiempo.AutoSize = true;
-            this.tiempo.BackColor = System.Drawing.Color.Transparent;
-            this.tiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tiempo.Location = new System.Drawing.Point(613, 261);
-            this.tiempo.Name = "tiempo";
-            this.tiempo.Size = new System.Drawing.Size(72, 51);
-            this.tiempo.TabIndex = 8;
-            this.tiempo.Text = "30";
             // 
             // pos0
             // 
@@ -463,12 +469,16 @@
             this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.TimerTiempoTick);
             // 
+            // timer3
+            // 
+            this.timer3.Interval = 300;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // PartidaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1297, 699);
-            this.Controls.Add(this.tiempo);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.enunciado);
             this.Controls.Add(this.panel1);
@@ -531,5 +541,6 @@
         private System.Windows.Forms.Label puntuacionConsolidadaLabel;
         private System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Label enunciado;
+        private System.Windows.Forms.Timer timer3;
     }
 }

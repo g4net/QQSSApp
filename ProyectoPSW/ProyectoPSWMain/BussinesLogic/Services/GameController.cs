@@ -23,6 +23,7 @@ namespace ProyectoPSWMain.Services
         {
             retos = new List<Reto>();
             retosAcertados= new List<Reto>();
+            retosJugados = new List<Reto>();
         }
 
         private Partida partida;
@@ -117,6 +118,7 @@ namespace ProyectoPSWMain.Services
 
         public Reto GetReto()
         {
+            retosJugados.Add(retos[this.index]);
             return retos[this.index];
         }
 
@@ -150,17 +152,29 @@ namespace ProyectoPSWMain.Services
 
             int nuevaPuntuacionActual = partida.PuntuacionPartida - reto.Puntuacion_acierto * 2;
             partida.PuntuacionPartida = nuevaPuntuacionActual < 0 ? 0 : nuevaPuntuacionActual;
-            PreguntaExtra();
+            RetoExtra();
         }
 
-        protected void PreguntaExtra()
+        protected void RetoExtra()
         {
             this.error = this.index;
             int dificultad = GetDifficultyArray()[this.index];
             Random random = new Random();
-            List<Pregunta> questions = QQSS.service.LoadUndoneQuestionsByDifficulty(dificultad);
-            int idx = random.Next(questions.Count);
-            retos[index] = questions[idx];
+
+            if (this.retos[this.index] is Pregunta)
+            {
+                List<Pregunta> preguntas = QQSS.service.LoadUndoneQuestionsByDifficulty(dificultad);
+                int idx = random.Next(preguntas.Count);
+                retos[index] = preguntas[idx];
+            }
+
+            if (this.retos[this.index] is Frase)
+            {
+                List<Frase> frases = QQSS.service.LoadUndoneFrasesByDifficulty(dificultad);
+                int idx = random.Next(frases.Count);
+                retos[index] = frases[idx];
+            }
+
         }
 
         public List<Respuesta> AnswerShuffle()
@@ -189,15 +203,23 @@ namespace ProyectoPSWMain.Services
             return retosAcertados;
         }
 
+        public List<Reto> GetRetosJugados()
+        {
+            return retosJugados;
+        }
+
         #region Reto frase
 
-        public static string QuitarLetras(Frase fraseOriginal, string dificultad)
+        public string QuitarLetras(out List<char> letrasHueco)
         {
-            double porcentaje;
-            if (dificultad == "facil"){porcentaje = 0.7;}
-            else if (dificultad == "medio"){ porcentaje = 0.8;}
-            else if (dificultad == "dificil"){porcentaje = 0.9;}
-            else{ throw new ArgumentException("La dificultad no es válida. (introduce facil, medio o dificil");}
+            letrasHueco = new List<char>();
+            Frase fraseOriginal = (Frase) this.retos[this.index];
+            int dificultad = fraseOriginal.Dificultad;
+            double porcentaje = 0.0;
+            if (dificultad == 1) porcentaje = 0.7;
+            else if (dificultad == 2) porcentaje = 0.8;
+            else if (dificultad == 3) porcentaje = 0.9;
+            else throw new ServiceException("Dificultad de la frase incorrecta");
 
             string frase = fraseOriginal.Enunciado;
             char[] fraseCaracteres = frase.ToCharArray();
@@ -211,6 +233,7 @@ namespace ProyectoPSWMain.Services
                 {
                     randomIndex = random.Next(fraseCaracteres.Length);
                 }
+                letrasHueco.Add(fraseCaracteres[randomIndex]);
                 fraseCaracteres[randomIndex] = '_';
             }
 

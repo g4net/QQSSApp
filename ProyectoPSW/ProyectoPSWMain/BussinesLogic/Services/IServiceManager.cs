@@ -17,12 +17,17 @@ namespace ProyectoPSWMain.Services
         bool CheckUserLevel();
         void Logout();
 
+        void Register(string username, string email, string password, string repasword);
+        double GetPuntajeODS(int ods);
+        bool TestUser(string username);
+        bool TestEmail(string email);
 
-
+        bool TestPassword(string password); 
         #endregion
 
-        #region Pregunta
+        #region Reto
         List<Pregunta> LoadUndoneQuestionsByDifficulty(int difficulty);
+        List<Frase> LoadUndoneFrasesByDifficulty(int difficulty);
 
         void Questions();
 
@@ -49,6 +54,8 @@ namespace ProyectoPSWMain.Services
         void SetPuntosStrategy(int i);
         void RetoFallado();
         int GetPuntuacionConsolidada();
+        void GenerarRetos(TipoReto tipoReto);
+        string QuitarLetras(out List<char> letrasHueco);
         #endregion
 
         #region Sonidos

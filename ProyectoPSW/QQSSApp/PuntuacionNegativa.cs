@@ -15,7 +15,7 @@ namespace QQSSApp
 {
     public partial class PuntuacionNegativa : Form
     {
-        Pregunta pregunta;
+        Reto reto;
         public PuntuacionNegativa()
         {
             InitializeComponent();
@@ -34,15 +34,18 @@ namespace QQSSApp
 
         private void ButtonReintentarClick(object sender, EventArgs e)
         {
-            PartidaForm partida = new PartidaForm();
+            Form partida = new Form();
+            if (reto is Pregunta) partida = new PartidaForm();
+            else if (reto is Frase) partida = new PartidaDescubrirFrase();
             partida.Show();
             this.Close();
         }
         private void InitializeNegativePunctuation()
         {
-            pregunta = (Pregunta) QQSS.service.GetReto();
-            respuesta.Text = pregunta.RespuestaCorrecta.ToString();
-            puntuacion.Text = pregunta.GetPuntuacionFallo();
+            reto = QQSS.service.GetReto();
+            if(reto is Pregunta) respuesta.Text = (reto as Pregunta).RespuestaCorrecta.ToString();
+            if(reto is Frase) respuesta.Text = (reto as Frase).Enunciado.ToString();
+            puntuacion.Text = reto.Puntuacion_acierto * 2 + "";
             QQSS.service.RetoFallado();
             punt_actual.Text = QQSS.service.GetPuntuacionPartida().ToString();
         }
@@ -54,8 +57,8 @@ namespace QQSSApp
 
         private void PuntuacionNegativa_Load(object sender, EventArgs e)
         {
-            TextEnlace.Text = "ODS" + pregunta.Ods;
-            TextEnlace.Links.Add(0, 100, QQSS.service.EnlaceInteres(pregunta.Ods));
+            TextEnlace.Text = "ODS" + reto.Ods;
+            TextEnlace.Links.Add(0, 100, QQSS.service.EnlaceInteres(reto.Ods));
         }
     }
 }

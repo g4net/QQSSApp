@@ -17,8 +17,7 @@ namespace QQSSApp
 {
     public partial class PuntuacionPositiva : Form
     {
-        Pregunta pregunta;
-        int retoindex;
+        Reto reto;
         bool consolidado;
         public PuntuacionPositiva()
         {
@@ -29,6 +28,7 @@ namespace QQSSApp
             consolidar.Enabled = !consolidado;
             QQSS.service.PlaySonido("respuestaCorrecta");
             InitializeTimer();
+            QQSS.service.GetLoggedUser().RetosSuperados.Add(reto);
         }
 
         private void InitializeTimer()
@@ -40,8 +40,9 @@ namespace QQSSApp
 
         private void continuar_salir_Click(object sender, EventArgs e)
         {
-            this.retoindex++;
-            PartidaForm partida = new PartidaForm();
+            Form partida = new Form();
+            if (reto is Pregunta) partida = new PartidaForm();
+            else if (reto is Frase) partida = new PartidaDescubrirFrase();
             partida.Show();
             this.Close();
         }
@@ -71,8 +72,8 @@ namespace QQSSApp
 
         private void PuntuacionPositiva_Load(object sender, EventArgs e)
         {
-            TextEnlace.Text = "ODS" + pregunta.Ods;
-            TextEnlace.Links.Add(0,100, QQSS.service.EnlaceInteres(pregunta.Ods));
+            TextEnlace.Text = "ODS" + reto.Ods;
+            TextEnlace.Links.Add(0,100, QQSS.service.EnlaceInteres(reto.Ods));
         }
     }
 }

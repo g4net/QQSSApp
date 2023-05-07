@@ -22,6 +22,10 @@ namespace ProyectoPSWMain.Entities
 
         public String Contraseña { get; set; }
 
+        public virtual Estadistica Estadistica { get; set; }
+
+        public virtual ICollection<Reto> RetosSuperados { get; set; }
+        public virtual ICollection<Reto> RetosJugados { get; set; }
 
         public virtual ICollection<Pregunta> PreguntasRealizadas { get; set; }
 

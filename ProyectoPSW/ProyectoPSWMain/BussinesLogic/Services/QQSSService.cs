@@ -121,9 +121,38 @@ namespace ProyectoPSWMain.Services
         public void Register(String Nombre, String Email, String Password)
         {
 
-            User usuario = new User(Nombre, Email, Password);
-            repository.Insert<User>(usuario);
-            Commit();
+            List<User> users = repository.GetAll<User>().ToList();
+            User usuario;
+            if (Nombre == "" || Email == "" || Password == "")
+            {
+                throw new ServiceException("Please Complete All the Camps");
+            }
+            if (!(users.Where(x => x.Email == Email).Any()))
+            {
+                if (!users.Where(x => x.Nombre == Nombre).Any())
+                {
+
+                    usuario = new User(Nombre, Email, Password);
+                    repository.Insert<User>(usuario);
+                    Commit();
+                }
+                else
+                {
+                    throw new ServiceException("The Name is already in use");
+
+                }
+
+            }
+            else
+            {
+                throw new ServiceException("The Email is already linked with an account ");
+            }
+            
+           
+
+            
+        }
+
             // Esto lo comprobamos en el form? para poder sacar los textos en tiempo real ?
             /*
             string regex = @"^[^@\s]+@[^@\s]+\.(com|net|org|gov)$";
@@ -162,7 +191,8 @@ namespace ProyectoPSWMain.Services
             //    throw new ServiceException("User with DNI" + usuario.Id + "already exists");
             //}
 
-        }
+        
+
         public void Login(String Logger, String Password) {
             List<User> users = repository.GetAll<User>().ToList();
             User usuario;

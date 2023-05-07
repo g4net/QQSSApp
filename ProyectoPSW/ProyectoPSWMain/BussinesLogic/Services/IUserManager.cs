@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace ProyectoPSWMain.Services
 {
@@ -14,11 +15,18 @@ namespace ProyectoPSWMain.Services
         bool IsValidEmail(string email);
         User GetLoggedUser();
         void UpdateUserScore(int points);
+        void IncrementaAciertos();
+        void IncrementaFallos();
         bool CheckLevel();
         void SetLoggedUser(User user);
-        void UpdateUserRetos(List<Reto> retos);
+        void UpdateUserRetos(List<Reto> retosAcertados, List<Reto> retosJugados);
         bool CheckRetoPlayed(Reto reto);
-        List<Pregunta> GetUsersQuestionByDificulty(int dificultad);
+        double GetPuntajeODS(int ods);
+        List<Pregunta> GetUsersQuestionByDifficulty(int dificultad);
+        List<Frase> GetUsersFrasesByDifficulty(int dificultad);
+        List<Reto> GetUsersRetosByDifficulty(int dificultad);
         void ResetUserQuestions(int dificultad);
+        void ResetUserFrases(int dificultad);
+        void ResetUserRetos(int dificultad);
     }
 }

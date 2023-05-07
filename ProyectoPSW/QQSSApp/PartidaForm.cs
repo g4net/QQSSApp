@@ -17,6 +17,7 @@ namespace QQSSApp
 {
     public partial class PartidaForm : Form
     {
+        public Button botonCorrecto;
         Pregunta pregunta;
         List<Respuesta> respuestas;
         private List<Image> images;
@@ -24,7 +25,9 @@ namespace QQSSApp
         private int currentImageIndex = 0;
         int retoindex;
         int tiempoContador;
+        int tiempodeMostrarRta;
         int error;
+        bool esCorrecta;
         public PartidaForm()
         {
             InitializeComponent();
@@ -65,7 +68,7 @@ namespace QQSSApp
                     b.BackColor = Color.YellowGreen;
                 }
                 else b.BackColor = Color.DarkSeaGreen;
-                if (i == QQSS.service.GetError()) { b.BackColor = Color.LightCoral; }
+                if (i == error) { b.BackColor = Color.LightCoral; }
             }
         }
 
@@ -98,44 +101,61 @@ namespace QQSSApp
 
         private void op1_click(object sender, EventArgs e)
         {
-            CheckAnswer(op1.Text);
+            CheckAnswer(op1);
         }
 
         private void op2_Click(object sender, EventArgs e)
         {
-            CheckAnswer(op2.Text);
+            CheckAnswer(op2);
 
         }
 
         private void op3_Click(object sender, EventArgs e)
         {
-            CheckAnswer(op3.Text);
+            CheckAnswer(op3);
         }
 
         private void op4_Click(object sender, EventArgs e)
         {
-            CheckAnswer(op4.Text);
+            CheckAnswer(op4);
         }
 
-        private void CheckAnswer(string optext)
+        private void CheckAnswer(Button op)
         {
-            int error = QQSS.service.GetError();
-           
-            if (QQSS.service.TestAnswer(optext))
+            timer3.Interval = 1000;
+            timer3.Start();
+            timer1.Stop();
+            timer2.Stop();
+
+            String optext;
+            if (op == null)
             {
-                Form respuestaAcertada;
-                if (retoindex != 9) respuestaAcertada = new PuntuacionPositiva();
-                else respuestaAcertada = new PartidaGanada();
-                respuestaAcertada.Show();
-                this.Close();
+                optext = "";
             }
             else
             {
-                Form respuestaFallada;
-                if (QQSS.service.GetError() != -1) respuestaFallada = new PartidaPerdida();
-                else respuestaFallada = new PuntuacionNegativa();
-                respuestaFallada.Show();
-                this.Close();
+                optext = op.Text;
+            }
+            int error = QQSS.service.GetError();
+            
+            if (QQSS.service.TestAnswer(optext))
+            {
+                
+                op.BackColor = Color.Green;
+                esCorrecta = true;
+               
+            }
+            else
+            {
+                if (op != null)
+                {
+                    op.BackColor = Color.Red;
+                    botonCorrecto.BackColor = Color.Green;
+                }
+                else {
+                    botonCorrecto.BackColor = Color.Green;
+                }
+                esCorrecta = false;
             }
         }
 
@@ -150,27 +170,19 @@ namespace QQSSApp
 
         private void Atras(object sender, EventArgs e) 
         {
-            DialogResult result = MessageBox.Show("¿Está seguro de que desea abandonar la partida actual (perderá los puntos no consolidados)?",
-                                                  "Confirmación de abandono",
-                                                  MessageBoxButtons.YesNo,
-                                                  MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                QQSS.service.AbandonarPartida();
-                Consolidar consolidarForm = new Consolidar();
-                consolidarForm.Show();
-                this.Close();
-            }
-
-            
+            Confirmar confirmarForm = new Confirmar(this);
+            confirmarForm.ShowDialog();
         }
 
         private void TimerTiempoTick(object sender, EventArgs e)
         {
             tiempoContador--;
             tiempo.Text = tiempoContador.ToString();
-            if (tiempoContador == 0) CheckAnswer("");
+            if (tiempoContador == 0)
+            {
+             
+                CheckAnswer(null);
+            }
         }
 
         private void InitializeTimers()
@@ -180,6 +192,8 @@ namespace QQSSApp
             timer2.Interval = 1000;
             tiempoContador = 30;
             timer2.Start();
+            tiempodeMostrarRta = 3;
+            
         }
 
         private void InitializeRetoPregunta()
@@ -189,10 +203,44 @@ namespace QQSSApp
             puntuacionPos.Text = pregunta.GetPuntuacionAcierto();
             puntuaciónNegativa.Text = pregunta.GetPuntuacionFallo();
             respuestas = QQSS.service.GetRespuestas();
+            
             op1.Text = respuestas.ElementAt(0).getText();
+            CheckCorrectButton(op1);
             op2.Text = respuestas.ElementAt(1).getText();
+            CheckCorrectButton(op2);
             op3.Text = respuestas.ElementAt(2).getText();
+            CheckCorrectButton(op3);
             op4.Text = respuestas.ElementAt(3).getText();
+            CheckCorrectButton(op4);
+        }
+        private void CheckCorrectButton(Button op) {
+            if (op.Text == pregunta.RespuestaCorrecta) {
+                botonCorrecto = op;
+                botonCorrecto.BackColor = Color.Green;
+            }
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            tiempodeMostrarRta--;
+
+            if (tiempodeMostrarRta == 0) { if (esCorrecta)
+                {
+                    Form respuestaAcertada;
+                    if (retoindex != 9) respuestaAcertada = new PuntuacionPositiva();
+                    else respuestaAcertada = new PartidaGanada();
+                    respuestaAcertada.Show();
+                    this.Close();
+                }
+                else {
+                    Form respuestaFallada;
+                    if (QQSS.service.GetError() != -1) respuestaFallada = new PartidaPerdida();
+                    else respuestaFallada = new PuntuacionNegativa();
+                    respuestaFallada.Show();
+                    this.Close();
+
+                }
+            }
         }
     }
 }
