@@ -88,8 +88,13 @@
     <Compile Include="BussinesLogic\Entities\User.cs" />
     <Compile Include="BussinesLogic\Services\App.cs" />
     <Compile Include="BussinesLogic\Services\AppBuilder.cs" />
+    <Compile Include="BussinesLogic\Services\Strategy\HalfStrategy.cs" />
+    <Compile Include="BussinesLogic\Services\Strategy\HardStrategy.cs" />
+    <Compile Include="BussinesLogic\Services\Strategy\MiddleStrategy.cs" />
+    <Compile Include="BussinesLogic\Services\Strategy\EasyStrategy.cs" />
+    <Compile Include="BussinesLogic\Services\IPuntosStrategy.cs" />
     <Compile Include="BussinesLogic\Services\TipoReto.cs" />
-    <Compile Include="BussinesLogic\Services\Context.cs" />
+    <Compile Include="BussinesLogic\Services\Strategy\Context.cs" />
     <Compile Include="BussinesLogic\Services\DatabaseService.cs" />
     <Compile Include="BussinesLogic\Services\GameController.cs" />
     <Compile Include="BussinesLogic\Services\IDatabaseService.cs" />

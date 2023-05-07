@@ -24,6 +24,7 @@ namespace ProyectoPSWMain.Services
             retos = new List<Reto>();
             retosAcertados= new List<Reto>();
             retosJugados = new List<Reto>();
+            context = new Context();
         }
 
         private Partida partida;
@@ -34,7 +35,6 @@ namespace ProyectoPSWMain.Services
         private List<Reto> retos;
         private List<Reto> retosAcertados;
         private Context context;
-        private PuntosStrategy puntosStrategy;
         private List<Reto> retosJugados;
 
         public void UpdateError()
