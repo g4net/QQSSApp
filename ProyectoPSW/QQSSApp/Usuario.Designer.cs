@@ -33,7 +33,6 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.nivel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -230,16 +229,13 @@
             this.PieChart.Location = new System.Drawing.Point(0, 0);
             this.PieChart.Name = "PieChart";
             this.PieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.PieChart.Series.Add(series2);
             this.PieChart.Size = new System.Drawing.Size(894, 359);
             this.PieChart.TabIndex = 15;
             this.PieChart.Text = "chart2";
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Location = new System.Drawing.Point(47, 383);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -251,7 +247,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.ColumnChart);
             this.splitContainer1.Size = new System.Drawing.Size(894, 359);
-            this.splitContainer1.SplitterDistance = 355;
+            this.splitContainer1.SplitterDistance = 863;
             this.splitContainer1.TabIndex = 16;
             // 
             // Usuario
