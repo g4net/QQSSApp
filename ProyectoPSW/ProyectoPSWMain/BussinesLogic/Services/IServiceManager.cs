@@ -17,9 +17,6 @@ namespace ProyectoPSWMain.Services
         bool CheckUserLevel();
         void Logout();
 
-        void IncrementaAciertos();
-        void IncrementaFallos();
-
         void Register(string username, string email, string password, string repasword);
         double GetPuntajeODS(int ods);
         bool TestUser(string username);
@@ -28,8 +25,9 @@ namespace ProyectoPSWMain.Services
         bool TestPassword(string password); 
         #endregion
 
-        #region Pregunta
+        #region Reto
         List<Pregunta> LoadUndoneQuestionsByDifficulty(int difficulty);
+        List<Frase> LoadUndoneFrasesByDifficulty(int difficulty);
 
         void Questions();
 

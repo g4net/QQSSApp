@@ -14,18 +14,17 @@ namespace QQSSApp
 {
     public partial class PartidaPerdida : Form
     {
-        Pregunta pregunta;
+        Reto reto;
         
         public PartidaPerdida()
         {
             InitializeComponent();
             this.CenterToScreen();
             puntuacion_acumulada.Text = "0";
-            pregunta = (Pregunta) QQSS.service.GetReto();
+            reto = QQSS.service.GetReto();
             QQSS.service.PlaySonido("PartidaPerdida");
-            respuesta.Text = pregunta.RespuestaCorrecta.ToString();
-            QQSS.service.IncrementaFallos();
-            QQSS.service.GetLoggedUser().RetosJugados.Add(pregunta);
+            if (reto is Pregunta) respuesta.Text = (reto as Pregunta).RespuestaCorrecta.ToString();
+            if (reto is Frase) respuesta.Text = (reto as Frase).Enunciado.ToString();
         }
 
 
@@ -49,8 +48,8 @@ namespace QQSSApp
 
         private void PartidaPerdida_Load(object sender, EventArgs e)
         {
-            TextEnlace.Text = "ODS" + pregunta.Ods;
-            TextEnlace.Links.Add(0, 100, QQSS.service.EnlaceInteres(pregunta.Ods));
+            TextEnlace.Text = "ODS" + reto.Ods;
+            TextEnlace.Links.Add(0, 100, QQSS.service.EnlaceInteres(reto.Ods));
         }
     }
 }

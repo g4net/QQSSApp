@@ -43,7 +43,6 @@ namespace QQSSApp
             InitializeODS();
             HabilitarBotonAbandonar();
             QQSS.service.PlaySonido("musicaFondo" + GetRandomNumber(7));
-            
         }
 
         public string GetRandomNumber(int maxNumber)

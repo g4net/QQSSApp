@@ -23,6 +23,11 @@ namespace QQSSApp
         private int tiempoContador;
         private int tiempodeMostrarRta;
         bool esCorrecta;
+        Label clickedLabel;
+        Label[] fraseConHuecos;
+        Label[] letrasParaHuecos;
+        char[] textoFrase;
+        List<char> huecos;
 
         public PartidaDescubrirFrase()
         {
@@ -45,36 +50,73 @@ namespace QQSSApp
 
         public void InitializeRetoFrase()
         {
-            List<char> huecos;
+            fraseConHuecos = new Label[101];
+            letrasParaHuecos = new Label[50];
 
-            char [] textoFrase = QQSS.service.QuitarLetras(out huecos).ToCharArray();
+            textoFrase = QQSS.service.QuitarLetras(out huecos).ToCharArray();
 
             enunciado.Text = frase.Descripcion;
 
             puntuacionPos.Text = frase.Puntuacion_acierto.ToString();
             puntuaciónNegativa.Text = (frase.Puntuacion_acierto * 2).ToString();
 
-            for (int i = 0; i <= 70; i++)
+            LabelInit();
+        }
+
+        private void LabelInit()
+        {
+            for (int i = 0; i <= 100; i++)
             {
                 string nombreLabel = "letra" + i;
                 Control[] controles = this.Controls.Find(nombreLabel, true);
                 if (controles.Length == 0 || controles[0] == null) continue;
                 Label b = (Label)controles[0];
+                fraseConHuecos[i] = b;
                 if (i >= textoFrase.Length) { b.Hide(); continue; }
                 b.Text = "" + textoFrase[i];
+                b.Click += (sender, _) =>
+                {
+                    if (b.Text != "_") return;
+                    b.Text = movingLabel.Text;
+                    movingLabel.Text = "?";
+                    clickedLabel.Hide();
+                };
             }
 
-            for(int i = 0; i<= 49; i++)
+            for (int i = 0; i <= 49; i++)
             {
                 string nombreLabel = "letraHueco" + i;
                 Control[] controles = this.Controls.Find(nombreLabel, true);
                 if (controles.Length == 0 || controles[0] == null) continue;
                 Label b = (Label)controles[0];
+                letrasParaHuecos[i] = b;
                 if (i >= huecos.Count) { b.Hide(); continue; }
                 b.Text = "" + huecos[i];
+                b.Click += (sender, _) =>
+                {
+                    clickedLabel = b;
+                    movingLabel.Text = b.Text;
+                    movingLabel.Show();
+                };
+            }
+        }
+
+        private void LabelReset()
+        {
+            for(int i = 0; i <= 100; i++)
+            {
+                if (i == textoFrase.Length) break;
+                fraseConHuecos[i].Text = "" + textoFrase[i];
             }
 
+            for (int i = 0; i <= 49; i++)
+            {
+                if (i == huecos.Count) break;
+                letrasParaHuecos[i].Show();
+                letrasParaHuecos[i].Text = "" + huecos[i];
+            }
         }
+
         public string GetRandomNumber(int maxNumber)
         {
             Random random = new Random();
@@ -146,12 +188,22 @@ namespace QQSSApp
 
         public void CheckAnswer(string fraseFormada)
         {
-            timer3.Interval = 1000;
-            timer3.Start();
-            timer1.Stop();
-            timer2.Stop();
-
-            esCorrecta = true;
+            if (fraseFormada == frase.Enunciado)
+            {
+                Form respuestaAcertada;
+                if (retoindex != 9) respuestaAcertada = new PuntuacionPositiva();
+                else respuestaAcertada = new PartidaGanada();
+                respuestaAcertada.Show();
+                this.Close();
+            }
+            else
+            {
+                LabelReset();
+                checkButton.Enabled = false;
+                checkButton.BackColor = Color.FromArgb(231, 105, 105);
+                timer3.Start();
+            }
+            
         }
 
         private void TimerTiempoTick(object sender, EventArgs e)
@@ -167,39 +219,53 @@ namespace QQSSApp
 
         private void InitializeTimers()
         {
-            timer1.Interval = 1764;
+            timer1.Interval = 7058;
             timer1.Start();
             timer2.Interval = 1000;
-            tiempoContador = 30;
+            tiempoContador = 120;
             timer2.Start();
-            tiempodeMostrarRta = 3;
+            tiempodeMostrarRta = 2;
+            timer3.Interval = 1000;
 
         }
 
-        private void timer3_Tick(object sender, EventArgs e)
+
+        private void OnMouseMove(object sender, MouseEventArgs e)
+        {
+            //Point mousePos = Control.MousePosition;
+            //Point labelPos = this.PointToClient(mousePos);
+            //movingLabel.BringToFront();
+            //movingLabel.Location = new Point(labelPos.X + 10, labelPos.Y + 10);
+        }
+
+        private void PartidaDescubrirFrase_Load(object sender, EventArgs e)
+        {
+            //foreach (Control control in this.Controls)
+            //{
+            //    control.MouseMove += new MouseEventHandler(OnMouseMove);
+            //}
+        }
+
+        private void CheckButtonOnClick(object sender, EventArgs e)
+        {
+            timer3.Start();
+            StringBuilder sb = new StringBuilder();
+            foreach(Label l in fraseConHuecos)
+            {
+                sb.Append(l.Text);
+            }
+            CheckAnswer(sb.ToString());
+        }
+
+        private void TimerMostrarRespuestaTick(object sender, EventArgs e)
         {
             tiempodeMostrarRta--;
 
             if (tiempodeMostrarRta != 0) return;
 
-            if(esCorrecta)
-            {
-                Form respuestaAcertada;
-                if (retoindex != 9) respuestaAcertada = new PuntuacionPositiva();
-                else respuestaAcertada = new PartidaGanada();
-                respuestaAcertada.Show();
-                this.Close();
-            }
-            else
-            {
-                Form respuestaFallada;
-                if (QQSS.service.GetError() != -1) respuestaFallada = new PartidaPerdida();
-                else respuestaFallada = new PuntuacionNegativa();
-                respuestaFallada.Show();
-                this.Close();
-            }
-
+            checkButton.Enabled = true;
+            checkButton.BackColor = Color.FromArgb(127, 221, 130);
+            tiempodeMostrarRta = 2;
         }
-
     }
 }

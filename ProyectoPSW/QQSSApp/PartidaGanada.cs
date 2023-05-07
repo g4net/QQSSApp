@@ -15,16 +15,14 @@ namespace QQSSApp
 {
     public partial class PartidaGanada : Form
     {
-        Pregunta pregunta;
+        Reto reto;
         public PartidaGanada()
         {
             InitializeComponent();
             this.CenterToScreen();
             QQSS.service.PlaySonido("PartidaGanada");
             InitializePartidaGanada();
-            QQSS.service.IncrementaAciertos();
-            QQSS.service.GetLoggedUser().RetosSuperados.Add(pregunta);
-            QQSS.service.GetLoggedUser().RetosJugados.Add(pregunta);
+            QQSS.service.GetLoggedUser().RetosSuperados.Add(reto);
         }
 
         private void continuar_salir_Click(object sender, EventArgs e)
@@ -36,8 +34,8 @@ namespace QQSSApp
         }
         private void InitializePartidaGanada()
         {
-            pregunta = (Pregunta) QQSS.service.GetReto();
-            puntuacion.Text = pregunta.GetPuntuacionAcierto();
+            reto = QQSS.service.GetReto();
+            puntuacion.Text = reto.Puntuacion_acierto.ToString();
             QQSS.service.RetoAcertado();
             puntuacion_partida.Text = QQSS.service.GetPuntuacionPartida().ToString();
             puntuacion_total.Text = QQSS.service.GetLoggedUser().PuntuacionAcumulada.ToString();
@@ -50,8 +48,8 @@ namespace QQSSApp
 
         private void PartidaGanada_Load(object sender, EventArgs e)
         {
-            TextEnlace.Text = "ODS" + pregunta.Ods;
-            TextEnlace.Links.Add(0, 100, QQSS.service.EnlaceInteres(pregunta.Ods));
+            TextEnlace.Text = "ODS" + reto.Ods;
+            TextEnlace.Links.Add(0, 100, QQSS.service.EnlaceInteres(reto.Ods));
         }
     }
 }

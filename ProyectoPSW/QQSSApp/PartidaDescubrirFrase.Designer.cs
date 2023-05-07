@@ -123,6 +123,36 @@
             this.letra68 = new System.Windows.Forms.Label();
             this.letra69 = new System.Windows.Forms.Label();
             this.letra70 = new System.Windows.Forms.Label();
+            this.letra71 = new System.Windows.Forms.Label();
+            this.letra72 = new System.Windows.Forms.Label();
+            this.letra73 = new System.Windows.Forms.Label();
+            this.letra74 = new System.Windows.Forms.Label();
+            this.letra75 = new System.Windows.Forms.Label();
+            this.letra76 = new System.Windows.Forms.Label();
+            this.letra77 = new System.Windows.Forms.Label();
+            this.letra78 = new System.Windows.Forms.Label();
+            this.letra79 = new System.Windows.Forms.Label();
+            this.letra80 = new System.Windows.Forms.Label();
+            this.letra81 = new System.Windows.Forms.Label();
+            this.letra82 = new System.Windows.Forms.Label();
+            this.letra83 = new System.Windows.Forms.Label();
+            this.letra84 = new System.Windows.Forms.Label();
+            this.letra85 = new System.Windows.Forms.Label();
+            this.letra86 = new System.Windows.Forms.Label();
+            this.letra87 = new System.Windows.Forms.Label();
+            this.letra88 = new System.Windows.Forms.Label();
+            this.letra89 = new System.Windows.Forms.Label();
+            this.letra90 = new System.Windows.Forms.Label();
+            this.letra91 = new System.Windows.Forms.Label();
+            this.letra92 = new System.Windows.Forms.Label();
+            this.letra93 = new System.Windows.Forms.Label();
+            this.letra94 = new System.Windows.Forms.Label();
+            this.letra95 = new System.Windows.Forms.Label();
+            this.letra96 = new System.Windows.Forms.Label();
+            this.letra97 = new System.Windows.Forms.Label();
+            this.letra98 = new System.Windows.Forms.Label();
+            this.letra99 = new System.Windows.Forms.Label();
+            this.letra100 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.ods_picture = new System.Windows.Forms.PictureBox();
             this.reloj_circular = new System.Windows.Forms.PictureBox();
@@ -180,6 +210,9 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.movingLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonAbandonar)).BeginInit();
@@ -377,9 +410,9 @@
             this.tiempo.Location = new System.Drawing.Point(87, 16);
             this.tiempo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tiempo.Name = "tiempo";
-            this.tiempo.Size = new System.Drawing.Size(57, 39);
+            this.tiempo.Size = new System.Drawing.Size(77, 39);
             this.tiempo.TabIndex = 8;
-            this.tiempo.Text = "30";
+            this.tiempo.Text = "120";
             // 
             // consolidadotexto
             // 
@@ -554,6 +587,36 @@
             this.flowLayoutPanel1.Controls.Add(this.letra68);
             this.flowLayoutPanel1.Controls.Add(this.letra69);
             this.flowLayoutPanel1.Controls.Add(this.letra70);
+            this.flowLayoutPanel1.Controls.Add(this.letra71);
+            this.flowLayoutPanel1.Controls.Add(this.letra72);
+            this.flowLayoutPanel1.Controls.Add(this.letra73);
+            this.flowLayoutPanel1.Controls.Add(this.letra74);
+            this.flowLayoutPanel1.Controls.Add(this.letra75);
+            this.flowLayoutPanel1.Controls.Add(this.letra76);
+            this.flowLayoutPanel1.Controls.Add(this.letra77);
+            this.flowLayoutPanel1.Controls.Add(this.letra78);
+            this.flowLayoutPanel1.Controls.Add(this.letra79);
+            this.flowLayoutPanel1.Controls.Add(this.letra80);
+            this.flowLayoutPanel1.Controls.Add(this.letra81);
+            this.flowLayoutPanel1.Controls.Add(this.letra82);
+            this.flowLayoutPanel1.Controls.Add(this.letra83);
+            this.flowLayoutPanel1.Controls.Add(this.letra84);
+            this.flowLayoutPanel1.Controls.Add(this.letra85);
+            this.flowLayoutPanel1.Controls.Add(this.letra86);
+            this.flowLayoutPanel1.Controls.Add(this.letra87);
+            this.flowLayoutPanel1.Controls.Add(this.letra88);
+            this.flowLayoutPanel1.Controls.Add(this.letra89);
+            this.flowLayoutPanel1.Controls.Add(this.letra90);
+            this.flowLayoutPanel1.Controls.Add(this.letra91);
+            this.flowLayoutPanel1.Controls.Add(this.letra92);
+            this.flowLayoutPanel1.Controls.Add(this.letra93);
+            this.flowLayoutPanel1.Controls.Add(this.letra94);
+            this.flowLayoutPanel1.Controls.Add(this.letra95);
+            this.flowLayoutPanel1.Controls.Add(this.letra96);
+            this.flowLayoutPanel1.Controls.Add(this.letra97);
+            this.flowLayoutPanel1.Controls.Add(this.letra98);
+            this.flowLayoutPanel1.Controls.Add(this.letra99);
+            this.flowLayoutPanel1.Controls.Add(this.letra100);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(78, 348);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(820, 85);
@@ -1340,6 +1403,336 @@
             this.letra70.TabIndex = 72;
             this.letra70.Text = "A";
             // 
+            // letra71
+            // 
+            this.letra71.AutoSize = true;
+            this.letra71.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra71.Location = new System.Drawing.Point(72, 48);
+            this.letra71.Margin = new System.Windows.Forms.Padding(0);
+            this.letra71.Name = "letra71";
+            this.letra71.Size = new System.Drawing.Size(24, 24);
+            this.letra71.TabIndex = 73;
+            this.letra71.Text = "A";
+            // 
+            // letra72
+            // 
+            this.letra72.AutoSize = true;
+            this.letra72.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra72.Location = new System.Drawing.Point(96, 48);
+            this.letra72.Margin = new System.Windows.Forms.Padding(0);
+            this.letra72.Name = "letra72";
+            this.letra72.Size = new System.Drawing.Size(24, 24);
+            this.letra72.TabIndex = 74;
+            this.letra72.Text = "A";
+            // 
+            // letra73
+            // 
+            this.letra73.AutoSize = true;
+            this.letra73.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra73.Location = new System.Drawing.Point(120, 48);
+            this.letra73.Margin = new System.Windows.Forms.Padding(0);
+            this.letra73.Name = "letra73";
+            this.letra73.Size = new System.Drawing.Size(24, 24);
+            this.letra73.TabIndex = 75;
+            this.letra73.Text = "A";
+            // 
+            // letra74
+            // 
+            this.letra74.AutoSize = true;
+            this.letra74.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra74.Location = new System.Drawing.Point(144, 48);
+            this.letra74.Margin = new System.Windows.Forms.Padding(0);
+            this.letra74.Name = "letra74";
+            this.letra74.Size = new System.Drawing.Size(24, 24);
+            this.letra74.TabIndex = 76;
+            this.letra74.Text = "A";
+            // 
+            // letra75
+            // 
+            this.letra75.AutoSize = true;
+            this.letra75.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra75.Location = new System.Drawing.Point(168, 48);
+            this.letra75.Margin = new System.Windows.Forms.Padding(0);
+            this.letra75.Name = "letra75";
+            this.letra75.Size = new System.Drawing.Size(24, 24);
+            this.letra75.TabIndex = 77;
+            this.letra75.Text = "A";
+            // 
+            // letra76
+            // 
+            this.letra76.AutoSize = true;
+            this.letra76.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra76.Location = new System.Drawing.Point(192, 48);
+            this.letra76.Margin = new System.Windows.Forms.Padding(0);
+            this.letra76.Name = "letra76";
+            this.letra76.Size = new System.Drawing.Size(24, 24);
+            this.letra76.TabIndex = 78;
+            this.letra76.Text = "A";
+            // 
+            // letra77
+            // 
+            this.letra77.AutoSize = true;
+            this.letra77.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra77.Location = new System.Drawing.Point(216, 48);
+            this.letra77.Margin = new System.Windows.Forms.Padding(0);
+            this.letra77.Name = "letra77";
+            this.letra77.Size = new System.Drawing.Size(24, 24);
+            this.letra77.TabIndex = 79;
+            this.letra77.Text = "A";
+            // 
+            // letra78
+            // 
+            this.letra78.AutoSize = true;
+            this.letra78.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra78.Location = new System.Drawing.Point(240, 48);
+            this.letra78.Margin = new System.Windows.Forms.Padding(0);
+            this.letra78.Name = "letra78";
+            this.letra78.Size = new System.Drawing.Size(24, 24);
+            this.letra78.TabIndex = 80;
+            this.letra78.Text = "A";
+            // 
+            // letra79
+            // 
+            this.letra79.AutoSize = true;
+            this.letra79.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra79.Location = new System.Drawing.Point(264, 48);
+            this.letra79.Margin = new System.Windows.Forms.Padding(0);
+            this.letra79.Name = "letra79";
+            this.letra79.Size = new System.Drawing.Size(24, 24);
+            this.letra79.TabIndex = 81;
+            this.letra79.Text = "A";
+            // 
+            // letra80
+            // 
+            this.letra80.AutoSize = true;
+            this.letra80.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra80.Location = new System.Drawing.Point(288, 48);
+            this.letra80.Margin = new System.Windows.Forms.Padding(0);
+            this.letra80.Name = "letra80";
+            this.letra80.Size = new System.Drawing.Size(24, 24);
+            this.letra80.TabIndex = 82;
+            this.letra80.Text = "A";
+            // 
+            // letra81
+            // 
+            this.letra81.AutoSize = true;
+            this.letra81.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra81.Location = new System.Drawing.Point(312, 48);
+            this.letra81.Margin = new System.Windows.Forms.Padding(0);
+            this.letra81.Name = "letra81";
+            this.letra81.Size = new System.Drawing.Size(24, 24);
+            this.letra81.TabIndex = 83;
+            this.letra81.Text = "A";
+            // 
+            // letra82
+            // 
+            this.letra82.AutoSize = true;
+            this.letra82.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra82.Location = new System.Drawing.Point(336, 48);
+            this.letra82.Margin = new System.Windows.Forms.Padding(0);
+            this.letra82.Name = "letra82";
+            this.letra82.Size = new System.Drawing.Size(24, 24);
+            this.letra82.TabIndex = 84;
+            this.letra82.Text = "A";
+            // 
+            // letra83
+            // 
+            this.letra83.AutoSize = true;
+            this.letra83.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra83.Location = new System.Drawing.Point(360, 48);
+            this.letra83.Margin = new System.Windows.Forms.Padding(0);
+            this.letra83.Name = "letra83";
+            this.letra83.Size = new System.Drawing.Size(24, 24);
+            this.letra83.TabIndex = 85;
+            this.letra83.Text = "A";
+            // 
+            // letra84
+            // 
+            this.letra84.AutoSize = true;
+            this.letra84.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra84.Location = new System.Drawing.Point(384, 48);
+            this.letra84.Margin = new System.Windows.Forms.Padding(0);
+            this.letra84.Name = "letra84";
+            this.letra84.Size = new System.Drawing.Size(24, 24);
+            this.letra84.TabIndex = 86;
+            this.letra84.Text = "A";
+            // 
+            // letra85
+            // 
+            this.letra85.AutoSize = true;
+            this.letra85.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra85.Location = new System.Drawing.Point(408, 48);
+            this.letra85.Margin = new System.Windows.Forms.Padding(0);
+            this.letra85.Name = "letra85";
+            this.letra85.Size = new System.Drawing.Size(24, 24);
+            this.letra85.TabIndex = 87;
+            this.letra85.Text = "A";
+            // 
+            // letra86
+            // 
+            this.letra86.AutoSize = true;
+            this.letra86.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra86.Location = new System.Drawing.Point(432, 48);
+            this.letra86.Margin = new System.Windows.Forms.Padding(0);
+            this.letra86.Name = "letra86";
+            this.letra86.Size = new System.Drawing.Size(24, 24);
+            this.letra86.TabIndex = 88;
+            this.letra86.Text = "A";
+            // 
+            // letra87
+            // 
+            this.letra87.AutoSize = true;
+            this.letra87.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra87.Location = new System.Drawing.Point(456, 48);
+            this.letra87.Margin = new System.Windows.Forms.Padding(0);
+            this.letra87.Name = "letra87";
+            this.letra87.Size = new System.Drawing.Size(24, 24);
+            this.letra87.TabIndex = 89;
+            this.letra87.Text = "A";
+            // 
+            // letra88
+            // 
+            this.letra88.AutoSize = true;
+            this.letra88.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra88.Location = new System.Drawing.Point(480, 48);
+            this.letra88.Margin = new System.Windows.Forms.Padding(0);
+            this.letra88.Name = "letra88";
+            this.letra88.Size = new System.Drawing.Size(24, 24);
+            this.letra88.TabIndex = 90;
+            this.letra88.Text = "A";
+            // 
+            // letra89
+            // 
+            this.letra89.AutoSize = true;
+            this.letra89.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra89.Location = new System.Drawing.Point(504, 48);
+            this.letra89.Margin = new System.Windows.Forms.Padding(0);
+            this.letra89.Name = "letra89";
+            this.letra89.Size = new System.Drawing.Size(24, 24);
+            this.letra89.TabIndex = 91;
+            this.letra89.Text = "A";
+            // 
+            // letra90
+            // 
+            this.letra90.AutoSize = true;
+            this.letra90.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra90.Location = new System.Drawing.Point(528, 48);
+            this.letra90.Margin = new System.Windows.Forms.Padding(0);
+            this.letra90.Name = "letra90";
+            this.letra90.Size = new System.Drawing.Size(24, 24);
+            this.letra90.TabIndex = 92;
+            this.letra90.Text = "A";
+            // 
+            // letra91
+            // 
+            this.letra91.AutoSize = true;
+            this.letra91.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra91.Location = new System.Drawing.Point(552, 48);
+            this.letra91.Margin = new System.Windows.Forms.Padding(0);
+            this.letra91.Name = "letra91";
+            this.letra91.Size = new System.Drawing.Size(24, 24);
+            this.letra91.TabIndex = 93;
+            this.letra91.Text = "A";
+            // 
+            // letra92
+            // 
+            this.letra92.AutoSize = true;
+            this.letra92.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra92.Location = new System.Drawing.Point(576, 48);
+            this.letra92.Margin = new System.Windows.Forms.Padding(0);
+            this.letra92.Name = "letra92";
+            this.letra92.Size = new System.Drawing.Size(24, 24);
+            this.letra92.TabIndex = 94;
+            this.letra92.Text = "A";
+            // 
+            // letra93
+            // 
+            this.letra93.AutoSize = true;
+            this.letra93.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra93.Location = new System.Drawing.Point(600, 48);
+            this.letra93.Margin = new System.Windows.Forms.Padding(0);
+            this.letra93.Name = "letra93";
+            this.letra93.Size = new System.Drawing.Size(24, 24);
+            this.letra93.TabIndex = 95;
+            this.letra93.Text = "A";
+            // 
+            // letra94
+            // 
+            this.letra94.AutoSize = true;
+            this.letra94.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra94.Location = new System.Drawing.Point(624, 48);
+            this.letra94.Margin = new System.Windows.Forms.Padding(0);
+            this.letra94.Name = "letra94";
+            this.letra94.Size = new System.Drawing.Size(24, 24);
+            this.letra94.TabIndex = 96;
+            this.letra94.Text = "A";
+            // 
+            // letra95
+            // 
+            this.letra95.AutoSize = true;
+            this.letra95.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra95.Location = new System.Drawing.Point(648, 48);
+            this.letra95.Margin = new System.Windows.Forms.Padding(0);
+            this.letra95.Name = "letra95";
+            this.letra95.Size = new System.Drawing.Size(24, 24);
+            this.letra95.TabIndex = 97;
+            this.letra95.Text = "A";
+            // 
+            // letra96
+            // 
+            this.letra96.AutoSize = true;
+            this.letra96.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra96.Location = new System.Drawing.Point(672, 48);
+            this.letra96.Margin = new System.Windows.Forms.Padding(0);
+            this.letra96.Name = "letra96";
+            this.letra96.Size = new System.Drawing.Size(24, 24);
+            this.letra96.TabIndex = 98;
+            this.letra96.Text = "A";
+            // 
+            // letra97
+            // 
+            this.letra97.AutoSize = true;
+            this.letra97.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra97.Location = new System.Drawing.Point(696, 48);
+            this.letra97.Margin = new System.Windows.Forms.Padding(0);
+            this.letra97.Name = "letra97";
+            this.letra97.Size = new System.Drawing.Size(24, 24);
+            this.letra97.TabIndex = 99;
+            this.letra97.Text = "A";
+            // 
+            // letra98
+            // 
+            this.letra98.AutoSize = true;
+            this.letra98.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra98.Location = new System.Drawing.Point(720, 48);
+            this.letra98.Margin = new System.Windows.Forms.Padding(0);
+            this.letra98.Name = "letra98";
+            this.letra98.Size = new System.Drawing.Size(24, 24);
+            this.letra98.TabIndex = 100;
+            this.letra98.Text = "A";
+            // 
+            // letra99
+            // 
+            this.letra99.AutoSize = true;
+            this.letra99.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra99.Location = new System.Drawing.Point(744, 48);
+            this.letra99.Margin = new System.Windows.Forms.Padding(0);
+            this.letra99.Name = "letra99";
+            this.letra99.Size = new System.Drawing.Size(24, 24);
+            this.letra99.TabIndex = 101;
+            this.letra99.Text = "A";
+            // 
+            // letra100
+            // 
+            this.letra100.AutoSize = true;
+            this.letra100.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letra100.Location = new System.Drawing.Point(768, 48);
+            this.letra100.Margin = new System.Windows.Forms.Padding(0);
+            this.letra100.Name = "letra100";
+            this.letra100.Size = new System.Drawing.Size(24, 24);
+            this.letra100.TabIndex = 102;
+            this.letra100.Text = "A";
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -1440,7 +1833,7 @@
             this.flowLayoutPanel3.Controls.Add(this.letraHueco47);
             this.flowLayoutPanel3.Controls.Add(this.letraHueco48);
             this.flowLayoutPanel3.Controls.Add(this.letraHueco49);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(178, 485);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(130, 485);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.flowLayoutPanel3.Size = new System.Drawing.Size(607, 52);
@@ -2004,11 +2397,51 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.TimerTiempoTick);
             // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.TimerMostrarRespuestaTick);
+            // 
+            // movingLabel
+            // 
+            this.movingLabel.AutoSize = true;
+            this.movingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.movingLabel.Location = new System.Drawing.Point(874, 509);
+            this.movingLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.movingLabel.Name = "movingLabel";
+            this.movingLabel.Size = new System.Drawing.Size(52, 55);
+            this.movingLabel.TabIndex = 103;
+            this.movingLabel.Text = "?";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(856, 485);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 20);
+            this.label1.TabIndex = 103;
+            this.label1.Text = "Selected";
+            // 
+            // checkButton
+            // 
+            this.checkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
+            this.checkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkButton.Location = new System.Drawing.Point(768, 485);
+            this.checkButton.Margin = new System.Windows.Forms.Padding(2);
+            this.checkButton.Name = "checkButton";
+            this.checkButton.Size = new System.Drawing.Size(69, 50);
+            this.checkButton.TabIndex = 104;
+            this.checkButton.Text = "CHECK";
+            this.checkButton.UseVisualStyleBackColor = false;
+            this.checkButton.Click += new System.EventHandler(this.CheckButtonOnClick);
+            // 
             // PartidaDescubrirFrase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 575);
+            this.Controls.Add(this.checkButton);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.enunciado);
@@ -2017,8 +2450,12 @@
             this.Controls.Add(this.reloj_circular);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.flowLayoutPanel3);
+            this.Controls.Add(this.movingLabel);
+            this.Controls.Add(this.label1);
             this.Name = "PartidaDescubrirFrase";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.PartidaDescubrirFrase_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnMouseMove);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -2187,5 +2624,38 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Label letra71;
+        private System.Windows.Forms.Label letra72;
+        private System.Windows.Forms.Label letra73;
+        private System.Windows.Forms.Label letra74;
+        private System.Windows.Forms.Label letra75;
+        private System.Windows.Forms.Label letra76;
+        private System.Windows.Forms.Label letra77;
+        private System.Windows.Forms.Label letra78;
+        private System.Windows.Forms.Label letra79;
+        private System.Windows.Forms.Label letra80;
+        private System.Windows.Forms.Label letra81;
+        private System.Windows.Forms.Label letra82;
+        private System.Windows.Forms.Label letra83;
+        private System.Windows.Forms.Label letra84;
+        private System.Windows.Forms.Label letra85;
+        private System.Windows.Forms.Label letra86;
+        private System.Windows.Forms.Label letra87;
+        private System.Windows.Forms.Label letra88;
+        private System.Windows.Forms.Label letra89;
+        private System.Windows.Forms.Label letra90;
+        private System.Windows.Forms.Label letra91;
+        private System.Windows.Forms.Label letra92;
+        private System.Windows.Forms.Label letra93;
+        private System.Windows.Forms.Label letra94;
+        private System.Windows.Forms.Label letra95;
+        private System.Windows.Forms.Label letra96;
+        private System.Windows.Forms.Label letra97;
+        private System.Windows.Forms.Label letra98;
+        private System.Windows.Forms.Label letra99;
+        private System.Windows.Forms.Label letra100;
+        private System.Windows.Forms.Label movingLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button checkButton;
     }
 }

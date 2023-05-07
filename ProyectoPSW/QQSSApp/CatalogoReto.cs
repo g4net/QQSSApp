@@ -1,4 +1,5 @@
-﻿using ProyectoPSWMain.Services;
+﻿using ProyectoPSWMain.Entities;
+using ProyectoPSWMain.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,6 +37,12 @@ namespace QQSSApp
             Form partida = new Form();
             if (tipoReto == TipoReto.AdivinarFrase) partida = new PartidaDescubrirFrase();
             else if (tipoReto == TipoReto.Pregunta) partida = new PartidaForm();
+            else if(tipoReto == TipoReto.None)
+            {
+                Reto reto = QQSS.service.GetReto();
+                if (reto is Pregunta) partida = new PartidaForm();
+                else if (reto is Frase) partida = new PartidaDescubrirFrase();
+            }
             partida.Show();
             this.Close();
         }

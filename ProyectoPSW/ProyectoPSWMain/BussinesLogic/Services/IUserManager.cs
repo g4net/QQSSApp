@@ -19,11 +19,9 @@ namespace ProyectoPSWMain.Services
         void IncrementaFallos();
         bool CheckLevel();
         void SetLoggedUser(User user);
-        void UpdateUserRetos(List<Reto> retos);
+        void UpdateUserRetos(List<Reto> retosAcertados, List<Reto> retosJugados);
         bool CheckRetoPlayed(Reto reto);
         double GetPuntajeODS(int ods);
-        void CargarListaRetosODS(int ods);
-        void CargarListaSuperadosODS(int ods);
         List<Pregunta> GetUsersQuestionByDifficulty(int dificultad);
         List<Frase> GetUsersFrasesByDifficulty(int dificultad);
         List<Reto> GetUsersRetosByDifficulty(int dificultad);

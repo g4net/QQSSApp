@@ -22,6 +22,7 @@ namespace ProyectoPSWMain.Services
         {
             retos = new List<Reto>();
             retosAcertados= new List<Reto>();
+            retosJugados = new List<Reto>();
         }
 
         private Partida partida;
@@ -31,6 +32,7 @@ namespace ProyectoPSWMain.Services
         private int pistasDisponibles;
         private List<Reto> retos;
         private List<Reto> retosAcertados;
+        private List<Reto> retosJugados;
 
         public void UpdateError()
         {
@@ -113,6 +115,7 @@ namespace ProyectoPSWMain.Services
 
         public Reto GetReto()
         {
+            retosJugados.Add(retos[this.index]);
             return retos[this.index];
         }
 
@@ -132,17 +135,29 @@ namespace ProyectoPSWMain.Services
 
             int nuevaPuntuacionActual = partida.PuntuacionPartida - reto.Puntuacion_acierto * 2;
             partida.PuntuacionPartida = nuevaPuntuacionActual < 0 ? 0 : nuevaPuntuacionActual;
-            PreguntaExtra();
+            RetoExtra();
         }
 
-        protected void PreguntaExtra()
+        protected void RetoExtra()
         {
             this.error = this.index;
             int dificultad = GetDifficultyArray()[this.index];
             Random random = new Random();
-            List<Pregunta> questions = QQSS.service.LoadUndoneQuestionsByDifficulty(dificultad);
-            int idx = random.Next(questions.Count);
-            retos[index] = questions[idx];
+
+            if (this.retos[this.index] is Pregunta)
+            {
+                List<Pregunta> preguntas = QQSS.service.LoadUndoneQuestionsByDifficulty(dificultad);
+                int idx = random.Next(preguntas.Count);
+                retos[index] = preguntas[idx];
+            }
+
+            if (this.retos[this.index] is Frase)
+            {
+                List<Frase> frases = QQSS.service.LoadUndoneFrasesByDifficulty(dificultad);
+                int idx = random.Next(frases.Count);
+                retos[index] = frases[idx];
+            }
+
         }
 
         public List<Respuesta> AnswerShuffle()
@@ -169,6 +184,11 @@ namespace ProyectoPSWMain.Services
         public List<Reto> GetRetosAcertados()
         {
             return retosAcertados;
+        }
+
+        public List<Reto> GetRetosJugados()
+        {
+            return retosJugados;
         }
 
         #region Reto frase

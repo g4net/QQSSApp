@@ -18,8 +18,6 @@ namespace ProyectoPSWMain.Services
         public readonly int[] Levels = { 500, 1000, 2000, 3000 };
         private User loggedUser;
 
-        public List<Reto> listaSuperadosPorODS = new List<Reto>();
-        public List<Reto> listaRetosPorODS = new List<Reto>();
 
         public bool IsValidEmail(string email)
         {
@@ -122,57 +120,11 @@ namespace ProyectoPSWMain.Services
 
         public double GetPuntajeODS(int ods)
         {
-            ClearListasRetos();
-            CargarListaRetosODS(ods);
-            if(listaRetosPorODS.Count != 0)
-            {
-                CargarListaSuperadosODS(ods);
-                double aciertosODS = listaSuperadosPorODS.Count * 100;
-                aciertosODS /= listaRetosPorODS.Count;
-                return aciertosODS;
-            }
-            else
-            {
-                return 0;
-            }
-            
-        }
+            double countODS = loggedUser.RetosJugados.Where(x => x.Ods == ods).Count();
+            if (countODS == 0) return 0;
+            double aciertosODS = loggedUser.RetosSuperados.Where(x => x.Ods == ods).Count();
 
-        public void ClearListasRetos()
-        {
-            listaRetosPorODS.Clear();
-            listaSuperadosPorODS.Clear();
-        }
-
-        public void CargarListaRetosODS(int ods)
-        {
-            var listaOrdenada = loggedUser.RetosJugados.OrderBy(x => x.Ods);
-            foreach (Reto reto in listaOrdenada)
-            {
-                if (reto.Ods == ods)
-                {
-                    listaRetosPorODS.Add(reto);
-                }
-                else if (reto.Ods >= ods)
-                {
-                    break;
-                }
-            }
-        }
-        public void CargarListaSuperadosODS(int ods)
-        {
-            var listaOrdenada = loggedUser.RetosSuperados.OrderBy(x => x.Ods);
-            foreach(Reto reto in listaOrdenada)
-            {
-                if(reto.Ods == ods)
-                {
-                    listaSuperadosPorODS.Add(reto);
-                }
-                else if(reto.Ods >= ods)
-                {
-                    break;
-                }
-            }
+            return (aciertosODS / countODS) * 100;
         }
 
         public void SetLoggedUser(User user)
@@ -181,9 +133,11 @@ namespace ProyectoPSWMain.Services
         }
 
         #region Reto
-        public void UpdateUserRetos(List<Reto> retos)
+        public void UpdateUserRetos(List<Reto> retosAcertados, List<Reto> retosJugados)
         {
-            this.loggedUser.RetosRealizados.Union(retos);
+            this.loggedUser.RetosRealizados.Union(retosAcertados);
+            this.loggedUser.RetosSuperados.Union(retosAcertados);
+            this.loggedUser.RetosJugados.Union(retosJugados);
         }
         public bool CheckRetoPlayed(Reto reto)
         {

@@ -78,14 +78,6 @@ namespace ProyectoPSWMain.Services
 
         }
 
-        public void IncrementaAciertos()
-        {
-            userManager.IncrementaAciertos();
-        }
-        public void IncrementaFallos()
-        {
-            userManager.IncrementaFallos();
-        }
         public bool TestUser(string username) {
             return userManager.IsValidUsername(username);
         }
@@ -339,6 +331,7 @@ namespace ProyectoPSWMain.Services
         public void RetoAcertado()
         {
             gameController.RetoAcertado();
+            userManager.IncrementaAciertos();
         }
 
         public string EnlaceInteres(int ods)
@@ -349,6 +342,7 @@ namespace ProyectoPSWMain.Services
         public void RetoFallado()
         {
             gameController.RetoFallado();
+            userManager.IncrementaFallos();
         }
 
         public bool TestAnswer(string txt)
@@ -371,15 +365,16 @@ namespace ProyectoPSWMain.Services
             return gameController.GetConsolidado();
         }
 
-        private void ActualizarRetosAcertados()
+        private void ActualizarRetos()
         {
             List<Reto> retosAcertados = gameController.GetRetosAcertados();
-            userManager.UpdateUserRetos(retosAcertados);
+            List<Reto> retosJugados = gameController.GetRetosJugados();
+            userManager.UpdateUserRetos(retosAcertados, retosJugados);
         }
 
         public void AbandonarPartida()
         {
-            ActualizarRetosAcertados();
+            ActualizarRetos();
             int puntuacion = gameController.GetPartidaActual().PuntuacionConsolidada;
             userManager.UpdateUserScore(puntuacion);
             SavePartida();
@@ -387,7 +382,7 @@ namespace ProyectoPSWMain.Services
 
         public void GanarPartida()
         {
-            ActualizarRetosAcertados();
+            ActualizarRetos();
             int puntuacion = gameController.GetPartidaActual().PuntuacionPartida;
             userManager.UpdateUserScore(puntuacion);
             SavePartida();
@@ -396,7 +391,7 @@ namespace ProyectoPSWMain.Services
 
         public void PerderPartida()
         {
-            ActualizarRetosAcertados();
+            ActualizarRetos();
             SavePartida();
         }
 
