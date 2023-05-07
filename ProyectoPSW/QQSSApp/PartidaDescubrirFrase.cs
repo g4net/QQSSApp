@@ -23,6 +23,11 @@ namespace QQSSApp
         private int tiempoContador;
         private int tiempodeMostrarRta;
         bool esCorrecta;
+        Label clickedLabel;
+        Label[] fraseConHuecos;
+        Label[] letrasParaHuecos;
+        char[] textoFrase;
+        List<char> huecos;
 
         public PartidaDescubrirFrase()
         {
@@ -45,36 +50,71 @@ namespace QQSSApp
 
         public void InitializeRetoFrase()
         {
-            List<char> huecos;
+            fraseConHuecos = new Label[101];
+            letrasParaHuecos = new Label[50];
 
-            char [] textoFrase = QQSS.service.QuitarLetras(out huecos).ToCharArray();
+            textoFrase = QQSS.service.QuitarLetras(out huecos).ToCharArray();
 
             enunciado.Text = frase.Descripcion;
 
             puntuacionPos.Text = frase.Puntuacion_acierto.ToString();
             puntuaciónNegativa.Text = (frase.Puntuacion_acierto * 2).ToString();
 
-            for (int i = 0; i <= 70; i++)
+            LabelInit();
+        }
+
+        private void LabelInit()
+        {
+            for (int i = 0; i <= 100; i++)
             {
                 string nombreLabel = "letra" + i;
                 Control[] controles = this.Controls.Find(nombreLabel, true);
                 if (controles.Length == 0 || controles[0] == null) continue;
                 Label b = (Label)controles[0];
+                fraseConHuecos[i] = b;
                 if (i >= textoFrase.Length) { b.Hide(); continue; }
                 b.Text = "" + textoFrase[i];
+                b.Click += (sender, _) =>
+                {
+                    if (b.Text != "_") return;
+                    b.Text = movingLabel.Text;
+                    movingLabel.Text = "?";
+                    clickedLabel.Hide();
+                };
             }
 
-            for(int i = 0; i<= 49; i++)
+            for (int i = 0; i <= 49; i++)
             {
                 string nombreLabel = "letraHueco" + i;
                 Control[] controles = this.Controls.Find(nombreLabel, true);
                 if (controles.Length == 0 || controles[0] == null) continue;
                 Label b = (Label)controles[0];
+                letrasParaHuecos[i] = b;
                 if (i >= huecos.Count) { b.Hide(); continue; }
                 b.Text = "" + huecos[i];
+                b.Click += (sender, _) =>
+                {
+                    clickedLabel = b;
+                    movingLabel.Text = b.Text;
+                    movingLabel.Show();
+                };
+            }
+        }
+
+        private void LabelReset()
+        {
+            for(int i = 0; i <= 100; i++)
+            {
+                fraseConHuecos[i].Text = "" + textoFrase[i];
             }
 
+            for (int i = 0; i <= 49; i++)
+            {
+                letrasParaHuecos[i].Show();
+                letrasParaHuecos[i].Text = "" + huecos[i];
+            }
         }
+
         public string GetRandomNumber(int maxNumber)
         {
             Random random = new Random();
@@ -151,7 +191,8 @@ namespace QQSSApp
             timer1.Stop();
             timer2.Stop();
 
-            esCorrecta = true;
+            esCorrecta = fraseFormada == frase.Enunciado;
+            
         }
 
         private void TimerTiempoTick(object sender, EventArgs e)
@@ -176,13 +217,40 @@ namespace QQSSApp
 
         }
 
-        private void timer3_Tick(object sender, EventArgs e)
+
+        private void OnMouseMove(object sender, MouseEventArgs e)
+        {
+            //Point mousePos = Control.MousePosition;
+            //Point labelPos = this.PointToClient(mousePos);
+            //movingLabel.BringToFront();
+            //movingLabel.Location = new Point(labelPos.X + 10, labelPos.Y + 10);
+        }
+
+        private void PartidaDescubrirFrase_Load(object sender, EventArgs e)
+        {
+            //foreach (Control control in this.Controls)
+            //{
+            //    control.MouseMove += new MouseEventHandler(OnMouseMove);
+            //}
+        }
+
+        private void CheckButtonOnClick(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach(Label l in fraseConHuecos)
+            {
+                sb.Append(l.Text);
+            }
+            CheckAnswer(sb.ToString());
+        }
+
+        private void TimerMostrarRespuestaTick(object sender, EventArgs e)
         {
             tiempodeMostrarRta--;
 
             if (tiempodeMostrarRta != 0) return;
 
-            if(esCorrecta)
+            if (esCorrecta)
             {
                 Form respuestaAcertada;
                 if (retoindex != 9) respuestaAcertada = new PuntuacionPositiva();
@@ -198,8 +266,6 @@ namespace QQSSApp
                 respuestaFallada.Show();
                 this.Close();
             }
-
         }
-
     }
 }
