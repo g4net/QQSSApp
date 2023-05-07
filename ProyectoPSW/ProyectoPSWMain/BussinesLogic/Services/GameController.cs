@@ -34,6 +34,7 @@ namespace ProyectoPSWMain.Services
         private List<Reto> retosAcertados;
         private Context context;
         private PuntosStrategy puntosStrategy;
+        private List<Reto> retosJugados;
 
         public void UpdateError()
         {
