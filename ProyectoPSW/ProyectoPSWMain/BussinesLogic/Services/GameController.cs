@@ -212,7 +212,7 @@ namespace ProyectoPSWMain.Services
 
         #region Reto frase
 
-        public string QuitarLetras(out List<char> letrasHueco)
+        /**public string QuitarLetras(out List<char> letrasHueco)
         {
             letrasHueco = new List<char>();
             Frase fraseOriginal = (Frase) this.retos[this.index];
@@ -241,6 +241,7 @@ namespace ProyectoPSWMain.Services
 
             return new string(fraseCaracteres);
         }
+        **/
 
         public static string GetLetrasEliminadas(Frase fraseOriginal, string fraseConHuecos)
         {

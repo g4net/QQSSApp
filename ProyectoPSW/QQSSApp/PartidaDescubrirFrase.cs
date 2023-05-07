@@ -77,9 +77,12 @@ namespace QQSSApp
                 b.Click += (sender, _) =>
                 {
                     if (b.Text != "_") return;
-                    b.Text = movingLabel.Text;
-                    movingLabel.Text = "?";
-                    clickedLabel.Hide();
+                    if (movingLabel.Text != "?")
+                    {
+                        b.Text = movingLabel.Text;
+                        movingLabel.Text = "?";
+                        clickedLabel.Hide();
+                    }
                 };
             }
 
@@ -127,6 +130,7 @@ namespace QQSSApp
         {
             botonAbandonar.Enabled = QQSS.service.GetConsolidado();
         }
+
         private void MarcarProgreso()
         {
             for (int i = 0; i <= (retoindex); i++)
