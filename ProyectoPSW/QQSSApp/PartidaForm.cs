@@ -32,6 +32,7 @@ namespace QQSSApp
         {
             InitializeComponent();
             InitializeImages();
+            QQSS.service.SetPuntosStrategy();
             this.CenterToScreen();
             this.retoindex = QQSS.service.GetProgressIndex();
             this.error = QQSS.service.GetError();
@@ -224,7 +225,9 @@ namespace QQSSApp
         {
             tiempodeMostrarRta--;
 
-            if (tiempodeMostrarRta == 0) { if (esCorrecta)
+            if (tiempodeMostrarRta == 0)
+            {
+                if (esCorrecta)
                 {
                     Form respuestaAcertada;
                     if (retoindex != 9) respuestaAcertada = new PuntuacionPositiva();
@@ -232,7 +235,8 @@ namespace QQSSApp
                     respuestaAcertada.Show();
                     this.Close();
                 }
-                else {
+                else
+                {
                     Form respuestaFallada;
                     if (QQSS.service.GetError() != -1) respuestaFallada = new PartidaPerdida();
                     else respuestaFallada = new PuntuacionNegativa();
@@ -242,5 +246,42 @@ namespace QQSSApp
                 }
             }
         }
+
+        private void PistaBoton_Click(object sender, EventArgs e)
+        {
+            PistaBoton.Enabled = false;
+            QQSS.service.UsarPista();
+            Button[] botones = { op1, op2, op3, op4 };
+            Random rnd = new Random();
+
+            for (int ia = botones.Length - 1; ia > 0; ia--)
+            {
+                int j = rnd.Next(ia + 1);
+                Button aux = botones[ia];
+                botones[ia] = botones[j];
+                botones[j] = aux;
+            }
+
+            int i = 0;
+            for (int cont = 0; cont < botones.Length & i < 2; cont++) {
+
+                Button b = botones[cont];
+
+                if (!QQSS.service.TestAnswer(b.Text))
+                {
+                    b.Hide();
+                    //b.BackColor = Color.Red;
+                    //b.Enabled = false;
+                    //b.ForeColor = Color.White;
+                    //b.Text = print;
+                    i++;
+                }
+            }
+                    
+                
+            
+        }
+
+    
     }
 }

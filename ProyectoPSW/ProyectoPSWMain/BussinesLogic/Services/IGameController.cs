@@ -1,4 +1,5 @@
-﻿using ProyectoPSWMain.Entities;
+﻿using ProyectoPSWMain.BussinesLogic.Services;
+using ProyectoPSWMain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,8 @@ namespace ProyectoPSWMain.Services
         void RetoAcertado();
         void SetPuntosStrategy();
         void RetoFallado();
+        void UsarPista();
+        int GetContextoPuntos();
         List<Respuesta> AnswerShuffle();
         bool TestAnswer(string txt);
         List<Reto> GetRetosAcertados();

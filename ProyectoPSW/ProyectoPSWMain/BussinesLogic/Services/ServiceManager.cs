@@ -1,4 +1,5 @@
-﻿using ProyectoPSWMain.Entities;
+﻿using ProyectoPSWMain.BussinesLogic.Services;
+using ProyectoPSWMain.Entities;
 using ProyectoPSWMain.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -340,6 +341,11 @@ namespace ProyectoPSWMain.Services
             gameController.SetPuntosStrategy(); 
         }
 
+        public void UsarPista()
+        {
+            gameController.UsarPista();
+        }
+
         public string EnlaceInteres(int ods)
         {
             return gameController.EnlaceInteres(ods);
@@ -423,6 +429,13 @@ namespace ProyectoPSWMain.Services
 
         #endregion
 
+        #region strategy
+
+        public int GetContextoPuntos()
+        {
+            return gameController.GetContextoPuntos();
+        }
+        #endregion
 
         #region Sonidos
 

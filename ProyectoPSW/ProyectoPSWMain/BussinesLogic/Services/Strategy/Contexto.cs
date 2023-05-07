@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoPSWMain.BussinesLogic.Services
 {
-    public class Context
+    public class Contexto
     {
         private IPuntosStrategy puntosStrategy;
         private int puntos;
@@ -18,25 +18,37 @@ namespace ProyectoPSWMain.BussinesLogic.Services
             this.partida = partida;
         }
 
-        public Context() 
+        public int GetPuntos() 
+        { 
+            return this.puntos; 
+        }
+
+        public Contexto() 
         { 
         
         }
 
-        public Context(IPuntosStrategy puntosStrategy)
+        public Contexto(IPuntosStrategy puntosStrategy)
         {
             this.puntosStrategy = puntosStrategy;
         }
 
-        public int SetStrategy(IPuntosStrategy puntosStrategy)
+        public IPuntosStrategy GetPuntosStrategy() 
+        { 
+            return this.puntosStrategy; 
+        }
+
+        public void SetStrategy(IPuntosStrategy puntosStrategy)
         {
             this.puntosStrategy = puntosStrategy;
-            int puntos = puntosStrategy.SetPuntos();
-            return puntos;
+            //Console.WriteLine(puntosStrategy.ToString());
+            puntos = puntosStrategy.SetPuntos();
+            
         }
 
         public void AñadirPuntos()
         {
+            //Console.WriteLine("CONTEXTO");
             this.puntosStrategy.AñadirPuntos(partida, puntos);
         }
     }

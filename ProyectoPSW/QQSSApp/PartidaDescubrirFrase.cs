@@ -271,5 +271,11 @@ namespace QQSSApp
             checkButton.BackColor = Color.FromArgb(127, 221, 130);
             tiempodeMostrarRta = 2;
         }
+
+        private void PistaBoton_Click(object sender, EventArgs e)
+        {
+            PistaBoton.Enabled = false;
+
+        }
     }
 }

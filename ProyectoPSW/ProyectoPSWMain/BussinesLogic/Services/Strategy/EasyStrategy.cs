@@ -13,6 +13,7 @@ namespace ProyectoPSWMain.BussinesLogic.Services
 
         public void AñadirPuntos(Partida partida, int puntos)
         {
+            Console.WriteLine("EASY");
             partida.PuntuacionPartida += 100;
         }
     }

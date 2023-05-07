@@ -50,8 +50,9 @@ namespace QQSSApp
         private void InitializePositivePunctuation()
         {
             reto = QQSS.service.GetReto();
-            puntuacion.Text = reto.Puntuacion_acierto.ToString();
+            //puntuacion.Text = reto.Puntuacion_acierto.ToString();  
             QQSS.service.RetoAcertado();
+            puntuacion.Text = QQSS.service.GetContextoPuntos().ToString();
 
             punt_actual.Text = QQSS.service.GetPuntuacionPartida().ToString();
         }
