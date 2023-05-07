@@ -132,8 +132,10 @@ namespace ProyectoPSWMain.Services
             retosAcertados.Add(reto);
         }
 
-        public void SetPuntosStrategy(int i)
+        public void SetPuntosStrategy()
         {
+            Reto reto = this.retos[this.index];
+            int i = reto.Dificultad;
             if (i == 1) { context.SetStrategy(new EasyStrategy()); }
             if (i == 2) { context.SetStrategy(new MiddleStrategy()); }
             if (i == 3) { context.SetStrategy(new HalfStrategy()); }

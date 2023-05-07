@@ -330,13 +330,14 @@ namespace ProyectoPSWMain.Services
 
         public void RetoAcertado()
         {
+            gameController.SetPuntosStrategy();
             gameController.RetoAcertado();
             userManager.IncrementaAciertos();
         }
 
-        public void SetPuntosStrategy(int i) 
+        public void SetPuntosStrategy() 
         {
-            gameController.SetPuntosStrategy(i); 
+            gameController.SetPuntosStrategy(); 
         }
 
         public string EnlaceInteres(int ods)
