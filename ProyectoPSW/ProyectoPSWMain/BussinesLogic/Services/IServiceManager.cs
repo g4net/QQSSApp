@@ -55,9 +55,7 @@ namespace ProyectoPSWMain.Services
         void RetoAcertado(Reto reto);
         void RetoFallado(Reto reto);
         void UltimoRetoFallado(Reto reto);
-        void RetoAcertado();
         void SetPuntosStrategy();
-        void RetoFallado();
         int GetPuntuacionConsolidada();
         void GenerarRetos(TipoReto tipoReto);
         void UsarPista();

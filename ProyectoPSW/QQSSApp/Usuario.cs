@@ -30,7 +30,7 @@ namespace QQSSApp
         {
             nivel.Text = usuario.nivel.ToString();
             puntuacion.Text = usuario.PuntuacionAcumulada.ToString();
-            AciertosLabel.Text = CalculoPorcentajeAciertos() + "%";
+            AciertosLabel.Text = CalculoPorcentajeAciertos().ToString("F2") + "%";
             NameLabel.Text = usuario.Nombre;
         }
 
@@ -55,14 +55,14 @@ namespace QQSSApp
         }
         
 
-        public string CalculoPorcentajeAciertos()
+        public double CalculoPorcentajeAciertos()
         {
-            if (usuario.Estadistica.NumFallos == 0 && usuario.Estadistica.NumAciertos == 0) return "0";
-            
-            //double aciertos = usuario.Estadistica.NumAciertos; 
-            //aciertos /= (usuario.Estadistica.NumAciertos + usuario.Estadistica.NumFallos);
-            //aciertos *= 100;
-            return usuario.Estadistica.NumAciertos / (usuario.Estadistica.NumAciertos + usuario.Estadistica.NumFallos) * 100 + "";
+            if (usuario.Estadistica.NumFallos == 0 && usuario.Estadistica.NumAciertos == 0) return 0;
+
+            double aciertos = usuario.Estadistica.NumAciertos; 
+            aciertos /= (usuario.Estadistica.NumAciertos + usuario.Estadistica.NumFallos); 
+            aciertos *= 100;
+            return  aciertos;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -81,5 +81,6 @@ namespace QQSSApp
             Modificar modificarForm = new Modificar(pantallaPrincipalForm);
             modificarForm.ShowDialog();
         }
+
     }
 }
