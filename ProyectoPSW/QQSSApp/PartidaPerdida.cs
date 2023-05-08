@@ -23,6 +23,7 @@ namespace QQSSApp
             puntuacion_acumulada.Text = "0";
             reto = QQSS.service.GetReto();
             QQSS.service.PlaySonido("PartidaPerdida");
+            QQSS.service.UltimoRetoFallado(reto);
             if (reto is Pregunta) respuesta.Text = (reto as Pregunta).RespuestaCorrecta.ToString();
             if (reto is Frase) respuesta.Text = (reto as Frase).Enunciado.ToString();
         }

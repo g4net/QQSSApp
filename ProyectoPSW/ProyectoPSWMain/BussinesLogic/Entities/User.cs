@@ -14,15 +14,15 @@ namespace ProyectoPSWMain.Entities
             this.RetosRealizados = new List<Reto>();
             this.RetosSuperados = new List<Reto>();
             this.RetosJugados = new List<Reto>();
-            this.Estadistica = new Estadistica(0, 0);
             this.PuntuacionAcumulada = 0;
             this.nivel = 0;
         }
 
-        public User(String Nombre, String Email, String Contraseña) : this() {
+        public User(String Nombre, String Email, String Contraseña, Estadistica Estadisticas) : this() {
             this.Nombre = Nombre;
             this.Email = Email;
             this.Contraseña = Contraseña;
+            this.Estadistica = Estadisticas;
            
         }
         public int getPoints() {

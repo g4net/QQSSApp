@@ -18,6 +18,7 @@ namespace ProyectoPSWMain.Services
         void Logout();
 
         void Register(string username, string email, string password, string repasword);
+        void SetAtributo(string tipoAtributo, string nuevoAtributo);
         double GetPuntajeODS(int ods);
         bool TestUser(string username);
         bool TestEmail(string email);
@@ -50,8 +51,9 @@ namespace ProyectoPSWMain.Services
         void GanarPartida();
         void Consolidar();
         int GetPuntuacionPartida();
-        void RetoAcertado();
-        void RetoFallado();
+        void RetoAcertado(Reto reto);
+        void RetoFallado(Reto reto);
+        void UltimoRetoFallado(Reto reto);
         int GetPuntuacionConsolidada();
         void GenerarRetos(TipoReto tipoReto);
         string QuitarLetras(out List<char> letrasHueco);

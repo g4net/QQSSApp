@@ -15,6 +15,10 @@ namespace ProyectoPSWMain.Services
 
         void Register(string nombre, string email, string password,string reppassword);
 
+        bool ExistsUser(string nombre);
+
+        bool ExistsEmail(string email);
+
         void DeleteUser(int dni);
 
         void Logout();

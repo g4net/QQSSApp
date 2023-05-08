@@ -9,6 +9,7 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProyectoPSWMain.Services
 {
@@ -46,14 +47,38 @@ namespace ProyectoPSWMain.Services
         }
         public void Register(string nombre, string email, string password, string reppassword)
         {
-            if(repository.GetWhere<User>(u => u.Nombre == nombre).FirstOrDefault() != null) throw new ServiceException("UsernameExists");
-            if (repository.GetWhere<User>(u => u.Email == email).FirstOrDefault() != null) throw new ServiceException("EmailExists");
+            if(ExistsUser(nombre)) throw new ServiceException("UsernameExists");
+            if(ExistsEmail(email)) throw new ServiceException("EmailExists");
             if (password != reppassword) throw new ServiceException("Passwordsnotmatch");
-            User usuario = new User(nombre, email, password);
+            User usuario = new User(nombre, email, password, new Estadistica(0,0));
             repository.Insert<User>(usuario);
             Commit();
             
 
+        }
+
+        public bool ExistsUser(string nombre)
+        {
+            if(repository.GetWhere<User>(u => u.Nombre == nombre).FirstOrDefault() != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ExistsEmail(string email)
+        {
+            if (repository.GetWhere<User>(u => u.Email == email).FirstOrDefault() != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public User Login(string login, string password)

@@ -132,7 +132,7 @@ namespace ProyectoPSWMain.Services
                 if (!users.Where(x => x.Nombre == Nombre).Any())
                 {
 
-                    usuario = new User(Nombre, Email, Password);
+                    usuario = new User(Nombre, Email, Password, new Estadistica(0, 0));
                     repository.Insert<User>(usuario);
                     Commit();
                 }

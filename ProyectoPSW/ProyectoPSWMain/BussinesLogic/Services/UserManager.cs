@@ -90,6 +90,21 @@ namespace ProyectoPSWMain.Services
             return this.loggedUser;
 
         }
+
+        public void SetNombre(string nombre)
+        {
+            loggedUser.Nombre = nombre;
+        }
+
+        public void SetEmail(string correo)
+        {
+            loggedUser.Email = correo;
+        }
+
+        public void SetContraseña(string contraseña)
+        {
+            loggedUser.Contraseña = contraseña;
+        }
         public void UpdateUserScore(int points)
         {
             if (this.loggedUser == null) throw new ServiceException("There is no user logged in");
@@ -125,6 +140,11 @@ namespace ProyectoPSWMain.Services
             double aciertosODS = loggedUser.RetosSuperados.Where(x => x.Ods == ods).Count();
 
             return (aciertosODS / countODS) * 100;
+        }
+
+        public void AddRetoJugado(Reto reto)
+        {
+            loggedUser.RetosJugados.Add(reto);
         }
 
         public void SetLoggedUser(User user)

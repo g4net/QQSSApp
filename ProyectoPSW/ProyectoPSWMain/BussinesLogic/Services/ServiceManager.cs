@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace ProyectoPSWMain.Services
@@ -76,6 +77,25 @@ namespace ProyectoPSWMain.Services
             }
             userManager.SetLoggedUser(login);
 
+        }
+
+        public void SetAtributo(string tipoAtributo, string nuevoAtributo)
+        {
+            if(tipoAtributo == "nombre")
+            {
+                if (!userManager.IsValidUsername(nuevoAtributo)) throw new ServiceException("InvalidUserFormat");
+                if(databaseService.ExistsUser(nuevoAtributo)) throw new ServiceException("UsernameExists");
+                userManager.SetNombre(nuevoAtributo);
+            }else if(tipoAtributo == "email")
+            {
+                if (!userManager.IsValidEmail(nuevoAtributo)) throw new ServiceException("InvalidEmailFormat");
+                if (databaseService.ExistsEmail(nuevoAtributo)) throw new ServiceException("EmailExists");
+                userManager.SetEmail(nuevoAtributo);
+            }else if(tipoAtributo == "contraseña")
+            {
+                if (!userManager.IsValidPassword(nuevoAtributo)) throw new ServiceException("InvalidPasswordFormat");
+                userManager.SetContraseña(nuevoAtributo);
+            }
         }
 
         public bool TestUser(string username) {
@@ -328,10 +348,11 @@ namespace ProyectoPSWMain.Services
             databaseService.SavePartida(partida);
         }
 
-        public void RetoAcertado()
+        public void RetoAcertado(Reto reto)
         {
             gameController.RetoAcertado();
             userManager.IncrementaAciertos();
+            userManager.AddRetoJugado(reto);
         }
 
         public string EnlaceInteres(int ods)
@@ -339,10 +360,18 @@ namespace ProyectoPSWMain.Services
             return gameController.EnlaceInteres(ods);
         }
 
-        public void RetoFallado()
+        public void RetoFallado(Reto reto)
         {
             gameController.RetoFallado();
             userManager.IncrementaFallos();
+            userManager.AddRetoJugado(reto);
+        }
+
+        public void UltimoRetoFallado(Reto reto)
+        {
+            gameController.UltimoRetoFallado();
+            userManager.IncrementaFallos();
+            userManager.AddRetoJugado(reto);
         }
 
         public bool TestAnswer(string txt)

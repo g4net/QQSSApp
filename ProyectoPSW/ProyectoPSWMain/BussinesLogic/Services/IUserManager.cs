@@ -18,7 +18,11 @@ namespace ProyectoPSWMain.Services
         void IncrementaAciertos();
         void IncrementaFallos();
         bool CheckLevel();
+        void AddRetoJugado(Reto reto);
         void SetLoggedUser(User user);
+        void SetContraseña(string contraseña);
+        void SetEmail(string correo);
+        void SetNombre(string nombre);
         void UpdateUserRetos(List<Reto> retosAcertados, List<Reto> retosJugados);
         bool CheckRetoPlayed(Reto reto);
         double GetPuntajeODS(int ods);

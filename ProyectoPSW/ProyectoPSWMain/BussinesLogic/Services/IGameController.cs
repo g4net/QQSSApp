@@ -26,6 +26,8 @@ namespace ProyectoPSWMain.Services
         Reto GetReto();
         void RetoAcertado();
         void RetoFallado();
+
+        void UltimoRetoFallado();
         List<Respuesta> AnswerShuffle();
         bool TestAnswer(string txt);
         List<Reto> GetRetosAcertados();

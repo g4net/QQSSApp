@@ -76,7 +76,7 @@ namespace DBTest
                 Console.WriteLine("===========================================");
             
               Console.WriteLine("\n// CREACIÓN DE UNA PARTIDA Y SUS PREGUNTITAS");
-              User user = new User("NickElodeon","nickputero@gmail.com","NickPutero123?");
+              User user = new User("NickElodeon","nickputero@gmail.com","NickPutero123?", new Estadistica(0,0));
                 Partida partida = new Partida(1, 0);
                 dal.Insert<Partida>(partida);
                  dal.Insert<User>(user);

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.label1 = new System.Windows.Forms.Label();
             this.nivel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -169,6 +169,7 @@
             this.ModificarButton.TabIndex = 9;
             this.ModificarButton.Text = "Modificar Datos";
             this.ModificarButton.UseVisualStyleBackColor = false;
+            this.ModificarButton.Click += new System.EventHandler(this.ModificarButton_Click);
             // 
             // label4
             // 
@@ -182,19 +183,19 @@
             // 
             // ColumnChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.ColumnChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ColumnChart.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.ColumnChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.ColumnChart.Legends.Add(legend3);
             this.ColumnChart.Location = new System.Drawing.Point(-44, 3);
             this.ColumnChart.Name = "ColumnChart";
             this.ColumnChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F);
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.ColumnChart.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F);
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.ColumnChart.Series.Add(series2);
             this.ColumnChart.Size = new System.Drawing.Size(894, 359);
             this.ColumnChart.TabIndex = 11;
             // 
@@ -222,10 +223,10 @@
             // 
             // PieChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.PieChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.PieChart.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.PieChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.PieChart.Legends.Add(legend4);
             this.PieChart.Location = new System.Drawing.Point(0, 0);
             this.PieChart.Name = "PieChart";
             this.PieChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
