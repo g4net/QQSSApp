@@ -205,7 +205,8 @@ namespace QQSSApp
                 LabelReset();
                 checkButton.Enabled = false;
                 checkButton.BackColor = Color.FromArgb(231, 105, 105);
-                timer3.Start();
+                InitializeTimers();
+                //timer3.Start();
             }
             
         }
@@ -228,7 +229,7 @@ namespace QQSSApp
             timer2.Interval = 1000;
             tiempoContador = 120;
             timer2.Start();
-            tiempodeMostrarRta = 2;
+            //tiempodeMostrarRta = 2;
             timer3.Interval = 1000;
 
         }

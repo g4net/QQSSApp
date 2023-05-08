@@ -261,7 +261,7 @@ namespace DBTest
             respuestasMal9.Add(respuesta3mal);
             dal.Insert<Respuesta>(respuesta3mal);
             respuestaBien.Texto = "La falta de tecnología y conocimientos agrícolas";
-            respuestasMal8.Add(respuestaBien);
+            respuestasMal9.Add(respuestaBien);
             dal.Insert<Respuesta>(respuestaBien);
 
             Pregunta pregunta9 = new Pregunta(respuestasMal9, "¿Cuál es la principal causa del hambre según la ODS 2?", 2, 200, respuestaBien.Texto, 2, true);

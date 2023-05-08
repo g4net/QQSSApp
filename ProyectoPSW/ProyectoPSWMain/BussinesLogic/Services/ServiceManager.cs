@@ -59,12 +59,14 @@ namespace ProyectoPSWMain.Services
 
         public void Login(string username, string password)
         {
-            if (username.IndexOf("@") != -1 && !userManager.IsValidEmail(username)) { throw new ServiceException("InvalidEmailFormat"); }
-            else
-            {
-                if (!userManager.IsValidUsername(username)) 
-                    throw new ServiceException("InvalidUserFormat");
-            }
+            if (username.IndexOf("@") != -1 && !userManager.IsValidEmail(username)) { throw new ServiceException("InvalidEmailFormat"); }            
+           
+                if (username.IndexOf("@") == -1)
+                {
+                    if (!userManager.IsValidUsername(username))
+                        throw new ServiceException("InvalidUserFormat");
+                }
+            
             if (!userManager.IsValidPassword(password)) throw new ServiceException("InvalidPasswordFormat");
             User login;
             try
