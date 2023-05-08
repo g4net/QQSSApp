@@ -217,7 +217,11 @@ namespace QQSSApp
             if (tiempoContador == 0)
             {
 
-                CheckAnswer(null);
+                Form respuestaFallada;
+                if (QQSS.service.GetError() != -1) respuestaFallada = new PartidaPerdida();
+                else respuestaFallada = new PuntuacionNegativa();
+                respuestaFallada.Show();
+                this.Close();
             }
         }
 

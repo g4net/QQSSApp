@@ -55,20 +55,14 @@ namespace QQSSApp
         }
         
 
-        public String CalculoPorcentajeAciertos()
+        public string CalculoPorcentajeAciertos()
         {
-            if(usuario.Estadistica.NumFallos != 0 || usuario.Estadistica.NumAciertos != 0)
-            {
-                double aciertos = usuario.Estadistica.NumAciertos; 
-                aciertos /= (usuario.Estadistica.NumAciertos + usuario.Estadistica.NumFallos);
-                aciertos *= 100;
-                return aciertos.ToString();
-            }
-            else
-            {
-                return "0";
-            }
+            if (usuario.Estadistica.NumFallos == 0 && usuario.Estadistica.NumAciertos == 0) return "0";
             
+            //double aciertos = usuario.Estadistica.NumAciertos; 
+            //aciertos /= (usuario.Estadistica.NumAciertos + usuario.Estadistica.NumFallos);
+            //aciertos *= 100;
+            return usuario.Estadistica.NumAciertos / (usuario.Estadistica.NumAciertos + usuario.Estadistica.NumFallos) * 100 + "";
         }
 
         private void button1_Click(object sender, EventArgs e)
