@@ -1,4 +1,5 @@
-﻿using ProyectoPSWMain.Entities;
+﻿using ProyectoPSWMain.BussinesLogic.Services;
+using ProyectoPSWMain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,8 +55,13 @@ namespace ProyectoPSWMain.Services
         void RetoAcertado(Reto reto);
         void RetoFallado(Reto reto);
         void UltimoRetoFallado(Reto reto);
+        void RetoAcertado();
+        void SetPuntosStrategy();
+        void RetoFallado();
         int GetPuntuacionConsolidada();
         void GenerarRetos(TipoReto tipoReto);
+        void UsarPista();
+        int GetContextoPuntos();
         string QuitarLetras(out List<char> letrasHueco);
         #endregion
 

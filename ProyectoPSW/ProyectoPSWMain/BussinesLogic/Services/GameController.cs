@@ -1,4 +1,5 @@
-﻿using ProyectoPSWMain.Entities;
+﻿using ProyectoPSWMain.BussinesLogic.Services;
+using ProyectoPSWMain.Entities;
 using ProyectoPSWMain.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace ProyectoPSWMain.Services
             retos = new List<Reto>();
             retosAcertados= new List<Reto>();
             retosJugados = new List<Reto>();
+            context = new Contexto();
         }
 
         private Partida partida;
@@ -32,13 +34,19 @@ namespace ProyectoPSWMain.Services
         private int pistasDisponibles;
         private List<Reto> retos;
         private List<Reto> retosAcertados;
+        private Contexto context;
         private List<Reto> retosJugados;
+
+        private PistaStrategy pistaStrategy = new PistaStrategy();
+        private EasyStrategy easyStrategy = new EasyStrategy();
+        private MiddleStrategy middleStrategy = new MiddleStrategy();
+        private HardStrategy hardStrategy = new HardStrategy();
 
         public void UpdateError()
         {
             this.error = index;
         }
-
+        public void SetContext(Contexto context) { this.context = context; }
         public int GetError() { return error; }
         public bool IsConsolidado() { return consolidado; }
         public void Consolidar()
@@ -119,12 +127,29 @@ namespace ProyectoPSWMain.Services
             return retos[this.index];
         }
 
-        public void RetoAcertado()
+        public void RetoAcertado()//aqui se usa el plantilla 
         {
+            context.setPartida(partida);
+            context.AñadirPuntos();
             Reto reto = this.retos[this.index];
             NextReto();
-            partida.PuntuacionPartida += reto.Puntuacion_acierto;
+            //partida.PuntuacionPartida += reto.Puntuacion_acierto;
             retosAcertados.Add(reto);
+        }
+
+        public void SetPuntosStrategy()
+        {
+            Reto reto = this.retos[this.index];
+            int i = reto.Dificultad;
+            if (i == 1) { context.SetStrategy(easyStrategy); }
+            else if (i == 2) { context.SetStrategy(middleStrategy); }
+            else if (i == 3) { context.SetStrategy(hardStrategy); }
+        }
+
+        public void UsarPista()
+        {
+            context.SetStrategy(pistaStrategy);
+            Console.WriteLine(context.GetPuntosStrategy());
         }
 
         public void RetoFallado()
@@ -136,10 +161,10 @@ namespace ProyectoPSWMain.Services
         public void UltimoRetoFallado()
         {
             Reto reto = this.retos[this.index];
-            int nuevaPuntuacionConsolidada = partida.PuntuacionConsolidada - reto.Puntuacion_acierto * 2;
+            int nuevaPuntuacionConsolidada = partida.PuntuacionConsolidada - QQSS.service.GetContextoPuntos() * 2;
             partida.PuntuacionConsolidada = nuevaPuntuacionConsolidada < 0 ? 0 : nuevaPuntuacionConsolidada;
 
-            int nuevaPuntuacionActual = partida.PuntuacionPartida - reto.Puntuacion_acierto * 2;
+            int nuevaPuntuacionActual = partida.PuntuacionPartida - QQSS.service.GetContextoPuntos() * 2;
             partida.PuntuacionPartida = nuevaPuntuacionActual < 0 ? 0 : nuevaPuntuacionActual;
         }
 
@@ -164,6 +189,13 @@ namespace ProyectoPSWMain.Services
             }
 
         }
+
+        #region strategy
+        public int GetContextoPuntos() 
+        {
+            return this.context.GetPuntos();
+        }
+        #endregion
 
         public List<Respuesta> AnswerShuffle()
         {
@@ -198,7 +230,7 @@ namespace ProyectoPSWMain.Services
 
         #region Reto frase
 
-        public string QuitarLetras(out List<char> letrasHueco)
+        /**public string QuitarLetras(out List<char> letrasHueco)
         {
             letrasHueco = new List<char>();
             Frase fraseOriginal = (Frase) this.retos[this.index];
@@ -227,6 +259,7 @@ namespace ProyectoPSWMain.Services
 
             return new string(fraseCaracteres);
         }
+        **/
 
         public static string GetLetrasEliminadas(Frase fraseOriginal, string fraseConHuecos)
         {

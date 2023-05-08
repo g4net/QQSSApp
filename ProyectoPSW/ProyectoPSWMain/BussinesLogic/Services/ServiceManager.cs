@@ -1,4 +1,5 @@
-﻿using ProyectoPSWMain.Entities;
+﻿using ProyectoPSWMain.BussinesLogic.Services;
+using ProyectoPSWMain.Entities;
 using ProyectoPSWMain.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -59,12 +60,14 @@ namespace ProyectoPSWMain.Services
 
         public void Login(string username, string password)
         {
-            if (username.IndexOf("@") != -1 && !userManager.IsValidEmail(username)) { throw new ServiceException("InvalidEmailFormat"); }
-            else
-            {
-                if (!userManager.IsValidUsername(username)) 
-                    throw new ServiceException("InvalidUserFormat");
-            }
+            if (username.IndexOf("@") != -1 && !userManager.IsValidEmail(username)) { throw new ServiceException("InvalidEmailFormat"); }            
+           
+                if (username.IndexOf("@") == -1)
+                {
+                    if (!userManager.IsValidUsername(username))
+                        throw new ServiceException("InvalidUserFormat");
+                }
+            
             if (!userManager.IsValidPassword(password)) throw new ServiceException("InvalidPasswordFormat");
             User login;
             try
@@ -350,9 +353,20 @@ namespace ProyectoPSWMain.Services
 
         public void RetoAcertado(Reto reto)
         {
+            gameController.SetPuntosStrategy();
             gameController.RetoAcertado();
             userManager.IncrementaAciertos();
             userManager.AddRetoJugado(reto);
+        }
+
+        public void SetPuntosStrategy() 
+        {
+            gameController.SetPuntosStrategy(); 
+        }
+
+        public void UsarPista()
+        {
+            gameController.UsarPista();
         }
 
         public string EnlaceInteres(int ods)
@@ -446,6 +460,13 @@ namespace ProyectoPSWMain.Services
 
         #endregion
 
+        #region strategy
+
+        public int GetContextoPuntos()
+        {
+            return gameController.GetContextoPuntos();
+        }
+        #endregion
 
         #region Sonidos
 

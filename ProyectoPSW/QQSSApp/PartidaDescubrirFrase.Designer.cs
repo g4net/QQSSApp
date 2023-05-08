@@ -153,7 +153,7 @@
             this.letra98 = new System.Windows.Forms.Label();
             this.letra99 = new System.Windows.Forms.Label();
             this.letra100 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.PistaBoton = new System.Windows.Forms.Button();
             this.ods_picture = new System.Windows.Forms.PictureBox();
             this.reloj_circular = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -1733,20 +1733,21 @@
             this.letra100.TabIndex = 102;
             this.letra100.Text = "A";
             // 
-            // button1
+            // PistaBoton
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Enabled = false;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::QQSSApp.Properties.Resources.pista;
-            this.button1.Location = new System.Drawing.Point(822, 97);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 72);
-            this.button1.TabIndex = 20;
-            this.button1.UseVisualStyleBackColor = false;
+            this.PistaBoton.BackColor = System.Drawing.Color.Transparent;
+            this.PistaBoton.Enabled = false;
+            this.PistaBoton.FlatAppearance.BorderSize = 0;
+            this.PistaBoton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PistaBoton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PistaBoton.Image = global::QQSSApp.Properties.Resources.pista;
+            this.PistaBoton.Location = new System.Drawing.Point(850, 97);
+            this.PistaBoton.Margin = new System.Windows.Forms.Padding(0);
+            this.PistaBoton.Name = "PistaBoton";
+            this.PistaBoton.Size = new System.Drawing.Size(72, 72);
+            this.PistaBoton.TabIndex = 20;
+            this.PistaBoton.UseVisualStyleBackColor = false;
+            this.PistaBoton.Click += new System.EventHandler(this.PistaBoton_Click);
             // 
             // ods_picture
             // 
@@ -2448,7 +2449,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ods_picture);
             this.Controls.Add(this.reloj_circular);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.PistaBoton);
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.movingLabel);
             this.Controls.Add(this.label1);
@@ -2569,7 +2570,7 @@
         private System.Windows.Forms.Label letra69;
         private System.Windows.Forms.Label letra70;
         private System.Windows.Forms.Button pos1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button PistaBoton;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label letraHueco0;
         private System.Windows.Forms.Label letraHueco1;

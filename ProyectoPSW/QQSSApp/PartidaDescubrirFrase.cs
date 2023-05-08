@@ -77,9 +77,12 @@ namespace QQSSApp
                 b.Click += (sender, _) =>
                 {
                     if (b.Text != "_") return;
-                    b.Text = movingLabel.Text;
-                    movingLabel.Text = "?";
-                    clickedLabel.Hide();
+                    if (movingLabel.Text != "?")
+                    {
+                        b.Text = movingLabel.Text;
+                        movingLabel.Text = "?";
+                        clickedLabel.Hide();
+                    }
                 };
             }
 
@@ -127,6 +130,7 @@ namespace QQSSApp
         {
             botonAbandonar.Enabled = QQSS.service.GetConsolidado();
         }
+
         private void MarcarProgreso()
         {
             for (int i = 0; i <= (retoindex); i++)
@@ -201,7 +205,8 @@ namespace QQSSApp
                 LabelReset();
                 checkButton.Enabled = false;
                 checkButton.BackColor = Color.FromArgb(231, 105, 105);
-                timer3.Start();
+                InitializeTimers();
+                //timer3.Start();
             }
             
         }
@@ -213,7 +218,11 @@ namespace QQSSApp
             if (tiempoContador == 0)
             {
 
-                CheckAnswer(null);
+                Form respuestaFallada;
+                if (QQSS.service.GetError() != -1) respuestaFallada = new PartidaPerdida();
+                else respuestaFallada = new PuntuacionNegativa();
+                respuestaFallada.Show();
+                this.Close();
             }
         }
 
@@ -224,7 +233,7 @@ namespace QQSSApp
             timer2.Interval = 1000;
             tiempoContador = 120;
             timer2.Start();
-            tiempodeMostrarRta = 2;
+            //tiempodeMostrarRta = 2;
             timer3.Interval = 1000;
 
         }
@@ -266,6 +275,12 @@ namespace QQSSApp
             checkButton.Enabled = true;
             checkButton.BackColor = Color.FromArgb(127, 221, 130);
             tiempodeMostrarRta = 2;
+        }
+
+        private void PistaBoton_Click(object sender, EventArgs e)
+        {
+            PistaBoton.Enabled = false;
+
         }
     }
 }
