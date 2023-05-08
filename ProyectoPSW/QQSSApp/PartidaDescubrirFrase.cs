@@ -44,7 +44,7 @@ namespace QQSSApp
             InitializeTimers();
             InitializeODS();
             HabilitarBotonAbandonar();
-            QQSS.service.PlaySonido("musicaFondo" + GetRandomNumber(7));
+            QQSS.service.PlaySonido("musicaFondo" + GetRandomNumber(2) + "_2min");
         }
 
 
@@ -282,5 +282,6 @@ namespace QQSSApp
             PistaBoton.Enabled = false;
 
         }
+
     }
 }
