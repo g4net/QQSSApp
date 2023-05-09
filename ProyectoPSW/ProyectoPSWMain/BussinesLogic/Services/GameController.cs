@@ -106,6 +106,16 @@ namespace ProyectoPSWMain.Services
             this.pistasDisponibles = 3;
         }
 
+        public void DecrementaPistas()
+        {
+            pistasDisponibles--;
+        }
+
+        public int GetNumPistas()
+        {
+            return pistasDisponibles;
+        }
+
         public void SetRetos(List<Reto> retos)
         {
             this.retos = retos;

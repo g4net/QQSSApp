@@ -456,9 +456,14 @@ namespace ProyectoPSWMain.Services
             return gameController.GetPuntuacionReto();
         }
 
+        public int GetNumPistas()
+        {
+            return gameController.GetNumPistas();
+        }
         public void UsarPista()
         {
             gameController.UsarPista();
+            gameController.DecrementaPistas();
         }
 
         #endregion

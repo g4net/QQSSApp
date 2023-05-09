@@ -39,7 +39,7 @@ namespace ProyectoPSWMain.Services
 
         #region Partida
         void CrearPartida(int lvl);
-
+        int GetNumPistas();
         string EnlaceInteres(int ods);
         void SavePartida();
         int GetError();

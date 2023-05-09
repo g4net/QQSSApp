@@ -42,8 +42,9 @@ namespace QQSSApp
             MarcarProgreso();
             InitializeTimers();
             InitializeODS();
-            HabilitarBotonAbandonar();
+            HabilitarBotones();
             QQSS.service.PlaySonido("musicaFondo" + GetRandomNumber(7));
+            PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
         }
 
         public string GetRandomNumber(int maxNumber)
@@ -52,9 +53,17 @@ namespace QQSSApp
             return random.Next(maxNumber).ToString();
         }
 
-        private void HabilitarBotonAbandonar()
+        private void HabilitarBotones()
         {
             botonAbandonar.Enabled = QQSS.service.GetConsolidado();
+            if(QQSS.service.GetNumPistas() > 0)
+            {
+                PistaBoton.Enabled = true;
+            }
+            else
+            {
+                PistaBoton.Enabled = false;
+            }
         }
         private void MarcarProgreso() 
         {
@@ -256,6 +265,7 @@ namespace QQSSApp
         {
             PistaBoton.Enabled = false;
             QQSS.service.UsarPista();
+            PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
             Button[] botones = { op1, op2, op3, op4 };
             Random rnd = new Random();
 
