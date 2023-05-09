@@ -150,20 +150,14 @@ namespace ProyectoPSWMain.Services
 
         public void RetoFallado()
         {
-            UltimoRetoFallado();
-            RetoExtra();
-        }
-
-        public void UltimoRetoFallado()
-        {
             Reto reto = this.retos[this.index];
             int nuevaPuntuacionConsolidada = partida.PuntuacionConsolidada - puntuacionReto * 2;
             partida.PuntuacionConsolidada = nuevaPuntuacionConsolidada < 0 ? 0 : nuevaPuntuacionConsolidada;
 
             int nuevaPuntuacionActual = partida.PuntuacionPartida - puntuacionReto * 2;
             partida.PuntuacionPartida = nuevaPuntuacionActual < 0 ? 0 : nuevaPuntuacionActual;
+            if(this.index != 9) RetoExtra();
         }
-
         protected void RetoExtra()
         {
             this.error = this.index;

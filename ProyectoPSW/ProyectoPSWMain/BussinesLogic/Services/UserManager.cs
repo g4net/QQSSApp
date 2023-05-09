@@ -157,7 +157,7 @@ namespace ProyectoPSWMain.Services
         {
             this.loggedUser.RetosRealizados.Union(retosAcertados);
             this.loggedUser.RetosSuperados.Union(retosAcertados);
-            this.loggedUser.RetosJugados.Union(retosJugados);
+            this.loggedUser.RetosJugados.Concat(retosJugados);
         }
         public bool CheckRetoPlayed(Reto reto)
         {

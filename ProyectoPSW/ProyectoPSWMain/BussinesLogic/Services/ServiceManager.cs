@@ -353,7 +353,7 @@ namespace ProyectoPSWMain.Services
             databaseService.SavePartida(partida);
         }
 
-        public void RetoAcertado(Reto reto)
+        public void RetoAcertado()
         {
             gameController.RetoAcertado();
             userManager.IncrementaAciertos();
@@ -366,18 +366,10 @@ namespace ProyectoPSWMain.Services
             return gameController.EnlaceInteres(ods);
         }
 
-        public void RetoFallado(Reto reto)
+        public void RetoFallado()
         {
             gameController.RetoFallado();
             userManager.IncrementaFallos();
-            userManager.AddRetoJugado(reto);
-        }
-
-        public void UltimoRetoFallado(Reto reto)
-        {
-            gameController.UltimoRetoFallado();
-            userManager.IncrementaFallos();
-            userManager.AddRetoJugado(reto);
         }
 
         public bool TestAnswer(string txt)
