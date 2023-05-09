@@ -81,11 +81,11 @@
             this.correcto.AutoSize = true;
             this.correcto.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.correcto.ForeColor = System.Drawing.Color.White;
-            this.correcto.Location = new System.Drawing.Point(153, 22);
+            this.correcto.Location = new System.Drawing.Point(126, 21);
             this.correcto.Name = "correcto";
-            this.correcto.Size = new System.Drawing.Size(347, 58);
+            this.correcto.Size = new System.Drawing.Size(388, 58);
             this.correcto.TabIndex = 1;
-            this.correcto.Text = "Moficar Datos";
+            this.correcto.Text = "Modificar Datos";
             this.correcto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1

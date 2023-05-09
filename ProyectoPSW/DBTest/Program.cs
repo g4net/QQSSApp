@@ -10,6 +10,8 @@ using ProyectoPSWMain.Entities;
 using System.Data.Entity.Validation;
 using ProyectoPSWMain.Services;
 using System.Data.Entity.Infrastructure;
+using System.Diagnostics.Contracts;
+using System.Diagnostics;
 
 namespace DBTest
 {
@@ -2472,139 +2474,139 @@ namespace DBTest
             dal.Commit();
             //-------------------Reto Frase--------------------
             //-------------------ODS 1-------------------------
-            Frase frase1 = new Frase("Esta ODS se enfoca en erradicar la pobreza extrema y el hambre en todo el mundo, trabajando para asegurar que todas las personas tengan acceso a alimentos nutritivos y suficientes recursos para satisfacer sus necesidades básicas.",
-                "No podemos avanzar como sociedad si dejamos atrás a los más vulnerables", 1, 100, 1, false);
+            Frase frase1 = new Frase("Esta frase hace referencia a que la verdadera riqueza no se trata de tener muchas cosas, sino de tener la libertad de elegir lo que se quiere hacer con la vida. (Nelson Mandela)",
+                "La riqueza no es abundancia de bienes, sino de libertad", 2, 200, 1, true);
             dal.Insert<Frase>(frase1);
-            Frase frase2 = new Frase("La ODS 1 busca promover el acceso igualitario a servicios básicos, como la salud y la educación, y asegurar que todas las personas tengan la oportunidad de mejorar su calidad de vida.",
-                "Un mundo justo y equitativo comienza con la eliminación de la pobreza", 1, 100, 1, true);
+            Frase frase2 = new Frase("Esta frase pone en evidencia que la pobreza no es una cuestión de falta de voluntad o esfuerzo por parte de las personas, sino de una desigualdad económica que limita su acceso a recursos básicos. (Barack Obama)",
+                "La pobreza no es una falta de carácter, sino una falta de dinero", 1, 100, 1, true);
             dal.Insert<Frase>(frase2);
             dal.Commit();
             //-------------------ODS 2-------------------------
-            Frase frase3 = new Frase("Esta ODS busca erradicar el hambre y la malnutrición en todo el mundo, asegurando que todas las personas tengan acceso a alimentos nutritivos y sostenibles, y promoviendo prácticas agrícolas sostenibles.",
-                "La alimentación es un derecho humano fundamental y un requisito previo para el logro de la seguridad alimentaria y la nutrición.", 2, 200, 2, false);
+            Frase frase3 = new Frase("Esta frase destaca la importancia de luchar contra el hambre y asegurar que todas las personas tengan acceso a suficientes alimentos para vivir dignamente. (Mahatma Gandhi)",
+                "El hambre es un crimen y debemos asegurarnos de que nadie pase hambre", 2, 200, 2, true);
             dal.Insert<Frase>(frase3);
-            Frase frase4 = new Frase("La ODS 2 busca promover el acceso igualitario a alimentos nutritivos y mejorar la productividad y la sostenibilidad en el sector agrícola, para asegurar la seguridad alimentaria a largo plazo.",
-                "La agricultura es la fuente de alimentación de la humanidad", 1, 100, 2, true);
+            Frase frase4 = new Frase("Esta frase hace referencia a que no todas las personas tienen acceso a una alimentación saludable y que la comida chatarra no es una opción para aquellos que buscan una dieta equilibrada. (Adam Richman)",
+                "No hay comida chatarra, sólo comida que es chatarra para ti", 1, 100, 2, true);
             dal.Insert<Frase>(frase4);
             dal.Commit();
             //-------------------ODS 3-------------------------
-            Frase frase5 = new Frase("Esta ODS se enfoca en asegurar que todas las personas tengan acceso a servicios de salud de calidad y asequibles, promoviendo la prevención y el tratamiento de enfermedades y lesiones.",
-                "La salud es un estado de completo bienestar físico, mental y social, y no solamente la ausencia de enfermedad o dolencia.", 3, 300, 3, false);
+            Frase frase5 = new Frase("Esta frase destaca la importancia de la salud en la vida, así como la alegría y la confianza en uno mismo como aspectos fundamentales del bienestar. (Lao Tzu)",
+                "La salud es la mayor posesión. La alegría es el mayor tesoro. La confianza es el mayor amigo", 3, 300, 3, true);
             dal.Insert<Frase>(frase5);
-            Frase frase6 = new Frase("La ODS 3 busca promover la salud y el bienestar de todas las personas, en todas las etapas de la vida, a través de la prevención y el tratamiento de enfermedades, y la promoción de estilos de vida saludables.",
-                "La salud es la inversión más valiosa que podemos hacer", 2, 200, 3, true);
+            Frase frase6 = new Frase("Esta frase hace referencia a la importancia de cuidar el cuerpo para mantener una buena salud, ya que es el único lugar que tenemos para vivir. (Jim Rohn)",
+                "Cuida tu cuerpo. Es el único lugar que tienes para vivir", 2, 200, 3, true);
             dal.Insert<Frase>(frase6);
             dal.Commit();
             //-------------------ODS 4-------------------------
-            Frase frase7 = new Frase("Esta ODS busca garantizar que todas las personas tengan acceso a una educación de calidad, desde la educación primaria hasta la educación superior, promoviendo la igualdad de oportunidades y la educación para el desarrollo sostenible.",
-                "La educación es la llave maestra que abre las puertas del desarrollo y el progreso", 2, 200, 4, false);
+            Frase frase7 = new Frase("Esta frase destaca la importancia de la educación como herramienta de transformación social y de empoderamiento personal. (Nelson Mandela)",
+                "La educación es el arma más poderosa que puedes usar para cambiar el mundo", 2, 200, 4, true);
             dal.Insert<Frase>(frase7);
-            Frase frase8 = new Frase("La ODS 4 busca promover la igualdad de acceso a una educación de calidad, y mejorar los resultados educativos a través de la promoción de prácticas pedagógicas innovadoras y el desarrollo de habilidades relevantes para el mercado laboral.",
-                "La educación es el arma más poderosa que puedes usar para cambiar el mundo", 1, 100, 4, true);
+            Frase frase8 = new Frase("Esta frase hace referencia a la importancia de ayudar a las personas a descubrir sus propias capacidades y habilidades a través de la educación. (Galileo Galilei)",
+                "No puedes enseñar nada a un hombre; sólo puedes ayudarle a descubrirlo en sí mismo", 1, 100, 4, true);
             dal.Insert<Frase>(frase8);
             dal.Commit();
             //-------------------ODS 5-------------------------
-            Frase frase9 = new Frase("Esta ODS se enfoca en promover la igualdad de género y el empoderamiento de todas las mujeres y niñas, eliminando todas las formas de discriminación y violencia de género.",
-                "No podemos avanzar como sociedad si dejamos atrás a la mitad de la población", 1, 100, 5, false);
+            Frase frase9 = new Frase("Esta frase destaca la importancia de la igualdad de género como un elemento fundamental para lograr un mundo más justo y sostenible. (ONU Mujeres)",
+                "La igualdad de género no es sólo un derecho humano fundamental, sino que es esencial para conseguir un mundo pacífico, próspero y sostenible", 3, 300, 5, true);
             dal.Insert<Frase>(frase9);
-            Frase frase10 = new Frase("La ODS 5 busca promover la igualdad de género y el empoderamiento de las mujeres y niñas, fomentando su participación en la toma de decisiones y eliminando las barreras que limitan su acceso a oportunidades económicas y educativas.",
-                "La igualdad de género no es solo un derecho humano fundamental, sino también un medio para lograr un mundo pacífico y sostenible", 3, 300, 5, true);
+            Frase frase10 = new Frase("Esta frase destaca que el feminismo no es una lucha contra los hombres o contra aquellos que tienen más poder, sino una lucha por la igualdad de oportunidades y derechos para todas las personas, independientemente de su género. (Chimamanda Ngozi Adichie)",
+                "El feminismo no es un palo con el que golpear a otros con más poder, es una lucha por la igualdad", 3, 300, 5, true);
             dal.Insert<Frase>(frase10);
             dal.Commit();
             //-------------------ODS 6-------------------------
-            Frase frase11 = new Frase("Esta ODS se enfoca en garantizar el acceso universal y equitativo al agua potable y al saneamiento, promoviendo prácticas sostenibles y la gestión integrada de los recursos hídricos.",
-                "El agua es esencial para la vida, pero más de 2 mil millones de personas carecen de acceso a agua potable segura y saneamiento", 2, 200, 6, false);
+            Frase frase11 = new Frase("Esta frase destaca la importancia del agua como recurso fundamental para la vida y la naturaleza, y la necesidad de protegerla y conservarla. (Leonardo da Vinci)",
+                "El agua es la fuerza motriz de toda la naturaleza", 2, 200, 6, true);
             dal.Insert<Frase>(frase11);
-            Frase frase12 = new Frase("La ODS 6 busca promover el acceso universal al agua potable y al saneamiento, asegurando una gestión sostenible de los recursos hídricos y la protección de los ecosistemas acuáticos.",
-                "El acceso al agua potable y al saneamiento es esencial para la salud, la dignidad y el bienestar humano.", 2, 200, 6, true);
+            Frase frase12 = new Frase("Esta frase hace referencia a la importancia de cuidar el agua y evitar su desperdicio, ya que es un recurso vital para la vida y la supervivencia de las personas y la naturaleza. (Desconocido)",
+                "El agua es vida, no la desperdiciemos", 2, 200, 6, true);
             dal.Insert<Frase>(frase12);
             dal.Commit();
             //-------------------ODS 7-------------------------
-            Frase frase13 = new Frase("Esta ODS se enfoca en garantizar el acceso universal a una energía asequible, confiable, sostenible y moderna, promoviendo la eficiencia energética y el uso de fuentes renovables de energía.",
-                "La energía limpia y asequible es una fuente esencial de prosperidad para todos.", 1, 100, 7, false);
+            Frase frase13 = new Frase("Esta frase destaca la importancia de la energía renovable como alternativa a los combustibles fósiles y la necesidad de invertir en ella para lograr un mundo más sostenible. (Greenpeace)",
+                "La energía renovable es la solución, no el problema", 1, 100, 7, true);
             dal.Insert<Frase>(frase13);
-            Frase frase14= new Frase("La ODS 7 busca promover el acceso universal a una energía limpia y sostenible, fomentando la inversión en tecnologías energéticas innovadoras y la promoción de políticas públicas que impulsen la transición hacia un sistema energético sostenible.",
-                "La energía sostenible es clave para lograr un futuro más próspero, justo y sostenible para todos.", 3, 300, 7, true);
+            Frase frase14= new Frase("Esta frase destaca los beneficios de la energía solar como fuente de energía limpia y renovable, y la necesidad de aprovechar su potencial para combatir el cambio climático. (WWF)",
+                "La energía solar es la fuente más segura, asequible y limpia de energía en el mundo", 3, 300, 7, true);
             dal.Insert<Frase>(frase14);
             dal.Commit();
             //-------------------ODS 8-------------------------
-            Frase frase15 = new Frase("Esta ODS se enfoca en promover el crecimiento económico sostenido, inclusivo y sostenible, fomentando la generación de empleos decentes y productivos, y garantizando condiciones de trabajo seguras y protegidas para todos los trabajadores.",
-                "La creación de empleos decentes y productivos es un elemento clave para lograr un crecimiento económico sostenible e inclusivo", 2, 200, 8, false);
+            Frase frase15 = new Frase("Esta frase destaca la importancia del trabajo como fuente de dignidad y autoestima para las personas, y la necesidad de promover empleos decentes y bien remunerados. (Juan Domingo Perón)",
+                "El trabajo dignifica al hombre", 2, 200, 8, false);
             dal.Insert<Frase>(frase15);
-            Frase frase16 = new Frase("La ODS 8 busca promover el crecimiento económico sostenible e inclusivo, fomentando la generación de empleos decentes y la protección de los derechos laborales, y eliminando las formas de trabajo forzoso y explotación laboral.",
-                "La igualdad de oportunidades y el acceso al empleo decente son fundamentales para el desarrollo sostenible", 2, 200, 8, true);
+            Frase frase16 = new Frase("Esta frase destaca la importancia de construir sociedades inclusivas y prósperas para lograr un crecimiento económico sostenible y equitativo. (Ban Ki-moon)",
+                "El crecimiento económico sostenible requiere sociedades inclusivas y prósperas", 2, 200, 8, true);
             dal.Insert<Frase>(frase16);
             dal.Commit();
             //-------------------ODS 9-------------------------
-            Frase frase17 = new Frase("Esta ODS se enfoca en construir infraestructuras resilientes, promover la industrialización inclusiva y sostenible, y fomentar la innovación y el uso de tecnologías avanzadas para lograr un desarrollo sostenible y equitativo.",
-                "La inversión en infraestructura resiliente y sostenible es clave para el crecimiento económico y la inclusión social", 1, 100, 9, false);
+            Frase frase17 = new Frase("Esta frase destaca la importancia de la innovación como factor clave para el éxito y el liderazgo en la industria y la infraestructura.(Steve Jobs)",
+                "La innovación es lo que distingue a un líder de los demás", 1, 100, 9, true);
             dal.Insert<Frase>(frase17);
-            Frase frase18 = new Frase("La ODS 9 busca promover la construcción de infraestructuras resilientes y sostenibles, fomentando la inversión en tecnologías limpias y avanzadas y la promoción de políticas públicas que impulsen la innovación y el emprendimiento.",
-                "La infraestructura y la innovación son fundamentales para impulsar el desarrollo sostenible y alcanzar los objetivos de la Agenda 2030", 2, 200, 9, true);
+            Frase frase18 = new Frase("Esta frase destaca la importancia de la infraestructura como elemento fundamental para el desarrollo económico y el bienestar social de las personas. (Enrique Peña Nieto)",
+                "La infraestructura es el sostén de la economía y el bienestar social", 2, 200, 9, true);
             dal.Insert<Frase>(frase18);
             dal.Commit();
             //-------------------ODS 10-------------------------
-            Frase frase19 = new Frase("Esta ODS se enfoca en reducir la desigualdad económica, social y territorial, promoviendo la inclusión social y económica de todas las personas, independientemente de su origen, género, edad o capacidad.",
-                "La lucha contra la discriminación y la promoción de la igualdad de oportunidades son fundamentales para lograr una sociedad inclusiva y sostenible", 1, 100, 10, false);
+            Frase frase19 = new Frase("Esta frase destaca la relación entre la desigualdad y la violencia, y la necesidad de trabajar en la reducción de las desigualdades para lograr sociedades más pacíficas y justas. (Pablo Escobar)",
+                "La desigualdad es el origen de la violencia", 1, 100, 10, true);
             dal.Insert<Frase>(frase19);
-            Frase frase20 = new Frase("La ODS 10 busca reducir las brechas de desigualdad económica y social, promoviendo la inclusión de todas las personas y comunidades en el desarrollo sostenible, y garantizando la protección de sus derechos y libertades.",
-                "La eliminación de la pobreza y la reducción de las desigualdades son fundamentales para lograr una sociedad más justa y sostenible para todos", 3, 300, 10, true);
+            Frase frase20 = new Frase("Esta frase destaca la importancia de la inclusión y la igualdad de oportunidades para todas las personas en la construcción de una sociedad justa y equitativa. (Nelson Mandela)",
+                "No podemos avanzar como sociedad si dejamos a nadie atrás", 3, 300, 10, true);
             dal.Insert<Frase>(frase20);
             dal.Commit();
             //-------------------ODS 11-------------------------
-            Frase frase21 = new Frase("Esta ODS se enfoca en lograr ciudades y comunidades más inclusivas, seguras, resilientes y sostenibles, garantizando el acceso a servicios básicos, infraestructuras y espacios públicos de calidad para todas las personas.",
-                "La planificación urbana integrada es clave para lograr ciudades y comunidades sostenibles y resilientes", 2, 200, 11, false);
+            Frase frase21 = new Frase("Esta frase destaca la importancia de aprender de la historia y de planificar pensando en el futuro para construir ciudades sostenibles e inteligentes. (Pedro Nueno)",
+                "Una ciudad inteligente es aquella que no solo piensa en el futuro, sino que aprende de su pasado", 2, 200, 11, true);
             dal.Insert<Frase>(frase21);
-            Frase frase22 = new Frase("La ODS 11 busca promover el desarrollo de ciudades y comunidades más sostenibles y resilientes, fomentando la planificación urbana inclusiva y participativa, y garantizando el acceso a servicios básicos y espacios públicos de calidad para todas las personas.",
-                "El acceso a viviendas adecuadas y asequibles es un derecho humano fundamental y una condición esencial para lograr una expansión urbana sostenible", 3, 300, 11, true);
+            Frase frase22 = new Frase("Esta frase destaca la importancia de la participación ciudadana en la construcción de ciudades sostenibles y el papel fundamental que juegan las personas en la creación de espacios públicos y comunitarios. (Luis Barragán)",
+                "Una ciudad es como una obra de arte colectiva, donde cada uno de sus habitantes es un artista", 3, 300, 11, true);
             dal.Insert<Frase>(frase22);
             dal.Commit();
             //-------------------ODS 12-------------------------
-            Frase frase23 = new Frase("Esta ODS se enfoca en fomentar patrones de consumo y producción sostenibles, promoviendo la eficiencia de los recursos, la reducción de la contaminación y el uso responsable de los recursos naturales.",
-                "El fomento de la innovación y la tecnología sostenible es clave para promover patrones de consumo y producción sostenibles", 1, 100, 12, false);
+            Frase frase23 = new Frase("Esta frase destaca la importancia de tomar acciones responsables en el presente para construir un futuro sostenible y responsable en términos de producción y consumo. (Peter Drucker)",
+                "La mejor manera de predecir el futuro es crearlo", 1, 100, 12, true);
             dal.Insert<Frase>(frase23);
-            Frase frase24 = new Frase("La ODS 12 busca fomentar patrones de consumo y producción sostenibles, promoviendo la eficiencia de los recursos, la reducción de la contaminación y el uso responsable de los recursos naturales.",
-                "La adopción de patrones de consumo y producción sostenible es fundamental para garantizar la sostenibilidad ambiental y social", 2, 200, 12, true);
+            Frase frase24 = new Frase("Esta frase destaca la importancia de vivir de manera responsable y sostenible en el presente, y no dejar una carga para las generaciones futuras en términos de producción y consumo. (David Attenborough)",
+                "La verdadera sostenibilidad significa vivir dentro de nuestros medios y no dejar una carga sobre las generaciones futuras", 2, 200, 12, true);
             dal.Insert<Frase>(frase24);
             dal.Commit();
             //-------------------ODS 13-------------------------
-            Frase frase25 = new Frase("La ODS 13 se enfoca en combatir el cambio climático y sus efectos negativos, mediante la adopción de medidas de mitigación y adaptación, y la promoción de la resiliencia climática.",
-                "La transición hacia una economía baja en carbono es fundamental para reducir las emisiones de gases de efecto invernadero y combatir el cambio climático", 1, 100, 13, true);
+            Frase frase25 = new Frase("Esta frase destaca la importancia de tomar acciones concretas para combatir el cambio climático y proteger el planeta para las generaciones futuras. (Antiguo proverbio indio)",
+                "La Tierra no es una herencia de nuestros padres, sino un préstamo de nuestros hijos", 1, 100, 13, true);
             dal.Insert<Frase>(frase25);
-            Frase frase26 = new Frase("La ODS 13 busca combatir el cambio climático y sus efectos negativos, mediante la adopción de medidas de mitigación y adaptación, y la promoción de la resiliencia climática.",
-                "La colaboración multilateral es clave para combatir el cambio climático y sus efectos negativos", 2, 200, 13, true);
+            Frase frase26 = new Frase("Esta frase destaca la necesidad de tomar acciones urgentes para combatir el cambio climático y proteger el planeta, y la importancia de que esta cuestión trascienda la política y se convierta en una cuestión de supervivencia para la humanidad. (Leonardo DiCaprio)",
+                "El cambio climático no es una cuestión política, sino una cuestión de supervivencia", 2, 200, 13, true);
             dal.Insert<Frase>(frase26);
             dal.Commit();
             //-------------------ODS 14-------------------------
-            Frase frase27 = new Frase("La ODS 14 busca conservar y utilizar de manera sostenible los océanos, los mares y los recursos marinos para el desarrollo sostenible, y promover la protección de la biodiversidad marina.",
-                "La gestión sostenible de los recursos marinos es clave para conservar los océanos y mares y proteger la biodiversidad marina", 3, 300, 14, true);
+            Frase frase27 = new Frase("Esta frase destaca la importancia de los océanos como fuente de vida y la necesidad de cuidarlos y protegerlos para asegurar la supervivencia de las especies marinas y de la humanidad misma. (Jean-Michel Cousteau)",
+                "Los océanos son el corazón de nuestro planeta, y debemos cuidarlos como tal", 3, 300, 14, true);
             dal.Insert<Frase>(frase27);
-            Frase frase28 = new Frase("La ODS 14 se enfoca en la conservación y uso sostenible de los océanos, mares y recursos marinos para el desarrollo sostenible, y promover la protección de la biodiversidad marina.",
-                "La adopción de prácticas sostenible es fundamental para reducir la contaminación marina y proteger la biodiversidad marina", 3, 300, 14, true);
+            Frase frase28 = new Frase("Esta frase destaca la importancia de valorar y cuidar el agua como un recurso vital para la vida submarina y la humanidad en general. (Mahatma Gandhi)",
+                "Cada gota de agua cuenta", 3, 300, 14, true);
             dal.Insert<Frase>(frase28);
             dal.Commit();
             //-------------------ODS 15-------------------------
-            Frase frase29 = new Frase("La ODS 15 se enfoca en proteger, restaurar y promover el uso sostenible de los ecosistemas terrestres, la gestión forestal sostenible, la lucha contra la desertificación, la detención y reversión de la degradación de la tierra y la pérdida de biodiversidad.",
-                "La pérdida de biodiversidad es una amenaza para la biodiversidad y los ecosistemas terrestres, por lo que es importante detener y revertir su degradación", 1, 100, 15, true);
+            Frase frase29 = new Frase("sta frase destaca la importancia de los bosques como ecosistemas complejos y vivos, y la necesidad de protegerlos y conservarlos para garantizar la vida de los ecosistemas terrestres y la humanidad misma. (Suzanne Simard)",
+                "El bosque es un organismo vivo y complejo, más allá de la suma de sus partes", 1, 100, 15, true);
             dal.Insert<Frase>(frase29);
-            Frase frase30 = new Frase("La ODS 15 busca proteger, restaurar y promover el uso sostenible de los ecosistemas terrestres, la gestión forestal sostenible, la lucha contra la desertificación, la detención y reversión de la degradación de la tierra y la pérdida de biodiversidad.",
-                "La conservación y restauración de los ecosistemas terrestres son fundamentales para la protección de la biodiversidad y el uso sostenible de los recursos naturales", 2, 200, 15, true);
+            Frase frase30 = new Frase("Esta frase destaca la importancia de la conexión y el respeto hacia la naturaleza como nuestro hogar y fuente de vida, y la necesidad de cuidar y proteger los ecosistemas terrestres para garantizar la supervivencia de la humanidad. (Gary Snyder)",
+                "La naturaleza no es un lugar para visitar, es nuestro hogar", 2, 200, 15, true);
             dal.Insert<Frase>(frase30);
             dal.Commit();
             //-------------------ODS 16-------------------------
-            Frase frase31 = new Frase("La ODS 16 se enfoca en promover sociedades pacíficas e inclusivas para el desarrollo sostenible, el acceso a la justicia y la construcción de instituciones efectivas e inclusivas.",
-                "La corrupción es un obstáculo para alcanzar una sociedad pacífica e inclusiva, por lo que es necesario tomar medidas para prevenirla y combatirla", 3, 300, 16, true);
+            Frase frase31 = new Frase("Esta frase destaca la importancia de la justicia y el perdón como fundamentos para lograr la paz y la estabilidad social en las comunidades y el mundo. (Desmond Tutu)",
+                "No hay paz sin justicia, no hay justicia sin perdón", 3, 300, 16, true);
             dal.Insert<Frase>(frase31);
-            Frase frase32 = new Frase("La ODS 16 busca promover sociedades pacíficas e inclusivas para el desarrollo sostenible, el acceso a la justicia y la construcción de instituciones efectivas e inclusivas.",
-                "El acceso a una justicia imparcial y efectiva es fundamental para el desarrollo sostenible y la protección de los derechos humanos", 1, 100, 16, true);
+            Frase frase32 = new Frase("Esta frase destaca la importancia de tener sistemas de justicia justos y sólidos como base para construir sociedades pacíficas y justas para todas las personas. (Ruth Bader Ginsburg)",
+                "Un sistema de justicia justo es la base de una sociedad justa", 1, 100, 16, true);
             dal.Insert<Frase>(frase32);
             dal.Commit();
             //-------------------ODS 17-------------------------
-            Frase frase33 = new Frase("La ODS 17 se enfoca en fortalecer los medios de implementación y revitalizar la Alianza Mundial para el Desarrollo Sostenible.",
-                "La cooperación internacional es esencial para lograr la ODS 17 y asegurar un desarrollo sostenible integral", 2, 200, 17, true);
+            Frase frase33 = new Frase("Esta frase destaca la importancia de trabajar juntos y colaborar para lograr objetivos comunes y construir un mundo sostenible y justo para todas las personas. (Markus Zusak)",
+                "Juntos podemos hacer una diferencia, trabajando en equipo y colaborando", 2, 200, 17, true);
             dal.Insert<Frase>(frase33);
-            Frase frase34 = new Frase("La ODS 17 busca fortalecer los medios de implementación y revitalizar la Alianza Mundial para el Desarrollo Sostenible.",
-                "El sector privado tiene un papel importante en la implementación de la ODS 17, ya que puede contribuir con su experiencia, tecnología y recursos para lograr un desarrollo sostenible y sostenible", 1, 100, 17, true);
+            Frase frase34 = new Frase("Esta frase destaca la importancia de las alianzas y la colaboración para lograr objetivos comunes, y cómo el éxito y el compromiso son fundamentales para mantener y fortalecer estas alianzas. (John C. Maxwell)",
+                "Las alianzas son clave para el éxito, y el éxito a su vez es clave para las alianzas", 1, 100, 17, true);
             dal.Insert<Frase>(frase34);
             dal.Commit();
 
