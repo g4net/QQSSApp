@@ -297,7 +297,7 @@ namespace QQSSApp
                     Label b = (Label)controles[0];
                     fraseConHuecos[i] = b;
 
-                    char aux = frase.Enunciado[i];
+                    char aux = frase.Enunciado[i];//esto falla
                     if (aux == clickedLabel.Text[0])
                     {
 
