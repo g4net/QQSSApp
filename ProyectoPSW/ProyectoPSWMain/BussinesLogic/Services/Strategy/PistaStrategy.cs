@@ -9,7 +9,7 @@ namespace ProyectoPSWMain.BussinesLogic.Services
 {
     public class PistaStrategy : IPuntosStrategy
     {
-        public int EstablecerPuntosRetoAcertado(int puntosActualPartida)
+        public int EstablecerPuntosReto(int puntosActualPartida)
         {
             return puntosActualPartida / 2;
         }

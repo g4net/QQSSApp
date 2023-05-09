@@ -42,6 +42,7 @@ namespace QQSSApp
             MarcarProgreso();
             InitializeTimers();
             InitializeODS();
+            QQSS.service.SetPuntosStrategy();
             HabilitarBotonAbandonar();
             QQSS.service.PlaySonido("musicaFondo" + GetRandomNumber(2) + "_2min");
         }
@@ -56,8 +57,8 @@ namespace QQSSApp
 
             enunciado.Text = frase.Descripcion;
 
-            puntuacionPos.Text = frase.Puntuacion_acierto.ToString();
-            puntuaciónNegativa.Text = (frase.Puntuacion_acierto * 2).ToString();
+            puntuacionPos.Text = QQSS.service.GetPuntuacionReto().ToString();
+            puntuaciónNegativa.Text = (QQSS.service.GetPuntuacionReto() * 2).ToString();
 
             LabelInit();
         }
@@ -75,7 +76,7 @@ namespace QQSSApp
                 b.Text = "" + textoFrase[i];
                 b.Click += (sender, _) =>
                 {
-                    if (b.Text != "_") return;
+                    if (b.Text != "_") return; //sustituir
                     if (movingLabel.Text != "?")
                     {
                         b.Text = movingLabel.Text;
@@ -279,7 +280,40 @@ namespace QQSSApp
 
         private void PistaBoton_Click(object sender, EventArgs e)
         {
-            PistaBoton.Enabled = false;
+            if (clickedLabel != null)
+            {
+                PistaBoton.Enabled = false;
+                QQSS.service.UsarPista();
+
+                for (int i = 1; i <= frase.Enunciado.Length; i++)
+                {
+                    string nombreLabel = "letra" + i;
+                    Control[] controles = this.Controls.Find(nombreLabel, true);
+
+                    if (controles.Length == 0 || controles[0] == null) continue;
+
+                    Label b = (Label)controles[0];
+                    fraseConHuecos[i] = b;
+
+                    char aux = frase.Enunciado[i];
+                    if (aux == clickedLabel.Text[0])
+                    {
+
+                        b.Text = "" + textoFrase[i];
+                        b.Click += (sender2, _) =>
+                        {
+                            if (b.Text != "_") return; 
+                            if (movingLabel.Text != "?")
+                            {
+                                b.Text = movingLabel.Text;
+                                movingLabel.Text = "?";
+                                clickedLabel.Hide();
+                            }
+                        };
+                    }
+
+                }
+            }
 
         }
 

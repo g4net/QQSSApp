@@ -35,7 +35,7 @@ namespace QQSSApp
         private void InitializePartidaGanada()
         {
             reto = QQSS.service.GetReto();
-            puntuacion.Text = reto.Puntuacion_acierto.ToString();
+            puntuacion.Text = QQSS.service.GetPuntuacionReto().ToString();
             QQSS.service.RetoAcertado();
             puntuacion_partida.Text = QQSS.service.GetPuntuacionPartida().ToString();
             puntuacion_total.Text = QQSS.service.GetLoggedUser().PuntuacionAcumulada.ToString();

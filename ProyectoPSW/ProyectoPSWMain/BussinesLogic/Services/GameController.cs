@@ -129,11 +129,13 @@ namespace ProyectoPSWMain.Services
             retosJugados.Add(retos[this.index]);
         }
 
-        public void RetoAcertado()//aqui se usa el plantilla 
+        public void RetoAcertado()
         {
             Reto reto = this.retos[this.index];
             NextReto();
-            partida.PuntuacionPartida += this.puntuacionReto; //Strategy
+            EstablecerPuntosReto(); //Strategy
+            puntuacionReto = GetPuntuacionReto();
+            partida.PuntuacionPartida += this.puntuacionReto; 
             retosAcertados.Add(reto);
         }
 
@@ -150,6 +152,7 @@ namespace ProyectoPSWMain.Services
 
         public void RetoFallado()
         {
+            EstablecerPuntosReto();
             Reto reto = this.retos[this.index];
             int nuevaPuntuacionConsolidada = partida.PuntuacionConsolidada - puntuacionReto * 2;
             partida.PuntuacionConsolidada = nuevaPuntuacionConsolidada < 0 ? 0 : nuevaPuntuacionConsolidada;
@@ -194,11 +197,12 @@ namespace ProyectoPSWMain.Services
             if (i == 1) { SetPuntosStrategy(new EasyStrategy()); }
             else if (i == 2) { SetPuntosStrategy(new MiddleStrategy()); }
             else if (i == 3) { SetPuntosStrategy(new HardStrategy()); }
+            EstablecerPuntosReto();
         }
 
-        public void EstablecerPuntosRetoAcertado() 
+        public void EstablecerPuntosReto() 
         { 
-            puntuacionReto = puntosStrategy.EstablecerPuntosRetoAcertado(puntuacionReto); 
+            puntuacionReto = puntosStrategy.EstablecerPuntosReto(puntuacionReto); 
         }
 
         public void UsarPista()

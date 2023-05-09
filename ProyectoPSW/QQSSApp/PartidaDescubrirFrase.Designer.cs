@@ -1736,7 +1736,6 @@
             // PistaBoton
             // 
             this.PistaBoton.BackColor = System.Drawing.Color.Transparent;
-            this.PistaBoton.Enabled = false;
             this.PistaBoton.FlatAppearance.BorderSize = 0;
             this.PistaBoton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PistaBoton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

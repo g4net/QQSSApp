@@ -31,7 +31,7 @@ namespace ProyectoPSWMain.Services
         void UsarPista();
         void SetPuntosStrategy();
         void SetPuntosStrategy(IPuntosStrategy puntosStrategy);
-        void EstablecerPuntosRetoAcertado();
+        void EstablecerPuntosReto();
         int GetPuntuacionReto();
         List<Respuesta> AnswerShuffle();
         bool TestAnswer(string txt);
