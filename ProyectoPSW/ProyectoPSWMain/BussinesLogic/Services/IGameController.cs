@@ -33,7 +33,6 @@ namespace ProyectoPSWMain.Services
         void SetPuntosStrategy(IPuntosStrategy puntosStrategy);
         void EstablecerPuntosRetoAcertado();
         int GetPuntuacionReto();
-        void UltimoRetoFallado();
         List<Respuesta> AnswerShuffle();
         bool TestAnswer(string txt);
         List<Reto> GetRetosAcertados();

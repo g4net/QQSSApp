@@ -357,7 +357,6 @@ namespace ProyectoPSWMain.Services
         {
             gameController.RetoAcertado();
             userManager.IncrementaAciertos();
-            userManager.AddRetoJugado(reto);
 
         }
 
