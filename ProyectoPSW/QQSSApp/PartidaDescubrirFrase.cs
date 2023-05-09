@@ -285,7 +285,7 @@ namespace QQSSApp
             if (clickedLabel != null)
             {
                 PistaBoton.Enabled = false;
-                QQSS.service.UsarPista();
+                QQSS.service.UsarPista(); // hasta aqui bien
 
                 for (int i = 1; i <= frase.Enunciado.Length; i++)
                 {
