@@ -280,6 +280,8 @@ namespace QQSSApp
 
         private void PistaBoton_Click(object sender, EventArgs e)
         {
+            //debería rellenar todos los hueco de la frase donde aparece la letra seleccionada
+            // luego elimiar todos los labels con la misma letra de las letrasParaHuecos
             if (clickedLabel != null)
             {
                 PistaBoton.Enabled = false;
