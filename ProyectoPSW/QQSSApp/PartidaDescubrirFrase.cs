@@ -22,7 +22,6 @@ namespace QQSSApp
         private List<Image> ods;
         private int tiempoContador;
         private int tiempodeMostrarRta;
-        bool esCorrecta;
         Label clickedLabel;
         Label[] fraseConHuecos;
         Label[] letrasParaHuecos;
@@ -144,7 +143,7 @@ namespace QQSSApp
                     b.BackColor = Color.YellowGreen;
                 }
                 else b.BackColor = Color.DarkSeaGreen;
-                if (i == QQSS.service.GetError()) { b.BackColor = Color.LightCoral; }
+                if (i == error) { b.BackColor = Color.LightCoral; }
             }
         }
 
