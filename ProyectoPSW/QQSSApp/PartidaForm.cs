@@ -32,7 +32,7 @@ namespace QQSSApp
         {
             InitializeComponent();
             InitializeImages();
-            QQSS.service.SetPuntosStrategy();
+            InitializePuntosStrategy();
             this.CenterToScreen();
             this.retoindex = QQSS.service.GetProgressIndex();
             this.error = QQSS.service.GetError();
@@ -71,6 +71,11 @@ namespace QQSSApp
                 else b.BackColor = Color.DarkSeaGreen;
                 if (i == error) { b.BackColor = Color.LightCoral; }
             }
+        }
+
+        public void InitializePuntosStrategy()
+        {
+            QQSS.service.SetPuntosStrategy();
         }
 
         public void InitializeImages()

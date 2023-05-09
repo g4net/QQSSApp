@@ -4,6 +4,7 @@ using ProyectoPSWMain.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.WebRequestMethods;
@@ -24,7 +25,6 @@ namespace ProyectoPSWMain.Services
             retos = new List<Reto>();
             retosAcertados= new List<Reto>();
             retosJugados = new List<Reto>();
-            context = new Contexto();
         }
 
         private Partida partida;
@@ -34,19 +34,16 @@ namespace ProyectoPSWMain.Services
         private int pistasDisponibles;
         private List<Reto> retos;
         private List<Reto> retosAcertados;
-        private Contexto context;
         private List<Reto> retosJugados;
+        private IPuntosStrategy puntosStrategy;
+        private int puntuacionReto;
 
-        private PistaStrategy pistaStrategy = new PistaStrategy();
-        private EasyStrategy easyStrategy = new EasyStrategy();
-        private MiddleStrategy middleStrategy = new MiddleStrategy();
-        private HardStrategy hardStrategy = new HardStrategy();
 
         public void UpdateError()
         {
             this.error = index;
         }
-        public void SetContext(Contexto context) { this.context = context; }
+        public int GetPuntuacionPartida() { return puntuacionReto; }
         public int GetError() { return error; }
         public bool IsConsolidado() { return consolidado; }
         public void Consolidar()
@@ -123,34 +120,33 @@ namespace ProyectoPSWMain.Services
 
         public Reto GetReto()
         {
-            retosJugados.Add(retos[this.index]);
             return retos[this.index];
+        }
+        
+
+        public void AddRetoRetosJugados()
+        {
+            retosJugados.Add(retos[this.index]);
         }
 
         public void RetoAcertado()//aqui se usa el plantilla 
         {
-            context.setPartida(partida);
-            context.AñadirPuntos();
             Reto reto = this.retos[this.index];
             NextReto();
-            //partida.PuntuacionPartida += reto.Puntuacion_acierto;
+            partida.PuntuacionPartida += this.puntuacionReto; //Strategy
             retosAcertados.Add(reto);
         }
 
+        /**
         public void SetPuntosStrategy()
         {
             Reto reto = this.retos[this.index];
             int i = reto.Dificultad;
-            if (i == 1) { context.SetStrategy(easyStrategy); }
-            else if (i == 2) { context.SetStrategy(middleStrategy); }
-            else if (i == 3) { context.SetStrategy(hardStrategy); }
+            if (i == 1) { context.SetStrategy(new EasyStrategy()); }
+            else if (i == 2) { context.SetStrategy(new MiddleStrategy()); }
+            else if (i == 3) { context.SetStrategy(new HardStrategy()); }
         }
-
-        public void UsarPista()
-        {
-            context.SetStrategy(pistaStrategy);
-            Console.WriteLine(context.GetPuntosStrategy());
-        }
+        **/
 
         public void RetoFallado()
         {
@@ -161,10 +157,10 @@ namespace ProyectoPSWMain.Services
         public void UltimoRetoFallado()
         {
             Reto reto = this.retos[this.index];
-            int nuevaPuntuacionConsolidada = partida.PuntuacionConsolidada - QQSS.service.GetContextoPuntos() * 2;
+            int nuevaPuntuacionConsolidada = partida.PuntuacionConsolidada - puntuacionReto * 2;
             partida.PuntuacionConsolidada = nuevaPuntuacionConsolidada < 0 ? 0 : nuevaPuntuacionConsolidada;
 
-            int nuevaPuntuacionActual = partida.PuntuacionPartida - QQSS.service.GetContextoPuntos() * 2;
+            int nuevaPuntuacionActual = partida.PuntuacionPartida - puntuacionReto * 2;
             partida.PuntuacionPartida = nuevaPuntuacionActual < 0 ? 0 : nuevaPuntuacionActual;
         }
 
@@ -191,10 +187,33 @@ namespace ProyectoPSWMain.Services
         }
 
         #region strategy
-        public int GetContextoPuntos() 
+
+        public void SetPuntosStrategy(IPuntosStrategy puntosStrategy) 
         {
-            return this.context.GetPuntos();
+            this.puntosStrategy = puntosStrategy;
         }
+
+        public void SetPuntosStrategy()
+        {
+            Reto reto = GetReto();
+            int i = reto.Dificultad;
+            if (i == 1) { SetPuntosStrategy(new EasyStrategy()); }
+            else if (i == 2) { SetPuntosStrategy(new MiddleStrategy()); }
+            else if (i == 3) { SetPuntosStrategy(new HardStrategy()); }
+        }
+
+        public void EstablecerPuntosRetoAcertado() 
+        { 
+            puntuacionReto = puntosStrategy.EstablecerPuntosRetoAcertado(puntuacionReto); 
+        }
+
+        public void UsarPista()
+        {
+            this.SetPuntosStrategy(new PistaStrategy());
+        }
+
+        public int GetPuntuacionReto() { return puntuacionReto; }
+
         #endregion
 
         public List<Respuesta> AnswerShuffle()

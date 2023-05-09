@@ -55,11 +55,11 @@ namespace ProyectoPSWMain.Services
         void RetoAcertado(Reto reto);
         void RetoFallado(Reto reto);
         void UltimoRetoFallado(Reto reto);
-        void SetPuntosStrategy();
         int GetPuntuacionConsolidada();
+        void SetPuntosStrategy();
         void GenerarRetos(TipoReto tipoReto);
         void UsarPista();
-        int GetContextoPuntos();
+        int GetPuntuacionReto();
         string QuitarLetras(out List<char> letrasHueco);
         #endregion
 

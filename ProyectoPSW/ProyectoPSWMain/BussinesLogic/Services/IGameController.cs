@@ -25,12 +25,14 @@ namespace ProyectoPSWMain.Services
         int[] GetDifficultyArray();
         bool GetConsolidado();
         Reto GetReto();
+        void AddRetoRetosJugados();
         void RetoAcertado();
-        void SetPuntosStrategy();
         void RetoFallado();
         void UsarPista();
-        int GetContextoPuntos();
-
+        void SetPuntosStrategy();
+        void SetPuntosStrategy(IPuntosStrategy puntosStrategy);
+        void EstablecerPuntosRetoAcertado();
+        int GetPuntuacionReto();
         void UltimoRetoFallado();
         List<Respuesta> AnswerShuffle();
         bool TestAnswer(string txt);

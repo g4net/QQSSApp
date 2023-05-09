@@ -9,11 +9,9 @@ namespace ProyectoPSWMain.BussinesLogic.Services
 {
     public class MiddleStrategy : IPuntosStrategy
     {
-        public int SetPuntos() { return 200; }
-
-        public void AñadirPuntos(Partida partida, int puntos)
+        public int EstablecerPuntosRetoAcertado(int puntosActualPartida)
         {
-            partida.PuntuacionPartida += 200;
+            return 200;
         }
     }
 }

@@ -9,7 +9,6 @@ namespace ProyectoPSWMain.BussinesLogic.Services
 {
     public interface IPuntosStrategy
     {
-        void AñadirPuntos(Partida partida, int puntos);
-        int SetPuntos();
+        int EstablecerPuntosRetoAcertado(int puntuacionActualPartida);
     }
 }

@@ -4,6 +4,7 @@ using ProyectoPSWMain.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -308,6 +309,7 @@ namespace ProyectoPSWMain.Services
         {
             letrasHueco = new List<char>();
             Frase fraseOriginal = (Frase)gameController.GetReto();
+            gameController.AddRetoRetosJugados();
             int dificultad = fraseOriginal.Dificultad;
             double porcentaje = 0.0;
             if (dificultad == 1) porcentaje = 0.7;
@@ -353,20 +355,10 @@ namespace ProyectoPSWMain.Services
 
         public void RetoAcertado(Reto reto)
         {
-            gameController.SetPuntosStrategy();
             gameController.RetoAcertado();
             userManager.IncrementaAciertos();
             userManager.AddRetoJugado(reto);
-        }
 
-        public void SetPuntosStrategy() 
-        {
-            gameController.SetPuntosStrategy(); 
-        }
-
-        public void UsarPista()
-        {
-            gameController.UsarPista();
         }
 
         public string EnlaceInteres(int ods)
@@ -395,6 +387,7 @@ namespace ProyectoPSWMain.Services
 
         public Reto GetReto()
         {
+            gameController.AddRetoRetosJugados();
             return gameController.GetReto();
         }
 
@@ -462,10 +455,21 @@ namespace ProyectoPSWMain.Services
 
         #region strategy
 
-        public int GetContextoPuntos()
+        public void SetPuntosStrategy() 
         {
-            return gameController.GetContextoPuntos();
+            gameController.SetPuntosStrategy();
         }
+
+        public int GetPuntuacionReto()
+        {
+            return gameController.GetPuntuacionReto();
+        }
+
+        public void UsarPista()
+        {
+            gameController.UsarPista();
+        }
+
         #endregion
 
         #region Sonidos
