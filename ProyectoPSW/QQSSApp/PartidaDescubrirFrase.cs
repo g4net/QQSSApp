@@ -205,8 +205,8 @@ namespace QQSSApp
                 LabelReset();
                 checkButton.Enabled = false;
                 checkButton.BackColor = Color.FromArgb(231, 105, 105);
-                InitializeTimers();
-                //timer3.Start();
+                
+                timer3.Start();
             }
             
         }
