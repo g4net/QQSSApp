@@ -31,7 +31,6 @@ namespace ProyectoPSWMain.Services
         void UsarPista();
         int GetContextoPuntos();
 
-        void UltimoRetoFallado();
         List<Respuesta> AnswerShuffle();
         bool TestAnswer(string txt);
         List<Reto> GetRetosAcertados();

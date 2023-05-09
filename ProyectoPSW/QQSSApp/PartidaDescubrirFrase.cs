@@ -261,6 +261,7 @@ namespace QQSSApp
             StringBuilder sb = new StringBuilder();
             foreach(Label l in fraseConHuecos)
             {
+                if (l.Text == "A") break;
                 sb.Append(l.Text);
             }
             CheckAnswer(sb.ToString());

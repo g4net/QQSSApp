@@ -47,7 +47,7 @@ namespace QQSSApp
             if(reto is Frase) respuesta.Text = (reto as Frase).Enunciado.ToString();
             //puntuacion.Text = reto.Puntuacion_acierto * 2 + "";
             puntuacion.Text = QQSS.service.GetContextoPuntos() * 2 + "";
-            QQSS.service.RetoFallado(reto);
+            QQSS.service.RetoFallado();
             punt_actual.Text = QQSS.service.GetPuntuacionPartida().ToString();
         }
 
