@@ -280,40 +280,29 @@ namespace QQSSApp
 
         private void PistaBoton_Click(object sender, EventArgs e)
         {
-            //debería rellenar todos los hueco de la frase donde aparece la letra seleccionada
-            // luego elimiar todos los labels con la misma letra de las letrasParaHuecos
-            if (clickedLabel != null)
+            PistaBoton.Enabled = false;
+            QQSS.service.UsarPista(); // hasta aqui bien
+
+            Random random = new Random();
+            int indice = random.Next(0, letrasParaHuecos.Length);
+            char letra = letrasParaHuecos[indice].Text[0];
+
+            for (int i = 0; i < fraseConHuecos.Length; i++)
             {
-                PistaBoton.Enabled = false;
-                QQSS.service.UsarPista(); // hasta aqui bien
-
-                for (int i = 1; i <= frase.Enunciado.Length; i++)
+                if (fraseConHuecos[i].Text == "_")
                 {
-                    string nombreLabel = "letra" + i;
-                    Control[] controles = this.Controls.Find(nombreLabel, true);
-
-                    if (controles.Length == 0 || controles[0] == null) continue;
-
-                    Label b = (Label)controles[0];
-                    fraseConHuecos[i] = b;
-
-                    char aux = frase.Enunciado[i];//esto falla
-                    if (aux == clickedLabel.Text[0])
+                    if (textoFrase[i] == letra)
                     {
-
-                        b.Text = "" + textoFrase[i];
-                        b.Click += (sender2, _) =>
-                        {
-                            if (b.Text != "_") return; 
-                            if (movingLabel.Text != "?")
-                            {
-                                b.Text = movingLabel.Text;
-                                movingLabel.Text = "?";
-                                clickedLabel.Hide();
-                            }
-                        };
+                        fraseConHuecos[i].Text = letra.ToString();
                     }
+                }
+            }
 
+            for (int i = 0; i < letrasParaHuecos.Length; i++)
+            {
+                if (letrasParaHuecos[i].Text == letra.ToString())
+                {
+                    letrasParaHuecos[i].Hide();
                 }
             }
 
