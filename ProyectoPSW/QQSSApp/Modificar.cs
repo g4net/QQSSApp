@@ -25,7 +25,6 @@ namespace QQSSApp
             ErrorGeneral.Text = "";
             NombreError.Text = "";
             */
-            this.FormClosed += (s, args) => Application.Exit();
             clearText();
             this.pantallaPrincipal = pantallaPrincipal; 
         }
@@ -38,19 +37,21 @@ namespace QQSSApp
                 {
                     QQSS.service.SetAtributo("nombre", nombre.Text);
                 }
-                if (Correo.Text == "") {
+                if (Correo.Text != "") {
                     QQSS.service.SetAtributo("email", Correo.Text);
                 }
-                if(RepetirContrasenya.Text == "" && Contrasenya.Text == "")
+                if(RepetirContrasenya.Text != "" && Contrasenya.Text != "")
                 {
                     if(Contrasenya.Text == RepetirContrasenya.Text)
                     {
                         QQSS.service.SetAtributo("contraseña", Contrasenya.Text);
                     }
                 }
+                QQSS.service.Logout();
                 Usuario usuarioForm = new Usuario(pantallaPrincipal);
-                usuarioForm.Show();
                 this.Hide();
+                usuarioForm.ShowDialog();
+                
 
             }
             catch (ServiceException ex)
@@ -74,8 +75,9 @@ namespace QQSSApp
 
 
                 }
-                if (ex.Message == "InvalidEmailFormat") CorreoError.Text = "Email format is not correct \nExample: valentinoelbueno@dom.com";
+                if (ex.Message == "InvalidEmailFormat") 
                 {
+                    CorreoError.Text = "Email format is not correct \nExample: valentinoelbueno@dom.com";
                     if (!QQSS.service.TestUser(nombre.Text)) { NombreError.Text = "Username format is not correct \nExample: ValentinoPiola123"; }
                     if (!QQSS.service.TestPassword(Contrasenya.Text)) { ContraError.Text = "Password format is not correct \nExample: Password123$"; }
                     if (RepetirContrasenya.Text != Contrasenya.Text) RepetirContraError.Text = "The passwords do not match";
@@ -90,7 +92,10 @@ namespace QQSSApp
 
         private void Volver_click(object sender, EventArgs e)
         {
+            Usuario usuarioForm = new Usuario(pantallaPrincipal);
             this.Hide();
+            usuarioForm.ShowDialog();
+            
         }
 
         private void label6_Click(object sender, EventArgs e)

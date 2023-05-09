@@ -79,7 +79,8 @@ namespace QQSSApp
         private void ModificarButton_Click(object sender, EventArgs e)
         {
             Modificar modificarForm = new Modificar(pantallaPrincipalForm);
-            modificarForm.ShowDialog();
+            modificarForm.Show();
+            this.Hide();
         }
 
     }
