@@ -51,8 +51,8 @@ namespace QQSSApp
         {
             reto = QQSS.service.GetReto();
             //puntuacion.Text = reto.Puntuacion_acierto.ToString();
-            puntuacion.Text = QQSS.service.GetContextoPuntos().ToString();
-            QQSS.service.RetoAcertado(reto);
+            QQSS.service.RetoAcertado();
+            puntuacion.Text = QQSS.service.GetPuntuacionReto().ToString();
             punt_actual.Text = QQSS.service.GetPuntuacionPartida().ToString();
         }
 

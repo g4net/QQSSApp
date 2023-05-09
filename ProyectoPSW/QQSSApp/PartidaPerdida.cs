@@ -23,7 +23,6 @@ namespace QQSSApp
             puntuacion_acumulada.Text = "0";
             reto = QQSS.service.GetReto();
             QQSS.service.PlaySonido("PartidaPerdida");
-            QQSS.service.UltimoRetoFallado(reto);
             if (reto is Pregunta) respuesta.Text = (reto as Pregunta).RespuestaCorrecta.ToString();
             if (reto is Frase) respuesta.Text = (reto as Frase).Enunciado.ToString();
         }
@@ -31,6 +30,7 @@ namespace QQSSApp
 
         private void reintentar_salir_Click(object sender, EventArgs e)
         {
+            QQSS.service.RetoFallado();
             QQSS.service.PerderPartida();
             PantallaPrincipalForm pantallaPrincipal = new PantallaPrincipalForm();
             pantallaPrincipal.Show();

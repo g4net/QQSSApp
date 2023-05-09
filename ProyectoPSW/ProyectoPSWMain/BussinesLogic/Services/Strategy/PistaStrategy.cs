@@ -9,13 +9,9 @@ namespace ProyectoPSWMain.BussinesLogic.Services
 {
     public class PistaStrategy : IPuntosStrategy
     {
-        public int SetPuntos() { return 0; }
-
-        public void AñadirPuntos(Partida partida, int puntos)
+        public int EstablecerPuntosReto(int puntosActualPartida)
         {
-            Console.WriteLine("HALF");
-            //puntos = puntos / 2;
-            partida.PuntuacionPartida += 1000;
+            return puntosActualPartida / 2;
         }
     }
 }

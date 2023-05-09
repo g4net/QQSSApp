@@ -422,8 +422,11 @@
     <Content Include="resources\Sonidos\menuPrincipal.wav" />
     <Content Include="resources\Sonidos\menuPrincipal1.wav" />
     <Content Include="resources\Sonidos\musicaFondo0.wav" />
+    <Content Include="resources\Sonidos\musicaFondo0_2min.wav" />
     <Content Include="resources\Sonidos\musicaFondo1.wav" />
+    <Content Include="resources\Sonidos\musicaFondo1_2min.wav" />
     <Content Include="resources\Sonidos\musicaFondo2.wav" />
+    <Content Include="resources\Sonidos\musicaFondo2_2min.wav" />
     <Content Include="resources\Sonidos\musicaFondo3.wav" />
     <Content Include="resources\Sonidos\musicaFondo4.wav" />
     <Content Include="resources\Sonidos\musicaFondo5.wav" />

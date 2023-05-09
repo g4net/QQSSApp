@@ -9,12 +9,9 @@ namespace ProyectoPSWMain.BussinesLogic.Services
 {
     public class EasyStrategy : IPuntosStrategy
     {
-        public int SetPuntos() { return 100; }
-
-        public void AñadirPuntos(Partida partida, int puntos)
+        public int EstablecerPuntosReto(int puntosActualPartida)
         {
-            Console.WriteLine("EASY");
-            partida.PuntuacionPartida += 100;
+            return 100;
         }
     }
 }

@@ -22,7 +22,6 @@ namespace QQSSApp
         private List<Image> ods;
         private int tiempoContador;
         private int tiempodeMostrarRta;
-        bool esCorrecta;
         Label clickedLabel;
         Label[] fraseConHuecos;
         Label[] letrasParaHuecos;
@@ -43,8 +42,9 @@ namespace QQSSApp
             MarcarProgreso();
             InitializeTimers();
             InitializeODS();
+            QQSS.service.SetPuntosStrategy();
             HabilitarBotonAbandonar();
-            QQSS.service.PlaySonido("musicaFondo" + GetRandomNumber(7));
+            QQSS.service.PlaySonido("musicaFondo" + GetRandomNumber(2) + "_2min");
         }
 
 
@@ -57,8 +57,8 @@ namespace QQSSApp
 
             enunciado.Text = frase.Descripcion;
 
-            puntuacionPos.Text = frase.Puntuacion_acierto.ToString();
-            puntuaciónNegativa.Text = (frase.Puntuacion_acierto * 2).ToString();
+            puntuacionPos.Text = QQSS.service.GetPuntuacionReto().ToString();
+            puntuaciónNegativa.Text = (QQSS.service.GetPuntuacionReto() * 2).ToString();
 
             LabelInit();
         }
@@ -76,7 +76,7 @@ namespace QQSSApp
                 b.Text = "" + textoFrase[i];
                 b.Click += (sender, _) =>
                 {
-                    if (b.Text != "_") return;
+                    if (b.Text != "_") return; //sustituir
                     if (movingLabel.Text != "?")
                     {
                         b.Text = movingLabel.Text;
@@ -144,7 +144,7 @@ namespace QQSSApp
                     b.BackColor = Color.YellowGreen;
                 }
                 else b.BackColor = Color.DarkSeaGreen;
-                if (i == QQSS.service.GetError()) { b.BackColor = Color.LightCoral; }
+                if (i == error) { b.BackColor = Color.LightCoral; }
             }
         }
 
@@ -205,8 +205,8 @@ namespace QQSSApp
                 LabelReset();
                 checkButton.Enabled = false;
                 checkButton.BackColor = Color.FromArgb(231, 105, 105);
-                InitializeTimers();
-                //timer3.Start();
+                
+                timer3.Start();
             }
             
         }
@@ -261,6 +261,7 @@ namespace QQSSApp
             StringBuilder sb = new StringBuilder();
             foreach(Label l in fraseConHuecos)
             {
+                if (l.Text == "A") break;
                 sb.Append(l.Text);
             }
             CheckAnswer(sb.ToString());
@@ -279,8 +280,44 @@ namespace QQSSApp
 
         private void PistaBoton_Click(object sender, EventArgs e)
         {
-            PistaBoton.Enabled = false;
+            //debería rellenar todos los hueco de la frase donde aparece la letra seleccionada
+            // luego elimiar todos los labels con la misma letra de las letrasParaHuecos
+            if (clickedLabel != null)
+            {
+                PistaBoton.Enabled = false;
+                QQSS.service.UsarPista(); // hasta aqui bien
+
+                for (int i = 1; i <= frase.Enunciado.Length; i++)
+                {
+                    string nombreLabel = "letra" + i;
+                    Control[] controles = this.Controls.Find(nombreLabel, true);
+
+                    if (controles.Length == 0 || controles[0] == null) continue;
+
+                    Label b = (Label)controles[0];
+                    fraseConHuecos[i] = b;
+
+                    char aux = frase.Enunciado[i];//esto falla
+                    if (aux == clickedLabel.Text[0])
+                    {
+
+                        b.Text = "" + textoFrase[i];
+                        b.Click += (sender2, _) =>
+                        {
+                            if (b.Text != "_") return; 
+                            if (movingLabel.Text != "?")
+                            {
+                                b.Text = movingLabel.Text;
+                                movingLabel.Text = "?";
+                                clickedLabel.Hide();
+                            }
+                        };
+                    }
+
+                }
+            }
 
         }
+
     }
 }
