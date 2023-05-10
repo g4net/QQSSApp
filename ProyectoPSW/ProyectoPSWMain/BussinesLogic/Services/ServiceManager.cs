@@ -340,6 +340,7 @@ namespace ProyectoPSWMain.Services
 
         public void RetoAcertado()
         {
+            gameController.AddRetoRetosJugados();
             gameController.RetoAcertado();
             userManager.IncrementaAciertos();
         }
@@ -351,6 +352,7 @@ namespace ProyectoPSWMain.Services
 
         public void RetoFallado()
         {
+            gameController.AddRetoRetosJugados();
             gameController.RetoFallado();
             userManager.IncrementaFallos();
         }
@@ -362,7 +364,6 @@ namespace ProyectoPSWMain.Services
 
         public Reto GetReto()
         {
-            gameController.AddRetoRetosJugados();
             return gameController.GetReto();
         }
 

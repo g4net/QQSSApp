@@ -155,9 +155,12 @@ namespace ProyectoPSWMain.Services
         #region Reto
         public void UpdateUserRetos(List<Reto> retosAcertados, List<Reto> retosJugados)
         {
-            this.loggedUser.RetosRealizados.Union(retosAcertados);
-            this.loggedUser.RetosSuperados.Union(retosAcertados);
-            this.loggedUser.RetosJugados.Concat(retosJugados);
+            var retos = this.loggedUser.RetosRealizados.Concat(retosAcertados);
+            this.loggedUser.RetosRealizados = retos.ToList();
+            retos = this.loggedUser.RetosSuperados.Concat(retosAcertados);
+            this.loggedUser.RetosSuperados = retos.ToList();
+            retos = this.loggedUser.RetosJugados.Concat(retosJugados);
+            this.loggedUser.RetosJugados = retos.ToList();
         }
         public bool CheckRetoPlayed(Reto reto)
         {
