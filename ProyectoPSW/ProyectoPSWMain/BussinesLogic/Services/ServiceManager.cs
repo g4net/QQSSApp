@@ -21,7 +21,7 @@ namespace ProyectoPSWMain.Services
         private IDatabaseService databaseService;
         private IGameController gameController;
 
-        ServiceManager()
+        private ServiceManager()
         {
         }
 
@@ -39,21 +39,6 @@ namespace ProyectoPSWMain.Services
             if (this.userManager == null) this.userManager = userManager;
             if (this.databaseService == null) this.databaseService = databaseService;
             if (this.gameController == null) this.gameController = gameController;
-        }
-
-        public void SetUserManager(IUserManager userManager)
-        {
-            this.userManager = userManager;
-        }
-
-        public void SetDatabaseService(IDatabaseService databaseService)
-        {
-            this.databaseService = databaseService;
-        }
-
-        public void SetGameController(IGameController gameController)
-        {
-            this.gameController = gameController;
         }
         
 
@@ -357,7 +342,6 @@ namespace ProyectoPSWMain.Services
         {
             gameController.RetoAcertado();
             userManager.IncrementaAciertos();
-
         }
 
         public string EnlaceInteres(int ods)
