@@ -2483,10 +2483,10 @@ namespace DBTest
             dal.Commit();
             //-------------------ODS 2-------------------------
             Frase frase3 = new Frase("Esta frase destaca la importancia de luchar contra el hambre y asegurar que todas las personas tengan acceso a suficientes alimentos para vivir dignamente. (Mahatma Gandhi)",
-                "El hambre es un crimen y debemos asegurarnos de que nadie pase hambre", 2, 200, 2, true);
+                "Debemos asegurarnos de que nadie pase hambre", 2, 200, 2, true);
             dal.Insert<Frase>(frase3);
             Frase frase4 = new Frase("Esta frase hace referencia a que no todas las personas tienen acceso a una alimentación saludable y que la comida chatarra no es una opción para aquellos que buscan una dieta equilibrada. (Adam Richman)",
-                "No hay comida chatarra, sólo comida que es chatarra para ti", 1, 100, 2, true);
+                "Hay comida que es chatarra para ti", 1, 100, 2, true);
             dal.Insert<Frase>(frase4);
             dal.Commit();
             //-------------------ODS 3-------------------------
@@ -2494,15 +2494,15 @@ namespace DBTest
                 "La salud es la mayor posesión", 3, 300, 3, true);
             dal.Insert<Frase>(frase5);
             Frase frase6 = new Frase("Esta frase hace referencia a la importancia de cuidar el cuerpo para mantener una buena salud, ya que es el único lugar que tenemos para vivir. (Jim Rohn)",
-                "Cuida tu cuerpo. Es el único lugar que tienes para vivir", 2, 200, 3, true);
+                "Cuida tu cuerpo", 2, 200, 3, true);
             dal.Insert<Frase>(frase6);
             dal.Commit();
             //-------------------ODS 4-------------------------
             Frase frase7 = new Frase("Esta frase destaca la importancia de la educación como herramienta de transformación social y de empoderamiento personal. (Nelson Mandela)",
-                "La educación es el arma más poderosa que puedes usar para cambiar el mundo", 2, 200, 4, true);
+                "La educación es el arma más poderosa", 2, 200, 4, true);
             dal.Insert<Frase>(frase7);
             Frase frase8 = new Frase("Esta frase hace referencia a la importancia de ayudar a las personas a descubrir sus propias capacidades y habilidades a través de la educación. (Galileo Galilei)",
-                "No puedes enseñar nada a un hombre; sólo puedes ayudarle a descubrirlo en sí mismo", 1, 100, 4, true);
+                "Sólo puedes ayudara un hombre a descubrirlo en sí mismo", 1, 100, 4, true);
             dal.Insert<Frase>(frase8);
             dal.Commit();
             //-------------------ODS 5-------------------------
@@ -2542,7 +2542,7 @@ namespace DBTest
                 "La innovación es lo que distingue a un líder de los demás", 1, 100, 9, true);
             dal.Insert<Frase>(frase17);
             Frase frase18 = new Frase("Esta frase destaca la importancia de la infraestructura como elemento fundamental para el desarrollo económico y el bienestar social de las personas. (Enrique Peña Nieto)",
-                "La infraestructura es el sostén de la economía y el bienestar social", 2, 200, 9, true);
+                "La infraestructura es el sostén de la economía", 2, 200, 9, true);
             dal.Insert<Frase>(frase18);
             dal.Commit();
             //-------------------ODS 10-------------------------
@@ -2555,7 +2555,7 @@ namespace DBTest
             dal.Commit();
             //-------------------ODS 11-------------------------
             Frase frase21 = new Frase("Esta frase destaca la importancia de aprender de la historia y de planificar pensando en el futuro para construir ciudades sostenibles e inteligentes. (Pedro Nueno)",
-                "Una ciudad inteligente es aquella que no solo piensa en el futuro, sino que aprende de su pasado", 2, 200, 11, true);
+                "Una ciudad inteligente es aquella que aprende de su pasado", 2, 200, 11, true);
             dal.Insert<Frase>(frase21);
             Frase frase22 = new Frase("Esta frase destaca la importancia de la participación ciudadana en la construcción de ciudades sostenibles y el papel fundamental que juegan las personas en la creación de espacios públicos y comunitarios. (Luis Barragán)",
                 "Una ciudad es como una obra de arte colectiva", 3, 300, 11, true);
