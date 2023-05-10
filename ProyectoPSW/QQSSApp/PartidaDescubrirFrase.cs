@@ -45,6 +45,7 @@ namespace QQSSApp
             QQSS.service.SetPuntosStrategy();
             HabilitarBotonAbandonar();
             QQSS.service.PlaySonido("musicaFondo" + GetRandomNumber(2) + "_2min");
+            PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
         }
 
 
@@ -282,6 +283,7 @@ namespace QQSSApp
         {
             PistaBoton.Enabled = false;
             QQSS.service.UsarPista(); // hasta aqui bien
+            PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
 
             Random random = new Random();
             int indice = random.Next(0, letrasParaHuecos.Length);
