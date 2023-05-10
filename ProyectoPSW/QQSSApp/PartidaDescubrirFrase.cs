@@ -271,7 +271,9 @@ namespace QQSSApp
             Random random = new Random();
             int indice = random.Next(0, letrasParaHuecos.Length);
             char letra = letrasParaHuecos[indice].Text[0];
-
+            puntuacionPos.Text = (QQSS.service.GetPuntuacionReto() / 2).ToString();
+            int puntNeg = -QQSS.service.GetPuntuacionReto() * 2;
+            puntuaciónNegativa.Text = puntNeg.ToString();
             for (int i = 0; i < fraseConHuecos.Length; i++)
             {
                 if (fraseConHuecos[i].Text != "_") continue;
