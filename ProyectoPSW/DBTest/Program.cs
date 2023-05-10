@@ -2475,10 +2475,10 @@ namespace DBTest
             //-------------------Reto Frase--------------------
             //-------------------ODS 1-------------------------
             Frase frase1 = new Frase("Esta frase hace referencia a que la verdadera riqueza no se trata de tener muchas cosas, sino de tener la libertad de elegir lo que se quiere hacer con la vida. (Nelson Mandela)",
-                "La riqueza no es abundancia de bienes, sino de libertad", 2, 200, 1, true);
+                "La riqueza es una abundancia de libertad", 2, 200, 1, true);
             dal.Insert<Frase>(frase1);
             Frase frase2 = new Frase("Esta frase pone en evidencia que la pobreza no es una cuestión de falta de voluntad o esfuerzo por parte de las personas, sino de una desigualdad económica que limita su acceso a recursos básicos. (Barack Obama)",
-                "La pobreza no es una falta de carácter, sino una falta de dinero", 1, 100, 1, true);
+                "La pobreza es una falta de dinero", 1, 100, 1, true);
             dal.Insert<Frase>(frase2);
             dal.Commit();
             //-------------------ODS 2-------------------------
@@ -2491,7 +2491,7 @@ namespace DBTest
             dal.Commit();
             //-------------------ODS 3-------------------------
             Frase frase5 = new Frase("Esta frase destaca la importancia de la salud en la vida, así como la alegría y la confianza en uno mismo como aspectos fundamentales del bienestar. (Lao Tzu)",
-                "La salud es la mayor posesión. La alegría es el mayor tesoro. La confianza es el mayor amigo", 3, 300, 3, true);
+                "La salud es la mayor posesión", 3, 300, 3, true);
             dal.Insert<Frase>(frase5);
             Frase frase6 = new Frase("Esta frase hace referencia a la importancia de cuidar el cuerpo para mantener una buena salud, ya que es el único lugar que tenemos para vivir. (Jim Rohn)",
                 "Cuida tu cuerpo. Es el único lugar que tienes para vivir", 2, 200, 3, true);
@@ -2507,10 +2507,10 @@ namespace DBTest
             dal.Commit();
             //-------------------ODS 5-------------------------
             Frase frase9 = new Frase("Esta frase destaca la importancia de la igualdad de género como un elemento fundamental para lograr un mundo más justo y sostenible. (ONU Mujeres)",
-                "La igualdad de género no es sólo un derecho humano fundamental, sino que es esencial para conseguir un mundo pacífico, próspero y sostenible", 3, 300, 5, true);
+                "La igualdad de género es esencial para conseguir un mundo pacífico", 3, 300, 5, true);
             dal.Insert<Frase>(frase9);
             Frase frase10 = new Frase("Esta frase destaca que el feminismo no es una lucha contra los hombres o contra aquellos que tienen más poder, sino una lucha por la igualdad de oportunidades y derechos para todas las personas, independientemente de su género. (Chimamanda Ngozi Adichie)",
-                "El feminismo no es un palo con el que golpear a otros con más poder, es una lucha por la igualdad", 3, 300, 5, true);
+                "El feminismo es una lucha por la igualdad", 3, 300, 5, true);
             dal.Insert<Frase>(frase10);
             dal.Commit();
             //-------------------ODS 6-------------------------
@@ -2523,10 +2523,10 @@ namespace DBTest
             dal.Commit();
             //-------------------ODS 7-------------------------
             Frase frase13 = new Frase("Esta frase destaca la importancia de la energía renovable como alternativa a los combustibles fósiles y la necesidad de invertir en ella para lograr un mundo más sostenible. (Greenpeace)",
-                "La energía renovable es la solución, no el problema", 1, 100, 7, true);
+                "La energía renovable es la solución", 1, 100, 7, true);
             dal.Insert<Frase>(frase13);
             Frase frase14= new Frase("Esta frase destaca los beneficios de la energía solar como fuente de energía limpia y renovable, y la necesidad de aprovechar su potencial para combatir el cambio climático. (WWF)",
-                "La energía solar es la fuente más segura, asequible y limpia de energía en el mundo", 3, 300, 7, true);
+                "La energía solar es la fuente más segura", 3, 300, 7, true);
             dal.Insert<Frase>(frase14);
             dal.Commit();
             //-------------------ODS 8-------------------------
@@ -2534,7 +2534,7 @@ namespace DBTest
                 "El trabajo dignifica al hombre", 2, 200, 8, false);
             dal.Insert<Frase>(frase15);
             Frase frase16 = new Frase("Esta frase destaca la importancia de construir sociedades inclusivas y prósperas para lograr un crecimiento económico sostenible y equitativo. (Ban Ki-moon)",
-                "El crecimiento económico sostenible requiere sociedades inclusivas y prósperas", 2, 200, 8, true);
+                "El crecimiento económico sostenible requiere sociedades inclusivas", 2, 200, 8, true);
             dal.Insert<Frase>(frase16);
             dal.Commit();
             //-------------------ODS 9-------------------------
@@ -2558,7 +2558,7 @@ namespace DBTest
                 "Una ciudad inteligente es aquella que no solo piensa en el futuro, sino que aprende de su pasado", 2, 200, 11, true);
             dal.Insert<Frase>(frase21);
             Frase frase22 = new Frase("Esta frase destaca la importancia de la participación ciudadana en la construcción de ciudades sostenibles y el papel fundamental que juegan las personas en la creación de espacios públicos y comunitarios. (Luis Barragán)",
-                "Una ciudad es como una obra de arte colectiva, donde cada uno de sus habitantes es un artista", 3, 300, 11, true);
+                "Una ciudad es como una obra de arte colectiva", 3, 300, 11, true);
             dal.Insert<Frase>(frase22);
             dal.Commit();
             //-------------------ODS 12-------------------------
@@ -2566,20 +2566,20 @@ namespace DBTest
                 "La mejor manera de predecir el futuro es crearlo", 1, 100, 12, true);
             dal.Insert<Frase>(frase23);
             Frase frase24 = new Frase("Esta frase destaca la importancia de vivir de manera responsable y sostenible en el presente, y no dejar una carga para las generaciones futuras en términos de producción y consumo. (David Attenborough)",
-                "La verdadera sostenibilidad significa vivir dentro de nuestros medios y no dejar una carga sobre las generaciones futuras", 2, 200, 12, true);
+                "La verdadera sostenibilidad significa vivir dentro de nuestros medios", 2, 200, 12, true);
             dal.Insert<Frase>(frase24);
             dal.Commit();
             //-------------------ODS 13-------------------------
             Frase frase25 = new Frase("Esta frase destaca la importancia de tomar acciones concretas para combatir el cambio climático y proteger el planeta para las generaciones futuras. (Antiguo proverbio indio)",
-                "La Tierra no es una herencia de nuestros padres, sino un préstamo de nuestros hijos", 1, 100, 13, true);
+                "La Tierra es un préstamo de nuestros hijos", 1, 100, 13, true);
             dal.Insert<Frase>(frase25);
             Frase frase26 = new Frase("Esta frase destaca la necesidad de tomar acciones urgentes para combatir el cambio climático y proteger el planeta, y la importancia de que esta cuestión trascienda la política y se convierta en una cuestión de supervivencia para la humanidad. (Leonardo DiCaprio)",
-                "El cambio climático no es una cuestión política, sino una cuestión de supervivencia", 2, 200, 13, true);
+                "El cambio climático es una cuestión de supervivencia", 2, 200, 13, true);
             dal.Insert<Frase>(frase26);
             dal.Commit();
             //-------------------ODS 14-------------------------
             Frase frase27 = new Frase("Esta frase destaca la importancia de los océanos como fuente de vida y la necesidad de cuidarlos y protegerlos para asegurar la supervivencia de las especies marinas y de la humanidad misma. (Jean-Michel Cousteau)",
-                "Los océanos son el corazón de nuestro planeta, y debemos cuidarlos como tal", 3, 300, 14, true);
+                "Los océanos son el corazón de nuestro planeta", 3, 300, 14, true);
             dal.Insert<Frase>(frase27);
             Frase frase28 = new Frase("Esta frase destaca la importancia de valorar y cuidar el agua como un recurso vital para la vida submarina y la humanidad en general. (Mahatma Gandhi)",
                 "Cada gota de agua cuenta", 3, 300, 14, true);
@@ -2587,26 +2587,26 @@ namespace DBTest
             dal.Commit();
             //-------------------ODS 15-------------------------
             Frase frase29 = new Frase("sta frase destaca la importancia de los bosques como ecosistemas complejos y vivos, y la necesidad de protegerlos y conservarlos para garantizar la vida de los ecosistemas terrestres y la humanidad misma. (Suzanne Simard)",
-                "El bosque es un organismo vivo y complejo, más allá de la suma de sus partes", 1, 100, 15, true);
+                "El bosque es un organismo vivo y complejo", 1, 100, 15, true);
             dal.Insert<Frase>(frase29);
             Frase frase30 = new Frase("Esta frase destaca la importancia de la conexión y el respeto hacia la naturaleza como nuestro hogar y fuente de vida, y la necesidad de cuidar y proteger los ecosistemas terrestres para garantizar la supervivencia de la humanidad. (Gary Snyder)",
-                "La naturaleza no es un lugar para visitar, es nuestro hogar", 2, 200, 15, true);
+                "La naturaleza es nuestro hogar", 2, 200, 15, true);
             dal.Insert<Frase>(frase30);
             dal.Commit();
             //-------------------ODS 16-------------------------
             Frase frase31 = new Frase("Esta frase destaca la importancia de la justicia y el perdón como fundamentos para lograr la paz y la estabilidad social en las comunidades y el mundo. (Desmond Tutu)",
-                "No hay paz sin justicia, no hay justicia sin perdón", 3, 300, 16, true);
+                "No hay paz sin justicia", 3, 300, 16, true);
             dal.Insert<Frase>(frase31);
             Frase frase32 = new Frase("Esta frase destaca la importancia de tener sistemas de justicia justos y sólidos como base para construir sociedades pacíficas y justas para todas las personas. (Ruth Bader Ginsburg)",
-                "Un sistema de justicia justo es la base de una sociedad justa", 1, 100, 16, true);
+                "Un sistema de justicia es la base de una sociedad", 1, 100, 16, true);
             dal.Insert<Frase>(frase32);
             dal.Commit();
             //-------------------ODS 17-------------------------
             Frase frase33 = new Frase("Esta frase destaca la importancia de trabajar juntos y colaborar para lograr objetivos comunes y construir un mundo sostenible y justo para todas las personas. (Markus Zusak)",
-                "Juntos podemos hacer una diferencia, trabajando en equipo y colaborando", 2, 200, 17, true);
+                "Juntos podemos hacer una diferencia", 2, 200, 17, true);
             dal.Insert<Frase>(frase33);
             Frase frase34 = new Frase("Esta frase destaca la importancia de las alianzas y la colaboración para lograr objetivos comunes, y cómo el éxito y el compromiso son fundamentales para mantener y fortalecer estas alianzas. (John C. Maxwell)",
-                "Las alianzas son clave para el éxito, y el éxito a su vez es clave para las alianzas", 1, 100, 17, true);
+                "Las alianzas son clave para el éxito", 1, 100, 17, true);
             dal.Insert<Frase>(frase34);
             dal.Commit();
 
