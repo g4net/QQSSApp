@@ -463,7 +463,6 @@ namespace ProyectoPSWMain.Services
         public void UsarPista()
         {
             gameController.UsarPista();
-            gameController.DecrementaPistas();
         }
 
         #endregion

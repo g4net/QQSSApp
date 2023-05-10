@@ -234,31 +234,14 @@ namespace QQSSApp
             timer2.Interval = 1000;
             tiempoContador = 120;
             timer2.Start();
-            //tiempodeMostrarRta = 2;
+            tiempodeMostrarRta = 2;
             timer3.Interval = 1000;
 
         }
 
 
-        private void OnMouseMove(object sender, MouseEventArgs e)
-        {
-            //Point mousePos = Control.MousePosition;
-            //Point labelPos = this.PointToClient(mousePos);
-            //movingLabel.BringToFront();
-            //movingLabel.Location = new Point(labelPos.X + 10, labelPos.Y + 10);
-        }
-
-        private void PartidaDescubrirFrase_Load(object sender, EventArgs e)
-        {
-            //foreach (Control control in this.Controls)
-            //{
-            //    control.MouseMove += new MouseEventHandler(OnMouseMove);
-            //}
-        }
-
         private void CheckButtonOnClick(object sender, EventArgs e)
         {
-            timer3.Start();
             StringBuilder sb = new StringBuilder();
             foreach(Label l in fraseConHuecos)
             {
@@ -291,21 +274,17 @@ namespace QQSSApp
 
             for (int i = 0; i < fraseConHuecos.Length; i++)
             {
-                if (fraseConHuecos[i].Text == "_")
-                {
-                    if (textoFrase[i] == letra)
-                    {
-                        fraseConHuecos[i].Text = letra.ToString();
-                    }
-                }
+                if (fraseConHuecos[i].Text != "_") continue;
+                if (frase.Enunciado[i] != letra) continue;
+
+                fraseConHuecos[i].Text = letra + "";
+                textoFrase[i] = letra;
+
             }
 
-            for (int i = 0; i < letrasParaHuecos.Length; i++)
+            foreach (Label l in letrasParaHuecos)
             {
-                if (letrasParaHuecos[i].Text == letra.ToString())
-                {
-                    letrasParaHuecos[i].Hide();
-                }
+                if (l.Text == letra + "") l.Hide();
             }
 
         }

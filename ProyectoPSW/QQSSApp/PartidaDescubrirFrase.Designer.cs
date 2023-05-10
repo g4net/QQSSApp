@@ -2465,8 +2465,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PartidaDescubrirFrase";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.PartidaDescubrirFrase_Load);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OnMouseMove);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

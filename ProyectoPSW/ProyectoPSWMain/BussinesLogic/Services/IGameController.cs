@@ -13,7 +13,6 @@ namespace ProyectoPSWMain.Services
     {
         void SetRetos(List<Reto> retos);
         int GetError();
-        void DecrementaPistas();
         int GetNumPistas();
         string EnlaceInteres(int ods);
         int GetIndex();
