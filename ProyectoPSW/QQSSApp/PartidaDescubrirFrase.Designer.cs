@@ -213,6 +213,8 @@
             this.movingLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.checkButton = new System.Windows.Forms.Button();
+            this.PistaLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonAbandonar)).BeginInit();
@@ -235,7 +237,7 @@
             this.flowLayoutPanel2.Controls.Add(this.pos8);
             this.flowLayoutPanel2.Controls.Add(this.pos9);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(205, 97);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(567, 35);
             this.flowLayoutPanel2.TabIndex = 29;
@@ -397,7 +399,7 @@
             this.panel1.Controls.Add(this.botonAbandonar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(954, 70);
             this.panel1.TabIndex = 26;
@@ -2428,7 +2430,7 @@
             this.checkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
             this.checkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkButton.Location = new System.Drawing.Point(768, 485);
-            this.checkButton.Margin = new System.Windows.Forms.Padding(2);
+            this.checkButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkButton.Name = "checkButton";
             this.checkButton.Size = new System.Drawing.Size(69, 50);
             this.checkButton.TabIndex = 104;
@@ -2436,11 +2438,34 @@
             this.checkButton.UseVisualStyleBackColor = false;
             this.checkButton.Click += new System.EventHandler(this.CheckButtonOnClick);
             // 
+            // PistaLabel
+            // 
+            this.PistaLabel.AutoSize = true;
+            this.PistaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PistaLabel.Location = new System.Drawing.Point(924, 115);
+            this.PistaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PistaLabel.Name = "PistaLabel";
+            this.PistaLabel.Size = new System.Drawing.Size(28, 17);
+            this.PistaLabel.TabIndex = 105;
+            this.PistaLabel.Text = "0/3";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(730, 194);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 106;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Autocompletar);
+            // 
             // PartidaDescubrirFrase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 575);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.PistaLabel);
             this.Controls.Add(this.checkButton);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.flowLayoutPanel2);
@@ -2655,5 +2680,7 @@
         private System.Windows.Forms.Label movingLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button checkButton;
+        private System.Windows.Forms.Label PistaLabel;
+        private System.Windows.Forms.Button button1;
     }
 }

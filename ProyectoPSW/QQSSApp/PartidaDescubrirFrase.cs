@@ -45,6 +45,7 @@ namespace QQSSApp
             QQSS.service.SetPuntosStrategy();
             HabilitarBotonAbandonar();
             QQSS.service.PlaySonido("musicaFondo" + GetRandomNumber(2) + "_2min");
+            PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
         }
 
 
@@ -106,7 +107,9 @@ namespace QQSSApp
 
         private void LabelReset()
         {
-            for(int i = 0; i <= 100; i++)
+            puntuacionPos.Text = QQSS.service.GetPuntuacionReto().ToString();
+            puntuaciónNegativa.Text = (QQSS.service.GetPuntuacionReto() * 2).ToString();
+            for (int i = 0; i <= 100; i++)
             {
                 if (i == textoFrase.Length) break;
                 fraseConHuecos[i].Text = "" + textoFrase[i];
@@ -265,11 +268,14 @@ namespace QQSSApp
         {
             PistaBoton.Enabled = false;
             QQSS.service.UsarPista(); // hasta aqui bien
+            PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
 
             Random random = new Random();
             int indice = random.Next(0, letrasParaHuecos.Length);
             char letra = letrasParaHuecos[indice].Text[0];
-
+            puntuacionPos.Text = (QQSS.service.GetPuntuacionReto() / 2).ToString();
+            int puntNeg = -QQSS.service.GetPuntuacionReto() * 2;
+            puntuaciónNegativa.Text = puntNeg.ToString();
             for (int i = 0; i < fraseConHuecos.Length; i++)
             {
                 if (fraseConHuecos[i].Text != "_") continue;
@@ -287,5 +293,9 @@ namespace QQSSApp
 
         }
 
+        private void Autocompletar(object sender, EventArgs e)
+        {
+            CheckAnswer(frase.Enunciado);
+        }
     }
 }
