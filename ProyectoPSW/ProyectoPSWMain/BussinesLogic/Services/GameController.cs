@@ -106,11 +106,6 @@ namespace ProyectoPSWMain.Services
             this.pistasDisponibles = 3;
         }
 
-        public void DecrementaPistas()
-        {
-            pistasDisponibles--;
-        }
-
         public int GetNumPistas()
         {
             return pistasDisponibles;
@@ -144,7 +139,6 @@ namespace ProyectoPSWMain.Services
             Reto reto = this.retos[this.index];
             NextReto();
             EstablecerPuntosReto(); //Strategy
-            puntuacionReto = GetPuntuacionReto();
             partida.PuntuacionPartida += this.puntuacionReto; 
             retosAcertados.Add(reto);
         }
@@ -202,7 +196,7 @@ namespace ProyectoPSWMain.Services
 
         public void SetPuntosStrategy()
         {
-            Reto reto = GetReto();
+            Reto reto = retos[this.index];
             int i = reto.Dificultad;
             if (i == 1) { SetPuntosStrategy(new EasyStrategy()); }
             else if (i == 2) { SetPuntosStrategy(new MiddleStrategy()); }
@@ -218,6 +212,7 @@ namespace ProyectoPSWMain.Services
         public void UsarPista()
         {
             this.SetPuntosStrategy(new PistaStrategy());
+            this.pistasDisponibles--;
         }
 
         public int GetPuntuacionReto() { return puntuacionReto; }

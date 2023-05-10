@@ -96,5 +96,12 @@ namespace QQSSApp
 
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoggerText.Text = "TestUser";
+            PasswordText.Text = "Test123?";
+            IniciarSesion_Click(this, new EventArgs());
+        }
     }
 }
