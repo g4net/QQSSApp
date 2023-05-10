@@ -107,7 +107,9 @@ namespace QQSSApp
 
         private void LabelReset()
         {
-            for(int i = 0; i <= 100; i++)
+            puntuacionPos.Text = QQSS.service.GetPuntuacionReto().ToString();
+            puntuaciónNegativa.Text = (QQSS.service.GetPuntuacionReto() * 2).ToString();
+            for (int i = 0; i <= 100; i++)
             {
                 if (i == textoFrase.Length) break;
                 fraseConHuecos[i].Text = "" + textoFrase[i];
@@ -291,5 +293,9 @@ namespace QQSSApp
 
         }
 
+        private void Autocompletar(object sender, EventArgs e)
+        {
+            CheckAnswer(frase.Enunciado);
+        }
     }
 }
