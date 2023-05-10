@@ -109,15 +109,14 @@ namespace QQSSApp
         {
             puntuacionPos.Text = QQSS.service.GetPuntuacionReto().ToString();
             puntuaciónNegativa.Text = (QQSS.service.GetPuntuacionReto() * 2).ToString();
-            for (int i = 0; i <= 100; i++)
+            for (int i = 0; i < textoFrase.Length; i++)
             {
-                if (i == textoFrase.Length) break;
                 fraseConHuecos[i].Text = "" + textoFrase[i];
             }
 
-            for (int i = 0; i <= 49; i++)
+            for (int i = 0; i < huecos.Count; i++)
             {
-                if (i == huecos.Count) break;
+                if (letrasParaHuecos[i].Text == "-") continue;
                 letrasParaHuecos[i].Show();
                 letrasParaHuecos[i].Text = "" + huecos[i];
             }
@@ -267,7 +266,7 @@ namespace QQSSApp
         private void PistaBoton_Click(object sender, EventArgs e)
         {
             PistaBoton.Enabled = false;
-            QQSS.service.UsarPista(); // hasta aqui bien
+            QQSS.service.UsarPista();
             PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
 
             Random random = new Random();
@@ -288,7 +287,11 @@ namespace QQSSApp
 
             foreach (Label l in letrasParaHuecos)
             {
-                if (l.Text == letra + "") l.Hide();
+                if (l.Text == letra + "")
+                {
+                    l.Hide();
+                    l.Text = "-";
+                }
             }
 
         }
