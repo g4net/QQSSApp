@@ -269,6 +269,9 @@ namespace QQSSApp
             Button[] botones = { op1, op2, op3, op4 };
             Random rnd = new Random();
 
+            puntuacionPos.Text = (QQSS.service.GetPuntuacionReto()/2).ToString();
+            int puntNeg = -QQSS.service.GetPuntuacionReto() * 2;
+            puntuaciónNegativa.Text = puntNeg.ToString();
             for (int ia = botones.Length - 1; ia > 0; ia--)
             {
                 int j = rnd.Next(ia + 1);
