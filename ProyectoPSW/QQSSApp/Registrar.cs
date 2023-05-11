@@ -17,6 +17,7 @@ namespace QQSSApp
         public Registrar()
         {
             InitializeComponent();
+            this.CenterToScreen();
             /* Refactoring
             CorreoError.Text = "";
             ContraError.Text = "";

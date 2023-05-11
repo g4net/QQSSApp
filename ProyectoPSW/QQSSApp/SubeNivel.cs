@@ -16,6 +16,7 @@ namespace QQSSApp
         public SubeNivel()
         {
             InitializeComponent();
+            this.CenterToScreen();
             Nivel.Text = QQSS.service.GetLoggedUser().nivel.ToString();
         }
 

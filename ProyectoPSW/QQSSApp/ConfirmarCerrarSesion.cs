@@ -18,6 +18,7 @@ namespace QQSSApp
         public ConfirmarCerrarSesion(Form PantallaPrincipalForm, Form Usuario)
         {
             InitializeComponent();
+            this.CenterToScreen();
             this.pantallaPrincipalForm = PantallaPrincipalForm;
             this.UserForm = Usuario;
         }

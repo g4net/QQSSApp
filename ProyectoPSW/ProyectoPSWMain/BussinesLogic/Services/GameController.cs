@@ -175,6 +175,10 @@ namespace ProyectoPSWMain.Services
             {
                 List<Pregunta> preguntas = QQSS.service.LoadUndoneQuestionsByDifficulty(dificultad);
                 int idx = random.Next(preguntas.Count);
+                while (retos.Contains(preguntas[idx]))
+                {
+                    idx = random.Next(preguntas.Count);
+                }
                 retos[index] = preguntas[idx];
             }
 
@@ -182,6 +186,10 @@ namespace ProyectoPSWMain.Services
             {
                 List<Frase> frases = QQSS.service.LoadUndoneFrasesByDifficulty(dificultad);
                 int idx = random.Next(frases.Count);
+                while (retos.Contains(frases[idx]))
+                {
+                    idx = random.Next(frases.Count);
+                }
                 retos[index] = frases[idx];
             }
 
