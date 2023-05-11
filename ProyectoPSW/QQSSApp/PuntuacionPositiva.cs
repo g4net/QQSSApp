@@ -40,6 +40,7 @@ namespace QQSSApp
         private void continuar_salir_Click(object sender, EventArgs e)
         {
             Form partida = new Form();
+            reto = QQSS.service.GetReto();
             if (reto is Pregunta) partida = new PartidaForm();
             else if (reto is Frase) partida = new PartidaDescubrirFrase();
             partida.Show();

@@ -18,6 +18,7 @@ namespace QQSSApp
         public Modificar(Form pantallaPrincipal)
         {
             InitializeComponent();
+            this.CenterToScreen();
             /* Refactoring
             CorreoError.Text = "";
             ContraError.Text = "";

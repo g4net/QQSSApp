@@ -18,6 +18,7 @@ namespace QQSSApp
         public Login()
         {
             InitializeComponent();
+            this.CenterToScreen();
             this.FormClosed += (s, args) => Application.Exit();
             /*Refactoring
              LoggerError.Text = "";
@@ -99,7 +100,7 @@ namespace QQSSApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LoggerText.Text = "TestUser";
+            LoggerText.Text = "Test";
             PasswordText.Text = "Test123?";
             IniciarSesion_Click(this, new EventArgs());
         }

@@ -17,6 +17,7 @@ namespace QQSSApp
         public Confirmar(Form partidaForm)
         {
             InitializeComponent();
+            this.CenterToScreen();
             this.partidaForm = partidaForm;
         }
 
