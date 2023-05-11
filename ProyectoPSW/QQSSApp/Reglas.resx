@@ -137,6 +137,15 @@ en esa ronda.
 
 -Si después de consolidar, se comete un fallo y se decide 
 abandonar el juego, se restarán los puntos del fallo a la 
-cantidad consolidada. </value>
+cantidad consolidada. 
+
+-El participante tendrá 3 posibles pistas a lo largo de la 
+duración de la partida
+
+- Durante el reto, sólo podrá hacer uso de una pista
+
+- Si el usuario hace uso de una pista, la puntuación de ese reto
+se reducirá a la mitad
+</value>
   </data>
 </root>

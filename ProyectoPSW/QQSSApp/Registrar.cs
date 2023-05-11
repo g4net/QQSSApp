@@ -197,5 +197,6 @@ namespace QQSSApp
             RepetirContraError.Text = "";
             ErrorGeneral.Text = "";
         }
+
     }
 }
