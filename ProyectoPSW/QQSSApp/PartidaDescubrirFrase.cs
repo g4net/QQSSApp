@@ -36,13 +36,13 @@ namespace QQSSApp
             this.frase = (Frase) QQSS.service.GetReto();
             this.retoindex = QQSS.service.GetProgressIndex();
             this.error = QQSS.service.GetError();
+            QQSS.service.SetPuntosStrategy();
             this.labelPuntuacionAcumulada.Text = QQSS.service.GetPuntuacionPartida().ToString();
             this.puntuacionConsolidadaLabel.Text = QQSS.service.GetPuntuacionConsolidada().ToString();
             InitializeRetoFrase();
             MarcarProgreso();
             InitializeTimers();
             InitializeODS();
-            QQSS.service.SetPuntosStrategy();
             HabilitarBotonAbandonar();
             QQSS.service.PlaySonido("musicaFondo" + GetRandomNumber(2) + "_2min");
             PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
