@@ -305,7 +305,7 @@ namespace ProyectoPSWMain.Services
             string frase = fraseOriginal.Enunciado;
             char[] fraseCaracteres = frase.ToCharArray();
             Random random = new Random();
-            int numCharsToReplace = (int)(fraseCaracteres.Length * porcentaje);
+            int numCharsToReplace = (int)(fraseCaracteres.Length * porcentaje) - 5;
 
             for (int i = 0; i < numCharsToReplace; i++)
             {

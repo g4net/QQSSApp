@@ -36,6 +36,7 @@ namespace QQSSApp
             this.frase = (Frase) QQSS.service.GetReto();
             this.retoindex = QQSS.service.GetProgressIndex();
             this.error = QQSS.service.GetError();
+            PistaBoton.Enabled = QQSS.service.GetNumPistas() > 0;
             QQSS.service.SetPuntosStrategy();
             this.labelPuntuacionAcumulada.Text = QQSS.service.GetPuntuacionPartida().ToString();
             this.puntuacionConsolidadaLabel.Text = QQSS.service.GetPuntuacionConsolidada().ToString();
