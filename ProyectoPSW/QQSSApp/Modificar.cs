@@ -27,7 +27,8 @@ namespace QQSSApp
             NombreError.Text = "";
             */
             clearText();
-            this.pantallaPrincipal = pantallaPrincipal; 
+            this.pantallaPrincipal = pantallaPrincipal;
+            pantallaPrincipal.Hide();
         }
 
         private void Aceptar_click(object sender, EventArgs e)
@@ -95,6 +96,7 @@ namespace QQSSApp
         {
             Usuario usuarioForm = new Usuario(pantallaPrincipal);
             this.Hide();
+            pantallaPrincipal.Show();
             usuarioForm.ShowDialog();
             
         }

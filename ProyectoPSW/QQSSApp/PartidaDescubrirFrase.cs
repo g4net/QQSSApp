@@ -44,6 +44,7 @@ namespace QQSSApp
             InitializeTimers();
             InitializeODS();
             HabilitarBotonAbandonar();
+            if (QQSS.service.GetLoggedUser().Nombre != "Test") button1.Hide();
             QQSS.service.PlaySonido("musicaFondo" + GetRandomNumber(2) + "_2min");
             PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
         }
@@ -298,7 +299,16 @@ namespace QQSSApp
 
         private void Autocompletar(object sender, EventArgs e)
         {
-            CheckAnswer(frase.Enunciado);
+            for (int i = 0; i < textoFrase.Length; i++)
+            {
+                fraseConHuecos[i].Text = "" + frase.Enunciado[i];
+            }
+
+            for (int i = 0; i < huecos.Count; i++)
+            {
+                letrasParaHuecos[i].Hide();
+            }
+            //CheckAnswer(frase.Enunciado);
         }
     }
 }

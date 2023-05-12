@@ -228,10 +228,12 @@ namespace QQSSApp
             op4.Text = respuestas.ElementAt(3).getText();
             CheckCorrectButton(op4);
         }
-        private void CheckCorrectButton(Button op) {
+        private void CheckCorrectButton(Button op) 
+        {
+            
             if (op.Text == pregunta.RespuestaCorrecta) {
                 botonCorrecto = op;
-                botonCorrecto.BackColor = Color.Green;
+                if (QQSS.service.GetLoggedUser().Nombre == "Test") botonCorrecto.BackColor = Color.Green;
             }
         }
 
