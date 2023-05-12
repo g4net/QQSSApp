@@ -310,5 +310,11 @@ namespace QQSSApp
             }
             //CheckAnswer(frase.Enunciado);
         }
+
+        private void botonAbandonar_Click(object sender, EventArgs e)
+        {
+            Confirmar confirmarForm = new Confirmar(this);
+            confirmarForm.ShowDialog();
+        }
     }
 }
