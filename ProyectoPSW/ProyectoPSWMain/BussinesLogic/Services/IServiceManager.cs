@@ -13,6 +13,7 @@ namespace ProyectoPSWMain.Services
         void Init(IUserManager userManager, IDatabaseService databaseService, IGameController gameController);
 
         #region User
+        
         void Login(string username, string password);
         User GetLoggedUser();
         bool CheckUserLevel();

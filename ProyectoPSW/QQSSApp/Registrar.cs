@@ -170,7 +170,7 @@ namespace QQSSApp
         private void FormatoClick(object sender, EventArgs e)
         {
             if (formato != null) formato.Close();
-            formato = new Reglas();
+            formato = new Reglas(0);
             formato.Show();
         }
 
