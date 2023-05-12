@@ -50,7 +50,7 @@ namespace QQSSApp
             for (int i = 0; i < series.Length; i++)
             {
                 Series serie = PieChart.Series.Add(series[i]);
-                serie.Points.Add(puntos[i]);
+                serie.Points.Add(puntos[i] > 100 ? 100 : puntos[i]);
             }
         }
         
