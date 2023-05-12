@@ -2507,7 +2507,7 @@ namespace DBTest
             dal.Commit();
             //-------------------ODS 5-------------------------
             Frase frase9 = new Frase("Esta frase destaca la importancia de la igualdad de género como un elemento fundamental para lograr un mundo más justo y sostenible. (ONU Mujeres)",
-                "La igualdad de género es esencial para conseguir un mundo pacífico", 3, 300, 5, true);
+                "La igualdad de género es esencial", 3, 300, 5, true);
             dal.Insert<Frase>(frase9);
             Frase frase10 = new Frase("Esta frase destaca que el feminismo no es una lucha contra los hombres o contra aquellos que tienen más poder, sino una lucha por la igualdad de oportunidades y derechos para todas las personas, independientemente de su género. (Chimamanda Ngozi Adichie)",
                 "El feminismo es una lucha por la igualdad", 3, 300, 5, true);
@@ -2534,7 +2534,7 @@ namespace DBTest
                 "El trabajo dignifica al hombre", 2, 200, 8, false);
             dal.Insert<Frase>(frase15);
             Frase frase16 = new Frase("Esta frase destaca la importancia de construir sociedades inclusivas y prósperas para lograr un crecimiento económico sostenible y equitativo. (Ban Ki-moon)",
-                "El crecimiento económico sostenible requiere sociedades inclusivas", 2, 200, 8, true);
+                "Requerimos de sociedades inclusivas", 2, 200, 8, true);
             dal.Insert<Frase>(frase16);
             dal.Commit();
             //-------------------ODS 9-------------------------
@@ -2566,7 +2566,7 @@ namespace DBTest
                 "La mejor manera de predecir el futuro es crearlo", 1, 100, 12, true);
             dal.Insert<Frase>(frase23);
             Frase frase24 = new Frase("Esta frase destaca la importancia de vivir de manera responsable y sostenible en el presente, y no dejar una carga para las generaciones futuras en términos de producción y consumo. (David Attenborough)",
-                "La verdadera sostenibilidad significa vivir dentro de nuestros medios", 2, 200, 12, true);
+                "Sostenibilidad significa vivir dentro de nuestros medios", 2, 200, 12, true);
             dal.Insert<Frase>(frase24);
             dal.Commit();
             //-------------------ODS 13-------------------------
