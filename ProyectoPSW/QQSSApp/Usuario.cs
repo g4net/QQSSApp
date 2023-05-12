@@ -45,7 +45,7 @@ namespace QQSSApp
             }
             for (int i = 0; i < series.Length; i++)
             {
-                ColumnChart.Series["Series1"].Points.AddXY(series[i], puntos[i]);
+                ColumnChart.Series["Series1"].Points.AddXY(series[i], puntos[i] > 100 ? 100 : puntos[i]);
             }
             for (int i = 0; i < series.Length; i++)
             {

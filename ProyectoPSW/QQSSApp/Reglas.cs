@@ -27,7 +27,7 @@ namespace QQSSApp
             {
                 this.label1.Text = "FORMATO";
                 this.label3.Text = "-Nombre de usuario: letras y números (no símbolos)\r\n-Correo: se comprobará el formato correcto de este\r\n-Contraseña: mín 8 máx 32,contendrá:\r\n        *una letra minúscula\r\n        *una letra mayúscula\r\n        *un número\r\n        *un símbolo: ? - + = _ @ # ! & $";
-
+                this.Height = 250;
             }
 
         }
