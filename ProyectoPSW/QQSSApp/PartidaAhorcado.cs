@@ -99,6 +99,7 @@ namespace QQSSApp
             puntuaciónNegativa.Text = (ahorcado.Puntuacion_acierto * 2).ToString();
             indToButton = new Dictionary<char, Button>();
             ControlsInit();
+            ImageInit();
 
         }
 
@@ -210,6 +211,13 @@ namespace QQSSApp
         {
             ods_picture.Image = ods[0];
             if (ahorcado.MuestraImagen) ods_picture.Image = ods[ahorcado.Ods];
+        }
+
+        public void ImageInit()
+        {
+            ahorcadoImgIndex = ahorcado.Dificultad == 1 ? 2 : ahorcado.Dificultad == 2 ? 4 : -1;
+            if (ahorcadoImgIndex == -1) return;
+            ahorcadoPictureBox.Image = ahorcadoImages[ahorcadoImgIndex];
         }
 
 
