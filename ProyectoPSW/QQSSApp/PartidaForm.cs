@@ -219,13 +219,13 @@ namespace QQSSApp
             puntuaciónNegativa.Text = pregunta.GetPuntuacionFallo();
             respuestas = QQSS.service.GetRespuestas();
             
-            op1.Text = respuestas.ElementAt(0).getText();
+            op1.Text = respuestas.ElementAt(0).GetText();
             CheckCorrectButton(op1);
-            op2.Text = respuestas.ElementAt(1).getText();
+            op2.Text = respuestas.ElementAt(1).GetText();
             CheckCorrectButton(op2);
-            op3.Text = respuestas.ElementAt(2).getText();
+            op3.Text = respuestas.ElementAt(2).GetText();
             CheckCorrectButton(op3);
-            op4.Text = respuestas.ElementAt(3).getText();
+            op4.Text = respuestas.ElementAt(3).GetText();
             CheckCorrectButton(op4);
         }
         private void CheckCorrectButton(Button op) 

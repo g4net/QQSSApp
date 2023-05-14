@@ -103,6 +103,12 @@
     <Compile Include="Modificar.Designer.cs">
       <DependentUpon>Modificar.cs</DependentUpon>
     </Compile>
+    <Compile Include="PartidaAhorcado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartidaAhorcado.Designer.cs">
+      <DependentUpon>PartidaAhorcado.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubeNivel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modificar.resx">
       <DependentUpon>Modificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartidaAhorcado.resx">
+      <DependentUpon>PartidaAhorcado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registrar.resx">
       <DependentUpon>Registrar.cs</DependentUpon>
@@ -413,6 +422,17 @@
     <None Include="resources\ODS_0.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="resources\ahorcado0.png" />
+    <EmbeddedResource Include="resources\ahorcado1.png" />
+    <EmbeddedResource Include="resources\ahorcado2.png" />
+    <EmbeddedResource Include="resources\ahorcado3.png" />
+    <EmbeddedResource Include="resources\ahorcado4.png" />
+    <EmbeddedResource Include="resources\ahorcado5.png" />
+    <EmbeddedResource Include="resources\ahorcado6.png" />
+    <EmbeddedResource Include="resources\ahorcado7.png" />
+    <EmbeddedResource Include="resources\ahorcado8.png" />
+    <EmbeddedResource Include="resources\ahorcado9.png" />
+    <EmbeddedResource Include="resources\ahorcadoInicio.png" />
     <Content Include="resources\Black_question_mark.png" />
     <None Include="resources\pista %282%29.png" />
     <None Include="resources\pista %281%29.png" />

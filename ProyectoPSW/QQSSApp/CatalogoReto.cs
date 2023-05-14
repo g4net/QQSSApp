@@ -37,11 +37,13 @@ namespace QQSSApp
             Form partida = new Form();
             if (tipoReto == TipoReto.AdivinarFrase) partida = new PartidaDescubrirFrase();
             else if (tipoReto == TipoReto.Pregunta) partida = new PartidaForm();
-            else if(tipoReto == TipoReto.None)
+            else if (tipoReto == TipoReto.Ahorcado) partida = new PartidaAhorcado();
+            else if (tipoReto == TipoReto.None)
             {
                 Reto reto = QQSS.service.GetReto();
                 if (reto is Pregunta) partida = new PartidaForm();
                 else if (reto is Frase) partida = new PartidaDescubrirFrase();
+                else if (reto is Ahorcado) partida = new PartidaAhorcado();
             }
             partida.Show();
             this.Close();
@@ -67,6 +69,11 @@ namespace QQSSApp
         private void ButtonAleatorio_OnClick(object sender, EventArgs e)
         {
             PlayButton(TipoReto.None);
+        }
+
+        private void ButtonAhorcado_OnClick(object sender, EventArgs e)
+        {
+            PlayButton(TipoReto.Ahorcado);
         }
     }
 }

@@ -169,7 +169,6 @@ namespace ProyectoPSWMain.Services
         }
         #endregion Reto
 
-        #region Pregunta
         public List<Pregunta> GetUsersQuestionByDifficulty(int dificultad)
         {
             List<Reto> retos = this.loggedUser.RetosRealizados.Where(x => x is Pregunta && x.Dificultad == dificultad).ToList();
@@ -186,6 +185,15 @@ namespace ProyectoPSWMain.Services
             foreach (Reto r in retos) frases.Add((Frase)r);
 
             return frases;
+        }
+
+        public List<Ahorcado> GetUsersAhorcadoByDifficulty(int dificultad)
+        {
+            List<Reto> retos = this.loggedUser.RetosRealizados.Where(x => x is Ahorcado && x.Dificultad == dificultad).ToList();
+            List<Ahorcado> ahorcado = new List<Ahorcado>();
+            foreach (Reto r in retos) ahorcado.Add((Ahorcado)r);
+
+            return ahorcado;
         }
 
         public List<Reto> GetUsersRetosByDifficulty(int dificultad)
@@ -219,6 +227,13 @@ namespace ProyectoPSWMain.Services
             this.loggedUser.RetosRealizados = this.loggedUser.RetosRealizados.Except(retos).ToList();
         }
 
-        #endregion Pregunta
+        public void ResetUserAhorcado(int dificultad)
+        {
+            List<Reto> retos = this.loggedUser.RetosRealizados.Where(x => x is Ahorcado && x.Dificultad == dificultad).ToList();
+            List<Ahorcado> ahorcado = new List<Ahorcado>();
+            foreach (Reto r in retos) ahorcado.Add((Ahorcado)r);
+
+            this.loggedUser.RetosRealizados = this.loggedUser.RetosRealizados.Except(ahorcado).ToList();
+        }
     }
 }

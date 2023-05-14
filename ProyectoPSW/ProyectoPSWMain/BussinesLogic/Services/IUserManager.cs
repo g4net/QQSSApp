@@ -28,9 +28,11 @@ namespace ProyectoPSWMain.Services
         double GetPuntajeODS(int ods);
         List<Pregunta> GetUsersQuestionByDifficulty(int dificultad);
         List<Frase> GetUsersFrasesByDifficulty(int dificultad);
+        List<Ahorcado> GetUsersAhorcadoByDifficulty(int dificultad);
         List<Reto> GetUsersRetosByDifficulty(int dificultad);
         void ResetUserQuestions(int dificultad);
         void ResetUserFrases(int dificultad);
         void ResetUserRetos(int dificultad);
+        void ResetUserAhorcado(int dificultad);
     }
 }

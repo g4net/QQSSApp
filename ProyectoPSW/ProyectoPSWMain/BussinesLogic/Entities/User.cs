@@ -18,7 +18,7 @@ namespace ProyectoPSWMain.Entities
             this.nivel = 0;
         }
 
-        public User(String Nombre, String Email, String Contraseña, Estadistica Estadisticas) : this() {
+        public User(string Nombre, string Email, string Contraseña, Estadistica Estadisticas) : this() {
             this.Nombre = Nombre;
             this.Email = Email;
             this.Contraseña = Contraseña;

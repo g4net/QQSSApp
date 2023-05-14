@@ -97,7 +97,7 @@ namespace ProyectoPSWMain.Services
         #endregion
 
 
-        #region Pregunta
+        #region Reto
 
         public List<Pregunta> LoadQuestionsByDifficulty(int difficulty)
         {
@@ -119,6 +119,13 @@ namespace ProyectoPSWMain.Services
             List<Reto> retos = new List<Reto>();
             retos = repository.GetWhere<Reto>(x => x.Dificultad == difficulty).ToList();
             return retos;
+        }
+
+        public List<Ahorcado> LoadAhorcadoByDifficulty(int difficulty)
+        {
+            List<Ahorcado> ahorcado = new List<Ahorcado>();
+            ahorcado = repository.GetWhere<Ahorcado>(x => x.Dificultad == difficulty).ToList();
+            return ahorcado;
         }
 
         #endregion

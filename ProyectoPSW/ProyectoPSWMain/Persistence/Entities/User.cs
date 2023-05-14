@@ -15,12 +15,12 @@ namespace ProyectoPSWMain.Entities
         public int PuntuacionAcumulada { get; set; }
         public int nivel { get; set;}
 
-        public String Nombre { get; set; }
+        public string Nombre { get; set; }
         public virtual ICollection<Partida> PartidasJugadas { get; set; }
 
-        public String Email { get; set; }
+        public string Email { get; set; }
 
-        public String Contraseña { get; set; }
+        public string Contraseña { get; set; }
 
         public virtual Estadistica Estadistica { get; set; }
 

@@ -155,6 +155,14 @@ namespace ProyectoPSWMain.Services
             return frasesDificultad.Except(frasesUsuario).ToList();
         }
 
+        public List<Ahorcado> LoadUndoneAhorcadoByDifficulty(int difficulty)
+        {
+            List<Ahorcado> ahorcadoDificultad = databaseService.LoadAhorcadoByDifficulty(difficulty);
+            List<Ahorcado> ahorcadoUsuario = userManager.GetUsersAhorcadoByDifficulty(difficulty);
+
+            return ahorcadoDificultad.Except(ahorcadoUsuario).ToList();
+        }
+
         public List<Reto> LoadUndoneRetosByDifficulty(int difficulty)
         {
             List<Reto> retosDificultad = databaseService.LoadRetosByDifficulty(difficulty);
@@ -237,6 +245,44 @@ namespace ProyectoPSWMain.Services
             gameController.SetRetos(frases.ToList());
         }
 
+
+        public void Ahorcado()
+        {
+            int[] dificultad = gameController.GetDifficultyArray();
+            if (dificultad.Length != 10) throw new ServiceException("Difficulty array has not the correct length");
+
+
+            var ahorcado = new List<Reto>();
+            Random random = new Random();
+            int prevDifficulty = -1;
+            List<Ahorcado> ahorcadoDB = null;
+
+
+            foreach (int difficulty in dificultad)
+            {
+
+                if (difficulty > 4 || difficulty < 0) throw new ServiceException("Difficulty array has incorrect values");
+                if (difficulty != prevDifficulty)
+                {
+                    ahorcadoDB = LoadUndoneAhorcadoByDifficulty(difficulty);
+                    prevDifficulty = difficulty;
+                }
+                if (ahorcadoDB.Count == 0)
+                {
+                    userManager.ResetUserAhorcado(difficulty);
+                    ahorcadoDB = LoadUndoneAhorcadoByDifficulty(difficulty);
+                }
+                int index = random.Next(ahorcadoDB.Count);
+                ahorcado.Add(ahorcadoDB[index]);
+
+
+
+                ahorcadoDB.RemoveAt(index);
+            }
+
+            gameController.SetRetos(ahorcado.ToList());
+        }
+
         public void RetosAleatorios()
         {
             int[] dificultad = gameController.GetDifficultyArray();
@@ -280,7 +326,7 @@ namespace ProyectoPSWMain.Services
             {
                 case TipoReto.Pregunta: Questions(); break;
                 case TipoReto.AdivinarFrase: AdivinarFrase(); break;
-                //case TipoReto.Ahorcado: Ahorcado(); break;
+                case TipoReto.Ahorcado: Ahorcado(); break;
                 default: RetosAleatorios(); break;
             }
         }

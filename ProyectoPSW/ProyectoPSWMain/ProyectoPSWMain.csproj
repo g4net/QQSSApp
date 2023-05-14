@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BussinesLogic\Entities\Ahorcado.cs" />
     <Compile Include="BussinesLogic\Entities\Estadistica.cs" />
     <Compile Include="BussinesLogic\Entities\Frase.cs" />
     <Compile Include="BussinesLogic\Entities\Partida.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="EntityFramework\EntityFrameworkDAL.cs" />
     <Compile Include="EntityFramework\IRepository.cs" />
     <Compile Include="EntityFramework\ProyectPSWDBContext.cs" />
+    <Compile Include="Persistence\Entities\Ahorcado.cs" />
     <Compile Include="Persistence\Entities\Estadistica.cs" />
     <Compile Include="Persistence\Entities\Frase.cs" />
     <Compile Include="Persistence\Entities\Partida.cs" />

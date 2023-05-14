@@ -25,6 +25,7 @@ namespace QQSSApp
             QQSS.service.PlaySonido("PartidaPerdida");
             if (reto is Pregunta) respuesta.Text = (reto as Pregunta).RespuestaCorrecta.ToString();
             if (reto is Frase) respuesta.Text = (reto as Frase).Enunciado.ToString();
+            if (reto is Ahorcado) respuesta.Text = (reto as Ahorcado).Enunciado.ToString();
         }
 
 

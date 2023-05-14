@@ -43,6 +43,7 @@ namespace QQSSApp
             reto = QQSS.service.GetReto();
             if (reto is Pregunta) partida = new PartidaForm();
             else if (reto is Frase) partida = new PartidaDescubrirFrase();
+            else if (reto is Ahorcado) partida = new PartidaAhorcado();
             partida.Show();
             this.Close();
         }

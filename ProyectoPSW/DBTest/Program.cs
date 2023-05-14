@@ -2610,6 +2610,127 @@ namespace DBTest
             dal.Insert<Frase>(frase34);
             dal.Commit();
 
+            //-------------------Reto Frase--------------------
+            string[] descripciones =
+            {
+                "Distribución justa de recursos financieros y eliminación de la brecha económica entre personas",
+                "Proporcionar a las personas el acceso a los recursos necesarios para cubrir sus necesidades básicas",
+                "Producción de alimentos de manera respetuosa con el medio ambiente y utilizando prácticas agrícolas sostenibles",
+                "Consumo de alimentos equilibrados y nutritivos que satisfagan las necesidades nutricionales de las personas",
+                "Acciones y medidas que se toman para evitar la aparición de enfermedades",
+                "Prestación de servicios sanitarios a la población para garantizar una buena salud y bienestar",
+                "Proporcionar una educación que abarque distintas áreas y que fomente el desarrollo integral de las personas",
+                "Garantizar que todas las personas tengan igualdad de oportunidades de acceso a la educación",
+                "Fortalecer el poder y la capacidad de las mujeres para tomar decisiones y ejercer control sobre sus vidas",
+                "Reconocimiento y respeto de los derechos de las mujeres y la igualdad de oportunidades entre géneros",
+                "Suministro de agua potable que cumpla con los estándares de calidad y seguridad para su consumo",
+                "Proceso de purificación de las aguas residuales para minimizar su impacto ambiental y garantizar su reutilización",
+                "Obtención de energía a partir de fuentes renovables y limpias que minimicen el impacto ambiental",
+                "Uso de la energía de manera eficiente y responsable para minimizar el consumo y las emisiones contaminantes",
+                "Garantizar que el trabajo sea justo, seguro y con remuneración adecuada",
+                "Promover un crecimiento sostenible e inclusivo que genere empleo y oportunidades para todas las personas",
+                "Desarrollo y aplicación de tecnologías innovadoras que mejoren la productividad y la sostenibilidad",
+                "Construcción y mejora de infraestructuras que sean sostenibles y respetuosas con el medio ambiente",
+                "Eliminar las desigualdades y promover la justicia social para todas las personas",
+                "Garantizar que todas las personas tengan acceso a los mismos derechos y oportunidades",
+                "Diseño y planificación de ciudades que sean sostenibles y habitables para todas las personas",
+                "Desarrollo de sistemas de transporte que sean sostenibles y respetuosos con el medio ambiente",
+                "Consumo consciente y responsable de los recursos para minimizar el impacto ambiental y social",
+                "Producción de bienes y servicios de manera sostenible y respetuosa con el medio ambiente",
+                "Reducción de las emisiones de gases de efecto invernadero y la mitigación del cambio climático",
+                "Adaptación a los impactos del cambio climático y la reducción de la vulnerabilidad de las personas y los ecosistemas",
+                "Protección de especies marinas en peligro de extinción y conservación de la biodiversidad submarina",
+                "Preservación de los ecosistemas marinos y su biodiversidad a largo plazo",
+                "Protección y restauración de bosques y su biodiversidad para preservar los servicios ecosistémicos",
+                "Protección de la fauna y su hábitat para garantizar la conservación de la biodiversidad terrestre.",
+                "Fortalecimiento de las instituciones para garantizar la justicia y la equidad.",
+                "Protección y promoción de los derechos humanos y la igualdad ante la ley.",
+                "Colaboración entre países y organizaciones para alcanzar los objetivos de desarrollo sostenible.",
+                "Participación activa de la ciudadanía en la implementación de los objetivos de desarrollo sostenible."
+            };
+
+            string[] frases = {
+                "Igualdad económica",
+                "Acceso a recursos",
+                "Agricultura sostenible",
+                "Alimentación saludable",
+                "Prevención enfermedades",
+                "Atención médica",
+                "Formación integral",
+                "Acceso equitativo",
+                "Empoderamiento mujer",
+                "Derechos femeninos",
+                "Abastecimiento seguro",
+                "Tratamiento aguas",
+                "Energía renovable",
+                "Eficiencia energética",
+                "Empleo digno",
+                "Crecimiento económico",
+                "Innovación tecnológica",
+                "Infraestructura sostenible",
+                "Equidad social",
+                "Inclusión social",
+                "Planificación urbana",
+                "Transporte sostenible",
+                "Consumo responsable",
+                "Producción sostenible",
+                "Mitigación del cambio climático",
+                "Adaptación al cambio climático",
+                "Conservación de especies",
+                "Protección de ecosistemas",
+                "Conservación de bosques",
+                "Protección de la fauna",
+                "Fortalecimiento institucional",
+                "Derechos humanos",
+                "Cooperación internacional",
+                "Participación ciudadana"
+            };
+            Console.WriteLine("Frases: {0}, Descripciones: {1}", frases.Length, descripciones.Length);
+            Random random = new Random();
+            for(int i = 0; i < frases.Length; i++)
+            {
+                Ahorcado ahorcado = new Ahorcado(descripciones[i], frases[i], i / (frases.Length/3), i / (frases.Length / 3) * 100, i/2, true);
+                dal.Insert<Ahorcado>(ahorcado);
+                dal.Commit();
+            }
+            
+
+
+            //-------------------ODS 1-------------------------
+
+            //-------------------ODS 2-------------------------
+
+            //-------------------ODS 3-------------------------
+
+            //-------------------ODS 4-------------------------
+
+            //-------------------ODS 5-------------------------
+
+            //-------------------ODS 6-------------------------
+
+            //-------------------ODS 7-------------------------
+
+            //-------------------ODS 8-------------------------
+
+            //-------------------ODS 9-------------------------
+
+            //-------------------ODS 10-------------------------
+
+            //-------------------ODS 11-------------------------
+
+            //-------------------ODS 12-------------------------
+
+            //-------------------ODS 13-------------------------
+
+            //-------------------ODS 14-------------------------
+
+            //-------------------ODS 15-------------------------
+
+            //-------------------ODS 16-------------------------
+
+            //-------------------ODS 17-------------------------
+
+
 
 
 

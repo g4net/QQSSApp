@@ -10,7 +10,7 @@ namespace ProyectoPSWMain.Entities
     {
         public Frase(){}
 
-        public Frase(String Descripcion, String Enunciado, int Dificulty, int Punt_acierto, int ods, bool muestraImagen) : base(Dificulty, Punt_acierto, ods, muestraImagen)
+        public Frase(string Descripcion, string Enunciado, int Dificulty, int Punt_acierto, int ods, bool muestraImagen) : base(Dificulty, Punt_acierto, ods, muestraImagen)
         {
             this.Descripcion = Descripcion;
             this.Enunciado = Enunciado;

@@ -30,11 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.volver = new System.Windows.Forms.Button();
-            this.BotonNivel2 = new System.Windows.Forms.Button();
+            this.BotonNivel3 = new System.Windows.Forms.Button();
             this.BotonNivel1 = new System.Windows.Forms.Button();
             this.BotonNivel0 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BotonNivel2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -42,15 +43,16 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.volver);
             this.panel1.Controls.Add(this.BotonNivel2);
+            this.panel1.Controls.Add(this.volver);
+            this.panel1.Controls.Add(this.BotonNivel3);
             this.panel1.Controls.Add(this.BotonNivel1);
             this.panel1.Controls.Add(this.BotonNivel0);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(39, 39);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(522, 332);
+            this.panel1.Size = new System.Drawing.Size(522, 380);
             this.panel1.TabIndex = 1;
             // 
             // volver
@@ -58,7 +60,7 @@
             this.volver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
             this.volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.volver.ForeColor = System.Drawing.Color.White;
-            this.volver.Location = new System.Drawing.Point(59, 283);
+            this.volver.Location = new System.Drawing.Point(59, 330);
             this.volver.Margin = new System.Windows.Forms.Padding(2);
             this.volver.Name = "volver";
             this.volver.Size = new System.Drawing.Size(96, 31);
@@ -67,20 +69,20 @@
             this.volver.UseVisualStyleBackColor = false;
             this.volver.Click += new System.EventHandler(this.volver_Click);
             // 
-            // BotonNivel2
+            // BotonNivel3
             // 
-            this.BotonNivel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
-            this.BotonNivel2.Enabled = false;
-            this.BotonNivel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BotonNivel2.ForeColor = System.Drawing.Color.White;
-            this.BotonNivel2.Location = new System.Drawing.Point(59, 208);
-            this.BotonNivel2.Margin = new System.Windows.Forms.Padding(2);
-            this.BotonNivel2.Name = "BotonNivel2";
-            this.BotonNivel2.Size = new System.Drawing.Size(396, 45);
-            this.BotonNivel2.TabIndex = 3;
-            this.BotonNivel2.Text = "Aleatorio";
-            this.BotonNivel2.UseVisualStyleBackColor = false;
-            this.BotonNivel2.Click += new System.EventHandler(this.ButtonAleatorio_OnClick);
+            this.BotonNivel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
+            this.BotonNivel3.Enabled = false;
+            this.BotonNivel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BotonNivel3.ForeColor = System.Drawing.Color.White;
+            this.BotonNivel3.Location = new System.Drawing.Point(59, 268);
+            this.BotonNivel3.Margin = new System.Windows.Forms.Padding(2);
+            this.BotonNivel3.Name = "BotonNivel3";
+            this.BotonNivel3.Size = new System.Drawing.Size(396, 45);
+            this.BotonNivel3.TabIndex = 3;
+            this.BotonNivel3.Text = "Aleatorio";
+            this.BotonNivel3.UseVisualStyleBackColor = false;
+            this.BotonNivel3.Click += new System.EventHandler(this.ButtonAleatorio_OnClick);
             // 
             // BotonNivel1
             // 
@@ -129,16 +131,31 @@
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(602, 395);
+            this.pictureBox1.Size = new System.Drawing.Size(602, 436);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // BotonNivel2
+            // 
+            this.BotonNivel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(221)))), ((int)(((byte)(130)))));
+            this.BotonNivel2.Enabled = false;
+            this.BotonNivel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BotonNivel2.ForeColor = System.Drawing.Color.White;
+            this.BotonNivel2.Location = new System.Drawing.Point(59, 207);
+            this.BotonNivel2.Margin = new System.Windows.Forms.Padding(2);
+            this.BotonNivel2.Name = "BotonNivel2";
+            this.BotonNivel2.Size = new System.Drawing.Size(396, 47);
+            this.BotonNivel2.TabIndex = 7;
+            this.BotonNivel2.Text = "Ahorcado";
+            this.BotonNivel2.UseVisualStyleBackColor = false;
+            this.BotonNivel2.Click += new System.EventHandler(this.ButtonAhorcado_OnClick);
             // 
             // CatalogoReto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 393);
+            this.ClientSize = new System.Drawing.Size(600, 430);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -156,10 +173,11 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button BotonNivel2;
+        private System.Windows.Forms.Button BotonNivel3;
         private System.Windows.Forms.Button BotonNivel1;
         private System.Windows.Forms.Button BotonNivel0;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button volver;
+        private System.Windows.Forms.Button BotonNivel2;
     }
 }
