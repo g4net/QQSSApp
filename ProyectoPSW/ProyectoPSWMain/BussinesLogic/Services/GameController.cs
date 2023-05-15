@@ -37,6 +37,7 @@ namespace ProyectoPSWMain.Services
         private List<Reto> retosJugados;
         private IPuntosStrategy puntosStrategy;
         private int puntuacionReto;
+        private bool pidePista;
 
 
         public void UpdateError()
@@ -104,6 +105,7 @@ namespace ProyectoPSWMain.Services
             this.error = -1;
             this.partida = null;
             this.pistasDisponibles = 3;
+            this.pidePista = false;
         }
 
         public int GetNumPistas()
@@ -121,6 +123,7 @@ namespace ProyectoPSWMain.Services
         protected void NextReto()
         {
             this.index++;
+            pidePista = false;
         }
 
         public Reto GetReto()
@@ -141,6 +144,16 @@ namespace ProyectoPSWMain.Services
             EstablecerPuntosReto(); //Strategy
             partida.PuntuacionPartida += this.puntuacionReto; 
             retosAcertados.Add(reto);
+        }
+
+        public void PidePista()
+        {
+            pidePista = true;
+        }
+
+        public bool GetQuierePista()
+        {
+            return pidePista;
         }
 
         /**

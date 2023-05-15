@@ -49,6 +49,8 @@ namespace ProyectoPSWMain.Services
         int GetProgressIndex();
         bool GetConsolidado();
         void AbandonarPartida();
+        void PidePista();
+        bool GetQuierePista();
         void PerderPartida();
         void GanarPartida();
         void Consolidar();

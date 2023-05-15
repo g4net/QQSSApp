@@ -265,41 +265,44 @@ namespace QQSSApp
 
         private void PistaBoton_Click(object sender, EventArgs e)
         {
-            PistaBoton.Enabled = false;
-            QQSS.service.UsarPista();
-            PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
-            Button[] botones = { op1, op2, op3, op4 };
-            Random rnd = new Random();
-
-            puntuacionPos.Text = (QQSS.service.GetPuntuacionReto()/2).ToString();
-            int puntNeg = -QQSS.service.GetPuntuacionReto() * 2;
-            puntuaciónNegativa.Text = puntNeg.ToString();
-            for (int ia = botones.Length - 1; ia > 0; ia--)
+            ConfirmarPista Pista = new ConfirmarPista();
+            Pista.ShowDialog();
+            if (QQSS.service.GetQuierePista())
             {
-                int j = rnd.Next(ia + 1);
-                Button aux = botones[ia];
-                botones[ia] = botones[j];
-                botones[j] = aux;
-            }
+                PistaBoton.Enabled = false;
+                QQSS.service.UsarPista();
+                PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
+                Button[] botones = { op1, op2, op3, op4 };
+                Random rnd = new Random();
 
-            int i = 0;
-            for (int cont = 0; cont < botones.Length & i < 2; cont++) {
-
-                Button b = botones[cont];
-
-                if (!QQSS.service.TestAnswer(b.Text))
+                puntuacionPos.Text = (QQSS.service.GetPuntuacionReto() / 2).ToString();
+                int puntNeg = -QQSS.service.GetPuntuacionReto() * 2;
+                puntuaciónNegativa.Text = puntNeg.ToString();
+                for (int ia = botones.Length - 1; ia > 0; ia--)
                 {
-                    b.Hide();
-                    //b.BackColor = Color.Red;
-                    //b.Enabled = false;
-                    //b.ForeColor = Color.White;
-                    //b.Text = print;
-                    i++;
+                    int j = rnd.Next(ia + 1);
+                    Button aux = botones[ia];
+                    botones[ia] = botones[j];
+                    botones[j] = aux;
+                }
+
+                int i = 0;
+                for (int cont = 0; cont < botones.Length & i < 2; cont++)
+                {
+
+                    Button b = botones[cont];
+
+                    if (!QQSS.service.TestAnswer(b.Text))
+                    {
+                        b.Hide();
+                        //b.BackColor = Color.Red;
+                        //b.Enabled = false;
+                        //b.ForeColor = Color.White;
+                        //b.Text = print;
+                        i++;
+                    }
                 }
             }
-                    
-                
-            
         }
 
     

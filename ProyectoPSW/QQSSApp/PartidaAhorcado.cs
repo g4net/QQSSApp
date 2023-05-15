@@ -275,18 +275,23 @@ namespace QQSSApp
 
         private void PistaBoton_Click(object sender, EventArgs e)
         {
-            PistaBoton.Enabled = false;
-            QQSS.service.UsarPista();
-            PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
-            Random random = new Random();
-            int r = random.Next(22);
-            while (huecos[r].Text != "_") r = random.Next(22);
-            char c = enunciadoAhorcado[0];
-            Button b = indToButton[c];
-            b.BackColor = Color.Yellow;
-            for (int i = 0; i < enunciadoAhorcado.Length; i++)
+            ConfirmarPista Pista = new ConfirmarPista();
+            Pista.ShowDialog();
+            if (QQSS.service.GetQuierePista())
             {
-                if (c == enunciadoAhorcado[i]) huecos[i].Text = c + "";
+                PistaBoton.Enabled = false;
+                QQSS.service.UsarPista();
+                PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
+                Random random = new Random();
+                int r = random.Next(22);
+                while (huecos[r].Text != "_") r = random.Next(22);
+                char c = enunciadoAhorcado[0];
+                Button b = indToButton[c];
+                b.BackColor = Color.Yellow;
+                for (int i = 0; i < enunciadoAhorcado.Length; i++)
+                {
+                    if (c == enunciadoAhorcado[i]) huecos[i].Text = c + "";
+                }
             }
         }
 

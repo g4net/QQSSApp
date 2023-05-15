@@ -208,6 +208,16 @@ namespace ProyectoPSWMain.Services
             gameController.SetRetos(questions.ToList());
         }
 
+        public void PidePista()
+        {
+            gameController.PidePista();
+        }
+
+        public bool GetQuierePista()
+        {
+            return gameController.GetQuierePista();
+        }
+
         public void AdivinarFrase()
         {
             int[] dificultad = gameController.GetDifficultyArray();

@@ -267,35 +267,39 @@ namespace QQSSApp
 
         private void PistaBoton_Click(object sender, EventArgs e)
         {
-            PistaBoton.Enabled = false;
-            QQSS.service.UsarPista();
-            PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
-
-            Random random = new Random();
-            int indice = random.Next(0, letrasParaHuecos.Length);
-            char letra = letrasParaHuecos[indice].Text[0];
-            puntuacionPos.Text = (QQSS.service.GetPuntuacionReto() / 2).ToString();
-            int puntNeg = -QQSS.service.GetPuntuacionReto() * 2;
-            puntuaciónNegativa.Text = puntNeg.ToString();
-            for (int i = 0; i < fraseConHuecos.Length; i++)
+            ConfirmarPista Pista = new ConfirmarPista();
+            Pista.ShowDialog();
+            if (QQSS.service.GetQuierePista())
             {
-                if (fraseConHuecos[i].Text != "_") continue;
-                if (frase.Enunciado[i] != letra) continue;
+                PistaBoton.Enabled = false;
+                QQSS.service.UsarPista();
+                PistaLabel.Text = QQSS.service.GetNumPistas() + "/3";
 
-                fraseConHuecos[i].Text = letra + "";
-                textoFrase[i] = letra;
-
-            }
-
-            foreach (Label l in letrasParaHuecos)
-            {
-                if (l.Text == letra + "")
+                Random random = new Random();
+                int indice = random.Next(0, letrasParaHuecos.Length);
+                char letra = letrasParaHuecos[indice].Text[0];
+                puntuacionPos.Text = (QQSS.service.GetPuntuacionReto() / 2).ToString();
+                int puntNeg = -QQSS.service.GetPuntuacionReto() * 2;
+                puntuaciónNegativa.Text = puntNeg.ToString();
+                for (int i = 0; i < fraseConHuecos.Length; i++)
                 {
-                    l.Hide();
-                    l.Text = "-";
+                    if (fraseConHuecos[i].Text != "_") continue;
+                    if (frase.Enunciado[i] != letra) continue;
+
+                    fraseConHuecos[i].Text = letra + "";
+                    textoFrase[i] = letra;
+
+                }
+
+                foreach (Label l in letrasParaHuecos)
+                {
+                    if (l.Text == letra + "")
+                    {
+                        l.Hide();
+                        l.Text = "-";
+                    }
                 }
             }
-
         }
 
         private void Autocompletar(object sender, EventArgs e)

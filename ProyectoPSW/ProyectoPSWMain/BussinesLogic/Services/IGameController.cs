@@ -23,6 +23,8 @@ namespace ProyectoPSWMain.Services
         void SetPartidaActual(Partida partida);
         Partida GetPartidaActual();
         int[] GetDifficultyArray();
+        void PidePista();
+        bool GetQuierePista();
         bool GetConsolidado();
         Reto GetReto();
         void AddRetoRetosJugados();
